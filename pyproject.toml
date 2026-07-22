@@ -1,0 +1,8 @@
+[project]
+name = "gdms-toolkit"
+version = "0.1.0"
+description = "台灣地球物理資料教學工具箱（GDMS 下載與讀取輔助）"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["gdms_toolkit"]

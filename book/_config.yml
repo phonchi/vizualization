@@ -1,0 +1,25 @@
+title: 台灣地球物理觀測資料探索
+author: 地球物理資料教學團隊
+copyright: "2026"
+language: zh-TW
+
+execute:
+  execute_notebooks: cache
+  timeout: 600
+
+only_build_toc_files: true
+
+repository:
+  url: https://github.com/phonchi/vizualization
+  branch: main
+
+html:
+  use_repository_button: false
+  use_issues_button: false
+  home_page_in_navbar: true
+
+sphinx:
+  config:
+    html_show_copyright: false
+    nb_merge_streams: true
+    suppress_warnings: ["mystnb.unknown_mime_type"]

@@ -1,0 +1,11 @@
+jupyter-book==1.0.4.post1
+jupytext>=1.16
+numpy
+pandas
+requests
+python-dotenv
+obspy>=1.4
+plotly>=5.20
+folium>=0.16
+matplotlib
+scipy

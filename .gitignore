@@ -1,0 +1,18 @@
+# 帳密與金鑰
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+*.egg-info/
+
+# 建置產物（根目錄殘留與 book 產出）
+_build/
+
+# Jupyter Book 產出
+book/_build/
+
+# 下載的資料快取（範例資料 data/sample/ 會進版控，下載快取不進）
+data/cache/

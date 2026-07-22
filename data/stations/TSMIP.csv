@@ -1,0 +1,534 @@
+﻿network,station_code,chinese_station_name,english_station_name,lat,lon,elevation,start_time,end_time,location_county,location_district
+TSMIP,A002,關渡國小,Guan-Du Elementary School,25.12579,121.46688,10.00,1992-11-02,2599-12-31,臺北市,北投區
+TSMIP,A003,成功國小,Cheng-Kung Elementary School,25.08602,121.45688,0.00,1992-10-21,2599-12-31,新北市,蘆洲區
+TSMIP,A004,富安國小,Fu-an Elementary School,25.10578,121.48283,1.00,1992-10-20,2599-12-31,臺北市,士林區
+TSMIP,A006,士林商職,Shi-Lin High School of Commerce,25.09399,121.51523,8.00,1992-10-20,2599-12-31,臺北市,士林區
+TSMIP,A007,大龍國小,Da-Long Elementary School,25.07349,121.5169,14.00,1992-10-20,2599-12-31,臺北市,大同區
+TSMIP,A008,大佳國小,Da-Jia Elementary School,25.07403,121.53594,2.00,1992-08-13,2599-12-31,臺北市,中山區
+TSMIP,A009,內湖國小,Nei-Hu Elementary School,25.0802,121.57963,7.00,1992-10-29,2599-12-31,臺北市,內湖區
+TSMIP,A010,二重國小,Er-Jhong Elementary School,25.06513,121.47778,0.00,1992-08-13,2026-01-15,新北市,三重區
+TSMIP,A011,三光國小,San-Guang Elementary School,25.0565,121.49665,11.00,1992-08-13,2599-12-31,新北市,三重區
+TSMIP,A013,長春國小,Jhang-Chun Elementary School,25.05645,121.53371,14.00,1992-09-15,2599-12-31,臺北市,中山區
+TSMIP,A014,民生國小,Min-Sheng Elementary School,25.05645,121.5522,16.00,1992-10-29,2599-12-31,臺北市,松山區
+TSMIP,A015,松山國小,Song-Shan Elementary School,25.05044,121.57943,14.00,1992-10-29,2599-12-31,臺北市,松山區
+TSMIP,A016,泰山國小,Tai-Shan Elementary School,25.06155,121.43113,27.00,1992-09-15,2599-12-31,新北市,泰山區
+TSMIP,A020,幸安國小,Sing-An Elementary School,25.03764,121.53438,4.00,1992-10-30,2599-12-31,臺北市,大安區
+TSMIP,A024,埔墘國小,Pu-Cian Elementary School,25.01923,121.47472,14.00,1992-08-11,2599-12-31,新北市,板橋區
+TSMIP,A025,東園國小,Dong-Yuang Elementary School,25.02281,121.498,11.00,1992-09-10,2599-12-31,臺北市,萬華區
+TSMIP,A026,頂溪國小,Ding-Si Elementary School,25.01568,121.51137,17.00,1992-08-12,2599-12-31,新北市,永和區
+TSMIP,A030,志清國小,Jhi-Ching Elementary School,24.99788,121.53873,21.00,1992-10-30,2599-12-31,臺北市,文山區
+TSMIP,A032,積穗國小,Ji-Suei Elementary School,24.99963,121.48283,7.00,1993-08-26,2599-12-31,新北市,中和區
+TSMIP,A034,新店國小,Sin-Dian Elementary School,24.95357,121.539,33.00,1993-09-01,2599-12-31,新北市,新店區
+TSMIP,A036,龜山國小,Guei-Shan Elementary School,24.9023,121.55344,66.00,1993-08-31,2599-12-31,新北市,新店區
+TSMIP,A037,國泰國小,Guo-Tai Elementary School,25.0343,121.44158,11.00,1993-09-10,2599-12-31,新北市,新莊區
+TSMIP,A038,裕民國小,Yu-Min Elementary School,25.02241,121.41863,16.00,1993-09-10,2599-12-31,新北市,新莊區
+TSMIP,A039,三峽國小,San-Sia Elementary School,24.93477,121.36926,38.00,1993-09-03,2599-12-31,新北市,三峽區
+TSMIP,A043,樹林國小,Shu-Lin Elementary School,24.98969,121.41806,20.00,1993-09-06,2599-12-31,新北市,樹林區
+TSMIP,A044,山佳國小,Shan-Jia Elementary School,24.97551,121.40214,54.00,1993-09-06,2599-12-31,新北市,樹林區
+TSMIP,A045,瑞柑國小,Ruei-Gan Elementary School,25.10949,121.82303,82.00,1993-09-14,2599-12-31,新北市,瑞芳區
+TSMIP,A046,瑞亭國小,Ruei-Ting Elementary School,25.1025,121.77695,43.00,1993-09-14,2599-12-31,新北市,瑞芳區
+TSMIP,A047,鶯歌國小,Ying-Ge Elementary School,24.95187,121.34456,59.00,1993-09-03,2599-12-31,新北市,鶯歌區
+TSMIP,A049,米倉國小,Mi-Chang Elementary School,25.14687,121.44546,33.00,1993-09-10,2599-12-31,新北市,八里區
+TSMIP,A050,八里國小,Ba-Li Elementary School,25.14992,121.40421,13.00,1993-09-10,2599-12-31,新北市,八里區
+TSMIP,A051,成州國小,Cheng-Jhou Elementary School,25.09973,121.44919,5.00,1993-09-07,2599-12-31,新北市,五股區
+TSMIP,A052,林口國小,Lin-Kou Elementary School,25.08008,121.38969,249.00,1993-09-09,2599-12-31,新北市,林口區
+TSMIP,A053,新北氣象站,New Taipei Weather Station,24.95958,121.52506,22.00,1993-08-31,2599-12-31,新北市,新店區
+TSMIP,A054,臺北氣象站,Taipei Weather Station,24.99746,121.44182,15.00,1993-09-09,2022-12-26,新北市,板橋區
+TSMIP,A057,五堵國小,Wu-Du Elementary School,25.07952,121.6938,16.00,1993-09-15,2599-12-31,基隆市,七堵區
+TSMIP,A059,隆聖國小,Long-Sheng Elementary School,25.15571,121.69354,73.00,1993-09-14,2599-12-31,基隆市,安樂區
+TSMIP,A060,德和國小,De-He Elementary School,25.15472,121.7303,50.62,1993-09-14,2599-12-31,基隆市,中山區
+TSMIP,A061,東信國小,Dong-Sin Elementary School,25.13164,121.76082,44.00,1993-09-15,2599-12-31,基隆市,信義區
+TSMIP,A063,暖江國小,Nuan-Giang Elementary School,25.1055,121.73815,47.00,1993-09-14,2599-12-31,基隆市,暖暖區
+TSMIP,A065,海洋大學2,National Taiwan Ocean University 2,25.14938,121.77332,16.00,1994-12-15,2599-12-31,基隆市,中正區
+TSMIP,A066,鞍部氣象站,An-Bu Weather Station,25.18277,121.52935,836.00,1992-09-30,2599-12-31,臺北市,北投區
+TSMIP,A070,鼻頭國小,Bi-Tou Elementary School,25.12177,121.91972,45.00,1994-12-15,2599-12-31,新北市,瑞芳區
+TSMIP,A071,深坑國小,Shen-Keng Elementary School,25.00169,121.61674,37.00,1995-01-13,2599-12-31,新北市,深坑區
+TSMIP,A072,石碇國小,Shih-Ding Elementary School,24.9906,121.65873,111.00,1995-01-13,2599-12-31,新北市,石碇區
+TSMIP,A075,平溪國小,Ping-Si Elementary School,25.02771,121.73659,228.00,1995-01-17,2599-12-31,新北市,平溪區
+TSMIP,A076,十分國小,Shih-Fen Elementary School,25.04353,121.77818,182.00,1995-01-17,2599-12-31,新北市,平溪區
+TSMIP,A077,牡丹國小,Mu-Dan Elementary School,25.06248,121.85118,98.00,1995-01-17,2599-12-31,新北市,雙溪區
+TSMIP,A078,雙溪國小,Shuang-Si Elementary School,25.03358,121.86665,36.00,1995-01-17,2022-09-23,新北市,雙溪區
+TSMIP,A079,貢寮國小,Gong-Liao Elementary School,25.02186,121.91466,18.00,1995-03-13,2599-12-31,新北市,貢寮區
+TSMIP,A082,澳底國小,Ao-Di Elementary School,25.05501,121.92582,15.00,1995-01-19,2599-12-31,新北市,貢寮區
+TSMIP,A083,三芝國小,San-Jhih Elementary School,25.25805,121.50261,61.00,1995-01-18,2599-12-31,新北市,三芝區
+TSMIP,A084,金山國小,Jin-Shan Elementary School,25.22263,121.6372,5.00,1995-01-18,2599-12-31,新北市,金山區
+TSMIP,A085,坪林國中,Ping-Lin Junior High School,24.93831,121.71219,197.00,1995-01-12,2599-12-31,新北市,坪林區
+TSMIP,A103,五分山氣象雷達站,Wu-Fen-Shan Weather Radar Station,25.07151,121.78141,728.00,1996-11-29,2599-12-31,新北市,瑞芳區
+TSMIP,A107,基隆氣象站,Keelung weather station,25.1328,121.74073,9.00,2000-08-25,2599-12-31,基隆市,仁愛區
+TSMIP,A112,彭佳嶼氣象站,Peng-Jia-Yu weather station,25.62793,122.08,37.00,2002-07-02,2599-12-31,基隆市,中正區
+TSMIP,A115,安和國小,An-He Elementary School,24.9888,121.46492,11.00,2006-01-24,2599-12-31,新北市,土城區
+TSMIP,A124,烏來國小,Wu-Lai Elementary School,24.86366,121.55341,146.00,2013-05-10,2599-12-31,新北市,烏來區
+TSMIP,A125,汐止國小,Si-Jhih Elementary School,25.06776,121.65486,12.00,2013-05-21,2599-12-31,新北市,汐止區
+TSMIP,A127,雙溪國小泰平分校,Shuang-Shi elementary school Tai-Ping Branch,24.97188,121.82553,399.00,2005-05-09,2599-12-31,新北市,雙溪區
+TSMIP,A128,淡水氣象站,Dan-Shuei Weather Station,25.16439,121.44915,15.00,2008-10-15,2599-12-31,新北市,淡水區
+TSMIP,A129,德拉楠國小,Tranan Elementary School,24.77756,121.502,403.68,2011-12-17,2599-12-31,新北市,烏來區
+TSMIP,A130,竹子湖氣象站,Ju-Tz-Hu Weather Station,25.16232,121.54465,612.00,2018-10-12,2599-12-31,臺北市,北投區
+TSMIP,A131,南港國小,Nan-Gang Elementary School,25.05806,121.61011,9.00,2019-06-05,2599-12-31,臺北市,南港區
+TSMIP,A132,基隆嶼,Keelung Island,25.19049,121.78416,9.00,2019-09-25,2599-12-31,基隆市,中正區
+TSMIP,A134,雙溪高中,Shuang-Xi High School,25.03495,121.86295,27.00,2022-03-16,2599-12-31,新北市,雙溪區
+TSMIP,A135,金山高中,Jin-Shan High School,25.22579,121.63775,18.75,2022-07-28,2599-12-31,新北市,金山區
+TSMIP,A136,龍埔公園,LongPu Park,24.93914,121.3743,37.32,2022-09-05,2599-12-31,新北市,三峽區
+TSMIP,A137,十四張歷史公園,Shisizhang Historical Park,24.97982,121.52766,17.00,2022-09-12,2599-12-31,新北市,新店區
+TSMIP,A138,柑林國小,Gan Lin Elementary School,25.01555,121.80444,100.00,2022-10-26,2599-12-31,新北市,雙溪區
+TSMIP,A139,大公雞公園,Big Rooster Park,25.07651,121.6403,40.72,2022-08-09,2599-12-31,新北市,汐止區
+TSMIP,A141,新北市政府消防局坪林分隊,Ping-Lin Branch of New Taipei City Fire Bureau,24.93915,121.71189,203.73,2022-10-20,2599-12-31,新北市,坪林區
+TSMIP,A142,農業部茶及飲料作物改良場北部分場,"Tea and Beverage Research Station, Ministry of Agriculture, Northern Region Branch Station",24.95576,121.6312,407.92,2022-10-23,2599-12-31,新北市,石碇區
+TSMIP,A143,烏來瀑布公園,Wulai Waterfall Park,24.84903,121.55013,260.07,2022-10-19,2599-12-31,新北市,烏來區
+TSMIP,A144,新莊體育園區,Xinzhuang Sports and Recreation Park,25.04332,121.45237,10.47,2022-11-07,2599-12-31,新北市,新莊區
+TSMIP,A145,三芝二坪頂,San Zhi Er Ping Ding,25.22698,121.53797,421.23,2022-04-10,2599-12-31,新北市,三芝區
+TSMIP,A146,林口足夢運動公園,Linkou Community Sports Park,25.07385,121.39561,267.09,2023-11-09,2599-12-31,新北市,林口區
+TSMIP,A147,石牌縣界公園,Shipai County Boundary Park,24.86531,121.77484,542.00,2026-05-20,,新北市,坪林區
+TSMIP,B001,新屋國小,Sin-Wu Elementary School,24.97351,121.10212,80.82,1993-11-22,2599-12-31,桃園市,新屋區
+TSMIP,B003,草漯國小,Cao-Ta Elementary School,25.04554,121.14306,51.00,1993-11-26,2599-12-31,桃園市,觀音區
+TSMIP,B004,大園國小,Da-Yuan Elementary School,25.05997,121.20291,29.00,1993-11-29,2599-12-31,桃園市,大園區
+TSMIP,B005,竹圍國小,Jhu-Wei Elementary School,25.10336,121.24446,11.00,1993-11-22,2599-12-31,桃園市,大園區
+TSMIP,B006,大同國小,Da-Tong Elementary School,24.91099,121.14921,163.89,1993-11-22,2025-12-30,桃園市,楊梅區
+TSMIP,B009,新街國小,Sin-Jie Elementary School,24.96275,121.22833,135.00,1993-11-24,2599-12-31,桃園市,中壢區
+TSMIP,B010,崙坪國小,Lun-Ping Elementary School,25.00101,121.162,100.00,1993-11-26,2599-12-31,桃園市,觀音區
+TSMIP,B011,大溪國小,Da-Si Elementary School,24.88418,121.28639,117.00,1993-11-25,2599-12-31,桃園市,大溪區
+TSMIP,B012,瑞豐國小,Ruei-Fong Elementary School,24.93614,121.29872,140.00,1993-11-25,2599-12-31,桃園市,八德區
+TSMIP,B013,龍潭國小,Long-Tan Elementary School,24.86391,121.21337,230.00,1993-11-25,2599-12-31,桃園市,龍潭區
+TSMIP,B014,大坑國小,Da-Keng Elementary School,25.0449,121.31538,100.00,1993-11-30,2599-12-31,桃園市,龜山區
+TSMIP,B016,北門國小,Bei-Men Elementary School,24.81447,120.96552,17.00,1993-11-18,2599-12-31,新竹市,北區
+TSMIP,B017,新竹園區實中,Hshinchu Yuancyu Experimental High School,24.77864,121.01819,91.00,1993-11-18,2599-12-31,新竹市,東區
+TSMIP,B018,湖口國小,Hu-Kou Elementary School,24.87865,121.06078,108.00,1993-11-25,2599-12-31,新竹縣,湖口鄉
+TSMIP,B019,新豐國小,Sin-Fong Elementary School,24.90056,120.9874,18.00,1993-11-20,2599-12-31,新竹縣,新豐鄉
+TSMIP,B021,關西國小,Guan-Si Elementary School,24.79194,121.17403,141.00,1993-11-23,2599-12-31,新竹縣,關西鎮
+TSMIP,B022,雙溪國小,Shuang-Si Elementary School,24.76729,120.99007,50.00,1993-11-18,2599-12-31,新竹縣,寶山鄉
+TSMIP,B023,大肚國小,Da-Du Elementary School,24.71995,121.13994,177.00,1993-11-19,2599-12-31,新竹縣,橫山鄉
+TSMIP,B024,竹東國小,Jhu-Dong Elementary School,24.7357,121.0881,131.00,1993-11-19,2599-12-31,新竹縣,竹東鎮
+TSMIP,B026,芎林國小,Cyong-Lin Elementary School,24.77363,121.08356,98.00,1993-11-18,2599-12-31,新竹縣,芎林鄉
+TSMIP,B027,新星國小,Sin-Sing Elementary School,24.83011,121.07455,80.00,1993-11-18,2599-12-31,新竹縣,新埔鎮
+TSMIP,B028,北埔國小,Bei-Pu Elementary School,24.70007,121.05351,129.00,1993-11-19,2599-12-31,新竹縣,北埔鄉
+TSMIP,B029,西湖國小,Si-Fu Elementary School,24.55775,120.75766,36.00,1993-11-16,2599-12-31,苗栗縣,西湖鄉
+TSMIP,B030,明德國小,Ming-De Elementary School,24.5863,120.88519,68.00,1993-11-10,2599-12-31,苗栗縣,頭屋鄉
+TSMIP,B032,五穀國小,Wu-Gu Elementary School,24.52205,120.8226,78.00,1993-11-16,2599-12-31,苗栗縣,公館鄉
+TSMIP,B033,竹南國小,Jhu-Nan Elementary School,24.68356,120.8703,11.00,1993-11-16,2599-12-31,苗栗縣,竹南鎮
+TSMIP,B034,造橋國小,Zao-Ciao Elementary School,24.63804,120.86532,18.00,1993-11-16,2599-12-31,苗栗縣,造橋鄉
+TSMIP,B035,後龍國小,Hou-Long Elementary School,24.61409,120.79702,13.00,1993-11-11,2599-12-31,苗栗縣,後龍鎮
+TSMIP,B036,坪頂國小,Ping-Ding Elementary School,24.44691,120.70491,134.00,1993-11-15,2599-12-31,苗栗縣,通霄鎮
+TSMIP,B037,通霄國小,Tong-Siao Elementary School,24.49191,120.68367,22.00,1994-12-09,2599-12-31,苗栗縣,通霄鎮
+TSMIP,B039,銅鑼國小,Tong-Luo Elementary School,24.48968,120.7908,160.00,1993-11-16,2599-12-31,苗栗縣,銅鑼鄉
+TSMIP,B041,藍田國小,Lan-Tian Elementary School,24.38981,120.69565,95.00,1993-11-08,2599-12-31,苗栗縣,苑裡鎮
+TSMIP,B043,信德國小,Sin-De Elementary School,24.68663,120.95979,88.00,1993-11-17,2599-12-31,苗栗縣,頭份市
+TSMIP,B045,獅潭國小,Shih-Tan Elementary School,24.53989,120.92055,201.00,1993-11-10,2599-12-31,苗栗縣,獅潭鄉
+TSMIP,B048,東海大學,Tung-Hai University,24.17808,120.59712,192.00,1993-11-06,2599-12-31,臺中市,西屯區
+TSMIP,B049,僑孝國小,Chiao-Siao Elementary School,24.17728,120.69969,134.00,1993-11-05,2599-12-31,臺中市,北屯區
+TSMIP,B050,西屯國小,Si-Tun Elementary School,24.17993,120.64171,100.00,1993-11-04,2599-12-31,臺中市,西屯區
+TSMIP,B051,忠明國小,Jhong-Ming Elementary School,24.15981,120.65967,96.00,1994-12-08,2599-12-31,臺中市,西區
+TSMIP,B052,大坑國小,Da-Keng Elementary School,24.19589,120.74797,218.00,1993-11-04,2599-12-31,臺中市,北屯區
+TSMIP,B053,四張犁國小,Sih-Jhang-Li Elementary School,24.19251,120.67871,133.00,1994-12-07,2599-12-31,臺中市,北屯區
+TSMIP,B056,黎明國小,Li-Ming Elementary School,24.15696,120.63354,77.00,1993-11-09,2599-12-31,臺中市,南屯區
+TSMIP,B059,清水國小,Cing-Shuei Elementary School,24.26608,120.57174,7.09,1994-12-09,2599-12-31,臺中市,清水區
+TSMIP,B060,大雅國小,Da-Ya Elementary School,24.22188,120.65043,136.00,1993-11-07,2599-12-31,臺中市,大雅區
+TSMIP,B061,大忠國小,Da-Jhong Elementary School,24.13453,120.55684,33.00,1993-11-06,2599-12-31,臺中市,大肚區
+TSMIP,B062,崇光國小,Chong-Guang Elementary School,24.11491,120.68417,65.00,1993-11-09,2599-12-31,臺中市,大里區
+TSMIP,B063,烏日國小,Wu-Rih Elementary School,24.10784,120.62376,34.00,1993-11-06,2599-12-31,臺中市,烏日區
+TSMIP,B064,順天國小,Shun-Tian Elementary School,24.34456,120.61937,50.00,1993-11-08,2599-12-31,臺中市,大甲區
+TSMIP,B066,潭子國小,Tan-Zih Elementary School,24.21382,120.70429,174.00,1993-11-05,2599-12-31,臺中市,潭子區
+TSMIP,B067,竹仔坑國小,Zhu Zi Keng Bilingual Elementary School,24.09,120.72824,98.00,1993-11-09,2599-12-31,臺中市,大里區
+TSMIP,B068,石岡國小,Shih-Gang Elementary School,24.27604,120.77319,283.00,1993-11-04,2599-12-31,臺中市,石岡區
+TSMIP,B069,東勢國小,Dong-Shih Elementary School,24.25964,120.83095,360.00,1993-11-04,2599-12-31,臺中市,東勢區
+TSMIP,B070,龍泉國小,Long-Cyuan Elementary School,24.19639,120.54746,6.00,1993-11-06,2599-12-31,臺中市,龍井區
+TSMIP,B071,雙冬國小,Shuang-Dong Elementary School,23.98404,120.79516,219.00,1993-11-05,2599-12-31,南投縣,草屯鎮
+TSMIP,B072,國姓國小,Guo-Sing Elementary School,24.03905,120.85796,315.00,1993-11-05,2599-12-31,南投縣,國姓鄉
+TSMIP,B073,史港國小,Shih-Gang Elementary School,24.01241,120.95729,465.00,1993-11-05,2599-12-31,南投縣,埔里鎮
+TSMIP,B074,南光國小,Nan-Guang Elementary School,23.96133,120.9711,447.00,1993-11-05,2599-12-31,南投縣,埔里鎮
+TSMIP,B075,草屯國小,Cao-Tun Elementary School,23.98149,120.68761,110.00,1993-11-03,2599-12-31,南投縣,草屯鎮
+TSMIP,B077,集集國小,Ji-Ji Elementary School,23.82721,120.78735,235.00,1993-11-07,2599-12-31,南投縣,集集鎮
+TSMIP,B078,水里國小,Shuei-Li Elementary School,23.80964,120.85433,289.00,1993-11-07,2599-12-31,南投縣,水里鄉
+TSMIP,B081,新竹氣象站,Hsinchu Weather Station,24.82827,121.01419,31.00,1993-11-17,2599-12-31,新竹縣,竹北市
+TSMIP,B082,臺中氣象站,Taichung Weather Station,24.1456,120.68409,89.00,1993-11-07,2599-12-31,臺中市,北區
+TSMIP,B083,中央大學,National Central University,24.96713,121.18688,131.00,1993-11-24,2599-12-31,桃園市,中壢區
+TSMIP,B084,日月潭氣象站,Sun Moon Lake Weather Station,23.88133,120.90822,999.00,1993-10-27,2599-12-31,南投縣,魚池鄉
+TSMIP,B085,三光國小,Sanguang Elementary School,24.67374,121.36658,685.00,1993-10-19,2599-12-31,桃園市,復興區
+TSMIP,B086,西港國小,Si-Gang Elementary School,23.86166,120.28924,4.00,1993-11-19,2599-12-31,彰化縣,大城鄉
+TSMIP,B090,桶頭國小,Tong-Tou Elementary School,23.64623,120.65589,241.00,1993-11-03,2599-12-31,南投縣,竹山鎮
+TSMIP,B091,龍山國小,Long-Shan Elementary School,24.98149,121.27055,108.00,1994-12-12,2599-12-31,桃園市,桃園區
+TSMIP,B095,峨眉國小,E-Mei Elementary School,24.68878,121.01994,104.00,1994-12-11,2599-12-31,新竹縣,峨眉鄉
+TSMIP,B097,大庄國小,Da-Jhuang Elementary School,24.78838,120.92734,13.00,1994-12-11,2599-12-31,新竹市,香山區
+TSMIP,B099,育英國中,Yu-Ying Junior High  School,24.13636,120.69929,85.00,1994-12-08,2599-12-31,臺中市,東區
+TSMIP,B102,豐東國中,Fong-Dong Junior High  School,24.24696,120.72861,231.00,1994-12-10,2599-12-31,臺中市,豐原區
+TSMIP,B103,內埔國小,Nei-Pu Elementary School,24.30747,120.71505,223.00,1994-12-08,2599-12-31,臺中市,后里區
+TSMIP,B104,公明國小,Gong-Ming Elementary School,24.24419,120.6093,210.00,1994-12-09,2599-12-31,臺中市,沙鹿區
+TSMIP,B105,竹林國小,Jhu-Lin Elementary School,24.23824,120.567,55.00,1994-12-09,2599-12-31,臺中市,沙鹿區
+TSMIP,B107,南郭國小,Nan-Guo Elementary School,24.07175,120.54681,17.00,1994-11-30,2599-12-31,彰化縣,彰化市
+TSMIP,B110,員林國小,Yuan-Lin Elementary School,23.96049,120.57986,26.00,1994-12-07,2599-12-31,彰化縣,員林市
+TSMIP,B111,和美國小,He-Mei Elementary School,24.11201,120.49487,13.00,1994-11-30,2599-12-31,彰化縣,和美鎮
+TSMIP,B112,洛津國小,Luo-Jin Elementary School,24.05517,120.43034,8.00,1994-11-30,2599-12-31,彰化縣,鹿港鎮
+TSMIP,B115,溪湖國小,Si-Hu Elementary School,23.95798,120.47793,18.00,1994-11-29,2599-12-31,彰化縣,溪湖鎮
+TSMIP,B116,田中高中,Tian-Jhong Junior High School,23.85563,120.58888,49.00,1994-12-06,2599-12-31,彰化縣,田中鎮
+TSMIP,B117,線西國中,Sian-Si Junior High School,24.13228,120.46833,6.00,1994-11-30,2599-12-31,彰化縣,線西鄉
+TSMIP,B118,永樂國小,Yong-Le Elementary School,24.00035,120.43149,9.00,1994-12-01,2599-12-31,彰化縣,埔鹽鄉
+TSMIP,B120,同安國小,Tong-An Elementary School,23.97743,120.6214,238.00,1994-12-07,2599-12-31,彰化縣,芬園鄉
+TSMIP,B121,合興國小,He-Sing Elementary School,23.89454,120.45894,25.00,1994-11-29,2599-12-31,彰化縣,埤頭鄉
+TSMIP,B122,二水國小,Er-Shuei Elementary School,23.81184,120.61793,85.00,1994-12-06,2599-12-31,彰化縣,二水鄉
+TSMIP,B123,華南國小,Hua-Nan Elementary School,24.01613,120.55158,21.00,1994-12-07,2599-12-31,彰化縣,花壇鄉
+TSMIP,B127,田美國小,Tian-Mei Elementary School,24.6296,121.00875,173.00,1994-12-11,2599-12-31,苗栗縣,南庄鄉
+TSMIP,B128,建中國小,Jian-Jhong Elementary School,24.41442,120.7697,299.00,1994-12-10,2599-12-31,苗栗縣,三義鄉
+TSMIP,B129,新街國小,Sin-Jie Elementary School,23.87658,120.6925,113.00,1994-12-07,2599-12-31,南投縣,名間鄉
+TSMIP,B131,建功國小,Jian-Gong Elementary School,24.56494,120.82576,50.00,1999-02-02,2599-12-31,苗栗縣,苗栗市
+TSMIP,B135,外埔國小,Wai-Pu Elementary School,24.33314,120.65332,146.00,1999-11-30,2599-12-31,臺中市,外埔區
+TSMIP,B136,神岡國小,Shengang Elementary School,24.25797,120.66039,176.00,1999-08-18,2599-12-31,臺中市,神岡區
+TSMIP,B137,白冷國小,Bai-Leng Elementary School,24.18355,120.93014,626.00,1999-08-20,2599-12-31,臺中市,和平區
+TSMIP,B138,湳雅國小,Nan-Ya Elementary School,23.92055,120.60279,42.00,1999-09-08,2599-12-31,彰化縣,社頭鄉
+TSMIP,B139,永靖國小,Yong-Jin Elementary School,23.92082,120.54842,29.00,1999-09-08,2599-12-31,彰化縣,永靖鄉
+TSMIP,B141,水尾國小,Shuei-Wei Elementary School,23.83211,120.47125,31.00,1999-09-18,2599-12-31,彰化縣,溪州鄉
+TSMIP,B143,中寮國小,Jhong-Liao Elementary School,23.87979,120.76324,164.00,1999-08-21,2599-12-31,南投縣,中寮鄉
+TSMIP,B145,新寶國小,Sin-Bao Elementary School,23.97876,120.34442,2.00,1999-09-07,2599-12-31,彰化縣,芳苑鄉
+TSMIP,B146,大同國小,Da-Tong Elementary School,24.16088,120.49127,7.00,1999-08-22,2021-05-31,彰化縣,伸港鄉
+TSMIP,B148,暨南國際大學,National Chi-Nan University,23.95738,120.92767,588.95,2000-10-05,2599-12-31,南投縣,埔里鎮
+TSMIP,B149,梧棲氣象站,Wu-Qi Weather Station,24.25656,120.52339,5.00,2000-10-05,2599-12-31,臺中市,梧棲區
+TSMIP,B162,北斗國中,Bei-Dou Junior High School,23.87634,120.52117,36.00,2008-02-04,2599-12-31,彰化縣,北斗鎮
+TSMIP,B168,新屋氣象站,Xin-Wu Weather Station,25.00675,121.04758,21.00,2013-03-05,2599-12-31,桃園市,新屋區
+TSMIP,B170,新平國小,Shin	ping Elementary School,24.1547,120.71968,108.00,2017-01-20,2599-12-31,臺中市,太平區
+TSMIP,B171,大安國小,Da	-An Elementary School,24.34501,120.58783,28.00,2017-01-23,2599-12-31,臺中市,大安區
+TSMIP,B172,光復國小,	Guang-Fu Elementary School,24.14404,120.682,92.00,2017-01-24,2599-12-31,臺中市,中區
+TSMIP,B173,樹義國小,Shu-Yi Elementary School,24.1113,120.65639,41.00,2017-01-24,2599-12-31,臺中市,南區
+TSMIP,B174,大南國小,Da	nan Elementary School,24.22677,120.80607,475.00,2017-01-20,2599-12-31,臺中市,新社區
+TSMIP,B175,文化國小,Wen-Hua Elementary School,24.95313,121.20436,137.00,2016-12-12,2599-12-31,桃園市,平鎮區
+TSMIP,B176,大竹國小,Da-Ju Elementary School,25.02495,121.25827,70.00,2016-12-16,2025-10-16,桃園市,蘆竹區
+TSMIP,B177,三灣國小,San	wan Elementary School,24.65612,120.95483,90.00,2017-07-10,2599-12-31,苗栗縣,三灣鄉
+TSMIP,B178,管嶼國小,Guan-Yu Elementary School,24.02765,120.41239,6.00,2017-07-05,2599-12-31,彰化縣,福興鄉
+TSMIP,B179,秀水國小,Shiou-Shuei Elementary School,24.03391,120.50391,14.00,2017-07-05,2599-12-31,彰化縣,秀水鄉
+TSMIP,B180,大村國小,Da-Tsuen Elementary School,23.99264,120.54578,20.00,2017-07-05,2599-12-31,彰化縣,大村鄉
+TSMIP,B181,埔心國小,Pu-Shin Elementary School,23.95351,120.5456,27.00,2017-07-05,2599-12-31,彰化縣,埔心鄉
+TSMIP,B182,田尾國小,Tian-Wei Elementary School,23.89235,120.52733,34.00,2017-07-06,2599-12-31,彰化縣,田尾鄉
+TSMIP,B183,民靖國小,Min-Jing Elementary School,23.87591,120.41629,21.00,2017-07-06,2599-12-31,彰化縣,竹塘鄉
+TSMIP,B184,鹿谷國小,Lu-Gu Elementary School,23.74919,120.75254,496.00,2017-07-06,2599-12-31,南投縣,鹿谷鄉
+TSMIP,B189,和平,He-Ping,24.17083,120.8948,538.00,2019-03-05,2599-12-31,臺中市,和平區
+TSMIP,B190,芳苑國中,Fang-Yuan Junior High School,23.92231,120.32021,4.00,2019-03-15,2599-12-31,彰化縣,芳苑鄉
+TSMIP,B192,觀音國中,Guan-Yin Junior High School,25.04096,121.08052,11.00,2019-02-21,2599-12-31,桃園市,觀音區
+TSMIP,B200,聯合大學,National United University,24.53737,120.79093,179.00,2011-01-05,2599-12-31,苗栗縣,苗栗市
+TSMIP,B201,彰化師大,National Changhua University of Education,24.07948,120.55823,25.00,2011-01-05,2599-12-31,彰化縣,彰化市
+TSMIP,B204,信義國中,Shin-Yi Junior High School,23.69615,120.85323,495.00,2013-01-18,2599-12-31,南投縣,信義鄉
+TSMIP,B205,大甲高工,Da-Jia Industrial Senior High School,24.34781,120.6403,99.00,2013-01-18,2599-12-31,臺中市,大甲區
+TSMIP,B207,北梅國中,Bei-Mei Junior High School,24.05657,120.91169,358.00,2015-02-06,2599-12-31,南投縣,國姓鄉
+TSMIP,B208,二林商工,Erh-lin Industrial and Commercial Vocational High School,23.90259,120.3781,14.00,2015-02-06,2599-12-31,彰化縣,二林鎮
+TSMIP,B209,五峰國小,Wu-Feng Elementary School,24.63189,121.11776,427.00,2015-12-04,2599-12-31,新竹縣,五峰鄉
+TSMIP,B210,東光國小,Dung-Guang Elementary School,24.7771,121.17527,147.00,2018-10-12,2599-12-31,新竹縣,關西鎮
+TSMIP,B214,田中氣象站,Tian Zhong Weather Station,23.87414,120.5814,68.00,2020-07-15,2599-12-31,彰化縣,田中鎮
+TSMIP,B215,上巴陵,ShungBaling,24.69933,121.42725,1695.00,2021-11-11,2599-12-31,桃園市,復興區
+TSMIP,B216,伸東國小,Shen Dong Elementary School,24.14683,120.49647,6.67,2022-01-17,2599-12-31,彰化縣,伸港鄉
+TSMIP,B218,埔頂公園,Pu Ding Park,24.90612,121.28163,165.16,2022-10-25,2599-12-31,桃園市,大溪區
+TSMIP,B219,霧峰921地震教育園區,921 Earthquake Museum of Taiwan,24.04201,120.69948,85.95,2022-10-19,2599-12-31,臺中市,霧峰區
+TSMIP,B222,後龍氣象站,Houlong Weather Station,24.64845,120.83183,31.32,2024-04-15,2599-12-31,苗栗縣,造橋鄉
+TSMIP,B223,東山高中,Dongshan Senior High School,24.16636,120.70989,116.47,2022-12-15,2599-12-31,臺中市,北屯區
+TSMIP,B224,后綜高中,Hou-Zong Senior High School,24.30548,120.72516,227.03,2022-12-15,2599-12-31,臺中市,后里區
+TSMIP,B225,內厝河濱公園,Neicuo Riverside Park,25.06465,121.27819,40.71,2023-12-07,2599-12-31,桃園市,蘆竹區
+TSMIP,B226,力行國小,Li Hsing Elementary School,24.14813,121.18888,1511.39,2025-08-12,2599-12-31,南投縣,仁愛鄉
+TSMIP,B227,德芙蘭國小谷關分校,De Fu Lan Elementary School Guguan Branch,24.20196,121.00596,751.69,2025-08-11,2599-12-31,臺中市,和平區
+TSMIP,B228,東汴國小,Dong-Bian Elementary School,24.11759,120.79613,271.69,2025-06-05,2599-12-31,臺中市,太平區
+TSMIP,B229,地利國小,Di Li Elementary School,23.79431,120.94362,390.92,2025-11-11,2599-12-31,南投縣,信義鄉
+TSMIP,B230,龍津高中,Long-Jin Senior High School,24.2045,120.52137,5.50,2024-09-24,2599-12-31,臺中市,龍井區
+TSMIP,B232,羅浮高中,Luo-Fu Senior High School,24.79723,121.36402,314.62,2024-09-24,2599-12-31,桃園市,復興區
+TSMIP,C001,安南國小,An-Nan Elementary School,23.70459,120.24908,8.00,1993-02-03,2599-12-31,雲林縣,東勢鄉
+TSMIP,C002,廉使國小,Lian-Shih Elementary School,23.71669,120.42016,25.00,1993-03-22,2599-12-31,雲林縣,虎尾鎮
+TSMIP,C003,公誠國小,Kung-Cheng Elementary School,23.7149,120.53851,52.00,1993-02-03,2599-12-31,雲林縣,斗六市
+TSMIP,C004,頂湖國小,Ding-Hu Elementary School,23.59964,120.1795,2.00,1993-02-02,2599-12-31,雲林縣,口湖鄉
+TSMIP,C005,大林國小排路分校,Da-Lin Elementary School Pia-Lu Branch,23.61003,120.4217,21.00,1993-02-02,2599-12-31,嘉義縣,大林鎮
+TSMIP,C006,梅山國小,Mei-Shan Elementary School,23.57958,120.56011,173.00,1993-02-01,2599-12-31,嘉義縣,梅山鄉
+TSMIP,C008,雙溪國小,Shuang-Shi Elementary School,23.4836,120.27761,11.00,1993-02-02,2599-12-31,嘉義縣,朴子市
+TSMIP,C010,民和國小,Min-Her Elementary School,23.46297,120.55294,211.00,1993-02-01,2599-12-31,嘉義縣,番路鄉
+TSMIP,C011,培英國小,Peir-Ing Elementary School,23.48306,120.6544,658.00,1993-02-01,2024-03-22,嘉義縣,竹崎鄉
+TSMIP,C012,新塭國小,Shin-Wun Elementary School,23.33041,120.15974,5.00,1993-02-02,2599-12-31,嘉義縣,布袋鎮
+TSMIP,C014,大埔國中小,DaPu Junior and Elementary School,23.29311,120.59135,248.00,1993-02-17,2599-12-31,嘉義縣,大埔鄉
+TSMIP,C015,白河國小,Bai-He Elementary School,23.3526,120.4144,39.00,1993-02-15,2599-12-31,臺南市,白河區
+TSMIP,C016,苓和國小,Ling-He Elementary School,23.21914,120.16209,7.00,1993-02-16,2599-12-31,臺南市,將軍區
+TSMIP,C017,中營國小,jhongying Elementary School,23.21328,120.27718,6.31,1993-02-16,2599-12-31,臺南市,下營區
+TSMIP,C018,六甲國小湖東分校,Liou-Jia Elementary School Hu-Dong Branch,23.22241,120.40021,130.00,1993-02-17,2599-12-31,臺南市,六甲區
+TSMIP,C020,竹橋國小,Jhu-Ciao Elementary School,23.10231,120.15833,7.00,1993-02-16,2599-12-31,臺南市,七股區
+TSMIP,C021,新市國小,Sinshih Elementary School,23.07921,120.29559,10.00,1993-02-17,2599-12-31,臺南市,新市區
+TSMIP,C022,南化國小,Nanhua Elementary School,23.04409,120.46969,101.00,1993-02-17,2599-12-31,臺南市,南化區
+TSMIP,C023,歸南國小,Gueinan Elementary School,22.96437,120.28808,23.00,1993-02-16,2599-12-31,臺南市,歸仁區
+TSMIP,C024,林中國小,Linchung Elementary School,23.75526,120.61562,101.00,1993-10-19,2599-12-31,雲林縣,林內鄉
+TSMIP,C025,饒平國小,Raoping Elementary School,23.77745,120.52282,44.00,1993-10-19,2599-12-31,雲林縣,莿桐鄉
+TSMIP,C026,永定國小,Yongding Elementary School,23.79657,120.41947,27.00,1993-10-20,2599-12-31,雲林縣,二崙鄉
+TSMIP,C027,麥寮國小,Mailiao Elementary School,23.75101,120.2543,10.00,1993-11-04,2599-12-31,雲林縣,麥寮鄉
+TSMIP,C028,山峰國小,Shanfong Elementary School,23.63084,120.61567,309.00,1993-11-10,2599-12-31,雲林縣,古坑鄉
+TSMIP,C029,興昌國小,Singchang Elementary School,23.61253,120.53727,111.00,1993-10-28,2599-12-31,雲林縣,古坑鄉
+TSMIP,C032,北辰國小,Beichen Elementary School,23.57699,120.30176,10.00,1993-10-20,2599-12-31,雲林縣,北港鎮
+TSMIP,C034,竹崎國小,Jhuci Elementary School,23.5207,120.55247,138.00,1995-02-26,2599-12-31,嘉義縣,竹崎鄉
+TSMIP,C035,龍山國小,Longshan Elementary School,23.51825,120.59194,227.40,1993-10-21,2599-12-31,嘉義縣,竹崎鄉
+TSMIP,C036,三和國小,Sanhe Elementary School,23.60623,120.48843,46.00,1993-10-20,2599-12-31,嘉義縣,大林鎮
+TSMIP,C037,民雄國小,Minsyong Elementary School,23.55491,120.42984,27.00,1993-10-19,2599-12-31,嘉義縣,民雄鄉
+TSMIP,C041,黎明國小,Liming Elementary School,23.43856,120.6047,233.00,1993-11-04,2599-12-31,嘉義縣,番路鄉
+TSMIP,C043,後塘國小,Houtang Elementary School,23.40481,120.33629,19.00,1993-10-18,2599-12-31,嘉義縣,鹿草鄉
+TSMIP,C044,布袋國小,Budai Elementary School,23.38122,120.1722,20.00,1993-10-18,2599-12-31,嘉義縣,布袋鎮
+TSMIP,C045,茶山國小,Cha-Shan Elementary School,23.30029,120.66693,424.71,1993-10-28,2599-12-31,嘉義縣,阿里山鄉
+TSMIP,C047,嘉北國小,Chiabei Elementary School,23.49365,120.45531,42.00,1995-02-16,2599-12-31,嘉義市,東區
+TSMIP,C049,後壁國小,Houbi  Elementary School,23.3655,120.36634,24.00,1993-12-04,2599-12-31,臺南市,後壁區
+TSMIP,C051,青山國小,Cingshan Elementary School,23.28089,120.46718,120.00,1995-02-24,2599-12-31,臺南市,東山區
+TSMIP,C053,重溪國小,Jhongsi Elementary School,23.28637,120.36365,20.00,1995-02-25,2599-12-31,臺南市,柳營區
+TSMIP,C055,新橋國小,Shinciao Elementary School,23.26868,120.27682,13.00,1995-02-25,2599-12-31,臺南市,新營區
+TSMIP,C056,玉湖國小,Yuhu Elementary School,23.26214,120.13922,3.00,1993-10-17,2599-12-31,臺南市,北門區
+TSMIP,C058,渡拔國小,Doba Elementary School,23.17149,120.32711,20.00,1993-10-18,2599-12-31,臺南市,官田區
+TSMIP,C059,後港國小頂山分校,Hou-Gang Elementary School Ding-Shan Branch,23.18292,120.11129,4.00,1993-10-17,2599-12-31,臺南市,七股區
+TSMIP,C060,安定國小,Anding Elementary School,23.12302,120.24644,10.00,1993-10-17,2599-12-31,臺南市,安定區
+TSMIP,C061,玉山國小,Yushan Elementary School,23.07471,120.51895,112.00,1993-10-22,2599-12-31,臺南市,南化區
+TSMIP,C062,玉井國小,Yujing Elementary School,23.12157,120.45903,64.00,1993-10-22,2599-12-31,臺南市,玉井區
+TSMIP,C064,永仁高中,Yong-Ren Senior High School,23.00297,120.2416,27.00,1993-10-15,2599-12-31,臺南市,永康區
+TSMIP,C065,崇和國小,Chonghe Elementary School,22.90429,120.35168,44.00,1993-10-15,2599-12-31,臺南市,關廟區
+TSMIP,C066,大甲國小,Dajia Elementary School,22.91879,120.21718,4.00,1993-10-15,2599-12-31,臺南市,仁德區
+TSMIP,C069,日新國小,Rihshin Elementary School,22.9732,120.18972,7.00,1993-10-16,2599-12-31,臺南市,南區
+TSMIP,C070,德高國小,Degao Elementary School,22.96387,120.23638,27.00,1993-10-16,2599-12-31,臺南市,東區
+TSMIP,C071,安佃國小,Andian Elementary School,23.06373,120.17322,24.00,1994-12-31,2599-12-31,臺南市,安南區
+TSMIP,C073,嘉義氣象站,Chiayi Weather Station,23.49629,120.43253,31.00,1993-10-20,2599-12-31,嘉義市,西區
+TSMIP,C074,阿里山氣象站,Alishan Weather Station,23.50838,120.81341,2417.00,1993-11-03,2599-12-31,嘉義縣,阿里山鄉
+TSMIP,C075,澎湖氣象站,Penghu Weather Station,23.56529,119.5636,10.00,1993-11-06,2599-12-31,澎湖縣,馬公市
+TSMIP,C076,四湖國小,Sihhu Elementary School,23.63634,120.22976,8.00,1993-10-29,2599-12-31,雲林縣,四湖鄉
+TSMIP,C077,子龍國小,Zihlong Elementary School,23.17428,120.20177,7.00,1993-10-18,2599-12-31,臺南市,佳里區
+TSMIP,C078,永康氣象站,Yongkang Weather Station,23.03802,120.23658,10.00,1993-10-22,2599-12-31,臺南市,永康區
+TSMIP,C082,巃巖國小,Longyan Elementary School,23.72289,120.30833,10.00,1993-10-20,2599-12-31,雲林縣,褒忠鄉
+TSMIP,C083,石榴國小,Shih-Liou Elementary School,23.72217,120.58585,69.00,1993-10-28,2599-12-31,雲林縣,斗六市
+TSMIP,C084,中溪國小,Jhongsi Elementary School,23.72682,120.46398,32.00,1993-10-20,2599-12-31,雲林縣,虎尾鎮
+TSMIP,C085,臺灣南區氣象中心,Southern Region Weather Center,22.99324,120.20467,19.00,1995-04-06,2599-12-31,臺南市,中西區
+TSMIP,C087,沄水國小,Yun-Shuei Elementary School,23.38208,120.52988,175.00,1993-10-21,2599-12-31,嘉義縣,中埔鄉
+TSMIP,C088,河東國小,Hedong Elementary School,23.34457,120.43811,44.00,1993-10-21,2599-12-31,臺南市,白河區
+TSMIP,C092,大新國小,Dashin Elementary School,23.78886,120.48619,34.00,1995-02-14,2599-12-31,雲林縣,西螺鎮
+TSMIP,C093,三崙國小,Sanluen Elementary School,23.6513,120.15524,3.00,1995-02-15,2599-12-31,雲林縣,四湖鄉
+TSMIP,C094,中和國小,Jhong-He Elementary School,23.79222,120.33061,13.00,1995-02-14,2599-12-31,雲林縣,崙背鄉
+TSMIP,C095,太保國小,Tai-Bao Elementary School,23.45494,120.33136,15.00,1995-02-26,2599-12-31,嘉義縣,太保市
+TSMIP,C096,復興國中,Fu-Sing Junior High School,22.98134,120.2407,31.00,1995-02-28,2599-12-31,臺南市,東區
+TSMIP,C097,延平國中,Yan-Ping Junior High School,23.00899,120.21154,16.00,1995-02-22,2599-12-31,臺南市,北區
+TSMIP,C098,石門國小,Shih-Men Elementary School,23.00061,120.16606,8.00,1995-02-21,2599-12-31,臺南市,安平區
+TSMIP,C099,善化國小,Shan-Hua Elementary School,23.13611,120.28824,17.00,1995-02-20,2599-12-31,臺南市,善化區
+TSMIP,C100,六甲國小,Liou-Jia Elementary School,23.22546,120.35064,30.00,1995-02-24,2599-12-31,臺南市,六甲區
+TSMIP,C101,東和國小,Dong-He Elementary School,23.68444,120.57029,80.00,1994-11-30,2599-12-31,雲林縣,古坑鄉
+TSMIP,C102,大埔國小坪林分校,Da-Pu Elementary School Ping-Lin Branch,23.24381,120.62232,555.00,1994-11-26,2599-12-31,嘉義縣,大埔鄉
+TSMIP,C104,僑真國小,Ciao-Jhen Elementary School,23.66679,120.47487,36.00,1995-02-16,2599-12-31,雲林縣,斗南鎮
+TSMIP,C105,新港國小,Sin-Gang Elementary School,23.55452,120.34523,13.00,1995-02-18,2599-12-31,嘉義縣,新港鄉
+TSMIP,C106,柳林國小,Liou-Lin Elementary School,23.43625,120.41467,32.00,1995-02-17,2599-12-31,嘉義縣,水上鄉
+TSMIP,C107,南梓國小,Nan-Zih Elementary School,23.29771,120.29921,15.00,1995-02-25,2599-12-31,臺南市,新營區
+TSMIP,C112,臺西國中,Tai-Shi Junior High  School,23.70137,120.19131,2.00,1999-09-09,2599-12-31,雲林縣,臺西鄉
+TSMIP,C113,貴林國小,Guei-Lin Elementary School,23.42011,120.21389,5.00,1999-09-10,2599-12-31,嘉義縣,布袋鎮
+TSMIP,C114,顯宮國小,Sian-Gong Elementary School,23.03672,120.12693,4.00,1999-09-11,2599-12-31,臺南市,安南區
+TSMIP,C116,青草國小,Cing-Cao Elementary School,23.07678,120.11675,7.00,1997-04-24,2599-12-31,臺南市,安南區
+TSMIP,C118,楠西國中,Nan-Si Junior High School,23.18229,120.48575,99.00,2001-12-05,2599-12-31,臺南市,楠西區
+TSMIP,C121,玉山氣象站,Yushan Weather Station,23.48728,120.95937,3856.00,2002-10-15,2599-12-31,南投縣,信義鄉
+TSMIP,C123,更寮國小,Geng-Liao Elementary School,23.48351,120.23956,7.00,2001-12-06,2599-12-31,嘉義縣,六腳鄉
+TSMIP,C124,東吉島氣象站,Dong-Ji Island Weather Station,23.25735,119.66751,34.00,2002-04-30,2599-12-31,澎湖縣,望安鄉
+TSMIP,C129,歡雅國小,HuanYa Elementary School,23.29263,120.24406,9.00,2007-06-07,2599-12-31,臺南市,鹽水區
+TSMIP,C130,中正大學,National Chung Cheng University,23.56632,120.46755,51.48,2007-12-13,2599-12-31,嘉義縣,民雄鄉
+TSMIP,C131,大內國小,Tanai Elementary School,23.11962,120.36121,24.00,2007-09-20,2599-12-31,臺南市,大內區
+TSMIP,C134,義竹國小埤前分校,Yi-Jhu Elementary School Pi-Chian Branch,23.34733,120.2227,6.00,2009-10-01,2599-12-31,嘉義縣,義竹鄉
+TSMIP,C137,新阿里山氣象站,New A-Li-Shan Weather Station,23.51674,120.81542,2297.00,2014-09-03,2599-12-31,嘉義縣,阿里山鄉
+TSMIP,C138,元長國中,Yuan-Chang Junior High School,23.64541,120.31741,13.00,2016-04-06,2599-12-31,雲林縣,元長鄉
+TSMIP,C139,大埤國小,Da-Pi Elementary School,23.64443,120.43091,25.00,2016-04-06,2599-12-31,雲林縣,大埤鄉
+TSMIP,C140,學甲國小,Shiue-Jia Elementary School,23.23767,120.17519,7.00,2017-02-03,2599-12-31,臺南市,學甲區
+TSMIP,C141,西港國小,Shi-Gang Elementary School,23.12256,120.19882,7.00,2017-02-08,2599-12-31,臺南市,西港區
+TSMIP,C142,左鎮國小,Tzuo-Jen Elementary School,23.05629,120.40403,63.00,2017-02-09,2599-12-31,臺南市,左鎮區
+TSMIP,C143,龍崎國小,Lung-Chi Elementary School,22.96408,120.3587,83.00,2017-02-04,2599-12-31,臺南市,龍崎區
+TSMIP,C144,溪口國小,Shi-Kou Elementary School,23.60451,120.39425,16.00,2017-07-07,2599-12-31,嘉義縣,溪口鄉
+TSMIP,C145,東石國小,Dung-Shr Elementary School,23.46077,120.15344,1.00,2017-07-07,2599-12-31,嘉義縣,東石鄉
+TSMIP,C146,麻豆國中,Ma-Dou Junior High School,23.18227,120.25984,17.00,2017-08-24,2599-12-31,臺南市,麻豆區
+TSMIP,C150,雲林科技大學,National Yunlin University of Science and Technology,23.68881,120.53809,54.00,2011-01-05,2599-12-31,雲林縣,斗六市
+TSMIP,C152,土庫國中,Tu-Ku junior high school,23.68758,120.38859,21.00,2014-07-28,2599-12-31,雲林縣,土庫鎮
+TSMIP,C155,蔦松國中,Niau-Sung junior high school,23.52265,120.22784,3.00,2015-12-04,2599-12-31,雲林縣,水林鄉
+TSMIP,C156,七股氣象雷達站,Chi-Gu weather station,23.14665,120.08647,2.00,2016-06-04,2023-07-24,臺南市,七股區
+TSMIP,C157,蒜頭糖廠,,23.4777,120.2999,16.00,2020-11-05,2599-12-31,嘉義縣,六腳鄉
+TSMIP,C158,古坑石頭公園,Gukeng Stone Park,23.6458,120.5887,168.00,2021-10-13,2599-12-31,雲林縣,古坑鄉
+TSMIP,C160,華南國小,Hua nan Elementary School,23.59649,120.57354,320.00,2021-12-24,2599-12-31,雲林縣,古坑鄉
+TSMIP,C161,大南國小,Da nan Elementary School,23.55868,120.55442,186.00,2021-12-20,2599-12-31,嘉義縣,梅山鄉
+TSMIP,C162,三和國小龍岩分校,Sanhe Elementary School Long-Yan Branch,23.57036,120.52,98.00,2021-12-20,2599-12-31,嘉義縣,大林鎮
+TSMIP,C163,新七股氣象雷達站,New Chi-Gu Weather Radar Station,23.15948,120.07645,2.95,2023-08-02,2599-12-31,臺南市,七股區
+TSMIP,C164,阿里山國中小,Alisan Elementary and Junior High School,23.46815,120.70124,1178.00,2024-05-07,2599-12-31,嘉義縣,阿里山鄉
+TSMIP,C165,南寧高中,Nan-Ning Senior High School,22.93682,120.18604,2.24,2022-11-15,2599-12-31,臺南市,南區
+TSMIP,C166,大同國小,Datong Elementary School,23.15682,120.30836,18.42,2023-09-25,2599-12-31,臺南市,善化區
+TSMIP,C167,南化國中,Nanhua Junior High School,23.04462,120.48025,131.09,2023-09-25,2599-12-31,臺南市,南化區
+TSMIP,C168,古坑氣象站,Gukeng Weather Station,23.63352,120.5515,90.62,2024-09-05,2599-12-31,雲林縣,古坑鄉
+TSMIP,C169,佳里國中,Jia Li Junior High School,23.1571,120.1711,6.05,2024-08-22,2599-12-31,臺南市,佳里區
+TSMIP,C170,東山國中,Dong-Shan Junior High School,23.31721,120.40297,30.79,2024-11-18,2599-12-31,臺南市,東山區
+TSMIP,D005,忠孝國小,Jhong-Siao Elementary School,22.61671,120.34922,19.00,1993-10-13,2599-12-31,高雄市,鳳山區
+TSMIP,D008,中正國小,Jhong-Jheng Elementary School,22.62842,120.376,15.00,1994-11-22,2599-12-31,高雄市,鳳山區
+TSMIP,D009,大社國小,Da-She Elementary School,22.8675,120.26433,23.00,1993-10-15,2599-12-31,高雄市,路竹區
+TSMIP,D011,梓官國小,Zih-Guan Elementary School,22.75992,120.26426,10.00,1993-10-13,2599-12-31,高雄市,梓官區
+TSMIP,D012,崇德國小,Chong-De Elementary School,22.87718,120.37913,36.00,1993-10-15,2599-12-31,高雄市,田寮區
+TSMIP,D013,燕巢國小,Yan-Chao Elementary School,22.79512,120.36558,49.88,1993-10-15,2599-12-31,高雄市,燕巢區
+TSMIP,D014,仁武國小,Ren-Wu Elementary School,22.70149,120.34884,21.00,1993-10-13,2599-12-31,高雄市,仁武區
+TSMIP,D015,大華國小,Da-Hua Elementary School,22.65427,120.3414,12.00,1993-10-13,2599-12-31,高雄市,鳥松區
+TSMIP,D017,林園國小,Lin-Yuan Elementary School,22.507,120.39328,5.00,1993-10-12,2599-12-31,高雄市,林園區
+TSMIP,D020,美濃國小,Mei-Nong Elementary School,22.89985,120.54371,47.00,1993-10-14,2599-12-31,高雄市,美濃區
+TSMIP,D023,仁愛國小,Ren-Ai Elementary School,22.67667,120.49608,29.00,1994-11-21,2599-12-31,屏東縣,屏東市
+TSMIP,D028,高樹國小,Gao-Shu Elementary School,22.82605,120.59923,86.00,1993-10-07,2599-12-31,屏東縣,高樹鄉
+TSMIP,D029,鹽埔國小,Yan-Pu Elementary School,22.75315,120.5763,58.00,1993-10-07,2599-12-31,屏東縣,鹽埔鄉
+TSMIP,D030,內埔國小,Nei-Pu Elementary School,22.61012,120.56717,26.00,1993-10-08,2599-12-31,屏東縣,內埔鄉
+TSMIP,D031,萬丹國小,Wan-Dan Elementary School,22.58269,120.48872,14.00,1993-10-08,2599-12-31,屏東縣,萬丹鄉
+TSMIP,D032,仙吉國小,Sian-Ji Elementary School,22.54371,120.46057,8.00,1993-10-12,2599-12-31,屏東縣,新園鄉
+TSMIP,D033,以栗國小,Yi-Li Elementary School,22.46222,120.46057,5.00,1993-10-12,2025-11-26,屏東縣,東港鎮
+TSMIP,D034,古樓國小,Gu-Lou Elementary School,22.52827,120.62776,95.00,1993-10-06,2025-05-29,屏東縣,來義鄉
+TSMIP,D035,潮州國小,Chao-Jhou Elementary School,22.54777,120.54038,13.00,1993-10-06,2599-12-31,屏東縣,潮州鎮
+TSMIP,D037,加祿國小枋山分校,Jialuh Elementary School Fangshan branch,22.26067,120.6513,4.75,1993-10-07,2599-12-31,屏東縣,枋山鄉
+TSMIP,D038,楓港國小,Fong-Gang Elementary School,22.19,120.69254,14.00,1993-10-07,2599-12-31,屏東縣,枋山鄉
+TSMIP,D039,車城國小溫泉分校,Che-Cheng Elementary School Wun-Cyuan Branch,22.09545,120.7484,59.00,1993-10-05,2599-12-31,屏東縣,車城鄉
+TSMIP,D042,滿州國小,Manjhou Elementary School,22.02045,120.83718,45.00,1993-10-05,2599-12-31,屏東縣,滿州鄉
+TSMIP,D044,仁和國小,Ren-He Elementary School,22.43666,120.51149,1.00,1993-10-08,2599-12-31,屏東縣,林邊鄉
+TSMIP,D045,高雄氣象站,Kaohsiung Weather Station,22.56623,120.31571,1.00,1994-11-21,2021-06-09,高雄市,前鎮區
+TSMIP,D046,恒春氣象站,Heng-Chun Weather Station,22.00376,120.74598,26.00,1993-10-05,2599-12-31,屏東縣,恆春鎮
+TSMIP,D047,甲仙國中,Jia-Sian Junior High School,23.08044,120.59085,279.00,1993-10-17,2599-12-31,高雄市,甲仙區
+TSMIP,D048,惠農國小,Huei-Nong Elementary School,22.72343,120.49873,31.00,1993-10-08,2599-12-31,屏東縣,九如鄉
+TSMIP,D049,賽嘉國小,Sai-Jia Elementary School,22.74426,120.64005,148.00,1993-10-08,2599-12-31,屏東縣,三地門鄉
+TSMIP,D050,桃源國小,Tao-Yuan Elementary School,23.1607,120.76564,642.00,1993-10-17,2599-12-31,高雄市,桃源區
+TSMIP,D051,春日國小,Chun-Rih Elementary School,22.37031,120.6282,66.00,1993-10-06,2599-12-31,屏東縣,春日鄉
+TSMIP,D054,民生國小,Min-Sheng Elementary School,23.27645,120.72119,723.00,1993-10-22,2599-12-31,高雄市,那瑪夏區
+TSMIP,D060,文藻外語大學,Wen-Zao Ursuline University of Languages,22.67125,120.31876,6.00,1994-11-23,2599-12-31,高雄市,三民區
+TSMIP,D062,高雄女中,Kaohsiung Municipal Kaohsiung Girls' Senior High School,22.62197,120.29257,9.00,1994-11-22,2599-12-31,高雄市,前金區
+TSMIP,D063,茄萣國小,Cie-Ding Elementary School,22.9043,120.18255,5.00,1994-11-24,2599-12-31,高雄市,茄萣區
+TSMIP,D064,彌陀國小,Mi-Tuo Elementary School,22.78343,120.24817,10.00,1994-11-24,2599-12-31,高雄市,彌陀區
+TSMIP,D065,仕隆國小,Shih-Long Elementary School,22.75034,120.31134,15.00,1994-11-24,2599-12-31,高雄市,橋頭區
+TSMIP,D066,大社國小,Da-She Elementary School,22.7301,120.34553,17.00,1994-11-24,2599-12-31,高雄市,大社區
+TSMIP,D067,九曲國小,Jiou-Cyu Elementary School,22.65582,120.42347,28.00,1994-11-22,2599-12-31,高雄市,大樹區
+TSMIP,D068,上平國小,Shang-Ping Elementary School,22.97637,120.54469,129.00,1994-11-25,2599-12-31,高雄市,杉林區
+TSMIP,D069,茂林國小,Mao-Lin Elementary School,22.88576,120.6647,256.00,1994-11-25,2599-12-31,高雄市,茂林區
+TSMIP,D070,里港國小,Li-Gang Elementary School,22.78096,120.49583,43.00,1994-11-22,2599-12-31,屏東縣,里港鄉
+TSMIP,D071,麟洛國小,Lin-Luo Elementary School,22.64768,120.52142,25.00,1994-11-21,2599-12-31,屏東縣,麟洛鄉
+TSMIP,D072,崇文國小,Chong-Wun Elementary School,22.66639,120.60051,55.00,1994-11-21,2599-12-31,屏東縣,內埔鄉
+TSMIP,D074,萬巒國小,Wan-Luan Elementary School,22.57299,120.57205,23.00,1994-11-21,2599-12-31,屏東縣,萬巒鄉
+TSMIP,D075,南州國小,Nan-Jhou Elementary School,22.4887,120.50649,5.00,1994-11-20,2599-12-31,屏東縣,南州鄉
+TSMIP,D076,玉光國小,Yu-Guang Elementary School,22.42631,120.56485,17.00,1994-11-20,2599-12-31,屏東縣,佳冬鄉
+TSMIP,D077,霧臺國小,Wu-Tai Elementary School,22.74537,120.73158,833.00,1994-11-25,2599-12-31,屏東縣,霧臺鄉
+TSMIP,D079,武潭國小佳平分校,Wu-Tan Elementary School Jia-Ping Branch,22.591,120.63252,89.00,1994-11-21,2599-12-31,屏東縣,泰武鄉
+TSMIP,D080,車城國小射寮分校,Che-Cheng Elementary School She-Liao Branch,22.05687,120.71192,5.00,1994-11-20,2599-12-31,屏東縣,車城鄉
+TSMIP,D082,水泉國小,Shuei-Cyuan Elementary School,21.94036,120.73207,63.13,1994-11-20,2599-12-31,屏東縣,恆春鎮
+TSMIP,D084,全德國小,Cyuan-De Elementary School,22.34673,120.36911,38.00,1995-07-17,2599-12-31,屏東縣,琉球鄉
+TSMIP,D085,阿蓮國小,A-Lian Elementary School,22.88369,120.32778,25.81,1995-02-23,2599-12-31,高雄市,阿蓮區
+TSMIP,D086,後紅國小,Hou-Hong Elementary School,22.79274,120.30298,12.00,1995-02-23,2599-12-31,高雄市,岡山區
+TSMIP,D088,民族國小,Min-Zu Elementary School,22.64402,120.31879,12.00,1995-02-22,2599-12-31,高雄市,三民區
+TSMIP,D089,汕尾國小,Shan-Wei Elementary School,22.47878,120.41114,4.00,1999-09-12,2599-12-31,高雄市,林園區
+TSMIP,D090,大寮國小,Da-Liao Elementary School,22.58952,120.41578,12.00,1997-04-23,2599-12-31,高雄市,大寮區
+TSMIP,D091,墾丁氣象雷達站,Ken-Ding Weather Radar Station,21.90092,120.85511,32.00,2000-05-03,2599-12-31,屏東縣,恆春鎮
+TSMIP,D097,牡丹國小,Mou-Dan Elementary School,22.17666,120.83801,292.00,2008-01-18,2599-12-31,屏東縣,牡丹鄉
+TSMIP,D103,新興國小,Shin-Shing Elementary School,22.62693,120.30467,11.00,2017-01-09,2599-12-31,高雄市,新興區
+TSMIP,D104,左營國小,Tzuo-Ying Elementary School,22.69049,120.29259,21.00,2017-01-10,2599-12-31,高雄市,左營區
+TSMIP,D105,內門國小,Nei-Men Elementary School,22.93941,120.4603,75.00,2017-02-04,2599-12-31,高雄市,內門區
+TSMIP,D106,四維國小,Sz-Wei Elementary School,22.62287,120.31295,12.00,2017-09-08,2599-12-31,高雄市,苓雅區
+TSMIP,D107,鹽埕國小,Yan-Cheng Elementary School,22.62383,120.28224,12.00,2017-01-11,2599-12-31,高雄市,鹽埕區
+TSMIP,D108,永安國小,Yung-An Elementary School,22.81432,120.2242,2.00,2017-01-11,2599-12-31,高雄市,永安區
+TSMIP,D109,三侯國小,San-Hou Elementary School,22.91141,120.19871,5.00,2017-01-11,2599-12-31,高雄市,湖內區
+TSMIP,D110,旗津國小,Chi-Jin Elementary School,22.60842,120.27196,6.00,2017-01-10,2599-12-31,高雄市,旗津區
+TSMIP,D111,長興國小,Chang-Shing Elementary School,22.67689,120.52604,27.00,2017-01-12,2599-12-31,屏東縣,長治鄉
+TSMIP,D112,竹田國小,Ju-Tian Elementary School,22.58179,120.54454,13.00,2017-01-02,2599-12-31,屏東縣,竹田鄉
+TSMIP,D113,枋寮國小,Fang-Liau Elementary School,22.36787,120.59104,2.00,2017-02-03,2599-12-31,屏東縣,枋寮鄉
+TSMIP,D114,崁頂國小,Kan-Ding Elementary School,22.51379,120.51123,8.00,2017-01-12,2599-12-31,屏東縣,崁頂鄉
+TSMIP,D115,加祿國小,Jia-Lu Elementary School,22.33003,120.62151,11.00,2016-09-21,2599-12-31,屏東縣,枋山鄉
+TSMIP,D117,丹路國小,Dan-Lu elementary school,22.20425,120.75127,122.00,2019-02-21,2599-12-31,屏東縣,獅子鄉
+TSMIP,D120,新埤國中,Shin-Pi junior high school,22.48348,120.56814,38.00,2011-12-29,2599-12-31,屏東縣,新埤鄉
+TSMIP,D122,高雄第一科大,"NKUST, First Campus",22.75326,120.33518,16.00,2013-01-18,2599-12-31,高雄市,楠梓區
+TSMIP,D123,旗美高中,Chi-Mei Senior High School,22.88547,120.49383,70.00,2014-07-28,2599-12-31,高雄市,旗山區
+TSMIP,D126,桃源國中,Tau-Yuan Junior High School,23.17932,120.78111,624.00,2015-02-06,2599-12-31,高雄市,桃源區
+TSMIP,D127,新高雄氣象站,New Kaohsiung Weather Station,22.73073,120.31238,14.14,2022-09-30,2599-12-31,高雄市,楠梓區
+TSMIP,D128,南和國小,Nanhe Elementary School,22.43629,120.64264,99.00,2023-05-09,2599-12-31,屏東縣,來義鄉
+TSMIP,D129,高士國小,Gao-Shi Elementary School,22.12476,120.84703,167.50,2024-03-21,2599-12-31,屏東縣,牡丹鄉
+TSMIP,D130,鳳山高中,Feng-Shan Senior High School,22.6324,120.34529,11.55,2023-11-11,2599-12-31,高雄市,鳳山區
+TSMIP,D131,牡丹國中,Mu Dan Junior High School,22.12916,120.776,101.36,2024-07-12,2599-12-31,屏東縣,牡丹鄉
+TSMIP,D132,梅山遊客中心,Meishan Visitor Center,23.26318,120.8264,895.07,2024-07-11,2599-12-31,高雄市,桃源區
+TSMIP,D133,九棚派出所,Jioupeng Police Station,22.13362,120.8816,12.27,2024-09-20,2599-12-31,屏東縣,滿州鄉
+TSMIP,D134,旭海派出所,Syuhai Police Station,22.19481,120.88728,9.54,2024-09-20,2599-12-31,屏東縣,牡丹鄉
+TSMIP,D135,寶來國中,Bao-Lai Junior High School,23.1092,120.70347,411.17,2025-12-12,2599-12-31,高雄市,六龜區
+TSMIP,D136,溪埔國中,Si Pu Junior High School,22.71868,120.44269,28.14,2024-08-22,2599-12-31,高雄市,大樹區
+TSMIP,D137,潮寮國中,Chao-Liao Junior High School,22.56308,120.42519,8.53,2024-11-18,2599-12-31,高雄市,大寮區
+TSMIP,E004,壯圍國小,Jhuang-Wei Elementary School,24.74348,121.79061,5.00,1992-11-24,2599-12-31,宜蘭縣,壯圍鄉
+TSMIP,E006,育英國小,Yu-Ying Elementary School,24.63961,121.8327,9.00,1992-11-30,2599-12-31,宜蘭縣,蘇澳鎮
+TSMIP,E007,士敏國小,Shih-Min Elementary School,24.59242,121.85349,11.00,1992-11-30,2599-12-31,宜蘭縣,蘇澳鎮
+TSMIP,E015,湖山國小,Hu-Shan Elementary School,24.77897,121.69922,99.00,1992-11-24,2599-12-31,宜蘭縣,員山鄉
+TSMIP,E018,萬富國小,Wan-Fu Elementary School,24.67991,121.68811,51.00,1992-12-02,2599-12-31,宜蘭縣,三星鄉
+TSMIP,E020,大湖國小雙連埤分校,Da-Hu Elementary School Shuang-Lian-Pi Branch,24.75381,121.6356,480.00,2001-10-20,2599-12-31,宜蘭縣,員山鄉
+TSMIP,E022,三星國小,San-Sing Elementary School,24.66678,121.65087,99.00,1992-11-30,2599-12-31,宜蘭縣,三星鄉
+TSMIP,E023,大同國小,Ta-Tong Elementary School,24.67874,121.60954,144.00,1992-12-01,2599-12-31,宜蘭縣,大同鄉
+TSMIP,E026,羅東國小,Luo-Dong Elementary School,24.67335,121.77276,9.00,1993-09-18,2599-12-31,宜蘭縣,羅東鎮
+TSMIP,E033,頭城國小,Toucheng Elementary School,24.86305,121.82751,14.00,1994-11-04,2599-12-31,宜蘭縣,頭城鎮
+TSMIP,E034,大福國小,Da-Fu Elementary School,24.80197,121.8141,4.00,1993-09-17,2599-12-31,宜蘭縣,壯圍鄉
+TSMIP,E035,礁溪國小,Jiao-Si Elementary School,24.82185,121.76757,16.00,1993-09-16,2599-12-31,宜蘭縣,礁溪鄉
+TSMIP,E037,員山國小,Yuan-Shan Elementary School,24.74351,121.7229,17.00,1993-09-18,2599-12-31,宜蘭縣,員山鄉
+TSMIP,E038,七賢國小,Ci-Sian Elementary School,24.71986,121.744,11.00,1993-09-17,2599-12-31,宜蘭縣,員山鄉
+TSMIP,E042,五結國小,Wu-Jie Elementary School,24.68744,121.7986,6.00,1993-09-18,2599-12-31,宜蘭縣,五結鄉
+TSMIP,E046,廣興國小,Guang-Sing Elementary School,24.66495,121.74228,31.00,1993-09-19,2599-12-31,宜蘭縣,冬山鄉
+TSMIP,E049,宜蘭氣象站,Yilan Weather Station,24.76379,121.75631,11.00,1993-09-17,2599-12-31,宜蘭縣,宜蘭市
+TSMIP,E050,金洋國小,Jin-Yang Elementary School,24.42591,121.74901,123.00,1993-09-20,2599-12-31,宜蘭縣,南澳鄉
+TSMIP,E053,澳花國小,Aohua Elementary School,24.32935,121.73931,56.00,1995-01-21,2599-12-31,宜蘭縣,南澳鄉
+TSMIP,E055,公館國小,Gong-Guan Elementary School,24.73664,121.81616,4.00,1995-01-20,2599-12-31,宜蘭縣,壯圍鄉
+TSMIP,E059,利澤國中,Li-Ze Junior High School,24.66543,121.8296,8.00,1995-01-22,2599-12-31,宜蘭縣,五結鄉
+TSMIP,E060,永樂國小,Yongle Elementary School,24.57572,121.84386,48.00,1995-01-21,2599-12-31,宜蘭縣,蘇澳鎮
+TSMIP,E061,東澳國小,Dong-Ao Elementary School,24.52182,121.83311,23.00,1995-01-21,2599-12-31,宜蘭縣,南澳鄉
+TSMIP,E062,南澳高中,Nan-Ao Senior High School,24.46628,121.8008,33.00,1995-01-21,2599-12-31,宜蘭縣,南澳鄉
+TSMIP,E067,南山國小,Nan-San Elementary School,24.43745,121.3813,1148.00,1997-11-14,2599-12-31,宜蘭縣,大同鄉
+TSMIP,E068,蘇澳氣象站,Su-Ao Weather Station,24.59716,121.8573,8.00,2000-09-13,2024-12-27,宜蘭縣,蘇澳鎮
+TSMIP,E069,龜山島,Gui-Shan Island,24.84271,121.94375,20.00,2001-11-15,2599-12-31,宜蘭縣,頭城鎮
+TSMIP,E072,興中國中,Shing-Jung Junior High School,24.70006,121.77169,28.00,2018-10-03,2599-12-31,宜蘭縣,五結鄉
+TSMIP,E075,武塔國小,Wu-Ta elementary school,24.445,121.77831,40.00,2015-02-06,2599-12-31,宜蘭縣,南澳鄉
+TSMIP,E076,大進國小,Da-Jin elemenyary school,24.63398,121.7168,88.00,2015-02-06,2599-12-31,宜蘭縣,冬山鄉
+TSMIP,E077,四季國小,Shi Ji Elementary School,24.48833,121.42666,792.00,2022-11-07,2599-12-31,宜蘭縣,大同鄉
+TSMIP,E078,寒溪國小,Han Si Elementary School,24.60916,121.6875,180.00,2022-10-24,2599-12-31,宜蘭縣,大同鄉
+TSMIP,E079,太平山莊,Taipingshan Villadirectly,24.49412,121.53627,1922.25,2025-03-08,2599-12-31,宜蘭縣,大同鄉
+TSMIP,F002,豐濱國小,Fong-Bin Elementary School,23.5982,121.52017,18.00,1992-12-14,2599-12-31,花蓮縣,豐濱鄉
+TSMIP,F004,富里國小,Fu-Li Elementary School,23.17273,121.24826,244.00,1992-12-15,2599-12-31,花蓮縣,富里鄉
+TSMIP,F015,吉安國小,Ji-an Elementary School,23.97287,121.56266,44.00,1994-11-07,2599-12-31,花蓮縣,吉安鄉
+TSMIP,F019,花蓮氣象站,Hualien Weather Station,23.97501,121.61349,18.00,1993-09-21,2599-12-31,花蓮縣,花蓮市
+TSMIP,F020,西林國小,Si-Lin Elementary School,23.81203,121.44161,180.00,1992-07-01,2599-12-31,花蓮縣,萬榮鄉
+TSMIP,F025,崇德國小,Chong-De Elementary School,24.1624,121.65239,33.35,1994-11-05,2599-12-31,花蓮縣,秀林鄉
+TSMIP,F026,秀林國小,Siou-Lin Elementary School,24.11817,121.62449,47.00,1994-11-05,2599-12-31,花蓮縣,秀林鄉
+TSMIP,F028,嘉里國小,Jia-Li Elementary School,24.01441,121.60943,20.00,1994-11-05,2599-12-31,花蓮縣,新城鄉
+TSMIP,F033,東富國小,Dung-Fu Elementary School,23.68457,121.48268,119.00,1994-11-06,2599-12-31,花蓮縣,光復鄉
+TSMIP,F036,瑞穗國小,Ruei-Suei Elementary School,23.49766,121.37446,109.00,1994-11-08,2599-12-31,花蓮縣,瑞穗鄉
+TSMIP,F037,春日國小,Chun-Rih Elementary School,23.45198,121.39359,97.00,1994-11-09,2599-12-31,花蓮縣,玉里鎮
+TSMIP,F039,高寮國小,Gao-Liao Elementary School,23.38269,121.35943,139.00,1994-11-09,2599-12-31,花蓮縣,玉里鎮
+TSMIP,F041,東里國小,Dong-Li Elementary School,23.26483,121.30264,175.00,1994-11-09,2599-12-31,花蓮縣,富里鄉
+TSMIP,F042,古風國小,Gu-Fong Elementary School,23.2199,121.26454,207.00,1994-11-09,2599-12-31,花蓮縣,卓溪鄉
+TSMIP,F043,磯崎國小,Ji-Ci Elementary School,23.70781,121.54756,9.00,1994-11-06,2599-12-31,花蓮縣,豐濱鄉
+TSMIP,F044,新社國小,Sin-She Elementary School,23.65172,121.53632,25.00,1994-11-06,2599-12-31,花蓮縣,豐濱鄉
+TSMIP,F045,和平國小,He-Ping Elementary School,24.30899,121.74942,27.00,1999-07-20,2599-12-31,花蓮縣,秀林鄉
+TSMIP,F048,國福國小,Guo-Fu Elementary School,24.00946,121.58046,30.00,1999-07-23,2599-12-31,花蓮縣,花蓮市
+TSMIP,F049,太昌國小,Tai-Chang Elementary School,23.99316,121.56455,58.00,1999-07-22,2599-12-31,花蓮縣,吉安鄉
+TSMIP,F051,月眉國小,Yei-Mei Elementary School,23.8676,121.55682,51.00,1999-07-24,2599-12-31,花蓮縣,壽豐鄉
+TSMIP,F053,太平國小,Tai-Ping Elementary School,23.40636,121.3204,137.00,1999-07-23,2599-12-31,花蓮縣,卓溪鄉
+TSMIP,F054,三民國小,San-Ming Elementary School,23.43046,121.34866,93.00,1999-07-25,2599-12-31,花蓮縣,玉里鎮
+TSMIP,F058,銅門國小,Tong-Men Elementary School,23.96589,121.49279,170.00,1998-05-01,2599-12-31,花蓮縣,秀林鄉
+TSMIP,F059,壽豐國小,Shou-Fong Elementary School,23.87061,121.50733,40.00,1998-05-01,2599-12-31,花蓮縣,壽豐鄉
+TSMIP,F067,大榮國小,Da-Rung Elementary School,23.75455,121.46879,91.00,2016-04-18,2599-12-31,花蓮縣,鳳林鎮
+TSMIP,F068,東華大學,National Dong-Hwa University,23.89728,121.55087,37.00,2018-09-17,2599-12-31,花蓮縣,壽豐鄉
+TSMIP,F071,光復高工,Guangfu Senior Comm. & Ind. Vocational High School,23.66886,121.42748,126.00,2011-12-20,2599-12-31,花蓮縣,光復鄉
+TSMIP,F072,西寶國小,Shi-Bau elementary school,24.20678,121.48174,1005.00,2013-01-18,2599-12-31,花蓮縣,秀林鄉
+TSMIP,F073,玉里高中,Yu-Li senior high school,23.34724,121.31913,138.00,2014-08-07,2599-12-31,花蓮縣,玉里鎮
+TSMIP,F074,化仁國中水璉分校,Hua-Ren junior high school,23.78749,121.56266,34.00,2017-10-06,2599-12-31,花蓮縣,壽豐鄉
+TSMIP,F075,紅葉國小,Hung-Ya elementary school,23.49395,121.34511,173.00,2017-10-06,2599-12-31,花蓮縣,萬榮鄉
+TSMIP,F076,花蓮氣象雷達站,Hualien Weather Radar Station,23.98882,121.62846,28.73,2023-07-07,2599-12-31,花蓮縣,花蓮市
+TSMIP,G001,長濱國小,Chang-Bin Elementary School,23.31635,121.45116,63.00,1992-12-14,2599-12-31,臺東縣,長濱鄉
+TSMIP,G002,東河國小,Dong-He Elementary School,22.97251,121.30397,46.00,1992-12-14,2599-12-31,臺東縣,東河鄉
+TSMIP,G003,大王國中,Da-Wang Junior High School,22.61556,121.00687,28.00,1992-12-15,2599-12-31,臺東縣,太麻里鄉
+TSMIP,G011,卑南國小,Bei-Nan Elementary School,22.78137,121.1193,38.00,1993-09-23,2599-12-31,臺東縣,臺東市
+TSMIP,G014,成功氣象站,Cheng-Gong Weather Station,23.0978,121.37315,37.00,1993-09-23,2599-12-31,臺東縣,成功鎮
+TSMIP,G015,臺東氣象站,Taitung Weather Station,22.75224,121.15487,12.00,1993-09-24,2599-12-31,臺東縣,臺東市
+TSMIP,G016,大武氣象站,Da-Wu Weather Station,22.3559,120.90357,11.00,1993-10-04,2599-12-31,臺東縣,大武鄉
+TSMIP,G017,蘭嶼氣象站,Lan-Yu Weather Station,22.03727,121.55813,309.00,1993-10-05,2599-12-31,臺東縣,蘭嶼鄉
+TSMIP,G020,福原國小,Fu-Yuan Elementary School,23.1259,121.2147,278.00,1994-11-10,2599-12-31,臺東縣,池上鄉
+TSMIP,G021,海端國小,Hai-Duan Elementary School,23.10197,121.17592,307.00,1994-11-10,2599-12-31,臺東縣,海端鄉
+TSMIP,G022,萬安國小,Wan-An Elementary School,23.09518,121.21917,286.00,1994-11-10,2599-12-31,臺東縣,池上鄉
+TSMIP,G023,關山國小,Guan-Shan Elementary School,23.05121,121.16385,231.00,1994-11-09,2599-12-31,臺東縣,關山鎮
+TSMIP,G024,武陵國小,Wu-Ling Elementary School,22.97027,121.11673,281.00,1994-11-15,2599-12-31,臺東縣,延平鄉
+TSMIP,G025,桃源國中,Tao-Yuan Junior High School,22.90228,121.08004,247.00,1994-11-15,2599-12-31,臺東縣,延平鄉
+TSMIP,G026,初鹿國小,Chu-Lu Elementary School,22.85969,121.09175,227.00,1994-11-15,2599-12-31,臺東縣,卑南鄉
+TSMIP,G028,利嘉國小,Li-Jia Elementary School,22.77665,121.06287,135.00,1994-11-17,2599-12-31,臺東縣,卑南鄉
+TSMIP,G030,溫泉國小,Wun-Cyuan Elementary School,22.69806,121.02662,53.00,1994-11-17,2599-12-31,臺東縣,卑南鄉
+TSMIP,G031,三間國小,San-Jian Elementary School,23.35613,121.4676,45.00,1994-11-10,2599-12-31,臺東縣,長濱鄉
+TSMIP,G032,寧埔國小,Ning-Pu Elementary School,23.24466,121.41411,31.00,1994-11-10,2599-12-31,臺東縣,長濱鄉
+TSMIP,G033,博愛國小,Bo-ai Elementary School,23.19177,121.39566,11.00,1994-11-10,2599-12-31,臺東縣,成功鎮
+TSMIP,G035,都蘭國小,Dou-Lan Elementary School,22.87835,121.22763,56.00,1994-11-15,2599-12-31,臺東縣,東河鄉
+TSMIP,G036,富崗國小,Fu-Gang Elementary School,22.79634,121.19376,34.00,1994-11-16,2599-12-31,臺東縣,臺東市
+TSMIP,G037,賓茂國中,Bin-Mao Junior High School,22.53282,120.96739,20.33,1994-11-19,2599-12-31,臺東縣,太麻里鄉
+TSMIP,G038,大溪國小,Da-Si Elementary School,22.46174,120.9404,15.65,1994-11-19,2599-12-31,臺東縣,太麻里鄉
+TSMIP,G041,初來國小新武分校,Chu-Lai Elementary School Sin-Wu Branch,23.13243,121.12511,437.00,1999-07-26,2599-12-31,臺東縣,海端鄉
+TSMIP,G045,瑞源國中,Rueiyuan Junior High School,22.97408,121.15637,190.00,1999-07-27,2599-12-31,臺東縣,鹿野鄉
+TSMIP,G046,尚德國小,Shungde Elementary School,22.96249,121.24092,189.00,1999-07-29,2599-12-31,臺東縣,東河鄉
+TSMIP,G047,富山國小利吉分校,Fu-Shan Elementary School Li-Ji Branch,22.8383,121.13855,113.00,1999-07-27,2599-12-31,臺東縣,卑南鄉
+TSMIP,G048,豐田國中,Fongtian Junior High School,22.77194,121.09093,60.00,1999-07-27,2599-12-31,臺東縣,臺東市
+TSMIP,G049,豐源國小,Fongyuan  Elementary School,22.7298,121.10792,22.00,1999-07-28,2599-12-31,臺東縣,臺東市
+TSMIP,G051,霧鹿國小利稻分校,Wu-Lu Elementary School Li-Dao Branch,23.18708,121.02506,1058.00,1998-08-11,2599-12-31,臺東縣,海端鄉
+TSMIP,G052,嘉蘭國小,Jia-Lan Elementary School,22.5957,120.9617,88.00,1998-08-12,2599-12-31,臺東縣,金峰鄉
+TSMIP,G053,安朔國小新化分校,An-Shuo Elementary School Sin-Hua Branch,22.38199,120.85635,457.00,1998-08-12,2599-12-31,臺東縣,達仁鄉
+TSMIP,G055,綠島國小,Lyudao elementary school,22.67327,121.46924,17.00,2004-12-15,2599-12-31,臺東縣,綠島鄉
+TSMIP,G057,信義國小,Shin-Yi Elementary School,23.02578,121.33041,25.00,2018-09-18,2599-12-31,臺東縣,成功鎮
+TSMIP,G060,尚武國小,Shang-Wu Elementary School,22.33983,120.88795,24.00,2015-12-04,2599-12-31,臺東縣,大武鄉
+TSMIP,G061,廣原國小,Guang-Yuan Elementary School,23.14882,121.20611,295.00,2016-06-04,2599-12-31,臺東縣,海端鄉
+TSMIP,H154,六龜國小,Liou Guei Elementary School,22.99542,120.63393,261.00,2007-08-20,2599-12-31,高雄市,六龜區
+TSMIP,I002,金門氣象站,Kinmen Weather Station,24.40748,118.28868,31.00,2003-12-14,2599-12-31,金門縣,金城鎮
+TSMIP,J001,馬祖氣象站,Matsu Weather Station,26.16922,119.92295,85.00,2003-12-27,2599-12-31,連江縣,南竿鄉

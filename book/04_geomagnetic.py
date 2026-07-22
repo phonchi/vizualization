@@ -1,0 +1,166 @@
+# %% [markdown]
+# # 4. 地磁觀測
+#
+# ## 4.1 為什麼地磁與地震有關？
+#
+# 地表量到的磁場是多種來源的疊加：
+#
+# 1. **主磁場**（地核發電機，~45,000 nT，變化以年計）
+# 2. **地殼磁場**（岩石磁化，固定的空間分布）
+# 3. **外源場**（電離層／磁層電流造成的日變化與磁暴，全球性、以天為尺度）
+# 4. **岩石圈應力相關訊號（?）**：壓磁效應（piezomagnetism），也就是應力改變
+#    岩石磁化率，以及地殼流體運動的動電效應。量級只有 0.1 到數 nT。
+#
+# 尋找地震相關訊號的難點：目標訊號比日變化（數十 nT）與磁暴
+# （數百 nT）小 1–3 個數量級。**單站看到的「異常」幾乎都是全球性
+# 外源場**，所以要用「多站相減」把共同的外源場消掉。
+#
+# ## 4.2 認識地磁站
+#
+# 氣象署地磁網有 20 站，遍布全台（含離島）。本章用第 2 章下載的
+# **新城（XCG，花蓮）**秒資料，IAGA-2002 格式，三分量 X（北）、
+# Y（東）、Z（垂直向下）。
+
+# %% tags=["remove-input"]
+import plotly.io as pio
+pio.renderers.default = "notebook_connected"
+
+# %%
+import numpy as np
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+import gdms_toolkit as gt
+from gdms_toolkit.download import CACHE_DIR
+from gdms_toolkit.viz import PALETTE, QUAKE_COLOR, apply_layout
+
+mags = gt.load_stations("MAGNET")
+mags[["station_code", "chinese_station_name", "lat", "lon", "location_county"]]
+
+# %%
+tgz = CACHE_DIR / "edu-mag-hualien2024.tgz"
+mag = gt.read_geomagnetic(tgz, "XCG", resample="1min")
+mag.describe().round(1)
+
+# %% [markdown]
+# 新城站的總磁場約 36,000 nT（F_calc 由三分量計算，因為該站 F 通道缺測）。
+#
+# ## 4.3 三分量時間序列（2024/03/25–04/09）
+
+# %%
+comps = [("X", "X（北向, nT）"), ("Y", "Y（東向, nT）"), ("Z", "Z（垂直, nT）")]
+fig = make_subplots(rows=3, cols=1, shared_xaxes=True, vertical_spacing=0.05,
+                    subplot_titles=[t for _, t in comps])
+for i, (c, _) in enumerate(comps, 1):
+    fig.add_trace(go.Scattergl(x=mag.index, y=mag[c], name=c,
+                               line=dict(color=PALETTE[i - 1], width=1.2)), i, 1)
+eq_t = "2024-04-02 23:58:11"
+for row in (1, 2, 3):
+    fig.add_vline(x=eq_t, line_dash="dash", line_color=QUAKE_COLOR, row=row, col=1)
+apply_layout(fig, height=640, showlegend=False,
+             title="新城（XCG）地磁三分量，1 分鐘平均（UTC）")
+fig
+
+# %% [markdown]
+# 讀圖重點：
+#
+# - 每天一個規律的**日變化**（Sq）：白天電離層電流造成的數十 nT 起伏。
+#   台灣在 UTC+8，日變化低谷約在 UTC 02–06（當地中午前後）。
+# - 有些天起伏特別大、不規則，那是磁擾或磁暴，屬於全球性現象。
+#   判斷某天是否磁暴，可查 [Kp 指數](https://kp.gfz-potsdam.de/en/)。
+# - 紅線（花蓮地震）附近有沒有「異常」？單看一站沒辦法回答，往下看差分分析。
+#
+# ## 4.4 疊代日變化：平靜日 vs 擾動日
+
+# %%
+z = mag["X"].copy()
+daily = z.groupby(z.index.date)
+fig = go.Figure()
+for i, (day, s) in enumerate(daily):
+    hours = s.index.hour + s.index.minute / 60
+    fig.add_trace(go.Scattergl(
+        x=hours, y=s - s.mean(), mode="lines", name=str(day),
+        line=dict(width=1, color="rgba(42,120,214,0.35)"), showlegend=False))
+apply_layout(fig, title="每日 X 分量疊圖（各日去平均）：日變化的形狀",
+             xaxis_title="UTC 時（台灣時間 = UTC+8）",
+             yaxis_title="ΔX（nT）", hovermode=False)
+fig
+
+# %% [markdown]
+# 大部分日子的曲線形狀相似（Sq 日變化），少數幾天明顯偏離。把「重複的背景」
+# 和「偶發的擾動」分開，是磁場資料分析的第一步。
+#
+# ## 4.5 兩站相減：消去全球外源場
+#
+# 外源場（日變化、磁暴）在幾百公里尺度內幾乎相同，兩站相減後剩下的
+# 就是**局部**訊號。我們用池上（CSG，台東縱谷）當參考站：
+
+# %%
+mag_csg = gt.read_geomagnetic(CACHE_DIR / "edu-mag-csg.tgz", "CSG",
+                              resample="1min")
+diff = (mag["F_calc"] - mag_csg["F_calc"]).dropna()
+fig = go.Figure(go.Scattergl(x=diff.index, y=diff - diff.mean(), mode="lines",
+                             line=dict(color=PALETTE[6], width=1.2)))
+fig.add_vline(x=eq_t, line_dash="dash", line_color=QUAKE_COLOR)
+apply_layout(fig, title="全磁力兩站差：新城（XCG）－ 池上（CSG），去平均",
+             yaxis_title="ΔF（nT）", showlegend=False)
+fig
+
+# %% [markdown]
+# 相減後，日變化的起伏大幅縮小，剩下的緩慢漂移與微小起伏，才是兩站
+# 「局部環境」的差異。震磁研究要找的訊號就藏在這種差分序列裡。
+#
+# ```{admonition} 健康的懷疑
+# :class: warning
+# 差分序列裡任何看起來像「異常」的東西，都要先排除幾個嫌疑：儀器溫度
+# 漂移、附近的人為干擾（車輛、電力設施）、以及參考站自己出了問題。
+# 震磁訊號就算存在，也只有 0.1 到數 nT，比上面這些干擾源都還要小。
+# ```
+#
+# ## 4.6 參考站怎麼選？
+#
+# 差分要有效，兩站要夠近，近到共享同一片外源場；又不能太近，否則局部
+# 訊號也一起被減掉。台灣可用的地磁秒資料站不多，這裡改用卑南（TTN，
+# 台東）當參考站再減一次，和前面池上（CSG）的結果比較：
+
+# %%
+mag_ttn = gt.read_geomagnetic(CACHE_DIR / "edu-mag-ttn.tgz", "TTN",
+                              resample="1min")
+diff_ttn = (mag["F_calc"] - mag_ttn["F_calc"]).dropna()
+print(f"減 CSG 後殘差標準差：{(diff - diff.mean()).std():.2f} nT")
+print(f"減 TTN 後殘差標準差：{(diff_ttn - diff_ttn.mean()).std():.2f} nT")
+
+# %% [markdown]
+# 殘差越小，代表外源場被消得越乾淨。實務上研究者會嘗試好幾個參考站、
+# 甚至用多站平均當參考，挑出最能壓低背景的組合。順帶一提，我們原本想
+# 用的加灣（HLN）和玉里（YLI）兩站在這段期間沒有秒資料，申請時系統回
+# 「無資料」。缺站在觀測研究裡是常態，分析的彈性往往就在於手上還有幾
+# 個備選。
+#
+# ## 4.7 極化比：震磁研究的常用指標
+#
+# 文獻裡最常被拿來找震磁前兆的量之一，是垂直分量對水平分量的比值 Z/H。
+# 想法是：外源場（來自高空）以水平分量為主，地下來源的訊號則會讓垂直
+# 分量相對變大，所以 Z/H 上升可能暗示地下有訊號。先算每日的 Z/H 中位數：
+
+# %%
+zh = (mag.Z / mag.H)
+zh_daily = zh.groupby(zh.index.date).median()
+fig = go.Figure(go.Scatter(x=list(map(str, zh_daily.index)), y=zh_daily.values,
+                           mode="lines+markers",
+                           line=dict(color=PALETTE[6], width=2)))
+fig.add_vline(x="2024-04-03", line_dash="dash", line_color=QUAKE_COLOR)
+apply_layout(fig, title="新城（XCG）每日 Z/H 中位數",
+             xaxis_title="日期", yaxis_title="Z / H", showlegend=False)
+fig
+
+# %% [markdown]
+# 你會看到 Z/H 幾乎是一條水平線，數值約 0.75，地震前後也沒什麼變化。
+# 這其實反映了一件重要的事：這個約 0.75 的靜態比值，主要由當地地磁場
+# 的傾角決定，是地理位置的性質，不是訊號。
+#
+# 真正的「ULF 極化分析」看的不是這個靜態比值，而是**特定頻帶**（大約
+# 0.001 到 1 Hz 的超低頻）裡 Z 與 H 的功率比隨時間怎麼變。要做這件事，
+# 必須用原始的 1 秒資料，一旦像我們這樣重取樣成 1 分鐘，這個頻帶的資訊
+# 就被抹掉了。這帶出一個資料分析的通則：**分析方法決定了你需要多快的
+# 取樣**，先想清楚要找什麼頻率的訊號，再決定資料怎麼降頻，順序不能反。

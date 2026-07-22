@@ -1,0 +1,11 @@
+format: jb-book
+root: 00_intro
+chapters:
+  - file: 01_overview
+  - file: 02_download
+  - file: 03_groundwater
+  - file: 04_geomagnetic
+  - file: 05_seismic
+  - file: 06_gnss
+  - file: 07_case_hualien2024
+  - file: 08_explore_ideas

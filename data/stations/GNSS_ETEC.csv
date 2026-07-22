@@ -1,0 +1,6 @@
+﻿network,station_code,chinese_station_name,english_station_name,lat,lon,elevation,start_time,end_time,location_county,location_district
+GNSS_ETEC,NDH1,化仁國小,NDH1,23.96236,121.59559,49.3997,2013-10-20,2599-12-31,花蓮縣,吉安鄉
+GNSS_ETEC,NDH2,南華國小,NDH2,23.94823,121.54738,106.9838,2013-11-01,2019-01-02,花蓮縣,吉安鄉
+GNSS_ETEC,NDH3,太昌國小,NDH3,23.99549,121.56526,92.0362,2013-10-28,2022-06-24,花蓮縣,花蓮市
+GNSS_ETEC,NDH4,壽豐鄉鯉魚山公共電視,NDH4,23.91679,121.51987,597.7667,2014-11-01,2599-12-31,花蓮縣,壽豐鄉
+GNSS_ETEC,NDH5,東華大學美崙校區,NDH5,24.01004,121.61812,57.8264,2014-11-01,2599-12-31,花蓮縣,花蓮市

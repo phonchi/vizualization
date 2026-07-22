@@ -1,0 +1,153 @@
+﻿network,station_code,chinese_station_name,english_station_name,lat,lon,elevation,start_time,end_time,location_county,location_district
+CWASN,ALS,阿里山氣象站,Alishan Weather Station,23.50838,120.81341,2417.00,1993-11-03,2599-12-31,嘉義縣,阿里山鄉
+CWASN,ANP,鞍部氣象站,An-Bu Weather Station,25.18277,121.52935,836.00,1992-09-30,2599-12-31,臺北市,北投區
+CWASN,BAC,臺北氣象站,Taipei Weather Station,24.99746,121.44182,15.00,1993-09-09,2022-12-26,新北市,板橋區
+CWASN,BGSB,八卦山,Baguashan,24.057,120.6106,107.00,2003-12-12,2004-09-10,彰化縣,彰化市
+CWASN,CCUH,中正大學,National Chung Cheng University,23.56632,120.46755,51.48,2007-12-13,2599-12-31,嘉義縣,民雄鄉
+CWASN,CHK,成功氣象站,Cheng-Gong Weather Station,23.0978,121.37315,37.00,1993-09-23,2599-12-31,臺東縣,成功鎮
+CWASN,CHKH,博愛國小,Bo-ai Elementary School,23.19177,121.39566,11.00,1994-11-10,2599-12-31,臺東縣,成功鎮
+CWASN,CHN8,義竹國小埤前分校,Yi-Jhu Elementary School Pi-Chian Branch,23.34733,120.2227,6.00,2009-10-01,2599-12-31,嘉義縣,義竹鄉
+CWASN,CHY,嘉義氣象站,Chiayi Weather Station,23.49629,120.43253,31.00,1993-10-20,2599-12-31,嘉義市,西區
+CWASN,DOSB,東沙島,Dongsha Island,20.701,116.7306,5.00,2003-12-09,2013-04-03,高雄市,旗津區
+CWASN,EAH,澳花國小,Aohua Elementary School,24.32935,121.73931,56.00,1995-01-21,2599-12-31,宜蘭縣,南澳鄉
+CWASN,EAS,安朔國小新化分校,An-Shuo Elementary School Sin-Hua Branch,22.38199,120.85635,457.00,1998-08-12,2599-12-31,臺東縣,達仁鄉
+CWASN,ECB,長濱國小,Chang-Bin Elementary School,23.31635,121.45116,63.00,1992-12-14,2599-12-31,臺東縣,長濱鄉
+CWASN,ECL,嘉蘭國小,Jia-Lan Elementary School,22.5957,120.9617,88.00,1998-08-12,2599-12-31,臺東縣,金峰鄉
+CWASN,ECS,萬安國小,Wan-An Elementary School,23.09518,121.21917,286.00,1994-11-10,2599-12-31,臺東縣,池上鄉
+CWASN,EDH,東河國小,Dong-He Elementary School,22.97251,121.30397,46.00,1992-12-14,2599-12-31,臺東縣,東河鄉
+CWASN,EGC,磯崎國小,Ji-Ci Elementary School,23.70781,121.54756,9.00,1994-11-06,2599-12-31,花蓮縣,豐濱鄉
+CWASN,EGFH,光復高工,Guangfu Senior Comm. & Ind. Vocational High School,23.66886,121.42748,126.00,2011-12-20,2599-12-31,花蓮縣,光復鄉
+CWASN,EGS,龜山島,Gui-Shan Island,24.84271,121.94375,20.00,2001-11-15,2599-12-31,宜蘭縣,頭城鎮
+CWASN,EHD,廣原國小,Guang-Yuan Elementary School,23.14882,121.20611,295.00,2016-06-04,2599-12-31,臺東縣,海端鄉
+CWASN,EHP,和平國小,He-Ping Elementary School,24.30899,121.74942,27.00,1999-07-20,2599-12-31,花蓮縣,秀林鄉
+CWASN,EHYH,紅葉國小,Hung-Ya elementary school,23.49395,121.34511,173.00,2017-10-06,2599-12-31,花蓮縣,萬榮鄉
+CWASN,ELD,霧鹿國小利稻分校,Wu-Lu Elementary School Li-Dao Branch,23.18708,121.02506,1058.00,1998-08-11,2599-12-31,臺東縣,海端鄉
+CWASN,ENA,金洋國小,Jin-Yang Elementary School,24.42591,121.74901,123.00,1993-09-20,2599-12-31,宜蘭縣,南澳鄉
+CWASN,ENA1,南澳,Nanao,24.4494,121.8102,4.00,2008-12-31,2011-01-04,宜蘭縣,蘇澳鎮
+CWASN,ENAH,南澳,Nanao,24.4494,121.8102,4.00,2011-01-05,2015-02-09,宜蘭縣,蘇澳鎮
+CWASN,ENLB,鹽寮,Yanliao,23.9036,121.6017,71.00,2002-12-02,2014-04-24,花蓮縣,壽豐鄉
+CWASN,ESA,永樂國小,Yongle Elementary School,24.57572,121.84386,48.00,1995-01-21,2599-12-31,宜蘭縣,蘇澳鎮
+CWASN,ESL,西林國小,Si-Lin Elementary School,23.81203,121.44161,180.00,1992-07-01,2599-12-31,花蓮縣,萬榮鄉
+CWASN,ETLH,西寶國小,Shi-Bau elementary school,24.20678,121.48174,1005.00,2013-01-18,2599-12-31,花蓮縣,秀林鄉
+CWASN,ETM,銅門國小,Tong-Men Elementary School,23.96589,121.49279,170.00,1998-05-01,2599-12-31,花蓮縣,秀林鄉
+CWASN,EWT,武塔國小,Wu-Ta elementary school,24.445,121.77831,40.00,2015-02-06,2599-12-31,宜蘭縣,南澳鄉
+CWASN,EYUL,玉里高中,Yu-Li senior high school,23.34724,121.31913,138.00,2014-08-07,2599-12-31,花蓮縣,玉里鎮
+CWASN,HEN,恒春氣象站,Heng-Chun Weather Station,22.00376,120.74598,26.00,1993-10-05,2599-12-31,屏東縣,恆春鎮
+CWASN,HSN,新竹氣象站,Hsinchu Weather Station,24.82827,121.01419,31.00,1993-11-17,2599-12-31,新竹縣,竹北市
+CWASN,HSN1,新竹園區實中,Hshinchu Yuancyu Experimental High School,24.77864,121.01819,91.00,1993-11-18,2599-12-31,新竹市,東區
+CWASN,HWA,花蓮氣象站,Hualien Weather Station,23.97501,121.61349,18.00,1993-09-21,2599-12-31,花蓮縣,花蓮市
+CWASN,ILA,宜蘭氣象站,Yilan Weather Station,24.76379,121.75631,11.00,1993-09-17,2599-12-31,宜蘭縣,宜蘭市
+CWASN,KAU,高雄氣象站,Kaohsiung Weather Station,22.56623,120.31571,1.00,1994-11-21,2021-06-09,高雄市,前鎮區
+CWASN,KAUH,新高雄氣象站,New Kaohsiung Weather Station,22.73073,120.31238,14.14,2022-09-30,2599-12-31,高雄市,楠梓區
+CWASN,KNM,金門氣象站,Kinmen Weather Station,24.40748,118.28868,31.00,2003-12-14,2599-12-31,金門縣,金城鎮
+CWASN,KSHI,東光國小,Dung-Guang Elementary School,24.7771,121.17527,147.00,2018-10-12,2599-12-31,新竹縣,關西鎮
+CWASN,LAY,蘭嶼氣象站,Lan-Yu Weather Station,22.03727,121.55813,309.00,1993-10-05,2599-12-31,臺東縣,蘭嶼鄉
+CWASN,LDU,綠島國小,Lyudao elementary school,22.67327,121.46924,17.00,2004-12-15,2599-12-31,臺東縣,綠島鄉
+CWASN,MSU,馬祖氣象站,Matsu Weather Station,26.16922,119.92295,85.00,2003-12-27,2599-12-31,連江縣,南竿鄉
+CWASN,NANB,南澳,Nanao,24.4275,121.7498,112.00,2003-12-12,2014-06-09,宜蘭縣,南澳鄉
+CWASN,NASB,南沙,Nansha Island,10.3772,114.3647,2.00,2004-12-01,2016-12-31,高雄市,旗津區
+CWASN,NCU,中央大學,National Central University,24.96713,121.18688,131.00,1993-11-24,2599-12-31,桃園市,中壢區
+CWASN,NCUB,中壢市,Jhongli,24.967,121.187,134.00,2005-07-21,2013-03-05,桃園市,中壢區
+CWASN,NCUH,中壢市,Jhongli,24.96794,121.18493,127.00,2011-01-05,2599-12-31,桃園市,中壢區
+CWASN,NDS,大進國小,Da-Jin elemenyary school,24.63398,121.7168,88.00,2015-02-06,2599-12-31,宜蘭縣,冬山鄉
+CWASN,NDXH,埔頂公園,Pu Ding Park,24.90612,121.28163,165.16,2022-10-25,2599-12-31,桃園市,大溪區
+CWASN,NFF,五峰國小,Wu-Feng Elementary School,24.63189,121.11776,427.00,2015-12-04,2599-12-31,新竹縣,五峰鄉
+CWASN,NFXH,羅浮高中,Luo-Fu Senior High School,24.79723,121.36402,314.62,2024-09-24,2599-12-31,桃園市,復興區
+CWASN,NHDH,新北氣象站,New Taipei Weather Station,24.95958,121.52506,22.00,1993-08-31,2599-12-31,新北市,新店區
+CWASN,NHW,新屋氣象站,Xin-Wu Weather Station,25.00675,121.04758,21.00,2013-03-05,2599-12-31,桃園市,新屋區
+CWASN,NJD,竹東國小,Jhu-Dong Elementary School,24.7357,121.0881,131.00,1993-11-19,2599-12-31,新竹縣,竹東鎮
+CWASN,NJN,竹南國小,Jhu-Nan Elementary School,24.68356,120.8703,11.00,1993-11-16,2599-12-31,苗栗縣,竹南鎮
+CWASN,NJS,金山高中,Jin-Shan High School,25.22579,121.63775,18.75,2022-07-28,2599-12-31,新北市,金山區
+CWASN,NLCH,內厝河濱公園,Neicuo Riverside Park,25.06465,121.27819,40.71,2023-12-07,2599-12-31,桃園市,蘆竹區
+CWASN,NLKH,林口足夢運動公園,Linkou Community Sports Park,25.07385,121.39561,267.09,2023-11-09,2599-12-31,新北市,林口區
+CWASN,NML,建功國小,Jian-Gong Elementary School,24.56494,120.82576,50.00,1999-02-02,2599-12-31,苗栗縣,苗栗市
+CWASN,NMLH,聯合大學,National United University,24.53737,120.79093,179.00,2011-01-05,2599-12-31,苗栗縣,苗栗市
+CWASN,NNS,南山國小,Nan-San Elementary School,24.43745,121.3813,1148.00,1997-11-14,2599-12-31,宜蘭縣,大同鄉
+CWASN,NNS1,南山,Nanshan,24.4284,121.3829,808.00,2008-10-18,2011-01-04,宜蘭縣,大同鄉
+CWASN,NNSH,南山,Nanshan,24.42834,121.38274,1106.00,2011-01-05,2599-12-31,宜蘭縣,大同鄉
+CWASN,NOU,海洋大學2,National Taiwan Ocean University 2,25.14938,121.77332,16.00,1994-12-15,2599-12-31,基隆市,中正區
+CWASN,NPLH,新北市政府消防局坪林分隊,Ping-Lin Branch of New Taipei City Fire Bureau,24.93915,121.71189,203.73,2022-10-20,2599-12-31,新北市,坪林區
+CWASN,NPXH,平溪觀音巖寺公園,Pingxi Guanyinyan Temple Park,25.02595,121.73728,229.26,2024-08-22,2599-12-31,新北市,平溪區
+CWASN,NSDH,農業部茶及飲料作物改良場北部分場,"Tea and Beverage Research Station, Ministry of Agriculture, Northern Region Branch Station",24.95576,121.6312,407.92,2022-10-23,2599-12-31,新北市,石碇區
+CWASN,NSG,雙溪高中,Shuang-Xi High School,25.03495,121.86295,27.00,2022-03-16,2599-12-31,新北市,雙溪區
+CWASN,NSJH,新莊體育園區,Xinzhuang Sports and Recreation Park,25.04332,121.45237,10.47,2022-11-07,2599-12-31,新北市,新莊區
+CWASN,NSK,三光國小,Sanguang Elementary School,24.67374,121.36658,685.00,1993-10-19,2599-12-31,桃園市,復興區
+CWASN,NST,田美國小,Tian-Mei Elementary School,24.6296,121.00875,173.00,1994-12-11,2599-12-31,苗栗縣,南庄鄉
+CWASN,NSX,龍埔公園,LongPu Park,24.93914,121.3743,37.32,2022-09-05,2599-12-31,新北市,三峽區
+CWASN,NSY,建中國小,Jian-Jhong Elementary School,24.41442,120.7697,299.00,1994-12-10,2599-12-31,苗栗縣,三義鄉
+CWASN,NSZ,三芝二坪頂,San Zhi Er Ping Ding,25.22698,121.53797,421.23,2022-04-10,2599-12-31,新北市,三芝區
+CWASN,NTS,淡水氣象站,Dan-Shuei Weather Station,25.16439,121.44915,15.00,2008-10-15,2599-12-31,新北市,淡水區
+CWASN,NWF,五分山氣象雷達站,Wu-Fen-Shan Weather Radar Station,25.07151,121.78141,728.00,1996-11-29,2599-12-31,新北市,瑞芳區
+CWASN,NWL,德拉楠國小,Tranan Elementary School,24.77756,121.502,403.68,2011-12-17,2021-11-25,新北市,烏來區
+CWASN,NWLH,烏來瀑布公園,Wulai Waterfall Park,24.84903,121.55013,260.07,2022-10-19,2599-12-31,新北市,烏來區
+CWASN,NXZ,大公雞公園,Big Rooster Park,25.07651,121.6403,40.72,2022-08-09,2599-12-31,新北市,汐止區
+CWASN,PCY,彭佳嶼氣象站,Peng-Jia-Yu weather station,25.62793,122.08,37.00,2002-07-02,2599-12-31,基隆市,中正區
+CWASN,PNG,澎湖氣象站,Penghu Weather Station,23.56529,119.5636,10.00,1993-11-06,2599-12-31,澎湖縣,馬公市
+CWASN,PTSB,坪頂,Pingding,24.4469,120.7048,202.00,2006-01-04,2014-10-24,苗栗縣,通霄鎮
+CWASN,SALH,阿蓮國小,A-Lian Elementary School,22.88369,120.32778,25.81,1995-02-23,2599-12-31,高雄市,阿蓮區
+CWASN,SANB,松安,Sungan,24.3978,120.9858,1354.00,2005-04-20,2014-07-14,苗栗縣,泰安鄉
+CWASN,SCK,七股氣象雷達站,Chi-Gu weather station,23.14665,120.08647,2.00,2016-06-04,2023-08-24,臺南市,七股區
+CWASN,SCL,子龍國小,Zihlong Elementary School,23.17428,120.20177,7.00,1993-10-18,2599-12-31,臺南市,佳里區
+CWASN,SCLH,佳里國中,Jia Li Junior High School,23.1571,120.1711,6.05,2024-08-22,2599-12-31,臺南市,佳里區
+CWASN,SCS,旗美高中,Chi-Mei Senior High School,22.88547,120.49383,70.00,2014-07-28,2599-12-31,高雄市,旗山區
+CWASN,SCZ,春日國小,Chun-Rih Elementary School,22.37031,120.6282,66.00,1993-10-06,2599-12-31,屏東縣,春日鄉
+CWASN,SDLH,潮寮國中,Chao-Liao Junior High School,22.56308,120.42519,8.53,2024-11-18,2599-12-31,高雄市,大寮區
+CWASN,SEB,墾丁氣象雷達站,Ken-Ding Weather Radar Station,21.90092,120.85511,32.00,2000-05-03,2599-12-31,屏東縣,恆春鎮
+CWASN,SFSH,鳳山高中,Feng-Shan Senior High School,22.6324,120.34529,11.55,2023-11-11,2599-12-31,高雄市,鳳山區
+CWASN,SGL,惠農國小,Huei-Nong Elementary School,22.72343,120.49873,31.00,1993-10-08,2599-12-31,屏東縣,九如鄉
+CWASN,SGS,甲仙國中,Jia-Sian Junior High School,23.08044,120.59085,279.00,1993-10-17,2599-12-31,高雄市,甲仙區
+CWASN,SHUL,化仁國中水璉分校,Hua-Ren junior high school,23.78749,121.56266,34.00,2017-10-06,2599-12-31,花蓮縣,壽豐鄉
+CWASN,SLBB,雙連埤,Shuanglienpi,24.7538,121.6356,490.00,2002-12-02,2014-06-09,宜蘭縣,員山鄉
+CWASN,SLJ,六甲國小湖東分校,Liou-Jia Elementary School Hu-Dong Branch,23.22241,120.40021,130.00,1993-02-17,,臺南市,六甲區
+CWASN,SLJH,六甲國小,Liou-Jia Elementary School,23.22546,120.35064,30.00,1995-02-24,2599-12-31,臺南市,六甲區
+CWASN,SML,日月潭氣象站,Sun Moon Lake Weather Station,23.88133,120.90822,999.00,1993-10-27,2599-12-31,南投縣,魚池鄉
+CWASN,SMS,滿州國小,Manjhou Elementary School,22.02045,120.83718,45.00,1993-10-05,2599-12-31,屏東縣,滿州鄉
+CWASN,SNCH,南寧高中,Nan-Ning Senior High School,22.93682,120.18604,2.24,2022-11-15,2599-12-31,臺南市,南區
+CWASN,SNHH,南化國中,Nanhua Junior High School,23.04462,120.48025,131.09,2023-09-25,2599-12-31,臺南市,南化區
+CWASN,SNJ,高雄第一科大,"NKUST, First Campus",22.75326,120.33518,16.00,2013-01-18,2599-12-31,高雄市,楠梓區
+CWASN,SPT,仁愛國小,Ren-Ai Elementary School,22.67667,120.49608,29.00,1994-11-21,2599-12-31,屏東縣,屏東市
+CWASN,SSD,賽嘉國小,Sai-Jia Elementary School,22.74426,120.64005,148.00,1993-10-08,2599-12-31,屏東縣,三地門鄉
+CWASN,SSH,善化國小,Shan-Hua Elementary School,23.13611,120.28824,17.00,1995-02-20,2599-12-31,臺南市,善化區
+CWASN,SSHH,大同國小,Datong Elementary School,23.15682,120.30836,18.42,2023-09-25,2599-12-31,臺南市,善化區
+CWASN,SSP,新埤國中,Shin-Pi junior high school,22.48348,120.56814,38.00,2011-12-29,2599-12-31,屏東縣,新埤鄉
+CWASN,STY,桃源國小,Tao-Yuan Elementary School,23.1607,120.76564,642.00,1993-10-17,2599-12-31,高雄市,桃源區
+CWASN,STYH,桃源國中,Tau-Yuan Junior High School,23.17932,120.78111,624.00,2015-02-06,2599-12-31,高雄市,桃源區
+CWASN,SXPH,溪埔國中,Si Pu Junior High School,22.71868,120.44269,28.14,2024-08-22,2599-12-31,高雄市,大樹區
+CWASN,TAI,臺灣南區氣象中心,Southern Region Weather Center,22.99324,120.20467,19.00,1995-04-06,2599-12-31,臺南市,中西區
+CWASN,TAI1,永康氣象站,Yongkang Weather Station,23.03802,120.23658,10.00,1993-10-22,2599-12-31,臺南市,永康區
+CWASN,TAP1,臺北市,Taipei City,25.0377,121.5138,15.00,2010-12-17,2018-06-27,臺北市,中正區
+CWASN,TAW,大武氣象站,Da-Wu Weather Station,22.3559,120.90357,11.00,1993-10-04,2599-12-31,臺東縣,大武鄉
+CWASN,TAWH,尚武國小,Shang-Wu Elementary School,22.33983,120.88795,24.00,2015-12-04,2599-12-31,臺東縣,大武鄉
+CWASN,TCU,臺中氣象站,Taichung Weather Station,24.1456,120.68409,89.00,1993-11-07,2599-12-31,臺中市,北區
+CWASN,TIPB,雙溪國小泰平分校,Shuang-Shi elementary school Tai-Ping Branch,24.97188,121.82553,399.00,2005-05-09,2599-12-31,新北市,雙溪區
+CWASN,TTN,臺東氣象站,Taitung Weather Station,22.75224,121.15487,12.00,1993-09-24,2599-12-31,臺東縣,臺東市
+CWASN,TWH,綠島,Lyudao,22.675,121.484,50.00,2002-03-13,2014-06-09,臺東縣,綠島鄉
+CWASN,WBTH,東山高中,Dongshan Senior High School,24.16636,120.70989,116.47,2022-12-15,2599-12-31,臺中市,北屯區
+CWASN,WCH1,南郭國小,Nan-Guo Elementary School,24.07175,120.54681,17.00,1994-11-30,2599-12-31,彰化縣,彰化市
+CWASN,WCHH,彰化師大,National Changhua University of Education,24.07948,120.55823,25.00,2011-01-05,2599-12-31,彰化縣,彰化市
+CWASN,WCKO,黎明國小,Liming Elementary School,23.43856,120.6047,233.00,1993-11-04,2599-12-31,嘉義縣,番路鄉
+CWASN,WCS,北梅國中,Bei-Mei Junior High School,24.05657,120.91169,358.00,2015-02-06,2599-12-31,南投縣,國姓鄉
+CWASN,WDG,東吉島氣象站,Dong-Ji Island Weather Station,23.25735,119.66751,34.00,2002-04-30,2599-12-31,澎湖縣,望安鄉
+CWASN,WDJ,大甲高工,Da-Jia Industrial Senior High School,24.34781,120.6403,99.00,2013-01-18,2599-12-31,臺中市,大甲區
+CWASN,WDL,公誠國小,Kung-Cheng Elementary School,23.7149,120.53851,52.00,1993-02-03,2599-12-31,雲林縣,斗六市
+CWASN,WDLH,雲林科技大學,National Yunlin University of Science and Technology,23.68881,120.53809,54.00,2011-01-05,2599-12-31,雲林縣,斗六市
+CWASN,WFEN,霧峰921地震教育園區,921 Earthquake Museum of Taiwan,24.04201,120.69948,85.95,2022-10-19,2599-12-31,臺中市,霧峰區
+CWASN,WGK,東和國小,Dong-He Elementary School,23.68444,120.57029,80.00,1994-11-30,2599-12-31,雲林縣,古坑鄉
+CWASN,WHLH,后綜高中,Hou-Zong Senior High School,24.30548,120.72516,227.03,2022-12-15,2599-12-31,臺中市,后里區
+CWASN,WHY,信義國中,Shin-Yi Junior High School,23.69615,120.85323,495.00,2013-01-18,2599-12-31,南投縣,信義鄉
+CWASN,WLC,全德國小,Cyuan-De Elementary School,22.34673,120.36911,38.00,1995-07-17,2599-12-31,屏東縣,琉球鄉
+CWASN,WLGB,六腳,Lioujian,23.4777,120.2999,16.00,2002-11-30,2015-02-10,嘉義縣,六腳鄉
+CWASN,WLJH,龍津高中,Long-Jin Senior High School,24.2045,120.52137,5.50,2024-09-24,2599-12-31,臺中市,龍井區
+CWASN,WLTB,龍潭,Longtan,24.8526,121.2524,27.00,2001-11-20,2014-08-12,桃園市,龍潭區
+CWASN,WNT,新街國小,Sin-Jie Elementary School,23.87658,120.6925,113.00,1994-12-07,2599-12-31,南投縣,名間鄉
+CWASN,WPL,史港國小,Shih-Gang Elementary School,24.01241,120.95729,465.00,1993-11-05,2599-12-31,南投縣,埔里鎮
+CWASN,WRL,二林商工,Erh-lin Industrial and Commercial Vocational High School,23.90259,120.3781,14.00,2015-02-06,2599-12-31,彰化縣,二林鎮
+CWASN,WSF,四湖國小,Sihhu Elementary School,23.63634,120.22976,8.00,1993-10-29,2599-12-31,雲林縣,四湖鄉
+CWASN,WSL,蔦松國中,Niau-Sung junior high school,23.52265,120.22784,3.00,2015-12-04,2599-12-31,雲林縣,水林鄉
+CWASN,WTC,西港國小,Si-Gang Elementary School,23.86166,120.28924,4.00,1993-11-19,2599-12-31,彰化縣,大城鄉
+CWASN,WTK,土庫國中,Tu-Ku junior high school,23.68758,120.38859,21.00,2014-07-28,2599-12-31,雲林縣,土庫鎮
+CWASN,WTP,大埔國小坪林分校,Da-Pu Elementary School Ping-Lin Branch,23.24381,120.62232,555.00,1994-11-26,2599-12-31,嘉義縣,大埔鄉
+CWASN,WWC,梧棲氣象站,Wu-Qi Weather Station,24.25656,120.52339,5.00,2000-10-05,2599-12-31,臺中市,梧棲區
+CWASN,WYL,員林國小,Yuan-Lin Elementary School,23.96049,120.57986,26.00,1994-12-07,2599-12-31,彰化縣,員林市
+CWASN,YUS,玉山氣象站,Yushan Weather Station,23.48728,120.95937,3856.00,2002-10-15,2599-12-31,南投縣,信義鄉
+CWASN,ZUZH,竹子湖氣象站,Ju-Tz-Hu Weather Station,25.16232,121.54465,612.00,2018-10-12,2599-12-31,臺北市,北投區
