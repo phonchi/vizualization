@@ -16,3 +16,11 @@ book/_build/
 
 # 下載的資料快取（範例資料 data/sample/ 會進版控，下載快取不進）
 data/cache/
+
+# 參考文獻 PDF 與程式庫（版權與審稿中資料，不進版控；筆記 notes/ 要進）
+reference/*
+!reference/notes/
+
+# Windows 下載殘留
+*Zone.Identifier
+desktop.ini
