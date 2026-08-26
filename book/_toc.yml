@@ -16,3 +16,4 @@ parts:
       - file: 09_forecasting_intro
       - file: 10_seismicity_stats
       - file: 11_etas
+      - file: 12_eepas_ppe
