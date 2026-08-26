@@ -28,7 +28,10 @@ jupyter-book build book/
 ```
 
 建置時會實際執行所有 notebook；第一次需要 `data/cache/` 內的資料（依第 2 章
-的申請清單下載，或直接執行 `book/02_download.ipynb`）。
+的申請清單下載，或直接執行 `book/02_download.ipynb`）。第二部（10、12、17 章）
+另需 1973–2025 長期目錄：`reference/Taiwan/EEPAS_TW-main.zip`（不進版控）存在時
+會自動解壓合併並快取為 `data/cache/catalog_1973_2025.csv`；沒有 zip 的環境請直接
+提供該快取 CSV。
 
 ### 用 toolkit 下載資料（三行版）
 
