@@ -1,11 +1,16 @@
 format: jb-book
 root: 00_intro
-chapters:
-  - file: 01_overview
-  - file: 02_download
-  - file: 03_groundwater
-  - file: 04_geomagnetic
-  - file: 05_seismic
-  - file: 06_gnss
-  - file: 07_case_hualien2024
-  - file: 08_explore_ideas
+parts:
+  - caption: 第一部：地球物理觀測資料探索
+    chapters:
+      - file: 01_overview
+      - file: 02_download
+      - file: 03_groundwater
+      - file: 04_geomagnetic
+      - file: 05_seismic
+      - file: 06_gnss
+      - file: 07_case_hualien2024
+      - file: 08_explore_ideas
+  - caption: 第二部：地震預報模型
+    chapters:
+      - file: 09_forecasting_intro
