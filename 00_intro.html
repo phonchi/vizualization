@@ -230,14 +230,18 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：地震預報模型</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">9. 地震可以預測嗎？從預測走向機率預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_seismicity_stats.html">10. 地震目錄統計的進階課</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_etas.html">11. ETAS：把餘震邏輯寫成一條式子</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_eepas_ppe.html">12. EEPAS 與 PPE：前兆尺度增加與中長期預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_step_oef.html">13. 短期預報上線：STEP 與作業化系統</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_ensembles.html">14. 三個臭皮匠：混合與加乘模型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_forecast_testing.html">15. 預報好不好，怎麼算？CSEP 檢驗</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_psha.html">16. 從預報到危害度：PSHA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_taiwan_outlook.html">17. 台灣：資料、模型與下一步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">10. 點過程：預報模型的共同語言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">11. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">12. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">13. ETAS I：條件強度、分支過程與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">14. ETAS II：估計、診斷、變體與作業引擎</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">16. EEPAS 與 PPE：前兆尺度增加與中長期預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">17. 預報檢驗 I：似然與一致性檢驗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">18. 預報檢驗 II：比較、警報、功效與價值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 三個臭皮匠：混合與加乘模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">21. 從預報到危害度：PSHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">22. 短期預報上線：STEP 與作業化系統</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">23. 台灣：資料、模型與下一步</a></li>
 </ul>
 
     </div>
@@ -447,18 +451,62 @@
 <li><p><a class="reference internal" href="07_case_hualien2024.html"><span class="doc">7. 案例分析：2024/4/3 花蓮地震 M7.2</span></a>：以 2024 年 4 月 3 日花蓮外海 M7.2 地震為案例，把四類資料放在同一時間軸上對照。這一章的結果可能會顛覆你的預期。</p></li>
 <li><p><a class="reference internal" href="08_explore_ideas.html"><span class="doc">8. 怎麼嚴謹地問「這和地震有關嗎？」</span></a>：怎麼嚴謹地問「這和地震有關嗎？」，一份前兆研究的方法地圖。</p></li>
 </ol>
-<p><strong>第二部：地震預報模型</strong></p>
-<ol class="arabic simple" start="6">
-<li><p><a class="reference internal" href="09_forecasting_intro.html"><span class="doc">9. 地震可以預測嗎？從預測走向機率預報</span></a>：地震可以預測嗎？從決定論式的「預測」走向機率式的「預報」。</p></li>
-<li><p><a class="reference internal" href="10_seismicity_stats.html"><span class="doc">10. 地震目錄統計的進階課</span></a>：目錄統計的進階課——Mc、b 值的不確定性、Omori 的皺褶、Båth、除叢的陷阱。</p></li>
-<li><p><a class="reference internal" href="11_etas.html"><span class="doc">11. ETAS：把餘震邏輯寫成一條式子</span></a>：ETAS——把「地震觸發地震」寫成一條條件強度函數，現代短期預報的主力引擎。</p></li>
-<li><p><a class="reference internal" href="12_eepas_ppe.html"><span class="doc">12. EEPAS 與 PPE：前兆尺度增加與中長期預報</span></a>：EEPAS 與 PPE——前兆尺度增加現象與中長期預報。</p></li>
-<li><p><a class="reference internal" href="13_step_oef.html"><span class="doc">13. 短期預報上線：STEP 與作業化系統</span></a>：STEP 與作業化系統——模型如何上線、機率如何說給社會聽。</p></li>
-<li><p><a class="reference internal" href="14_ensembles.html"><span class="doc">14. 三個臭皮匠：混合與加乘模型</span></a>：模型組合——混合與加乘，以及一場十年前瞻測試的教訓。</p></li>
-<li><p><a class="reference internal" href="15_forecast_testing.html"><span class="doc">15. 預報好不好，怎麼算？CSEP 檢驗</span></a>：預報好不好怎麼算——CSEP 的檢驗科學。</p></li>
-<li><p><a class="reference internal" href="16_psha.html"><span class="doc">16. 從預報到危害度：PSHA</span></a>：從預報到危害度——PSHA 與台灣地震模型。</p></li>
-<li><p><a class="reference internal" href="17_taiwan_outlook.html"><span class="doc">17. 台灣：資料、模型與下一步</span></a>：台灣——資料、模型與下一步。</p></li>
-</ol>
+<p><strong>第二部：地震預報模型</strong>（15 章，教科書式的深度）</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>章</p></th>
+<th class="head"><p>主題</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="09_forecasting_intro.html"><span class="doc">9. 地震可以預測嗎？從預測走向機率預報</span></a></p></td>
+<td><p>地震預報的問題設定：預測／預報／預警與可預報性</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="10_point_process.html"><span class="doc">10. 點過程：預報模型的共同語言</span></a></p></td>
+<td><p>點過程：預報模型的共同語言（條件強度、概似、模擬）</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="11_catalog_completeness_b.html"><span class="doc">11. 目錄統計 I：完整度與規模分布</span></a></p></td>
+<td><p>目錄統計 I：完整度 <span class="math notranslate nohighlight">\(M_c\)</span> 與規模分布 <span class="math notranslate nohighlight">\(b\)</span> 值</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="12_clustering_laws.html"><span class="doc">12. 目錄統計 II：叢集的經驗律與除叢</span></a></p></td>
+<td><p>目錄統計 II：叢集的經驗律與除叢</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="13_etas_structure.html"><span class="doc">13. ETAS I：條件強度、分支過程與模擬</span></a></p></td>
+<td><p>ETAS I：條件強度、分支過程與模擬</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="14_etas_estimation.html"><span class="doc">14. ETAS II：估計、診斷、變體與作業引擎</span></a></p></td>
+<td><p>ETAS II：估計、診斷、變體與作業引擎</p></td>
+</tr>
+<tr class="row-even"><td><p>15（第二期）</p></td>
+<td><p>Ψ：前兆尺度增加的解剖</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="16_eepas_ppe.html"><span class="doc">16. EEPAS 與 PPE：前兆尺度增加與中長期預報</span></a></p></td>
+<td><p>EEPAS 與 PPE：把 Ψ 變成可運轉的預報</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="17_testing_consistency.html"><span class="doc">17. 預報檢驗 I：似然與一致性檢驗</span></a></p></td>
+<td><p>預報檢驗 I：似然與一致性檢驗</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="18_testing_comparison.html"><span class="doc">18. 預報檢驗 II：比較、警報、功效與價值</span></a></p></td>
+<td><p>預報檢驗 II：比較、警報、功效與價值</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="19_ensembles.html"><span class="doc">19. 三個臭皮匠：混合與加乘模型</span></a></p></td>
+<td><p>模型組合：加法、乘法與權重學習</p></td>
+</tr>
+<tr class="row-odd"><td><p>20（第二期）</p></td>
+<td><p>時間相依複發模型：Weibull、BPT、應力釋放</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="21_psha.html"><span class="doc">21. 從預報到危害度：PSHA</span></a></p></td>
+<td><p>PSHA：從發生率到地動危害</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="22_operational_systems.html"><span class="doc">22. 短期預報上線：STEP 與作業化系統</span></a></p></td>
+<td><p>作業化系統：STEP、OEF 與機率溝通</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="23_taiwan_outlook.html"><span class="doc">23. 台灣：資料、模型與下一步</span></a></p></td>
+<td><p>台灣：資料、模型、缺口與下一步</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>第二部以<strong>觀念</strong>為主：每一章用文字與示意圖把模型的直覺講清楚，程式碼只是產生示意圖的工具（預設摺疊，有興趣才展開）。你不需要會寫這些模型，但讀完應該能看懂任何一篇地震預報論文在做什麼、以及該對它問哪些問題。</p>
 <p>每一章都是可以下載執行的 Jupyter Notebook（頁面右上角下載按鈕）。所有圖表用的都是真實 GDMS 資料，重跑、改站、改時間範圍，只要改幾行程式。</p>
 </section>

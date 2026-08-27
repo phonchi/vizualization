@@ -1,0 +1,877 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>23. 台灣：資料、模型與下一步 &#8212; 台灣地球物理觀測資料探索</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '23_taiwan_outlook';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="22. 短期預報上線：STEP 與作業化系統" href="22_operational_systems.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">台灣地球物理觀測資料探索</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    台灣地球物理觀測資料探索
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地球物理觀測資料探索</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">1. 台灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">2. 資料下載機制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">3. 地下水位觀測</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">4. 地磁觀測</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">5. 地動觀測：波形與地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">6. GNSS 地殼變形觀測</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">7. 案例分析：2024/4/3 花蓮地震 M7.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">8. 怎麼嚴謹地問「這和地震有關嗎？」</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：地震預報模型</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">9. 地震可以預測嗎？從預測走向機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">10. 點過程：預報模型的共同語言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">11. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">12. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">13. ETAS I：條件強度、分支過程與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">14. ETAS II：估計、診斷、變體與作業引擎</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">16. EEPAS 與 PPE：前兆尺度增加與中長期預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">17. 預報檢驗 I：似然與一致性檢驗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">18. 預報檢驗 II：比較、警報、功效與價值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 三個臭皮匠：混合與加乘模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">21. 從預報到危害度：PSHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">22. 短期預報上線：STEP 與作業化系統</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">23. 台灣：資料、模型與下一步</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/23_taiwan_outlook.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>23. 台灣：資料、模型與下一步</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">23.1 目錄的百年整備</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">23.2 統計地震學的積累</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">23.3 0403 花蓮：一次誠實的事後檢視</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">23.4 台灣的預報之路：現況與缺口</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">23.5 第二部的終點，也是起點</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>23. 台灣：資料、模型與下一步<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>最後一章，把第二部的所有工具帶回家。台灣是地球上做統計地震
+學最幸運的地方之一：板塊聚合速率每年八公分、地震多到不缺
+樣本、觀測網密度世界頂級、目錄免費公開（你在
+<a class="reference internal" href="02_download.html"><span class="doc">第 2 章</span></a>就申請過了）。這一章用台灣的資料與台灣的研究，做四件事：盤點目錄
+的家底、整理統計地震學的積累、對 0403 花蓮做一次誠實的事後
+檢視，最後回答：台灣的地震預報，現在走到哪裡、下一步是什麼。</p>
+<section id="id2">
+<h2>23.1 目錄的百年整備<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>第 11 章說過：目錄是一段行政史。台灣這一段特別精彩——從
+1897 年台北測候所啟動觀測算起，超過一百二十年。畫出 1973 年
+以來儀器目錄的全貌：</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">plotly.subplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_subplots</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">gdms_toolkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_taiwan_catalog</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gdms_toolkit.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">ACCENT</span><span class="p">,</span> <span class="n">PALETTE</span><span class="p">,</span> <span class="n">QUAKE_COLOR</span><span class="p">,</span> <span class="n">apply_layout</span>
+
+<span class="n">cat</span> <span class="o">=</span> <span class="n">load_taiwan_catalog</span><span class="p">()</span>
+<span class="n">yearly</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;YE&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">row_heights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
+                    <span class="n">vertical_spacing</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+<span class="n">big</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">cat</span><span class="o">.</span><span class="n">ML</span> <span class="o">&gt;=</span> <span class="mf">5.0</span><span class="p">]</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scattergl</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">big</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">big</span><span class="o">.</span><span class="n">ML</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+                           <span class="n">name</span><span class="o">=</span><span class="s2">&quot;ML ≥ 5&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ACCENT</span><span class="p">,</span>
+                                                      <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)),</span>
+              <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">yearly</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">yearly</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;年事件數（全目錄）&quot;</span><span class="p">,</span>
+                     <span class="n">marker_color</span><span class="o">=</span><span class="n">PALETTE</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;1999-09-21&quot;</span><span class="p">,</span> <span class="s2">&quot;集集&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2024-04-03&quot;</span><span class="p">,</span> <span class="s2">&quot;0403 花蓮&quot;</span><span class="p">)]:</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">add_vline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">date</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dot&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="n">QUAKE_COLOR</span><span class="p">,</span>
+                      <span class="n">row</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;1999-09-21&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">7.4</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;集集&quot;</span><span class="p">,</span> <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">QUAKE_COLOR</span><span class="p">),</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;2024-04-03&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">7.4</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;0403&quot;</span><span class="p">,</span> <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">QUAKE_COLOR</span><span class="p">),</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;規模 ML&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;年事件數&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">apply_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;台灣長期目錄總覽（1973–2025，共 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> 筆）&quot;</span><span class="p">,</span>
+             <span class="n">height</span><span class="o">=</span><span class="mi">560</span><span class="p">,</span> <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html">        <script>
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.7.0.min"</script>
+        </div><div class="output text_html"><div style="height:560px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="a3611f7b-742d-4b12-a9f2-b06ed457bfde" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("a3611f7b-742d-4b12-a9f2-b06ed457bfde")) {                    Plotly.newPlot(                        "a3611f7b-742d-4b12-a9f2-b06ed457bfde",                        [{"marker":{"color":"#2a78d6","opacity":0.5,"size":4},"mode":"markers","name":"ML \u2265 5","x":["1973-02-14T00:49:16.200000","1973-03-11T14:53:07.400000","1973-04-23T13:29:12.700000","1973-06-07T06:22:02.800000","1973-06-30T17:43:30.300000","1973-07-28T17:53:32.300000","1973-08-25T21:50:42.510000","1973-09-11T23:19:28.600000","1973-10-02T02:59:42.200000","1974-01-16T04:56:00.000000","1974-04-10T22:59:49.380000","1974-05-05T05:57:35.760000","1975-04-30T14:53:33.560000","1975-06-26T15:25:31.310000","1975-07-07T17:50:00.100000","1975-07-20T15:38:23.670000","1975-08-22T22:48:48.290000","1976-02-23T09:02:27.580000","1976-03-20T01:07:00.790000","1976-04-14T14:00:46.330000","1976-06-09T22:40:58.710000","1976-07-18T17:02:29.600000","1976-09-09T09:39:39.010000","1977-01-07T19:36:52.650000","1977-02-06T05:07:29.350000","1977-06-14T10:30:57.600000","1977-10-17T18:30:22.160000","1977-10-28T13:16:59.810000","1977-12-06T06:19:00.450000","1977-12-12T02:44:00.990000","1977-12-25T22:33:48.070000","1978-04-08T10:26:07.800000","1978-04-14T13:12:14.300000","1978-05-27T13:44:09.150000","1978-05-30T15:09:06.110000","1978-06-07T07:29:47.840000","1978-07-23T14:42:38.180000","1978-07-24T02:37:00.390000","1978-07-24T11:41:53.630000","1978-07-24T23:54:46.010000","1978-07-25T17:56:28.880000","1978-07-31T00:20:40.530000","1978-08-07T00:56:10.790000","1978-08-09T18:35:03.560000","1978-08-09T19:36:08.160000","1978-08-13T03:41:33.580000","1978-08-14T16:50:11.590000","1978-08-26T04:53:11.160000","1978-08-31T18:27:53.510000","1978-09-10T15:50:34.740000","1978-09-10T16:10:53.020000","1978-09-10T16:34:01.430000","1978-09-11T06:22:07.490000","1978-09-11T22:25:36.570000","1978-11-10T09:06:04.080000","1978-11-12T02:27:09.650000","1978-12-26T07:49:11.540000","1979-01-03T06:39:04.520000","1979-06-02T00:08:59.300000","1979-07-20T15:12:31.220000","1979-07-24T15:20:28.420000","1979-09-11T18:06:58.420000","1979-09-13T20:54:50.970000","1979-12-02T05:25:17.570000","1979-12-02T19:09:44.440000","1979-12-23T09:46:30.170000","1980-03-21T08:59:44.930000","1980-05-16T15:35:59.290000","1980-06-07T12:14:43.870000","1980-06-18T09:32:26.490000","1980-09-16T21:00:24.480000","1980-09-25T10:56:51.060000","1980-10-18T00:08:22.980000","1980-11-22T16:00:58.860000","1981-01-24T14:10:31.400000","1981-01-29T04:51:36.210000","1981-02-20T20:09:10.990000","1981-03-02T12:13:46.610000","1981-03-05T05:24:49.630000","1981-03-27T22:41:01.840000","1981-03-30T22:22:47.620000","1981-05-14T09:27:34.840000","1981-05-14T21:22:51.680000","1981-06-01T11:53:44.150000","1981-06-04T08:22:07.190000","1981-10-15T20:47:07.650000","1981-11-02T15:21:47.170000","1981-12-12T04:56:39.200000","1982-01-14T19:52:10.450000","1982-01-23T14:10:39.840000","1982-02-17T16:53:53.710000","1982-06-19T20:25:43.050000","1982-10-20T20:01:54.560000","1982-10-20T20:04:54.690000","1983-01-31T00:01:44.120000","1983-01-31T00:47:42.940000","1983-02-26T02:05:36.340000","1983-05-07T23:58:02.060000","1983-05-10T00:15:03.770000","1983-06-21T20:55:03.620000","1983-07-03T15:52:58.570000","1983-07-15T10:39:06.800000","1983-10-05T03:29:37.370000","1983-12-08T02:53:42.540000","1983-12-22T14:37:25.770000","1984-03-25T07:48:13.000000","1984-04-11T13:51:09.610000","1984-05-20T18:24:32.320000","1984-06-03T02:22:46.620000","1984-06-09T16:38:59.700000","1984-07-05T00:34:56.880000","1984-08-20T18:44:24.630000","1984-11-05T16:37:05.220000","1984-12-08T18:27:46.150000","1985-01-20T12:36:19.210000","1985-06-22T10:32:56.850000","1985-06-29T02:05:07.780000","1985-07-04T16:40:02.170000","1985-07-10T17:06:20.260000","1985-08-05T13:00:38.590000","1985-08-05T13:02:36.490000","1985-08-12T00:21:33.260000","1985-08-20T03:02:09.900000","1985-08-30T15:09:51.490000","1985-10-17T04:12:15.080000","1985-11-26T00:27:04.810000","1986-01-16T13:04:31.970000","1986-01-28T06:19:21.210000","1986-03-22T04:45:31.590000","1986-05-08T08:59:07.880000","1986-05-20T05:25:49.580000","1986-05-20T05:37:31.690000","1986-05-22T17:47:22.000000","1986-05-22T21:00:03.160000","1986-05-24T09:58:14.040000","1986-05-24T10:02:08.830000","1986-05-28T03:57:19.250000","1986-06-04T12:43:14.260000","1986-06-04T16:20:56.720000","1986-06-06T00:47:54.380000","1986-07-30T11:31:47.530000","1986-09-27T09:36:35.380000","1986-09-28T00:02:55.740000","1986-10-15T13:16:59.360000","1986-11-14T21:20:04.520000","1986-11-14T22:34:22.650000","1986-11-14T23:04:37.090000","1986-11-15T01:00:02.150000","1986-11-15T07:24:07.130000","1986-11-15T16:12:51.880000","1986-11-16T13:13:58.040000","1986-11-18T08:49:13.070000","1986-11-19T03:26:52.540000","1986-11-26T09:49:44.720000","1986-11-29T22:50:03.390000","1986-11-30T03:03:51.880000","1986-12-08T09:38:23.680000","1987-01-06T05:07:48.590000","1987-01-15T19:41:42.520000","1987-04-17T05:10:54.030000","1987-04-18T12:49:37.590000","1987-04-25T12:18:09.160000","1987-05-04T19:06:45.460000","1987-05-14T15:30:58.800000","1987-06-07T05:50:07.640000","1987-06-27T07:38:55.670000","1987-07-12T20:18:10.920000","1987-09-05T20:46:20.720000","1987-12-18T05:53:40.850000","1988-03-03T03:21:19.760000","1988-04-07T03:05:07.210000","1988-04-07T03:24:35.410000","1988-04-11T22:35:15.930000","1988-05-08T17:50:21.440000","1988-07-03T05:20:39.240000","1988-07-18T14:46:32.280000","1988-07-18T14:49:27.600000","1988-07-20T23:15:34.920000","1988-07-21T18:39:28.420000","1988-08-11T03:41:01.430000","1988-10-16T12:09:26.760000","1988-10-16T12:14:21.840000","1988-10-16T12:36:59.140000","1988-12-28T16:36:39.140000","1989-01-08T17:41:40.310000","1989-01-19T01:43:49.710000","1989-03-26T02:56:21.940000","1989-06-08T13:46:24.230000","1989-08-03T11:36:49.050000","1989-08-03T11:40:18.550000","1990-01-15T12:42:30.140000","1990-07-16T07:12:23.610000","1990-07-16T19:14:51.950000","1990-08-21T16:00:58.540000","1990-09-11T14:09:03.960000","1990-11-11T23:59:06.440000","1990-12-13T03:01:48.380000","1990-12-13T19:50:19.230000","1990-12-13T20:28:11.210000","1990-12-13T23:19:00.970000","1990-12-13T23:28:05.780000","1990-12-14T02:37:39.020000","1990-12-14T04:55:31.150000","1990-12-15T05:01:33.350000","1990-12-18T01:24:55.840000","1990-12-19T00:08:14.420000","1990-12-19T00:20:26.040000","1990-12-25T14:21:54.020000","1991-01-18T01:36:27.010000","1991-01-18T10:49:56.540000","1991-01-19T13:24:11.510000","1991-01-20T18:54:34.900000","1991-01-21T18:02:39.400000","1991-03-02T04:56:38.430000","1991-03-02T18:13:18.710000","1991-03-12T06:04:06.140000","1991-03-17T04:37:05.740000","1991-03-26T03:58:23.710000","1991-03-26T06:19:30.430000","1991-03-26T10:24:20.350000","1991-04-02T08:21:41.630000","1991-06-03T17:03:10.450000","1991-09-30T09:44:43.680000","1991-10-12T05:08:40.460000","1991-10-18T03:52:09.120000","1991-10-23T20:37:22.750000","1991-11-03T04:17:20.510000","1991-11-25T10:29:11.330000","1991-12-02T06:14:15.720000","1991-12-05T15:48:23.130000","1992-03-21T03:11:59.290000","1992-04-19T18:32:20.750000","1992-04-20T16:16:38.800000","1992-04-24T11:49:13.330000","1992-05-28T23:19:35.450000","1992-07-07T00:45:36.270000","1992-07-24T05:26:55.840000","1992-08-14T17:26:23.610000","1992-10-03T13:56:40.610000","1992-12-28T05:23:25.340000","1993-01-23T08:59:26.310000","1993-02-19T02:36:00.350000","1993-03-05T06:57:04.720000","1993-12-06T23:00:17.400000","1993-12-10T08:59:33.990000","1993-12-15T21:49:43.100000","1994-01-20T05:50:15.570000","1994-01-21T18:06:20.410000","1994-03-28T08:11:15.710000","1994-04-06T01:12:11.090000","1994-06-05T01:09:30.090000","1994-06-05T04:59:38.520000","1994-06-06T08:57:24.490000","1994-06-09T14:17:10.400000","1994-06-17T11:18:18.160000","1994-09-16T06:20:15.620000","1994-09-20T19:47:59.440000","1994-10-05T01:13:24.470000","1994-10-19T17:55:21.580000","1994-11-10T07:07:42.200000","1994-11-15T23:59:54.340000","1994-12-21T11:22:12.680000","1994-12-22T04:11:04.260000","1995-01-10T07:55:19.560000","1995-02-10T02:21:59.690000","1995-02-23T05:19:02.780000","1995-02-25T03:15:06.720000","1995-04-09T04:44:51.480000","1995-04-10T09:51:13.360000","1995-04-25T08:29:02.960000","1995-05-02T22:48:20.540000","1995-05-27T18:11:11.120000","1995-06-06T23:21:22.990000","1995-06-25T06:59:07.090000","1995-06-28T14:14:53.730000","1995-07-07T03:04:48.360000","1995-07-14T16:52:46.480000","1995-10-31T22:27:06.940000","1995-12-01T03:17:04.620000","1995-12-18T16:17:54.530000","1995-12-20T23:56:36.930000","1996-05-28T21:53:22.350000","1996-07-06T01:27:05.470000","1996-09-05T23:42:07.880000","1996-09-06T00:26:04.150000","1996-09-06T02:04:56.380000","1996-09-06T08:24:37.530000","1996-09-06T11:34:32.670000","1996-11-26T08:22:23.710000","1996-12-18T11:20:23.240000","1997-01-16T01:07:20.410000","1997-04-13T17:45:13.990000","1997-05-03T02:46:13.680000","1997-06-18T02:03:30.610000","1997-06-22T09:36:04.100000","1997-07-04T18:37:30.510000","1997-08-24T12:17:39.950000","1997-08-24T18:58:36.540000","1997-10-22T11:16:26.560000","1997-11-14T04:29:50.770000","1998-01-14T17:54:45.030000","1998-01-14T17:57:13.560000","1998-01-18T19:56:51.710000","1998-01-20T23:29:38.870000","1998-07-17T04:51:14.960000","1998-07-24T18:44:03.030000","1998-10-09T12:52:51.540000","1998-11-03T07:06:37.490000","1998-11-17T22:27:32.520000","1998-11-19T10:30:02.240000","1999-05-07T01:03:24.410000","1999-06-10T07:17:59.270000","1999-07-07T13:53:13.370000","1999-09-10T14:18:20.840000","1999-09-20T17:47:15.850000","1999-09-20T17:49:40.070000","1999-09-20T17:51:35.380000","1999-09-20T17:55:23.080000","1999-09-20T17:57:15.580000","1999-09-20T17:58:55.130000","1999-09-20T17:59:28.810000","1999-09-20T18:02:19.810000","1999-09-20T18:03:41.570000","1999-09-20T18:05:54.010000","1999-09-20T18:11:27.860000","1999-09-20T18:11:54.210000","1999-09-20T18:15:42.590000","1999-09-20T18:16:17.950000","1999-09-20T18:21:28.740000","1999-09-20T18:26:10.880000","1999-09-20T18:28:02.500000","1999-09-20T18:32:55.210000","1999-09-20T19:28:43.360000","1999-09-20T19:40:32.730000","1999-09-20T19:43:02.480000","1999-09-20T19:57:52.820000","1999-09-20T20:02:16.300000","1999-09-20T20:21:59.680000","1999-09-20T20:40:03.820000","1999-09-20T20:43:48.750000","1999-09-20T21:15:25.050000","1999-09-20T21:24:34.670000","1999-09-20T21:41:22.910000","1999-09-20T21:46:38.110000","1999-09-20T21:54:47.400000","1999-09-20T22:22:46.460000","1999-09-20T23:18:13.210000","1999-09-21T00:45:40.930000","1999-09-21T03:31:49.080000","1999-09-21T07:06:02.610000","1999-09-21T11:07:42.200000","1999-09-21T15:28:10.390000","1999-09-21T17:38:35.570000","1999-09-21T18:18:37.570000","1999-09-21T22:17:01.520000","1999-09-22T00:14:40.770000","1999-09-22T00:49:43.450000","1999-09-22T00:51:10.660000","1999-09-22T12:17:20.960000","1999-09-23T00:46:04.040000","1999-09-23T00:46:18.450000","1999-09-23T05:42:49.590000","1999-09-23T12:44:34.450000","1999-09-23T21:39:01.340000","1999-09-24T03:38:25.870000","1999-09-25T04:19:13.340000","1999-09-25T08:43:31.100000","1999-09-25T20:51:52.260000","1999-09-25T23:52:49.630000","1999-09-27T04:03:22.390000","1999-09-27T04:11:46.060000","1999-09-27T07:00:40.740000","1999-09-27T07:28:19.690000","1999-09-27T11:55:07.060000","1999-09-28T05:53:49.560000","1999-09-30T01:04:03.860000","1999-10-01T12:54:10.280000","1999-10-04T12:26:15.390000","1999-10-05T12:18:17.370000","1999-10-13T01:39:46.880000","1999-10-18T15:31:26.870000","1999-10-18T16:00:45.890000","1999-10-22T02:18:56.900000","1999-10-22T03:10:17.460000","1999-10-23T17:08:03.040000","1999-10-30T08:27:49.500000","1999-11-01T17:53:02.250000","1999-11-15T07:25:21.970000","1999-11-17T07:35:09.950000","1999-11-28T21:25:50.240000","2000-01-03T02:20:08.100000","2000-02-15T21:33:18.150000","2000-03-09T05:08:44.500000","2000-03-16T00:37:53.460000","2000-03-16T13:10:55.200000","2000-04-19T14:04:18.910000","2000-05-06T13:41:52.840000","2000-05-07T16:18:08.930000","2000-05-17T03:25:46.620000","2000-05-18T15:18:56.650000","2000-06-10T18:23:29.450000","2000-06-19T21:56:24.760000","2000-07-13T22:01:10.320000","2000-07-14T00:07:32.460000","2000-07-14T23:04:34.640000","2000-07-17T06:50:39.380000","2000-07-28T20:28:07.720000","2000-08-02T08:34:31.990000","2000-08-23T00:49:16.580000","2000-09-10T08:54:46.530000","2000-11-29T11:00:33.000000","2000-12-10T10:08:38.620000","2000-12-10T19:30:44.470000","2000-12-29T18:03:28.590000","2001-03-01T16:37:50.190000","2001-06-14T02:35:25.780000","2001-06-19T05:16:15.460000","2001-06-19T05:43:39.170000","2001-07-09T15:20:47.630000","2001-09-17T22:44:44.790000","2002-01-08T17:00:39.250000","2002-02-12T03:27:25.000000","2002-04-03T18:06:10.790000","2002-04-20T08:48:00.020000","2002-05-10T04:17:12.920000","2002-05-15T03:46:05.910000","2002-06-14T07:22:23.290000","2002-07-18T04:52:31.520000","2002-08-28T17:05:34.060000","2002-09-06T11:02:01.990000","2002-09-07T22:59:32.850000","2002-09-24T22:43:22.890000","2002-09-30T08:35:13.530000","2002-12-07T03:45:12.000000","2002-12-21T06:09:14.470000","2003-06-09T05:08:04.680000","2003-06-10T08:40:32.050000","2003-06-16T18:33:38.850000","2003-08-04T10:53:24.450000","2003-08-06T12:23:08.460000","2003-11-12T00:02:35.910000","2003-12-06T06:34:57.740000","2003-12-10T04:38:13.520000","2003-12-10T04:39:36.580000","2003-12-10T05:20:25.130000","2003-12-10T08:46:45.570000","2003-12-11T00:01:50.580000","2003-12-16T13:56:59.350000","2003-12-17T16:27:25.260000","2003-12-18T05:33:28.190000","2004-01-01T03:15:18.140000","2004-01-28T19:13:24.690000","2004-05-01T07:56:11.090000","2004-05-08T08:02:46.970000","2004-05-16T06:04:08.700000","2004-05-19T07:04:12.940000","2004-06-02T16:56:29.750000","2005-01-20T07:47:16.050000","2005-02-01T01:59:47.770000","2005-02-18T20:18:18.830000","2005-03-05T19:06:51.730000","2005-03-05T19:08:00.090000","2005-04-30T14:48:17.230000","2005-05-29T22:17:21.720000","2005-06-07T16:45:04.970000","2005-06-10T01:32:46.860000","2005-06-18T09:31:05.560000","2005-09-23T16:49:50.880000","2005-09-26T18:50:20.300000","2006-01-08T17:01:38.020000","2006-03-09T04:07:28.790000","2006-04-01T10:02:19.540000","2006-04-15T22:40:55.370000","2006-04-28T09:05:26.960000","2006-05-07T01:53:02.140000","2006-08-11T23:51:06.070000","2006-10-09T10:01:45.630000","2006-10-09T11:08:24.970000","2006-10-11T06:43:52.340000","2006-12-26T12:26:21.000000","2006-12-26T12:40:25.630000","2006-12-26T15:41:44.670000","2006-12-26T17:35:13.020000","2006-12-27T02:30:39.790000","2007-02-18T21:04:59.620000","2007-07-23T13:40:02.440000","2007-08-09T00:55:47.360000","2007-08-29T03:00:16.450000","2007-10-17T14:40:00.030000","2007-12-05T01:41:42.530000","2008-02-17T20:33:02.320000","2008-03-04T17:31:47.480000","2008-04-14T15:39:44.450000","2008-04-23T18:28:41.950000","2008-04-23T22:04:15.520000","2008-05-13T18:27:55.340000","2008-07-13T14:58:36.830000","2008-08-01T18:55:49.320000","2008-12-02T03:16:54.230000","2008-12-23T00:04:43.820000","2009-01-03T22:04:34.970000","2009-04-17T12:37:48.890000","2009-06-28T09:34:56.190000","2009-07-26T01:00:12.370000","2009-07-26T06:10:59.790000","2009-07-29T16:53:06.060000","2009-08-21T20:57:44.740000","2009-10-03T17:36:06.280000","2009-11-05T09:32:57.660000","2009-11-05T11:34:21.260000","2009-12-19T13:02:16.340000","2010-01-04T19:27:37.380000","2010-01-19T06:09:26.790000","2010-02-12T02:42:38.620000","2010-03-04T00:18:52.140000","2010-03-04T08:16:16.340000","2010-06-15T00:31:17.990000","2010-07-02T19:11:32.400000","2010-07-17T09:04:17.220000","2010-07-25T03:52:10.210000","2010-08-21T16:38:00.030000","2010-09-20T03:17:08.050000","2010-09-28T17:33:53.180000","2010-10-02T19:23:12.360000","2010-11-08T13:01:20.950000","2010-11-12T15:39:00.610000","2010-11-21T12:31:45.640000","2010-12-06T02:14:12.400000","2010-12-07T02:46:14.920000","2011-02-01T08:16:31.540000","2011-03-20T08:00:51.190000","2011-05-03T15:52:34.410000","2011-06-02T17:07:52.330000","2011-06-10T01:25:22.110000","2011-06-26T13:19:14.120000","2011-07-12T11:17:10.970000","2011-09-21T22:18:33.380000","2012-02-26T02:35:00.430000","2012-03-21T23:44:38.280000","2012-04-19T01:58:08.570000","2012-04-27T14:48:35.790000","2012-06-06T01:08:34.740000","2012-06-14T16:15:13.370000","2012-08-14T10:55:43.350000","2012-08-17T20:20:02.970000","2012-08-31T12:11:39.630000","2012-09-04T20:00:18.320000","2012-10-25T10:31:17.590000","2012-11-20T17:09:01.670000","2012-12-02T17:45:36.940000","2012-12-30T16:03:25.790000","2013-01-17T08:30:41.850000","2013-02-02T03:39:52.440000","2013-03-07T03:36:45.680000","2013-03-27T02:03:19.630000","2013-03-27T02:04:05.920000","2013-06-01T20:32:23.500000","2013-06-02T05:43:03.210000","2013-07-16T10:11:35.000000","2013-07-24T15:32:15.040000","2013-09-03T22:23:25.790000","2013-10-29T17:50:11.340000","2013-10-31T12:02:09.540000","2013-10-31T15:47:28.450000","2014-01-14T18:38:12.980000","2014-01-14T19:50:05.520000","2014-03-15T20:04:36.770000","2014-05-04T12:43:36.000000","2014-05-21T00:21:13.950000","2014-05-25T12:41:13.240000","2014-07-17T06:11:54.150000","2014-09-25T10:35:03.020000","2014-10-07T18:08:10.260000","2015-01-07T04:48:32.840000","2015-02-13T20:06:31.830000","2015-03-23T10:13:51.620000","2015-04-20T11:20:47.250000","2015-09-01T13:24:45.650000","2015-09-15T19:37:35.490000","2015-09-16T13:08:59.750000","2015-10-12T11:14:47.500000","2015-10-13T11:49:04.650000","2015-11-01T21:09:42.810000","2015-12-03T14:31:13.880000","2016-01-11T04:52:57.550000","2016-01-19T02:13:26.830000","2016-02-05T19:57:26.080000","2016-02-05T19:58:28.920000","2016-02-09T00:47:00.620000","2016-02-18T01:09:39.020000","2016-02-18T01:18:31.990000","2016-04-16T10:55:46.520000","2016-04-27T15:17:14.420000","2016-04-27T15:27:38.590000","2016-04-27T18:19:06.230000","2016-05-12T03:17:15.050000","2016-05-13T08:24:12.010000","2016-05-14T03:32:48.300000","2016-05-18T00:22:45.830000","2016-05-21T20:51:40.900000","2016-06-20T00:39:47.470000","2016-10-06T15:52:00.510000","2016-10-25T04:45:52.380000","2016-11-07T11:56:26.070000","2016-11-30T12:04:34.480000","2016-12-15T14:14:29.550000","2017-02-10T17:12:52.560000","2017-05-15T23:12:54.530000","2017-05-24T13:10:54.350000","2017-09-20T14:29:56.980000","2017-11-03T02:48:59.580000","2017-11-03T23:34:48.210000","2017-11-11T12:22:53.520000","2017-11-22T14:20:09.400000","2017-11-23T20:55:32.220000","2018-02-04T13:12:52.110000","2018-02-04T13:56:40.640000","2018-02-04T13:57:42.380000","2018-02-04T14:13:12.440000","2018-02-05T15:58:41.280000","2018-02-06T05:09:14.890000","2018-02-06T15:50:41.620000","2018-02-06T18:00:13.370000","2018-02-06T18:07:39.000000","2018-02-06T19:15:28.680000","2018-02-07T03:36:18.460000","2018-02-07T11:13:05.890000","2018-02-07T13:06:40.520000","2018-02-07T15:21:30.440000","2018-02-08T00:54:17.060000","2018-02-21T23:10:41.380000","2018-02-25T18:28:40.890000","2018-03-20T09:22:56.290000","2018-03-29T00:17:50.310000","2018-08-18T00:15:17.260000","2018-11-25T23:57:23.400000","2018-12-09T15:15:41.330000","2018-12-12T13:24:23.760000","2018-12-15T21:21:05.480000","2019-01-08T12:16:46.270000","2019-01-22T03:19:26.660000","2019-01-30T15:14:53.790000","2019-02-07T16:52:04.830000","2019-02-15T14:08:07.110000","2019-03-08T02:32:14.450000","2019-03-13T04:32:34.970000","2019-04-03T01:52:55.390000","2019-04-04T01:56:55.140000","2019-04-09T15:13:21.890000","2019-04-09T22:57:52.350000","2019-04-18T05:01:07.110000","2019-06-04T09:46:18.990000","2019-08-06T01:19:48.740000","2019-08-07T21:28:03.560000","2019-12-16T11:25:57.690000","2020-02-03T17:02:56.840000","2020-02-15T11:00:06.500000","2020-02-15T11:05:00.480000","2020-02-15T19:20:13.850000","2020-02-25T11:14:02.110000","2020-05-03T03:24:40.900000","2020-05-24T22:31:30.490000","2020-06-26T23:27:44.890000","2020-09-28T20:50:54.710000","2020-09-29T01:14:17.150000","2020-10-17T15:03:13.620000","2020-11-05T18:36:12.160000","2020-11-11T21:33:26.980000","2020-11-11T21:35:34.580000","2020-11-16T20:14:24.410000","2020-12-10T05:29:38.580000","2021-01-16T23:10:59.290000","2021-01-28T07:29:31.830000","2021-02-17T18:38:48.660000","2021-03-02T09:23:00.810000","2021-04-18T14:11:39.580000","2021-04-18T14:14:37.800000","2021-05-25T16:48:00.500000","2021-06-11T05:12:48.900000","2021-06-11T07:33:26.310000","2021-06-11T21:58:58.610000","2021-06-20T14:50:13.510000","2021-07-07T11:24:58.530000","2021-07-07T22:11:55.570000","2021-07-13T22:52:05.270000","2021-07-13T22:59:24.540000","2021-07-13T23:45:27.200000","2021-08-06T11:12:30.520000","2021-09-13T10:41:27.690000","2021-09-25T22:21:19.630000","2021-10-18T05:49:18.630000","2021-10-23T03:16:04.620000","2022-02-07T10:58:25.120000","2022-03-09T12:22:14.020000","2022-03-19T15:23:42.800000","2022-03-22T17:06:55.190000","2022-03-22T17:41:38.850000","2022-03-22T17:42:38.870000","2022-03-22T17:43:25.400000","2022-03-22T18:11:34.480000","2022-03-22T18:37:50.770000","2022-03-22T19:35:03.930000","2022-03-22T20:29:59.120000","2022-03-22T21:41:08.120000","2022-03-24T00:38:26.080000","2022-04-07T23:36:10.140000","2022-04-08T19:19:33.190000","2022-04-09T16:43:50.720000","2022-04-11T13:47:27.910000","2022-04-11T13:49:12.060000","2022-04-11T19:15:31.330000","2022-04-18T11:38:37.540000","2022-06-20T01:05:07.780000","2022-06-20T01:05:47.270000","2022-06-20T01:39:42.950000","2022-06-25T02:27:19.770000","2022-06-25T13:34:35.010000","2022-06-27T20:07:01.040000","2022-06-27T22:03:22.540000","2022-06-28T13:34:59.300000","2022-06-28T13:43:30.310000","2022-07-24T00:32:34.850000","2022-07-28T00:16:16.220000","2022-09-14T01:35:51.630000","2022-09-17T13:41:19.110000","2022-09-17T13:55:41.900000","2022-09-17T14:35:14.170000","2022-09-17T14:45:28.180000","2022-09-18T01:52:34.290000","2022-09-18T05:19:19.390000","2022-09-18T06:32:03.310000","2022-09-18T06:44:15.250000","2022-09-18T06:44:57.510000","2022-09-18T06:57:35.430000","2022-09-18T08:46:31.880000","2022-09-18T09:39:55.860000","2022-09-19T02:07:45.110000","2022-10-02T20:25:22.270000","2022-10-10T12:17:51.720000","2022-10-17T13:20:38.820000","2022-10-31T08:48:27.850000","2022-11-13T01:47:44.940000","2022-11-15T11:53:21.370000","2022-11-26T17:38:04.220000","2022-12-07T16:54:28.180000","2022-12-15T04:03:16.420000","2022-12-22T04:36:32.280000","2022-12-23T21:17:59.140000","2023-02-06T20:20:17.360000","2023-02-08T10:49:59.930000","2023-02-11T11:35:49.160000","2023-02-18T15:49:09.470000","2023-03-21T01:45:20.430000","2023-05-04T15:38:20.900000","2023-05-25T13:48:29.490000","2023-06-10T05:31:53.480000","2023-06-10T09:12:33.830000","2023-07-08T19:47:12.010000","2023-07-08T21:22:03.390000","2023-07-09T22:11:33.640000","2023-08-04T12:22:12.540000","2023-08-04T12:25:17.410000","2023-09-05T09:30:41.210000","2023-09-15T10:34:30.780000","2023-10-11T10:36:57.460000","2023-11-10T16:54:39.940000","2024-01-28T18:11:22.690000","2024-01-28T18:11:55.690000","2024-02-24T04:37:08.960000","2024-02-29T05:26:27.800000","2024-03-19T11:20:29.590000","2024-03-21T10:49:52.880000","2024-04-02T23:58:09.940000","2024-04-03T00:00:19.330000","2024-04-03T00:01:51.020000","2024-04-03T00:02:23.810000","2024-04-03T00:03:47.620000","2024-04-03T00:04:44.770000","2024-04-03T00:11:26.390000","2024-04-03T00:12:54.020000","2024-04-03T00:17:37.130000","2024-04-03T00:31:14.560000","2024-04-03T00:35:36.880000","2024-04-03T00:43:55.030000","2024-04-03T00:46:44.860000","2024-04-03T00:46:51.990000","2024-04-03T00:50:46.340000","2024-04-03T01:07:16.470000","2024-04-03T01:09:27.560000","2024-04-03T01:09:37.750000","2024-04-03T01:17:43.490000","2024-04-03T01:39:37.210000","2024-04-03T01:39:48.600000","2024-04-03T01:49:41.430000","2024-04-03T01:53:58.450000","2024-04-03T02:14:34.940000","2024-04-03T02:16:04.440000","2024-04-03T02:23:25.570000","2024-04-03T02:28:17.500000","2024-04-03T02:28:27.350000","2024-04-03T03:20:55.190000","2024-04-03T03:57:18.810000","2024-04-03T04:34:44.980000","2024-04-03T05:23:52.900000","2024-04-03T08:38:01.730000","2024-04-03T15:39:10.050000","2024-04-03T15:42:36.260000","2024-04-03T15:55:12.470000","2024-04-03T18:29:48.510000","2024-04-03T19:46:53.370000","2024-04-04T14:30:06.540000","2024-04-04T18:35:02.650000","2024-04-05T04:50:51.640000","2024-04-05T06:12:48.080000","2024-04-05T20:26:27.780000","2024-04-06T03:52:55.300000","2024-04-06T10:47:13.530000","2024-04-06T15:53:11.850000","2024-04-06T21:15:10.180000","2024-04-07T10:01:22.140000","2024-04-07T22:49:29.880000","2024-04-08T05:09:35.100000","2024-04-08T18:02:37.250000","2024-04-08T22:14:08.220000","2024-04-12T18:44:36.550000","2024-04-13T14:26:36.970000","2024-04-16T18:59:50.290000","2024-04-17T09:17:10.830000","2024-04-21T02:40:56.770000","2024-04-21T16:35:52.170000","2024-04-22T09:08:39.720000","2024-04-22T09:12:10.760000","2024-04-22T09:15:59.370000","2024-04-22T09:17:10.180000","2024-04-22T09:52:55.090000","2024-04-22T10:46:22.810000","2024-04-22T10:49:06.880000","2024-04-22T10:50:31.520000","2024-04-22T11:13:12.350000","2024-04-22T11:22:08.110000","2024-04-22T11:25:57.070000","2024-04-22T11:45:35.950000","2024-04-22T13:13:40.110000","2024-04-22T14:11:24.560000","2024-04-22T18:26:52.910000","2024-04-22T18:32:48.820000","2024-04-22T19:19:54.610000","2024-04-22T19:20:11.370000","2024-04-22T19:28:32.490000","2024-04-22T19:34:05.570000","2024-04-22T20:03:07.920000","2024-04-22T20:49:58.060000","2024-04-22T20:52:56.600000","2024-04-22T20:53:29.070000","2024-04-22T21:04:21.850000","2024-04-22T21:14:47.050000","2024-04-22T21:19:36.030000","2024-04-22T21:19:43.550000","2024-04-22T21:24:31.240000","2024-04-22T21:31:39.470000","2024-04-22T21:31:44.110000","2024-04-23T00:04:05.900000","2024-04-23T00:04:24.410000","2024-04-23T00:11:01.910000","2024-04-23T01:45:45.530000","2024-04-23T02:21:00.900000","2024-04-24T07:30:53.170000","2024-04-26T12:28:12.340000","2024-04-26T18:21:24.090000","2024-04-26T18:49:29.320000","2024-04-26T19:13:28.440000","2024-04-28T17:40:21.580000","2024-05-02T02:07:27.980000","2024-05-06T09:45:32.160000","2024-05-06T09:52:46.260000","2024-05-10T01:35:39.250000","2024-05-10T01:37:22.780000","2024-05-10T07:45:18.040000","2024-05-11T05:16:02.390000","2024-05-11T09:44:39.800000","2024-05-22T08:00:40.760000","2024-05-24T17:07:10.990000","2024-05-29T23:54:45.800000","2024-05-30T01:11:39.700000","2024-05-30T15:52:17.310000","2024-05-31T17:10:59.420000","2024-06-01T00:32:39.400000","2024-06-11T21:51:33.290000","2024-06-18T03:46:58.740000","2024-06-23T14:27:09.970000","2024-07-26T02:23:59.970000","2024-07-27T11:21:48.010000","2024-08-15T09:06:46.110000","2024-08-15T23:35:55.240000","2024-08-17T13:10:12.070000","2024-08-28T20:14:52.910000","2024-08-31T18:21:42.470000","2024-09-02T08:26:25.170000","2024-09-07T05:16:50.740000","2024-09-11T13:41:10.670000","2024-09-13T04:59:33.790000","2024-09-21T10:51:08.930000","2024-10-14T13:17:15.990000","2024-10-16T13:58:21.560000","2024-10-27T10:21:45.050000","2024-10-31T16:18:19.410000","2024-11-06T17:19:39.920000","2024-11-14T02:38:16.960000","2024-11-22T12:40:17.790000","2024-11-27T15:32:24.260000","2024-12-26T08:08:51.590000","2024-12-29T19:51:36.070000","2025-01-11T20:27:09.890000","2025-01-20T16:17:26.980000","2025-01-20T16:26:25.730000","2025-01-20T17:42:31.760000","2025-01-24T11:18:42.420000","2025-01-24T22:01:57.080000","2025-01-25T11:49:17.280000","2025-01-25T16:10:50.910000","2025-01-25T23:38:53.110000","2025-01-27T00:18:50.380000","2025-01-30T02:11:54.240000","2025-02-07T16:46:58.080000","2025-03-05T13:27:39.210000","2025-03-13T05:09:39.480000","2025-03-25T01:40:48.590000","2025-05-05T10:10:00.920000","2025-05-05T10:53:27.510000","2025-06-11T11:00:29.820000","2025-06-11T16:01:04.550000","2025-06-19T20:18:39.110000","2025-06-23T18:00:57.190000","2025-07-07T19:57:06.260000","2025-07-15T13:58:17.850000","2025-08-10T06:03:36.500000","2025-08-19T01:26:08.400000","2025-08-21T08:37:46.560000","2025-08-22T06:06:15.240000","2025-09-19T22:56:45.090000","2025-10-07T23:52:13.010000","2025-11-10T05:00:48.340000"],"y":{"dtype":"f8","bdata":"AAAAAAAAGEBmZmZmZmYUQHE9CtejcBRAw\u002fUoXI\u002fCFUDhehSuR+EUQM3MzMzMzBZAAAAAAAAAFEAzMzMzMzMUQJqZmZmZmRVAmpmZmZmZFUDXo3A9CtcUQFK4HoXrURRAMzMzMzMzFEBcj8L1KFwVQGZmZmZmZhRA9ihcj8L1FEBcj8L1KFwUQKRwPQrXoxZAKVyPwvUoF0DhehSuR+EVQGZmZmZmZhRAAAAAAAAAFEAAAAAAAAAUQDMzMzMzMxdAZmZmZmZmFkBmZmZmZmYVQBSuR+F6FBRAAAAAAAAAFUDhehSuR+EUQI\u002fC9ShcjxVAPQrXo3A9FUBcj8L1KFwXQHE9CtejcBRAzczMzMzMFEB7FK5H4XoVQHE9CtejcBRAZmZmZmZmHEBI4XoUrkcWQGZmZmZmZhRAKVyPwvUoFkDhehSuR+EVQDMzMzMzMxVAcT0K16NwFEBI4XoUrkcVQFK4HoXrURVAexSuR+F6FUDXo3A9CtcUQD0K16NwPRVACtejcD0KFEAK16NwPQoVQHE9CtejcBRAUrgehetRFUAAAAAAAAAUQJqZmZmZmRVAUrgehetRFEAUrkfhehQUQGZmZmZmZhVAUrgehetRFUCkcD0K16MUQAAAAAAAABRAH4XrUbgeFEAK16NwPQoUQKRwPQrXoxVAuB6F61G4FUDhehSuR+EUQGZmZmZmZhRAAAAAAAAAFkBxPQrXo3AUQPYoXI\u002fC9RVA9ihcj8L1F0AfhetRuB4UQB+F61G4HhVAcT0K16NwFkBcj8L1KFwUQAAAAAAAABRAuB6F61G4F0AUrkfhehQWQBSuR+F6FBdAKVyPwvUoFEAfhetRuB4VQClcj8L1KBVAMzMzMzMzFEB7FK5H4XoUQAAAAAAAABRACtejcD0KFkD2KFyPwvUUQGZmZmZmZhRAZmZmZmZmFUAUrkfhehQUQDMzMzMzMxdAhetRuB6FFEApXI\u002fC9SgUQAAAAAAAABhAuB6F61G4FUDNzMzMzMwWQArXo3A9ChRAKVyPwvUoFUCPwvUoXI8UQAAAAAAAABhAexSuR+F6FEAzMzMzMzMUQFyPwvUoXBdAAAAAAAAAFUBcj8L1KFwUQPYoXI\u002fC9RRAmpmZmZmZFEAAAAAAAAAUQI\u002fC9ShcjxZAAAAAAAAAFUB7FK5H4XoUQDMzMzMzMxRAj8L1KFyPFEDhehSuR+EUQClcj8L1KBRAMzMzMzMzFUBxPQrXo3AUQJqZmZmZmRRA7FG4HoXrFECF61G4HoUUQHsUrkfhehVAH4XrUbgeFUDsUbgehesUQNejcD0K1xRAH4XrUbgeFEBmZmZmZmYVQHE9CtejcBRAXI\u002fC9ShcGEA9CtejcD0UQI\u002fC9ShcjxdAPQrXo3A9FEBmZmZmZmYYQArXo3A9ChdA7FG4HoXrFUAK16NwPQoUQI\u002fC9ShcjxVAj8L1KFyPFUAAAAAAAAAUQBSuR+F6FBRAH4XrUbgeFUB7FK5H4XoUQEjhehSuRxdAexSuR+F6FUApXI\u002fC9SgUQDMzMzMzMxRAMzMzMzMzG0BmZmZmZmYWQDMzMzMzMxlAXI\u002fC9ShcFUCuR+F6FK4WQD0K16NwPRRAPQrXo3A9FEAzMzMzMzMWQFK4HoXrURRAw\u002fUoXI\u002fCFECkcD0K16MUQK5H4XoUrhVAKVyPwvUoFUDsUbgehesWQI\u002fC9ShcjxRAMzMzMzMzFEBcj8L1KFwVQClcj8L1KBlAexSuR+F6FUAAAAAAAAAUQFyPwvUoXBhAhetRuB6FFEC4HoXrUbgUQOF6FK5H4RVApHA9CtejFEAzMzMzMzMUQK5H4XoUrhZASOF6FK5HFEBmZmZmZmYUQD0K16NwPRRAPQrXo3A9FEAAAAAAAAAVQEjhehSuRxVASOF6FK5HF0D2KFyPwvUUQAAAAAAAABdA4XoUrkfhF0DXo3A9CtcWQDMzMzMzMxZAAAAAAAAAFkC4HoXrUbgUQOF6FK5H4RRAPQrXo3A9FEAAAAAAAAAUQD0K16NwPRZAKVyPwvUoFUDsUbgehesUQDMzMzMzMxRAmpmZmZmZFEAK16NwPQoUQGZmZmZmZhVAcT0K16NwFUBmZmZmZmYWQAAAAAAAABhAH4XrUbgeFECuR+F6FK4UQDMzMzMzMxRAUrgehetRFEBcj8L1KFwUQDMzMzMzMxRAj8L1KFyPFkBmZmZmZmYUQOxRuB6F6xRACtejcD0KFEBxPQrXo3AVQAAAAAAAABRAAAAAAAAAFEAzMzMzMzMUQGZmZmZmZhRAAAAAAAAAFEDXo3A9CtcUQK5H4XoUrhZApHA9CtejFEAzMzMzMzMVQM3MzMzMzBRAcT0K16NwFkBI4XoUrkcUQEjhehSuRxRAj8L1KFyPF0BSuB6F61EVQBSuR+F6FBRAXI\u002fC9ShcFEBxPQrXo3AUQAAAAAAAABRA7FG4HoXrFUD2KFyPwvUUQDMzMzMzMxRAMzMzMzMzFkCPwvUoXI8UQNejcD0K1xRArkfhehSuFUCPwvUoXI8UQClcj8L1KBRAuB6F61G4FECamZmZmZkWQB+F61G4HhVAmpmZmZmZFUAK16NwPQoUQNejcD0K1xVAKVyPwvUoFUAUrkfhehQZQM3MzMzMzBZAUrgehetRFkBxPQrXo3AWQKRwPQrXoxVAH4XrUbgeFEAAAAAAAAAaQBSuR+F6FBRAPQrXo3A9FEBSuB6F61EUQArXo3A9ChRAuB6F61G4GUAK16NwPQoUQFK4HoXrURdAhetRuB6FFUAUrkfhehQVQGZmZmZmZhVAw\u002fUoXI\u002fCFEBcj8L1KFwUQHsUrkfhehRAmpmZmZmZFEAUrkfhehQXQHsUrkfhehZAUrgehetRFUApXI\u002fC9SgUQPYoXI\u002fC9RVA9ihcj8L1FEAK16NwPQoVQD0K16NwPRRAAAAAAAAAGkApXI\u002fC9SgVQDMzMzMzMxVAMzMzMzMzF0DD9Shcj8IUQOF6FK5H4RZAMzMzMzMzF0A9CtejcD0UQDMzMzMzMxRAw\u002fUoXI\u002fCFEBI4XoUrkccQBSuR+F6FBVAAAAAAAAAFkAfhetRuB4UQFyPwvUoXBZAZmZmZmZmFUAfhetRuB4UQHsUrkfhehVAPQrXo3A9FkAUrkfhehQVQOF6FK5H4RRAmpmZmZmZFUC4HoXrUbgUQAAAAAAAABVAZmZmZmZmFUAzMzMzMzMVQJqZmZmZmRVACtejcD0KFUC4HoXrUbgUQEjhehSuRxRASOF6FK5HFEDNzMzMzMwYQLgehetRuBdAj8L1KFyPFUCPwvUoXI8VQArXo3A9ChZAAAAAAAAAFEDD9Shcj8IVQNejcD0K1xRAZmZmZmZmFECkcD0K16MVQDMzMzMzMx1ASOF6FK5HGEDhehSuR+EXQDMzMzMzMxVAw\u002fUoXI\u002fCGUDXo3A9CtcWQOxRuB6F6xVApHA9CtejFUBmZmZmZmYaQPYoXI\u002fC9RRAhetRuB6FFEDNzMzMzMwaQClcj8L1KBVApHA9CtejGkDhehSuR+EUQM3MzMzMzBRAzczMzMzMFEBI4XoUrkcUQD0K16NwPRRAH4XrUbgeFUBI4XoUrkcUQMP1KFyPwhRAZmZmZmZmFUDhehSuR+EUQHsUrkfhehRA16NwPQrXFEBmZmZmZmYUQHE9CtejcBRAmpmZmZmZFEBcj8L1KFwaQFK4HoXrURVAmpmZmZmZFEBmZmZmZmYUQHsUrkfhehRAuB6F61G4FED2KFyPwvUUQHE9CtejcBRAmpmZmZmZFEDXo3A9CtcUQOxRuB6F6xRAw\u002fUoXI\u002fCFEAzMzMzMzMbQM3MzMzMzBhAKVyPwvUoFEAAAAAAAAAYQFK4HoXrURVAw\u002fUoXI\u002fCFUBI4XoUrkcUQIXrUbgehRZApHA9CtejFEBxPQrXo3AUQHsUrkfhehRAXI\u002fC9ShcFEApXI\u002fC9SgUQDMzMzMzMxtAKVyPwvUoFUC4HoXrUbgUQKRwPQrXoxRA7FG4HoXrFED2KFyPwvUUQFK4HoXrURRAj8L1KFyPFEB7FK5H4XoUQDMzMzMzMxRACtejcD0KFEApXI\u002fC9SgUQDMzMzMzMxRAmpmZmZmZFECamZmZmZkZQAAAAAAAABhAUrgehetRFECamZmZmZkUQJqZmZmZmRtAPQrXo3A9FEApXI\u002fC9SgVQD0K16NwPRRA7FG4HoXrFUBcj8L1KFwWQD0K16NwPRRAFK5H4XoUFEAUrkfhehQUQJqZmZmZmRRASOF6FK5HFEAfhetRuB4UQFyPwvUoXBZAZmZmZmZmFEDNzMzMzMwaQLgehetRuBRAUrgehetRFEDNzMzMzMwWQHsUrkfhehRAcT0K16NwFEBmZmZmZmYYQBSuR+F6FBRASOF6FK5HFkDNzMzMzMwYQK5H4XoUrhRAKVyPwvUoFEBmZmZmZmYVQArXo3A9ChVAMzMzMzMzF0AzMzMzMzMZQKRwPQrXoxVA4XoUrkfhFECF61G4HoUUQArXo3A9ChRAFK5H4XoUFEDNzMzMzMwYQBSuR+F6FBVAMzMzMzMzFEBcj8L1KFwVQM3MzMzMzBhAhetRuB6FFECF61G4HoUUQB+F61G4HhhAMzMzMzMzFUAK16NwPQoVQOF6FK5H4RRAKVyPwvUoFEAAAAAAAAAUQArXo3A9ChRAH4XrUbgeFEDsUbgehesZQIXrUbgehRVAuB6F61G4FEA9CtejcD0UQI\u002fC9ShcjxVAj8L1KFyPFECuR+F6FK4ZQKRwPQrXoxVA4XoUrkfhFEC4HoXrUbgUQI\u002fC9ShcjxVAFK5H4XoUFEC4HoXrUbgVQB+F61G4HhRAZmZmZmZmFUCamZmZmZkUQAAAAAAAABVAXI\u002fC9ShcFkDhehSuR+EWQB+F61G4HhhArkfhehSuFEApXI\u002fC9SgUQI\u002fC9ShcjxRAZmZmZmZmFkCamZmZmZkXQNejcD0K1xdAexSuR+F6FkBmZmZmZmYUQKRwPQrXoxRAKVyPwvUoFEAAAAAAAAAUQBSuR+F6FBRAKVyPwvUoFUBmZmZmZmYUQFyPwvUoXBRA7FG4HoXrGEApXI\u002fC9SgYQNejcD0K1xRA7FG4HoXrFECPwvUoXI8VQD0K16NwPRhAMzMzMzMzGEBxPQrXo3AUQNejcD0K1xtAMzMzMzMzFEApXI\u002fC9SgWQB+F61G4HhRAMzMzMzMzF0Bcj8L1KFwUQBSuR+F6FBdAuB6F61G4FkBSuB6F61EVQKRwPQrXoxVAexSuR+F6FEC4HoXrUbgVQOF6FK5H4RRAcT0K16NwFECPwvUoXI8WQNejcD0K1xRAKVyPwvUoFEBI4XoUrkcWQFK4HoXrURRAuB6F61G4FkBI4XoUrkcVQGZmZmZmZhRAUrgehetRFUAK16NwPQoVQGZmZmZmZhVAhetRuB6FFUAAAAAAAAAXQEjhehSuRxRAXI\u002fC9ShcGECamZmZmZkYQPYoXI\u002fC9RZArkfhehSuG0DXo3A9CtcVQHE9CtejcBZA7FG4HoXrFECuR+F6FK4ZQOF6FK5H4RZAH4XrUbgeFkCPwvUoXI8UQOF6FK5H4RRAmpmZmZmZFkBI4XoUrkcVQFK4HoXrURRAFK5H4XoUFEBcj8L1KFwUQKRwPQrXoxRAXI\u002fC9ShcFUCPwvUoXI8YQKRwPQrXoxRAMzMzMzMzFEDXo3A9CtcVQBSuR+F6FBdA4XoUrkfhFEDhehSuR+EUQEjhehSuRxRACtejcD0KFEAfhetRuB4VQIXrUbgehRRAZmZmZmZmGUAfhetRuB4UQNejcD0K1xVACtejcD0KFECPwvUoXI8XQFyPwvUoXBVAuB6F61G4FEDNzMzMzMwUQClcj8L1KBRA4XoUrkfhFEDD9Shcj8IVQJqZmZmZmRVAFK5H4XoUFEAfhetRuB4VQFK4HoXrURRAZmZmZmZmFkB7FK5H4XoXQPYoXI\u002fC9RhAAAAAAAAAFEAK16NwPQoUQOxRuB6F6xlAzczMzMzMFUAfhetRuB4UQBSuR+F6FBVAFK5H4XoUFECuR+F6FK4ZQEjhehSuRxRAMzMzMzMzFEBcj8L1KFwUQFyPwvUoXBRA7FG4HoXrFED2KFyPwvUXQClcj8L1KBRAFK5H4XoUFUBcj8L1KFwVQJqZmZmZmRRA7FG4HoXrFUAfhetRuB4ZQMP1KFyPwhhAAAAAAAAAFkDXo3A9CtcVQMP1KFyPwhZAcT0K16NwFkDhehSuR+EUQNejcD0K1xVAhetRuB6FF0Bcj8L1KFwVQAAAAAAAABVAMzMzMzMzF0BmZmZmZmYaQArXo3A9ChVAexSuR+F6FEAUrkfhehQVQIXrUbgehRRA4XoUrkfhFECuR+F6FK4WQIXrUbgehRRAFK5H4XoUFkBmZmZmZmYYQPYoXI\u002fC9RRACtejcD0KFED2KFyPwvUUQArXo3A9ChVASOF6FK5HFECamZmZmZkYQDMzMzMzMxVASOF6FK5HFEBI4XoUrkcUQK5H4XoUrhRA16NwPQrXFkAAAAAAAAAXQIXrUbgehRRAZmZmZmZmF0CamZmZmZkUQClcj8L1KBVAzczMzMzMFECkcD0K16MWQB+F61G4HhRAZmZmZmZmFUCPwvUoXI8XQB+F61G4HhVAUrgehetRFkApXI\u002fC9SgUQFyPwvUoXBRACtejcD0KGUCF61G4HoUVQI\u002fC9ShcjxVA16NwPQrXFUCuR+F6FK4UQB+F61G4HhRAj8L1KFyPFEBmZmZmZmYXQEjhehSuRxRApHA9CtejFkDNzMzMzMwVQD0K16NwPRVAAAAAAAAAFEDXo3A9CtcUQNejcD0K1xhApHA9CtejFEBcj8L1KFwUQDMzMzMzMxdA9ihcj8L1FUBI4XoUrkcUQMP1KFyPwhRASOF6FK5HFECuR+F6FK4UQHE9CtejcBVArkfhehSuFUDNzMzMzMwXQArXo3A9ChZAexSuR+F6FEAfhetRuB4UQEjhehSuRxlAuB6F61G4F0BmZmZmZmYUQPYoXI\u002fC9RhAAAAAAAAAFUDD9Shcj8IUQOxRuB6F6xZAPQrXo3A9FUBmZmZmZmYUQDMzMzMzMxVA4XoUrkfhF0D2KFyPwvUUQDMzMzMzMxRAexSuR+F6FUBSuB6F61EUQD0K16NwPRVAuB6F61G4FUBSuB6F61EVQAAAAAAAABRACtejcD0KFEC4HoXrUbgVQArXo3A9ChZApHA9CtejFEAAAAAAAAAVQI\u002fC9ShcjxdAMzMzMzMzF0AK16NwPQoZQArXo3A9ChRAexSuR+F6FEDXo3A9CtcVQFK4HoXrURVAH4XrUbgeFEDXo3A9CtcVQArXo3A9ChZAuB6F61G4FUBSuB6F61EUQHsUrkfhehRAmpmZmZmZFUBxPQrXo3AWQB+F61G4HhdAAAAAAAAAFUBSuB6F61EVQHsUrkfhehZA16NwPQrXFkCuR+F6FK4UQDMzMzMzMxZAzczMzMzMGkApXI\u002fC9SgXQNejcD0K1xhAUrgehetRFEAK16NwPQoWQHsUrkfhehdAKVyPwvUoGEAfhetRuB4UQNejcD0K1xZAcT0K16NwF0CkcD0K16MUQDMzMzMzMxRArkfhehSuFUDhehSuR+EUQBSuR+F6FBVArkfhehSuFUBcj8L1KFwYQBSuR+F6FBVAmpmZmZmZFEAzMzMzMzMUQArXo3A9ChVASOF6FK5HFEApXI\u002fC9SgUQGZmZmZmZhRA7FG4HoXrFUAAAAAAAAAVQNejcD0K1xVAUrgehetRFUBmZmZmZmYaQArXo3A9ChVAmpmZmZmZFUBcj8L1KFwXQArXo3A9ChRAmpmZmZmZGEDNzMzMzMwWQFK4HoXrURtAj8L1KFyPFUBI4XoUrkcVQI\u002fC9ShcjxZAZmZmZmZmF0AUrkfhehQYQHE9CtejcBVAhetRuB6FFUDsUbgehesUQK5H4XoUrhRAFK5H4XoUFkBxPQrXo3AUQI\u002fC9ShcjxZArkfhehSuFkAK16NwPQoaQD0K16NwPRVAAAAAAAAAFUDD9Shcj8IUQGZmZmZmZhZA16NwPQrXFECuR+F6FK4UQNejcD0K1xVAZmZmZmZmFEBcj8L1KFwVQPYoXI\u002fC9RVASOF6FK5HFED2KFyPwvUVQHsUrkfhehVASOF6FK5HFUAAAAAAAAAUQClcj8L1KBRAUrgehetRFkAzMzMzMzMVQIXrUbgehRdAAAAAAAAAFkCF61G4HoUVQIXrUbgehRRAH4XrUbgeFEBcj8L1KFwUQD0K16NwPRRAcT0K16NwFUDD9Shcj8IcQNejcD0K1xZApHA9CtejFUBSuB6F61EUQD0K16NwPRRAuB6F61G4FEA9CtejcD0aQB+F61G4HhVA7FG4HoXrFUAAAAAAAAAVQClcj8L1KBdA7FG4HoXrFUBxPQrXo3AWQPYoXI\u002fC9RVAFK5H4XoUFkAzMzMzMzMUQBSuR+F6FBRA7FG4HoXrFUDXo3A9CtcUQKRwPQrXoxZA7FG4HoXrF0AfhetRuB4VQBSuR+F6FBVA9ihcj8L1GEBSuB6F61EUQClcj8L1KBRAj8L1KFyPFUCamZmZmZkVQOF6FK5H4RRAKVyPwvUoFUCPwvUoXI8VQIXrUbgehRRAAAAAAAAAFECF61G4HoUUQGZmZmZmZhRAZmZmZmZmFEDXo3A9CtcVQBSuR+F6FBRACtejcD0KFUAfhetRuB4WQAAAAAAAABZApHA9CtejFEDXo3A9CtcVQFK4HoXrURVAj8L1KFyPFUCPwvUoXI8UQOF6FK5H4RRAhetRuB6FFkAAAAAAAAAUQNejcD0K1xRA9ihcj8L1FUApXI\u002fC9SgUQBSuR+F6FBRAAAAAAAAAFEDNzMzMzMwUQK5H4XoUrhVAj8L1KFyPFkCuR+F6FK4VQGZmZmZmZhZAUrgehetRFUBmZmZmZmYUQDMzMzMzMxRAFK5H4XoUFUAK16NwPQoWQPYoXI\u002fC9RRAFK5H4XoUF0D2KFyPwvUVQDMzMzMzMxRA9ihcj8L1FEBmZmZmZmYUQMP1KFyPwhVA4XoUrkfhF0CkcD0K16MYQOF6FK5H4RhACtejcD0KFUDXo3A9CtcUQJqZmZmZmRRAFK5H4XoUFED2KFyPwvUUQHE9CtejcBdApHA9CtejFUC4HoXrUbgUQBSuR+F6FBZAmpmZmZmZFEBcj8L1KFwVQOxRuB6F6xZAcT0K16NwFUAK16NwPQoXQPYoXI\u002fC9RVAj8L1KFyPGECkcD0K16MVQNejcD0K1xRA7FG4HoXrFUAUrkfhehQWQFK4HoXrURRAAAAAAAAAFEA9CtejcD0ZQAAAAAAAABhAUrgehetRFEB7FK5H4XoUQLgehetRuBRAMzMzMzMzGEC4HoXrUbgXQOxRuB6F6xRArkfhehSuFEAK16NwPQoYQEjhehSuRxRAXI\u002fC9ShcFEB7FK5H4XoVQClcj8L1KBRAMzMzMzMzFUCPwvUoXI8VQB+F61G4HhRAKVyPwvUoFkA9CtejcD0UQB+F61G4HhRAH4XrUbgeFEAzMzMzMzMWQLgehetRuBRApHA9CtejFkBI4XoUrkcXQHsUrkfhehlAj8L1KFyPFEBcj8L1KFwUQKRwPQrXoxRAhetRuB6FFkBmZmZmZmYVQArXo3A9ChRAH4XrUbgeFECF61G4HoUVQIXrUbgehRRAhetRuB6FFUDNzMzMzMwVQAAAAAAAABZAPQrXo3A9FkDXo3A9CtcVQB+F61G4HhZAcT0K16NwFUA9CtejcD0VQM3MzMzMzBRACtejcD0KFEDD9Shcj8IZQAAAAAAAABRAhetRuB6FFECkcD0K16MVQMP1KFyPwhRAKVyPwvUoF0C4HoXrUbgVQFyPwvUoXBdAXI\u002fC9ShcFUC4HoXrUbgWQDMzMzMzMxVAAAAAAAAAFUDhehSuR+EWQOxRuB6F6xRAPQrXo3A9FkD2KFyPwvUXQK5H4XoUrhlAcT0K16NwFEDNzMzMzMwUQD0K16NwPRRAPQrXo3A9FEC4HoXrUbgUQArXo3A9ChVAXI\u002fC9ShcFECPwvUoXI8UQPYoXI\u002fC9RVAexSuR+F6FEC4HoXrUbgUQJqZmZmZmRVA"},"type":"scattergl","xaxis":"x","yaxis":"y"},{"marker":{"color":"#1baf7a"},"name":"\u5e74\u4e8b\u4ef6\u6578\uff08\u5168\u76ee\u9304\uff09","x":["1973-12-31T00:00:00.000000","1974-12-31T00:00:00.000000","1975-12-31T00:00:00.000000","1976-12-31T00:00:00.000000","1977-12-31T00:00:00.000000","1978-12-31T00:00:00.000000","1979-12-31T00:00:00.000000","1980-12-31T00:00:00.000000","1981-12-31T00:00:00.000000","1982-12-31T00:00:00.000000","1983-12-31T00:00:00.000000","1984-12-31T00:00:00.000000","1985-12-31T00:00:00.000000","1986-12-31T00:00:00.000000","1987-12-31T00:00:00.000000","1988-12-31T00:00:00.000000","1989-12-31T00:00:00.000000","1990-12-31T00:00:00.000000","1991-12-31T00:00:00.000000","1992-12-31T00:00:00.000000","1993-12-31T00:00:00.000000","1994-12-31T00:00:00.000000","1995-12-31T00:00:00.000000","1996-12-31T00:00:00.000000","1997-12-31T00:00:00.000000","1998-12-31T00:00:00.000000","1999-12-31T00:00:00.000000","2000-12-31T00:00:00.000000","2001-12-31T00:00:00.000000","2002-12-31T00:00:00.000000","2003-12-31T00:00:00.000000","2004-12-31T00:00:00.000000","2005-12-31T00:00:00.000000","2006-12-31T00:00:00.000000","2007-12-31T00:00:00.000000","2008-12-31T00:00:00.000000","2009-12-31T00:00:00.000000","2010-12-31T00:00:00.000000","2011-12-31T00:00:00.000000","2012-12-31T00:00:00.000000","2013-12-31T00:00:00.000000","2014-12-31T00:00:00.000000","2015-12-31T00:00:00.000000","2016-12-31T00:00:00.000000","2017-12-31T00:00:00.000000","2018-12-31T00:00:00.000000","2019-12-31T00:00:00.000000","2020-12-31T00:00:00.000000","2021-12-31T00:00:00.000000","2022-12-31T00:00:00.000000","2023-12-31T00:00:00.000000","2024-12-31T00:00:00.000000","2025-12-31T00:00:00.000000"],"y":{"dtype":"i2","bdata":"dwIUBUUFeQW1B6oYqQuACzILLQt7Ee8NeBDEJu8OtQXYBCIOlw0ADDEN9SKdHpsfYBseGut3SzTsHLUvISk9IdwgUh40HE4ekyDpHvAdnRaAGowUhxwjHekUiR9FFJIdGhlWHTkkgzasKQ=="},"type":"bar","xaxis":"x2","yaxis":"y2"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"matches":"x2","showticklabels":false},"yaxis":{"anchor":"x","domain":[0.424,1.0],"title":{"text":"\u898f\u6a21 ML"}},"xaxis2":{"anchor":"y2","domain":[0.0,1.0]},"yaxis2":{"anchor":"x2","domain":[0.0,0.384],"title":{"text":"\u5e74\u4e8b\u4ef6\u6578"}},"shapes":[{"line":{"color":"#e34948","dash":"dot"},"type":"line","x0":"1999-09-21","x1":"1999-09-21","xref":"x","y0":0,"y1":1,"yref":"y domain"},{"line":{"color":"#e34948","dash":"dot"},"type":"line","x0":"1999-09-21","x1":"1999-09-21","xref":"x2","y0":0,"y1":1,"yref":"y2 domain"},{"line":{"color":"#e34948","dash":"dot"},"type":"line","x0":"2024-04-03","x1":"2024-04-03","xref":"x","y0":0,"y1":1,"yref":"y domain"},{"line":{"color":"#e34948","dash":"dot"},"type":"line","x0":"2024-04-03","x1":"2024-04-03","xref":"x2","y0":0,"y1":1,"yref":"y2 domain"}],"annotations":[{"font":{"color":"#e34948"},"showarrow":false,"text":"\u96c6\u96c6","x":"1999-09-21","xref":"x","y":7.4,"yref":"y"},{"font":{"color":"#e34948"},"showarrow":false,"text":"0403","x":"2024-04-03","xref":"x","y":7.4,"yref":"y"}],"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x","title":{"text":"\u53f0\u7063\u9577\u671f\u76ee\u9304\u7e3d\u89bd\uff081973\u20132025\uff0c\u5171 349,868 \u7b46\uff09"},"height":560},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('a3611f7b-742d-4b12-a9f2-b06ed457bfde');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p>上圖是 M≥5 的大事件——集集與 0403 花蓮的餘震序列像兩根
+直柱。下圖的年事件數同時寫著兩部歷史：1999 與 2024 的兩根
+尖峰是餘震序列，來自地球；1994 年那次翻倍的階梯（觸發式改
+連續記錄）則來自儀器。至於 2012 年的觀測網升級，增加的主要
+是 M2 以下的微震偵測，在這份 M≥2 的公開目錄裡幾乎看不出來。
+第 11 章的功課在自己的資料上一目瞭然：讀任何目錄統計圖，先問
+哪些特徵來自地球、哪些來自儀器。</p>
+<p>幾件家底值得清點。規模尺度經歷兩次大換代（震度反推的 <span class="math notranslate nohighlight">\(M_H\)</span> →
+延時規模 <span class="math notranslate nohighlight">\(M_D\)</span> → 1991 年起模擬 Wood–Anderson 的 <span class="math notranslate nohighlight">\(M_L\)</span>，
+其間 1987 年 <span class="math notranslate nohighlight">\(M_D\)</span> 另有一次類比轉數位），
+學界已把 1900–2014 的目錄均一化成 <span class="math notranslate nohighlight">\(M_w\)</span>（Chang et al. 2016，
+補回 188 個早年事件、修復 1985–1991 的資料空隙）；寬頻矩
+張量目錄 AutoBATS 提供 1996 年以來八千多個自動機制解，並
+給出台灣的規模轉換式 <span class="math notranslate nohighlight">\(M_w = 0.87\,M_L + 0.23\)</span>——<span class="math notranslate nohighlight">\(M_L\)</span> 在
+大規模端飽和偏高，做任何跨目錄比較前先換算。中央氣象署的地震目錄全期累積超過 67 萬筆（含更早年代與大量
+微小規模事件；本章使用的 1973 年起、M≥2 公開目錄約 35 萬筆），
+是這一切的基石。</p>
+</section>
+<section id="id3">
+<h2>23.2 統計地震學的積累<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>第 10、11 章的每一條定律，台灣都有自己的數字。整理成一張
+「在地基準值」表（出處與但書見各章）：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>量</p></th>
+<th class="head"><p>台灣值</p></th>
+<th class="head"><p>但書</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>b 值（全台平均）</p></td>
+<td><p>≈ 1.0，陸上高、外海低</p></td>
+<td><p>隨年代與規模尺度變</p></td>
+</tr>
+<tr class="row-odd"><td><p>b 值（1973–87 vs 1994 後）</p></td>
+<td><p>0.83 vs 0.99</p></td>
+<td><p>差異來自尺度換代，非構造</p></td>
+</tr>
+<tr class="row-even"><td><p>Omori p（集集）</p></td>
+<td><p>1.05</p></td>
+<td><p>Lee et al. 2013</p></td>
+</tr>
+<tr class="row-odd"><td><p>Omori p（池上 2022）</p></td>
+<td><p>0.92–1.39</p></td>
+<td><p>強烈依賴擬合時間窗</p></td>
+</tr>
+<tr class="row-even"><td><p>p 隨主震規模</p></td>
+<td><p><span class="math notranslate nohighlight">\(p \approx 0.11 M_m + 0.38\)</span></p></td>
+<td><p>Tsai et al. 2012</p></td>
+</tr>
+<tr class="row-odd"><td><p>Båth ΔM（706 序列）</p></td>
+<td><p>1.20 ± 0.73</p></td>
+<td><p>餘震數 &gt;50 時降至 0.74</p></td>
+</tr>
+<tr class="row-even"><td><p>ETAS（全台，兩份獨立估計）</p></td>
+<td><p><span class="math notranslate nohighlight">\(p \approx 1.04\)</span>–<span class="math notranslate nohighlight">\(1.06\)</span>、<span class="math notranslate nohighlight">\(\alpha \approx 1.0\)</span>–<span class="math notranslate nohighlight">\(1.2\)</span></p></td>
+<td><p>1994 年後目錄、<span class="math notranslate nohighlight">\(M_c = 3.0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mc 空間場</p></td>
+<td><p>陸上 1.5–2.0、外海 2.5–3.2</p></td>
+<td><p>Chan &amp; Wu 2013</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>這張表有兩個讀法。表面上它是速查表；深一層，它是第二部
+方法論的總復習——每一列的「但書」欄，都是前面某一章的
+核心教訓：尺度換代（10 章）、時間窗敏感（10 章）、平均值
+不等於個案預測力（10 章）、參數要配目錄斷代（11 章）。
+另外兩個值得記住的台灣發現：2022 池上序列的<strong>前震 b 值
+（約 0.5–0.6）顯著低於餘震（約 0.85）</strong>，與國際上「前震
+b 值偏低」的候選判別一致——但這是回溯分析，不是即時判定；
+以及集集餘震的異常豐富（GR 外推的最大餘震幾乎與主震同級），
+提醒 Båth「常數」在個案上的脆弱。</p>
+</section>
+<section id="id4">
+<h2>23.3 0403 花蓮：一次誠實的事後檢視<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>第一部<a class="reference internal" href="07_case_hualien2024.html"><span class="doc">第 7 章</span></a>對 0403 花蓮做過
+四類觀測資料的對照，結論是
+乾淨的訊號只有波形與餘震。現在有了第二部的工具，可以問
+更精確的問題：<strong>如果當時台灣有一套完整的預報系統，它會
+說什麼？</strong></p>
+<p>先看長期。用 0403 <strong>之前</strong>的目錄（1973–2024/03）做一張
+PPE 式平滑地震度地圖，疊上 0403 震央：</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[(</span><span class="n">cat</span><span class="o">.</span><span class="n">time</span> <span class="o">&lt;</span> <span class="s2">&quot;2024-04-01&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">ML</span> <span class="o">&gt;=</span> <span class="mf">5.0</span><span class="p">)]</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">119.0</span><span class="p">,</span> <span class="mf">123.5</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">21.0</span><span class="p">,</span> <span class="mf">26.0</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">LON</span><span class="p">,</span> <span class="n">LAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">)</span>
+<span class="n">dens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">LON</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">lo</span><span class="p">,</span> <span class="n">la</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">pre</span><span class="p">[[</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;ML&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">():</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="p">((</span><span class="n">LON</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">*</span> <span class="mi">111</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">la</span><span class="p">)))</span> <span class="o">**</span> <span class="mi">2</span> \
+         <span class="o">+</span> <span class="p">((</span><span class="n">LAT</span> <span class="o">-</span> <span class="n">la</span><span class="p">)</span> <span class="o">*</span> <span class="mi">111</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">dens</span> <span class="o">+=</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mf">4.9</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">r2</span><span class="p">))</span> <span class="o">+</span> <span class="mf">1e-4</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">lons</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">lats</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">dens</span><span class="p">),</span>
+                           <span class="n">colorscale</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
+                           <span class="n">colorbar</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;log₁₀ 相對率&quot;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mf">121.57</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mf">23.88</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+                         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;0403 花蓮 M7.2&quot;</span><span class="p">,</span>
+                         <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">QUAKE_COLOR</span><span class="p">,</span>
+                                     <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">))))</span>
+<span class="n">apply_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;只用 0403 之前的目錄：過去地震的鄰近性「看見」花蓮了嗎？&quot;</span><span class="p">,</span>
+             <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;經度&quot;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;緯度&quot;</span><span class="p">,</span>
+             <span class="n">yaxis_scaleanchor</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;closest&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">560</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="height:560px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="b8ba5b6a-6176-4ded-a985-58f87a44e5ed" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("b8ba5b6a-6176-4ded-a985-58f87a44e5ed")) {                    Plotly.newPlot(                        "b8ba5b6a-6176-4ded-a985-58f87a44e5ed",                        [{"colorbar":{"title":{"text":"log\u2081\u2080 \u76f8\u5c0d\u7387"}},"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"x":{"dtype":"f8","bdata":"AAAAAADAXUBmZmZmZsZdQMzMzMzMzF1AMjMzMzPTXUCYmZmZmdldQP7\u002f\u002f\u002f\u002f\u002f311AZGZmZmbmXUDKzMzMzOxdQDAzMzMz811AlpmZmZn5XUD8\u002f\u002f\u002f\u002f\u002f\u002f9dQGJmZmZmBl5AyMzMzMwMXkAuMzMzMxNeQJSZmZmZGV5A+v\u002f\u002f\u002f\u002f8fXkBgZmZmZiZeQMbMzMzMLF5ALDMzMzMzXkCSmZmZmTleQPj\u002f\u002f\u002f\u002f\u002fP15AXmZmZmZGXkDEzMzMzExeQCozMzMzU15AkJmZmZlZXkD2\u002f\u002f\u002f\u002f\u002f19eQFxmZmZmZl5AwszMzMxsXkAoMzMzM3NeQI6ZmZmZeV5A9P\u002f\u002f\u002f\u002f9\u002fXkBaZmZmZoZeQMDMzMzMjF5AJjMzMzOTXkCMmZmZmZleQPL\u002f\u002f\u002f\u002f\u002fn15AWGZmZmamXkC+zMzMzKxeQCQzMzMzs15AipmZmZm5XkDw\u002f\u002f\u002f\u002f\u002f79eQFZmZmZmxl5AvMzMzMzMXkAiMzMzM9NeQIiZmZmZ2V5A"},"y":{"dtype":"f8","bdata":"AAAAAAAANUCamZmZmRk1QDQzMzMzMzVAzszMzMxMNUBoZmZmZmY1QAIAAAAAgDVAnJmZmZmZNUA2MzMzM7M1QNDMzMzMzDVAamZmZmbmNUAEAAAAAAA2QJ6ZmZmZGTZAODMzMzMzNkDSzMzMzEw2QGxmZmZmZjZABgAAAACANkCgmZmZmZk2QDozMzMzszZA1MzMzMzMNkBuZmZmZuY2QAgAAAAAADdAopmZmZkZN0A8MzMzMzM3QNbMzMzMTDdAcGZmZmZmN0AKAAAAAIA3QKSZmZmZmTdAPjMzMzOzN0DYzMzMzMw3QHJmZmZm5jdADAAAAAAAOECmmZmZmRk4QEAzMzMzMzhA2szMzMxMOEB0ZmZmZmY4QA4AAAAAgDhAqJmZmZmZOEBCMzMzM7M4QNzMzMzMzDhAdmZmZmbmOEAQAAAAAAA5QKqZmZmZGTlARDMzMzMzOUDezMzMzEw5QHhmZmZmZjlAEgAAAACAOUCsmZmZmZk5QEYzMzMzszlA4MzMzMzMOUB6ZmZmZuY5QA=="},"z":{"dtype":"f8","bdata":"8g4QR0WG9r8XKTgStYL2v7mT7uiXfva\u002f\u002fqsM0Lt59r\u002f67iWP1nP2v6EayfF9bPa\u002fQaoKcS5j9r\u002ftD3Vsilf2v1EOvv02Sva\u002f+iUYovU+9r\u002fFPfWtUzn2vxiDf0RsMva\u002fyjuIse4o9r+hgZcGDyT2v8yVhY\u002ffLPa\u002faNbpaKU19r+c7a0d2Tf2v7v+lakmNva\u002fGES8ingy9r+X2jsM7C32v3nEia2MKfa\u002ffWo1Spom9r+ntzNTLCb2v354DFxpKPa\u002fff5JIFss9r\u002fTVLIfyTD2vzWDmbjmNPa\u002fMVnA1jc49r+VvAkQJTr2v8Rn3ZsrOva\u002fSM2YZiA89r9wRGPyMUb2vwxJRUepUfa\u002fyVmPxLRa9r8SVjB572H2vxWJd60IaPa\u002fp6lCMl1t9r\u002f2Z+rjHnL2vwZLvaRrdva\u002fHGb+WFd69r+um6NX8H32vy1dmo9Bgfa\u002fu0taq1OE9r\u002fwTCa6LYf2v\u002fZSQ5rVifa\u002fP7CrGPuD9r9brZIZVID2v1Xe3gMvfPa\u002fp2COfmp39r\u002f3PYNs3HH2vyKmovtUa\u002fa\u002fw78Gpqxj9r+4a8tk6Fr2v6spS394Ufa\u002f+JNs0zdI9r\u002fYEjpS1D72v7mgqus2Mva\u002fi9kFYlsh9r8DKGuYgRP2v+U2ga2yHfa\u002fGqZNj8gn9r+AlNJcCyn2vwIPfm2MJfa\u002fZyC1uWAf9r\u002fpT2hviRf2v7nuBtdYD\u002fa\u002fMmO64VoJ9r8e4Nxymwj2v76AIlaTDfa\u002fQHUShQQV9r9\u002fEtiF6xv2v7MW08dcIfa\u002f+xqsLCwl9r\u002fp7Ct\u002fsyb2v\u002fSuqj0aJPa\u002fU0wIjBAj9r99qZ+b\u002fzP2vysQZ6cORfa\u002f4EoLp9dQ9r+RT4YiwFn2v074GLENYfa\u002f3nbNQ1Bn9r8i8\u002fUD0Wz2vxrJ8PW6cfa\u002f96dXWSp29r9\u002fp3s5M3r2vwBY3Zfkffa\u002fVP1GH0qB9r9\u002fMEAjbYT2v5DXPUFVh\u002fa\u002fkt9VSpiB9r+qd0Rh1332v5esZyKiefa\u002fHg4ovuB09r+47r\u002fVeG\u002f2v0KMyjtRafa\u002fr+3EI1pi9r\u002f0rnRqmVr2v1MH2xwwUva\u002f+GRWrzVJ9r9i6hVUUj\u002f2vxSjKKu6M\u002fa\u002fzyxDQYwm9r8YYkn1Oxz2v5zxvJcDG\u002fa\u002f0pb\u002f\u002fG8b9r87nUhoFhj2v3brk+0aEfa\u002fBNs7VrIG9r9I3mRcj\u002fj1v0Wi29mD5\u002fW\u002fGIXjWv3Y9b\u002fSfHyOPtf1vx6ZuRsN5fW\u002f5M0uTIf19b\u002fhtUYgKAH2v4\u002fkw3+jCPa\u002fMd8tcT4N9r+ONL2npA\u002f2v\u002fDrDtouEfa\u002fTI\u002fi+ngX9r8qYhUPAij2v\u002f5U6Zg6Ofa\u002fhHAZLZZG9r\u002f7lNOWCVH2v8x1hYKaWfa\u002f3J2VIeBg9r+HPsVfMmf2v5mbwVnIbPa\u002ffOeZKcdx9r8+1gk9SXb2v7\u002fTTztieva\u002frZZUPyF+9r9J6EIzkoH2v+\u002f3NLC+hPa\u002fq9mV2BN\u002f9r\u002fifaeMM3v2v0hNgEjidva\u002fHKkfmAty9r91L4WAmWz2v5H1oEx2Zva\u002fILIDQI9f9r\u002fLBJWZ1lf2v51iGLBAT\u002fa\u002fXdBzE7lF9r8HlilrIDv2v\u002fxYV52GL\u002fa\u002fg6Kb2LUj9r+9OVvAdRn2vwiB8FHGEfa\u002ft8Bdut0K9r9S1iYPjQL2vzZfwqVd9\u002fW\u002ffgRb3FPn9b9yuxe4h8\u002f1v9r9Mzk3r\u002fW\u002f6AnIB0uR9b9RqlKA+Y\u002f1vxae7nXtsPW\u002fYHPwdvbO9b9WGhnpyd\u002f1v26+cuEA6fW\u002fpoH+spPt9b8zfD+Psu71v5utjSU78vW\u002f2E0t9Y4C9r9EUm4u2hj2v4EOKJ9JLPa\u002fowq8IJo79r+8bwWdwUf2v7DTSsqzUfa\u002fH6X\u002fnhNa9r+LrIc0SWH2v8QoKgCZZ\u002fa\u002fxLY+ATJt9r9jUizRNXL2v\u002fpC+k29dva\u002fcwrMadt69r9o4vzunn72v68KcacTgva\u002fF+7NlWV89r\u002f\u002fxKW+YHj2vyOQX2boc\u002fa\u002fOIrYD+du9r\u002f4rMtmRGn2vxFIleHkYva\u002fTuUbsqhb9r+DtwYEaVP2vyaMAsPySfa\u002fNB\u002fytAI\u002f9r9INJkrWDL2v9AKjiEWJPa\u002fyu1wMHkV9r9QM8iqWwj2vxo9Bsq4\u002fPW\u002fUji1jhzx9b9eUrlIzeT1v1t7WfgS1vW\u002fPiBjn4\u002fA9b\u002f4zzt+7pz1v4P5pa28avW\u002fUdpxYCFK9b8Q+SY7Q1b1v3Zwjj4Fg\u002fW\u002fnG8ifiCk9b9JLx0hIrb1v4BXJ1mTv\u002fW\u002fd1LgLhHD9b+83ZDRKcD1v2l4UWBLwPW\u002fTlAIHQ\u002fg9b8\u002fAUbq+QP2vxCkfnlDHfa\u002fKjndiakv9r9TI3qK5D32v0+LlD1iSfa\u002fdxM\u002frvRS9r9uylwVHlv2v6Wa7MszYva\u002fUUKEUXBo9r9ToB1J\u002fW32v\u002fraP035cva\u002fwem1fXt39r+FENO\u002flXv2v+y69jdWf\u002fa\u002fNPR0LoV59r9AruFHWXX2v8PwQ5qycPa\u002fTNzyxXdr9r\u002ftjv1ZimX2v5J8K0\u002fEXva\u002fMsW8i\u002fNW9r+46q7\u002f0U32v8xdHPv3Qva\u002fMpTLksU19r8+mMNCSiX2v\u002f5xlvGqEPa\u002fJaJ2AB769b8YA6dqaej1v\u002fAyio3T2fW\u002fMWHknXjI9b94O9+yyrj1v\u002fCV+hfPqfW\u002fwnJsfFuT9b8J9iw+12X1v2oK5lNnI\u002fW\u002f+uTjzp4R9b8XMp8ojjf1v3fSCCQ3XPW\u002fUf7FI0ly9b8xSSEXSYL1v5JOk4tNivW\u002flTDcSiaL9b\u002fD\u002fWGZ5oj1v56ZfkNGmfW\u002f70VF4dLE9b\u002f4tZhRNe\u002f1v5WXRdNeDfa\u002fwZFgThAj9r9U5aEEkzP2v5ungP+6QPa\u002fml2NrJJL9r\u002fCN7RrvFT2vxSXakyhXPa\u002fH3HdnYhj9r\u002fKrPWypGn2v+rwLT0ab\u002fa\u002fteg6wAR09r8vAC5geXj2v9JfgLWIfPa\u002fU1ZlSGh29r+GBGacF3L2v8TxQ0JBbfa\u002fkyjHQMZn9r\u002fmE3gtgGH2v4zwrFQ8Wva\u002fXp9ZUrNR9r+G+IVtekf2vyYLyQrpOva\u002fGQAdXOMq9r98EYgUYRX2vzy9amfe9vW\u002fiBiGvSzR9b81rMFzGbr1v7yORXiuqfW\u002f+GDalqWI9b\u002fPYg4fJ3f1vwjjGprzd\u002fW\u002fpORec1Nq9b\u002f4SMTLHjz1v8Mjp1PyAfW\u002fLfPF3Q0D9b\u002f+pnlcqR31v29k6aNWLfW\u002fdjtjUyQ89b8Slq4Eb0v1v7xGNulrTPW\u002fry9qsU9G9b+2gXR+c0P1v33g88yvaPW\u002fq2U8EoSo9b+AtB7GW9r1vyYRhrky\u002ffW\u002fJjwuFSsW9r\u002ffX0lJACn2vxIwasncN\u002fa\u002f\u002fmyqjAFE9r8oTxnlMU72v5IcSkTrVva\u002fLaPaG4Je9r+g95GPMWX2v2sDUXQka\u002fa\u002fm77At3pw9r\u002fIiMrBTHX2v6nTzaStefa\u002fGL2Wuv9y9r+CDzrpk272v2PpClyUafa\u002fDc7pq9tj9r+2gsMmO132vz4aY2JzVfa\u002fNP1iPidM9r+or73gxED2v3ZIOLBcMva\u002fypHRxlsf9r\u002ftbmbyJgX2v1MAlXgQ4PW\u002fQd1Kizqz9b85QJGggZb1v9grYeLKfvW\u002frg6Qo89O9b9nrWSq0j\u002f1v6b8WOpYWfW\u002feTp7o+VS9b\u002fCxdyKgij1vxYs0VKi8\u002fS\u002f9XeTsfrl9L\u002fjtkrlbu70v76PgtZh7\u002fS\u002fQu1EQIj99L8DaA01Lw31v+joF\u002fGhB\u002fW\u002fOE8Sp\u002fcF9b+\u002f0nmscBr1vyiU+s1LRPW\u002fBpmNDEqK9b+8tcHtGsX1v9XwcpIb7fW\u002fXy\u002fvOk0J9r8i01BYYh72v\u002f\u002fdZkDpLva\u002fC06X0VY89r9yBOHZjEf2v65SdrUbUfa\u002fXLc7GGRZ9r+UsGdtqWD2vwo431gcZ\u002fa\u002fesaW\u002f+Bs9r+WT0\u002fwEnL2v4wCJajHdva\u002fIpVPjTNv9r8mPXZXwWr2v42TKTqpZfa\u002fIROBaL9f9r8XH5pTzlj2vx0qzHeMUPa\u002fv4SwcYpG9r8KrP3METr2v0gIYjLlKfa\u002fyBwHX9IT9r\u002fGLAl1jPT1vxtkMubvyfW\u002f3v7U33qW9b9S565L+nb1v7j8OfHpZPW\u002f5RW6J1pM9b8EWXdGtUX1v7f22HiUT\u002fW\u002fh0O9P95A9b+G3w3P4Q71v6vATdD0xPS\u002fo6HV6+ab9L\u002fqCAP8HqP0v9YT5Nlvp\u002fS\u002ffcJqEbat9L+F1AhPerr0vz10u9RZuvS\u002fjQ4GO5jR9L9Z0IB0Ofr0v+4K\u002fHEMLPW\u002fzS1ugeZz9b\u002fCCCRkT7L1vxIuExHh3fW\u002fmq5DIc\u002f89b9WvUC46xP2v21MtTv\u002fJfa\u002f7XNdBKY09r8b\u002fG072kD2v0SWuKg7S\u002fa\u002fUXeZOjVU9r9LJJh0EVz2v4kgPRgGY\u002fa\u002fzf0nGjtp9r8MEiz0zm72vy3wvmzZc\u002fa\u002fXzIwDt1q9r\u002fAOHP7imb2v3nhaLF4Yfa\u002fExCLOnVb9r+6ZWvlR1T2v1QJkh+jS\u002fa\u002fvKsWqg5B9r9NIpNpvjP2vxHrwNU6Iva\u002f41t636MJ9r9s\u002fTW2\u002feT1vx+AjdUntPW\u002fosshixuD9b\u002fW\u002fAXBkmP1v3jauAmTT\u002fW\u002ffO9wL5JF9b\u002fbZTqnfEn1v4au0zFMR\u002fW\u002fcy\u002f+PYQt9b8nkz3ZZPX0v8L87Jkvo\u002fS\u002fVLfoaztf9L8cVqwU5U70v7Ur9Az\u002fOvS\u002fH7spQEg49L+FodVPcFD0v5uCc666UvS\u002fqvBEDFSG9L9RMpu4gcn0vz7Ijm4zEvW\u002fMT5q8rdg9b8fIcXRS6H1vwnn5H3Az\u002fW\u002fmaYMMO3w9b+GD27YwQn2v1FvKSk1Hfa\u002ftNnJOv0s9r9w3RODIzr2v8xpJvhRRfa\u002fWr\u002fCz\u002fpO9r8FoDv7bVf2v0wzaWblXva\u002fM3zxSYxl9r\u002fEH+m6g2v2v54baZzlcPa\u002fVzJlpr1l9r8mhre00GH2v8ow5WX2XPa\u002fMEkFkfxW9r8kxZbxrk\u002f2v5nkAMfFRva\u002fFBgB8M479r8KXogmBi72v+2KvQkBHPa\u002fBqZT4\u002fkC9r+Rg9ve1d31v9BAY+xQp\u002fW\u002fWnx+j55q9b+55f+2k0X1vyV1ivTGKvW\u002frtO4db8p9b\u002fcAFh0MDr1vyPh7m0iN\u002fW\u002fd65jFu0V9b\u002fw0GpIqdr0v9uZdtP9lfS\u002f+oPcvS9W9L8ftkqWDhz0v8GrlCf30vO\u002fCkKvCWHD87+Dxg5nT\u002fTzvyrh59EAFPS\u002fPhDXiOpM9L\u002fnfyt4+Yv0v\u002fPrLf+16vS\u002fDBO4PaRL9b8VZSx1RZL1v86zpxcdw\u002fW\u002fEnkx5NDl9b8GpKXm9f\u002f1v0XUlsCTFPa\u002fwkRJE2Il9r+r8lAJbTP2vwO1H2RiP\u002fa\u002fglQ7RrhJ9r9ROC87wlL2v7bGClS9Wva\u002fZAL1eddh9r+N5SgKNGj2vw3+ldbubfa\u002fPi4fNXBf9r\u002fwDMKtZVz2vyoa5f8SWPa\u002fRs1A91FS9r8rNGbtAkv2v+89TbTxQfa\u002fOTfT2sE29r+SwFSe0yj2vxbzdiYNF\u002fa\u002fNRsayGr\u002f9b8FDLu3Qd71v5a15v6jrvW\u002f8diu7Ld29b\u002fRfyybMEn1v1+mIFDMLPW\u002fc0fOrhkm9b8AEHQWmyv1v7PlhCUUJPW\u002f40+iTHv\u002f9L\u002fPiR2ZU7r0v77MsH\u002f\u002fZfS\u002f1nvgd3gn9L\u002fGH4ZHU+LzvwtxYT8elfO\u002fsbYPTpqG87\u002fn9SKuL7rzv\u002f+UI1OYAPS\u002f0Sk7F9FE9L9dOtLKQI70v7O5pGxA7vS\u002fchs3YypH9b+5RaJN44j1v0RCPnJSuPW\u002fIGEOmWvb9b\u002f7TjJBd\u002fb1v\u002fQlTVARDPa\u002fb44a7M8d9r9E71NCtSz2v4B4YDhtOfa\u002f29IWA29E9r8NO7U+EE72vxhiQUeQVva\u002f\u002fnWsPB9e9r8q636B4mT2v1EOVrP3ava\u002f5Lh8XVVX9r\u002fKZrxPGVb2v0958jTFUva\u002fpffnFXNN9r\u002fkVMegPUb2v1vBvOEUPfa\u002fuF3ED7sx9r+cHRQIwSP2vwaqEShzEva\u002fQsnd2bP89b+Otl6k6OD1v2C51k7jvfW\u002feG6r7D2W9b\u002fE0JNK4nD1vwn9HPTSU\u002fW\u002fN7cV2bo99b\u002fciP3+dyj1v86VLH17FPW\u002fS\u002f1ubYrr9L\u002fWYpHMrJ\u002f0v4rr7IawPPS\u002fNJXJuLjz878ROQHUFKbzv2p9zgrGQfO\u002fIiEh7fwz87\u002f4JRM3NJbzv5ogJ6YM\u002ffO\u002f1s9sP2hS9L\u002fgylK\u002fs6P0v4W63wSl9\u002fS\u002flEzTY1hD9b85omMm2n\u002f1vxQynJ\u002fmrfW\u002fqmcCPjrR9b8hY2tpDe31v7opV0+SA\u002fa\u002f7unhyTgW9r+SgW9a9SX2v1D\u002f8a9vM\u002fa\u002ftMdhpB4\u002f9r8dxdIOWUn2v3xKOh1gUva\u002fEtrp5GVa9r9QNhGtkWH2v45TVtECaPa\u002fUo+IkrhM9r+8rUwm8E72v5iidqUcTfa\u002fPwP9HWBI9r8bEOnOVEH2v+VLBgUWOPa\u002fAcP\u002fX30s9r+BMBj4Qx72vzhlj58MDfa\u002fevQ4g1749b9ZBbVdqN\u002f1v8tIOi53wvW\u002f36G8Je+g9b9SspZY3Xz1vzuqiC8YXPW\u002fRklVRjxC9b9sKvJS0Cj1v4uZ0vtkCPW\u002fKrK4lxDV9L85QRG87YP0vxgDNiufHvS\u002fNO8H4lDO87+5FeWK\u002fnLzv8fLQldw9\u002fK\u002f\u002fNGXs6To8r98Uhq3MmXzvyJqoJmI3\u002fO\u002fYogmfkw69L9TdFzQ2I\u002f0v9uvM\u002fDy5PS\u002fqqRkHJY09b8FF2gMfHP1v+jiQzF9ovW\u002f3DA4gqzG9b8pNrOac+P1v7pIwcLy+vW\u002fmfauQ4kO9r8uLSglIx\u002f2v2xzwQllLfa\u002fpltuqcU59r8ZOZ4fnUT2vzBKjHIuTva\u002fKw10t61W9r\u002f3czkoRF72v2QEUe4SZfa\u002fMlJzwxtB9r8cyp1cxEf2v8RHRLE8R\u002fa\u002fUct+rQND9r+S0jzzNDz2vzn3sFrhMva\u002fgVtu6dQm9r8\u002f6hLN1Bf2vxgdgRjHBfa\u002f965evqrw9b9o2wMocNj1v7Ir7D2NvPW\u002fsaPQLZGa9b\u002fIhM\u002fksm\u002f1vxpGSOh3SfW\u002flmtD99Qy9b8qDbSPBhn1vwP\u002ffj\u002fQ8fS\u002fAntEa7G19L9HiC0ttVn0v4cszd2M6fO\u002fI9z8Gtqd87+lXEbyHEjzv2G4ehEt1vK\u002fpCbXwcm28r9v6HJUCjPzv0TJjbl\u002fwvO\u002fHzbLn28Y9L8iT8euZ2n0v9+jm0dzyvS\u002fBFVjTQIj9b\u002fQiDYtN2X1v+rBLLT2lfW\u002f3gfLNXm79b\u002fMUEAFc9n1vw1maQcQ8vW\u002f7rZCCK0G9r\u002f5IBqSMxj2v\u002fEtdgBIJ\u002fa\u002fIoBDX2I09r+u66rp3D\u002f2v1ChCwn9Sfa\u002fO4vaL\u002flS9r\u002fIMLXM\u002fFr2v2wwtgcrYva\u002fy1mRFoA89r8IEKPW50H2v1Gq\u002fUegQPa\u002fUjrVvtY89r\u002f+6ah9uDb2v0NZgFaCLfa\u002fu+roksQg9r9MWsFSFRD2v0QgTj2W+\u002fW\u002fF48+FPnj9b+H\u002fylptMn1v9q\u002fJZFsrvW\u002f0hq53YqN9b+xSGW992H1v2SmMSPTN\u002fW\u002f4Xd4sDoY9b8XZ40mHff0v9RQrbOGy\u002fS\u002fP0f0iOGL9L\u002fASFQJaCr0v29AQTGas\u002fO\u002fj7mVNelv878yW902Izbzvxz7e1xuy\u002fK\u002fXdyXNTCd8r+AsBRZRxjzv6Bppk62tPO\u002fH075QMYZ9L9VCmcHAmb0v8DWBIZRvvS\u002fmNKad1QT9b+ILmLJAVb1v\u002fGQONZXiPW\u002fBzPnMW+v9b\u002fmsWA+3s71vyUHulPL6PW\u002fi\u002f\u002fA0JH+9b9dL47uHBH2v3TVQ1gUIfa\u002fok286fMu9r9paOKZGTv2v8fUUj3ORfa\u002f7jPyT0tP9r9qX\u002fvovlf2vyEVDYBOX\u002fa\u002f7p\u002f57DE\u002f9r93CoSaczv2v\u002fI6yZ0uNva\u002fj2KF9Ys09r\u002fEp38V5DD2v5jk0YRYKPa\u002fq4awNOka9r9RX3WK7Qf2v5z\u002fZuJT7\u002fW\u002fzirFXbjS9b\u002fxtWhTOrH1v+YbkvgimPW\u002fNb9Hofl79b9ZlQmy2FL1v8rcniStHvW\u002faCgkyDLn9L+4PyFYGr30vyKwMBPKjfS\u002fZo3gz3JS9L\u002fsPO1FSP\u002fzv2VzypMfj\u002fO\u002fTagge7xI87+X+5WPgRnzv+Kru\u002fLirPK\u002fWosavh2C8r\u002f4MwKMrwjzv962J2u\u002fpPO\u002fWbRYlZAV9L8hlHx8LGb0vzs8qKXlsPS\u002fcSi2HmcB9b88ECO9+kT1v5TSp\u002fwmefW\u002fUY5HOT2i9b9PnuWchMP1v7xjubQJ3\u002fW\u002fNWScvyn29b+BQ4EL2Qn2v1X6nmfIGva\u002fDcEOS3sp9r\u002fVQNfAVTb2v8YejHylQfa\u002ffkMC8KdL9r97gFJ3jlT2v\u002fCQ5USBXPa\u002fdXzHRPpB9r8HlO9YdjP2v2pVzG\u002fwJva\u002ffk+kUMYr9r\u002fmaZ\u002fFFCz2v+NMgAIyJPa\u002fZGt7DFIW9r99SyxkkQL2v+5rMyWL6PW\u002fF1CHl37H9b+HYWSus5\u002f1v5u7eHZagfW\u002fp1DR4wJk9b+6t8LxDzr1vxObD7kj\u002fPS\u002fUxC2KC2x9L+D58scAXD0vx1SFk31KvS\u002fci9sVFv5878slomYC9Dzv0lVpaZYffO\u002fgpBeq5cz879wakyWSwDzv+Z7mnqfo\u002fK\u002fYu3LoySL8r9IwAZi0v3yv3GpSbIXfPO\u002f6y4rXUfx878y+IAkJVL0v6M8YjHdovS\u002fsI0PNlLu9L984JMklDD1v12ly9FOZ\u002fW\u002fhPGPAG2T9b9Tf2t7OLf1v26ATiG61PW\u002fpQl3YG\u002ft9b8YZ\u002f2kZwL2v\u002f2qHIlmFPa\u002fmHSrSvwj9r94DrLplTH2v\u002fKs3KqHPfa\u002fDD3OBRRI9r+7EmpPcFH2v1PuQfHHWfa\u002forZ+LbRG9r+zdlNCgDj2v4mrsX3FLPa\u002f7SK+RCgt9r8aqnCrzSr2v9fveRW0Ifa\u002ftvTr0xMT9r8dJE7HBf\u002f1v6TN1wOp5PW\u002fu5BoRAzC9b83+C1RX5X1v24Icr6uZfW\u002fESFLNQ9D9b8WDpRuFRr1v+I1uyqe0vS\u002fD\u002fft\u002fn1z9L8MFYncUA\u002f0vwgiV4vpuvO\u002fgxLeUAqd8786yrvB3pjzv+NWeCneaPO\u002fmD5tvQAl879Fx+gKr+Hyv5oD8kwxlPK\u002fahbtgAua8r+nNgwNN+\u002fyv8+W4YD0SPO\u002fHJDoL5S0879YnO7hQyX0v4DLZb7Rf\u002fS\u002f8FuBVaTK9L8TUbdJ6xL1vxyBWw1iUfW\u002fMYNebbaC9b\u002fOdlCs86n1v\u002fzlqGTjyfW\u002fuEF37Wrk9b9KareF0Pr1v2W+mB72Dfa\u002fnZboCn4e9r+mRUD\u002f4Cz2v6Oa3Wx7Ofa\u002fPS7C2pVE9r8A\u002faNNak72v8QXLuknV\u002fa\u002fZBhzvXpM9r\u002fuT34JE0P2v\u002f3WNsVVOva\u002f+8aZlsoz9r\u002f8MXu\u002fByz2v\u002fuHs72PIPa\u002fkBXuRLAQ9r9ML2QHrPv1v6+wVKgS4PW\u002fyjWRoJC79b+tqhDzgIv1v9g+sfkNVPW\u002fz3FvG74r9b+AudAKRv30v4i489g+pvS\u002fOgZbpXop9L+JjmCl5LXzv1AyVr+\u002fefO\u002fE68mSxZr87\u002fv1ADbSl3zv2Zr43UsN\u002fO\u002fbuyYbJLv8r\u002fqpjiBIa\u002fyv9NzJTbJc\u002fK\u002fbc7zxuxt8r\u002fUR9IVsrjyv7BLlAUXHfO\u002fDWNBJ\u002fmF87\u002fPBfa6vu7zvyH8TkMQSvS\u002fATCDJxiZ9L\u002fEl+C+UO70v\u002f5N6CZ6OPW\u002fwtvalahw9b+hjc7\u002fAZz1v+w2GW6uvvW\u002f9VxnVjTb9b8P6LK7I\u002fP1v1K9zY6DB\u002fa\u002fpAJsGgsZ9r\u002fjsDhuQCj2v1+RDE6JNfa\u002fpoFDLjVB9r8tBtttg0v2v3rrkWynVPa\u002fhC0B41xQ9r\u002fOLcY7ykj2v78E4PSSQPa\u002fLhByKL839r8bzvdxUS32vwhsOAsTIPa\u002fNHJxkPgO9r8TumkiuPj1v0bRk6g+2\u002fW\u002feYsoOvKz9b\u002fDuytEf4X1v7P6wJMEVvW\u002fMtxoPfsk9b9Bzr9rcOv0v\u002f8OvECvlfS\u002f4OdkEdEq9L8\u002fTLQHAcfzv6ltEekPhfO\u002fvPJbsRRj87+SCa0h\u002fzrzv204tK\u002fzC\u002fO\u002fbt\u002fg03im8r8scCUpc0byv2lWuE+RKPK\u002fqCEfsUgt8r\u002fL7gtqVIDyv0JjKhyS8\u002fK\u002fUbW8r\u002fJj8783BwhJB8XzvyNTPhNmF\u002fS\u002f6dDBL99k9L+yCKx7J8n0vz\u002f66LWpH\u002fW\u002fZYdweJde9b925h6R8Y31v1t0QsVas\u002fW\u002fZJT7zOzR9b\u002feYfuDduv1v64YiPweAfa\u002f9a8jBLET9r+BGqQQwCP2v0Mcb8y7Mfa\u002fc8XrR\u002fs99r+Cfobaw0j2v1EZp6BNUva\u002folwPyGRS9r9qOjrofUv2v2zWUuFSQ\u002fa\u002fJmm317w59r9kIyfKOC72vwG6wkP\u002fH\u002fa\u002foDGr9QkO9r+yybKuzvb1v5jBkfqt1\u002fW\u002fN+CrIx6t9b+2RDf1qHr1v2MdYugQSvW\u002fP2bPKnoT9b\u002faASSJ6tv0v5Y0KgxwlPS\u002fTktkkiZG9L\u002fRIDejk\u002f\u002fzv7bhG9PSxPO\u002f\u002foBBBM6R878CIGHxk1bzv29uNHNZ+vK\u002fIUTE2HJQ8r8x3bJwRsfxv+9JfaUP4\u002fG\u002fNqLOOQIT8r9ODNJeu2HyvzGnqMt1ufK\u002fkIWO0iYb879SOyBIBo3zv0AZM4Sd6\u002fO\u002fbnG+WcY+9L9kIuBMZK70v8spDIQpC\u002fW\u002fJvgyduBN9b8lsDQGOoD1vwqGcJ4aqPW\u002fM7b77bDI9b+nWyEm3uP1vzIPaX3a+vW\u002fmcjNx38O9r+OKCMWbh\u002f2v1P9iWAfLva\u002fcSTBAvM69r+0gdfyNEb2v0Ts+I8iUPa\u002fW+0sAmxT9r\u002fWc6ZI+Ez2v8ckCIbdRPa\u002fPObfYAU79r+HvZwPFS\u002f2v87RVKtuIPa\u002fEwyfiB4O9r\u002fDx\u002fZxlvb1v0s+HQgM1\u002fW\u002fJ\u002fqt4K2q9b9AF4jq8G\u002f1v\u002frWhVJ2O\u002fW\u002fA5\u002ftkbkN9b\u002fBWPy5ldD0v+8GCHLZhPS\u002fcqjo2TI59L\u002fq97t6FPzzv5JSvaoQzfO\u002fr+Vk4e6n8784L6+JmXLzv7DaKDK7EfO\u002fPsfmI4J88r+OTKh2Wv\u002fxv\u002f29ADjh6\u002fG\u002f4R4g9+fy8b\u002f61MomNA7yv4vDnQGITfK\u002fwVYp\u002fb2w8r\u002fW6Rks+D3zv4aq9sm5yfO\u002fuN\u002fMLeA89L8C8yCMMKX0v141fcx\u002f+\u002fS\u002fC41Ruls+9b8YcWaDxnL1v8TnDEHvnPW\u002f5yzCDo6\u002f9b8oCKwEbdz1v5b9vonJ9PW\u002fg1+C7IkJ9r8gAYMuWxv2v9+l85rCKva\u002fOMEE2Sg49r+saLtI4UP2vz1ArR8vTva\u002f8DlvOzVU9r8ah+RqHk72v+Y1V7YeRva\u002frFccWDw89r\u002fYgoN9NDD2v2OL3jGDIfa\u002fDX7WhFMP9r8tsqxhTfj1vylMvaEp2vW\u002fXJFpJS+x9b91QYmj0Xr1v74NHxd3RPW\u002fgvIoGHIR9b9iJlLGNMf0vwk5D5e0c\u002fS\u002fyl5AYfgp9L\u002fkhV9LP+Xzv9rJKH5yqvO\u002foWdCL2aL879DmNuAlmfzvyNXYn76KvO\u002ff4Frby\u002fP8r+KQCd+ulvyv9tD6dhx\u002fvG\u002fxPQQksi18b8Mvf5TOprxv97FMAR7zPG\u002fER0fnhMt8r9SI8hQYdTyv42On0p2lPO\u002fYp1HA4Qm9L8f9epfy5P0v4EmjEej6fS\u002fa9YYOv8t9b\u002fyNPCI9WT1v98BVQqwkfW\u002fo79qwoe29b+6igIvNtX1vzjswRYD7\u002fW\u002fW8hhpOUE9r8ZaG8Xmxf2v4TJ21u2J\u002fa\u002fZh3o7Ko19r\u002f10eiR1EH2v6HHDvZ8TPa\u002fyeyK51ZV9r+EuUjeaE\u002f2vwrN9DN\u002fR\u002fa\u002fvhUqo6099r\u002ft3rl0vzH2v7OxyHhFI\u002fa\u002fFNnYxY4R9r8uHyfvj\u002fv1vzv\u002f8VC+3\u002fW\u002f7UY6DBm89b9CYC5FTI\u002f1v9Xas7gQWvW\u002fSEt0ce0W9b9cwfuFCL30vxU6fpvsXPS\u002fk\u002fa1x0cV9L9Zca2yodTzv9M2hZjykfO\u002frlusdXdk87+5vFNtuDfzv1AfGaddGvO\u002f\u002fqeIssvo8r+PYZIaGYHyv\u002f0kgmLq9vG\u002f6iLcOYFu8b\u002fItFEgYCLxv2ri\u002fcmaR\u002fG\u002f5LPbiGjB8b9Ea6VHVIzyv1yWAv3MYfO\u002f4JS65t8A9L9W+0K4bHb0vwpiTPj90fS\u002fV7PhnCgb9b8rfFq6Nlb1v9yhfT1BhvW\u002fqEfhQ66t9b9oivxDV871v3iN0AOm6fW\u002fB\u002fv7ta4A9r+AOsVXRRT2v5py\u002fAEOJfa\u002f1M8G+Ygz9r81u39\u002fG0D2v7QhN0sWS\u002fa\u002fBOgXvxNX9r848Oo\u002fDFH2v9TqxjcrSfa\u002fYXd0UXg\u002f9r+fiC5FwjP2v9D2Pa6oJfa\u002fBIO\u002fn5gU9r9ucRpxwP\u002f1v4s8RHX\u002f5fW\u002f8OESo9nF9b\u002fXUrGITZ31v9OvYxJyaPW\u002fgnS91p0d9b86OUViDq\u002f0v4mjNpyZLvS\u002fce0qrv7y87\u002fSk6TByLvzv2rrbCIkbvO\u002fRKRHk7wt87+dT1h+I\u002f3yv9Bsvgwi8\u002fK\u002fvsyq4VbT8r\u002fShfNL\u002fHXyv2f4TKg+5PG\u002fL6DQJfxW8b\u002fMtw\u002fFsP3wv4IvhToWEvG\u002fmV7aKIuW8b\u002fqNqN76WfyvxsCN8A0L\u002fO\u002fgPhtsSnO878MFbmra030v9ID64G8s\u002fS\u002fTZrL12QF9b8tau\u002fKg0b1v5KQJEjNevW\u002f5xtP6zel9b+Z69JWA8j1vxi92IPd5PW\u002fGUTGDwj99b+ufXqddRH2v9U+v0vfIva\u002fNdgPBtQx9r\u002fewBZrwz72vx3NjJsFSva\u002fvIKuRExZ9r\u002fsMPlnCVP2vzw67MArS\u002fa\u002fI7xZqqJB9r\u002fpGimaOTb2vzwiOVOZKPa\u002fwovnkEMY9r\u002fyc\u002fkeiQT2vxrj50x47PW\u002fBnL3a7jO9b+eaKexJqn1v9HCUajRd\u002fW\u002fJQS63z4z9b8RhZrXg9H0v4m0f++YYPS\u002fTFN8zf0S9L8Qr+w2Ab7zvwpbLiGZTfO\u002f\u002fKtt46Hn8r8WGhE9cavyv1SI7x5IofK\u002fGnriHtiP8r8rd+hsFUjyvwF8\u002fw2rxvG\u002fore1e3BQ8b\u002fIp69f1\u002f3wvyCL6ViW7fC\u002fLOIKK0Jd8b\u002fMuZY7sxnyv0B+CFqD0\u002fK\u002fVkSXjYJ8878u2X2KrhP0v\u002fj1EpaUjvS\u002fOqgeaXLt9L\u002fjfOctmzb1v+7VHu3mb\u002fW\u002fq8C\u002f74+d9b\u002f\u002fmlo+iML1v4gZOnbi4PW\u002fDwfYoBv69b\u002faCaEbSw\u002f2v+sy6qBBIfa\u002fpOWwxJ0w9r8bUA7L2T32vydYkjZVSfa\u002fsjqc0bdb9r9rXfs1RlX2vzHVmeR2Tfa\u002fV5Fu7iVE9r9o8KMhGzn2v97xpZYFLPa\u002fYuQvrHUc9r+yxStI0wn2v4EaUv1M8\u002fW\u002fQKiEdrjX9b8MEVSOVrX1v0yd8pJ3ifW\u002fh1SuVV1Q9b\u002fqlQrtGgf1v4zKfFMxsfS\u002fMgbbXIpR9L+ZnIGXY9jzvxB7YEmaQPO\u002fcIRx+Aq08r8v36xiC0byv90ZcdPFBfK\u002fBoXpthUR8r\u002fYYxVAOAnyv8wLY80fsPG\u002fRMieweY18b8LtTnBvcvwv7k3+GcqjPC\u002fw5uHPnLG8L9uVwV7lHXxv+AvRnP6MvK\u002fR4ghusD+8r+8UqFC58rzv\u002ftjar25ZvS\u002fZczExDHW9L\u002fkKHvVKyj1vwoRN+GKZvW\u002fDZbyD1GX9b8+DV5zSb71v8BjcIT33fW\u002fdE1VjRf49b\u002f9awiK5g32v4yG6qBMIPa\u002fXJ0NgPcv9r9AESdsaz32v0c0oKsOSfa\u002f61WeMB9e9r9eomxWplf2v85N8sz8T\u002fa\u002fTdRiNPZG9r+nJrYjWjz2v21wuv3dL\u002fa\u002frcH6Yx4h9r+hPN9Flg\u002f2v6OzYj2R+vW\u002fmIVChxbh9b+CRkdjzMH1v7LrwC\u002fhmvW\u002fylhKKCZq9b\u002fC0ExAcy31v6N5\u002f68F4vS\u002fY2frqth\u002f9L\u002fxhAmBkfTzv3qL9y8SNvO\u002fXdxUVRp68r8irKYSytjxv8OknNmRTfG\u002fTsUSRwtr8b+T0EB55c3xvxfy58oItvG\u002fKPATxek08b8ReFnV4ZHwvxiYERQ6G\u002fC\u002fdIWPwjwn8L\u002fkqgq7mc3wvxk3qeijpvG\u002fs3bqPwCd8r9udBB+hJPzvynT3G9HSPS\u002fy1QP+4fE9L8j03XMdx31vyHgWRrlX\u002fW\u002fxGYkNCaT9b+2SNaBr7v1v6NMlRJg3PW\u002f1LtT8yj39b8AmsLzZg32v19PVRYWIPa\u002fZVlev\u002fAv9r+K2BGAgz32v3unmx86Sfa\u002fko3NWmhg9r8CtaqzFlr2v\u002fxV7nOvUva\u002fPqxOKQdK9r85i9qg6T\u002f2vyzB2PYTNPa\u002fqrK+kC4m9r9dk+1hxRX2v0\u002fd4cM8Ava\u002f\u002fOPaF8Hq9b\u002fI2fJwMM71v9V+218Dq\u002fW\u002fAs6RX09\u002f9b9TupRu+kj1v6\u002frCLJoBPW\u002fZ+5+QImn9L9wxCXxpCH0v5+LiVFxa\u002fO\u002f\u002f266xzCo8r847jypiPbxv+Xj9nimPPG\u002fznH10lg58b\u002fSXO0zHMjxv96RYAh30\u002fG\u002fVPWSVY9L8b9EVSbjDXrwv86bAipDxO+\u002fpT5woIWy77\u002fKJ7MOl3jwv7RnYK3wcfG\u002ffjqD8BOM8r+DKh10v4Tzv\u002f3hezG+O\u002fS\u002fK\u002fikdfu79L+zvp6gMhj1v\u002faTk3biXPW\u002fUu9ObZuR9b9ItWYFErv1v8s8EwVV3PW\u002fHlV6u3X39b\u002fNUaAS5g32v\u002fR8urKvIPa\u002fQlkazZUw9r9IF4OgKj72v6\u002fT8Z7dSfa\u002fePVZ6Iti9r+Rzbipjlz2v+VJgqKFVfa\u002fWgo5XE5N9r9A7p9GvUP2v5+LPCGZOPa\u002fJPDdVpYr9r8B3XOuUBz2v3E\u002fyZFBCva\u002f\u002f79r5a\u002f09b\u002fzoFOzktr1v6SgBT5YuvW\u002f2nglNJ6R9b8ddPMHk171v5eWI8p9IvW\u002f7IOTp6TS9L\u002fp6KmdnV\u002f0v\u002fALHJxYzvO\u002f3YShq\u002fcv879h3EqLFKDyv2X4kay8FvK\u002fc7FI75j68b\u002fnfxDlnzXyvx+MlArwIvK\u002f8tbSFTmg8b9w1uQjJMTwv8SC8ER4\u002fO+\u002fvwJnLUql77\u002fY8Oyodl7wvyR9gIR7bvG\u002f5nQ62BGY8r9IknCIOIzzv9C8n72ePfS\u002fPok8z1a89L9LY8dAuhj1v5QZZQPlXfW\u002fm2xtEv2S9b9WXJ+Rp7z1v3nOPw\u002f83fW\u002f79q7iBf59b\u002fbOo8xdQ\u002f2v2RRGRAlIva\u002f7vmiZu4x9r\u002fYe8nsZT\u002f2vyctl4L8Sva\u002f9dBMAJBk9r+vPuOVD1\u002f2v+WchrR7WPa\u002fEM8a\u002f8NQ9r\u002fuRP7AyUf2v4qGHxlfPfa\u002f2Khv5kQx9r9M2dRuJiP2v\u002fzU7GyREva\u002fSVakR+f+9b83NYerPuf1v5pB9GUeyvW\u002fDvLs2AKl9b\u002fMNdoGNXb1vwjt\u002fn3pQ\u002fW\u002fQxfsAEQF9b90\u002fJl9QK\u002f0v\u002fIlWPdaR\u002fS\u002fplpdVIPS87+8SdD\u002f0FTzv\u002fpnOdvK2vK\u002f8sTax0Wx8r+wR1irSLPyv93xWAQkjPK\u002f72xkpzgY8r9mn6uE30fxv0uIbsb6d\u002fC\u002fBEeVKwEc8L8AJTZ9BYzwvw8bNCyenPG\u002fKRst3\u002fG28r+lWncolJ3zv167RmncR\u002fS\u002f8GGXXH3D9L\u002fBl2f0eh71v4oYtQ7ZYvW\u002fe3lyq1mX9b8XsZsfg8D1v+aQJqFk4fW\u002foPNMKhn89b8muzhFGxL2vzx34VV6JPa\u002f5sEiyvwz9r+UsDViNkH2vw5iQPyWTPa\u002fnjWT5Y9m9r+J1XvnpWH2v4eiDVaTW\u002fa\u002fDED2nWJU9r9RjC6JBEz2v1cQXUNXQva\u002fq+qrGyg39r\u002fiiXi3MSr2v3w6Z+AWG\u002fa\u002fyC+JglgJ9r9p9X1nQ\u002fT1v9YGDzPT2vW\u002fh2rSEbO79b9AeBsLWpb1vyDlI4fha\u002fW\u002fTKFow9g49b\u002fIA9Vw2\u002fj0vyTlEQxsq\u002fS\u002fVk4T+u5O9L9EkAtngOHzv+9VK8jncPO\u002fX60MIwor879ng+JTqg\u002fzv5b6JQFr7fK\u002fotL7uaGY8r+8S8\u002fqIAfyvzNxwI12WfG\u002fsO+9SEXP8L87uGBD+fHwv24jQGh\u002fx\u002fG\u002fUFRYUx3O8r\u002fW8kgXsq3zvzIDPpywVfS\u002f8GVy3ZjP9L8sHkhjzCj1v5qJeeWDa\u002fW\u002f2WclMZye9b\u002f9eP3pm8b1v4G3V5qJ5vW\u002fGGWPa3YA9r9d44dL1BX2v3AyQZyrJ\u002fa\u002f+TqQOr029r\u002fZDLqBmEP2v94vIdepTva\u002fFM+e2cNo9r9RitQvZ2T2v4iiWS3RXva\u002fJm2bvCVY9r9tyflFY1D2v8+cRaByR\u002fa\u002fy2PKeSw99r\u002ftuH3tWTH2vwFApymyI\u002fa\u002fDfZNpdUT9r\u002fcHiOURwH2v7CTM5Fq6\u002fW\u002fpq3WjJPR9b8JBk06P7P1v7OQPLrTj\u002fW\u002fPIex+LBl9b9RA9r+wDL1v1aPZj2A9fS\u002finVRhPOq9L9FvfYeZVP0v6hUbDQxAfS\u002fCd+4s4a4879lABu0U4nzv9sx8KRwYfO\u002fQRtJ+PcP87\u002fDFoMnbKDyv8zgb\u002fWQH\u002fK\u002fdOW4+Tif8b+BFVUVjnjxv23OElTP4PG\u002fto3sUEHI8r+9aPO8cLbzv14H1pmWZvS\u002fFGUoi6zg9L+95DOAljf1vwbBabHBd\u002fW\u002f6Ydfr6Ko9b\u002fsFPuX1c71v4OGwSRU7fW\u002fWkgi\u002fxwG9r+71giIkRr2vywnhPCsK\u002fa\u002fL3V69iU69r\u002foLvVGhEb2vztXnnIuUfa\u002fwi4ZGmhr9r8Vnp3rZWf2v7L9rGM3Yva\u002fNM30gAdc9r+oIxX62lT2v+65X9yhTPa\u002fcq0ODD5D9r\u002fzS+oXhTj2v39cCcQ\u002fLPa\u002fZMZJaCge9r+RQ+pI6Q32v9YzFgYd+\u002fW\u002f4mGUoFLl9b\u002fB+OdVCsz1vyyyRd6KrvW\u002fLkXbXo2L9b8aizUbGWH1v+AcxgMVL\u002fW\u002fqGXlyuP59L\u002fEtDBaBcD0v0AddIbviPS\u002fMPMDsZJT9L+JomdrlCH0v\u002fPWQQsr5\u002fO\u002fpuAr2PKP87+itIkWBi3zv3lYhV39yfK\u002fVhGEu8pa8r95coVqkwDyv+WhWK4mCfK\u002fdCyj2JzT8r9al91LU9Dzv4B6ThO0gvS\u002fE7MQDOj49L\u002fNbbv6Pkv1v1zbaPB7h\u002fW\u002fgrGXojy19b81D74HAdn1v2mdpNGc9fW\u002fi744ae0M9r\u002f\u002f808wOiD2v6E2s9FqMPa\u002fiApJkyc+9r81o2ls7Un2v0wbVfYaVPa\u002fBF0FAYNu9r9fHTkzoGr2vysKCM2\u002fZfa\u002f\u002fpQdo\u002f5f9r9KHot8X1n2v7pe+a\u002fVUfa\u002fxFuLxElJ9r+Ql\u002fopmz\u002f2v25jooKgNPa\u002ffuzQTCco9r9sR5p+8xn2vyAwPVC\u002fCfa\u002fRhRCyzn39b+aNDB5\u002fuH1vwA4VR98yfW\u002fT6O3qsCs9b8cp4FEWYr1v+iH\u002fwk4Y\u002fW\u002fDgq4AQE+9b9TEkItwhf1v2XhLzcK8PS\u002fJLc84K\u002fG9L+21HmuApn0v4nSX0kWX\u002fS\u002fzWLEqR0O9L\u002fFkKe6Q6zzv5fMHD3kUPO\u002fQHOhUmHv8r81Ips8p6Hyv\u002fzTc0V\u002fsvK\u002fFq5JUK1Q878\u002fu1lZ9xf0v\u002feIivcWsPS\u002fxT9e0VAZ9b9k2AWbrWP1vws4nttfmvW\u002fga9NMRbE9b8FRKpg1+T1vz2iyE8r\u002f\u002fW\u002fVnlQ5bsU9r+UJaV1rCb2vxIW0RXLNfa\u002fa5Vnsq1C9r\u002fbuiv2w032vx6dLrtiV\u002fa\u002fPtQ5UNtx9r8Gp84n\u002fW32v+6vxiNbafa\u002fh1LISv5j9r9kDU+04132v4tj9nr\u002fVva\u002fsOtPpT5P9r+cGF0UiEb2v7uNnda8PPa\u002fAUwAMLgx9r8\u002fhASGTyX2v6A32BFSF\u002fa\u002fQxA9iocH9r8Jdr4JrPX1v8wQcLJn4fW\u002f9FaY+UfK9b8gs0wt8K\u002f1v12kHnQTk\u002fW\u002fnq3rgnh19b9h24atwVf1v1tu80K7OfW\u002fzHuZ5RwZ9b+6oGgXGPP0v7YVW+MZw\u002fS\u002fuisQ53+C9L\u002f7OnYovCz0v\u002f3kaGndwPO\u002fCTb3OHhe878MkVlJJyrzv1pcLr5+UfO\u002fTtwaw1bQ87+lBnU9RWj0v25DcJJi5fS\u002fq5mIEyo\u002f9b+C2sh2sn\u002f1vy7Yz3q0r\u002fW\u002fuYfvwqzU9b80wN4y+PH1v\u002fwUKHm3Cfa\u002fTir0HVId9r90fCgmvy32v66\u002frECuO\u002fa\u002fHVtRC6BH9r\u002f2sVL79FH2vwkHguL2Wva\u002fRUvqhC919r9L8FSaXHH2vzYTCCj2bPa\u002f180pCfhn9r+qLaCTWmL2vwYAxvgRXPa\u002fIqmVaw5V9r9gGdVUPE32v\u002fK0snCERPa\u002f73oj3Ms69r+IeEMb9C\u002f2vzCtghHbI\u002fa\u002fi9LI1FoW9r81JtJ2SQf2v\u002fVK+uR59vW\u002fsmWCmcHj9b9tteWFB8\u002f1v\u002f5HHcI+uPW\u002f\u002f2MhqTuf9b\u002fmlN8csYb1v0+nEBvncPW\u002fT+UnnBVY9b8UCbZZOjr1v1hCgclQFfW\u002fKhQp3qnl9L+WcvpZQab0vx293g0UVPS\u002f\u002fqF0m2H+879sgKfjPLvzv+CQ+2h3wvO\u002fo5aUJ8kf9L8pPiKE\u002faz0vyJpJfbbG\u002fW\u002fxT8pjZtn9b\u002fTWSnNxp31v\u002fKFKn+GxvW\u002fZ1SvK1zm9b8+y+rH7\u002f\u002f1v\u002fEJH5LtFPa\u002fob9eWnIm9r+6+\u002fYTRDX2v\u002fkYZ1DxQfa\u002fbK9aweNM9r9Tc6mia1b2v3oG\u002fhDHXva\u002fwpIpFFp49r8zo+topXT2v5C\u002f1WZ\u002fcPa\u002fQCizVd5r9r9WrqVGuGb2v90IJ90BYfa\u002fEg490a1a9r9C8wG7rFP2v\u002fmzIPjsS\u002fa\u002fx5namVpD9r+HE49V3zn2v95St31iL\u002fa\u002fgNygN8kj9r+X9zy09xb2v9HEIlXVCPa\u002fRVEgtVX59b8Zf\u002fzjfuj1v4mIALBM1vW\u002fCMDFIrHC9b9dy\u002ff6k6\u002f1v23dn84znvW\u002fp+xzsteK9b9cTPqXAXT1v1xDZerRWPW\u002f7AAhttk39b9y8g9Sjw\u002f1v+wiixQT4PS\u002fE+wPQ6et9L8czb4r3oL0v9AnhubkdPS\u002fepoRik2k9L9NI7REMgX1v7Wzod8lV\u002fW\u002fdEQkfYiR9b+uYVKCk7z1vylzL8PX3fW\u002fmyUiknP49b+xg11CQg72vw6mog11IPa\u002fnTfc8tsv9r89FhMlCz32v9k9euVvSPa\u002fyGJa7lxS9r9VtgZAElv2v1tN+z7CYva\u002fTMMcikx79r8BWy8OyHf2vxeaAJjpc\u002fa\u002f9Om\u002fBKZv9r96cEUD82r2v7podTLGZfa\u002f9rQ9iBRg9r+0zDHr0Vn2v3EPaOfwUva\u002fNERuZmJL9r84OblNFUP2v+FL4eL1Ofa\u002fE8BY6+wv9r8fRE0c3yT2v1dWrSWwGPa\u002f2El2A1UL9r+ON5RrCP31vwrdiNlv7vW\u002frcrqJBfg9b+WjtQ5FNL1vwrbY7L3w\u002fW\u002fDq0dmai09b+MZ3kQaaP1v2PecDzRj\u002fW\u002f6LM+o5R59b8NjxKF1GD1v0mhatjERvW\u002fSUAIIy0u9b9Tg2oHGxz1v99xVoMNGfW\u002fNBGMGC0x9b+1kS+ahmH1v1MHAZdnkvW\u002fJLKjHnm69b8UMp0Djtr1v0HAtwqm9PW\u002fWtytQUUK9r97iWlbdxz2v42dlUD4K\u002fa\u002fZJENVlA59r9qn7+r5UT2v3wMMIwGT\u002fa\u002fjgdEPPBX9r\u002fedm9401\u002f2vyEyM4zXZva\u002flTPSeAB+9r83Ou6Gunr2v0kbWPkqd\u002fa\u002fsbfpgUZz9r+81iBTA2\u002f2v+dYqXJYava\u002fwZffBz1l9r8LbznLp1\u002f2v0walo2OWfa\u002f0kWoseVS9r9X3spSn0v2vx8Ft5ipQ\u002fa\u002fQCvkOOs69r9FHt5UPDH2v626yIhaJva\u002fs5+e3OkZ9r82X39SCAz2vx1cJIwk\u002f\u002fW\u002fuZfYYZf19b\u002f21nIPv+z1v98VEH+m4vW\u002fzLqnqSfX9b9sEAe+V8r1v57bAaA+vPW\u002fLygHZPWs9b+Rftm4JJ31v4CmNlHFjvW\u002fT1jgtvyD9b9RAPhzln71vxVhrPW9gfW\u002fowFl9n6Q9b9LyR4VKKn1v4eu94P+xPW\u002fn+2fTyLf9b+hqoH7Ifb1v0r7uScHCva\u002fcOSKkDkb9r\u002fEZKFfJir2v3DnkeUrN\u002fa\u002f\u002fGMv05dC9r\u002fQXcWKqUz2v6ANgtyUVfa\u002fYjJbX4Rd9r8UvWRPm2T2v4LqTQP3ava\u002f6XsR+GyA9r8iD\u002faic332v2GcAb47eva\u002fF22qfrl29r80d\u002fAU5HL2v7sXAne0bva\u002fdkYXQCRq9r9uQKjhLGX2vxZsRwfHX\u002fa\u002fypg05+lZ9r9\u002fozoPilP2v+yXhsyWTPa\u002fnqvlDfRE9r+5AqkMazz2v3Qp0imCMva\u002f0bgh+x4m9r9J1Hi8qRX2v5aJDWLwBva\u002fmWNIipoE9r\u002f3ij\u002fzOQL2v\u002fR\u002fGo8S\u002fPW\u002fJ6VYAtbz9b9TeZLubur1v+GXKwgp4PW\u002fBFdMc\u002ffU9b8fM5\u002f2DMn1vxR27lBqwPW\u002fGX26oNe99b+GZILnX771v6dK3PMDw\u002fW\u002fJzpZxvjM9b\u002fU2rN9kdv1vy6AGXab7PW\u002fubPOD\u002fL99b\u002fVkaNqWw72v570jSReHfa\u002f130DMuQq9r8tkLLEADf2v9i3LCXVQfa\u002fCvA\u002fV4VL9r9I09SoM1T2v9whsSb\u002fW\u002fa\u002fMKaRRANj9r\u002fqKLIBWGn2v+rGcTsSb\u002fa\u002fOXPMY3+C9r\u002fzPQPM53\u002f2vxIqrS4Vffa\u002fZZSK7vp59r9Bt0SWknb2v\u002f2homjYcva\u002f+McMSclu9r9An3W0YWr2vxTU9DCdZfa\u002fifrPtHVg9r8MlWeA4lr2v7y0l4LVVPa\u002fP5+vHjVO9r+SWMyGzEb2v6TCv7oiPva\u002fbf6dzhkz9r+gKT8BDST2vxQYahzeFva\u002fkxZGSnoW9r9kTmAjIhb2v0bp2RIQEva\u002fCU34HxEM9r\u002fF0eTeJwX2v4UlGNWs\u002ffW\u002fMqLIcIb19b\u002fFKf25q+z1v2nnInlP5\u002fW\u002f5nK22xro9b8QueGvm+r1v4nPhyMM7\u002fW\u002fE7grYzD29b9j2sft1\u002f\u002f1v7K6DFEpC\u002fa\u002fRddSsScX9r8a6dd0ECP2v+HDpLZvLva\u002fiuDOqg059r+9xM0X10L2v9PUW4vMS\u002fa\u002fuCOQY\u002fhT9r9e6Q9TaVv2v67o13YvYva\u002fpRo51Fpo9r\u002fiLPaZ+m32v6F1A8scc\u002fa\u002fsoUtJBSE9r82iRiSCIL2v+fkc\u002fOyf\u002fa\u002f13chFQp99r+ulvgQD3r2v7ynz8vEdva\u002fy+TbHC1z9r9CGX08SG\u002f2v4jay8QUa\u002fa\u002flnixk49m9r8zHsAqs2H2v\u002fIc0Qd2XPa\u002f0ltG7sZW9r9\u002fXQgxhVD2v4pa7YpzSfa\u002fUjZvMDdB9r\u002fZ1e1H7jf2v2BmAlIgMPa\u002fZcdL1zos9r9aqSpoXCn2v\u002fWZOXqAJfa\u002fUDFuJ8kg9r+Cn5k9oRv2v1StXBhMFva\u002fLHUoUPQQ9r\u002fkCtvqFgz2vyOoewVOCfa\u002f2JyLtWwJ9r+Bgng6aQv2v1UB09b6Dva\u002fPEe2Tz8U9r8OeCYRFBv2v7LaZhwSI\u002fa\u002fICQjbbgr9r+z4T23kjT2v+cp415LPfa\u002fL1JdBKxF9r9xdsWKlk32v5FWmk39VPa\u002f6paq\u002ftxb9r8umA5wOGL2v9+Q5d0VaPa\u002fL+PNPX1t9r\u002fNGjY3d3L2v8IbGoYMd\u002fa\u002fcJc6GvWE9r+8UhbTzIP2v\u002fX74swYgva\u002fG7MZF+x\u002f9r9mx6h7XX32v49ttYp8eva\u002fOR5zUFJ39r\u002fxD3h443P2v6Lw99UxcPa\u002f2heoLz1s9r8y2G9rA2j2v6RaFiOAY\u002fa\u002fB74+qate9r9ZFOETeln2v4HcBr3dU\u002fa\u002fCfPkCdpN9r\u002fy9NBGvEf2v+KyiqdCQva\u002fEzq85+Q99r+1S49jJDr2v\u002fsXS81lNva\u002frOyKPIMy9r9zZlj\u002fli72v+4NEI3LKva\u002fMv6oFVgn9r94c+z3mST2v5fuJlQXI\u002fa\u002fnqVt+xoj9r9UhD29iiT2v62bhCxGJ\u002fa\u002fA4Gs4Tor9r\u002fid5m9RTD2v6ffxpMqNva\u002flr1FtZ889r9mbcFVXUP2vyLsKc4nSva\u002fPNHoF9NQ9r9FaVi6QVf2v3PkutdhXfa\u002fQ5LLBypj9r+DUG+zlmj2v4XYFBeobfa\u002fA3IH2GBy9r\u002fNk8cKxXb2vxgU+IrZeva\u002fgewjlw6F9r+1tIr1T4X2v8vDcbFdhPa\u002fFb9C1a6C9r\u002fqejrQhYD2vxmiH5gEfva\u002fSJiUojx79r8NtRgRN3j2v9GsuaX4dPa\u002f2Uoir4Nx9r9dtAP32G32v4IS5Tv4afa\u002fuHbJq+Bl9r+X3go2kmH2v9NRaoURXfa\u002f\u002fXbzG3FY9r9G4Umg3FP2v71cIT+RT\u002fa\u002fGRpOobFL9r\u002fkjYflKUj2v3UfyszTRPa\u002f+klSRp9B9r\u002fopdhOlj72v0BAFH3TO\u002fa\u002f6S4EFX459r+8WKklyjf2v6jtBVfvNva\u002f\u002fgcv0RE39r\u002fIZ6FFODj2v\u002fKsVBJZOva\u002fPiD7smI99r\u002fCiKhmOUH2v2d0BS62Rfa\u002fZwCqDqtK9r8Tj2Ca6U\u002f2v9QXk1tIVfa\u002fThIJuaVa9r8HUV+M6F\u002f2v6NvnU\u002f\u002fZPa\u002fV+IRtt5p9r+ctHY1gG72v0Glk73gcva\u002fKFULsf929r8+R\u002fYc3nr2v7C1LiV+fva\u002fDMIW8E+F9r\u002fVDvd8AYf2v1kxe\u002fGwhva\u002fNn4cI2eF9r92YeQfkoP2v2LbuKtigfa\u002fRUHbOvB+9r+0Ywz1Rnz2v4ZNp5xtefa\u002f0pTkRGh29r9Sqqa0OXP2vzTF30bkb\u002fa\u002fkwckx2ps9r8R8W7C0Wj2v+QSPLwhZfa\u002f0QOoB2ph9r\u002fxSBbHwV32v00PVnhCWva\u002fdqt5kPxW9r\u002foGsrV8VP2vx94RCUdUfa\u002ff2va9X1O9r\u002f59fNMHUz2v9Qp5CcNSva\u002fBjHYh2ZI9r915Fy4Rkf2v6Ni2evJRva\u002fFNTK\u002fgNH9r8r2ryW\u002fEf2vzWNf3KwSfa\u002fs7NLshNM9r+PLoXHEk\u002f2vxm03IqTUva\u002fJi8tp3dW9r9ROg3Yn1r2v9Lr\u002f+LuXva\u002fO\u002fpjkktj9r9gaoCRoWf2v34IY2rha\u002fa\u002fDgv+AABw9r8I96jX9XP2v+Rqtk2+d\u002fa\u002ftWkg8VZ79r9K3bXsvn72v0IVo5P2gfa\u002fSXheOMGH9r8w4LMWbYn2vzHHLHs+ifa\u002fw5jdayWI9r8dG47kiYb2v7gRSTWbhPa\u002fCFVatXCC9r9IYm\u002frFoD2v6RN5jeVffa\u002fxkXNfvB69r8MvL6PLHj2v0ENoQtNdfa\u002fqd52KVZy9r+EWpGQTW\u002f2vy1CqU07bPa\u002f0PANhCpp9r\u002fA6ZX2KGb2vzIQMKZEY\u002fa\u002fqvG1gIhg9r9Clqb\u002f+l32v7HIaD+gW\u002fa\u002fbMYxmX1Z9r93CdIDnFf2vx\u002f6S4QIVva\u002f3OWrR9NU9r+knSjEDVT2vw5rEvPHU\u002fa\u002fUQe7Tw1U9r\u002fQWDPl4lT2v5YkOPFGVva\u002f51mKbDFY9r9LGnHUlFr2v3wUgUFfXfa\u002fDKO59Xtg9r+gSHk11WP2vw9BkQZWZ\u002fa\u002fHKj2gOtq9r9vbIWQhW72v6MXXTUXcva\u002f5rVRZ5Z19r\u002fwJIHD+3j2v0lvCSNCfPa\u002fg3UzL2Z\u002f9r9QcVD+ZYL2vy8zOr5Ahfa\u002fWnloCgSM9r8177mXfYz2v\u002fLWuAIBjPa\u002f7swRsOiK9r+z98u2bYn2v6gQqruvh\u002fa\u002fM3O+bsCF9r+k3WtAqoP2vwGSneVzgfa\u002fbzLXNyJ\u002f9r9W7AVJuXz2v8emexg9eva\u002fl+V\u002fILJ39r\u002f+5znTHXX2v+2UNv6Gcva\u002f1IWd5\u002fVv9r89Vtblc232v8wHL2UKa\u002fa\u002fe1tv0cFo9r8oQfEuoWb2vyNbt8CuZPa\u002fugKYPfFi9r+ejy\u002fDcGH2vxe11hM3YPa\u002f5nSNG09f9r\u002ffxwLfw172v6EQSQifXva\u002fEHphbOde9r\u002fLn2n4n1\u002f2v9hLCz\u002fHYPa\u002fsc\u002fzj1di9r+JWextR2T2v8gl1E+KZva\u002f467SoBFp9r94BSHizWv2vwRJL8Gvbva\u002f0mM0+ahx9r+eEnDqrHT2vyEvgOawd\u002fa\u002fxttQP6x69r8jwZErmH32v0\u002f5opJvgPa\u002fXHDtzS6D9r8G4glp04X2v+rqOOZbiPa\u002fqOACXBiQ9r\u002fo+7bCn4\u002f2v4thbWPJjva\u002fkhvYXKCN9r\u002fGbSjMN4z2v0DHl\u002fieiva\u002fjPQfgOCI9r8YT1O0A4f2v5NmXOgNhfa\u002fIOigXgOD9r\u002f89xTr54D2v5fCNGe\u002ffva\u002fjqqlCo589r9V1wyvWHr2v+wnx\u002fgkePa\u002fzFVEVPl19r8TolO63HP2vw87TkbWcfa\u002fyaWbzuxv9r\u002fImSy+Jm72v0ftyUeKbPa\u002fvNySzB1r9r\u002frgPMu6Gn2vxZ+09zwaPa\u002foMt8gD9o9r9SFRpk22f2vxRE06bKZ\u002fa\u002fUW4hcRFo9r9vfMxXsWj2v\u002fLb+Qqpafa\u002fklQTVfRq9r8vI6dejGz2v1ri3ilobva\u002fHrZ\u002fNn1w9r\u002fmiAk6wHL2vxL3i9Mldfa\u002fULUmJaN39r9La2lFLnr2v2AP1YS+fPa\u002fUbDSi0x\u002f9r9RUORZ0oH2v+ps7i9LhPa\u002fftJqbrOG9r\u002fPLFRuCIn2v3Jfe1lIi\u002fa\u002f","shape":"50, 45"},"type":"heatmap"},{"marker":{"color":"#e34948","line":{"width":3},"size":14,"symbol":"x"},"mode":"markers","name":"0403 \u82b1\u84ee M7.2","x":[121.57],"y":[23.88],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"yaxis":{"title":{"text":"\u7def\u5ea6"},"scaleanchor":"x"},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"closest","title":{"text":"\u53ea\u7528 0403 \u4e4b\u524d\u7684\u76ee\u9304\uff1a\u904e\u53bb\u5730\u9707\u7684\u9130\u8fd1\u6027\u300c\u770b\u898b\u300d\u82b1\u84ee\u4e86\u55ce\uff1f"},"xaxis":{"title":{"text":"\u7d93\u5ea6"}},"height":560},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('b8ba5b6a-6176-4ded-a985-58f87a44e5ed');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p>答案是：看見了，但這算不上預報。花蓮外海本來就是全台地震
+度最高的區域之一——長期模型本來就把最高的率放在那裡。
+這正是第 16 章講過的：PPE 這類基準模型回答「哪裡」很在行，
+對「何時」完全沉默。0403 落在高背景區，是基準模型的成功，
+也是它的天花板。</p>
+<p>短期呢？0403 主震前，即時目錄上沒有顯著的前震序列（這與
+2022 池上不同——池上有 <span class="math notranslate nohighlight">\(M_L\)</span> 6.6 的關山前震在前一天）。
+一套 ETAS 型的 OAF 系統在 0403 <strong>之前</strong>不會發出任何警示，
+但在主震<strong>之後</strong>能立刻接手：第 13 章你已經看過它的餘震率
+衰減多麼服從 Omori 律——餘震機率預報、震度超越機率，技術
+上完全做得出來，2025 年大埔序列的快報就是實證。中期呢？
+誠實的回答是：台灣目前<strong>沒有</strong>作業化的中期模型可以事後
+檢視——這正是下一節要談的缺口。</p>
+<p>這個檢視最大的價值，是它把第 8 章的警告變得具體：事後回頭
+看，你總能在圖上找到「跡象」；但預報系統必須在事前、按
+事先定好的規則發言。0403 教我們的不是「差一點就能預測」，
+而是<strong>各時間尺度的工具各自能做什麼、不能做什麼</strong>。</p>
+</section>
+<section id="id5">
+<h2>23.4 台灣的預報之路：現況與缺口<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>把台灣現有的能力攤在時間軸上：</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tools</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;地震預警（EEW）&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">86400</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">60</span> <span class="o">/</span> <span class="mi">86400</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">),</span>
+     <span class="s2">&quot;#1baf7a&quot;</span><span class="p">,</span> <span class="s2">&quot;作業中（世界前段班）&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;短期預報（ETAS/OAF）&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">90</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">),</span>
+     <span class="s2">&quot;#2a78d6&quot;</span><span class="p">,</span> <span class="s2">&quot;技術就緒（大埔快報實證）&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;中期預報（EEPAS 類）&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.25</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+     <span class="s2">&quot;#e34948&quot;</span><span class="p">,</span> <span class="s2">&quot;缺口（在地化進行中）&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;長期危害（TEM PSHA）&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+     <span class="s2">&quot;#4a3aa7&quot;</span><span class="p">,</span> <span class="s2">&quot;已有兩代國家級模型&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tools</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">],</span> <span class="n">base</span><span class="o">=</span><span class="p">[</span><span class="n">lo</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span>
+                         <span class="n">marker_color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">status</span><span class="p">,</span>
+                         <span class="n">text</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">textposition</span><span class="o">=</span><span class="s2">&quot;inside&quot;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;時間尺度（年，log₁₀）&quot;</span><span class="p">,</span>
+                 <span class="n">tickvals</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                 <span class="n">ticktext</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;秒–分&quot;</span><span class="p">,</span> <span class="s2">&quot;小時&quot;</span><span class="p">,</span> <span class="s2">&quot;天&quot;</span><span class="p">,</span> <span class="s2">&quot;年&quot;</span><span class="p">,</span> <span class="s2">&quot;百年&quot;</span><span class="p">])</span>
+<span class="n">apply_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;台灣地震風險資訊工具的時間尺度地圖&quot;</span><span class="p">,</span>
+             <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;closest&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">380</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="height:380px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="c8b3b38f-3096-4c15-bf79-6686383f8fe3" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c8b3b38f-3096-4c15-bf79-6686383f8fe3")) {                    Plotly.newPlot(                        "c8b3b38f-3096-4c15-bf79-6686383f8fe3",                        [{"base":[-7.021982712365565],"marker":{"color":"#1baf7a"},"name":"\u4f5c\u696d\u4e2d\uff08\u4e16\u754c\u524d\u6bb5\u73ed\uff09","opacity":0.8,"orientation":"h","text":"\u4f5c\u696d\u4e2d\uff08\u4e16\u754c\u524d\u6bb5\u73ed\uff09","textposition":"inside","x":[1.3010299956639813],"y":["\u5730\u9707\u9810\u8b66\uff08EEW\uff09"],"type":"bar"},{"base":[-2.5625902246063346],"marker":{"color":"#2a78d6"},"name":"\u6280\u8853\u5c31\u7dd2\uff08\u5927\u57d4\u5feb\u5831\u5be6\u8b49\uff09","opacity":0.8,"orientation":"h","text":"\u6280\u8853\u5c31\u7dd2\uff08\u5927\u57d4\u5feb\u5831\u5be6\u8b49\uff09","textposition":"inside","x":[1.9542425094393252],"y":["\u77ed\u671f\u9810\u5831\uff08ETAS\u002fOAF\uff09"],"type":"bar"},{"base":[-0.6020599913279624],"marker":{"color":"#e34948"},"name":"\u7f3a\u53e3\uff08\u5728\u5730\u5316\u9032\u884c\u4e2d\uff09","opacity":0.8,"orientation":"h","text":"\u7f3a\u53e3\uff08\u5728\u5730\u5316\u9032\u884c\u4e2d\uff09","textposition":"inside","x":[1.9030899869919438],"y":["\u4e2d\u671f\u9810\u5831\uff08EEPAS \u985e\uff09"],"type":"bar"},{"base":[1.0],"marker":{"color":"#4a3aa7"},"name":"\u5df2\u6709\u5169\u4ee3\u570b\u5bb6\u7d1a\u6a21\u578b","opacity":0.8,"orientation":"h","text":"\u5df2\u6709\u5169\u4ee3\u570b\u5bb6\u7d1a\u6a21\u578b","textposition":"inside","x":[1.6989700043360187],"y":["\u9577\u671f\u5371\u5bb3\uff08TEM PSHA\uff09"],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"title":{"text":"\u6642\u9593\u5c3a\u5ea6\uff08\u5e74\uff0clog\u2081\u2080\uff09"},"tickvals":[-6,-4,-2,0,2],"ticktext":["\u79d2\u2013\u5206","\u5c0f\u6642","\u5929","\u5e74","\u767e\u5e74"]},"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"closest","title":{"text":"\u53f0\u7063\u5730\u9707\u98a8\u96aa\u8cc7\u8a0a\u5de5\u5177\u7684\u6642\u9593\u5c3a\u5ea6\u5730\u5716"},"showlegend":false,"height":380},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('c8b3b38f-3096-4c15-bf79-6686383f8fe3');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p><strong>已經很強的：預警</strong>。1999 集集地震，速報系統在大停電中
+102 秒算出位置與規模；2018 花蓮地震，17 秒發布警報、20 秒
+送達民眾手機。這是台灣真正領先世界的部分——但記住第 9 章
+的區辨：預警是「地震已發生、波還在路上」，跟預報是兩件事。</p>
+<p><strong>正在成形的：短期統計預報</strong>。本土化的時空 ETAS 參數有兩份
+獨立估計互相印證；2025 大埔序列的快報示範了完整的作業化
+流程（預訓練一小時、即時每輪 7 分鐘、輸出場址震度機率），
+並罕見地把預報機率與實際觀測並列發表。</p>
+<p><strong>明顯的缺口，有四個</strong>。中期（月到十年）模型在台灣還是
+空白——短期有 ETAS、長期有 PSHA，中間這段沒有在地化的
+作業模型；EEPAS 的台灣在地化正由台灣團隊進行中。
+預報<strong>檢驗文化</strong>尚未建立——台灣多為個案回溯分析，缺少
+CSEP 式、事先註冊的前瞻檢驗，而第 17 章說得很清楚：台灣
+測試區小、目標地震少，正是低統計功效的情境，檢驗設計要
+格外用心。<strong>即時目錄與重定位目錄的落差</strong>——作業預報用
+即時目錄，其完整度與定位品質都遜於研究用目錄，大埔快報的
+作者就誠實指出某段「平靜」無法據即時目錄定論。最後是
+<strong>前兆</strong>——中央氣象署自己的業務回顧承認，短期前兆可視為
+成功的比例在兩成以下；這不是放棄的理由，而是把資源優先
+投給統計預報的理由。</p>
+<p>制度面則有第 9 章留下的兩個問題等著台灣回答：機率預報的
+<strong>權威性</strong>由誰授予？要走義大利路線（權威但不公開、服務
+民防）、紐西蘭路線（公開、與使用者共同設計）、還是美國
+路線（大震後自動發布）？這些不是技術問題，但答案會決定
+技術被怎麼使用。</p>
+</section>
+<section id="id6">
+<h2>23.5 第二部的終點，也是起點<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>這本教材從地下水位的固體潮講起，繞了一大圈，結束在地震
+預報的制度設計。回頭看，兩部其實在講同一件事的兩面。
+第一部教你對「看起來像前兆的異常」保持懷疑——因為訊號
+太小、樣本太少、事後選擇太會騙人。第二部教你這個領域
+如何把懷疑<strong>制度化</strong>：基準模型、前瞻檢驗、資訊增益、
+統計功效——一整套讓錯誤的宣稱無所遁形的機制，以及在
+這套機制下仍然存活下來的、貨真價實的可預報性：叢集。</p>
+<p>地震預報今天能誠實說出口的成果是：我們無法告訴你下一個
+大地震的時間地點，但我們能告訴你機率——而且這個機率經得
+起檢驗、能接上危害與工程、正在多個國家每天運轉。台灣有
+世界級的資料、世界級的預警、正在成形的短期預報，以及
+一段還沒有人填上的中期空白。</p>
+<p>那段空白，也許就留給正在讀這一頁的你。工具都在前面十六章
+裡了；目錄就在 <code class="docutils literal notranslate"><span class="pre">data/cache/</span></code> 裡。動手之前，只需要記得
+全書說了兩遍的那句話——一個數字算得出來，不等於它站得
+住腳；讓它站住腳的方法，你現在已經會了。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="22_operational_systems.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">22. 短期預報上線：STEP 與作業化系統</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">23.1 目錄的百年整備</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">23.2 統計地震學的積累</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">23.3 0403 花蓮：一次誠實的事後檢視</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">23.4 台灣的預報之路：現況與缺口</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">23.5 第二部的終點，也是起點</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

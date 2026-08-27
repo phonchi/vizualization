@@ -29,17 +29,25 @@
 4. {doc}`07_case_hualien2024`：以 2024 年 4 月 3 日花蓮外海 M7.2 地震為案例，把四類資料放在同一時間軸上對照。這一章的結果可能會顛覆你的預期。
 5. {doc}`08_explore_ideas`：怎麼嚴謹地問「這和地震有關嗎？」，一份前兆研究的方法地圖。
 
-**第二部：地震預報模型**
+**第二部：地震預報模型**（15 章，教科書式的深度）
 
-6. {doc}`09_forecasting_intro`：地震可以預測嗎？從決定論式的「預測」走向機率式的「預報」。
-7. {doc}`10_seismicity_stats`：目錄統計的進階課——Mc、b 值的不確定性、Omori 的皺褶、Båth、除叢的陷阱。
-8. {doc}`11_etas`：ETAS——把「地震觸發地震」寫成一條條件強度函數，現代短期預報的主力引擎。
-9. {doc}`12_eepas_ppe`：EEPAS 與 PPE——前兆尺度增加現象與中長期預報。
-10. {doc}`13_step_oef`：STEP 與作業化系統——模型如何上線、機率如何說給社會聽。
-11. {doc}`14_ensembles`：模型組合——混合與加乘，以及一場十年前瞻測試的教訓。
-12. {doc}`15_forecast_testing`：預報好不好怎麼算——CSEP 的檢驗科學。
-13. {doc}`16_psha`：從預報到危害度——PSHA 與台灣地震模型。
-14. {doc}`17_taiwan_outlook`：台灣——資料、模型與下一步。
+| 章 | 主題 |
+|---|---|
+| {doc}`09_forecasting_intro` | 地震預報的問題設定：預測／預報／預警與可預報性 |
+| {doc}`10_point_process` | 點過程：預報模型的共同語言（條件強度、概似、模擬） |
+| {doc}`11_catalog_completeness_b` | 目錄統計 I：完整度 $M_c$ 與規模分布 $b$ 值 |
+| {doc}`12_clustering_laws` | 目錄統計 II：叢集的經驗律與除叢 |
+| {doc}`13_etas_structure` | ETAS I：條件強度、分支過程與模擬 |
+| {doc}`14_etas_estimation` | ETAS II：估計、診斷、變體與作業引擎 |
+| 15（第二期） | Ψ：前兆尺度增加的解剖 |
+| {doc}`16_eepas_ppe` | EEPAS 與 PPE：把 Ψ 變成可運轉的預報 |
+| {doc}`17_testing_consistency` | 預報檢驗 I：似然與一致性檢驗 |
+| {doc}`18_testing_comparison` | 預報檢驗 II：比較、警報、功效與價值 |
+| {doc}`19_ensembles` | 模型組合：加法、乘法與權重學習 |
+| 20（第二期） | 時間相依複發模型：Weibull、BPT、應力釋放 |
+| {doc}`21_psha` | PSHA：從發生率到地動危害 |
+| {doc}`22_operational_systems` | 作業化系統：STEP、OEF 與機率溝通 |
+| {doc}`23_taiwan_outlook` | 台灣：資料、模型、缺口與下一步 |
 
 第二部以**觀念**為主：每一章用文字與示意圖把模型的直覺講清楚，程式碼只是產生示意圖的工具（預設摺疊，有興趣才展開）。你不需要會寫這些模型，但讀完應該能看懂任何一篇地震預報論文在做什麼、以及該對它問哪些問題。
 
