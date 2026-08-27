@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -216,7 +216,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地球物理觀測資料探索</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_overview.html">1. 台灣地球物理觀測總覽</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_download.html">2. 資料下載機制</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">3. 地下水位觀測</a></li>
@@ -225,6 +226,18 @@
 <li class="toctree-l1"><a class="reference internal" href="06_gnss.html">6. GNSS 地殼變形觀測</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">7. 案例分析：2024/4/3 花蓮地震 M7.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">8. 怎麼嚴謹地問「這和地震有關嗎？」</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：地震預報模型</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">9. 地震可以預測嗎？從預測走向機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_seismicity_stats.html">10. 地震目錄統計的進階課</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_etas.html">11. ETAS：把餘震邏輯寫成一條式子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_eepas_ppe.html">12. EEPAS 與 PPE：前兆尺度增加與中長期預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_step_oef.html">13. 短期預報上線：STEP 與作業化系統</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_ensembles.html">14. 三個臭皮匠：混合與加乘模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_forecast_testing.html">15. 預報好不好，怎麼算？CSEP 檢驗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_psha.html">16. 從預報到危害度：PSHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_taiwan_outlook.html">17. 台灣：資料、模型與下一步</a></li>
 </ul>
 
     </div>
@@ -387,10 +400,11 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>台灣地球物理觀測資料探索<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>這是一個為研究生「打底」的教學網站。它帶你認識台灣四大類地球物理連續觀測資料（地下水位、地磁、地動、GNSS 地殼變形），學會從中央氣象署 GDMS（臺灣地震與地球物理資料管理系統）下載真實資料，並用 Python 做視覺化與探索，最後一起想清楚一個核心問題：</p>
+<p>這是一個為研究生「打底」的教學網站，分成兩部。<strong>第一部</strong>帶你認識台灣四大類地球物理連續觀測資料（地下水位、地磁、地動、GNSS 地殼變形），學會從中央氣象署 GDMS（臺灣地震與地球物理資料管理系統）下載真實資料，並用 Python 做視覺化與探索，一起想清楚一個核心問題：</p>
 <blockquote>
 <div><p><strong>這些觀測量與地震之間有什麼關係？</strong></p>
 </div></blockquote>
+<p><strong>第二部</strong>接著走進地震預報的世界：當「找前兆」這條路困難重重（第一部會誠實地讓你看到有多難），科學社群這三十年來實際走通的路是什麼？答案是<strong>統計地震預報模型</strong>——從描述餘震叢集的 ETAS、捕捉前兆尺度增加的 EEPAS，到把預報變成日常業務的作業化系統與機率式地震危害度分析（PSHA）。第二部以觀念為主，帶你把這一整套思想走一遍。</p>
 <section id="id2">
 <h2>為什麼要觀測這些？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>大地震發生前，地殼處於應力累積的狀態。應力的變化「理論上」可能在多種物理量上留下痕跡：</p>
@@ -425,6 +439,7 @@
 </section>
 <section id="id3">
 <h2>這個網站怎麼用<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><strong>第一部：地球物理觀測資料探索</strong></p>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="01_overview.html"><span class="doc">1. 台灣地球物理觀測總覽</span></a>：先看台灣有哪些測站、分布在哪裡。</p></li>
 <li><p><a class="reference internal" href="02_download.html"><span class="doc">2. 資料下載機制</span></a>：GDMS 的註冊、下載機制，以及本站的 <code class="docutils literal notranslate"><span class="pre">gdms_toolkit</span></code> 自動化工具。</p></li>
@@ -432,6 +447,19 @@
 <li><p><a class="reference internal" href="07_case_hualien2024.html"><span class="doc">7. 案例分析：2024/4/3 花蓮地震 M7.2</span></a>：以 2024 年 4 月 3 日花蓮外海 M7.2 地震為案例，把四類資料放在同一時間軸上對照。這一章的結果可能會顛覆你的預期。</p></li>
 <li><p><a class="reference internal" href="08_explore_ideas.html"><span class="doc">8. 怎麼嚴謹地問「這和地震有關嗎？」</span></a>：怎麼嚴謹地問「這和地震有關嗎？」，一份前兆研究的方法地圖。</p></li>
 </ol>
+<p><strong>第二部：地震預報模型</strong></p>
+<ol class="arabic simple" start="6">
+<li><p><a class="reference internal" href="09_forecasting_intro.html"><span class="doc">9. 地震可以預測嗎？從預測走向機率預報</span></a>：地震可以預測嗎？從決定論式的「預測」走向機率式的「預報」。</p></li>
+<li><p><a class="reference internal" href="10_seismicity_stats.html"><span class="doc">10. 地震目錄統計的進階課</span></a>：目錄統計的進階課——Mc、b 值的不確定性、Omori 的皺褶、Båth、除叢的陷阱。</p></li>
+<li><p><a class="reference internal" href="11_etas.html"><span class="doc">11. ETAS：把餘震邏輯寫成一條式子</span></a>：ETAS——把「地震觸發地震」寫成一條條件強度函數，現代短期預報的主力引擎。</p></li>
+<li><p><a class="reference internal" href="12_eepas_ppe.html"><span class="doc">12. EEPAS 與 PPE：前兆尺度增加與中長期預報</span></a>：EEPAS 與 PPE——前兆尺度增加現象與中長期預報。</p></li>
+<li><p><a class="reference internal" href="13_step_oef.html"><span class="doc">13. 短期預報上線：STEP 與作業化系統</span></a>：STEP 與作業化系統——模型如何上線、機率如何說給社會聽。</p></li>
+<li><p><a class="reference internal" href="14_ensembles.html"><span class="doc">14. 三個臭皮匠：混合與加乘模型</span></a>：模型組合——混合與加乘，以及一場十年前瞻測試的教訓。</p></li>
+<li><p><a class="reference internal" href="15_forecast_testing.html"><span class="doc">15. 預報好不好，怎麼算？CSEP 檢驗</span></a>：預報好不好怎麼算——CSEP 的檢驗科學。</p></li>
+<li><p><a class="reference internal" href="16_psha.html"><span class="doc">16. 從預報到危害度：PSHA</span></a>：從預報到危害度——PSHA 與台灣地震模型。</p></li>
+<li><p><a class="reference internal" href="17_taiwan_outlook.html"><span class="doc">17. 台灣：資料、模型與下一步</span></a>：台灣——資料、模型與下一步。</p></li>
+</ol>
+<p>第二部以<strong>觀念</strong>為主：每一章用文字與示意圖把模型的直覺講清楚，程式碼只是產生示意圖的工具（預設摺疊，有興趣才展開）。你不需要會寫這些模型，但讀完應該能看懂任何一篇地震預報論文在做什麼、以及該對它問哪些問題。</p>
 <p>每一章都是可以下載執行的 Jupyter Notebook（頁面右上角下載按鈕）。所有圖表用的都是真實 GDMS 資料，重跑、改站、改時間範圍，只要改幾行程式。</p>
 </section>
 <section id="id4">
@@ -449,6 +477,8 @@ cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w
 <h2>資料來源與引用<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>本站所有觀測資料來自中央氣象署「臺灣地震與地球物理資料管理系統」（GDMS，<a class="reference external" href="https://gdms.cwa.gov.tw/">https://gdms.cwa.gov.tw/</a>）。使用資料發表研究成果時，請依 GDMS 網站規範引用資料來源（含 DOI：<a class="reference external" href="https://doi.org/10.7914/SN/T5">10.7914/SN/T5</a>）。</p>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>

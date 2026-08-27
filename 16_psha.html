@@ -1,0 +1,876 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>16. 從預報到危害度：PSHA &#8212; 台灣地球物理觀測資料探索</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '16_psha';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="17. 台灣：資料、模型與下一步" href="17_taiwan_outlook.html" />
+    <link rel="prev" title="15. 預報好不好，怎麼算？CSEP 檢驗" href="15_forecast_testing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">台灣地球物理觀測資料探索</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    台灣地球物理觀測資料探索
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地球物理觀測資料探索</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">1. 台灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">2. 資料下載機制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">3. 地下水位觀測</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">4. 地磁觀測</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">5. 地動觀測：波形與地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">6. GNSS 地殼變形觀測</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">7. 案例分析：2024/4/3 花蓮地震 M7.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">8. 怎麼嚴謹地問「這和地震有關嗎？」</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：地震預報模型</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">9. 地震可以預測嗎？從預測走向機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_seismicity_stats.html">10. 地震目錄統計的進階課</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_etas.html">11. ETAS：把餘震邏輯寫成一條式子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_eepas_ppe.html">12. EEPAS 與 PPE：前兆尺度增加與中長期預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_step_oef.html">13. 短期預報上線：STEP 與作業化系統</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_ensembles.html">14. 三個臭皮匠：混合與加乘模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_forecast_testing.html">15. 預報好不好，怎麼算？CSEP 檢驗</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. 從預報到危害度：PSHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_taiwan_outlook.html">17. 台灣：資料、模型與下一步</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/16_psha.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>16. 從預報到危害度：PSHA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.1 為什麼要「機率式」</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.2 玩具 PSHA：一個場址、兩條斷層</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.3 反聚合：危害是誰貢獻的？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tem">16.4 台灣地震模型（TEM）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oef-psha">16.5 時變危害：把 OEF 接上 PSHA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.6 反思：規範背後全是模型</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="psha">
+<h1>16. 從預報到危害度：PSHA<a class="headerlink" href="#psha" title="Link to this heading">#</a></h1>
+<p>第二部到目前為止都在回答「<strong>會不會有地震</strong>」。但對工程師、
+保險公司、建築規範的制定者來說，這不是最終的問題。房子不在乎
+震央在哪、規模多大——房子只在乎<strong>腳下的地表會晃多大</strong>。</p>
+<p>把「地震發生的機率」轉換成「地動強度的機率」，就是<strong>機率式
+地震危害度分析</strong>（Probabilistic Seismic Hazard Analysis,
+PSHA，Cornell 1968）。你家的建築耐震設計、核電廠選址、
+地震保險費率，背後全是這套計算。它也是地震預報這門學問
+通往社會的最寬的一座橋——而橋的每一塊磚，都是前面幾章
+教過的東西。</p>
+<p>本章以 Baker 的教學白皮書（<em>Probabilistic Seismic Hazard
+Analysis</em>, White Paper v2.0.1, 2013；已擴充為 Baker, Bradley
+&amp; Stafford 2021 教科書）為骨架，只講觀念，搭配一個玩具計算。</p>
+<section id="id1">
+<h2>16.1 為什麼要「機率式」<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>傳統的替代方案是決定論式的：「假設最壞情境——最近的斷層
+發生最大地震——算出地動，照著設計。」聽起來穩健，實則有
+兩個致命問題：「最壞情境」沒有客觀定義（最大規模？最近
+距離？地動要取平均還是平均加幾個標準差？），而且它完全
+忽略<strong>發生率</strong>——一條一萬年動一次的大斷層與一條一百年
+動一次的小斷層，對設計的意義天差地遠。</p>
+<p>PSHA 的回答是：不挑情境，<strong>把所有可能的地震、所有可能的
+地動，連同各自的機率，全部積分起來</strong>。Baker 把計算拆成
+五個步驟：</p>
+<ol class="arabic simple">
+<li><p>找出所有可能產生破壞性地動的<strong>震源</strong>（斷層或面震源）；</p></li>
+<li><p>描述每個震源的<strong>規模分布</strong>——就是 GR 律（第 5、10 章）；</p></li>
+<li><p>描述震源到場址的<strong>距離分布</strong>；</p></li>
+<li><p>給定規模與距離，用**地動預測方程（GMPE）**描述地動強度
+的分布——經驗迴歸式，殘差取對數常態，典型的 σ 約 0.5–0.6
+個自然對數單位（意思是：同樣的地震、同樣的距離，一個
+標準差就是約 1.8 倍的 PGA——<strong>地動的不確定性比震源的
+不確定性還大</strong>，這是 PSHA 最反直覺的事實之一）；</p></li>
+<li><p>用全機率定理把以上全部積分，得到「場址地動超越某強度」
+的年發生率。</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2>16.2 玩具 PSHA：一個場址、兩條斷層<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>用最小的例子把五步驟走一遍：一個場址，附近有兩條斷層——
+近而小（10 km 外，最大規模 6.0，活動較頻繁）與遠而大
+（25 km 外，最大規模 8.0，活動較稀）。規模服從截斷 GR
+（b=1），GMPE 用 Baker 白皮書示範的 Cornell 型式。對每個
+地動門檻 <span class="math notranslate nohighlight">\(x\)</span>，把兩條斷層、所有規模的貢獻積分起來：</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">gdms_toolkit.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">ACCENT</span><span class="p">,</span> <span class="n">PALETTE</span><span class="p">,</span> <span class="n">QUAKE_COLOR</span><span class="p">,</span> <span class="n">apply_layout</span>
+
+<span class="c1"># 兩條斷層：名稱、距離 (km)、M≥5 年發生率、最大規模</span>
+<span class="n">faults</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;近而小的斷層&quot;</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">),</span>
+          <span class="p">(</span><span class="s2">&quot;遠而大的斷層&quot;</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">)]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                                    <span class="c1"># b = 1（自然對數版）</span>
+<span class="n">M_MIN</span> <span class="o">=</span> <span class="mf">5.0</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gmpe_lnpga</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Cornell 型 GMPE（Baker 白皮書示範式；PGA 單位 g）。&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mf">0.152</span> <span class="o">+</span> <span class="mf">0.859</span> <span class="o">*</span> <span class="n">m</span> <span class="o">-</span> <span class="mf">1.803</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">25</span><span class="p">)</span>
+
+<span class="n">SIGMA</span> <span class="o">=</span> <span class="mf">0.57</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">exceed_rate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">rate5</span><span class="p">,</span> <span class="n">m_max</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;單一震源對「PGA &gt; x」年率的貢獻（對規模數值積分）。&quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">M_MIN</span><span class="p">,</span> <span class="n">m_max</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+    <span class="c1"># 截斷指數分布的規模密度</span>
+    <span class="n">fm</span> <span class="o">=</span> <span class="n">B</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">B</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">M_MIN</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">B</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_max</span> <span class="o">-</span> <span class="n">M_MIN</span><span class="p">)))</span>
+    <span class="n">p_ex</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">gmpe_lnpga</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">dist</span><span class="p">))</span> <span class="o">/</span> <span class="n">SIGMA</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rate5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">p_ex</span> <span class="o">*</span> <span class="n">fm</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+<span class="n">x_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x_grid</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">rate5</span><span class="p">,</span> <span class="n">m_max</span><span class="p">),</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">faults</span><span class="p">,</span> <span class="n">PALETTE</span><span class="p">):</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">exceed_rate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">rate5</span><span class="p">,</span> <span class="n">m_max</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_grid</span><span class="p">])</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">lam</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">lam</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                             <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s2">&quot;dot&quot;</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">total</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;總危害&quot;</span><span class="p">,</span>
+                         <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">ACCENT</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_hline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">475</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="n">QUAKE_COLOR</span><span class="p">,</span>
+              <span class="n">annotation_text</span><span class="o">=</span><span class="s2">&quot;1/475 年（50 年 10%）&quot;</span><span class="p">)</span>
+<span class="n">apply_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;玩具 PSHA 危害曲線：年超越率 vs 地動強度&quot;</span><span class="p">,</span>
+             <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;PGA（g）&quot;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;年超越率 λ(PGA &gt; x)&quot;</span><span class="p">,</span>
+             <span class="n">xaxis_type</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">yaxis_type</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html">        <script>
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.7.0.min"</script>
+        </div><div class="output text_html"><div style="height:525px; width:100%;">            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="7a2cf190-c290-4e5c-806e-4b7e36ffc922" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("7a2cf190-c290-4e5c-806e-4b7e36ffc922")) {                    Plotly.newPlot(                        "7a2cf190-c290-4e5c-806e-4b7e36ffc922",                        [{"line":{"color":"#2a78d6","dash":"dot"},"mode":"lines","name":"\u8fd1\u800c\u5c0f\u7684\u65b7\u5c64","x":{"dtype":"f8","bdata":"exSuR+F6hD\u002fIBqOcZeaFP8iwflAea4c\u002fwULdw8oKiT\u002fuiTxcSceKP3ljkaqZoow\u002fGfcJuN6ejj88KdG9MF+QPy\u002f9r73JgZE\u002fgqEdzoi4kj9XffmR0wSUP+oxIHgoaJU\u002fBXWPcyDklj\u002fpVg7ScHqYPxChdzPtLJo\u002fhInpo4n9mz8zIEbbXO6dP+RmTVLRAKA\u002f6JMZON8coT\u002fUPKYJn0yiP7TySVxukaM\u002fEpNoAsPspD9XBa65LGCmPxN6HfdW7ac\u002fO6cG0wqWqT+CMhcXMVyrP3G85XDUQa0\u002f3vl9yyNJrz+VFlFpOrqwP14oU1Ej47E\u002flkz+U6Igsz+17ODYJHS0PyOCaZ0x37U\u002ft+WZdmpjtz+7vOgxjgK5P6Z0epd6vro\u002flJ4BkC6ZvD\u002fLg79wzJS+PxPXJDjOWcA\u002fJQV0owd8wT90u8h+YLLCP7IdYfc9\u002fsM\u002fu59Q\u002fh1hxT\u002fvGxMAmdzGP1pLmrpjcsg\u002f\u002fpryM1Ekyj9y28HTVPTLP3dkCqKE5M0\u002fUCrIrRv3zz\u002fFjxVPPhfRP9qksTiaRtI\u002f3rATtv6K0z9Ydqse4eXUP4ZZqqzQWNY\u002fOE57SHjl1z\u002fqRBZ0oI3ZP6WNZFgxU9s\u002fedwS9zQ43T9XiFeD2T7fP744MPK5tOA\u002f8PYlMkHd4T\u002fermHHVxrjP7ptQqFqbeQ\u002fpwyy\u002fP\u002fX5T8Il0QluVvnPwGNe1VU+ug\u002fOr1VuK616j85xHqOxo\u002fsP8w6enm9iu4\u002fmTfhd21U8D+0sBBuR3bxP7Nr6jU6rPI\u002fVfkxh6r38z9Y\u002f1rVFVr1P1e6iwYU1fY\u002fENsPSVlq+D+cCFgJuBv6P6\u002fGxwoj6\u002fs\u002fm427pa\u002fa\u002fT+vuFstmOz\u002fPw=="},"y":{"dtype":"f8","bdata":"f7zaKJiZuT9NlN2EkZm5P7p8L7OGmbk\u002fyNvpTnWZuT+snDm5WZm5P\u002fLi1o0umbk\u002f3HeS5OuYuT\u002fgka9Shpi5P05moZ3tl7k\u002fB\u002f2mEAuXuT98NDBov5W5PxK+jkngk7k\u002fJPfMQzWRuT+16hdgdI25PwX+O1U+iLk\u002fsMQoghqBuT\u002fkGKrmcne5P6g\u002fRmaQark\u002fmkWStZdZuT\u002fK2MRjh0O5P1Do2H03J7k\u002fba73SlsDuT88GyiYhda4P5z7H\u002fEvn7g\u002fha18\u002fMRbuD9u+EL7rQq4P3TY+Chjqrc\u002frNm6b345tz+S3vuYz7a2P286IeBwIbY\u002f3AxZmNp4tT8ng7169Ly0P6wuPzMj7rM\u002fYBZW5VANsz\u002fKZgWl7xuyP5+XYEH1G7E\u002fR2ffM9APsD+Qfa8RrPStP03pHCpYvas\u002fr1uZe1eAqT\u002fn9K7hh0SnP8RoiD6zEKU\u002frp3IOFLroj8IEFRQVNqgP6ilB7jgxZ0\u002f6sG9lf8Smj8i7+hKzKKWP92c6bsKepM\u002fS6yjLH2bkD\u002fwFmbc+A+MP8BSfD1GfYc\u002fvG51Hg96gz+wFE3U\u002ff1\u002fP5cFlSiiBXo\u002fH+oFWsb1dD8wRhYAgLdwP7er2mB2Zmo\u002fTFsyOCejZD8lGsi5FvBfPwnZMLjXdVg\u002ff0Es2D6KUj+A44mk9M9LP7x\u002f5i05pEQ\u002f0sLZalJQPj++83u7TAU2P03OllunpS8\u002fbWBl2zB+Jj+0Z5K4MZ8fP7TAE\u002f1B+xU\u002f4GG5vfc3Dj80HeeUhokEPxdMZMUZmfs+PvDRYcBU8j7TN8kDJRLoPgDwSz2zPd8+NsXsilgJ1D6E+Aa1BGbJPh8nbCJt0L8+rdurWBKwsz7rMlg3MROoPg=="},"type":"scatter"},{"line":{"color":"#eb6834","dash":"dot"},"mode":"lines","name":"\u9060\u800c\u5927\u7684\u65b7\u5c64","x":{"dtype":"f8","bdata":"exSuR+F6hD\u002fIBqOcZeaFP8iwflAea4c\u002fwULdw8oKiT\u002fuiTxcSceKP3ljkaqZoow\u002fGfcJuN6ejj88KdG9MF+QPy\u002f9r73JgZE\u002fgqEdzoi4kj9XffmR0wSUP+oxIHgoaJU\u002fBXWPcyDklj\u002fpVg7ScHqYPxChdzPtLJo\u002fhInpo4n9mz8zIEbbXO6dP+RmTVLRAKA\u002f6JMZON8coT\u002fUPKYJn0yiP7TySVxukaM\u002fEpNoAsPspD9XBa65LGCmPxN6HfdW7ac\u002fO6cG0wqWqT+CMhcXMVyrP3G85XDUQa0\u002f3vl9yyNJrz+VFlFpOrqwP14oU1Ej47E\u002flkz+U6Igsz+17ODYJHS0PyOCaZ0x37U\u002ft+WZdmpjtz+7vOgxjgK5P6Z0epd6vro\u002flJ4BkC6ZvD\u002fLg79wzJS+PxPXJDjOWcA\u002fJQV0owd8wT90u8h+YLLCP7IdYfc9\u002fsM\u002fu59Q\u002fh1hxT\u002fvGxMAmdzGP1pLmrpjcsg\u002f\u002fpryM1Ekyj9y28HTVPTLP3dkCqKE5M0\u002fUCrIrRv3zz\u002fFjxVPPhfRP9qksTiaRtI\u002f3rATtv6K0z9Ydqse4eXUP4ZZqqzQWNY\u002fOE57SHjl1z\u002fqRBZ0oI3ZP6WNZFgxU9s\u002fedwS9zQ43T9XiFeD2T7fP744MPK5tOA\u002f8PYlMkHd4T\u002fermHHVxrjP7ptQqFqbeQ\u002fpwyy\u002fP\u002fX5T8Il0QluVvnPwGNe1VU+ug\u002fOr1VuK616j85xHqOxo\u002fsP8w6enm9iu4\u002fmTfhd21U8D+0sBBuR3bxP7Nr6jU6rPI\u002fVfkxh6r38z9Y\u002f1rVFVr1P1e6iwYU1fY\u002fENsPSVlq+D+cCFgJuBv6P6\u002fGxwoj6\u002fs\u002fm427pa\u002fa\u002fT+vuFstmOz\u002fPw=="},"y":{"dtype":"f8","bdata":"3h9nE+uWqT9\u002fZkefdpWpPxZ97cNgk6k\u002fu2ruoG2QqT\u002fXkRCFT4ypP6arslqjhqk\u002fX0xa+ux+qT8gKXyfk3SpP8yOI87eZqk\u002frtYNCfRUqT\u002fWOI7E1T2pP0xNSghkIKk\u002fgCPPLV\u002f7qD+vPc8Zbc2oP+rVJDAhlag\u002fCglyFwdRqD9EtRgqsP+nP0wA1DLDn6c\u002f4HHS0A0wpz8cRYKglq+mP6RnwxKvHaY\u002fHEoouwN6pT85yG3VqcSkP4RfR9Yo\u002fqM\u002f0HECDX8noz+qIvKnIEKiP59uRs\u002fwT6E\u002fN2E8+DRToD8M78QFBp2eP60LbTdWiZw\u002flABDWz1xmj8sKarPq1qYPyAbAuFqS5Y\u002fYOxrn+tIlD+aJ+\u002feG1iSP8f0rIlDfZA\u002frNdkadd3jT\u002ftw78\u002foC2KP8y1tAi2H4c\u002fWKwrylRQhD8bn3EQO8CBPwdgsXyj3X4\u002fQv9Cxbm0ej\u002faLedhYwB3P30y6gDcuXM\u002f8g7eYVzZcD\u002fUH8rw+6xsP4K2JrwlUWg\u002fZ9mR4t+NZD+7wGqJUFJhP0rleE3oHF0\u002fCER687hmWD\u002f3qy1sr2ZUP+CsEkcHBFE\u002fSpYSpUJRTD\u002fSjp5\u002f4oFHP93ezbqzd0M\u002fX6oK\u002fPsUQD8g3tg9LIA6PyqE2EEFxjU\u002fP8sPTfLVMT8Uk3HK\u002fB8tP2Yfg8Yasic\u002fH38sQlc0Iz+3Cg+rxf8ePzTOlGXo5xg\u002f3qgWhbfpEz+PPcOU5qwPPxwA8AtKDQk\u002fT165b\u002f2xAz+\u002f6smTpMX+PhiBmw\u002fl4Pc+N0YEHhpm8j7nXkF34iTsPq8gmpoMXOU+D3OmvZUU4D7TXOQCogLYPhavE1ZOxdE+vyPz0jESyj5TPvBi5\u002fLCPg=="},"type":"scatter"},{"line":{"color":"#2a78d6","width":3},"mode":"lines","name":"\u7e3d\u5371\u5bb3","x":{"dtype":"f8","bdata":"exSuR+F6hD\u002fIBqOcZeaFP8iwflAea4c\u002fwULdw8oKiT\u002fuiTxcSceKP3ljkaqZoow\u002fGfcJuN6ejj88KdG9MF+QPy\u002f9r73JgZE\u002fgqEdzoi4kj9XffmR0wSUP+oxIHgoaJU\u002fBXWPcyDklj\u002fpVg7ScHqYPxChdzPtLJo\u002fhInpo4n9mz8zIEbbXO6dP+RmTVLRAKA\u002f6JMZON8coT\u002fUPKYJn0yiP7TySVxukaM\u002fEpNoAsPspD9XBa65LGCmPxN6HfdW7ac\u002fO6cG0wqWqT+CMhcXMVyrP3G85XDUQa0\u002f3vl9yyNJrz+VFlFpOrqwP14oU1Ej47E\u002flkz+U6Igsz+17ODYJHS0PyOCaZ0x37U\u002ft+WZdmpjtz+7vOgxjgK5P6Z0epd6vro\u002flJ4BkC6ZvD\u002fLg79wzJS+PxPXJDjOWcA\u002fJQV0owd8wT90u8h+YLLCP7IdYfc9\u002fsM\u002fu59Q\u002fh1hxT\u002fvGxMAmdzGP1pLmrpjcsg\u002f\u002fpryM1Ekyj9y28HTVPTLP3dkCqKE5M0\u002fUCrIrRv3zz\u002fFjxVPPhfRP9qksTiaRtI\u002f3rATtv6K0z9Ydqse4eXUP4ZZqqzQWNY\u002fOE57SHjl1z\u002fqRBZ0oI3ZP6WNZFgxU9s\u002fedwS9zQ43T9XiFeD2T7fP744MPK5tOA\u002f8PYlMkHd4T\u002fermHHVxrjP7ptQqFqbeQ\u002fpwyy\u002fP\u002fX5T8Il0QluVvnPwGNe1VU+ug\u002fOr1VuK616j85xHqOxo\u002fsP8w6enm9iu4\u002fmTfhd21U8D+0sBBuR3bxP7Nr6jU6rPI\u002fVfkxh6r38z9Y\u002f1rVFVr1P1e6iwYU1fY\u002fENsPSVlq+D+cCFgJuBv6P6\u002fGxwoj6\u002fs\u002fm427pa\u002fa\u002fT+vuFstmOz\u002fPw=="},"y":{"dtype":"f8","bdata":"NyZH2YYywz\u002fGo0BqJjLDP6Idk4qbMcM\u002fk4iwD9Ywwz\u002fM8uC9wC\u002fDP2IcmB1ALsM\u002fBs\u002ffMDEswz840zYRaCnDP9qWWYKuJcM\u002fL\u002fSWisIgwz90qDslVRrDP1zy2SYJEsM\u002fckRabXIHwz\u002fGxH92FfrCP300p3Zn6cI\u002fmuTwBs\u002fUwj\u002fDOdt9pbvCP+cf2P84ncI\u002fRb\u002f9Ts94wj+s\u002fQJaqU3CPxFOnYMHG8I\u002fvulFlC7gwT+sf29BbZzBP6\u002fVIS4iT8E\u002fNvN+QcL3wD\u002fiBJ4n35XAP+IHTsgtKcA\u002fSArZ6xhjvz9VGm0aEV6+P1p9\u002fG3GQ70\u002fAc0p7ykVvD9yDahun9O6P3S1f+v9gLk\u002feBExzYsfuD+wMMGc9rG2P9HUyyNGO7U\u002fPAIMIcu+sz9Gt88QCkCyP2ALJdaiwrA\u002fxUYkrmyUrj+uXMullrSrP8WUHq5n7Kg\u002flv1wcelBpj\u002fD9ZC8YLqjPyQZIdwrWqE\u002fpkU1rlZJnj8cMwLJaziaP61zbnMvhJY\u002feOf1KDktkz+PY2B\u002fRjKQP2lvK0fjIIs\u002fPbfkPOaGhj\u002fXP6zX1IuCP8+wWfqjRn4\u002f6Dyoru5\u002feD8KGApQvKdzP24jjk9jRG8\u002f5AU1N2aoaD\u002fWKJ\u002fkEEhjPxT6pghZ510\u002fTzRwa7v\u002fVj8iJJPr+YtRP5ZHh9+\u002fkEo\u002fMQH4BT\u002f1Qz9stj8mPsU9P7SaMMfNDDY\u002fblr4ToY5MD8+A3qB0ronP2HghYHzQCE\u002fGGC5lvr0GD9KCWZvLPYRP5jmf2r\u002fvAk\u002fOhvrP21dAj9dS4W9gxv6PlgMoBxzffI+qtUcA0IZ6j6K7LMu0lriPt64rp5pudk+y4ikfx310T4OS8aws\u002ffIPg=="},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"shapes":[{"line":{"color":"#e34948","dash":"dash"},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0.002105263157894737,"y1":0.002105263157894737,"yref":"y"}],"annotations":[{"showarrow":false,"text":"1\u002f475 \u5e74\uff0850 \u5e74 10%\uff09","x":1,"xanchor":"right","xref":"x domain","y":0.002105263157894737,"yanchor":"bottom","yref":"y"}],"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"xaxis":{"title":{"text":"PGA\uff08g\uff09"},"type":"log"},"yaxis":{"title":{"text":"\u5e74\u8d85\u8d8a\u7387 \u03bb(PGA \u003e x)"},"type":"log"},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x","title":{"text":"\u73a9\u5177 PSHA \u5371\u5bb3\u66f2\u7dda\uff1a\u5e74\u8d85\u8d8a\u7387 vs \u5730\u52d5\u5f37\u5ea6"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('7a2cf190-c290-4e5c-806e-4b7e36ffc922');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p>這就是 <strong>危害曲線（hazard curve）</strong>——PSHA 的最終輸出。
+讀法：垂直找一個年率（例如工程規範常用的 1/475），水平對到
+的 PGA 就是設計地動。注意兩條斷層的角色變化：低強度端由
+近而小的斷層主導（它常動），愈往高強度端，遠而大的斷層佔比
+愈高、並在最高強度端反超（只有夠大的地震配上運氣不好的地動
+殘差，才晃得出超過 1 g）。</p>
+<p>這裡順便拆掉全工程界最常被誤解的一個詞。「475 年回歸期」
+<strong>不是</strong>「每 475 年來一次」，它只是年超越率 1/475 的倒數——
+平均間隔。把年率換算成「50 年內至少超越一次的機率」要再
+借一個假設（通常是 Poisson）：<span class="math notranslate nohighlight">\(P = 1 - e^{-\lambda t}\)</span>，
+代入 <span class="math notranslate nohighlight">\(\lambda = 1/475\)</span>、<span class="math notranslate nohighlight">\(t = 50\)</span> 年，得到約 10%——這就是
+「50 年 10% 超越機率 ≈ 475 年回歸期」的全部由來。Baker
+甚至建議乾脆只報年率、不報回歸期，免得誤會。</p>
+<div class="warning admonition">
+<p class="admonition-title">「475 年才來一次，我這輩子遇不到」</p>
+<p>這句話錯兩次。第一，回歸期是平均值，不是週期——明年就超越
+的機率每年都在。第二，475 年講的是「這個場址的地動超越
+設計值」的平均間隔，不是「大地震發生」的間隔；一個場址的
+地動可以被許多不同斷層的地震超越。</p>
+</div>
+</section>
+<section id="id3">
+<h2>16.3 反聚合：危害是誰貢獻的？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>PSHA 把所有情境加總，是它的優點也是代價：算完之後，「危害
+主要來自哪種地震？」反而看不到了。<strong>反聚合（deaggregation）</strong>
+就是把積分拆回去——問「已知 PGA 超越了 <span class="math notranslate nohighlight">\(x\)</span>，它是規模多大、
+距離多遠的地震造成的機率各是多少」（一個貝氏定理的直接
+應用）。用玩具模型算兩個危害水準的規模貢獻：</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">8.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">PALETTE</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">PALETTE</span><span class="p">[</span><span class="mi">1</span><span class="p">])]:</span>
+    <span class="n">contrib</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">m_lo</span><span class="p">,</span> <span class="n">m_hi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">m_edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">m_edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">rate5</span><span class="p">,</span> <span class="n">m_max</span> <span class="ow">in</span> <span class="n">faults</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">m_lo</span> <span class="o">&gt;=</span> <span class="n">m_max</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">m_lo</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">m_hi</span><span class="p">,</span> <span class="n">m_max</span><span class="p">),</span> <span class="mi">60</span><span class="p">)</span>
+            <span class="n">fm</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">B</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">M_MIN</span><span class="p">))</span>
+                  <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">B</span> <span class="o">*</span> <span class="p">(</span><span class="n">m_max</span> <span class="o">-</span> <span class="n">M_MIN</span><span class="p">))))</span>
+            <span class="n">p_ex</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x_val</span><span class="p">)</span> <span class="o">-</span> <span class="n">gmpe_lnpga</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">dist</span><span class="p">))</span> <span class="o">/</span> <span class="n">SIGMA</span><span class="p">)</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="n">rate5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">p_ex</span> <span class="o">*</span> <span class="n">fm</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+        <span class="n">contrib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">contrib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">contrib</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">contrib</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">–</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span>
+                            <span class="nb">zip</span><span class="p">(</span><span class="n">m_edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">m_edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])],</span>
+                         <span class="n">y</span><span class="o">=</span><span class="n">contrib</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;PGA &gt; </span><span class="si">{</span><span class="n">x_val</span><span class="si">}</span><span class="s2"> g&quot;</span><span class="p">,</span>
+                         <span class="n">marker_color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+<span class="n">apply_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;反聚合：不同危害水準下，各規模區間的貢獻&quot;</span><span class="p">,</span>
+             <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;規模區間&quot;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;貢獻比例（%）&quot;</span><span class="p">,</span>
+             <span class="n">barmode</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="height:525px; width:100%;">            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="c291d45d-a7ae-4a75-b0cc-7bf4924694c3" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c291d45d-a7ae-4a75-b0cc-7bf4924694c3")) {                    Plotly.newPlot(                        "c291d45d-a7ae-4a75-b0cc-7bf4924694c3",                        [{"marker":{"color":"#2a78d6"},"name":"PGA \u003e 0.2 g","x":["5.0\u20135.5","5.5\u20136.0","6.0\u20136.5","6.5\u20137.0","7.0\u20137.5","7.5\u20138.0"],"y":{"dtype":"f8","bdata":"bP48\u002fAJ6SkATQBBf6QdEQPN+Go+zngxAz4YrW\u002f4TAUBboUaI2PXtP9pPo\u002faRiNU\u002f"},"type":"bar"},{"marker":{"color":"#eb6834"},"name":"PGA \u003e 1.0 g","x":["5.0\u20135.5","5.5\u20136.0","6.0\u20136.5","6.5\u20137.0","7.0\u20137.5","7.5\u20138.0"],"y":{"dtype":"f8","bdata":"vI3JpQEQKEAQ13qzX\u002fdIQI50cN4iwgBAOTL77KbbGkDwAWBBc0kqQOyuaA5YFTBA"},"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x","title":{"text":"\u53cd\u805a\u5408\uff1a\u4e0d\u540c\u5371\u5bb3\u6c34\u6e96\u4e0b\uff0c\u5404\u898f\u6a21\u5340\u9593\u7684\u8ca2\u737b"},"xaxis":{"title":{"text":"\u898f\u6a21\u5340\u9593"}},"yaxis":{"title":{"text":"\u8ca2\u737b\u6bd4\u4f8b\uff08%\uff09"}},"barmode":"group"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('c291d45d-a7ae-4a75-b0cc-7bf4924694c3');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p>規律一目瞭然：<strong>危害水準愈高，主控的震源愈大、愈遠</strong>。
+PGA &gt; 0.2 g 的危害幾乎全由近斷層的中等地震包辦；PGA &gt; 1 g 時，
+遠斷層的大地震（M≥6.5）已搶下超過三分之一的貢獻，且愈往
+高強度端佔比愈高。反聚合是 PSHA 與工程設計之間的翻譯器——
+選設計地震波、做情境演練，都從這張圖出發。</p>
+</section>
+<section id="tem">
+<h2>16.4 台灣地震模型（TEM）<a class="headerlink" href="#tem" title="Link to this heading">#</a></h2>
+<p>台灣有自己的國家級 PSHA。**台灣地震模型（Taiwan Earthquake
+Model, TEM）**由學界團隊建立，兩代正式發布：</p>
+<ul class="simple">
+<li><p><strong>TEM PSHA2015</strong>（Wang et al. 2016, <em>TAO</em>）：採用地質調查
+辨識的 38 條孕震構造，加上淺層、隱沒帶板塊內、隱沒帶板塊
+間三類背景地震活動，各配對應的 GMPE。結論的定性圖像：
+<strong>危害最高的區域在西南部與東部縱谷</strong>；西部人口稠密都會中
+以台南（短週期）與台中（長週期）最受關注——原文特別點名
+台南的低樓層建物與台中的高樓層建物的耐震設計。</p></li>
+<li><p><strong>TEM PSHA2020</strong>（Chan et al. 2020, <em>Earthquake Spectra</em>）：
+構造資料庫擴充並納入三維幾何、允許<strong>多構造同時破裂</strong>
+（0403 花蓮與 1999 集集都提醒過我們這件事）、加入場址
+放大效應，並對斷層源導入 <strong>BPT（Brownian passage time）</strong>
+更新模型——斷層有「記憶」：剛破裂過的斷層短期內再破裂
+的機率低，隨應力重新累積而升高。下一代模型（PSHA2025）
+正在發展中。</p></li>
+</ul>
+<p>BPT 值得多停一秒，因為它是這一章與前面所有章節思想上的
+交會點：GR 律與 Poisson 假設說地震「無記憶」，ETAS 說地震
+短期內「彼此招引」（叢集），BPT 說單一斷層長期上「自我
+抑制」（週期性）——三種記憶結構，各自主宰不同的時間尺度
+與空間對象。一個完整的危害模型，三種都要裝。</p>
+</section>
+<section id="oef-psha">
+<h2>16.5 時變危害：把 OEF 接上 PSHA<a class="headerlink" href="#oef-psha" title="Link to this heading">#</a></h2>
+<p>傳統 PSHA 是<strong>時不變</strong>的：Poisson 假設下，今年與明年的危害
+曲線一模一樣。但第 11–13 章整整三章都在說：短期內地震率
+可以比背景高出百倍千倍。大地震剛過的城市，重建決策面對的
+危害顯然不是那條長期平均曲線。把 OEF 的時變地震率餵進
+PSHA 的積分（把齊次 Poisson 換成非齊次 Poisson），就得到
+<strong>時變危害</strong>：</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">weekly_exceed</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">boost</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;一週內超越機率：背景率 × boost（主震後餘震率放大）。&quot;&quot;&quot;</span>
+    <span class="n">lam_wk</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">exceed_rate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">r5</span> <span class="o">*</span> <span class="n">boost</span><span class="p">,</span> <span class="n">mm</span><span class="p">)</span> <span class="o">/</span> <span class="mf">52.18</span>
+                 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">r5</span><span class="p">,</span> <span class="n">mm</span> <span class="ow">in</span> <span class="n">faults</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lam_wk</span><span class="p">)</span>
+
+<span class="n">x_grid2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">boost</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;平時（長期背景）&quot;</span><span class="p">,</span> <span class="n">ACCENT</span><span class="p">),</span>
+                           <span class="p">(</span><span class="mf">200.0</span><span class="p">,</span> <span class="s2">&quot;大地震後第一週（餘震率放大，示意）&quot;</span><span class="p">,</span>
+                            <span class="n">QUAKE_COLOR</span><span class="p">)]:</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_grid2</span><span class="p">,</span>
+                             <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">weekly_exceed</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">boost</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_grid2</span><span class="p">],</span>
+                             <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                             <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)))</span>
+<span class="n">apply_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;時變危害示意：主震後一週的超越機率曲線整條上移&quot;</span><span class="p">,</span>
+             <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;PGA（g）&quot;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;一週內超越機率&quot;</span><span class="p">,</span>
+             <span class="n">xaxis_type</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">yaxis_type</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="height:525px; width:100%;">            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="f99d2eae-5cbe-463f-84a5-58f0ab805b13" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("f99d2eae-5cbe-463f-84a5-58f0ab805b13")) {                    Plotly.newPlot(                        "f99d2eae-5cbe-463f-84a5-58f0ab805b13",                        [{"line":{"color":"#2a78d6","width":2.5},"mode":"lines","name":"\u5e73\u6642\uff08\u9577\u671f\u80cc\u666f\uff09","x":{"dtype":"f8","bdata":"exSuR+F6hD\u002f5nx4461CGP\u002fDLxRIZUYg\u002f7SBPAjJ\u002fij8Ax\u002fPmU9+MP68bjRz7dY8\u002fIdWIeQUkkT8jrr10a62SP8tqQl4WWpQ\u002f2vodri8tlj\u002fJrY1uKSqYP\u002fvgm73EVJo\u002fFMsJ5BixnD+oj+8Om0OfP5mDVF2TCKE\u002ffTp6b4OPoj+Imsr2fzmkP975LFutCaY\u002fJJSLIngDqD\u002fpRv9nmyqqP+dRX+cng6w\u002fr9aCqosRrz8ClFkzTe2wP45XDU3LcbI\u002felozvR0ZtD9ltK7jY+a1P\u002ff368oE3bc\u002f1auylLUAuj\u002frLG16gFW8P2RoH27M374\u002ftiM6tTLSwD\u002ftI8rAQlTCP4QA8F3v+MM\u002fo\u002fKY7FLDxT\u002fPKXsEz7bHPwaVndcS18k\u002fKPdpJyIozD\u002fJiWzZXK7OP+b7CJ1Dt9A\u002fA4R+fuk20j8lqvmF9NjTP8xCcxt6oNU\u002f3lGkbNaQ1z\u002f8nFTFsq3ZP0vlSHkM+9s\u002fLALfbDx93j9E3Uilf5zgP2xdcjq\u002fGeI\u002fPWbO4iy54z+hD1YW2X3lP5VxcKEaa+c\u002fUl4Y85SE6T\u002fAl7j7Ps7rPwTSt6lqTO4\u002frszriOaB8D+t02apw\u002fzxPyBgcCKYmfM\u002ffLjpg29b9T\u002f8ZoVBm0X3P1Ng1Pa4W\u002fk\u002f"},"y":[0.00287014411076969,0.0028698467701699926,0.002869374701114036,0.002868640541360379,0.002867521867381706,0.0028658513556366616,0.0028634059817191915,0.002859895880929275,0.002854953756799228,0.002848125955497882,0.0028388664820139242,0.002826535281888032,0.002810402027568437,0.002789656429484033,0.002763425758972371,0.0027307998597415617,0.0026908634774219786,0.0026427352836889684,0.0025856125217376125,0.00251881973924728,0.0024418595757046413,0.002354463013947039,0.002256635907572968,0.002148698030305707,0.0020313104967530915,0.0019054873557241558,0.0017725876366246895,0.0016342852574433575,0.0014925159860974535,0.0013494029430419774,0.0012071646525667612,0.0010680120002288795,0.0009340422159584971,0.00080713882560568,0.0006888861980514083,0.0005805058623241655,0.000482819387493838,0.0003962396787371425,0.0003207895021621887,0.00025614335729740034,0.00020168682635690605,0.00015658645148119987,0.00011986306420175286,9.046220151220918e-05,6.73165663620523e-05,4.9397149758489967e-05,3.575135169109345e-05,2.5527989573115306e-05,1.7990309073900868e-05,1.251893674381055e-05,8.607133248572651e-06,5.85077218862029e-06,3.9352675971215945e-06,2.6213005761555053e-06,1.7307441902980614e-06,1.1337309951953145e-06,7.374023939243912e-07,4.7655346724351233e-07,3.0615131241251703e-07,1.9555478314448038e-07],"type":"scatter"},{"line":{"color":"#e34948","width":2.5},"mode":"lines","name":"\u5927\u5730\u9707\u5f8c\u7b2c\u4e00\u9031\uff08\u9918\u9707\u7387\u653e\u5927\uff0c\u793a\u610f\uff09","x":{"dtype":"f8","bdata":"exSuR+F6hD\u002f5nx4461CGP\u002fDLxRIZUYg\u002f7SBPAjJ\u002fij8Ax\u002fPmU9+MP68bjRz7dY8\u002fIdWIeQUkkT8jrr10a62SP8tqQl4WWpQ\u002f2vodri8tlj\u002fJrY1uKSqYP\u002fvgm73EVJo\u002fFMsJ5BixnD+oj+8Om0OfP5mDVF2TCKE\u002ffTp6b4OPoj+Imsr2fzmkP975LFutCaY\u002fJJSLIngDqD\u002fpRv9nmyqqP+dRX+cng6w\u002fr9aCqosRrz8ClFkzTe2wP45XDU3LcbI\u002felozvR0ZtD9ltK7jY+a1P\u002ff368oE3bc\u002f1auylLUAuj\u002frLG16gFW8P2RoH27M374\u002ftiM6tTLSwD\u002ftI8rAQlTCP4QA8F3v+MM\u002fo\u002fKY7FLDxT\u002fPKXsEz7bHPwaVndcS18k\u002fKPdpJyIozD\u002fJiWzZXK7OP+b7CJ1Dt9A\u002fA4R+fuk20j8lqvmF9NjTP8xCcxt6oNU\u002f3lGkbNaQ1z\u002f8nFTFsq3ZP0vlSHkM+9s\u002fLALfbDx93j9E3Uilf5zgP2xdcjq\u002fGeI\u002fPWbO4iy54z+hD1YW2X3lP5VxcKEaa+c\u002fUl4Y85SE6T\u002fAl7j7Ps7rPwTSt6lqTO4\u002frszriOaB8D+t02apw\u002fzxPyBgcCKYmfM\u002ffLjpg29b9T\u002f8ZoVBm0X3P1Ng1Pa4W\u002fk\u002f"},"y":[0.4372130684950656,0.4371795032843043,0.4371262098088864,0.4370433180497364,0.4369169885967469,0.4367282887759355,0.4364519476006393,0.4360550504281415,0.4354957587423002,0.43472216015931464,0.43367136451175614,0.43226896095465517,0.43042893810555183,0.428054146924741,0.42503735974970236,0.42126295549844583,0.4166092468822622,0.4109514639854066,0.40416541845705645,0.39613188680202693,0.38674175759814555,0.3759019702965214,0.3635422166930228,0.3496222680518234,0.3341396274268651,0.3171369973152578,0.29870882396679344,0.27900597704969377,0.25823750860418115,0.23666847600126084,0.214613065575616,0.1924227366450939,0.17046978216673536,0.1491274677823884,0.12874860680762246,0.10964487965619585,0.09206927419812783,0.07620365777774518,0.062152753287584184,0.049944840576438665,0.039538550625112134,0.030834359899791663,0.023688954977593935,0.017930558424794962,0.01337353534540664,0.0098310303150011,0.00712489488266399,0.005092651339731358,0.0035916287960979787,0.0025006711209083488,0.0017199532402573103,0.0011694734931557704,0.000786745421466617,0.000524123401672627,0.00034608923489853893,0.0002267206225599061,0.0001474696584340407,9.530617424224896e-05,6.122839732780605e-05,3.911019563629381e-05],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"xaxis":{"title":{"text":"PGA\uff08g\uff09"},"type":"log"},"yaxis":{"title":{"text":"\u4e00\u9031\u5167\u8d85\u8d8a\u6a5f\u7387"},"type":"log"},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x","title":{"text":"\u6642\u8b8a\u5371\u5bb3\u793a\u610f\uff1a\u4e3b\u9707\u5f8c\u4e00\u9031\u7684\u8d85\u8d8a\u6a5f\u7387\u66f2\u7dda\u6574\u689d\u4e0a\u79fb"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('f99d2eae-5cbe-463f-84a5-58f0ab805b13');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p>主震後第一週，各強度的超越機率整條上移約兩個數量級——
+平時每週萬分之一的搖晃機率，序列期間變成百分之幾。這不是
+學術演習：ICEF 報告（Jordan et al. 2011）明確要求 OEF 必須
+「與 PSHA 的長期預報一致地」輸出完整的危害描述——<strong>地動
+超越機率，而不只是地震發生機率</strong>。實作上的代表作有兩個：
+義大利把 OEF 地震率接上建物清冊與易損性模型，每日產出
+預期損失（OELF）；紐西蘭為 Canterbury 重建建立了 50 年
+時變危害模型，Kaikōura 之後更直接用它計算「地動超越規範
+設計值的機率增益」，支撐了中紐西蘭無筋磚造建築的<strong>強制
+補強</strong>政策。第 13 章的機率溝通難題，在這裡有了最實在的
+出口：機率變成了法規與工程決策。</p>
+</section>
+<section id="id4">
+<h2>16.6 反思：規範背後全是模型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>走完這一章，回頭看「一個數字算得出來，不等於它站得住腳」
+這句話——PSHA 是它的終極考場。一條危害曲線背後疊著多少
+層假設：目錄的完整性與除叢（第 10 章——記得除叢會偏移
+b 值、而 b 值直接進入危害積分）、GR 律外插到沒觀測過的
+大規模、GMPE 從有限的強震紀錄迴歸並外插、Poisson 或 BPT
+的發生模型、斷層幾何與滑移率的地質判讀。每一層都有不確定
+性（除叢與 b 值的細節見<a class="reference internal" href="10_seismicity_stats.html"><span class="doc">第 10 章</span></a>），
+而最終那個「475 年回歸期的設計地動」以工程規範的姿態
+出現時，所有的不確定性都藏進了一個看起來很權威的數字裡。
+這不是要你不信任規範——而是要你知道：規範是<strong>模型的輸出</strong>,
+模型會更新（TEM 兩代已發布、第三代進行中，就是證據），而懂得掀開引擎蓋的
+人，才有資格參與更新它。</p>
+<p>第二部的工具至此全部到齊：統計地基、短中長期模型、組合、
+檢驗、危害。<a class="reference internal" href="17_taiwan_outlook.html"><span class="doc">最後一章</span></a>，我們把所有
+東西帶回家——用台灣的
+目錄、台灣的地震、台灣的預報現況，做一次總整理，並誠實
+地問：台灣的下一步是什麼？</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="15_forecast_testing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">15. 預報好不好，怎麼算？CSEP 檢驗</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="17_taiwan_outlook.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">17. 台灣：資料、模型與下一步</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">16.1 為什麼要「機率式」</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">16.2 玩具 PSHA：一個場址、兩條斷層</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">16.3 反聚合：危害是誰貢獻的？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tem">16.4 台灣地震模型（TEM）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oef-psha">16.5 時變危害：把 OEF 接上 PSHA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">16.6 反思：規範背後全是模型</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -64,6 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9. 地震可以預測嗎？從預測走向機率預報" href="09_forecasting_intro.html" />
     <link rel="prev" title="7. 案例分析：2024/4/3 花蓮地震 M7.2" href="07_case_hualien2024.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -212,7 +213,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地球物理觀測資料探索</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_overview.html">1. 台灣地球物理觀測總覽</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_download.html">2. 資料下載機制</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">3. 地下水位觀測</a></li>
@@ -221,6 +223,18 @@
 <li class="toctree-l1"><a class="reference internal" href="06_gnss.html">6. GNSS 地殼變形觀測</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">7. 案例分析：2024/4/3 花蓮地震 M7.2</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. 怎麼嚴謹地問「這和地震有關嗎？」</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：地震預報模型</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">9. 地震可以預測嗎？從預測走向機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_seismicity_stats.html">10. 地震目錄統計的進階課</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_etas.html">11. ETAS：把餘震邏輯寫成一條式子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_eepas_ppe.html">12. EEPAS 與 PPE：前兆尺度增加與中長期預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_step_oef.html">13. 短期預報上線：STEP 與作業化系統</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_ensembles.html">14. 三個臭皮匠：混合與加乘模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_forecast_testing.html">15. 預報好不好，怎麼算？CSEP 檢驗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_psha.html">16. 從預報到危害度：PSHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_taiwan_outlook.html">17. 台灣：資料、模型與下一步</a></li>
 </ul>
 
     </div>
@@ -371,6 +385,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3 幾個把個案變成證據的方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.4 用手上的資料可以往哪走</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.5 一句話帶走</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.6 接下來：第二部</a></li>
 </ul>
             </nav>
         </div>
@@ -448,7 +463,9 @@
 重取樣），並把每一個候選異常都拿磁暴目錄（Kp、Dst）對照，看有多少其實
 是太空天氣。</p></li>
 <li><p><strong>地震活動度</strong>：做 b 值的時空掃描、餘震序列的 Omori 擬合，並用第 8.2 節
-第 4 關的精神，設計前震警報規則再回測誤報率。</p></li>
+第 4 關的精神，設計前震警報規則再回測誤報率。這條路走得最遠——遠到
+自成一門學問，本書第二部（<a class="reference internal" href="09_forecasting_intro.html"><span class="doc">第 9 章</span></a>起）
+會完整帶你走一遍。</p></li>
 <li><p><strong>GNSS</strong>：從中研院或 Nevada 的解算成果，畫花蓮地震的同震位移向量場，
 反推斷層滑移；或去找只有 GNSS 看得到的慢地震。</p></li>
 <li><p><strong>整合</strong>：用 <code class="docutils literal notranslate"><span class="pre">gdms_toolkit</span></code> 定期抓最新資料，做一頁會自動更新的「台灣
@@ -463,6 +480,20 @@
 在它剛好符合你期待的時候。</p>
 <p><strong>延伸閱讀</strong>：Roeloffs (1988) 水文前兆綜述、Johnston (1997) 震磁綜述、
 Cicerone et al. (2009) 前兆目錄，以及台灣本土的地震前兆觀測計畫相關文獻。</p>
+</section>
+<section id="id7">
+<h2>8.6 接下來：第二部<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>讀完這一章，你可能會覺得有點洩氣：訊號太小、樣本太少、事後選擇太會
+騙人——那科學對地震還能說什麼？</p>
+<p>其實有一條路走通了，而且就建立在這一章的紀律之上。過去三十年，地震
+科學放下「找前兆、做預測」的執念，改用你已經最熟悉的資料——地震目錄
+本身——回答一個謙虛但答得出來的問題：**這裡、這段時間內，發生某規模
+以上地震的機率是多少？**這條路叫統計地震預報，它把 8.2 節的四個關卡
+制度化成一套國際檢驗機制，讓每一個模型都得在「事先定好規則」的前瞻
+測試中證明自己。第二部（<a class="reference internal" href="09_forecasting_intro.html"><span class="doc">第 9 章</span></a>起）就
+帶你把這條路完整走一遍——從目錄統計的進階課，到世界各國實際上線
+運轉的預報模型，最後回到台灣。第一部教你懷疑；第二部教你，懷疑
+過關之後還能留下什麼。</p>
 </section>
 </section>
 
@@ -505,6 +536,15 @@ Cicerone et al. (2009) 前兆目錄，以及台灣本土的地震前兆觀測計
         <p class="prev-next-title">7. 案例分析：2024/4/3 花蓮地震 M7.2</p>
       </div>
     </a>
+    <a class="right-next"
+       href="09_forecasting_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">9. 地震可以預測嗎？從預測走向機率預報</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -528,6 +568,7 @@ Cicerone et al. (2009) 前兆目錄，以及台灣本土的地震前兆觀測計
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3 幾個把個案變成證據的方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.4 用手上的資料可以往哪走</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.5 一句話帶走</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.6 接下來：第二部</a></li>
 </ul>
   </nav></div>
 
