@@ -22,8 +22,8 @@
 # 本章目標：看懂 RINEX 檔案的結構與內容。
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %%
 import gzip

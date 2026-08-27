@@ -23,8 +23,8 @@
 # 最低點就是 Ψ 的**起始點（onset）**。用合成資料畫出典型樣貌：
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %% tags=["hide-input"]
 import numpy as np

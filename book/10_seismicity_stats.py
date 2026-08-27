@@ -29,8 +29,8 @@
 # 各畫一條規模–頻率分布（FMD），差異一目了然：
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %% tags=["hide-input"]
 import numpy as np
@@ -354,7 +354,7 @@ fig
 # 時間窗變、Båth 隨餘震數變、除叢法本身會製造統計假象。
 #
 # 所以在台灣用目錄做任何長期統計之前，先記住幾個該切一刀的年份：
-# **1973**（儀器目錄起點）、**1991**（改用 $M_L$）、**1994**
+# **1973**（儀器目錄起點）**、1991**（改用 $M_L$）**、1994**
 # （連續記錄，多數現代研究的起點）、**2012**（微震偵測能力再升級）。
 # 以及一條實用的換算式：台灣區域 $M_w = 0.87\,M_L + 0.23$
 # （AutoBATS）——$M_L\,7.0$ 其實只是 $M_w\,6.3$，把 $M_L$ 目錄

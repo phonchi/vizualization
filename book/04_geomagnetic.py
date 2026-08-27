@@ -18,12 +18,12 @@
 # ## 4.2 認識地磁站
 #
 # 氣象署地磁網有 20 站，遍布全台（含離島）。本章用第 2 章下載的
-# **新城（XCG，花蓮）**秒資料，IAGA-2002 格式，三分量 X（北）、
+# **新城（XCG，花蓮**）秒資料，IAGA-2002 格式，三分量 X（北）、
 # Y（東）、Z（垂直向下）。
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %%
 import numpy as np

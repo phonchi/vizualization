@@ -32,7 +32,7 @@
 # 1. 找出所有可能產生破壞性地動的**震源**（斷層或面震源）；
 # 2. 描述每個震源的**規模分布**——就是 GR 律（第 5、10 章）；
 # 3. 描述震源到場址的**距離分布**；
-# 4. 給定規模與距離，用**地動預測方程（GMPE）**描述地動強度
+# 4. 給定規模與距離，用**地動預測方程（GMPE**）描述地動強度
 #    的分布——經驗迴歸式，殘差取對數常態，典型的 σ 約 0.5–0.6
 #    個自然對數單位（意思是：同樣的地震、同樣的距離，一個
 #    標準差就是約 1.8 倍的 PGA——**地動的不確定性比震源的
@@ -49,8 +49,8 @@
 # 地動門檻 $x$，把兩條斷層、所有規模的貢獻積分起來：
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %% tags=["hide-input"]
 import numpy as np
@@ -164,7 +164,7 @@ fig
 # ## 16.4 台灣地震模型（TEM）
 #
 # 台灣有自己的國家級 PSHA。**台灣地震模型（Taiwan Earthquake
-# Model, TEM）**由學界團隊建立，兩代正式發布：
+# Model, TEM**）由學界團隊建立，兩代正式發布：
 #
 # - **TEM PSHA2015**（Wang et al. 2016, *TAO*）：採用地質調查
 #   辨識的 38 條孕震構造，加上淺層、隱沒帶板塊內、隱沒帶板塊

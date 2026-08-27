@@ -6,8 +6,8 @@
 # `data/stations/`），看看它們的規模與分布。
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %%
 import folium

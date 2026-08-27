@@ -14,8 +14,8 @@
 # | 地磁 | XCG 新城（花蓮） | ~30 km |
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %%
 import numpy as np

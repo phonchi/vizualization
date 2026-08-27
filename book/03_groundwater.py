@@ -19,8 +19,8 @@
 # GDMS 釋出六口即時觀測井，1 秒取樣，同時記錄水位、氣壓與水溫：
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %%
 import pandas as pd

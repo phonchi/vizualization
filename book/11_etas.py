@@ -68,8 +68,8 @@
 # Omori 核抽、規模從 GR 律抽，遞迴到沒有新事件為止：
 
 # %% tags=["remove-input"]
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+from gdms_toolkit.viz import setup_plotly
+setup_plotly()
 
 # %% tags=["hide-input"]
 import numpy as np
@@ -299,7 +299,7 @@ fig
 # ## 11.4 一條描述叢集的語言
 #
 # 這一章結束前，把一個容易誤會的定位講清楚：**ETAS 不是物理
-# 定律，它是描述叢集的統計語言。**它的三個零件——GR、Omori、
+# 定律，它是描述叢集的統計語言**。它的三個零件——GR、Omori、
 # Utsu–Seki——全是先從資料歸納、再寫成公式的經驗律；空間核的
 # 函數形式靠 AIC 挑選，不靠力學推導；不同構造區的參數各不相同，
 # 沒有第一原理告訴你該是多少。它有物理上說得通的詮釋（例如
