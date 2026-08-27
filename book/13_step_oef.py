@@ -127,7 +127,8 @@ fig
 # ## 13.2 從模型到系統：三條路線
 #
 # STEP 於 2005 年在加州上線（原網站已走入歷史；美國現行系統
-# 是新一代的 OAF，用 Reasenberg–Jones 或 ETAS 引擎——把 STEP
+# 是新一代的作業化餘震預報系統（Operational Aftershock
+# Forecasting, OAF），用 Reasenberg–Jones 或 ETAS 引擎——把 STEP
 # 講成「USGS 現在在跑的系統」是常見的錯誤）。二十年下來，
 # 世界上形成了三條代表性的作業化路線，第 9 章看過概要，這裡
 # 補上工程與制度的細節：
