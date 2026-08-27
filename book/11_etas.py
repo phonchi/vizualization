@@ -1,7 +1,7 @@
 # %% [markdown]
 # # 11. ETAS：把餘震邏輯寫成一條式子
 #
-# {doc}`第 5 章 <05_seismic>`與{doc}`第 10 章 <10_seismicity_stats>`
+# {doc}`第 5 章 <05_seismic>`與{doc}`第 10 章 <11_catalog_completeness_b>`
 # 給了你兩條經驗律：GR 律（規模怎麼分布）與 Omori 律（餘震怎麼
 # 衰減）。這一章要把它們縫成一個完整的隨機
 # 過程模型——**ETAS**（Epidemic-Type Aftershock Sequence，
@@ -311,5 +311,5 @@ fig
 # 什麼時候來」，ETAS 給的答案跟背景率差不多——約等於沒有答案。
 # 想往前多看幾個月、幾年，需要完全不同的想法：不問「這個地震
 # 會觸發什麼」，而問「這個地震**預示**著什麼」。
-# {doc}`下一章 <12_eepas_ppe>`的 EEPAS 就是把時間之箭反過來的
+# {doc}`下一章 <16_eepas_ppe>`的 EEPAS 就是把時間之箭反過來的
 # 模型——每一個小地震，都可能是未來更大地震的前兆。

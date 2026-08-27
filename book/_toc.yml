@@ -14,11 +14,15 @@ parts:
   - caption: 第二部：地震預報模型
     chapters:
       - file: 09_forecasting_intro
-      - file: 10_seismicity_stats
-      - file: 11_etas
-      - file: 12_eepas_ppe
-      - file: 13_step_oef
-      - file: 14_ensembles
-      - file: 15_forecast_testing
-      - file: 16_psha
-      - file: 17_taiwan_outlook
+      - file: 10_point_process
+      - file: 11_catalog_completeness_b
+      - file: 12_clustering_laws
+      - file: 13_etas_structure
+      - file: 14_etas_estimation
+      - file: 16_eepas_ppe
+      - file: 17_testing_consistency
+      - file: 18_testing_comparison
+      - file: 19_ensembles
+      - file: 21_psha
+      - file: 22_operational_systems
+      - file: 23_taiwan_outlook
