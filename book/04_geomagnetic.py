@@ -48,7 +48,7 @@ mag.describe().round(1)
 # ## 4.3 三分量時間序列（2024/03/25–04/09）
 
 # %%
-comps = [("X", "X（北向, nT）"), ("Y", "Y（東向, nT）"), ("Z", "Z（垂直, nT）")]
+comps = [("X", "X（北向，nT）"), ("Y", "Y（東向，nT）"), ("Z", "Z（垂直，nT）")]
 fig = make_subplots(rows=3, cols=1, shared_xaxes=True, vertical_spacing=0.05,
                     subplot_titles=[t for _, t in comps])
 for i, (c, _) in enumerate(comps, 1):
@@ -70,7 +70,7 @@ fig
 #   判斷某天是否磁暴，可查 [Kp 指數](https://kp.gfz-potsdam.de/en/)。
 # - 紅線（花蓮地震）附近有沒有「異常」？單看一站沒辦法回答，往下看差分分析。
 #
-# ## 4.4 疊代日變化：平靜日 vs 擾動日
+# ## 4.4 疊合日變化：平靜日 vs 擾動日
 
 # %%
 z = mag["X"].copy()
