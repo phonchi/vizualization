@@ -1234,16 +1234,18 @@ P\bigl(N(T)=0\bigr)
 <div class="math notranslate nohighlight" id="equation-eq-nhpp">
 <span class="eqno">(25)<a class="headerlink" href="#equation-eq-nhpp" title="Link to this equation">#</a></span>\[P\bigl(\text{exceedance in }[0,T]\bigr)
   \;=\; 1-\exp\left[-\int_{0}^{T}\lambda_{IM}(x;t)\,\mathrm{d}t\right],\]</div>
-<p>其中時變的危害積分是 <span class="math notranslate nohighlight">\(\lambda_{IM}(x;t)=\sum_{\rm src}\nu_{\rm src}(t)\int\!\!\int
-P(IM&gt;x\mid m,r)f_M(m)f_R(r)\,\mathrm{d}m\,\mathrm{d}r\)</span>。<a class="reference internal" href="#equation-eq-nhpp">(25)</a> 就是
-21.6 節那條時窗機率的推廣：<span class="math notranslate nohighlight">\(\lambda t\)</span> 換成 <span class="math notranslate nohighlight">\(\int\lambda\,\mathrm{d}t\)</span>。整個
-時變危害的框架，數學上就只有這一步。</p>
+<p>其中時變的危害積分是</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{IM}(x;t) = \sum_{\rm src}\nu_{\rm src}(t)
+  \int\!\!\int P(IM&gt;x\mid m,r)\,f_M(m)\,f_R(r)\,\mathrm{d}m\,\mathrm{d}r .\]</div>
+<p><a class="reference internal" href="#equation-eq-nhpp">(25)</a> 就是 21.6 節那條時窗機率的推廣：<span class="math notranslate nohighlight">\(\lambda t\)</span> 換成
+<span class="math notranslate nohighlight">\(\int\lambda\,\mathrm{d}t\)</span>。整個時變危害的框架，數學上就只有這一步。</p>
 <p><strong>要看清楚哪一層變了、哪一層沒變。</strong> 變的只有最外層的 <span class="math notranslate nohighlight">\(\nu_{\rm src}(t)\)</span>，規模分布、
 距離分布、GMPE 三層原封不動——這等於假設「餘震序列期間的地震，其規模–距離–地動關係
 與平時一樣」。這不見得對（餘震的深度、機制、破裂尺度都可能與背景地震有系統性差異），
 但它讓整套計算可以複用，代價是把時變性全部壓進一個純量。</p>
-<p>兩種記憶各自怎麼提供 <span class="math notranslate nohighlight">\(\nu_{\rm src}(t)\)</span>。<strong>短期用 ETAS</strong>：<span class="math notranslate nohighlight">\(\nu(t)=\lambda^*(t\mid
-H_t)\)</span>，第 13、14 章的條件強度——微妙之處在於 <span class="math notranslate nohighlight">\(\lambda^*\)</span> 條件於歷史，而未來還沒發生
+<p>兩種記憶各自怎麼提供 <span class="math notranslate nohighlight">\(\nu_{\rm src}(t)\)</span>。<strong>短期用 ETAS</strong>：取 <span class="math notranslate nohighlight">\(\nu(t)=\lambda^*(t\mid H_t)\)</span>
+即第 13、14 章的條件強度——微妙之處在於 <span class="math notranslate nohighlight">\(\lambda^*\)</span> 條件於歷史，而未來還沒發生
 的餘震會再觸發自己的餘震，嚴格算 <a class="reference internal" href="#equation-eq-nhpp">(25)</a> 需要對未來所有可能歷史取期望，實務上
 就是跑數萬條模擬目錄再平均，這也是時變危害系統遠比傳統 PSHA 昂貴的原因。<strong>長期用
 BPT</strong>：<span class="math notranslate nohighlight">\(\nu(t)=h(t-t_{\rm last})\)</span>，<span class="math notranslate nohighlight">\(h\)</span> 是第 20 章的危害函數 <a class="reference internal" href="20_recurrence_models.html#equation-eq-hazard-def">(20)</a>。</p>
@@ -1491,8 +1493,9 @@ Kaikōura 地震之後，這套模型被用來計算「地動超越建築規範�
 該怎麼分段？<span class="math notranslate nohighlight">\(c_v\)</span> 取 0.3 還是 0.7（第 20 章）？這些<strong>不能</strong>被積分掉，因為它們不是
 隨機的——真相只有一個，只是我們不知道。</p>
 <p>這個區分有可操作的後果：<strong>偶然不確定性變大會讓危害曲線的尾巴變厚（一條曲線改變
-形狀）；認知不確定性變大會讓你得到很多條不同的曲線。</strong> 表達後者的標準工具是 <strong>logic tree</strong>：對每一個無法由資料決定的選擇，列出所有
-合理選項、各給一個權重，然後把整棵樹跑完，輸出一<strong>族</strong>曲線（通常報告成平均危害曲線
+形狀）；認知不確定性變大會讓你得到很多條不同的曲線。</strong> 表達後者的標準工具是
+<strong>logic tree</strong>：對每一個無法由資料決定的選擇，列出所有合理選項、各給一個權重，然後
+把整棵樹跑完，輸出一<strong>族</strong>曲線（通常報告成平均危害曲線
 加上分位數帶）。這棵樹可以長得非常大——<strong>UCERF3 有 5760 個 logic-tree 分支</strong>（第 20
 章）。這個數字本身就是認知不確定性規模的量尺：一個需要 5760 個分支才能表達的模型，
 等於在說「這件事我們真的不太確定」。</p>
@@ -1561,21 +1564,27 @@ et al. (2021) 的批評完全適用；用 ETAS 全目錄模擬重做一次台灣
 <h2>21.14 附錄：本章推導細節<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
 <section id="a-gr">
 <h3>A. 截斷 GR 的累積分布、抽樣與平均規模<a class="headerlink" href="#a-gr" title="Link to this heading">#</a></h3>
-<p>由 <a class="reference internal" href="#equation-eq-trunc-gr">(23)</a> 積分得累積分布
-<span class="math notranslate nohighlight">\(F_M(m)=\bigl[1-e^{-\beta(m-m_{\min})}\bigr]\big/\bigl[1-e^{-\beta(m_{\max}
--m_{\min})}\bigr]\)</span>。這個式子在模擬時直接可用：由第 10 章的反函數法，取
-<span class="math notranslate nohighlight">\(U\sim\mathrm{Unif}(0,1)\)</span> 則 <span class="math notranslate nohighlight">\(m=m_{\min}-\beta^{-1}\ln[1-U(1-e^{-\beta(m_{\max}
--m_{\min})})]\)</span> 就是一個截斷 GR 的抽樣。平均規模由分部積分得 <span class="math notranslate nohighlight">\(E[M]=m_{\min}+1/\beta
--(m_{\max}-m_{\min})e^{-\beta(m_{\max}-m_{\min})}/[1-e^{-\beta(m_{\max}-m_{\min})}]\)</span>，
-<span class="math notranslate nohighlight">\(m_{\max}\to\infty\)</span> 時退化成指數分布的 <span class="math notranslate nohighlight">\(m_{\min}+1/\beta\)</span>（<span class="math notranslate nohighlight">\(b=1\)</span> 時即
-<span class="math notranslate nohighlight">\(m_{\min}+0.434\)</span>）。</p>
+<p>由 <a class="reference internal" href="#equation-eq-trunc-gr">(23)</a> 積分得累積分布與平均規模：</p>
+<div class="math notranslate nohighlight">
+\[F_M(m)=\frac{1-e^{-\beta(m-m_{\min})}}{1-e^{-\beta(m_{\max}-m_{\min})}},
+  \qquad
+  E[M] = m_{\min} + \frac{1}{\beta}
+  - \frac{(m_{\max}-m_{\min})\,e^{-\beta(m_{\max}-m_{\min})}}
+         {1-e^{-\beta(m_{\max}-m_{\min})}} .\]</div>
+<p>前者在模擬時直接可用：由第 10 章的反函數法，取 <span class="math notranslate nohighlight">\(U\sim\mathrm{Unif}(0,1)\)</span> 則
+<span class="math notranslate nohighlight">\(m=m_{\min}-\beta^{-1}\ln\bigl[1-U\bigl(1-e^{-\beta(m_{\max}-m_{\min})}\bigr)\bigr]\)</span>
+就是一個截斷 GR 的抽樣。後者在 <span class="math notranslate nohighlight">\(m_{\max}\to\infty\)</span> 時退化成指數分布的
+<span class="math notranslate nohighlight">\(m_{\min}+1/\beta\)</span>（<span class="math notranslate nohighlight">\(b=1\)</span> 時即 <span class="math notranslate nohighlight">\(m_{\min}+0.434\)</span>）。</p>
 </section>
 <section id="b-varepsilon">
 <h3>B. 危害積分的 <span class="math notranslate nohighlight">\(\varepsilon\)</span> 形式<a class="headerlink" href="#b-varepsilon" title="Link to this heading">#</a></h3>
-<p>把 21.7 節的 <span class="math notranslate nohighlight">\(P(IM&gt;x\mid m,r)\)</span> 展開成 <span class="math notranslate nohighlight">\(\varepsilon\)</span> 的積分，<a class="reference internal" href="#equation-eq-psha">(22)</a> 有一個等價
-寫法 <span class="math notranslate nohighlight">\(\lambda_{IM}(x)=\sum_{\rm src}\nu_{\rm src}\iiint_{\varepsilon_0(x,m,r)}^{\infty}
-\varphi(e)f_M(m)f_R(r)\,\mathrm{d}e\,\mathrm{d}m\,\mathrm{d}r\)</span>。被積函數不再含 <span class="math notranslate nohighlight">\(x\)</span>
-——<span class="math notranslate nohighlight">\(x\)</span> 只出現在積分下限裡。這個寫法讓反聚合的三個維度完全對稱，並清楚顯示 <strong>PSHA
+<p>把 21.7 節的 <span class="math notranslate nohighlight">\(P(IM&gt;x\mid m,r)\)</span> 展開成 <span class="math notranslate nohighlight">\(\varepsilon\)</span> 的積分，<a class="reference internal" href="#equation-eq-psha">(22)</a> 有一個等價寫法</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{IM}(x) = \sum_{\rm src}\nu_{\rm src}
+  \int\!\!\int\!\!\int_{\varepsilon_0(x,m,r)}^{\infty}
+  \varphi(e)\,f_M(m)\,f_R(r)\,\mathrm{d}e\,\mathrm{d}m\,\mathrm{d}r .\]</div>
+<p>被積函數不再含 <span class="math notranslate nohighlight">\(x\)</span>——<span class="math notranslate nohighlight">\(x\)</span> 只出現在積分下限裡。這個寫法讓反聚合的三個維度完全對稱，
+並清楚顯示 <strong>PSHA
 本質上是在 <span class="math notranslate nohighlight">\((m,r,\varepsilon)\)</span> 這個三維情境空間上，對一個由 <span class="math notranslate nohighlight">\(x\)</span> 決定的區域做積分</strong>；
 改變 <span class="math notranslate nohighlight">\(x\)</span> 就是移動那個區域的邊界。</p>
 </section>
@@ -1661,8 +1670,9 @@ et al. (2021) 的批評完全適用；用 ETAS 全目錄模擬重做一次台灣
 最好的證據。懂得掀開引擎蓋的人，才有資格參與下一次更新。</p>
 <p>最後還有一件事沒做完。本章的時變危害停在數學上：<a class="reference internal" href="#equation-eq-nhpp">(25)</a> 告訴我們怎麼把時變的
 地震率換成地動超越機率。但一個系統要 24 小時運轉、在大地震後很短的時間內產出結果、
-還要把那個結果講給不懂機率的人聽，需要的遠不只是一條式子。<a class="reference internal" href="22_operational_systems.html"><span class="doc">第 22 章</span></a>就來處理這一段：從 STEP 到現行的作業化系統，模型上線之後
-會冒出哪些不再是統計的問題。</p>
+還要把那個結果講給不懂機率的人聽，需要的遠不只是一條式子。
+<a class="reference internal" href="22_operational_systems.html"><span class="doc">第 22 章</span></a>就來處理這一段：從 STEP 到現行的作業化系統，
+模型上線之後會冒出哪些不再是統計的問題。</p>
 </section>
 </section>
 </section>
