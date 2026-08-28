@@ -19,10 +19,12 @@ parts:
       - file: 12_clustering_laws
       - file: 13_etas_structure
       - file: 14_etas_estimation
+      - file: 15_psi_phenomenon
       - file: 16_eepas_ppe
       - file: 17_testing_consistency
       - file: 18_testing_comparison
       - file: 19_ensembles
+      - file: 20_recurrence_models
       - file: 21_psha
       - file: 22_operational_systems
       - file: 23_taiwan_outlook

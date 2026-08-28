@@ -39,12 +39,12 @@
 | {doc}`12_clustering_laws` | 目錄統計 II：叢集的經驗律與除叢 |
 | {doc}`13_etas_structure` | ETAS I：條件強度、分支過程與模擬 |
 | {doc}`14_etas_estimation` | ETAS II：估計、診斷、變體與作業引擎 |
-| 15（第二期） | Ψ：前兆尺度增加的解剖 |
+| {doc}`15_psi_phenomenon` | Ψ：前兆尺度增加的解剖 |
 | {doc}`16_eepas_ppe` | EEPAS 與 PPE：把 Ψ 變成可運轉的預報 |
 | {doc}`17_testing_consistency` | 預報檢驗 I：似然與一致性檢驗 |
 | {doc}`18_testing_comparison` | 預報檢驗 II：比較、警報、功效與價值 |
 | {doc}`19_ensembles` | 模型組合：加法、乘法與權重學習 |
-| 20（第二期） | 時間相依複發模型：Weibull、BPT、應力釋放 |
+| {doc}`20_recurrence_models` | 時間相依複發模型：Weibull、BPT、應力釋放 |
 | {doc}`21_psha` | PSHA：從發生率到地動危害 |
 | {doc}`22_operational_systems` | 作業化系統：STEP、OEF 與機率溝通 |
 | {doc}`23_taiwan_outlook` | 台灣：資料、模型、缺口與下一步 |
