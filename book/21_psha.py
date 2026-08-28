@@ -662,18 +662,21 @@ fig
 # $$P\bigl(\text{exceedance in }[0,T]\bigr)
 #   \;=\; 1-\exp\left[-\int_{0}^{T}\lambda_{IM}(x;t)\,\mathrm{d}t\right],$$ (eq:nhpp)
 #
-# 其中時變的危害積分是 $\lambda_{IM}(x;t)=\sum_{\rm src}\nu_{\rm src}(t)\int\!\!\int
-# P(IM>x\mid m,r)f_M(m)f_R(r)\,\mathrm{d}m\,\mathrm{d}r$。{eq}`eq:nhpp` 就是
-# 21.6 節那條時窗機率的推廣：$\lambda t$ 換成 $\int\lambda\,\mathrm{d}t$。整個
-# 時變危害的框架，數學上就只有這一步。
+# 其中時變的危害積分是
+#
+# $$\lambda_{IM}(x;t) = \sum_{\rm src}\nu_{\rm src}(t)
+#   \int\!\!\int P(IM>x\mid m,r)\,f_M(m)\,f_R(r)\,\mathrm{d}m\,\mathrm{d}r .$$
+#
+# {eq}`eq:nhpp` 就是 21.6 節那條時窗機率的推廣：$\lambda t$ 換成
+# $\int\lambda\,\mathrm{d}t$。整個時變危害的框架，數學上就只有這一步。
 #
 # **要看清楚哪一層變了、哪一層沒變。** 變的只有最外層的 $\nu_{\rm src}(t)$，規模分布、
 # 距離分布、GMPE 三層原封不動——這等於假設「餘震序列期間的地震，其規模–距離–地動關係
 # 與平時一樣」。這不見得對（餘震的深度、機制、破裂尺度都可能與背景地震有系統性差異），
 # 但它讓整套計算可以複用，代價是把時變性全部壓進一個純量。
 #
-# 兩種記憶各自怎麼提供 $\nu_{\rm src}(t)$。**短期用 ETAS**：$\nu(t)=\lambda^*(t\mid
-# H_t)$，第 13、14 章的條件強度——微妙之處在於 $\lambda^*$ 條件於歷史，而未來還沒發生
+# 兩種記憶各自怎麼提供 $\nu_{\rm src}(t)$。**短期用 ETAS**：取 $\nu(t)=\lambda^*(t\mid H_t)$
+# 即第 13、14 章的條件強度——微妙之處在於 $\lambda^*$ 條件於歷史，而未來還沒發生
 # 的餘震會再觸發自己的餘震，嚴格算 {eq}`eq:nhpp` 需要對未來所有可能歷史取期望，實務上
 # 就是跑數萬條模擬目錄再平均，這也是時變危害系統遠比傳統 PSHA 昂貴的原因。**長期用
 # BPT**：$\nu(t)=h(t-t_{\rm last})$，$h$ 是第 20 章的危害函數 {eq}`eq:hazard-def`。
@@ -865,8 +868,9 @@ fig
 # 隨機的——真相只有一個，只是我們不知道。
 #
 # 這個區分有可操作的後果：**偶然不確定性變大會讓危害曲線的尾巴變厚（一條曲線改變
-# 形狀）；認知不確定性變大會讓你得到很多條不同的曲線。** 表達後者的標準工具是 **logic tree**：對每一個無法由資料決定的選擇，列出所有
-# 合理選項、各給一個權重，然後把整棵樹跑完，輸出一**族**曲線（通常報告成平均危害曲線
+# 形狀）；認知不確定性變大會讓你得到很多條不同的曲線。** 表達後者的標準工具是
+# **logic tree**：對每一個無法由資料決定的選擇，列出所有合理選項、各給一個權重，然後
+# 把整棵樹跑完，輸出一**族**曲線（通常報告成平均危害曲線
 # 加上分位數帶）。這棵樹可以長得非常大——**UCERF3 有 5760 個 logic-tree 分支**（第 20
 # 章）。這個數字本身就是認知不確定性規模的量尺：一個需要 5760 個分支才能表達的模型，
 # 等於在說「這件事我們真的不太確定」。
@@ -948,21 +952,29 @@ fig
 #
 # ### A. 截斷 GR 的累積分布、抽樣與平均規模
 #
-# 由 {eq}`eq:trunc-gr` 積分得累積分布
-# $F_M(m)=\bigl[1-e^{-\beta(m-m_{\min})}\bigr]\big/\bigl[1-e^{-\beta(m_{\max}
-# -m_{\min})}\bigr]$。這個式子在模擬時直接可用：由第 10 章的反函數法，取
-# $U\sim\mathrm{Unif}(0,1)$ 則 $m=m_{\min}-\beta^{-1}\ln[1-U(1-e^{-\beta(m_{\max}
-# -m_{\min})})]$ 就是一個截斷 GR 的抽樣。平均規模由分部積分得 $E[M]=m_{\min}+1/\beta
-# -(m_{\max}-m_{\min})e^{-\beta(m_{\max}-m_{\min})}/[1-e^{-\beta(m_{\max}-m_{\min})}]$，
-# $m_{\max}\to\infty$ 時退化成指數分布的 $m_{\min}+1/\beta$（$b=1$ 時即
-# $m_{\min}+0.434$）。
+# 由 {eq}`eq:trunc-gr` 積分得累積分布與平均規模：
+#
+# $$F_M(m)=\frac{1-e^{-\beta(m-m_{\min})}}{1-e^{-\beta(m_{\max}-m_{\min})}},
+#   \qquad
+#   E[M] = m_{\min} + \frac{1}{\beta}
+#   - \frac{(m_{\max}-m_{\min})\,e^{-\beta(m_{\max}-m_{\min})}}
+#          {1-e^{-\beta(m_{\max}-m_{\min})}} .$$
+#
+# 前者在模擬時直接可用：由第 10 章的反函數法，取 $U\sim\mathrm{Unif}(0,1)$ 則
+# $m=m_{\min}-\beta^{-1}\ln\bigl[1-U\bigl(1-e^{-\beta(m_{\max}-m_{\min})}\bigr)\bigr]$
+# 就是一個截斷 GR 的抽樣。後者在 $m_{\max}\to\infty$ 時退化成指數分布的
+# $m_{\min}+1/\beta$（$b=1$ 時即 $m_{\min}+0.434$）。
 #
 # ### B. 危害積分的 $\varepsilon$ 形式
 #
-# 把 21.7 節的 $P(IM>x\mid m,r)$ 展開成 $\varepsilon$ 的積分，{eq}`eq:psha` 有一個等價
-# 寫法 $\lambda_{IM}(x)=\sum_{\rm src}\nu_{\rm src}\iiint_{\varepsilon_0(x,m,r)}^{\infty}
-# \varphi(e)f_M(m)f_R(r)\,\mathrm{d}e\,\mathrm{d}m\,\mathrm{d}r$。被積函數不再含 $x$
-# ——$x$ 只出現在積分下限裡。這個寫法讓反聚合的三個維度完全對稱，並清楚顯示 **PSHA
+# 把 21.7 節的 $P(IM>x\mid m,r)$ 展開成 $\varepsilon$ 的積分，{eq}`eq:psha` 有一個等價寫法
+#
+# $$\lambda_{IM}(x) = \sum_{\rm src}\nu_{\rm src}
+#   \int\!\!\int\!\!\int_{\varepsilon_0(x,m,r)}^{\infty}
+#   \varphi(e)\,f_M(m)\,f_R(r)\,\mathrm{d}e\,\mathrm{d}m\,\mathrm{d}r .$$
+#
+# 被積函數不再含 $x$——$x$ 只出現在積分下限裡。這個寫法讓反聚合的三個維度完全對稱，
+# 並清楚顯示 **PSHA
 # 本質上是在 $(m,r,\varepsilon)$ 這個三維情境空間上，對一個由 $x$ 決定的區域做積分**；
 # 改變 $x$ 就是移動那個區域的邊界。
 #
@@ -1025,6 +1037,6 @@ fig
 #
 # 最後還有一件事沒做完。本章的時變危害停在數學上：{eq}`eq:nhpp` 告訴我們怎麼把時變的
 # 地震率換成地動超越機率。但一個系統要 24 小時運轉、在大地震後很短的時間內產出結果、
-# 還要把那個結果講給不懂機率的人聽，需要的遠不只是一條式子。{doc}`第 22 章
-# <22_operational_systems>`就來處理這一段：從 STEP 到現行的作業化系統，模型上線之後
-# 會冒出哪些不再是統計的問題。
+# 還要把那個結果講給不懂機率的人聽，需要的遠不只是一條式子。
+# {doc}`第 22 章 <22_operational_systems>`就來處理這一段：從 STEP 到現行的作業化系統，
+# 模型上線之後會冒出哪些不再是統計的問題。
