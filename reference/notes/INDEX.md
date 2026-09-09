@@ -20,6 +20,11 @@
 
 ## 主題檔案 → 章節對應
 
+2026-09-09 全站延伸閱讀已按目前第 01–23 章重新核對，含原始 PDF 與公開連結：
+[首頁與第一部](reading_00_08_verified.md)、[第 09–16 章](reading_09_16_verified.md)、
+[第 17–23 章](reading_17_23_verified.md)。以下舊筆記的供應章號保留原記錄；
+定位目前教材請以 `book/_toc.yml`、`book/_conventions.md` 與上述核實稿為準。
+
 | 檔案 | 內容 | 主要供應章節 |
 |---|---|---|
 | [eepas.md](eepas.md) | EEPAS 原始論文（Rhoades & Evison 2004）到 20 年回顧、CA/日本/義大利應用、EAS 餘震擴充 | 12（EEPAS 與 PPE）、14 |

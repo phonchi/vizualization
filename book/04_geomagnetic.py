@@ -164,3 +164,13 @@ fig
 # 必須用原始的 1 秒資料，一旦像我們這樣重取樣成 1 分鐘，這個頻帶的資訊
 # 就被抹掉了。這帶出一個資料分析的通則：**分析方法決定了你需要多快的
 # 取樣**，先想清楚要找什麼頻率的訊號，再決定資料怎麼降頻，順序不能反。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - **背景查詢・免費網站**：GFZ，〈[Kp index](https://kp.gfz.de/en/)〉。
+#   查閱全球地磁活動指數與說明，對照本章的擾動日；先檢查太空天氣背景，再討論單站或兩站差值中的局部異常。
+# - **入門・免費官方文章**：USGS Geomagnetism Program，〈[Overview](https://www.usgs.gov/programs/geomagnetism/science/overview)〉。
+#   認識地磁觀測的研究用途，並閱讀其中對地震相關磁場宣稱的檢驗，延伸本章對參考站、背景場與儀器干擾的討論。
+# - **核心綜述・全文可能需訂閱**：Johnston, M. J. S.（1997），〈[Review of electric and magnetic fields accompanying seismic and volcanic activity](https://doi.org/10.1023/A:1006500408086)〉，*Surveys in Geophysics*；[USGS 免費摘要](https://www.usgs.gov/publications/review-electric-and-magnetic-fields-accompanying-seismic-and-volcanic-activity)。
+#   對照壓磁效應、流體相關電磁效應與觀測頻帶，特別區分同震訊號和震前訊號；看到地震伴隨的磁場變化，不等於能據此提前預測地震。

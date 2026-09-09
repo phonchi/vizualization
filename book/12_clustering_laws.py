@@ -1013,3 +1013,12 @@ fig
 # 的 GR 律縫成一條條件強度函數，讓「地震觸發地震」變成一個可以擬合、
 # 可以模擬、可以檢驗的數學物件。屆時你會發現，本章辛苦推導的每一條
 # 式子都在那條函數裡佔一個位置——包括那個一直在製造麻煩的 $c$。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [Aftershock Forecast Overview](https://earthquake.usgs.gov/data/oaf/overview.php) — USGS；免費官方說明。先看「How the Aftershock Forecasts Work」，把餘震產能、發生率衰減與規模分布三件事分開理解，再回頭閱讀本章的經驗律。
+# - [The Centenary of the Omori Formula for a Decay Law of Aftershock Activity](https://doi.org/10.4294/jpe1952.43.1) — Tokuji Utsu、Yosihiko Ogata、Ritsuko S. Matsu'ura，1995，*Journal of Physics of the Earth*；[免費全文](https://www.jstage.jst.go.jp/article/jpe1952/43/1/43_1_1/_article)。這篇回顧整理 Omori 公式、參數擬合與早期漏測問題，尤其適合追讀本章對 c 值與 p 值的解釋。
+# - [The Effect of Declustering on the Size Distribution of Mainshocks](https://doi.org/10.1785/0220200231) — Leila Mizrahi、Shyam Nandan、Stefan Wiemer，2021，*Seismological Research Letters*；出版社全文可能需訂閱，[免費作者預印本](https://arxiv.org/abs/2012.09053)。以觀測與合成目錄研究除叢如何改變規模分布，對應本章「除叢也是一種資料選擇」的討論。
+#
+# - [New Empirical Tests of the Multifractal Omori Law for Taiwan](https://doi.org/10.1785/0120110237) — Ching-Yi Tsai、Guy Ouillon、Didier Sornette，2012，*Bulletin of the Seismological Society of America*；全文可能需訂閱。這是本章台灣 p 值與主震規模關係的原始來源，重點閱讀如何處理長短期目錄完整度，以及如何用不同除叢方法檢查結果。

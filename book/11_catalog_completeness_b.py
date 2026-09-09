@@ -1092,3 +1092,12 @@ fig
 # 有多大（Båth）、以及那個最麻煩的操作——把目錄拆成「背景」與「叢集」
 # 的除叢，它會像 11.10 節預告的那樣，回頭污染我們剛剛辛苦估好的 $b$
 # 值。這些是 {doc}`第 12 章 <12_clustering_laws>`的內容。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [Estimate magnitude of completeness](https://seismostats.readthedocs.io/latest/user/estimate_mc.html) — SeismoStats 開發團隊；免費官方文件。用公式與短例子比較 MAXC、KS 與 b 值穩定法，閱讀時可對照本章對門檻選擇及方法假設的討論。
+# - [Estimate b-value](https://seismostats.readthedocs.io/latest/user/estimate_b.html) — SeismoStats 開發團隊；免費官方文件。整理傳統與差分式估計法，適合查閱規模離散化、完整度門檻與各方法適用條件。
+# - [The estimation of b-value of the frequency–magnitude distribution and of its 1σ intervals from binned magnitude data](https://doi.org/10.1093/gji/ggae159) — S. Tinti、P. Gasperini，2024，*Geophysical Journal International*；[免費出版版全文與補充資料](https://cris.unibo.it/handle/11585/980514)。深入比較分箱規模資料的估計式與不確定度，適合讀完本章連續、離散估計推導後，進一步理解哪些修正有統計依據。
+#
+# - [b-Values Observations in Taiwan: A Review](https://doi.org/10.3319/TAO.2015.04.28.01%28T%29) — Jeen-Hwa Wang、Kou-Cheng Chen、Pei-Ling Leu、Jeng-Hsin Chang，2015，*Terrestrial, Atmospheric and Oceanic Sciences*；[免費全文](https://tao.cgu.org.tw/index.php/articles/archive/geophysics/item/1361-2015042801t)。整理台灣 b 值的時空變化、構造背景及估計研究，適合對照本章的台灣目錄例子；閱讀前兆相關解釋時，仍需分辨回溯觀察與前瞻檢驗。

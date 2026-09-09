@@ -149,3 +149,13 @@ print(channels)
 #
 # 想查完整規則，可參考
 # [IRIS 的 SEED 頻道命名說明](https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/)。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - **操作入口・免費網站**：中央氣象署，〈[臺灣地震與地球物理資料管理系統（GDMS）](https://gdms.cwa.gov.tw/)〉。
+#   對照本章的查詢、申請與取件流程，查看官方資料項目及使用說明；資料下載需先註冊登入。
+# - **格式查詢・免費文件**：FDSN，〈[Channel codes](https://docs.fdsn.org/projects/source-identifiers/en/v1.0/channel-codes.html)〉。
+#   查閱 band、source 與 subsource codes，對照本章的 HHZ、HH1 與 HH2。重點是頻道代碼描述什麼訊號，不要只把它當成檔名的一部分。
+# - **核心論文**：Beyreuther et al.（2010），〈[ObsPy: A Python Toolbox for Seismology](https://doi.org/10.1785/gssrl.81.3.530)〉，*Seismological Research Letters*；[出版學會免費全文](https://www.seismosoc.org/Publications/SRL/SRL_81/srl_81-3_es/)。
+#   了解下載後的波形為什麼適合交給 ObsPy 統一讀取與處理。論文中的程式介面屬於早期版本，實際寫程式時搭配[目前的官方教學](https://docs.obspy.org/tutorial/)。

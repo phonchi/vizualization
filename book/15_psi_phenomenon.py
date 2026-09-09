@@ -1251,3 +1251,10 @@ fig
 # 那三條迴歸按它自己的規模給定——迴歸的殘差是常態的，於是三條迴歸
 # 直接變成三個機率核。這一步繞開了本章列出的**全部**困難，代價是
 # 預報強度被稀釋。那筆交易划不划算，下一章見分曉。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [A 20-Year Journey of Forecasting with the “Every Earthquake a Precursor According to Scale” Model](https://doi.org/10.3390/geosciences12090349) — David A. Rhoades、Sepideh J. Rastin、Annemarie Christophersen，2022，*Geosciences*；免費開放全文。先讀第 2 節的 Ψ 現象與尺度關係，再讀限制與未解問題，掌握本章經驗觀察如何連到機率模型。
+# - [Algorithmic Identification of the Precursory Scale Increase Phenomenon in Earthquake Catalogs](https://doi.org/10.1785/0220240233) — Annemarie Christophersen、David A. Rhoades、Sebastian Hainzl，2024，*Seismological Research Letters*；[免費機構典藏全文](https://gfzpublic.gfz.de/rest/items/item_5029405_4/component/file_5029659/content)。這是本章自動辨識與對照實驗的已發表來源，建議比較矩形、圓形搜尋與隨機化目錄的設計；辨識到統計現象仍須與前瞻預報能力分開判斷。
+# - [Space–Time Trade-Off of Precursory Seismicity in New Zealand and California Revealed by a Medium-Term Earthquake Forecasting Model](https://doi.org/10.3390/app112110215) — Sepideh J. Rastin、David A. Rhoades、Annemarie Christophersen，2021，*Applied Sciences*；免費開放全文。研究時間與空間參數的取捨，適合延伸本章「同一事件的 Ψ 辨識不唯一」及參數解讀問題。

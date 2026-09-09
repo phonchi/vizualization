@@ -149,3 +149,13 @@ print(f"測站清單 HUAL：緯度 {hual.lat}, 經度 {hual.lon}")
 # 想用 Python 讀 RINEX，可以看 `georinex`；想自己嘗試 PPP 精密單點定位，
 # 開源的 PRIDE PPP-AR 是不錯的起點。
 # ```
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - **資料實作・免費網站**：Nevada Geodetic Laboratory，〈[Plug and Play GPS Data Products](https://geodesy.unr.edu/PlugNPlayPortal.php)〉。
+#   從測站清單進入位置時間序列與資料格式說明，延伸本章「原始衛星觀測」和「已解算座標」的區別；比較位移前先確認參考框架及單位。
+# - **格式查詢・免費文件**：IGS／RTCM RINEX Working Group，〈[RINEX](https://igs.org/wg/rinex/)〉。
+#   依手上檔案的版本選擇規格，查閱標頭與觀測量代碼，對照本章的 RINEX 解析；檔頭的近似座標不等於逐時刻解算的位置序列。
+# - **資料方法導讀・免費文章**：Blewitt, G., Hammond, W. C., & Kreemer, C.（2018），〈[Harnessing the GPS Data Explosion for Interdisciplinary Science](https://doi.org/10.1029/2018EO104623)〉，*Eos*；[免費全文](https://eos.org/science-updates/harnessing-the-gps-data-explosion-for-interdisciplinary-science)。
+#   了解大量 GNSS 資料如何整理成可研究的速度與位移產品，特別看季節變化、地震階變及設備更動如何影響時間序列的解讀。

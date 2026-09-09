@@ -1321,3 +1321,12 @@ fig
 # {doc}`第 15 章 <15_psi_phenomenon>`要處理的 Ψ 現象，就是把這條
 # 反向的箭頭寫成可檢驗的迴歸關係——而它能被辨識出來的前提，正是
 # 我們現在已經有了一個描述「正常叢集」的模型。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data](https://doi.org/10.18637/jss.v088.c01) — Abdollah Jalilian，2019，*Journal of Statistical Software*；[免費全文與程式](https://www.jstatsoft.org/article/view/v088c01)。沿著資料整理、模型擬合與結果診斷讀一遍，對照本章的背景率估計及隨機除叢；數學方法與 R 範例可以分開閱讀。
+# - [ETAS: Epidemic-Type Aftershock Sequence](https://github.com/lmizrahi/etas) — Leila Mizrahi 等；免費作者程式庫與說明。README 將參數估計、模擬及變動完整度的實作連回各自論文，適合延伸本章「不完整資料如何影響參數」的問題。
+# - [The Effect of Declustering on the Size Distribution of Mainshocks](https://doi.org/10.1785/0220200231) — Leila Mizrahi、Shyam Nandan、Stefan Wiemer，2021，*Seismological Research Letters*；出版社全文可能需訂閱，[免費作者預印本](https://arxiv.org/abs/2012.09053)。用合成目錄檢查除叢後的估計偏差，適合思考本章的背景／觸發分類結果能否直接當成物理事實。
+#
+# - [SimplETAS: A Benchmark Earthquake Forecasting Model Suitable for Operational Purposes and Seismic Hazard Analysis](https://doi.org/10.1785/0220230199) — Simone Mancini、Warner Marzocchi，2023 年線上發表，*Seismological Research Letters*；全文可能需訂閱，[作者程式庫](https://github.com/smancini2/simplETAS)可免費閱讀。直接對照本章參數精簡的理由，思考固定哪些參數能減少估計困難，以及簡化模型應如何接受樣本外檢驗。

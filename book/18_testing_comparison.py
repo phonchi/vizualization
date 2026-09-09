@@ -1052,3 +1052,11 @@ fig
 # 組合起來可能比任何單一模型都好。但那一章開頭就會回到本章的結論：
 # 組合模型多出來的每一個權重都是一個參數，都要在 {eq}`eq:igpec` 的
 # 第二項裡付出代價；而天花板不在演算法，在候選池的**多樣性**。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [Theory of CSEP Tests：Forecast comparison tests](https://docs.cseptesting.org/getting_started/theory.html#forecast-comparison-tests) — pyCSEP 開發團隊，官方文件（免費）。從資訊增益 IGPE 的定義與 T-test 範例開始，對照本章的基準模型、率修正與信賴區間，理解「分數較高」與「差異顯著」的區別。
+# - [Evaluating earthquake predictions and earthquake forecasts: a guide for students and new researchers](https://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/zechar.pdf_2063069264.pdf) — J. Douglas Zechar（2010），CORSSA 免費教材（DOI：10.5078/corssa-77337879）。接著閱讀警報式預測與誤差圖的部分，比較不同評估方法回答的問題，銜接本章的 Molchan 圖與面積技能分數。
+# - [Statistical power of spatial earthquake forecast tests](https://doi.org/10.1093/gji/ggad030) — Asim M. Khawaja 等（2023），*Geophysical Journal International*；[免費機構典藏全文](https://gfzpublic.gfz.de/pubman/item/item_5015770_1)。以空間檢驗說明樣本量與網格如何改變統計功效，正好延伸本章「通過檢驗不等於模型有辨識力」的討論；可接著比較等寬網格與 Quadtree 的設計。
+# - [Enhancing the Statistical Evaluation of Earthquake Forecasts—An Application to Italy](https://doi.org/10.1785/0220240209) — Jonas R. Brehmer、Kristof Kraus、Tilmann Gneiting、Marcus Herrmann、Warner Marzocchi（2025），*Seismological Research Letters*（出版社全文可能需訂閱；[免費作者稿](https://arxiv.org/abs/2405.10712)）。從義大利預報案例延伸本章的模型比較、可靠度圖與校準，重點是評分函數如何對應預報目標，以及如何分開檢查校準與鑑別力。

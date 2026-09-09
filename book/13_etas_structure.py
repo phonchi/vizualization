@@ -1409,3 +1409,12 @@ fig
 # {eq}`eq:pp-loglik` 實際算出來、用隨機除叢把「這是不是背景事件」變成
 # 一個機率 $\phi_j$、看清楚 ETAS 參數之間的相關性有多恐怖，並回答一個
 # 這一章刻意沒碰的問題——如果七個參數都可以釘死，我們到底在估什麼？
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data](https://doi.org/10.18637/jss.v088.c01) — Abdollah Jalilian，2019，*Journal of Statistical Software*；[免費全文與程式](https://www.jstatsoft.org/article/view/v088c01)。先讀模型結構與參數說明，把本章的背景率、時間核、空間核對照到一套完整的時空 ETAS 表達式。
+# - [ETAS: Epidemic-Type Aftershock Sequence](https://github.com/lmizrahi/etas) — Leila Mizrahi 等；免費作者程式庫與說明。可從目錄模擬範例追讀 ETAS 如何生成事件序列，對照本章的世代分解與 branching 模擬；程式所用參數慣例需先與本章核對。
+# - [Statistical Models for Earthquake Occurrences and Residual Analysis for Point Processes](https://doi.org/10.1080/01621459.1988.10478560) — Yosihiko Ogata，1988，*Journal of the American Statistical Association*；出版社全文可能需訂閱，[免費研究機構全文](https://bemlar.ism.ac.jp/zhuang/Refs/Refs/ogata1988.pdf)。回到 ETAS 的經典來源，閱讀事件歷史如何進入條件強度，以及作者如何用資料比較不同叢集模型。
+#
+# - [Space–time ETAS models and an improved extension](https://doi.org/10.1016/j.tecto.2005.10.016) — Yosihiko Ogata、Jiancang Zhuang，2006，*Tectonophysics*；出版社全文可能需訂閱，[免費作者機構全文](https://bemlar.ism.ac.jp/zhuang/pubs/ogata2006tectno.pdf)。這是本章時空 ETAS 結構的重要來源，說明如何把 Omori 衰減與餘震區尺度關係放進條件強度，並比較模型延伸。

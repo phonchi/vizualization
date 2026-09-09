@@ -948,3 +948,10 @@ fig
 # 開始，一路走到 Molchan 圖與面積技能分數，最後回頭質問這整套檢驗體系
 # 自己的統計功效。屆時你會發現，本章那句「沒被拒絕不等於模型好」不只是
 # 一句提醒，而是一個可以量化、而且量化結果相當難堪的命題。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [Theory of CSEP Tests](https://docs.cseptesting.org/getting_started/theory.html) — pyCSEP 開發團隊，官方文件（免費）。先對照各檢驗的目標、模擬方式與分位數分數，再看 N、S、M 與 conditional L-test 的程式範例，可把本章公式接到實際檢驗流程。
+# - [Evaluating earthquake predictions and earthquake forecasts: a guide for students and new researchers](https://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/zechar.pdf_2063069264.pdf) — J. Douglas Zechar（2010），CORSSA 免費教材（DOI：10.5078/corssa-77337879）。從「觀測是否與預報一致」出發整理檢驗方法，適合先建立觀念，再回頭理解本章為何要拆開事件數、空間與規模。
+# - [Prospective evaluation of multiplicative hybrid earthquake forecasting models in California](https://doi.org/10.1093/gji/ggac018) — J. A. Bayona、W. H. Savran、D. A. Rhoades、M. J. Werner（2022），*Geophysical Journal International*（免費全文）。本章 Poisson／二元似然、負二項計數與多重檢定的主要實例來源；閱讀時留意餘震叢集如何影響各種評分。

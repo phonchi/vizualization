@@ -1331,3 +1331,13 @@ fig
 # 增益差 0.1，可以說誰比較好嗎？{doc}`第 17 章 <17_testing_consistency>`
 # 就從最基本的問題開始：**給定一份預報與一份觀測，怎麼判斷它們
 # 相不相容？**
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - [A 20-Year Journey of Forecasting with the “Every Earthquake a Precursor According to Scale” Model](https://doi.org/10.3390/geosciences12090349) — David A. Rhoades、Sepideh J. Rastin、Annemarie Christophersen，2022，*Geosciences*；免費開放全文。先讀第 3–5 節，建立 EEPAS、模型組合與缺失前兆補償的全貌，再回到本章的正規化推導。
+# - [Long-range Earthquake Forecasting with Every Earthquake a Precursor According to Scale](https://doi.org/10.1007/s00024-003-2434-9) — David A. Rhoades、Frank F. Evison，2004，*Pure and Applied Geophysics*；全文可能需訂閱。這是 EEPAS 原始論文，重點是如何把尺度關係轉成每個事件對未來地震率的貢獻，而不是先判定哪個事件必然是前兆。
+# - [Application of the EEPAS earthquake forecasting model to Italy](https://doi.org/10.1093/gji/ggad123) — Emanuele Biondini、David A. Rhoades、Paolo Gasperini，2023，*Geophysical Journal International*；出版社全文可能需訂閱，[免費機構典藏全文](https://www.earth-prints.org/handle/2122/17084)。將本章公式連到義大利目錄的實際應用，閱讀 PPE、ETAS 與 EEPAS 的比較時，特別留意學習期、測試期和預報時間窗。
+#
+# - [The Effect of Catalogue Lead Time on Medium-Term Earthquake Forecasting with Application to New Zealand Data](https://doi.org/10.3390/e22111264) — David A. Rhoades、Sepideh J. Rastin、Annemarie Christophersen，2020，*Entropy*；免費開放全文。說明目錄開始前遺漏的事件如何影響 EEPAS，適合延伸本章的 lead time 與時間完整度補償推導。
+# - [Long-range earthquake forecasting allowing for aftershocks](https://doi.org/10.1111/j.1365-246X.2008.04083.x) — D. A. Rhoades，2009，*Geophysical Journal International*；[出版社網頁全文](https://academic.oup.com/gji/article/178/1/244/644120)可免費閱讀。閱讀 EEPAS 如何加入預報事件的餘震貢獻，對照本章 EAS 延伸與「降低輸入餘震權重」的不同角色。

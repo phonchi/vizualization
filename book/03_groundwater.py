@@ -192,3 +192,13 @@ fig
 # 讀資料時把缺測值轉成 NaN、而不是直接丟掉整口井，就能保住還能用的部分。
 # 判斷資料能不能用，永遠要看清楚是哪個欄位、哪段時間缺，而不是看到
 # 「有一口井」就當它整口都可信。
+
+# %% [markdown]
+# ## 參考資料與延伸閱讀
+#
+# - **入門・免費網站**：USGS，〈[How does an earthquake affect groundwater levels and water quality in wells?](https://www.usgs.gov/faqs/how-does-earthquake-affect-groundwater-levels-and-water-quality-wells)〉。
+#   先分清震波經過時的水位振盪、震後水位偏移與水質變化，再回頭判斷本章各口井究竟觀測到了哪一種反應。
+# - **觀測機制・免費官方教材**：USGS（2003），〈[Earthquakes—Rattling the Earth's Plumbing System](https://pubs.usgs.gov/fs/fs-096-03/)〉，Fact Sheet 096-03。
+#   用不同地點的觀測說明地震如何擾動地下水，適合延伸本章「同一場地震，不同井反應不同」的討論。
+# - **核心綜述・全文需訂閱**：Roeloffs, E. A.（1988），〈[Hydrologic precursors to earthquakes: A review](https://doi.org/10.1007/BF00878996)〉，*Pure and Applied Geophysics*。
+#   重點讀潮汐響應、承壓含水層與應變的關係，以及如何排除氣壓、降雨與抽水影響；文獻整理的候選前兆不能直接當成已驗證的預測方法。
