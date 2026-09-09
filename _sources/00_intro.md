@@ -67,3 +67,12 @@ cp .env.example .env        # 填入你的 GDMS 帳號
 ## 資料來源與引用
 
 本站所有觀測資料來自中央氣象署「臺灣地震與地球物理資料管理系統」（GDMS，<https://gdms.cwa.gov.tw/>）。使用資料發表研究成果時，請依 GDMS 網站規範引用資料來源（含 DOI：[10.7914/SN/T5](https://doi.org/10.7914/SN/T5)）。
+
+## 參考資料與延伸閱讀
+
+- **入門・免費網站**：USGS，〈[Can you predict earthquakes?](https://www.usgs.gov/faqs/can-you-predict-earthquakes)〉。
+  先讀這篇短文，釐清「預測一次地震」與「估計地震機率」的差別，也想想為什麼事後找到異常還不能算預測成功。
+- **台灣觀測背景・免費文章**：蕭乃祺（2019），〈[臺灣地震測報的發展](https://www.ntsec.edu.tw/liveSupply/detail.aspx?a=6829&cat=6841&lid=16154&p=1&print=1)〉，《科學研習》58 卷 6 期。
+  從地震儀、GNSS 與地下水觀測的建置歷程，認識本站資料從何而來。文中的測站數與作業現況是當時的紀錄，可與本站測站清單對照。
+- **進階・開放取用論文**：Mizrahi et al.（2024），〈[Developing, Testing, and Communicating Earthquake Forecasts: Current Practices and Future Directions](https://doi.org/10.1029/2023RG000823)〉，*Reviews of Geophysics*。
+  建議先讀 Plain Language Summary，再看模型開發、檢驗與溝通三部分的關係；這正是第二部各章串起來要回答的問題。

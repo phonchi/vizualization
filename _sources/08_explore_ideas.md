@@ -89,9 +89,6 @@
 紀律地把前面那些已知的東西一層層剝掉，並且對剩下的部分保持懷疑，尤其是
 在它剛好符合你期待的時候。
 
-**延伸閱讀**：Roeloffs (1988) 水文前兆綜述、Johnston (1997) 震磁綜述、
-Cicerone et al. (2009) 前兆目錄，以及台灣本土的地震前兆觀測計畫相關文獻。
-
 ## 8.6 接下來：第二部
 
 讀完這一章，你可能會覺得有點洩氣：訊號太小、樣本太少、事後選擇太會
@@ -106,3 +103,16 @@ Cicerone et al. (2009) 前兆目錄，以及台灣本土的地震前兆觀測計
 帶你把這條路完整走一遍——從目錄統計的進階課，到世界各國實際上線
 運轉的預報模型，最後回到台灣。第一部教你懷疑；第二部教你，懷疑
 過關之後還能留下什麼。
+
+## 參考資料與延伸閱讀
+
+- **入門・免費網站**：USGS，〈[Can you predict earthquakes?](https://www.usgs.gov/faqs/can-you-predict-earthquakes)〉。
+  用短文檢查本章的核心問題：判準是否事先定好、沒有地震時是否也會出現相同異常，以及怎樣才算可檢驗的預測。
+- **水文綜述・全文需訂閱**：Roeloffs, E. A.（1988），〈[Hydrologic precursors to earthquakes: A review](https://doi.org/10.1007/BF00878996)〉，*Pure and Applied Geophysics*。
+  對照本章「背景扣乾淨了嗎」這一關，閱讀地下水異常的物理解釋與非構造因素，思考需要哪些額外觀測才能排除替代解釋。
+- **電磁綜述・全文可能需訂閱**：Johnston, M. J. S.（1997），〈[Review of electric and magnetic fields accompanying seismic and volcanic activity](https://doi.org/10.1023/A:1006500408086)〉，*Surveys in Geophysics*；[USGS 免費摘要](https://www.usgs.gov/publications/review-electric-and-magnetic-fields-accompanying-seismic-and-volcanic-activity)。
+  比較候選物理機制與實際觀測限制，延伸本章對儀器干擾、多站比較，以及同震效應不能當作震前證據的討論。
+- **跨觀測綜述・全文可能需訂閱**：Cicerone, R. D., Ebel, J. E., & Britton, J.（2009），〈[A systematic compilation of earthquake precursors](https://doi.org/10.1016/j.tecto.2009.06.008)〉，*Tectonophysics*。
+  看不同候選前兆如何整理成時間、空間、振幅與訊雜比等可比較欄位；彙整曾被報告的現象，和證明能前瞻預報，是兩個不同層次的工作。
+- **統計方法・免費論文**：Wasserstein, R. L., & Lazar, N. A.（2016），〈[The ASA Statement on p-Values: Context, Process, and Purpose](https://doi.org/10.1080/00031305.2016.1154108)〉，*The American Statistician*。
+  延伸本章對事後調整門檻與選擇性報告的提醒；重點看為什麼單一 $p$ 值不能取代研究設計、效果大小與完整的分析紀錄。
