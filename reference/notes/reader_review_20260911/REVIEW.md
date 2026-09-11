@@ -54,3 +54,9 @@
 ## 範圍
 
 未變更章序、未啟動外部Claude審查、未處理無關研究目錄或私人PDF。依使用者本輪明確授權，驗證後直接推送與更新既有網站。發布結果另存publication.json。
+
+## 發布確認
+
+來源提交：`deb7a452ea3c74d0c36bb967224c8a7c6182ba1d`。網站提交：`8756d96220b1013f686da59ce841b1474c0f0046`。
+GitHub Pages建置完成；34頁皆為HTTP 200，內容SHA-256與本機驗收版本一致。
+[線上網站](https://phonchi.github.io/vizualization/)；[逐頁核對](publication.json)。
