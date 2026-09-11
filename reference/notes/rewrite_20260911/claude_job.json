@@ -1,0 +1,10 @@
+{
+  "job_id": "4b392d0f-a99a-479c-9ce3-f226b9f58d88",
+  "session_id": "7dedc168-ec46-441e-a977-b684505bd670",
+  "target": "claude",
+  "status": "completed",
+  "exit_code": 0,
+  "cleanup_confirmed": true,
+  "started_at": 1789097250.4383254,
+  "finished_at": 1789097681.1158447
+}

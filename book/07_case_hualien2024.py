@@ -1,23 +1,46 @@
-# %% [markdown]
-# # 7. 案例分析：2024/4/3 花蓮地震 M7.2
-#
-# 2024 年 4 月 3 日上午 7 時 58 分（台灣時間；UTC 4/2 23:58），
-# 花蓮外海發生規模 7.2 地震——台灣自 921 之後最大的地震。
-# 本章把前面學過的**四類資料放到同一個事件上**，完整走一遍
-# 「多參數對照分析」的流程。
-#
-# | 資料 | 測站 | 距震央 |
-# |---|---|---|
-# | 地震目錄 | 全台 | — |
-# | 波形 | HWA 花蓮氣象站 | ~12 km |
-# | 地下水位 | TUN 壯圍（宜蘭） | ~95 km |
-# | 地磁 | XCG 新城（花蓮） | ~30 km |
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: tags,-all
+#     formats: ipynb,py:percent
+#     notebook_metadata_filter: kernelspec,jupytext
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.19.5
+#   kernelspec:
+#     display_name: Python 3
+#     language: python
+#     name: python3
+# ---
 
+# %% [markdown]
+# # 24. 花蓮案例：同一場地震，不同觀測回答什麼
+#
+# 前面分別讀過各類觀測，現在把它們放回 2024 年 4 月 3 日花蓮 $M_L\,7.2$
+# 地震。當地發震時間約為上午 7 時 58 分，對應 UTC 4 月 2 日 23 時 58 分。
+# 這個時間轉換是共同時間軸的起點，但不同站的震波到時仍會晚於發震時刻。
+#
+# 本章不把四類資料當作四張獨立的贊成票。先問每一類資料理應對什麼過程
+# 敏感，再看它是否在相應時間尺度出現可辨認的變化。地震目錄與波形並非
+# 彼此獨立，因為目錄本來就由波形建構；地下水和地磁也有各自共享的背景。
+#
+# | 資料 | 本章測站／範圍 | 主要比較對象 |
+# |---|---|---|
+# | 地震目錄 | 本書春季目錄 | 主震後事件的時空分布 |
+# | 波形 | HWA 花蓮站 | 起振、持續時間及分量 |
+# | 地下水 | TUN 壯圍等井 | 振盪與較持久的水位偏移 |
+# | 地磁 | XCG 新城 | 主震時窗與日常背景 |
+#
+# 站點位置不同，所以水位和磁場不能被視為震源處的直接量測。GNSS 需要
+# 另有已解算位移產品才可加入，本章不包含這項成果。
+#
 # %% tags=["remove-input"]
 from gdms_toolkit.viz import setup_plotly
 setup_plotly()
 
-# %%
+# %% tags=["remove-input"]
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -31,9 +54,13 @@ from gdms_toolkit.viz import PALETTE, ACCENT, QUAKE_COLOR, SEQUENTIAL, apply_lay
 EQ_UTC = pd.Timestamp("2024-04-02 23:58:11", tz="UTC")
 
 # %% [markdown]
-# ## 7.1 主震與餘震序列
-
-# %%
+# ## 24.1 從事件分布建立背景
+#
+# 先看主震後三十天的目錄點，顏色表示距主震的天數。這是一個時間切片，
+# 不是以親代機率判定出的 ETAS 家族；圖中也可能包含區域背景活動。
+# 把它稱為主震後事件分布，比先假設所有點都由主震觸發更精確。
+#
+# %% tags=["remove-input"]
 cat_csv = CACHE_DIR / "catalog_2024spring.csv"
 if cat_csv.exists():
     cat = pd.read_csv(cat_csv, parse_dates=["time"])
@@ -55,15 +82,22 @@ fig = px.scatter_map(aft, lat="latitude", lon="longitude",
                      zoom=7, center=dict(lat=24.0, lon=121.6),
                      map_style="carto-positron", height=560,
                      labels={"days": "主震後天數"})
-apply_layout(fig, title="主震後 30 天餘震分布（顏色＝發生時間）", hovermode="closest")
+apply_layout(fig, title="主震後 30 天事件分布（顏色＝發生時間）", hovermode="closest")
 fig
 
 # %% [markdown]
-# 餘震帶從震央向北北東延伸約 60 公里——大致就是斷層破裂面在地表的投影。
+# 密集點帶提示活動區域，也顯示後續事件未必集中在單一位置。要將它解釋
+# 為某一斷層上的破裂，還需深度、震源機制與重定位結果。Zheng et al.（2024）
+# 的研究進一步結合波形與大地測量資料建立震源模型，示範的是更完整的
+# 推論，不是單憑震央圖描線。
 #
-# ## 7.2 強烈的地動：主震波形
-
-# %%
+# ## 24.2 波形讓事件時間具體可見
+#
+# 三分量波形在同一時間軸上顯示強烈震動。主震紅線與到站訊號之間的差異
+# 包含傳播時間；繪圖為了瀏覽而減少顯示點數，不適合從這張圖讀取精確峰值
+# 或逐樣本到時。物理振幅仍需儀器響應校正。
+#
+# %% tags=["remove-input"]
 st = gt.read_waveform(CACHE_DIR / "edu-wave-hualien2024.mseed")
 fig = make_subplots(rows=3, cols=1, shared_xaxes=True, vertical_spacing=0.04,
                     subplot_titles=[tr.id for tr in st])
@@ -80,14 +114,17 @@ apply_layout(fig, height=600, showlegend=False, hovermode=False,
 fig
 
 # %% [markdown]
-# ## 7.3 地下水位：預期會有同震反應，實際呢？
+# ## 24.3 地下水：先分清振盪與偏移
 #
-# 教科書上，大地震會在地下水位留下兩種痕跡：震波經過時水位像液面地震儀
-# 一樣振盪（稱為水震盪，hydroseismogram），以及震後水位停在跟震前不同
-# 的高度（同震階變，co-seismic step）。壯圍井距震央約 95 公里，理論上有
-# 機會看到。先看主震前後各三天（1 分鐘平均）：
-
-# %%
+# 地下水可能在震波經過時振盪，也可能震後停在不同水位，或逐漸恢復。
+# 這些形狀涉及不同機制與頻率，應分別檢查。只比較震前震後平均值，可能
+# 漏掉短暫振盪；只看短窗差分，則可能漏掉持續偏移。
+#
+# 先用一分鐘平均的壯圍資料看多日背景。若日常潮汐與氣壓造成的變化已經
+# 很大，就必須把候選同震反應與這些背景一起比較，不能只因它接近紅線
+# 就認定有關。
+#
+# %% tags=["remove-input"]
 gw = gt.read_groundwater(CACHE_DIR / "edu-gw-hualien2024.tgz", "TUN",
                          start="2024-03-30", end="2024-04-06", resample="1min")
 fig = go.Figure(go.Scattergl(x=gw.index, y=gw.water_level_cm, mode="lines",
@@ -98,10 +135,11 @@ apply_layout(fig, title="壯圍（TUN）水位，主震前後各三天",
 fig
 
 # %% [markdown]
-# 水位就是照著原本的潮汐節奏起伏，紅線那一刻看不出明顯的跳動。放大到
-# 1 秒解析度、只看地震前後這 20 分鐘，再確認一次：
-
-# %%
+# 在這個多日縱軸下，主震附近未呈現明顯的大幅水位階變。但一分鐘平均
+# 會減弱短暫振盪，這個判讀只適用於目前顯示尺度。接著回到一秒資料，
+# 檢查主震前五分鐘到後十五分鐘的短窗。
+#
+# %% tags=["remove-input"]
 gw_s = gt.read_groundwater(CACHE_DIR / "edu-gw-hualien2024.tgz", "TUN",
                            start="2024-04-02", end="2024-04-03", resample=None)
 win = gw_s.loc[EQ_UTC - pd.Timedelta("5min"): EQ_UTC + pd.Timedelta("15min")]
@@ -113,13 +151,14 @@ apply_layout(fig, title="壯圍（TUN）水位，主震前後 20 分鐘（1 秒�
 fig
 
 # %% [markdown]
-# 誠實的結果：**看不到水震盪，也沒有可辨識的階變**。水位在地震前後就是
-# 平順地延續原本每分鐘約 0.01 cm 的潮汐趨勢，起伏幅度不到 0.3 cm。
+# 這段短窗沒有呈現像地震波形那樣明顯的瞬間擾動。這是對本井、本資料窗
+# 及本圖解析度的描述，還不是「水位完全沒有反應」的統計證明。
 #
-# 用數字確認這個判斷，別只靠肉眼。比較「地震前」與「地震後」5 分鐘內
-# 1 秒差分的標準差，如果有水震盪，震後這個值應該明顯放大：
-
-# %%
+# 下面另外比較四口井的一秒差分標準差：震前使用十分鐘、震後使用五分鐘。
+# 比值可描述短時間波動是否增加，但兩窗長度不同，且觀測有時間相關；
+# 不能把比值接近一直接當成接受「無反應」假設的檢定。
+#
+# %% tags=["remove-input"]
 def wobble(station):
     s = gt.read_groundwater(CACHE_DIR / "edu-gw-hualien2024.tgz", station,
                             start="2024-04-02", end="2024-04-03",
@@ -133,19 +172,21 @@ for st_code in ["TUN", "DON", "NAB", "CHI"]:
     print(f"{st_code}：震前 std={b:.4f}  震後 std={a:.4f}  比值={a / b:.1f}×")
 
 # %% [markdown]
-# 四口井的比值全都接近 1.0，也就是說地震前後的擾動程度沒差別，沒有水震盪。
-# 這不代表理論錯了。距離約 100 公里、規模 7.2，靜態體應變本來就小，換算
-# 成水位可能只有毫米量級，剛好埋在這幾口井約 0.04 cm 的量測噪訊底下。要
-# 在近場、井的封閉性又好，再加上乾淨的儀器，才比較有機會抓到教科書上那種漂亮
-# 的階變。
+# 若比值沒有明顯放大，只表示這項摘要未顯示突出的高頻波動增加。
+# 持續水位偏移主要影響階變附近的一次差分，較慢的反應也可能被這個指標
+# 忽略。因此應將它與原始曲線一起看；完整的同震反應分析仍不可省略。
 #
-# 這是本課程最想讓你帶走的一課：**「應該會有訊號」和「資料裡真的看得到
-# 訊號」是兩回事**。真正的分析要能算出一個門檻，誠實回答「以這口井的噪訊
-# 水準，多大的訊號才看得出來」，而不是憑印象宣稱看到了什麼。
+# 要給出可檢測上限，可以在具有相似背景的非事件時窗注入不同幅度與持續
+# 時間的模擬訊號，再用固定流程檢查檢出率。這一步目前尚未執行，所以本章
+# 不聲稱已量出最小可偵測水位或排除了某種物理機制。井的敏感度和實際
+# 地殼應變也未在這裡校準，不能只用震央距離替它們指定數值。
 #
-# ## 7.4 地磁場有反應嗎？
-
-# %%
+# ## 24.4 地磁：把紅線與日常背景放在一起
+#
+# 下圖仍使用一分鐘平均。總磁力與垂直分量的日常起伏提供背景輪廓；它們
+# 來自同一組分量紀錄，不能算成兩次獨立的異常證據。
+#
+# %% tags=["remove-input"]
 mag = gt.read_geomagnetic(CACHE_DIR / "edu-mag-hualien2024.tgz", "XCG",
                           start="2024-03-30", end="2024-04-06", resample="1min")
 fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.08,
@@ -162,14 +203,17 @@ apply_layout(fig, height=520, showlegend=False,
 fig
 
 # %% [markdown]
-# 一樣看不出與地震明顯相關的變化。每天規律的日變化，遠遠大過任何可能的
-# 震磁訊號。這和地下水那節得到的是同一個教訓：震磁效應至今仍有爭論，
-# 部分原因就是它（如果存在）實在太小，很難從背景裡分出來。負面結果也是
-# 結果，把它老實呈現出來，是科學態度的一部分。
+# 目前的圖未顯示一個可以直接歸因於地震的明顯變化。要再往前判斷，應沿用
+# 地磁章的方法：查太空天氣、比較參考站、指定頻帶，並考慮儀器與局部干擾的
+# 可能。本圖沒有完成這些識別步驟，因此也不宣稱排除所有震磁效應。
 #
-# ## 7.5 四合一總覽
-
-# %%
+# ## 24.5 共同時間軸能比較什麼
+#
+# 四列圖把發震前後的紀錄對齊，但波形涵蓋的視窗比其他序列短。空白區域
+# 表示這裡沒有展示該產品，不能視作零訊號。每列的單位和縱軸也不同，
+# 只能比較各列相對自身背景的變化，不能把曲線高度當成共同效果量。
+#
+# %% tags=["remove-input"]
 tr = st.select(channel="HHZ")[0].copy()
 tr.detrend("demean")
 wave_t = pd.to_datetime(tr.times("timestamp"), unit="s", utc=True)
@@ -200,21 +244,19 @@ apply_layout(fig, height=800, showlegend=False, hovermode=False,
 fig
 
 # %% [markdown]
-# 這張圖就是本課程的縮影，四類資料在同一時間軸上，清楚程度天差地遠：
+# 目錄中的群集與波形中的強震動，在這組展示資料中最容易辨認；它們分別
+# 描述事件的發生與到站震動。地下水和地磁則需更細緻的背景模型與敏感度
+# 分析，才能判定有多小的效應仍可能存在。辨認各類觀測對哪些問題有資訊，
+# 並不需要替它們排價值高低。
 #
-# - 地震目錄：主震後餘震密集出現，訊號明確。
-# - 波形：主震的巨大振幅，一眼就看得到。
-# - 地下水：在這幾口井、這個距離下，沒有可解析的同震訊號。
-# - 地磁：日變化淹沒一切，看不出地震相關的變化。
+# 這個案例以已知地震時刻回看資料，適合研究伴隨效應與設計後續分析，
+# 不能單靠它建立震前預報技巧。若想把某個水位或磁場指標加入預報模型，
+# 還需要知道非地震時段出現相同指標的頻率，以及加入指標後是否比既有
+# 基準提供更多預測資訊。
 #
-# 換句話說，這場地震留給我們的、真正乾淨明確的觀測，是波形和餘震。地下水
-# 和地磁的「前兆」或「同震反應」，在這個案例裡並沒有出現在資料上。這不是
-# 失敗的分析，而是一次誠實的分析：它告訴我們，用哪些資料、在什麼條件下，
-# 才有機會看到什麼樣的訊號。
+# {doc}`下一章 <08_explore_ideas>`把這兩個問題接起來：從可解釋的物理
+# 反應，走到有對照、有不確定性、也能被新資料檢查的統計證據。
 #
-# 帶著這個經驗回頭想「地震前兆」這個問題，會比一開始務實很多。想更進一步，
-# 第 8 章整理了一套從「單一事件的巧合」走向「統計上站得住腳的證據」的方法。
-
 # %% [markdown]
 # ## 參考資料與延伸閱讀
 #
@@ -224,5 +266,5 @@ fig
 #   比較官方事件參數、震源機制與地動產品；USGS 與本章使用的規模尺度、定位結果及時間表示可能不同，先核對定義再比較數字。
 # - **核心案例・開放取用論文**：Zheng et al.（2024），〈[Thrust-dominated unilateral rupture of a blind listric fault associated with the 2024 Hualien earthquake](https://doi.org/10.1038/s41598-024-82971-x)〉，*Scientific Reports*。
 #   看作者如何結合地震波與大地測量資料推估破裂過程，特別注意不同觀測對斷層幾何的約束；這是超越本章時間序列對照、進一步建立震源模型的例子。
-# - **台灣比較案例・論文**：Wang et al.（2016），〈[Studies on Aftershocks in Taiwan: A Review](https://doi.org/10.3319/TAO.2016.09.12.01)〉，*Terrestrial, Atmospheric and Oceanic Sciences*；[期刊文章與全文入口](https://tao.cgu.org.tw/index.php/articles/archive/geophysics/item/1498-2016091201t)。
-#   把花蓮序列放進台灣其他地震的背景中，對照餘震分布與觸發機制；這篇早於 2024 年，提供的是比較框架，並非花蓮事件的分析結果。
+# - **臺灣比較案例・論文**：Wang et al.（2016），〈[Studies on Aftershocks in Taiwan: A Review](https://doi.org/10.3319/TAO.2016.09.12.01)〉，*Terrestrial, Atmospheric and Oceanic Sciences*；[期刊文章與全文入口](https://tao.cgu.org.tw/index.php/articles/archive/geophysics/item/1498-2016091201t)。
+#   把花蓮序列放進臺灣其他地震的背景中，對照餘震分布與觸發機制；這篇早於 2024 年，提供的是比較框架，並非花蓮事件的分析結果。

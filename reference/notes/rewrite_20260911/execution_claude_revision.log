@@ -1,0 +1,9 @@
+START 09_forecasting_intro
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "09_forecasting_intro", "status": "passed", "seconds": 2.83, "outputs": 3}
+START foundation_randomness
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "foundation_randomness", "status": "passed", "seconds": 1.75, "outputs": 3}
+START 10_point_process
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "10_point_process", "status": "passed", "seconds": 2.12, "outputs": 6}

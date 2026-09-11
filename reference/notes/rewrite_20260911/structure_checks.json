@@ -1,0 +1,254 @@
+{
+  "pages": [
+    {
+      "page": "00_intro",
+      "cjk_characters": 1129,
+      "display_math": 0
+    },
+    {
+      "page": "09_forecasting_intro",
+      "cjk_characters": 2433,
+      "display_math": 0
+    },
+    {
+      "page": "foundation_catalog",
+      "cjk_characters": 2092,
+      "display_math": 0
+    },
+    {
+      "page": "foundation_randomness",
+      "cjk_characters": 2165,
+      "display_math": 1
+    },
+    {
+      "page": "10_point_process",
+      "cjk_characters": 3440,
+      "display_math": 6
+    },
+    {
+      "page": "11_catalog_completeness_b",
+      "cjk_characters": 4554,
+      "display_math": 5
+    },
+    {
+      "page": "12_clustering_laws",
+      "cjk_characters": 3977,
+      "display_math": 6
+    },
+    {
+      "page": "foundation_inference",
+      "cjk_characters": 2249,
+      "display_math": 2
+    },
+    {
+      "page": "13_etas_structure",
+      "cjk_characters": 4465,
+      "display_math": 6
+    },
+    {
+      "page": "14_etas_estimation",
+      "cjk_characters": 4812,
+      "display_math": 3
+    },
+    {
+      "page": "15_psi_phenomenon",
+      "cjk_characters": 3899,
+      "display_math": 2
+    },
+    {
+      "page": "16_eepas_ppe",
+      "cjk_characters": 3684,
+      "display_math": 2
+    },
+    {
+      "page": "17_testing_consistency",
+      "cjk_characters": 2532,
+      "display_math": 4
+    },
+    {
+      "page": "18_testing_comparison",
+      "cjk_characters": 2459,
+      "display_math": 2
+    },
+    {
+      "page": "19_ensembles",
+      "cjk_characters": 2461,
+      "display_math": 1
+    },
+    {
+      "page": "20_recurrence_models",
+      "cjk_characters": 2874,
+      "display_math": 4
+    },
+    {
+      "page": "21_psha",
+      "cjk_characters": 3033,
+      "display_math": 5
+    },
+    {
+      "page": "22_operational_systems",
+      "cjk_characters": 2380,
+      "display_math": 0
+    },
+    {
+      "page": "01_overview",
+      "cjk_characters": 1679,
+      "display_math": 0
+    },
+    {
+      "page": "02_download",
+      "cjk_characters": 1610,
+      "display_math": 0
+    },
+    {
+      "page": "03_groundwater",
+      "cjk_characters": 2044,
+      "display_math": 0
+    },
+    {
+      "page": "04_geomagnetic",
+      "cjk_characters": 1632,
+      "display_math": 0
+    },
+    {
+      "page": "05_seismic",
+      "cjk_characters": 2189,
+      "display_math": 0
+    },
+    {
+      "page": "06_gnss",
+      "cjk_characters": 1590,
+      "display_math": 0
+    },
+    {
+      "page": "07_case_hualien2024",
+      "cjk_characters": 1963,
+      "display_math": 0
+    },
+    {
+      "page": "08_explore_ideas",
+      "cjk_characters": 2370,
+      "display_math": 0
+    },
+    {
+      "page": "23_taiwan_outlook",
+      "cjk_characters": 4170,
+      "display_math": 0
+    },
+    {
+      "page": "appendix_a_point_process",
+      "cjk_characters": 2183,
+      "display_math": 13
+    },
+    {
+      "page": "appendix_b_catalog",
+      "cjk_characters": 1792,
+      "display_math": 24
+    },
+    {
+      "page": "appendix_c_etas",
+      "cjk_characters": 2680,
+      "display_math": 24
+    },
+    {
+      "page": "appendix_d_eepas",
+      "cjk_characters": 1665,
+      "display_math": 22
+    },
+    {
+      "page": "appendix_e_testing",
+      "cjk_characters": 2386,
+      "display_math": 21
+    },
+    {
+      "page": "appendix_f_hazard",
+      "cjk_characters": 1439,
+      "display_math": 15
+    },
+    {
+      "page": "appendix_g_observations",
+      "cjk_characters": 2655,
+      "display_math": 7
+    }
+  ],
+  "labels": {
+    "eq:cond-int": [
+      "10_point_process"
+    ],
+    "eq:pp-loglik": [
+      "10_point_process"
+    ],
+    "eq:time-rescale": [
+      "10_point_process"
+    ],
+    "eq:gr-density": [
+      "11_catalog_completeness_b"
+    ],
+    "eq:b-exact": [
+      "11_catalog_completeness_b"
+    ],
+    "eq:omori-density": [
+      "12_clustering_laws"
+    ],
+    "eq:mx": [
+      "12_clustering_laws"
+    ],
+    "eq:etas-intensity": [
+      "13_etas_structure"
+    ],
+    "eq:branching-ratio": [
+      "13_etas_structure"
+    ],
+    "eq:rho-phi": [
+      "14_etas_estimation"
+    ],
+    "eq:rj-rate": [
+      "14_etas_estimation"
+    ],
+    "eq:cumag": [
+      "15_psi_phenomenon"
+    ],
+    "eq:psi-scaling": [
+      "15_psi_phenomenon"
+    ],
+    "eq:eepas-rate": [
+      "16_eepas_ppe"
+    ],
+    "eq:jpoll": [
+      "17_testing_consistency"
+    ],
+    "eq:igpe": [
+      "18_testing_comparison"
+    ],
+    "eq:igpec": [
+      "18_testing_comparison"
+    ],
+    "eq:mulhyb": [
+      "19_ensembles"
+    ],
+    "eq:renewal-prob": [
+      "20_recurrence_models"
+    ],
+    "eq:hazard-def": [
+      "20_recurrence_models"
+    ],
+    "eq:bpt-pdf": [
+      "20_recurrence_models"
+    ],
+    "eq:psha": [
+      "21_psha"
+    ],
+    "eq:trunc-gr": [
+      "21_psha"
+    ],
+    "eq:gmpe-exceed": [
+      "21_psha"
+    ],
+    "eq:nhpp": [
+      "21_psha"
+    ]
+  },
+  "doc_links": 110,
+  "equation_refs": 19,
+  "errors": []
+}

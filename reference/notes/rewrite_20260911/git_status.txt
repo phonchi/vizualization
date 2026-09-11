@@ -1,0 +1,72 @@
+本次教學改編範圍；未列無關研究檔案。
+ M README.md
+ M book/00_intro.md
+ M book/01_overview.ipynb
+ M book/01_overview.py
+ M book/02_download.ipynb
+ M book/02_download.py
+ M book/03_groundwater.ipynb
+ M book/03_groundwater.py
+ M book/04_geomagnetic.ipynb
+ M book/04_geomagnetic.py
+ M book/05_seismic.ipynb
+ M book/05_seismic.py
+ M book/06_gnss.ipynb
+ M book/06_gnss.py
+ M book/07_case_hualien2024.ipynb
+ M book/07_case_hualien2024.py
+ M book/08_explore_ideas.md
+ M book/09_forecasting_intro.ipynb
+ M book/09_forecasting_intro.py
+ M book/10_point_process.ipynb
+ M book/10_point_process.py
+ M book/11_catalog_completeness_b.ipynb
+ M book/11_catalog_completeness_b.py
+ M book/12_clustering_laws.ipynb
+ M book/12_clustering_laws.py
+ M book/13_etas_structure.ipynb
+ M book/13_etas_structure.py
+ M book/14_etas_estimation.ipynb
+ M book/14_etas_estimation.py
+ M book/15_psi_phenomenon.ipynb
+ M book/15_psi_phenomenon.py
+ M book/16_eepas_ppe.ipynb
+ M book/16_eepas_ppe.py
+ M book/17_testing_consistency.ipynb
+ M book/17_testing_consistency.py
+ M book/18_testing_comparison.ipynb
+ M book/18_testing_comparison.py
+ M book/19_ensembles.ipynb
+ M book/19_ensembles.py
+ M book/20_recurrence_models.ipynb
+ M book/20_recurrence_models.py
+ M book/21_psha.ipynb
+ M book/21_psha.py
+ M book/22_operational_systems.ipynb
+ M book/22_operational_systems.py
+ M book/23_taiwan_outlook.ipynb
+ M book/23_taiwan_outlook.py
+ M book/_config.yml
+ M book/_conventions.md
+ M book/_toc.yml
+?? book/_ext/
+?? book/_static/
+?? book/appendix_a_point_process.md
+?? book/appendix_b_catalog.md
+?? book/appendix_c_etas.md
+?? book/appendix_d_eepas.md
+?? book/appendix_e_testing.md
+?? book/appendix_f_hazard.md
+?? book/appendix_g_observations.md
+?? book/foundation_catalog.ipynb
+?? book/foundation_catalog.py
+?? book/foundation_inference.ipynb
+?? book/foundation_inference.py
+?? book/foundation_randomness.ipynb
+?? book/foundation_randomness.py
+?? gdms_toolkit/teaching.py
+?? reference/notes/rewrite_20260911/
+?? reference/notes/rewrite_core_sources.md
+?? reference/notes/rewrite_forecast_sources.md
+?? reference/notes/rewrite_taiwan_sources.md
+?? scripts/

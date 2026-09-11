@@ -1,0 +1,20 @@
+[
+  {
+    "page": "09_forecasting_intro",
+    "status": "passed",
+    "seconds": 2.83,
+    "outputs": 3
+  },
+  {
+    "page": "foundation_randomness",
+    "status": "passed",
+    "seconds": 1.75,
+    "outputs": 3
+  },
+  {
+    "page": "10_point_process",
+    "status": "passed",
+    "seconds": 2.12,
+    "outputs": 6
+  }
+]

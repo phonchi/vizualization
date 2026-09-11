@@ -1,22 +1,15 @@
 format: jb-book
 root: 00_intro
 parts:
-  - caption: 第一部：地球物理觀測資料探索
-    chapters:
-      - file: 01_overview
-      - file: 02_download
-      - file: 03_groundwater
-      - file: 04_geomagnetic
-      - file: 05_seismic
-      - file: 06_gnss
-      - file: 07_case_hualien2024
-      - file: 08_explore_ideas
-  - caption: 第二部：地震預報模型
+  - caption: 第一部：地震統計與預報
     chapters:
       - file: 09_forecasting_intro
+      - file: foundation_catalog
+      - file: foundation_randomness
       - file: 10_point_process
       - file: 11_catalog_completeness_b
       - file: 12_clustering_laws
+      - file: foundation_inference
       - file: 13_etas_structure
       - file: 14_etas_estimation
       - file: 15_psi_phenomenon
@@ -27,4 +20,23 @@ parts:
       - file: 20_recurrence_models
       - file: 21_psha
       - file: 22_operational_systems
+  - caption: 第二部：台灣地球物理觀測
+    chapters:
+      - file: 01_overview
+      - file: 02_download
+      - file: 03_groundwater
+      - file: 04_geomagnetic
+      - file: 05_seismic
+      - file: 06_gnss
+      - file: 07_case_hualien2024
+      - file: 08_explore_ideas
       - file: 23_taiwan_outlook
+  - caption: 第三部：技術附錄
+    chapters:
+      - file: appendix_a_point_process
+      - file: appendix_b_catalog
+      - file: appendix_c_etas
+      - file: appendix_d_eepas
+      - file: appendix_e_testing
+      - file: appendix_f_hazard
+      - file: appendix_g_observations

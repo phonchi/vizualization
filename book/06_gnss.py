@@ -1,31 +1,47 @@
-# %% [markdown]
-# # 6. GNSS 地殼變形觀測
-#
-# ## 6.1 為什麼 GNSS 與地震有關？
-#
-# GNSS（GPS 等衛星定位系統）連續站以毫米級精度追蹤測站位置：
-#
-# - **震間（inter-seismic）**：板塊持續推擠，台灣以每年約 8 公分的速度
-#   縮短——應變正在累積。
-# - **同震（co-seismic）**：地震瞬間測站「跳」到新位置，位移場直接
-#   反映斷層滑移分布。
-# - **震後（post-seismic）**：餘滑與黏彈性鬆弛造成的緩慢衰減運動。
-# - **慢地震（SSE）**：不放地震波的緩慢滑移事件，只有 GNSS 看得到。
-#
-# ## 6.2 GDMS 提供的是「原始觀測檔」（RINEX）
-#
-# 這裡要先建立一個重要觀念：GDMS 釋出的 GNSS 資料是 **RINEX 觀測檔**
-# ——接收儀記錄的衛星訊號原始觀測量（虛擬距離、載波相位），
-# **不是**現成的位置時間序列。從 RINEX 到毫米級座標需要專業軟體
-# （GAMIT/GLOBK、Bernese、PRIDE PPP-AR 等）解算。
-#
-# 本章目標：看懂 RINEX 檔案的結構與內容。
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: tags,-all
+#     formats: ipynb,py:percent
+#     notebook_metadata_filter: kernelspec,jupytext
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.19.5
+#   kernelspec:
+#     display_name: Python 3
+#     language: python
+#     name: python3
+# ---
 
+# %% [markdown]
+# # 23. GNSS：從衛星訊號到地表位移
+#
+# 地震儀擅長記錄震波造成的振盪；若要知道一場地震之後測站停在什麼新位置，
+# 還需要地表位移資料。GNSS 利用衛星訊號估計接收站座標，經過精密解算與
+# 適當的參考框架，能讓我們比較長期速度、地震前後的位移及較緩慢的變形。
+#
+# 這些變化的形狀對應不同問題。震間速度告訴我們地表如何持續變形；同震
+# 階變約束地震造成的位移；震後曲線可能含有餘滑、黏彈性鬆弛及水文負載等
+# 成分。單一曲線通常不能唯一識別地下機制，需要多站空間型態與物理模型。
+#
+# 臺灣位於板塊聚合區，但板塊相對運動速率、跨某條基線的縮短率，以及某一
+# 測站的速度，並不是同一個數字。沒有指定參考框架與地理範圍，就不能把
+# 一個「每年幾公分」的速率套用到全島。
+#
+# ## 23.1 衛星原始觀測還不是位移
+#
+# 本書使用的 GDMS GNSS 產品是 RINEX 觀測檔，儲存偽距與載波相位等資料。
+# 它們受到衛星軌道、時鐘、大氣、天線與多路徑影響，需經解算才能得到座標。
+# 本章不將原始觀測偽裝成位移成果；先看產品與品質，再說明一份解算序列
+# 應怎樣讀。
+#
 # %% tags=["remove-input"]
 from gdms_toolkit.viz import setup_plotly
 setup_plotly()
 
-# %%
+# %% tags=["remove-input", "remove-output"]
 import gzip
 import tarfile
 from collections import Counter
@@ -42,12 +58,15 @@ with tarfile.open(tgz) as tar:
 print("\n".join(names))
 
 # %% [markdown]
-# 檔名規則（RINEX 2）：`hual0930.24o.gz` → 測站 `hual`（花蓮）、
-# 年積日 `093`（2024 年第 93 天 = 4/2）、`24o` = 2024 年觀測檔。
+# 一份 RINEX 檔的標頭記錄版本、測站、觀測量種類及取樣間隔。它相當於
+# 儀器資料的身分說明。標頭中也可能有近似座標，供解算初始化或位置查核，
+# 但那不是每個時刻重新估計的精密位置。
 #
-# ## 6.3 打開一個 RINEX 檔看看
-
-# %%
+# 檔名與欄位解析、ECEF 座標換算移到{doc}`附錄 G <appendix_g_observations>`。
+# 主文留下與科學解讀直接相關的一件事：檔案裡有很多數字，不表示地表位移
+# 已經被測成很多個時間點。
+#
+# %% tags=["remove-input", "remove-output"]
 with tarfile.open(tgz) as tar:
     member = next(m for m in tar.getmembers() if "hual0930" in m.name)
     raw = gzip.decompress(tar.extractfile(member).read()).decode("ascii")
@@ -55,16 +74,17 @@ lines = raw.splitlines()
 print("\n".join(lines[:20]))
 
 # %% [markdown]
-# 標頭裡的重要欄位：`APPROX POSITION XYZ`（測站概略座標，地心直角座標）、
-# `TYPES OF OBSERV`（記錄的觀測量：C1 虛擬距離、L1/L2 載波相位…）、
-# `INTERVAL`（取樣間隔 30 秒）。
+# ## 23.2 品質從可用觀測開始
 #
-# 標頭之後是一個個「曆元（epoch）」：每 30 秒一筆，記錄當下收到哪些
-# 衛星（G=GPS、R=GLONASS）、各觀測量的值。
+# 下面顯示 HUAL 站某日各曆元記錄的衛星數。本書資料為三十秒間隔；衛星數
+# 變化可能反映星座移動、遮蔽或觀測可用性。突然減少值得檢查，但它不是
+# 地表突然移動的證據。
 #
-# ## 6.4 簡單解析：每個曆元收到幾顆衛星？
-
-# %%
+# 定位能力也受衛星幾何影響。即使衛星數一樣，分散在天空各方向與集中在
+# 同一方向，對座標的約束也不同。這與上一章地震定位的測站幾何很相似：
+# 觀測數量重要，觀測從哪個方向來同樣重要。
+#
+# %% tags=["remove-input"]
 def parse_epoch_sats(lines):
     """從 RINEX 2 觀測檔抓出（時間, 衛星數）序列。"""
     out = []
@@ -88,16 +108,17 @@ apply_layout(fig, title=f"HUAL 站 2024/04/02 可見衛星數（30 秒取樣，�
 fig
 
 # %% [markdown]
-# 衛星數隨星座幾何在 8–20 顆之間起伏。衛星數與幾何分布（DOP）
-# 直接影響定位精度。
+# 這張圖回答的是觀測供應的變化。要評估座標品質，還需要檢視解算殘差、
+# 相位周跳、幾何和正式誤差等資訊。不能把衛星較多的時段直接當作所有
+# 分量都同樣準確，也不能由衛星數反推出毫米級精度。
 #
-# ## 6.5 從標頭座標反推測站位置
+# ## 23.3 位移需要一個參考
 #
-# 標頭裡的 `APPROX POSITION XYZ` 是測站的地心直角座標（ECEF），單位公尺。
-# 把它轉成我們熟悉的經緯度，就能和第 1 章的測站清單對照，確認自己讀對了
-# 檔案。轉換公式是大地測量的標準流程（WGS84 橢球，迭代求緯度）：
-
-# %%
+# 地心直角座標可以換成經緯度與橢球高，也可以將相對位移轉為東、北、上
+# 分量。幾何換算改變的是表示方式，不會提升原始座標的精度。因此把檔頭
+# 近似座標轉到小數點後很多位，仍然不會得到同震位移。
+#
+# %% tags=["remove-input", "remove-output"]
 import math
 import re
 
@@ -125,37 +146,43 @@ hual = load_stations("GNSS").query("station_code == 'HUAL'").iloc[0]
 print(f"測站清單 HUAL：緯度 {hual.lat}, 經度 {hual.lon}")
 
 # %% [markdown]
-# 從 RINEX 標頭算出的位置，和測站清單裡登錄的經緯度吻合到小數點後好幾位。
-# 這種交叉檢查看似瑣碎，卻是處理陌生資料格式時最實在的一步：先確認自己
-# 讀進來的東西「位置對得上」，再談後面的分析。
+# ## 23.4 讀一份已解算座標序列
 #
-# ## 6.6 想要位置時間序列？用解算好的成果
+# Nevada Geodetic Laboratory 等研究機構提供解算好的位置與速度產品。
+# 閱讀前先確認參考框架、單位、取樣間隔與產品版本；同一站換到不同框架，
+# 長期趨勢可能不同。將多站放在同一框架下，才能比較它們的相對運動。
 #
-# 要看同震位移，需要的是每日一點的座標序列，不是原始觀測檔。學術研究
-# 通常直接使用專業機構解算好的成果：
+# 閱讀東、北、上三分量圖時，可以先看長期斜率，再看週期起伏與突變。
+# 斜率是測站在該框架中的速度；季節成分可能包含水文負載和其他環境效應；
+# 階變則需對照地震與裝置更換紀錄。許多站同時改變，是值得追查的空間證據，
+# 但參考框架或解算流程的共同誤差也可能跨站出現。
 #
-# - **中研院地球所 GPS Lab**（<https://gps.earth.sinica.edu.tw/>）：台灣
-#   全網每日座標解，可申請下載。
-# - **Nevada Geodetic Laboratory**（<https://geodesy.unr.edu/>）：全球
-#   （含台灣多站）每日解，網頁直接可抓。
+# | 序列形狀 | 可能關心的過程 | 還需要的對照 |
+# |---|---|---|
+# | 長期近線性趨勢 | 區域地表速度 | 參考框架、跨站速度場 |
+# | 突然偏移 | 同震位移或裝置階變 | 事件時間、維運紀錄、鄰站 |
+# | 震後逐漸變緩 | 餘滑或其他鬆弛過程 | 更長序列、空間分布與模型 |
+# | 季節性往返 | 地表負載等週期效應 | 降雨、水文及背景資料 |
 #
-# 拿到解算後的東西向、南北向、垂直向三分量序列（單位毫米，一天一點），
-# 就能看到 2024/4/3 那天花蓮周邊測站在幾秒內跳了數十公分。從原始觀測檔
-# 自己解算到毫米級座標，需要 GAMIT/GLOBK、Bernese 或 PRIDE PPP-AR 這類
-# 專業軟體，超出本課範圍，但知道路在哪裡，需要時才找得到。
+# 每日解能比較震前後座標是否不同，卻不能從一天一點的圖判定幾秒內如何
+# 移動。研究快速同震過程需要高頻 GNSS 解及相應處理；原始觀測每三十秒
+# 一筆，也不等於已經有三十秒精密位移。
 #
-# ```{admonition} 延伸工具
-# :class: tip
-# 想用 Python 讀 RINEX，可以看 `georinex`；想自己嘗試 PPP 精密單點定位，
-# 開源的 PRIDE PPP-AR 是不錯的起點。
-# ```
-
+# 慢滑移可以在沒有相應強烈地震波的情況下逐漸累積位移。GNSS 是重要觀測
+# 方式之一，但還有其他方式；應變、傾斜或其他地球物理資料也能提供約束。
+# 是否看得到，取決於滑移位置、幅度、時間尺度及觀測網的敏感度。
+#
+# 本章沒有建立花蓮事件的精密 GNSS 解，因此下一章的共同時間軸只比較
+# 實際具備的波形、目錄、地下水及地磁，不以近似座標補出一條不存在的
+# 位移曲線。這個區分讓{doc}`花蓮案例 <07_case_hualien2024>`可以清楚
+# 說明哪些證據已在手上，哪些需要另外取得。
+#
 # %% [markdown]
 # ## 參考資料與延伸閱讀
 #
 # - **資料實作・免費網站**：Nevada Geodetic Laboratory，〈[Plug and Play GPS Data Products](https://geodesy.unr.edu/PlugNPlayPortal.php)〉。
 #   從測站清單進入位置時間序列與資料格式說明，延伸本章「原始衛星觀測」和「已解算座標」的區別；比較位移前先確認參考框架及單位。
-# - **格式查詢・免費文件**：IGS／RTCM RINEX Working Group，〈[RINEX](https://igs.org/wg/rinex/)〉。
-#   依手上檔案的版本選擇規格，查閱標頭與觀測量代碼，對照本章的 RINEX 解析；檔頭的近似座標不等於逐時刻解算的位置序列。
+# - **格式查詢・免費檔案**：IGS／RTCM RINEX Working Group，〈[RINEX](https://igs.org/wg/rinex/)〉。
+#   依手上檔案的版本選擇規格，查閱標頭與觀測量代碼；詳細解析移到附錄 G，檔頭的近似座標不等於逐時刻解算的位置序列。
 # - **資料方法導讀・免費文章**：Blewitt, G., Hammond, W. C., & Kreemer, C.（2018），〈[Harnessing the GPS Data Explosion for Interdisciplinary Science](https://doi.org/10.1029/2018EO104623)〉，*Eos*；[免費全文](https://eos.org/science-updates/harnessing-the-gps-data-explosion-for-interdisciplinary-science)。
-#   了解大量 GNSS 資料如何整理成可研究的速度與位移產品，特別看季節變化、地震階變及設備更動如何影響時間序列的解讀。
+#   瞭解大量 GNSS 資料如何整理成可研究的速度與位移產品，特別看季節變化、地震階變及裝置更動如何影響時間序列的解讀。

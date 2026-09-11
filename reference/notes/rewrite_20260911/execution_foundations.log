@@ -1,0 +1,19 @@
+START foundation_catalog
+/home/phonchi/vizualization/.venv/lib/python3.13/site-packages/IPython/paths.py:59: UserWarning: IPython dir '/home/phonchi/.ipython' is not a writable location, using a temp directory.
+  warn("IPython dir '{0}' is not a writable location,"
+/home/phonchi/vizualization/.venv/lib/python3.13/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted
+  ret = f(**kwargs)
+[Errno 1] Operation not permitted
+{"page": "foundation_catalog", "status": "failed", "seconds": 0.38, "error": "[Errno 1] Operation not permitted"}
+START foundation_randomness
+[Errno 1] Operation not permitted
+{"page": "foundation_randomness", "status": "failed", "seconds": 0.0, "error": "[Errno 1] Operation not permitted"}
+START foundation_inference
+[Errno 1] Operation not permitted
+{"page": "foundation_inference", "status": "failed", "seconds": 0.0, "error": "[Errno 1] Operation not permitted"}
+START 09_forecasting_intro
+[Errno 1] Operation not permitted
+{"page": "09_forecasting_intro", "status": "failed", "seconds": 0.0, "error": "[Errno 1] Operation not permitted"}
+START 10_point_process
+[Errno 1] Operation not permitted
+{"page": "10_point_process", "status": "failed", "seconds": 0.01, "error": "[Errno 1] Operation not permitted"}

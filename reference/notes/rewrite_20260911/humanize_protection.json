@@ -1,0 +1,346 @@
+{
+  "pages": 34,
+  "checks": [
+    {
+      "file": "book/00_intro.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "8efab9425899586139e4642b631eec4cfd653f262468762b7e04d02843a8ac49",
+      "after_sha256": "c8dc7143e79eb481ca7dcdda9fa5e958ed0ffb4fa5f0b139f5d92dda915db5e9"
+    },
+    {
+      "file": "book/09_forecasting_intro.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "bc3ccf077d106096beb0aaea8c7d90fc08679b4bc4caaf52d4602eb4ce80ef6b",
+      "after_sha256": "e778064aca40f08ba28da0a868b136d9500b2c8a490389d5aa28689763ce9c05"
+    },
+    {
+      "file": "book/foundation_catalog.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "9bd12789ac19b3db7340fd1ba644fad8226235e33c8dbf9e6f6f97b76aff4701",
+      "after_sha256": "f42f9a9df8f3c8f372b48e9c4c0f04bfff50c9602876da466a4d184b85743b60"
+    },
+    {
+      "file": "book/foundation_randomness.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "4b5b725bf9a84331400d4008406cfac498c8c9daf0c06899054959eae5e4f709",
+      "after_sha256": "c105014f071147d0d005fa0547c3cc65a88c5cb47746ec607f47456e29c40ce2"
+    },
+    {
+      "file": "book/10_point_process.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "f1eb92e27b73b4ec46b0a827c0dc6a8d423e802cc2cc6b170d45228b29dd8a5a",
+      "after_sha256": "68e31cec00e4d000f4020984f78c40cf5d583525fcaf5f3a06687b512cd97bfc"
+    },
+    {
+      "file": "book/11_catalog_completeness_b.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "169c5f627c4200f22961995885ca139b4ae558b99a0d60c00d9eaa84317565b7",
+      "after_sha256": "83075008c499fd24a55eeb12bb5ce70e19869a328f39e5dea5903634e8283681"
+    },
+    {
+      "file": "book/12_clustering_laws.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "13a65ee36ce669e196dc55c41785da4f47167a962a9b527ded91824eba06cbbe",
+      "after_sha256": "676e56372497fdcf4338aa42d243b9634f4a8a1c8a229a0eb7a1235346ac6e63"
+    },
+    {
+      "file": "book/foundation_inference.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "1b9c797b612e1879c3d866c3258a4d8da9e6338cc908501c3e3a12a276f67eaf",
+      "after_sha256": "ae21d874aa86dd4f756675a2401733d2baad1bfda09f872e5707054820adb1de"
+    },
+    {
+      "file": "book/13_etas_structure.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "db38c13205b6c6557fa156d95626decff8a5191907be16e9f0ed64e61e08563f",
+      "after_sha256": "2890d09f8cb16685f29d3b16bb36089ccce7c4d0b0636d30af6330118d699b96"
+    },
+    {
+      "file": "book/14_etas_estimation.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "651487608f381c08d04595bcdd4df0c5d6b76013459b87b9f351ff91f400064a",
+      "after_sha256": "46d93d0c0fae107b4323bfbc6055ed183fb43d22171ad76c996064839fc0e050"
+    },
+    {
+      "file": "book/15_psi_phenomenon.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "9d6b1e8f12d9dfc44dd2afc3a9dbfdd9691e93b77bc8a5cd9626157773c11343",
+      "after_sha256": "878dc71af675d1e98d0ab83ad18cbd1c2ed5717d2e9f757a6f81fb972a17e2d3"
+    },
+    {
+      "file": "book/16_eepas_ppe.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "5a01aa44acd7daabddf4665719fb2d6985ccd61070411bd036d7f4103f88ae91",
+      "after_sha256": "a9dca29baa04c6d726128e0aaaa324cd2901a947a240fa2de4a94365040cdbf3"
+    },
+    {
+      "file": "book/17_testing_consistency.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "422ee60f01d2086ad15b2f9b87b4eb22e9959e5e81fa6df912d17bffc54ca958",
+      "after_sha256": "556c7398de71a0b2e965ecb128f03142fe9bd0bcdf57d93c58c00f8454de4202"
+    },
+    {
+      "file": "book/18_testing_comparison.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "a3f33b48c309ae2fb2f76c64c8ec4022acecaeedfbc5a8ecfee266a56c6be731",
+      "after_sha256": "65ec4545a33a11cfcd69007a80f407b00978fc8a1f8ba238c4432814ee067741"
+    },
+    {
+      "file": "book/19_ensembles.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "de116e64238afc6b55db377e79f9a184fd1d17d879f19edf515bf37802630a79",
+      "after_sha256": "6861a33d53a49b2e3971d2127f46ad6c9d5de7d18bdf732b4599413907c72748"
+    },
+    {
+      "file": "book/20_recurrence_models.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "5c94470512f14d920d4074783ccb6f129682995efde57d6f65e7e0046c2976e4",
+      "after_sha256": "4d5694e31027a0e16451fd06b43f19a3e2dd38f0439f33d90187b1b977da2abf"
+    },
+    {
+      "file": "book/21_psha.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "18e3cc4e862f3caf89af06af0e2617f8798a595b5e587e45c8bcaeeec89730fd",
+      "after_sha256": "3e973e7c73d2fe10262b99631b1b63d490117e1eaa3d87f404acb725e16da2e3"
+    },
+    {
+      "file": "book/22_operational_systems.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "739eac143822deef9e8b3aab8ff79bce48eb9f6e71b9b47d18b2be8ef3ec8f83",
+      "after_sha256": "38c9c89824e55d8283dc4572971b46620e76cc187c922e19734d7fa458cee12d"
+    },
+    {
+      "file": "book/01_overview.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "de78fe5f2b2ff8183710de8ae5cc59ca6106fd90fca7d27b8782baa5471c01c5",
+      "after_sha256": "d4763501b0c31dd789c8591651cfeb2859d287c53c71cfaad7f8de6885c97632"
+    },
+    {
+      "file": "book/02_download.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "abc39d2dfa23c6f94fc01d5c4f2d89fcafa5cb4a0cd1984af5646232efe9cff6",
+      "after_sha256": "4dcbec38507b3228a142373e56cc26a6b45e38476a1f934d3b9251923bcdaa15"
+    },
+    {
+      "file": "book/03_groundwater.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "72be83c1c98da16c62a1d98358229b12eb91fa2450494811a557b9983c241fe8",
+      "after_sha256": "861ade2f1a2a1252e01bcc449165709e4a2d6b3a59c3e117cdc5dded044199fa"
+    },
+    {
+      "file": "book/04_geomagnetic.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "cd85759509c661903e3ae3eff3778caf4fc73e98e9094753e18505ea368e5f0a",
+      "after_sha256": "677795f13b1089cc6910be4af14071144b816e42abc38cc5c64f8a8c2f4108b1"
+    },
+    {
+      "file": "book/05_seismic.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "cbf01413e0a7ebde140f557afb50733c4fc3f3d3190975f2631e9537b7858c78",
+      "after_sha256": "7f5d44b7d365df0f871fa3088076981d21eaea2e16aceeec046ceac71332ae02"
+    },
+    {
+      "file": "book/06_gnss.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "83f540e893bdd1bf80856ad8cbfa30470d9d0f8fa4131e8cdfca464e262346d1",
+      "after_sha256": "aa65b29e9fee6e6483b00e3adbc628f930a8cf5df646d71465565a1ed1629cbf"
+    },
+    {
+      "file": "book/07_case_hualien2024.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "001a268bb06ee87aa38b97dc373a61a0c1d0f86b7d8a111b2ca9a7671d4c960b",
+      "after_sha256": "b2889f562272a3d09d3b676161c5f4350ff296156365f442e03304dd1bb35324"
+    },
+    {
+      "file": "book/08_explore_ideas.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "29cb41cc21dbc1a380f9ec384c2a1b0e11ed2351cfab0c153486fea136ecb7b3",
+      "after_sha256": "c07c43e0021c493ff6c66de19409d7ba9d40f9ac0bc3e07cf3602241e11c0f2d"
+    },
+    {
+      "file": "book/23_taiwan_outlook.py",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "676bcebed3b8524d15e4620bb8683cace7a3af8f5f18b77a0655fcebb22d6757",
+      "after_sha256": "50d4cff79c5fdc2c53c25a9fc19c337a52d870e430d36fcb9efb212ccb490b6f"
+    },
+    {
+      "file": "book/appendix_a_point_process.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "912330a76028cdf5af5315834b654fbbeabb733a0e110061d34ee20a2adca862",
+      "after_sha256": "07263b1e648c3fd9f77925c3262e071a64ad7a077206a1075ac05581201c90da"
+    },
+    {
+      "file": "book/appendix_b_catalog.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "0b8e5b118c4f4d86a26b329d929451721bb148530a6230f64785236281cc8547",
+      "after_sha256": "9d3ec486baab4e1d7d4350dc10746f05f816073c5388ccca7b86e950b5c1e1c1"
+    },
+    {
+      "file": "book/appendix_c_etas.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "65a8be00d19b175c2d9a441bd8bf7fd16bdf2ee81441f29cb2abca452d2292ac",
+      "after_sha256": "bfa07e65b06a0e905098075d7a6330ee707fa6bb7d2a60668ec1a03e9b37961d"
+    },
+    {
+      "file": "book/appendix_d_eepas.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "b5e5865fd61dc4a35a9159ce0aaa5b0eed6e7304c0168899dae54291fa925eab",
+      "after_sha256": "7a810da5d7ab30377fe4d0c5b37e3990726286300734497ee7e6dae693c2e614"
+    },
+    {
+      "file": "book/appendix_e_testing.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "5d0b9c30f491faa651d68529b992634fd11422eee975b03dd3d470d0c616d5b6",
+      "after_sha256": "2bbf197610eef7d48870a980cca0b5221d801dfb02279c929600bb7b5025cf54"
+    },
+    {
+      "file": "book/appendix_f_hazard.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "5bb2e2b8a5b732e58e205b6ae3b2cb42d3be0ba2c7b46042d08306b30243ec12",
+      "after_sha256": "b5f47068986e2f6eaf973d10d2fd7cab7aa4077b2bd2565830dbfee8930a3dce"
+    },
+    {
+      "file": "book/appendix_g_observations.md",
+      "code": true,
+      "math": true,
+      "numbers": true,
+      "links": true,
+      "quotes": true,
+      "before_sha256": "9c8c9a936be2c7d3c35aaec0c73631af31e093c774c296f6ccae6f7e35df6c26",
+      "after_sha256": "bc7128cd854fea20f095b79738e8ebd509b51f2d162ee3371ac8b46c2ed6abd9"
+    }
+  ],
+  "issues": []
+}

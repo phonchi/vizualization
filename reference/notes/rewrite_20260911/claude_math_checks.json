@@ -1,0 +1,24 @@
+[
+  {
+    "check": "two-uniform-point gap survival by joint-density integration",
+    "computed": 0.48999999999999994,
+    "correct_exponent": 2,
+    "review_exponent_1_value": 0.7
+  },
+  {
+    "check": "fixed N Fano expectation by exact multinomial enumeration",
+    "value": 1.0,
+    "N": 4,
+    "k": 3
+  },
+  {
+    "check": "declared March-June window covers current cached catalog",
+    "events": 3006,
+    "outside": 0
+  },
+  {
+    "check": "Poisson independent thinning acts on mean count",
+    "correct": 0.11307956328284252,
+    "incorrect_multiply_event_probability": 0.07585446705942692
+  }
+]

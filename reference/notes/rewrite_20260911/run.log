@@ -1,0 +1,1266 @@
+Teaching rewrite validation, 2026-09-11. Includes failed attempts and final passing runs.
+
+===== browser.log =====
+Traceback (most recent call last):
+  File "/home/phonchi/vizualization/scripts/check_teaching_browser.py", line 19, in <module>
+    browser=p.chromium.launch(headless=True,args=['--allow-file-access-from-files'])
+  File "/home/phonchi/miniconda3/lib/python3.13/site-packages/playwright/sync_api/_generated.py", line 16269, in launch
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.launch(
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<17 lines>...
+        )
+        ^
+    )
+    ^
+  File "/home/phonchi/miniconda3/lib/python3.13/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/home/phonchi/miniconda3/lib/python3.13/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "/home/phonchi/miniconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/phonchi/miniconda3/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /home/phonchi/.cache/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --allow-file-access-from-files --user-data-dir=/tmp/playwright_chromiumdev_profile-iARwIF --remote-debugging-pipe --no-startup-window
+<launched> pid=17
+[pid=17][err] [0911/110426.403480:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+Call log:
+  - <launching> /home/phonchi/.cache/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --allow-file-access-from-files --user-data-dir=/tmp/playwright_chromiumdev_profile-iARwIF --remote-debugging-pipe --no-startup-window
+  - <launched> pid=17
+  - [pid=17][err] [0911/110426.403480:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)
+  - [pid=17] <gracefully close start>
+  - [pid=17] <kill>
+  - [pid=17] <will force kill>
+  - [pid=17] <process did exit: exitCode=null, signal=SIGTRAP>
+  - [pid=17] starting temporary directories cleanup
+  - [pid=17] finished temporary directories cleanup
+  - [pid=17] <gracefully close end>
+
+
+===== browser_acceptance.log =====
+{"page": "00_intro", "device": "desktop", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "desktop", "heading": "1. 地震預報從什麼問題開始", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "desktop", "heading": "2. 從地震目錄提出統計問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4}
+{"page": "foundation_randomness", "device": "desktop", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "10_point_process", "device": "desktop", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3}
+{"page": "11_catalog_completeness_b", "device": "desktop", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "desktop", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "desktop", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "13_etas_structure", "device": "desktop", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "14_etas_estimation", "device": "desktop", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "desktop", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8}
+{"page": "16_eepas_ppe", "device": "desktop", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "desktop", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "desktop", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "19_ensembles", "device": "desktop", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "desktop", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "desktop", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "desktop", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "desktop", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7}
+{"page": "02_download", "device": "desktop", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "desktop", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "desktop", "heading": "21. 地磁觀測：共同背景與區域性變化", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "desktop", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "06_gnss", "device": "desktop", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "desktop", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 1}
+{"page": "08_explore_ideas", "device": "desktop", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "desktop", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "desktop", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "desktop", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "desktop", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "desktop", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "desktop", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "desktop", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "desktop", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "00_intro", "device": "mobile", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "mobile", "heading": "1. 地震預報從什麼問題開始", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "mobile", "heading": "2. 從地震目錄提出統計問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4, "figure_scrolls": true}
+{"page": "foundation_randomness", "device": "mobile", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3, "figure_scrolls": true}
+{"page": "10_point_process", "device": "mobile", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3, "figure_scrolls": true}
+{"page": "11_catalog_completeness_b", "device": "mobile", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "mobile", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "mobile", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2, "figure_scrolls": true}
+{"page": "13_etas_structure", "device": "mobile", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2, "figure_scrolls": true}
+{"page": "14_etas_estimation", "device": "mobile", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "mobile", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8, "figure_scrolls": true}
+{"page": "16_eepas_ppe", "device": "mobile", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "mobile", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "mobile", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3, "figure_scrolls": true}
+{"page": "19_ensembles", "device": "mobile", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "mobile", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "mobile", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "mobile", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "mobile", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7, "figure_scrolls": true}
+{"page": "02_download", "device": "mobile", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "mobile", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "mobile", "heading": "21. 地磁觀測：共同背景與區域性變化", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "mobile", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "06_gnss", "device": "mobile", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "mobile", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 1, "figure_scrolls": true}
+{"page": "08_explore_ideas", "device": "mobile", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "mobile", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "mobile", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "mobile", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "mobile", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "mobile", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "mobile", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "mobile", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "mobile", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+FAILURES []
+
+===== browser_after_humanize.log =====
+{"page": "00_intro", "device": "desktop", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "desktop", "heading": "1. 地震預報從什麼問題開始", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 4, "rawMath": 4, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "desktop", "heading": "2. 從地震目錄提出統計問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4}
+{"page": "foundation_randomness", "device": "desktop", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "10_point_process", "device": "desktop", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3}
+{"page": "11_catalog_completeness_b", "device": "desktop", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "desktop", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "desktop", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "13_etas_structure", "device": "desktop", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "14_etas_estimation", "device": "desktop", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "desktop", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8}
+{"page": "16_eepas_ppe", "device": "desktop", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "desktop", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "desktop", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "19_ensembles", "device": "desktop", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "desktop", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "desktop", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "desktop", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "desktop", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7}
+{"page": "02_download", "device": "desktop", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "desktop", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "desktop", "heading": "21. 地磁觀測：共同背景與局部變化", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "desktop", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "06_gnss", "device": "desktop", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "desktop", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 1}
+{"page": "08_explore_ideas", "device": "desktop", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "desktop", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "desktop", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 88, "rawMath": 88, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "desktop", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "desktop", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "desktop", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函數", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "desktop", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "desktop", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "desktop", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "00_intro", "device": "mobile", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "mobile", "heading": "1. 地震預報從什麼問題開始", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 4, "rawMath": 4, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "mobile", "heading": "2. 從地震目錄提出統計問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4, "figure_scrolls": true}
+{"page": "foundation_randomness", "device": "mobile", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3, "figure_scrolls": true}
+{"page": "10_point_process", "device": "mobile", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3, "figure_scrolls": true}
+{"page": "11_catalog_completeness_b", "device": "mobile", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "mobile", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "mobile", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2, "figure_scrolls": true}
+{"page": "13_etas_structure", "device": "mobile", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2, "figure_scrolls": true}
+{"page": "14_etas_estimation", "device": "mobile", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "mobile", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8, "figure_scrolls": true}
+{"page": "16_eepas_ppe", "device": "mobile", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "mobile", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "mobile", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3, "figure_scrolls": true}
+{"page": "19_ensembles", "device": "mobile", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "mobile", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "mobile", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "mobile", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "mobile", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7, "figure_scrolls": true}
+{"page": "02_download", "device": "mobile", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "mobile", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "mobile", "heading": "21. 地磁觀測：共同背景與局部變化", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "mobile", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "06_gnss", "device": "mobile", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "mobile", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 1, "figure_scrolls": true}
+{"page": "08_explore_ideas", "device": "mobile", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "mobile", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "mobile", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 88, "rawMath": 88, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "mobile", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "mobile", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "mobile", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函數", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "mobile", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "mobile", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "mobile", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+FAILURES []
+
+===== browser_final.log =====
+{"page": "00_intro", "device": "desktop", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "desktop", "heading": "1. 地震預報從什麼問題開始", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "desktop", "heading": "2. 從地震目錄提出統計問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4}
+{"page": "foundation_randomness", "device": "desktop", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "10_point_process", "device": "desktop", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3}
+{"page": "11_catalog_completeness_b", "device": "desktop", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "desktop", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "desktop", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "13_etas_structure", "device": "desktop", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "14_etas_estimation", "device": "desktop", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "desktop", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8}
+{"page": "16_eepas_ppe", "device": "desktop", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "desktop", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "desktop", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "19_ensembles", "device": "desktop", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "desktop", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "desktop", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "desktop", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "desktop", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7}
+{"page": "02_download", "device": "desktop", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "desktop", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "desktop", "heading": "21. 地磁觀測：共同背景與區域性變化", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "desktop", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false}
+{"page": "06_gnss", "device": "desktop", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "desktop", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}
+{"page": "08_explore_ideas", "device": "desktop", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "desktop", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "desktop", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "desktop", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "desktop", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "desktop", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "desktop", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "desktop", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "desktop", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "00_intro", "device": "mobile", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "mobile", "heading": "1. 地震預報從什麼問題開始", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "mobile", "heading": "2. 從地震目錄提出統計問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4}
+{"page": "foundation_randomness", "device": "mobile", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "10_point_process", "device": "mobile", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3}
+{"page": "11_catalog_completeness_b", "device": "mobile", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "mobile", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "mobile", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "13_etas_structure", "device": "mobile", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "14_etas_estimation", "device": "mobile", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "mobile", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8}
+{"page": "16_eepas_ppe", "device": "mobile", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "mobile", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "mobile", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "19_ensembles", "device": "mobile", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "mobile", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "mobile", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "mobile", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "mobile", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7}
+{"page": "02_download", "device": "mobile", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "mobile", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "mobile", "heading": "21. 地磁觀測：共同背景與區域性變化", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "mobile", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false}
+{"page": "06_gnss", "device": "mobile", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "mobile", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}
+{"page": "08_explore_ideas", "device": "mobile", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "mobile", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "mobile", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "mobile", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "mobile", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "mobile", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "mobile", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "mobile", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "mobile", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+FAILURES [{"page": "05_seismic", "device": "desktop", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false}, {"page": "07_case_hualien2024", "device": "desktop", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}, {"page": "05_seismic", "device": "mobile", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false}, {"page": "07_case_hualien2024", "device": "mobile", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": [], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}]
+
+===== browser_retry.log =====
+{"page": "00_intro", "viewport": 1440, "heading": "地震統計與預報：從模型到臺灣觀測", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "09_forecasting_intro", "viewport": 1440, "heading": "1. 地震預報從什麼問題開始", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "foundation_catalog", "viewport": 1440, "heading": "2. 從地震目錄提出統計問題", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 4}
+{"page": "foundation_randomness", "viewport": 1440, "heading": "3. 隨機性與叢集：平均之外還有什麼", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}
+{"page": "10_point_process", "viewport": 1440, "heading": "4. 點過程：把歷史轉成可更新的發生率", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}
+{"page": "11_catalog_completeness_b", "viewport": 1440, "heading": "5. 目錄統計 I：完整度與規模分布", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "12_clustering_laws", "viewport": 1440, "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "foundation_inference", "viewport": 1440, "heading": "7. 從描述到估計：資料能讓我們知道多少", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}
+{"page": "13_etas_structure", "viewport": 1440, "heading": "8. ETAS I：把每個事件接進預報", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}
+{"page": "14_etas_estimation", "viewport": 1440, "heading": "9. ETAS II：從目錄估計模型，再檢查它", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "15_psi_phenomenon", "viewport": 1440, "heading": "10. Ψ：從震前活動看統計證據", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 8}
+{"page": "16_eepas_ppe", "viewport": 1440, "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "width": 1440, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "17_testing_consistency", "viewport": 1440, "heading": "12. 預報檢驗 I：觀測是否符合模型", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "18_testing_comparison", "viewport": 1440, "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}
+{"page": "19_ensembles", "viewport": 1440, "heading": "14. 模型組合：利用不同尺度的資訊", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "20_recurrence_models", "viewport": 1440, "heading": "15. 複發模型：已經等了多久，也是資訊", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "21_psha", "viewport": 1440, "heading": "16. PSHA：從地震發生走到場址搖晃", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "22_operational_systems", "viewport": 1440, "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "01_overview", "viewport": 1440, "heading": "18. 臺灣地球物理觀測總覽", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 7}
+{"page": "02_download", "viewport": 1440, "heading": "19. 資料產品與品質：取得資料之前先定義問題", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "03_groundwater", "viewport": 1440, "heading": "20. 地下水位：含水層如何回應外界擾動", "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "04_geomagnetic", "viewport": 1440, "heading": "21. 地磁觀測：共同背景與區域性變化", "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "05_seismic", "viewport": 1440, "heading": "22. 地動觀測：波形如何成為地震目錄", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false}
+{"page": "06_gnss", "viewport": 1440, "heading": "23. GNSS：從衛星訊號到地表位移", "width": 1440, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "07_case_hualien2024", "viewport": 1440, "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}
+{"page": "08_explore_ideas", "viewport": 1440, "heading": "25. 從觀測現象到可檢驗的證據", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "viewport": 1440, "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_a_point_process", "viewport": 1440, "heading": "附錄 A：點過程的機率、概似與模擬", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_b_catalog", "viewport": 1440, "heading": "附錄 B：目錄統計與叢集律的推導", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_c_etas", "viewport": 1440, "heading": "附錄 C：ETAS 的分支、概似與推論", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_d_eepas", "viewport": 1440, "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_e_testing", "viewport": 1440, "heading": "附錄 E：預報檢驗與模型組合的推導", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_f_hazard", "viewport": 1440, "heading": "附錄 F：複發時間與地震危害積分", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_g_observations", "viewport": 1440, "heading": "附錄 G：觀測資料、處理與幾何細節", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "00_intro", "viewport": 390, "heading": "地震統計與預報：從模型到臺灣觀測", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "09_forecasting_intro", "viewport": 390, "heading": "1. 地震預報從什麼問題開始", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "foundation_catalog", "viewport": 390, "heading": "2. 從地震目錄提出統計問題", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 4}
+{"page": "foundation_randomness", "viewport": 390, "heading": "3. 隨機性與叢集：平均之外還有什麼", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}
+{"page": "10_point_process", "viewport": 390, "heading": "4. 點過程：把歷史轉成可更新的發生率", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}
+{"page": "11_catalog_completeness_b", "viewport": 390, "heading": "5. 目錄統計 I：完整度與規模分布", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "12_clustering_laws", "viewport": 390, "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "foundation_inference", "viewport": 390, "heading": "7. 從描述到估計：資料能讓我們知道多少", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}
+{"page": "13_etas_structure", "viewport": 390, "heading": "8. ETAS I：把每個事件接進預報", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}
+{"page": "14_etas_estimation", "viewport": 390, "heading": "9. ETAS II：從目錄估計模型，再檢查它", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "15_psi_phenomenon", "viewport": 390, "heading": "10. Ψ：從震前活動看統計證據", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 8}
+{"page": "16_eepas_ppe", "viewport": 390, "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "width": 390, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "17_testing_consistency", "viewport": 390, "heading": "12. 預報檢驗 I：觀測是否符合模型", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "18_testing_comparison", "viewport": 390, "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}
+{"page": "19_ensembles", "viewport": 390, "heading": "14. 模型組合：利用不同尺度的資訊", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "20_recurrence_models", "viewport": 390, "heading": "15. 複發模型：已經等了多久，也是資訊", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "21_psha", "viewport": 390, "heading": "16. PSHA：從地震發生走到場址搖晃", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "22_operational_systems", "viewport": 390, "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "01_overview", "viewport": 390, "heading": "18. 臺灣地球物理觀測總覽", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 7}
+{"page": "02_download", "viewport": 390, "heading": "19. 資料產品與品質：取得資料之前先定義問題", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "03_groundwater", "viewport": 390, "heading": "20. 地下水位：含水層如何回應外界擾動", "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "04_geomagnetic", "viewport": 390, "heading": "21. 地磁觀測：共同背景與區域性變化", "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "05_seismic", "viewport": 390, "heading": "22. 地動觀測：波形如何成為地震目錄", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 1, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false}
+{"page": "06_gnss", "viewport": 390, "heading": "23. GNSS：從衛星訊號到地表位移", "width": 390, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "07_case_hualien2024", "viewport": 390, "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}
+{"page": "08_explore_ideas", "viewport": 390, "heading": "25. 從觀測現象到可檢驗的證據", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "viewport": 390, "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_a_point_process", "viewport": 390, "heading": "附錄 A：點過程的機率、概似與模擬", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_b_catalog", "viewport": 390, "heading": "附錄 B：目錄統計與叢集律的推導", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_c_etas", "viewport": 390, "heading": "附錄 C：ETAS 的分支、概似與推論", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_d_eepas", "viewport": 390, "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_e_testing", "viewport": 390, "heading": "附錄 E：預報檢驗與模型組合的推導", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_f_hazard", "viewport": 390, "heading": "附錄 F：複發時間與地震危害積分", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+{"page": "appendix_g_observations", "viewport": 390, "heading": "附錄 G：觀測資料、處理與幾何細節", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}
+FAILURES [{"page": "00_intro", "viewport": 1440, "heading": "地震統計與預報：從模型到臺灣觀測", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "09_forecasting_intro", "viewport": 1440, "heading": "1. 地震預報從什麼問題開始", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "foundation_catalog", "viewport": 1440, "heading": "2. 從地震目錄提出統計問題", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 4}, {"page": "foundation_randomness", "viewport": 1440, "heading": "3. 隨機性與叢集：平均之外還有什麼", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}, {"page": "10_point_process", "viewport": 1440, "heading": "4. 點過程：把歷史轉成可更新的發生率", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}, {"page": "11_catalog_completeness_b", "viewport": 1440, "heading": "5. 目錄統計 I：完整度與規模分布", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "12_clustering_laws", "viewport": 1440, "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "foundation_inference", "viewport": 1440, "heading": "7. 從描述到估計：資料能讓我們知道多少", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}, {"page": "13_etas_structure", "viewport": 1440, "heading": "8. ETAS I：把每個事件接進預報", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}, {"page": "14_etas_estimation", "viewport": 1440, "heading": "9. ETAS II：從目錄估計模型，再檢查它", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "15_psi_phenomenon", "viewport": 1440, "heading": "10. Ψ：從震前活動看統計證據", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 8}, {"page": "16_eepas_ppe", "viewport": 1440, "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "width": 1440, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "17_testing_consistency", "viewport": 1440, "heading": "12. 預報檢驗 I：觀測是否符合模型", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "18_testing_comparison", "viewport": 1440, "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}, {"page": "19_ensembles", "viewport": 1440, "heading": "14. 模型組合：利用不同尺度的資訊", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "20_recurrence_models", "viewport": 1440, "heading": "15. 複發模型：已經等了多久，也是資訊", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "21_psha", "viewport": 1440, "heading": "16. PSHA：從地震發生走到場址搖晃", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "22_operational_systems", "viewport": 1440, "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "01_overview", "viewport": 1440, "heading": "18. 臺灣地球物理觀測總覽", "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 7}, {"page": "02_download", "viewport": 1440, "heading": "19. 資料產品與品質：取得資料之前先定義問題", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "03_groundwater", "viewport": 1440, "heading": "20. 地下水位：含水層如何回應外界擾動", "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "04_geomagnetic", "viewport": 1440, "heading": "21. 地磁觀測：共同背景與區域性變化", "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "05_seismic", "viewport": 1440, "heading": "22. 地動觀測：波形如何成為地震目錄", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false}, {"page": "06_gnss", "viewport": 1440, "heading": "23. GNSS：從衛星訊號到地表位移", "width": 1440, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "07_case_hualien2024", "viewport": 1440, "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}, {"page": "08_explore_ideas", "viewport": 1440, "heading": "25. 從觀測現象到可檢驗的證據", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": true, "dropdown_closes": true}, {"page": "23_taiwan_outlook", "viewport": 1440, "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_a_point_process", "viewport": 1440, "heading": "附錄 A：點過程的機率、概似與模擬", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_b_catalog", "viewport": 1440, "heading": "附錄 B：目錄統計與叢集律的推導", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_c_etas", "viewport": 1440, "heading": "附錄 C：ETAS 的分支、概似與推論", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_d_eepas", "viewport": 1440, "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_e_testing", "viewport": 1440, "heading": "附錄 E：預報檢驗與模型組合的推導", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_f_hazard", "viewport": 1440, "heading": "附錄 F：複發時間與地震危害積分", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_g_observations", "viewport": 1440, "heading": "附錄 G：觀測資料、處理與幾何細節", "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "00_intro", "viewport": 390, "heading": "地震統計與預報：從模型到臺灣觀測", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "09_forecasting_intro", "viewport": 390, "heading": "1. 地震預報從什麼問題開始", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "foundation_catalog", "viewport": 390, "heading": "2. 從地震目錄提出統計問題", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 4}, {"page": "foundation_randomness", "viewport": 390, "heading": "3. 隨機性與叢集：平均之外還有什麼", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}, {"page": "10_point_process", "viewport": 390, "heading": "4. 點過程：把歷史轉成可更新的發生率", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}, {"page": "11_catalog_completeness_b", "viewport": 390, "heading": "5. 目錄統計 I：完整度與規模分布", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "12_clustering_laws", "viewport": 390, "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "foundation_inference", "viewport": 390, "heading": "7. 從描述到估計：資料能讓我們知道多少", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}, {"page": "13_etas_structure", "viewport": 390, "heading": "8. ETAS I：把每個事件接進預報", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 2}, {"page": "14_etas_estimation", "viewport": 390, "heading": "9. ETAS II：從目錄估計模型，再檢查它", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "15_psi_phenomenon", "viewport": 390, "heading": "10. Ψ：從震前活動看統計證據", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 8}, {"page": "16_eepas_ppe", "viewport": 390, "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "width": 390, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "17_testing_consistency", "viewport": 390, "heading": "12. 預報檢驗 I：觀測是否符合模型", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "18_testing_comparison", "viewport": 390, "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 3}, {"page": "19_ensembles", "viewport": 390, "heading": "14. 模型組合：利用不同尺度的資訊", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "20_recurrence_models", "viewport": 390, "heading": "15. 複發模型：已經等了多久，也是資訊", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "21_psha", "viewport": 390, "heading": "16. PSHA：從地震發生走到場址搖晃", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "22_operational_systems", "viewport": 390, "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "01_overview", "viewport": 390, "heading": "18. 臺灣地球物理觀測總覽", "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "plot_trace_count": 7}, {"page": "02_download", "viewport": 390, "heading": "19. 資料產品與品質：取得資料之前先定義問題", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "03_groundwater", "viewport": 390, "heading": "20. 地下水位：含水層如何回應外界擾動", "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "04_geomagnetic", "viewport": 390, "heading": "21. 地磁觀測：共同背景與區域性變化", "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "05_seismic", "viewport": 390, "heading": "22. 地動觀測：波形如何成為地震目錄", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 1, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false}, {"page": "06_gnss", "viewport": 390, "heading": "23. GNSS：從衛星訊號到地表位移", "width": 390, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "07_case_hualien2024", "viewport": 390, "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 1, "initiallyOpen": 1, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": false, "dropdown_closes": false, "plot_trace_count": 1}, {"page": "08_explore_ideas", "viewport": 390, "heading": "25. 從觀測現象到可檢驗的證據", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"], "dropdown_opens": true, "dropdown_closes": true}, {"page": "23_taiwan_outlook", "viewport": 390, "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_a_point_process", "viewport": 390, "heading": "附錄 A：點過程的機率、概似與模擬", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_b_catalog", "viewport": 390, "heading": "附錄 B：目錄統計與叢集律的推導", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_c_etas", "viewport": 390, "heading": "附錄 C：ETAS 的分支、概似與推論", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_d_eepas", "viewport": 390, "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_e_testing", "viewport": 390, "heading": "附錄 E：預報檢驗與模型組合的推導", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_f_hazard", "viewport": 390, "heading": "附錄 F：複發時間與地震危害積分", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}, {"page": "appendix_g_observations", "viewport": 390, "heading": "附錄 G：觀測資料、處理與幾何細節", "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": ["Identifier 'THEBE_JS_URL' has already been declared"]}]
+
+===== browser_verified.log =====
+{"page": "00_intro", "device": "desktop", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "desktop", "heading": "1. 地震預報從什麼問題開始", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "desktop", "heading": "2. 從地震目錄提出統計問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4}
+{"page": "foundation_randomness", "device": "desktop", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "10_point_process", "device": "desktop", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3}
+{"page": "11_catalog_completeness_b", "device": "desktop", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "desktop", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "desktop", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "13_etas_structure", "device": "desktop", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2}
+{"page": "14_etas_estimation", "device": "desktop", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "desktop", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8}
+{"page": "16_eepas_ppe", "device": "desktop", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "desktop", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "desktop", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3}
+{"page": "19_ensembles", "device": "desktop", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "desktop", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "desktop", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "desktop", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "desktop", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7}
+{"page": "02_download", "device": "desktop", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "desktop", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "desktop", "heading": "21. 地磁觀測：共同背景與區域性變化", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "desktop", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "06_gnss", "device": "desktop", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "desktop", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 1}
+{"page": "08_explore_ideas", "device": "desktop", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "desktop", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "desktop", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "desktop", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "desktop", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "desktop", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "desktop", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "desktop", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "desktop", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 1440, "width": 1440, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "00_intro", "device": "mobile", "heading": "地震統計與預報：從模型到臺灣觀測", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "09_forecasting_intro", "device": "mobile", "heading": "1. 地震預報從什麼問題開始", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "foundation_catalog", "device": "mobile", "heading": "2. 從地震目錄提出統計問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 4, "figure_scrolls": false}
+{"page": "foundation_randomness", "device": "mobile", "heading": "3. 隨機性與叢集：平均之外還有什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 7, "rawMath": 7, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3, "figure_scrolls": false}
+{"page": "10_point_process", "device": "mobile", "heading": "4. 點過程：把歷史轉成可更新的發生率", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 27, "rawMath": 27, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 3, "figure_scrolls": false}
+{"page": "11_catalog_completeness_b", "device": "mobile", "heading": "5. 目錄統計 I：完整度與規模分布", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 71, "rawMath": 71, "dropdowns": 3, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "12_clustering_laws", "device": "mobile", "heading": "6. 目錄統計 II：叢集的經驗律與除叢", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 57, "rawMath": 57, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "foundation_inference", "device": "mobile", "heading": "7. 從描述到估計：資料能讓我們知道多少", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 17, "rawMath": 17, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2, "figure_scrolls": false}
+{"page": "13_etas_structure", "device": "mobile", "heading": "8. ETAS I：把每個事件接進預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 72, "rawMath": 72, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 2, "figure_scrolls": false}
+{"page": "14_etas_estimation", "device": "mobile", "heading": "9. ETAS II：從目錄估計模型，再檢查它", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 50, "rawMath": 50, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "15_psi_phenomenon", "device": "mobile", "heading": "10. Ψ：從震前活動看統計證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 34, "rawMath": 34, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 8, "figure_scrolls": false}
+{"page": "16_eepas_ppe", "device": "mobile", "heading": "11. EEPAS 與 PPE：讓尺度關係成為機率預報", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 7, "mathErrors": 0, "mathRendered": 36, "rawMath": 36, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "17_testing_consistency", "device": "mobile", "heading": "12. 預報檢驗 I：觀測是否符合模型", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 19, "rawMath": 19, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "18_testing_comparison", "device": "mobile", "heading": "13. 預報檢驗 II：新增資訊是否有幫助", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 20, "rawMath": 20, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true, "plot_trace_count": 3, "figure_scrolls": false}
+{"page": "19_ensembles", "device": "mobile", "heading": "14. 模型組合：利用不同尺度的資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "20_recurrence_models", "device": "mobile", "heading": "15. 複發模型：已經等了多久，也是資訊", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 40, "rawMath": 40, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "21_psha", "device": "mobile", "heading": "16. PSHA：從地震發生走到場址搖晃", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 24, "rawMath": 24, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "22_operational_systems", "device": "mobile", "heading": "17. 作業化預報：讓資料、模型與使用者接得起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 3, "rawMath": 3, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "admonition_opens": true, "admonition_closes": true}
+{"page": "01_overview", "device": "mobile", "heading": "18. 臺灣地球物理觀測總覽", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 2, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 7, "figure_scrolls": false}
+{"page": "02_download", "device": "mobile", "heading": "19. 資料產品與品質：取得資料之前先定義問題", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "03_groundwater", "device": "mobile", "heading": "20. 地下水位：含水層如何回應外界擾動", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "04_geomagnetic", "device": "mobile", "heading": "21. 地磁觀測：共同背景與區域性變化", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 4, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "05_seismic", "device": "mobile", "heading": "22. 地動觀測：波形如何成為地震目錄", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 11, "rawMath": 11, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "06_gnss", "device": "mobile", "heading": "23. GNSS：從衛星訊號到地表位移", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 1, "mathErrors": 0, "mathRendered": 0, "rawMath": 0, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "07_case_hualien2024", "device": "mobile", "heading": "24. 花蓮案例：同一場地震，不同觀測回答什麼", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 6, "mathErrors": 0, "mathRendered": 1, "rawMath": 1, "dropdowns": 0, "initiallyOpen": 0, "errors": [], "plot_trace_count": 1, "figure_scrolls": false}
+{"page": "08_explore_ideas", "device": "mobile", "heading": "25. 從觀測現象到可檢驗的證據", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 2, "rawMath": 2, "dropdowns": 1, "initiallyOpen": 0, "errors": [], "dropdown_opens": true, "dropdown_closes": true}
+{"page": "23_taiwan_outlook", "device": "mobile", "heading": "26. 臺灣展望：把觀測、預報與驗證接起來", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 5, "mathErrors": 0, "mathRendered": 6, "rawMath": 6, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_a_point_process", "device": "mobile", "heading": "附錄 A：點過程的機率、概似與模擬", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 70, "rawMath": 70, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_b_catalog", "device": "mobile", "heading": "附錄 B：目錄統計與叢集律的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 120, "rawMath": 120, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_c_etas", "device": "mobile", "heading": "附錄 C：ETAS 的分支、概似與推論", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 121, "rawMath": 121, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_d_eepas", "device": "mobile", "heading": "附錄 D：Ψ 的量測與 EEPAS 的核函式", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 91, "rawMath": 91, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_e_testing", "device": "mobile", "heading": "附錄 E：預報檢驗與模型組合的推導", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 124, "rawMath": 124, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_f_hazard", "device": "mobile", "heading": "附錄 F：複發時間與地震危害積分", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 83, "rawMath": 83, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+{"page": "appendix_g_observations", "device": "mobile", "heading": "附錄 G：觀測資料、處理與幾何細節", "viewport": 390, "width": 390, "visibleCode": 0, "plots": 0, "mathErrors": 0, "mathRendered": 29, "rawMath": 29, "dropdowns": 0, "initiallyOpen": 0, "errors": []}
+FAILURES []
+
+===== build.log =====
+Running Jupyter-Book v1.0.4.post1
+Source Folder: /home/phonchi/vizualization/book
+Config Path: /home/phonchi/vizualization/book/_build/offline_config.yml
+Output Path: /home/phonchi/vizualization/book/_build/html
+Running Sphinx v7.4.7
+loading translations [en]... done
+[etoc] Changing master_doc to '00_intro'
+[etoc] Excluded 1 extra file(s) not in toc
+myst v3.0.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'substitution', 'tasklist', 'linkify', 'colon_fence', 'dollarmath'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('mailto', 'http', 'https'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+myst-nb v1.4.0: NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, eval_name_regex='^[a-zA-Z_][a-zA-Z0-9_]*$', execution_mode='off', execution_cache_path='', execution_excludepatterns=[], execution_timeout=600, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=True, render_plugin='default', remove_code_source=False, remove_code_outputs=False, scroll_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /home/phonchi/vizualization/book/_build/.jupyter_cache
+sphinx-multitoc-numbering v0.1.3: Loaded
+building [mo]: targets for 0 po files that are out of date
+writing output...
+building [html]: targets for 34 source files that are out of date
+updating environment: [new config] 34 added, 0 changed, 0 removed
+reading sources... [  3%] 00_intro
+reading sources... [  6%] 01_overview
+reading sources... [  9%] 02_download
+reading sources... [ 12%] 03_groundwater
+reading sources... [ 15%] 04_geomagnetic
+reading sources... [ 18%] 05_seismic
+reading sources... [ 21%] 06_gnss
+reading sources... [ 24%] 07_case_hualien2024
+reading sources... [ 26%] 08_explore_ideas
+reading sources... [ 29%] 09_forecasting_intro
+reading sources... [ 32%] 10_point_process
+reading sources... [ 35%] 11_catalog_completeness_b
+reading sources... [ 38%] 12_clustering_laws
+reading sources... [ 41%] 13_etas_structure
+reading sources... [ 44%] 14_etas_estimation
+reading sources... [ 47%] 15_psi_phenomenon
+reading sources... [ 50%] 16_eepas_ppe
+reading sources... [ 53%] 17_testing_consistency
+reading sources... [ 56%] 18_testing_comparison
+reading sources... [ 59%] 19_ensembles
+reading sources... [ 62%] 20_recurrence_models
+reading sources... [ 65%] 21_psha
+reading sources... [ 68%] 22_operational_systems
+reading sources... [ 71%] 23_taiwan_outlook
+reading sources... [ 74%] appendix_a_point_process
+reading sources... [ 76%] appendix_b_catalog
+reading sources... [ 79%] appendix_c_etas
+reading sources... [ 82%] appendix_d_eepas
+reading sources... [ 85%] appendix_e_testing
+reading sources... [ 88%] appendix_f_hazard
+reading sources... [ 91%] appendix_g_observations
+reading sources... [ 94%] foundation_catalog
+reading sources... [ 97%] foundation_inference
+reading sources... [100%] foundation_randomness
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets...
+copying static files... done
+copying extra files... done
+copying assets: done
+writing output... [  3%] 00_intro
+writing output... [  6%] 01_overview
+writing output... [  9%] 02_download
+writing output... [ 12%] 03_groundwater
+writing output... [ 15%] 04_geomagnetic
+writing output... [ 18%] 05_seismic
+writing output... [ 21%] 06_gnss
+writing output... [ 24%] 07_case_hualien2024
+writing output... [ 26%] 08_explore_ideas
+writing output... [ 29%] 09_forecasting_intro
+writing output... [ 32%] 10_point_process
+writing output... [ 35%] 11_catalog_completeness_b
+writing output... [ 38%] 12_clustering_laws
+writing output... [ 41%] 13_etas_structure
+writing output... [ 44%] 14_etas_estimation
+writing output... [ 47%] 15_psi_phenomenon
+writing output... [ 50%] 16_eepas_ppe
+writing output... [ 53%] 17_testing_consistency
+writing output... [ 56%] 18_testing_comparison
+writing output... [ 59%] 19_ensembles
+writing output... [ 62%] 20_recurrence_models
+writing output... [ 65%] 21_psha
+writing output... [ 68%] 22_operational_systems
+writing output... [ 71%] 23_taiwan_outlook
+writing output... [ 74%] appendix_a_point_process
+writing output... [ 76%] appendix_b_catalog
+writing output... [ 79%] appendix_c_etas
+writing output... [ 82%] appendix_d_eepas
+writing output... [ 85%] appendix_e_testing
+writing output... [ 88%] appendix_f_hazard
+writing output... [ 91%] appendix_g_observations
+writing output... [ 94%] foundation_catalog
+writing output... [ 97%] foundation_inference
+writing output... [100%] foundation_randomness
+
+generating indices... genindex done
+writing additional pages... search done
+copying images... [ 50%] _build/jupyter_execute/38e75fcbdacfd1f2dd310e14739077c22f128761cbe674a45f900c5fd82d842d.png
+copying images... [100%] _build/jupyter_execute/4e8369ae3c50b67b3634d61705d4ac8e9b5b26ce2cd3fa4dbe9bdfd8286fbaa2.png
+
+dumping search index in English (code: en)... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in book/_build/html.
+
+===============================================================================
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    book/_build/html/
+You can look at your book by opening this file in a browser:
+    book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/phonchi/vizualization/book/_build/html/index.html
+
+===============================================================================
+
+
+===== build_after_humanize.log =====
+Running Jupyter-Book v1.0.4.post1
+Source Folder: /home/phonchi/vizualization/book
+Config Path: /home/phonchi/vizualization/book/_build/offline_config.yml
+Output Path: /home/phonchi/vizualization/book/_build/html
+Running Sphinx v7.4.7
+loading translations [en]... done
+[etoc] Changing master_doc to '00_intro'
+[etoc] Excluded 1 extra file(s) not in toc
+myst v3.0.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'tasklist', 'dollarmath', 'linkify', 'substitution', 'colon_fence'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('mailto', 'http', 'https'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+myst-nb v1.4.0: NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, eval_name_regex='^[a-zA-Z_][a-zA-Z0-9_]*$', execution_mode='off', execution_cache_path='', execution_excludepatterns=[], execution_timeout=600, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=True, render_plugin='default', remove_code_source=False, remove_code_outputs=False, scroll_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /home/phonchi/vizualization/book/_build/.jupyter_cache
+sphinx-multitoc-numbering v0.1.3: Loaded
+building [mo]: targets for 0 po files that are out of date
+writing output...
+building [html]: targets for 34 source files that are out of date
+updating environment: [new config] 34 added, 0 changed, 0 removed
+reading sources... [  3%] 00_intro
+reading sources... [  6%] 01_overview
+reading sources... [  9%] 02_download
+reading sources... [ 12%] 03_groundwater
+reading sources... [ 15%] 04_geomagnetic
+reading sources... [ 18%] 05_seismic
+reading sources... [ 21%] 06_gnss
+reading sources... [ 24%] 07_case_hualien2024
+reading sources... [ 26%] 08_explore_ideas
+reading sources... [ 29%] 09_forecasting_intro
+reading sources... [ 32%] 10_point_process
+reading sources... [ 35%] 11_catalog_completeness_b
+reading sources... [ 38%] 12_clustering_laws
+reading sources... [ 41%] 13_etas_structure
+reading sources... [ 44%] 14_etas_estimation
+reading sources... [ 47%] 15_psi_phenomenon
+reading sources... [ 50%] 16_eepas_ppe
+reading sources... [ 53%] 17_testing_consistency
+reading sources... [ 56%] 18_testing_comparison
+reading sources... [ 59%] 19_ensembles
+reading sources... [ 62%] 20_recurrence_models
+reading sources... [ 65%] 21_psha
+reading sources... [ 68%] 22_operational_systems
+reading sources... [ 71%] 23_taiwan_outlook
+reading sources... [ 74%] appendix_a_point_process
+reading sources... [ 76%] appendix_b_catalog
+reading sources... [ 79%] appendix_c_etas
+reading sources... [ 82%] appendix_d_eepas
+reading sources... [ 85%] appendix_e_testing
+reading sources... [ 88%] appendix_f_hazard
+reading sources... [ 91%] appendix_g_observations
+reading sources... [ 94%] foundation_catalog
+reading sources... [ 97%] foundation_inference
+reading sources... [100%] foundation_randomness
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets...
+copying static files... done
+copying extra files... done
+copying assets: done
+writing output... [  3%] 00_intro
+writing output... [  6%] 01_overview
+writing output... [  9%] 02_download
+writing output... [ 12%] 03_groundwater
+writing output... [ 15%] 04_geomagnetic
+writing output... [ 18%] 05_seismic
+writing output... [ 21%] 06_gnss
+writing output... [ 24%] 07_case_hualien2024
+writing output... [ 26%] 08_explore_ideas
+writing output... [ 29%] 09_forecasting_intro
+writing output... [ 32%] 10_point_process
+writing output... [ 35%] 11_catalog_completeness_b
+writing output... [ 38%] 12_clustering_laws
+writing output... [ 41%] 13_etas_structure
+writing output... [ 44%] 14_etas_estimation
+writing output... [ 47%] 15_psi_phenomenon
+writing output... [ 50%] 16_eepas_ppe
+writing output... [ 53%] 17_testing_consistency
+writing output... [ 56%] 18_testing_comparison
+writing output... [ 59%] 19_ensembles
+writing output... [ 62%] 20_recurrence_models
+writing output... [ 65%] 21_psha
+writing output... [ 68%] 22_operational_systems
+writing output... [ 71%] 23_taiwan_outlook
+writing output... [ 74%] appendix_a_point_process
+writing output... [ 76%] appendix_b_catalog
+writing output... [ 79%] appendix_c_etas
+writing output... [ 82%] appendix_d_eepas
+writing output... [ 85%] appendix_e_testing
+writing output... [ 88%] appendix_f_hazard
+writing output... [ 91%] appendix_g_observations
+writing output... [ 94%] foundation_catalog
+writing output... [ 97%] foundation_inference
+writing output... [100%] foundation_randomness
+
+generating indices... genindex done
+writing additional pages... search done
+copying images... [ 50%] _build/jupyter_execute/38e75fcbdacfd1f2dd310e14739077c22f128761cbe674a45f900c5fd82d842d.png
+copying images... [100%] _build/jupyter_execute/4e8369ae3c50b67b3634d61705d4ac8e9b5b26ce2cd3fa4dbe9bdfd8286fbaa2.png
+
+dumping search index in English (code: en)... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in book/_build/html.
+
+===============================================================================
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    book/_build/html/
+You can look at your book by opening this file in a browser:
+    book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/phonchi/vizualization/book/_build/html/index.html
+
+===============================================================================
+
+
+===== build_clean.log =====
+Running Jupyter-Book v1.0.4.post1
+Source Folder: /home/phonchi/vizualization/book
+Config Path: /home/phonchi/vizualization/book/_build/offline_config.yml
+Output Path: /home/phonchi/vizualization/book/_build/html
+Running Sphinx v7.4.7
+loading translations [en]... done
+[etoc] Changing master_doc to '00_intro'
+[etoc] Excluded 1 extra file(s) not in toc
+myst v3.0.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'substitution', 'colon_fence', 'tasklist', 'linkify', 'dollarmath'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('mailto', 'http', 'https'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+myst-nb v1.4.0: NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, eval_name_regex='^[a-zA-Z_][a-zA-Z0-9_]*$', execution_mode='off', execution_cache_path='', execution_excludepatterns=[], execution_timeout=600, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=True, render_plugin='default', remove_code_source=False, remove_code_outputs=False, scroll_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /home/phonchi/vizualization/book/_build/.jupyter_cache
+sphinx-multitoc-numbering v0.1.3: Loaded
+building [mo]: targets for 0 po files that are out of date
+writing output...
+building [html]: targets for 34 source files that are out of date
+updating environment: [new config] 34 added, 0 changed, 0 removed
+reading sources... [  3%] 00_intro
+reading sources... [  6%] 01_overview
+reading sources... [  9%] 02_download
+reading sources... [ 12%] 03_groundwater
+reading sources... [ 15%] 04_geomagnetic
+reading sources... [ 18%] 05_seismic
+reading sources... [ 21%] 06_gnss
+reading sources... [ 24%] 07_case_hualien2024
+reading sources... [ 26%] 08_explore_ideas
+reading sources... [ 29%] 09_forecasting_intro
+reading sources... [ 32%] 10_point_process
+reading sources... [ 35%] 11_catalog_completeness_b
+reading sources... [ 38%] 12_clustering_laws
+reading sources... [ 41%] 13_etas_structure
+reading sources... [ 44%] 14_etas_estimation
+reading sources... [ 47%] 15_psi_phenomenon
+reading sources... [ 50%] 16_eepas_ppe
+reading sources... [ 53%] 17_testing_consistency
+reading sources... [ 56%] 18_testing_comparison
+reading sources... [ 59%] 19_ensembles
+reading sources... [ 62%] 20_recurrence_models
+reading sources... [ 65%] 21_psha
+reading sources... [ 68%] 22_operational_systems
+reading sources... [ 71%] 23_taiwan_outlook
+reading sources... [ 74%] appendix_a_point_process
+reading sources... [ 76%] appendix_b_catalog
+reading sources... [ 79%] appendix_c_etas
+reading sources... [ 82%] appendix_d_eepas
+reading sources... [ 85%] appendix_e_testing
+reading sources... [ 88%] appendix_f_hazard
+reading sources... [ 91%] appendix_g_observations
+reading sources... [ 94%] foundation_catalog
+reading sources... [ 97%] foundation_inference
+reading sources... [100%] foundation_randomness
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets...
+copying static files... done
+copying extra files... done
+copying assets: done
+writing output... [  3%] 00_intro
+writing output... [  6%] 01_overview
+writing output... [  9%] 02_download
+writing output... [ 12%] 03_groundwater
+writing output... [ 15%] 04_geomagnetic
+writing output... [ 18%] 05_seismic
+writing output... [ 21%] 06_gnss
+writing output... [ 24%] 07_case_hualien2024
+writing output... [ 26%] 08_explore_ideas
+writing output... [ 29%] 09_forecasting_intro
+writing output... [ 32%] 10_point_process
+writing output... [ 35%] 11_catalog_completeness_b
+writing output... [ 38%] 12_clustering_laws
+writing output... [ 41%] 13_etas_structure
+writing output... [ 44%] 14_etas_estimation
+writing output... [ 47%] 15_psi_phenomenon
+writing output... [ 50%] 16_eepas_ppe
+writing output... [ 53%] 17_testing_consistency
+writing output... [ 56%] 18_testing_comparison
+writing output... [ 59%] 19_ensembles
+writing output... [ 62%] 20_recurrence_models
+writing output... [ 65%] 21_psha
+writing output... [ 68%] 22_operational_systems
+writing output... [ 71%] 23_taiwan_outlook
+writing output... [ 74%] appendix_a_point_process
+writing output... [ 76%] appendix_b_catalog
+writing output... [ 79%] appendix_c_etas
+writing output... [ 82%] appendix_d_eepas
+writing output... [ 85%] appendix_e_testing
+writing output... [ 88%] appendix_f_hazard
+writing output... [ 91%] appendix_g_observations
+writing output... [ 94%] foundation_catalog
+writing output... [ 97%] foundation_inference
+writing output... [100%] foundation_randomness
+
+generating indices... genindex done
+writing additional pages... search done
+copying images... [ 50%] _build/jupyter_execute/38e75fcbdacfd1f2dd310e14739077c22f128761cbe674a45f900c5fd82d842d.png
+copying images... [100%] _build/jupyter_execute/4e8369ae3c50b67b3634d61705d4ac8e9b5b26ce2cd3fa4dbe9bdfd8286fbaa2.png
+
+dumping search index in English (code: en)... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in book/_build/html.
+
+===============================================================================
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    book/_build/html/
+You can look at your book by opening this file in a browser:
+    book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/phonchi/vizualization/book/_build/html/index.html
+
+===============================================================================
+
+
+===== build_render_fix.log =====
+Running Jupyter-Book v1.0.4.post1
+Source Folder: /home/phonchi/vizualization/book
+Config Path: /home/phonchi/vizualization/book/_build/offline_config.yml
+Output Path: /home/phonchi/vizualization/book/_build/html
+Running Sphinx v7.4.7
+loading translations [en]... done
+[etoc] Changing master_doc to '00_intro'
+[etoc] Excluded 1 extra file(s) not in toc
+myst v3.0.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'substitution', 'linkify', 'tasklist', 'colon_fence', 'dollarmath'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('mailto', 'http', 'https'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+myst-nb v1.4.0: NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, eval_name_regex='^[a-zA-Z_][a-zA-Z0-9_]*$', execution_mode='off', execution_cache_path='', execution_excludepatterns=[], execution_timeout=600, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=True, render_plugin='default', remove_code_source=False, remove_code_outputs=False, scroll_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /home/phonchi/vizualization/book/_build/.jupyter_cache
+sphinx-multitoc-numbering v0.1.3: Loaded
+building [mo]: targets for 0 po files that are out of date
+writing output...
+building [html]: targets for 34 source files that are out of date
+updating environment: [new config] 34 added, 0 changed, 0 removed
+reading sources... [  3%] 00_intro
+reading sources... [  6%] 01_overview
+reading sources... [  9%] 02_download
+reading sources... [ 12%] 03_groundwater
+reading sources... [ 15%] 04_geomagnetic
+reading sources... [ 18%] 05_seismic
+reading sources... [ 21%] 06_gnss
+reading sources... [ 24%] 07_case_hualien2024
+reading sources... [ 26%] 08_explore_ideas
+reading sources... [ 29%] 09_forecasting_intro
+reading sources... [ 32%] 10_point_process
+reading sources... [ 35%] 11_catalog_completeness_b
+reading sources... [ 38%] 12_clustering_laws
+reading sources... [ 41%] 13_etas_structure
+reading sources... [ 44%] 14_etas_estimation
+reading sources... [ 47%] 15_psi_phenomenon
+reading sources... [ 50%] 16_eepas_ppe
+reading sources... [ 53%] 17_testing_consistency
+reading sources... [ 56%] 18_testing_comparison
+reading sources... [ 59%] 19_ensembles
+reading sources... [ 62%] 20_recurrence_models
+reading sources... [ 65%] 21_psha
+reading sources... [ 68%] 22_operational_systems
+reading sources... [ 71%] 23_taiwan_outlook
+reading sources... [ 74%] appendix_a_point_process
+reading sources... [ 76%] appendix_b_catalog
+reading sources... [ 79%] appendix_c_etas
+reading sources... [ 82%] appendix_d_eepas
+reading sources... [ 85%] appendix_e_testing
+reading sources... [ 88%] appendix_f_hazard
+reading sources... [ 91%] appendix_g_observations
+reading sources... [ 94%] foundation_catalog
+reading sources... [ 97%] foundation_inference
+reading sources... [100%] foundation_randomness
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets...
+copying static files... done
+copying extra files... done
+copying assets: done
+writing output... [  3%] 00_intro
+writing output... [  6%] 01_overview
+writing output... [  9%] 02_download
+writing output... [ 12%] 03_groundwater
+writing output... [ 15%] 04_geomagnetic
+writing output... [ 18%] 05_seismic
+writing output... [ 21%] 06_gnss
+writing output... [ 24%] 07_case_hualien2024
+writing output... [ 26%] 08_explore_ideas
+writing output... [ 29%] 09_forecasting_intro
+writing output... [ 32%] 10_point_process
+writing output... [ 35%] 11_catalog_completeness_b
+writing output... [ 38%] 12_clustering_laws
+writing output... [ 41%] 13_etas_structure
+writing output... [ 44%] 14_etas_estimation
+writing output... [ 47%] 15_psi_phenomenon
+writing output... [ 50%] 16_eepas_ppe
+writing output... [ 53%] 17_testing_consistency
+writing output... [ 56%] 18_testing_comparison
+writing output... [ 59%] 19_ensembles
+writing output... [ 62%] 20_recurrence_models
+writing output... [ 65%] 21_psha
+writing output... [ 68%] 22_operational_systems
+writing output... [ 71%] 23_taiwan_outlook
+writing output... [ 74%] appendix_a_point_process
+writing output... [ 76%] appendix_b_catalog
+writing output... [ 79%] appendix_c_etas
+writing output... [ 82%] appendix_d_eepas
+writing output... [ 85%] appendix_e_testing
+writing output... [ 88%] appendix_f_hazard
+writing output... [ 91%] appendix_g_observations
+writing output... [ 94%] foundation_catalog
+writing output... [ 97%] foundation_inference
+writing output... [100%] foundation_randomness
+
+generating indices... genindex done
+writing additional pages... search done
+copying images... [ 50%] _build/jupyter_execute/38e75fcbdacfd1f2dd310e14739077c22f128761cbe674a45f900c5fd82d842d.png
+copying images... [100%] _build/jupyter_execute/4e8369ae3c50b67b3634d61705d4ac8e9b5b26ce2cd3fa4dbe9bdfd8286fbaa2.png
+
+dumping search index in English (code: en)... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in book/_build/html.
+
+===============================================================================
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    book/_build/html/
+You can look at your book by opening this file in a browser:
+    book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/phonchi/vizualization/book/_build/html/index.html
+
+===============================================================================
+
+
+===== details_inspection.log =====
+['<details class="maplibregl-ctrl maplibregl-ctrl-attrib maplibregl-compact maplibregl-compact-show" open=""><summary class="maplibregl-ctrl-attrib-button" title="Toggle attribution" aria-label="Toggle attribution"></summary><div class="maplibregl-ctrl-attrib-inner">© <a href="https://carto.com/about-carto/" target="_blank" rel="noopener">CARTO</a>, © <a href="http://www.openstreetmap.org/about/" target="_blank">OpenStreetMap</a> contributors</div></details>']
+
+===== execution_changed.log =====
+START 03_groundwater
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "03_groundwater", "status": "passed", "seconds": 122.38, "outputs": 11}
+START 05_seismic
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "05_seismic", "status": "passed", "seconds": 10.23, "outputs": 12}
+START 07_case_hualien2024
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "07_case_hualien2024", "status": "passed", "seconds": 31.2, "outputs": 12}
+START 09_forecasting_intro
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "09_forecasting_intro", "status": "passed", "seconds": 2.25, "outputs": 3}
+START 10_point_process
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "10_point_process", "status": "passed", "seconds": 2.19, "outputs": 6}
+START 11_catalog_completeness_b
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "11_catalog_completeness_b", "status": "passed", "seconds": 2.86, "outputs": 7}
+START 12_clustering_laws
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "12_clustering_laws", "status": "passed", "seconds": 3.23, "outputs": 7}
+START 15_psi_phenomenon
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "15_psi_phenomenon", "status": "passed", "seconds": 2.08, "outputs": 7}
+START 18_testing_comparison
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "18_testing_comparison", "status": "passed", "seconds": 2.71, "outputs": 7}
+START 21_psha
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "21_psha", "status": "passed", "seconds": 2.42, "outputs": 7}
+START 22_operational_systems
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "22_operational_systems", "status": "passed", "seconds": 2.36, "outputs": 6}
+START 23_taiwan_outlook
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "23_taiwan_outlook", "status": "passed", "seconds": 2.16, "outputs": 6}
+
+===== execution_claude_revision.log =====
+START 09_forecasting_intro
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "09_forecasting_intro", "status": "passed", "seconds": 2.83, "outputs": 3}
+START foundation_randomness
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "foundation_randomness", "status": "passed", "seconds": 1.75, "outputs": 3}
+START 10_point_process
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "10_point_process", "status": "passed", "seconds": 2.12, "outputs": 6}
+
+===== execution_eepas.log =====
+START 16_eepas_ppe
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "16_eepas_ppe", "status": "passed", "seconds": 2.84, "outputs": 8}
+
+===== execution_foundations.log =====
+START foundation_catalog
+/home/phonchi/vizualization/.venv/lib/python3.13/site-packages/IPython/paths.py:59: UserWarning: IPython dir '/home/phonchi/.ipython' is not a writable location, using a temp directory.
+  warn("IPython dir '{0}' is not a writable location,"
+/home/phonchi/vizualization/.venv/lib/python3.13/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted
+  ret = f(**kwargs)
+[Errno 1] Operation not permitted
+{"page": "foundation_catalog", "status": "failed", "seconds": 0.38, "error": "[Errno 1] Operation not permitted"}
+START foundation_randomness
+[Errno 1] Operation not permitted
+{"page": "foundation_randomness", "status": "failed", "seconds": 0.0, "error": "[Errno 1] Operation not permitted"}
+START foundation_inference
+[Errno 1] Operation not permitted
+{"page": "foundation_inference", "status": "failed", "seconds": 0.0, "error": "[Errno 1] Operation not permitted"}
+START 09_forecasting_intro
+[Errno 1] Operation not permitted
+{"page": "09_forecasting_intro", "status": "failed", "seconds": 0.0, "error": "[Errno 1] Operation not permitted"}
+START 10_point_process
+[Errno 1] Operation not permitted
+{"page": "10_point_process", "status": "failed", "seconds": 0.01, "error": "[Errno 1] Operation not permitted"}
+
+===== execution_foundations_retry.log =====
+START foundation_catalog
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "foundation_catalog", "status": "passed", "seconds": 2.39, "outputs": 4}
+START foundation_randomness
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "foundation_randomness", "status": "passed", "seconds": 1.72, "outputs": 3}
+START foundation_inference
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "foundation_inference", "status": "passed", "seconds": 2.36, "outputs": 3}
+START 09_forecasting_intro
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "09_forecasting_intro", "status": "passed", "seconds": 2.09, "outputs": 3}
+START 10_point_process
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "10_point_process", "status": "passed", "seconds": 2.06, "outputs": 6}
+
+===== execution_sequence_markers.log =====
+START foundation_randomness
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "foundation_randomness", "status": "passed", "seconds": 1.91, "outputs": 3}
+
+===== math_checks.log =====
+[
+  {
+    "name": "n=2 finite-window compensator",
+    "actual": 0.7666666666666666,
+    "expected": 0.7666666666666666,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "finite-window log likelihood",
+    "actual": -3.069251759660712,
+    "expected": -3.069251759660712,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "finite Omori integral p=0.8",
+    "actual": 4.3320149258858756,
+    "expected": 4.3320149258858756,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "finite Omori integral p=1.0",
+    "actual": 3.9318256327243253,
+    "expected": 3.9318256327243257,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "finite Omori integral p=1.2",
+    "actual": 3.7563314880532,
+    "expected": 3.7563314880532,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "spatial kernel normalization",
+    "actual": 1.0000000000000153,
+    "expected": 1.0,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "discrete magnitude MLE score per event",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "asymmetric magnitude interval brackets estimate",
+    "passed": true,
+    "lower": 0.9920282299975384,
+    "estimate": 1.0914446942506806,
+    "upper": 1.2131505793966226
+  },
+  {
+    "name": "posterior predictive total variance",
+    "actual": 17.299857224816,
+    "expected": 17.346938775510203,
+    "tolerance": 0.15,
+    "passed": true
+  },
+  {
+    "name": "concave mixture maximum may be on boundary",
+    "actual": 1.0,
+    "expected": 1.0,
+    "tolerance": 1e-08,
+    "passed": true
+  },
+  {
+    "name": "regular shared illustrative catalog provenance",
+    "passed": true,
+    "events": 80
+  },
+  {
+    "name": "poisson shared illustrative catalog provenance",
+    "passed": true,
+    "events": 80
+  },
+  {
+    "name": "cluster shared illustrative catalog provenance",
+    "passed": true,
+    "events": 80
+  }
+]
+
+===== notebook_sync.log =====
+[
+  {
+    "page": "01_overview",
+    "restored_output_cells": 4,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "02_download",
+    "restored_output_cells": 0,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": []
+  },
+  {
+    "page": "03_groundwater",
+    "restored_output_cells": 7,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "04_geomagnetic",
+    "restored_output_cells": 7,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "05_seismic",
+    "restored_output_cells": 10,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "06_gnss",
+    "restored_output_cells": 1,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "07_case_hualien2024",
+    "restored_output_cells": 7,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1,
+      2
+    ]
+  },
+  {
+    "page": "09_forecasting_intro",
+    "restored_output_cells": 2,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "10_point_process",
+    "restored_output_cells": 5,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "11_catalog_completeness_b",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "12_clustering_laws",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "13_etas_structure",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "14_etas_estimation",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "15_psi_phenomenon",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "16_eepas_ppe",
+    "restored_output_cells": 7,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "17_testing_consistency",
+    "restored_output_cells": 5,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "18_testing_comparison",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "19_ensembles",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "20_recurrence_models",
+    "restored_output_cells": 5,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "21_psha",
+    "restored_output_cells": 6,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "22_operational_systems",
+    "restored_output_cells": 5,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "23_taiwan_outlook",
+    "restored_output_cells": 5,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": [
+      1
+    ]
+  },
+  {
+    "page": "foundation_catalog",
+    "restored_output_cells": 3,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": []
+  },
+  {
+    "page": "foundation_inference",
+    "restored_output_cells": 2,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": []
+  },
+  {
+    "page": "foundation_randomness",
+    "restored_output_cells": 2,
+    "code_changed_vs_build": false,
+    "cells_without_cached_output": []
+  }
+]

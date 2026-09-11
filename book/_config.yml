@@ -1,4 +1,4 @@
-title: 台灣地球物理觀測資料探索
+title: 地震統計與預報：從模型到台灣觀測
 author: 地球物理資料教學團隊
 copyright: "2026"
 language: zh-TW
@@ -19,7 +19,13 @@ html:
   home_page_in_navbar: true
 
 sphinx:
+  local_extensions:
+    teaching_render: _ext
   config:
+    html_static_path: ["_static"]
+    html_css_files: ["teaching.css"]
+    togglebutton_hint: "展開補充"
+    togglebutton_hint_hide: "收合補充"
     html_show_copyright: false
     nb_merge_streams: true
     suppress_warnings: ["mystnb.unknown_mime_type"]
