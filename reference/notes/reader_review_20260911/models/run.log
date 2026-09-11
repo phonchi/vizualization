@@ -1,0 +1,6 @@
+START 11_catalog_completeness_b
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "11_catalog_completeness_b", "status": "passed", "seconds": 3.65, "outputs": 7}
+START 12_clustering_laws
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "12_clustering_laws", "status": "passed", "seconds": 3.19, "outputs": 7}

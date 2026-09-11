@@ -1,0 +1,130 @@
+[
+  {
+    "page": "11_catalog_completeness_b",
+    "target": 1,
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "11_catalog_completeness_b",
+    "target": 3,
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "11_catalog_completeness_b",
+    "target": 5,
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "12_clustering_laws",
+    "target": 3,
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "16_eepas_ppe",
+    "target": 3,
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "03_groundwater",
+    "target": "20.9",
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "04_geomagnetic",
+    "target": "21.6",
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "21_psha",
+    "target": "16.4",
+    "device": "desktop",
+    "errors": [],
+    "document_width": 1440,
+    "viewport": 1440
+  },
+  {
+    "page": "11_catalog_completeness_b",
+    "target": 1,
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  },
+  {
+    "page": "11_catalog_completeness_b",
+    "target": 3,
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  },
+  {
+    "page": "11_catalog_completeness_b",
+    "target": 5,
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  },
+  {
+    "page": "12_clustering_laws",
+    "target": 3,
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  },
+  {
+    "page": "16_eepas_ppe",
+    "target": 3,
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  },
+  {
+    "page": "03_groundwater",
+    "target": "20.9",
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  },
+  {
+    "page": "04_geomagnetic",
+    "target": "21.6",
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  },
+  {
+    "page": "21_psha",
+    "target": "16.4",
+    "device": "mobile",
+    "errors": [],
+    "document_width": 390,
+    "viewport": 390
+  }
+]

@@ -1,0 +1,6 @@
+START 16_eepas_ppe
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "16_eepas_ppe", "status": "passed", "seconds": 2.73, "outputs": 8}
+START 18_testing_comparison
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "18_testing_comparison", "status": "passed", "seconds": 2.62, "outputs": 7}

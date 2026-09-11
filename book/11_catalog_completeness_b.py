@@ -139,6 +139,8 @@ fig
 #
 # 下面把三種方法放在同一張圖上。它們使用同一批事件，因此差異不來自地震活動，而來自判準。圖中的 KS 型方法用模擬校準比較，不應把「沒有拒絕」解讀為證明沒有漏測。大樣本能發現很小的偏離；小樣本則可能根本沒有足夠能力區分模型。
 #
+# 圖上的三個標示都是各方法選出的完整度規模門檻；KS 方法旁的數值也是門檻，不是檢定的 p 值。
+#
 # %% tags=["remove-input"]
 def b_exact(m, mc, dm=DM):
     """離散精確式（Tinti & Mulargia 1987）＋ Shi & Bolt (1982) 標準差。"""
@@ -188,18 +190,21 @@ mc_c = mc_ks(m94, grid_mc, np.random.default_rng(11))
 
 counts, _ = np.histogram(m94, bins=BINS)
 fig = go.Figure(go.Bar(x=CENTERS, y=counts, marker_color=ACCENT,
-                       opacity=0.75, name="非累積 FMD"))
+                       opacity=0.75, name="非累積 FMD", showlegend=False))
 for x, name, color in [(mc_a, f"MAXC＋0.2 = {mc_a:.1f}", PALETTE[1]),
                        (mc_b, f"b 值穩定度 = {mc_b:.1f}", PALETTE[2]),
-                       (mc_c, f"KS 模擬 p 值 = {mc_c:.1f}", PALETTE[3])]:
-    fig.add_vline(x=x, line_color=color, line_dash="dash",
-                  annotation_text=name, annotation_position="top")
+                       (mc_c, f"KS 模擬法：Mc = {mc_c:.1f}", PALETTE[3])]:
+    fig.add_vline(x=x, line_color=color, line_dash="dash")
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="lines", name=name,
+                            line=dict(color=color, dash="dash")))
 apply_layout(fig,
              title=f"三種 Mc 估計法（台灣 1994–2011，N = {len(m94):,}）："
                    f"彼此差 {max(mc_a, mc_b, mc_c) - min(mc_a, mc_b, mc_c):.1f}"
                    f" 個規模單位",
              xaxis_title="規模 ML", yaxis_title="事件數",
-             xaxis_range=[1.9, 5.5], yaxis_type="log", hovermode="x")
+             xaxis_range=[1.9, 5.5], yaxis_type="log", hovermode="x",
+             legend=dict(orientation="h", x=0, y=1.02, yanchor="bottom"),
+             margin=dict(l=60, r=20, t=100, b=40))
 fig
 
 # %% [markdown]
@@ -262,9 +267,6 @@ cutoffs = np.round(np.arange(2.6, 4.41, DM), 2)
 b_aki = np.array([np.log10(np.e) / (obs[obs >= c - 1e-9].mean() - c)
                   for c in cutoffs])
 b_exa = np.array([b_exact(obs, c)[0] for c in cutoffs])
-d_pos = np.diff(obs)[np.diff(obs) > 0]
-b_pos = {dc: np.log1p(DM / (d_pos[d_pos >= dc - 1e-9].mean() - dc))
-             / (L10 * DM) for dc in (0.2, 0.6)}
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=cutoffs, y=b_aki, mode="lines+markers",
@@ -273,9 +275,6 @@ fig.add_trace(go.Scatter(x=cutoffs, y=b_aki, mode="lines+markers",
 fig.add_trace(go.Scatter(x=cutoffs, y=b_exa, mode="lines+markers",
                          name="離散精確式", line=dict(color=ACCENT),
                          marker=dict(size=5)))
-for dc, color in [(0.2, PALETTE[4]), (0.6, PALETTE[2])]:
-    fig.add_hline(y=b_pos[dc], line_color=color, line_dash="dot",
-                  annotation_text=f"b-positive（trim {dc}）＝ {b_pos[dc]:.3f}")
 fig.add_hline(y=B_TRUE, line_dash="dash", line_color=QUAKE_COLOR,
               annotation_text=f"真值 b = {B_TRUE:.1f}")
 apply_layout(fig,
@@ -370,6 +369,8 @@ fig
 #
 # 下面用時變偵測能力的合成序列比較三種取差方式。橫軸是保留差值的門檻，並不是完整度規模 $M_c$。先看曲線在門檻增加時是否接近真值，再留意高門檻端的波動。Tinti 與 Gasperini（2024）的比較也以這種方式區分估計公式、配對規則與不完整情境。
 #
+# 圖中正差和負差都取自時間順序上相鄰的事件，負差以其大小表示。不重疊配對則將第 1、2 個事件配成一對，第 3、4 個配成下一對，再取各對的絕對差，每個事件只用一次。本圖沒有實作前面提到的「尋找下一個足夠大事件」配對法。
+#
 # ```{admonition} 相鄰差值為什麼不算獨立樣本？
 # :class: dropdown
 #
@@ -400,9 +401,9 @@ d_pair = np.abs(m_obs[1:half:2] - m_obs[0:half:2])     # 取法 (B)：配對
 trims = np.round(np.arange(0.1, 1.01, 0.1), 2)
 
 fig = go.Figure()
-for name, arr, color in [("正差（取法 A）", dd[dd > 0], PALETTE[0]),
-                         ("負差（取法 A）", -dd[dd < 0], PALETTE[1]),
-                         ("絕對差（取法 B）", d_pair, PALETTE[2])]:
+for name, arr, color in [("相鄰正差", dd[dd > 0], PALETTE[0]),
+                         ("相鄰負差的大小", -dd[dd < 0], PALETTE[1]),
+                         ("不重疊配對絕對差", d_pair, PALETTE[2])]:
     fig.add_trace(go.Scatter(x=trims, y=[b_trim(arr, dc) for dc in trims],
                              mode="lines+markers", name=name,
                              line=dict(color=color), marker=dict(size=6)))

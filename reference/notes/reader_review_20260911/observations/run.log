@@ -1,0 +1,6 @@
+START 03_groundwater
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "03_groundwater", "status": "passed", "seconds": 120.29, "outputs": 11}
+START 04_geomagnetic
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+{"page": "04_geomagnetic", "status": "passed", "seconds": 9.72, "outputs": 8}

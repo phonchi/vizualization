@@ -1,0 +1,14 @@
+[
+  {
+    "page": "03_groundwater",
+    "status": "passed",
+    "seconds": 120.29,
+    "outputs": 11
+  },
+  {
+    "page": "04_geomagnetic",
+    "status": "passed",
+    "seconds": 9.72,
+    "outputs": 8
+  }
+]

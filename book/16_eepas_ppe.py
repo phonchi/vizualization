@@ -211,6 +211,45 @@ fig
 # 正規化使輸出的長期尺度與指定 GR 律相容；有限輸入門檻仍會留下低目標規模端的缺口。這不是靠把整張預報乘上一個常數就能完全修正，因為不同目標規模缺少的比例不同。
 #
 # %% [markdown]
+# 再用三個合成事件看總率如何疊加。每個事件依自己的時間、位置與規模，對未來留下一片貢獻；重疊的地方便相加。這張時間空間剖面採 Ψ 回歸值作尺度示意，只顯示基本模型的相對貢獻，不是完整預報，也沒有加入目標餘震的卷積。
+#
+# %% tags=["remove-input"]
+# 示意用 Evison–Rhoades 的 Ψ 迴歸值（第 15 章），凸顯尺度隨規模變化
+PSI = dict(a_M=3.16, b_M=0.65, a_T=1.36, b_T=0.40, sig_T=0.35,
+           b_A=0.35, sig_A=1.0)
+events = [(1.0, 20.0, 4.0), (3.0, 55.0, 5.0), (5.5, 80.0, 5.8)]
+tg = np.linspace(0.05, 25.0, 320)              # 年
+xg = np.linspace(0.0, 110.0, 240)              # km（一維剖面）
+TT, XX = np.meshgrid(tg, xg)
+dens = np.zeros_like(TT)
+for t0, x0, mi in events:
+    dt_d = np.clip((TT - t0) * DAY_YR, 1e-3, None)
+    z = (np.log10(dt_d) - PSI["a_T"] - PSI["b_T"] * mi) / PSI["sig_T"]
+    f = np.exp(-0.5 * z ** 2) / (dt_d * PSI["sig_T"] * LN10 * np.sqrt(2 * np.pi))
+    f[TT <= t0] = 0.0
+    sx = PSI["sig_A"] * 10 ** (0.5 * PSI["b_A"] * mi)
+    h = np.exp(-0.5 * ((XX - x0) / sx) ** 2) / (sx * np.sqrt(2 * np.pi))
+    dens += f * h * 10 ** (-B_GR * (PSI["b_M"] - 1) * mi)      # η(m_i) 的斜率項
+
+fig = go.Figure(go.Heatmap(x=tg, y=xg, z=np.sqrt(dens), colorscale="Blues",
+                           showscale=False))
+fig.add_trace(go.Scatter(
+    x=[e[0] for e in events], y=[e[1] for e in events], mode="markers+text",
+    name="過去的地震",
+    text=[f"M{e[2]:.1f} → 預告 M{PSI['a_M'] + PSI['b_M'] * e[2]:.1f}，"
+          f"中位等待 {10 ** (PSI['a_T'] + PSI['b_T'] * e[2]) / DAY_YR:.1f} 年"
+          for e in events],
+    textposition="middle left",
+    marker=dict(size=[8, 12, 16], color=QUAKE_COLOR)))
+apply_layout(fig, title="每個地震在未來時空放下一個機率包裹（顏色為率密度的平方根）",
+             xaxis_title="時間（年）", yaxis_title="位置（km，一維剖面）",
+             hovermode="closest", height=470)
+fig
+
+# %% [markdown]
+# 每個標記後方逐漸出現一片分布，較大輸入事件的時間與空間尺度也不同。亮區表示多個貢獻疊加後的相對率，不是已知的未來震央。讀懂這種相加方式後，還要問：若某些輸入事件沒有被目錄記錄，它們原本的貢獻會少掉多少？
+#
+# %% [markdown]
 # ## 11.4 目錄看不到的事件去了哪裡
 #
 # 前面完整度章談的是觀測：小事件可能未被目錄記錄。在 EEPAS 裡，這也變成預報問題，因為未記錄事件原本可能對未來有所貢獻。目標越接近輸入門檻，缺少這部分來源的影響通常越明顯。
@@ -268,43 +307,7 @@ fig
 #
 # 長時間窗下，若主震與餘震的時間差相對於預報尺度很短，可以考慮近似合併時間分布。空間上則需對未知的主震位置積分：目標餘震的位置等於主震位置加上相對位移，對應兩個空間分布的卷積。
 #
-# 在兩者都是獨立二維常態的簡化情況下，卷積仍是常態，變異數相加；推導見附錄 D。為了先建立疊加的直覺，下圖回到基本模型，畫出三個不同規模事件在未來時間與位置的貢獻。它只畫時間空間剖面，並未實作主震與餘震的卷積。
-#
-# %% tags=["remove-input"]
-# 示意用 Evison–Rhoades 的 Ψ 迴歸值（第 15 章），凸顯尺度隨規模變化
-PSI = dict(a_M=3.16, b_M=0.65, a_T=1.36, b_T=0.40, sig_T=0.35,
-           b_A=0.35, sig_A=1.0)
-events = [(1.0, 20.0, 4.0), (3.0, 55.0, 5.0), (5.5, 80.0, 5.8)]
-tg = np.linspace(0.05, 25.0, 320)              # 年
-xg = np.linspace(0.0, 110.0, 240)              # km（一維剖面）
-TT, XX = np.meshgrid(tg, xg)
-dens = np.zeros_like(TT)
-for t0, x0, mi in events:
-    dt_d = np.clip((TT - t0) * DAY_YR, 1e-3, None)
-    z = (np.log10(dt_d) - PSI["a_T"] - PSI["b_T"] * mi) / PSI["sig_T"]
-    f = np.exp(-0.5 * z ** 2) / (dt_d * PSI["sig_T"] * LN10 * np.sqrt(2 * np.pi))
-    f[TT <= t0] = 0.0
-    sx = PSI["sig_A"] * 10 ** (0.5 * PSI["b_A"] * mi)
-    h = np.exp(-0.5 * ((XX - x0) / sx) ** 2) / (sx * np.sqrt(2 * np.pi))
-    dens += f * h * 10 ** (-B_GR * (PSI["b_M"] - 1) * mi)      # η(m_i) 的斜率項
-
-fig = go.Figure(go.Heatmap(x=tg, y=xg, z=np.sqrt(dens), colorscale="Blues",
-                           showscale=False))
-fig.add_trace(go.Scatter(
-    x=[e[0] for e in events], y=[e[1] for e in events], mode="markers+text",
-    name="過去的地震",
-    text=[f"M{e[2]:.1f} → 預告 M{PSI['a_M'] + PSI['b_M'] * e[2]:.1f}，"
-          f"中位等待 {10 ** (PSI['a_T'] + PSI['b_T'] * e[2]) / DAY_YR:.1f} 年"
-          for e in events],
-    textposition="middle left",
-    marker=dict(size=[8, 12, 16], color=QUAKE_COLOR)))
-apply_layout(fig, title="每個地震在未來時空放下一個機率包裹（顏色為率密度的平方根）",
-             xaxis_title="時間（年）", yaxis_title="位置（km，一維剖面）",
-             hovermode="closest", height=470)
-fig
-
-# %% [markdown]
-# 每個標記後方逐漸出現一片分布，較大輸入事件的時間與空間尺度也不同。亮區是多個貢獻疊加後的相對率，不是已知的未來震央；若要加入目標餘震，才進一步使用上面說明的卷積。
+# 在兩者都是獨立二維常態的簡化情況下，卷積仍是常態，變異數相加。這表示主震位置原有的不確定性，還要加上餘震相對位移的變異；推導見 {doc}`附錄 D <appendix_d_eepas>`。這裡整合的是尚未知的中間位置，與基本模型將多個已知事件的貢獻相加不同。
 #
 # %% [markdown]
 # ## 11.8 新開始的目錄，如何做長期預報
@@ -355,6 +358,8 @@ fig
 # ## 11.9 成績必須連同題目一起讀
 #
 # 下面保留 Rhoades（2011）日本本土研究的回溯比較，三根柱代表不同目標規模的 EEPAS 相對 PPE 增益，虛線則為跨規模級距移植參數的結果。這些數字是為 CSEP 前瞻測試準備模型時的回溯分析，不是後來前瞻實驗已取得的成績。
+#
+# 圖中的 $I$ 是每事件平均對數分數，兩模型的分數差取指數後，以 1 為持平基準。大於 1 表示 EEPAS 在這份資料上的分數較高，小於 1 則表示 PPE 較高；它不表示每個時間窗的事件機率都乘上同一倍數。{doc}`預報比較 <18_testing_comparison>`會正式定義這個分數及其不確定性。
 #
 # %% tags=["remove-input"]
 BRACKET = [("3.95 < M < 4.45", 1040, 0.24),

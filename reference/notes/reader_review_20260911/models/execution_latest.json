@@ -1,0 +1,14 @@
+[
+  {
+    "page": "11_catalog_completeness_b",
+    "status": "passed",
+    "seconds": 2.82,
+    "outputs": 7
+  },
+  {
+    "page": "12_clustering_laws",
+    "status": "passed",
+    "seconds": 3.23,
+    "outputs": 7
+  }
+]

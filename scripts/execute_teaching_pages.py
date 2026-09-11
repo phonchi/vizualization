@@ -2,13 +2,14 @@
 from pathlib import Path
 import argparse
 import json
+import os
 import time
 import jupytext
 import nbformat
 from nbclient import NotebookClient
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'reference/notes/rewrite_20260911'
+OUT=ROOT/os.environ.get('TEACHING_REPORT_DIR','reference/notes/rewrite_20260911')
 GUARD='''import requests
 def _offline_request(*args, **kwargs):
     raise RuntimeError("Teaching validation is offline; prepare the local cache first")

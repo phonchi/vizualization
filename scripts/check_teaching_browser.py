@@ -1,13 +1,14 @@
 """Browser acceptance of the generated local teaching book (no publication)."""
 from pathlib import Path
 import json
+import os
 import time
 import yaml
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
 HTML=ROOT/'book/_build/html'
-OUT=ROOT/'reference/notes/rewrite_20260911/browser'
+OUT=ROOT/os.environ.get('TEACHING_REPORT_DIR','reference/notes/rewrite_20260911')/'browser'
 OUT.mkdir(parents=True,exist_ok=True)
 toc=yaml.safe_load((ROOT/'book/_toc.yml').read_text())
 pages=[toc['root']]+[c['file'] for part in toc['parts'] for c in part['chapters']]

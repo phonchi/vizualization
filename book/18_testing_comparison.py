@@ -370,7 +370,7 @@ for name, P in MODELS.items():
         marker=dict(size=7)))
     lines.append(f"{name} S_B={sb:.4f}")
 fig.add_hline(y=s_bar, line_dash="dot", line_color=GREY,
-              annotation_text=f"氣候基準率 {s_bar:.2f}")
+              annotation_text=f"長期基準率 {s_bar:.2f}")
 apply_layout(fig,
              title="可靠度圖與 Brier 分數：" + "；".join(lines),
              xaxis_title="預報機率", yaxis_title="實際發生比例",
@@ -384,6 +384,8 @@ fig
 # 假設某種防護行動每次花費 $C$，若不行動而事件發生會損失 $L$；先採一個簡化模型，假設行動可以避免這項損失。當事件機率為 $P$，不行動的預期損失為 $PL$，因此 $P>C/L$ 時行動較合算。
 #
 # 這個門檻沒有普遍的固定數字。低成本的準備工作與高成本的撤離，面對同一個預報可能採取不同決定；差別來自後果與成本，並非機率互相矛盾。
+#
+# 價值分數 $V$ 比較使用預報與只用長期平均時的支出，再以完美預報能節省的幅度作尺度。$V=0$ 表示與長期基準持平，$V=1$ 表示達到完美預報的節省幅度，負值則表示使用預報反而支出更多。
 #
 # 下面比較不同 $C/L$ 的相對價值。它用來理解預報技巧如何轉成決策價值，不能直接當成現實撤離規則。真實情境還有防護效果不完全、行動延遲、不同人承擔不同損失等因素，需要使用者與專業機構共同評估。
 #
@@ -412,7 +414,7 @@ for name, P in MODELS.items():
     fig.add_trace(go.Scatter(x=ALPHAS, y=v, mode="lines", name=name,
                              line=dict(color=MCOLOR[name], width=2.8)))
 fig.add_hline(y=0, line_dash="dash", line_color=GREY,
-              annotation_text="與氣候基準持平")
+              annotation_text="與長期基準持平")
 fig.add_vline(x=s_bar, line_dash="dot", line_color=GREY,
               annotation_text=f"C/L = 基準率 {s_bar:.2f}")
 apply_layout(fig,

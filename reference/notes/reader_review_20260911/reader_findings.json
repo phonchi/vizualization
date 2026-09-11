@@ -1,0 +1,430 @@
+{
+  "snapshot_head": "44d70a084b2dc905586848ae36368943768f3ee8",
+  "method": "Three native subagents, AI simulated undergraduate readers; each read all 34 pages in order, not human student testing.",
+  "reader_roles": {
+    "A": "first-time prerequisite knowledge",
+    "B": "course narrative and case continuity",
+    "C": "main-text/figure/appendix reading layers"
+  },
+  "coverage": [
+    {
+      "page": "00_intro",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "09_forecasting_intro",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "foundation_catalog",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "foundation_randomness",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "10_point_process",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "11_catalog_completeness_b",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "12_clustering_laws",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "foundation_inference",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "13_etas_structure",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "14_etas_estimation",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "15_psi_phenomenon",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "16_eepas_ppe",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "17_testing_consistency",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "18_testing_comparison",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "19_ensembles",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "20_recurrence_models",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "21_psha",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "22_operational_systems",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "01_overview",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "02_download",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "03_groundwater",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "04_geomagnetic",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "05_seismic",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "06_gnss",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "07_case_hualien2024",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "08_explore_ideas",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "23_taiwan_outlook",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "appendix_a_point_process",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "appendix_b_catalog",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "appendix_c_etas",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "appendix_d_eepas",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "appendix_e_testing",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "appendix_f_hazard",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    },
+    {
+      "page": "appendix_g_observations",
+      "A": "read",
+      "B": "read",
+      "C": "read"
+    }
+  ],
+  "findings": [
+    {
+      "id": "R01",
+      "issue": "Q–Q與KS讀法",
+      "source": "book/10_point_process.py",
+      "readers": [
+        "A"
+      ],
+      "resolution": "圖前補Q–Q分位數配對與KS累積分布距離。",
+      "status": "resolved"
+    },
+    {
+      "id": "R02",
+      "issue": "Mc門檻誤標為p值",
+      "source": "book/11_catalog_completeness_b.py",
+      "readers": [
+        "A"
+      ],
+      "resolution": "圖例標明Mc，另排為水平圖例避免門檻標籤重疊。",
+      "status": "resolved"
+    },
+    {
+      "id": "R03",
+      "issue": "b-positive參考線出現過早",
+      "source": "book/11_catalog_completeness_b.py",
+      "readers": [
+        "C"
+      ],
+      "resolution": "移除尚未介紹的早期b-positive參考線。",
+      "status": "resolved"
+    },
+    {
+      "id": "R04",
+      "issue": "A/B配對規則未說明",
+      "source": "book/11_catalog_completeness_b.py",
+      "readers": [
+        "A",
+        "C"
+      ],
+      "resolution": "圖例改描述性配對名稱，補不重疊配對及未實作版本的說明。",
+      "status": "resolved"
+    },
+    {
+      "id": "R05",
+      "issue": "Båth圖例下界與正文矛盾",
+      "source": "book/12_clustering_laws.py",
+      "readers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "resolution": "改為排序差期望，區分固定主震與排序抽樣；補負規模差讀法，排開左右小標。",
+      "status": "resolved"
+    },
+    {
+      "id": "R06",
+      "issue": "Ψ首圖缺M^-、r、M.U.定義",
+      "source": "book/15_psi_phenomenon.py",
+      "readers": [
+        "C"
+      ],
+      "resolution": "圖前補M^-、r與M.U.意義。",
+      "status": "resolved"
+    },
+    {
+      "id": "R07",
+      "issue": "愛琴海對照突然換案例",
+      "source": "book/15_psi_phenomenon.py",
+      "readers": [
+        "B"
+      ],
+      "resolution": "區分合成點與愛琴海真實對照，核實2022原文Figure1/12。",
+      "status": "resolved"
+    },
+    {
+      "id": "R08",
+      "issue": "EEPAS疊加圖位於卷積段",
+      "source": "book/16_eepas_ppe.py",
+      "readers": [
+        "B"
+      ],
+      "resolution": "把基本疊加圖移回總率段，卷積段保留其自身問題。",
+      "status": "resolved"
+    },
+    {
+      "id": "R09",
+      "issue": "EEPAS資訊分數增益讀法提前",
+      "source": "book/16_eepas_ppe.py",
+      "readers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "resolution": "圖前補每事件對數分數的指數化比較，避免誤認事件機率倍數。",
+      "status": "resolved"
+    },
+    {
+      "id": "R10",
+      "issue": "POLL/BILL圖例縮寫未對應",
+      "source": "book/17_testing_consistency.py",
+      "readers": [
+        "C"
+      ],
+      "resolution": "先對應POLL/BILL的兩種分數，說明差值不等於模型增益。",
+      "status": "resolved"
+    },
+    {
+      "id": "R11",
+      "issue": "價值分數V缺量尺",
+      "source": "book/18_testing_comparison.py",
+      "readers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "resolution": "圖前補V的0、1與負值讀法，圖內改長期基準。",
+      "status": "resolved"
+    },
+    {
+      "id": "R12",
+      "issue": "PGA與g缺初次定義",
+      "source": "book/21_psha.py",
+      "readers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "resolution": "第一張圖前介紹PGA及g單位。",
+      "status": "resolved"
+    },
+    {
+      "id": "R13",
+      "issue": "水文機制缺含水層及水頭圖像",
+      "source": "book/03_groundwater.py",
+      "readers": [
+        "A"
+      ],
+      "resolution": "開場補含水層、承壓與壓力水頭圖像。",
+      "status": "resolved"
+    },
+    {
+      "id": "R14",
+      "issue": "三者並列與兩列圖不符",
+      "source": "book/03_groundwater.py",
+      "readers": [
+        "C"
+      ],
+      "resolution": "說明實際並列的是水位與氣壓。",
+      "status": "resolved"
+    },
+    {
+      "id": "R15",
+      "issue": "HWA全缺測說法與非缺值數衝突",
+      "source": "book/03_groundwater.py",
+      "readers": [
+        "B",
+        "C"
+      ],
+      "resolution": "改為部分缺測；非缺值計數不當成品質保證。",
+      "status": "resolved"
+    },
+    {
+      "id": "R16",
+      "issue": "TTN為NaN卻繼續排名參考站",
+      "source": "book/04_geomagnetic.py",
+      "readers": [
+        "B",
+        "C"
+      ],
+      "resolution": "重跑確認TTN有效配對為0，輸出資料不足並停止排名式解讀；手機文字自動換行。",
+      "status": "resolved"
+    },
+    {
+      "id": "R17",
+      "issue": "ULF與Nyquist未介紹",
+      "source": "book/04_geomagnetic.py",
+      "readers": [
+        "A"
+      ],
+      "resolution": "補ULF與Nyquist定義，保留頻帶和抗混疊條件。",
+      "status": "resolved"
+    },
+    {
+      "id": "R18",
+      "issue": "回歸簡化式s^2未定義",
+      "source": "book/appendix_d_eepas.md",
+      "readers": [
+        "A",
+        "B"
+      ],
+      "resolution": "定義相對誤差變異數s^2，獨立代值核對兩方向斜率。",
+      "status": "resolved"
+    },
+    {
+      "id": "R19",
+      "issue": "家族動差g及v未定義",
+      "source": "book/appendix_e_testing.md",
+      "readers": [
+        "B"
+      ],
+      "resolution": "定義家族大小的g平均與v變異數，說清下節改指計數的動差。",
+      "status": "resolved"
+    },
+    {
+      "id": "R20",
+      "issue": "附錄G無主文回程",
+      "source": "book/appendix_g_observations.md",
+      "readers": [
+        "C"
+      ],
+      "resolution": "附錄G增加8個對應主文章節回程連結。",
+      "status": "resolved"
+    }
+  ],
+  "extraction_limit": "Initial export omitted stream output; all readers supplemented 03/04/05/07 from STREAM_OUTPUTS and/or actual HTML. The absent-output allegation was withdrawn."
+}

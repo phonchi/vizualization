@@ -3,8 +3,10 @@
 Run with the project's Python. This does not execute notebooks or contact GDMS.
 """
 from pathlib import Path
+from collections import defaultdict, deque
 import copy
 import json
+import os
 import jupytext
 import nbformat
 
@@ -18,6 +20,11 @@ def sync():
         if source.name.startswith("_"):
             continue
         paired = source.with_suffix(".ipynb")
+        prior_ids = defaultdict(deque)
+        if paired.exists():
+            for old_cell in nbformat.read(paired, as_version=4).cells:
+                if old_cell.get("id"):
+                    prior_ids[(old_cell.cell_type, old_cell.source)].append(old_cell.id)
         cached = BOOK / "_build/jupyter_execute" / paired.name
         prior_outputs = {}
         for candidate in (cached, paired):
@@ -29,6 +36,9 @@ def sync():
         notebook = jupytext.read(source)
         restored, missing = 0, []
         for i, cell in enumerate(notebook.cells):
+            identities = prior_ids[(cell.cell_type, cell.source)]
+            if identities:
+                cell.id = identities.popleft()
             if cell.cell_type != "code":
                 continue
             tags = list(cell.metadata.get("tags", []))
@@ -65,7 +75,7 @@ def sync():
         jupytext.write(notebook, source, fmt="py:percent")
         report.append({"page": source.stem, "restored_output_cells": restored,
                        "code_changed_vs_build": changed, "cells_without_cached_output": missing})
-    target = ROOT / "reference/notes/rewrite_20260911/notebook_sync.json"
+    target = ROOT / os.environ.get("TEACHING_REPORT_DIR", "reference/notes/rewrite_20260911") / "notebook_sync.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n")
     print(json.dumps(report, ensure_ascii=False, indent=2))

@@ -263,6 +263,8 @@ fig
 #
 # 下面左圖由目錄以指定視窗規則選出序列，右圖則是上述理想獨立抽樣的計算。兩者回答不同問題：左圖讓我們看見序列定義的影響，右圖隔離了抽樣極值本身的變化。
 #
+# 右圖的排序差參考線，表示一組獨立 GR 樣本中最大與次大規模的間距期望。另一條曲線則固定主震規模，再減去抽樣得到的最大餘震規模；兩者是不同的抽樣問題，不能把排序差參考線當成這條曲線的下界。
+#
 # %% tags=["remove-input"]
 # 左：台灣長期目錄的實測 ΔM（Gardner–Knopoff 視窗法）
 cat_long = load_taiwan_catalog()
@@ -306,9 +308,9 @@ mean_u = np.array([DM_MAX - sum(1 / np.arange(1, n + 1)) / BETA
 n_zero = float(np.exp(BETA * DM_MAX - 0.5772))
 
 fig = make_subplots(rows=1, cols=2, horizontal_spacing=0.11,
-                    subplot_titles=(f"台灣 1973–2025 實測（ML ≥ 6 主震，"
-                                    f"{len(bath)} 個序列）",
-                                    "i.i.d. GR 零假設：ΔM 隨餘震數 N 變化"))
+                    subplot_titles=(f"台灣 1973–2025 實測<br>ML ≥ 6 主震，"
+                                    f"{len(bath)} 個序列",
+                                    "獨立 GR 抽樣<br>固定主震，改變餘震數 N"))
 fig.add_trace(go.Histogram(x=bath, xbins=dict(size=0.2), marker_color=ACCENT,
                            opacity=0.85, name="實測 ΔM"), row=1, col=1)
 fig.add_vline(x=1.2, line_dash="dash", line_color=QUAKE_COLOR, row=1, col=1)
@@ -322,23 +324,26 @@ fig.add_trace(go.Scatter(x=n_grid, y=mean_u, mode="lines",
                          name="E[ΔM]（主震規模固定）"), row=1, col=2)
 fig.add_trace(go.Scatter(x=n_grid, y=np.full(len(n_grid), 1 / BETA),
                          mode="lines", line=dict(color=GREEN, dash="dot"),
-                         name=f"Utsu 下界 1/β = {1/BETA:.2f}"), row=1, col=2)
+                         name=f"排序差期望 1/β = {1/BETA:.2f}"), row=1, col=2)
 fig.add_hline(y=1.2, line_dash="dash", line_color=QUAKE_COLOR, row=1, col=2)
 fig.add_hline(y=0.0, line_color="#888888", row=1, col=2)
 fig.update_xaxes(title_text="ΔM（主震 − 最大餘震）", row=1, col=1)
 fig.update_yaxes(title_text="序列數", row=1, col=1)
 fig.update_xaxes(title_text="餘震數 N（對數軸）", type="log", row=1, col=2)
 fig.update_yaxes(title_text="ΔM", row=1, col=2)
-apply_layout(fig, title=f"Båth 定律的兩張臉：實測平均 {bath.mean():.2f}"
-                        f"（紅虛線＝Båth 的 1.2），"
-                        f"理論在 N ≈ {n_zero:.0f} 時歸零",
-             height=460, hovermode="closest")
+apply_layout(fig, title=f"最大餘震規模差：實測平均 {bath.mean():.2f}"
+                        f"（紅虛線＝Båth 的 1.2）<br>"
+                        f"固定主震的理論規模差在 N ≈ {n_zero:.0f} 時歸零",
+             height=540, hovermode="closest",
+             margin=dict(l=60, r=20, t=140, b=50))
 fig
 
 # %% [markdown]
 # 左圖和文獻中的平均規模差不一致時，不能立刻解讀成地區物理差異。應先核對主震選擇、空間窗、時間窗、完整度與序列是否重疊。本圖只對指定的較大候選主震使用視窗分類，是教學示範，並未重現 Chan 與 Wu（2013）的完整選樣程序。
 #
 # 右圖把主震規模固定後，增加餘震數，預期最大餘震會增大，規模差便下降。陰影反映隨機極值的變異，說明知道平均關係仍不足以準確預測個別序列。附錄 B 推導這個分布與其動差。
+#
+# 這項抽樣沒有強迫後續事件比最初的事件小。規模差降到零以下，表示抽到了更大的事件；此時最初稱為「主震」的事件，就不再是序列中最大的那一個。
 #
 # ## 6.6 要不要先把餘震刪掉？
 #

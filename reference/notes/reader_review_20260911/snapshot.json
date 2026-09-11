@@ -1,0 +1,279 @@
+{
+  "head": "44d70a084b2dc905586848ae36368943768f3ee8",
+  "pages": [
+    {
+      "order": 0,
+      "page": "00_intro",
+      "source": "book/00_intro.md",
+      "reader_copy": "book/_build/reader_pack/00_00_intro.md",
+      "characters": 2173
+    },
+    {
+      "order": 1,
+      "page": "09_forecasting_intro",
+      "source": "book/09_forecasting_intro.py",
+      "reader_copy": "book/_build/reader_pack/01_09_forecasting_intro.md",
+      "characters": 4508
+    },
+    {
+      "order": 2,
+      "page": "foundation_catalog",
+      "source": "book/foundation_catalog.py",
+      "reader_copy": "book/_build/reader_pack/02_foundation_catalog.md",
+      "characters": 3959
+    },
+    {
+      "order": 3,
+      "page": "foundation_randomness",
+      "source": "book/foundation_randomness.py",
+      "reader_copy": "book/_build/reader_pack/03_foundation_randomness.md",
+      "characters": 4256
+    },
+    {
+      "order": 4,
+      "page": "10_point_process",
+      "source": "book/10_point_process.py",
+      "reader_copy": "book/_build/reader_pack/04_10_point_process.md",
+      "characters": 7848
+    },
+    {
+      "order": 5,
+      "page": "11_catalog_completeness_b",
+      "source": "book/11_catalog_completeness_b.py",
+      "reader_copy": "book/_build/reader_pack/05_11_catalog_completeness_b.md",
+      "characters": 10178
+    },
+    {
+      "order": 6,
+      "page": "12_clustering_laws",
+      "source": "book/12_clustering_laws.py",
+      "reader_copy": "book/_build/reader_pack/06_12_clustering_laws.md",
+      "characters": 9713
+    },
+    {
+      "order": 7,
+      "page": "foundation_inference",
+      "source": "book/foundation_inference.py",
+      "reader_copy": "book/_build/reader_pack/07_foundation_inference.md",
+      "characters": 4689
+    },
+    {
+      "order": 8,
+      "page": "13_etas_structure",
+      "source": "book/13_etas_structure.py",
+      "reader_copy": "book/_build/reader_pack/08_13_etas_structure.md",
+      "characters": 10390
+    },
+    {
+      "order": 9,
+      "page": "14_etas_estimation",
+      "source": "book/14_etas_estimation.py",
+      "reader_copy": "book/_build/reader_pack/09_14_etas_estimation.md",
+      "characters": 11156
+    },
+    {
+      "order": 10,
+      "page": "15_psi_phenomenon",
+      "source": "book/15_psi_phenomenon.py",
+      "reader_copy": "book/_build/reader_pack/10_15_psi_phenomenon.md",
+      "characters": 8767
+    },
+    {
+      "order": 11,
+      "page": "16_eepas_ppe",
+      "source": "book/16_eepas_ppe.py",
+      "reader_copy": "book/_build/reader_pack/11_16_eepas_ppe.md",
+      "characters": 9472
+    },
+    {
+      "order": 12,
+      "page": "17_testing_consistency",
+      "source": "book/17_testing_consistency.py",
+      "reader_copy": "book/_build/reader_pack/12_17_testing_consistency.md",
+      "characters": 6434
+    },
+    {
+      "order": 13,
+      "page": "18_testing_comparison",
+      "source": "book/18_testing_comparison.py",
+      "reader_copy": "book/_build/reader_pack/13_18_testing_comparison.md",
+      "characters": 6380
+    },
+    {
+      "order": 14,
+      "page": "19_ensembles",
+      "source": "book/19_ensembles.py",
+      "reader_copy": "book/_build/reader_pack/14_19_ensembles.md",
+      "characters": 7083
+    },
+    {
+      "order": 15,
+      "page": "20_recurrence_models",
+      "source": "book/20_recurrence_models.py",
+      "reader_copy": "book/_build/reader_pack/15_20_recurrence_models.md",
+      "characters": 7588
+    },
+    {
+      "order": 16,
+      "page": "21_psha",
+      "source": "book/21_psha.py",
+      "reader_copy": "book/_build/reader_pack/16_21_psha.md",
+      "characters": 7867
+    },
+    {
+      "order": 17,
+      "page": "22_operational_systems",
+      "source": "book/22_operational_systems.py",
+      "reader_copy": "book/_build/reader_pack/17_22_operational_systems.md",
+      "characters": 5381
+    },
+    {
+      "order": 18,
+      "page": "01_overview",
+      "source": "book/01_overview.py",
+      "reader_copy": "book/_build/reader_pack/18_01_overview.md",
+      "characters": 3391
+    },
+    {
+      "order": 19,
+      "page": "02_download",
+      "source": "book/02_download.py",
+      "reader_copy": "book/_build/reader_pack/19_02_download.md",
+      "characters": 2939
+    },
+    {
+      "order": 20,
+      "page": "03_groundwater",
+      "source": "book/03_groundwater.py",
+      "reader_copy": "book/_build/reader_pack/20_03_groundwater.md",
+      "characters": 4682
+    },
+    {
+      "order": 21,
+      "page": "04_geomagnetic",
+      "source": "book/04_geomagnetic.py",
+      "reader_copy": "book/_build/reader_pack/21_04_geomagnetic.md",
+      "characters": 5040
+    },
+    {
+      "order": 22,
+      "page": "05_seismic",
+      "source": "book/05_seismic.py",
+      "reader_copy": "book/_build/reader_pack/22_05_seismic.md",
+      "characters": 5402
+    },
+    {
+      "order": 23,
+      "page": "06_gnss",
+      "source": "book/06_gnss.py",
+      "reader_copy": "book/_build/reader_pack/23_06_gnss.md",
+      "characters": 2889
+    },
+    {
+      "order": 24,
+      "page": "07_case_hualien2024",
+      "source": "book/07_case_hualien2024.py",
+      "reader_copy": "book/_build/reader_pack/24_07_case_hualien2024.md",
+      "characters": 4873
+    },
+    {
+      "order": 25,
+      "page": "08_explore_ideas",
+      "source": "book/08_explore_ideas.md",
+      "reader_copy": "book/_build/reader_pack/25_08_explore_ideas.md",
+      "characters": 3987
+    },
+    {
+      "order": 26,
+      "page": "23_taiwan_outlook",
+      "source": "book/23_taiwan_outlook.py",
+      "reader_copy": "book/_build/reader_pack/26_23_taiwan_outlook.md",
+      "characters": 8856
+    },
+    {
+      "order": 27,
+      "page": "appendix_a_point_process",
+      "source": "book/appendix_a_point_process.md",
+      "reader_copy": "book/_build/reader_pack/27_appendix_a_point_process.md",
+      "characters": 6164
+    },
+    {
+      "order": 28,
+      "page": "appendix_b_catalog",
+      "source": "book/appendix_b_catalog.md",
+      "reader_copy": "book/_build/reader_pack/28_appendix_b_catalog.md",
+      "characters": 7677
+    },
+    {
+      "order": 29,
+      "page": "appendix_c_etas",
+      "source": "book/appendix_c_etas.md",
+      "reader_copy": "book/_build/reader_pack/29_appendix_c_etas.md",
+      "characters": 9081
+    },
+    {
+      "order": 30,
+      "page": "appendix_d_eepas",
+      "source": "book/appendix_d_eepas.md",
+      "reader_copy": "book/_build/reader_pack/30_appendix_d_eepas.md",
+      "characters": 7436
+    },
+    {
+      "order": 31,
+      "page": "appendix_e_testing",
+      "source": "book/appendix_e_testing.md",
+      "reader_copy": "book/_build/reader_pack/31_appendix_e_testing.md",
+      "characters": 10243
+    },
+    {
+      "order": 32,
+      "page": "appendix_f_hazard",
+      "source": "book/appendix_f_hazard.md",
+      "reader_copy": "book/_build/reader_pack/32_appendix_f_hazard.md",
+      "characters": 6090
+    },
+    {
+      "order": 33,
+      "page": "appendix_g_observations",
+      "source": "book/appendix_g_observations.md",
+      "reader_copy": "book/_build/reader_pack/33_appendix_g_observations.md",
+      "characters": 6093
+    }
+  ],
+  "sha256": {
+    "book/00_intro.md": "c8dc7143e79eb481ca7dcdda9fa5e958ed0ffb4fa5f0b139f5d92dda915db5e9",
+    "book/09_forecasting_intro.py": "e778064aca40f08ba28da0a868b136d9500b2c8a490389d5aa28689763ce9c05",
+    "book/foundation_catalog.py": "f42f9a9df8f3c8f372b48e9c4c0f04bfff50c9602876da466a4d184b85743b60",
+    "book/foundation_randomness.py": "c105014f071147d0d005fa0547c3cc65a88c5cb47746ec607f47456e29c40ce2",
+    "book/10_point_process.py": "68e31cec00e4d000f4020984f78c40cf5d583525fcaf5f3a06687b512cd97bfc",
+    "book/11_catalog_completeness_b.py": "83075008c499fd24a55eeb12bb5ce70e19869a328f39e5dea5903634e8283681",
+    "book/12_clustering_laws.py": "676e56372497fdcf4338aa42d243b9634f4a8a1c8a229a0eb7a1235346ac6e63",
+    "book/foundation_inference.py": "ae21d874aa86dd4f756675a2401733d2baad1bfda09f872e5707054820adb1de",
+    "book/13_etas_structure.py": "2890d09f8cb16685f29d3b16bb36089ccce7c4d0b0636d30af6330118d699b96",
+    "book/14_etas_estimation.py": "46d93d0c0fae107b4323bfbc6055ed183fb43d22171ad76c996064839fc0e050",
+    "book/15_psi_phenomenon.py": "878dc71af675d1e98d0ab83ad18cbd1c2ed5717d2e9f757a6f81fb972a17e2d3",
+    "book/16_eepas_ppe.py": "a9dca29baa04c6d726128e0aaaa324cd2901a947a240fa2de4a94365040cdbf3",
+    "book/17_testing_consistency.py": "556c7398de71a0b2e965ecb128f03142fe9bd0bcdf57d93c58c00f8454de4202",
+    "book/18_testing_comparison.py": "65ec4545a33a11cfcd69007a80f407b00978fc8a1f8ba238c4432814ee067741",
+    "book/19_ensembles.py": "6861a33d53a49b2e3971d2127f46ad6c9d5de7d18bdf732b4599413907c72748",
+    "book/20_recurrence_models.py": "4d5694e31027a0e16451fd06b43f19a3e2dd38f0439f33d90187b1b977da2abf",
+    "book/21_psha.py": "3e973e7c73d2fe10262b99631b1b63d490117e1eaa3d87f404acb725e16da2e3",
+    "book/22_operational_systems.py": "38c9c89824e55d8283dc4572971b46620e76cc187c922e19734d7fa458cee12d",
+    "book/01_overview.py": "d4763501b0c31dd789c8591651cfeb2859d287c53c71cfaad7f8de6885c97632",
+    "book/02_download.py": "4dcbec38507b3228a142373e56cc26a6b45e38476a1f934d3b9251923bcdaa15",
+    "book/03_groundwater.py": "861ade2f1a2a1252e01bcc449165709e4a2d6b3a59c3e117cdc5dded044199fa",
+    "book/04_geomagnetic.py": "677795f13b1089cc6910be4af14071144b816e42abc38cc5c64f8a8c2f4108b1",
+    "book/05_seismic.py": "7f5d44b7d365df0f871fa3088076981d21eaea2e16aceeec046ceac71332ae02",
+    "book/06_gnss.py": "aa65b29e9fee6e6483b00e3adbc628f930a8cf5df646d71465565a1ed1629cbf",
+    "book/07_case_hualien2024.py": "b2889f562272a3d09d3b676161c5f4350ff296156365f442e03304dd1bb35324",
+    "book/08_explore_ideas.md": "c07c43e0021c493ff6c66de19409d7ba9d40f9ac0bc3e07cf3602241e11c0f2d",
+    "book/23_taiwan_outlook.py": "50d4cff79c5fdc2c53c25a9fc19c337a52d870e430d36fcb9efb212ccb490b6f",
+    "book/appendix_a_point_process.md": "07263b1e648c3fd9f77925c3262e071a64ad7a077206a1075ac05581201c90da",
+    "book/appendix_b_catalog.md": "9d3ec486baab4e1d7d4350dc10746f05f816073c5388ccca7b86e950b5c1e1c1",
+    "book/appendix_c_etas.md": "bfa07e65b06a0e905098075d7a6330ee707fa6bb7d2a60668ec1a03e9b37961d",
+    "book/appendix_d_eepas.md": "7a810da5d7ab30377fe4d0c5b37e3990726286300734497ee7e6dae693c2e614",
+    "book/appendix_e_testing.md": "2bbf197610eef7d48870a980cca0b5221d801dfb02279c929600bb7b5025cf54",
+    "book/appendix_f_hazard.md": "b5f47068986e2f6eaf973d10d2fd7cab7aa4077b2bd2565830dbfee8930a3dce",
+    "book/appendix_g_observations.md": "bc7128cd854fea20f095b79738e8ebd509b51f2d162ee3371ac8b46c2ed6abd9"
+  }
+}

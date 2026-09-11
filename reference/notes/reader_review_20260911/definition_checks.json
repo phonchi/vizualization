@@ -1,0 +1,15 @@
+{
+  "regression_relative_variance": {
+    "v": 2.0,
+    "error_variance": 0.5,
+    "s_squared": 0.25,
+    "forward": -0.8,
+    "inverse": -1.25
+  },
+  "branching_moments": {
+    "n": 0.4,
+    "g_mean": 1.6666666666666667,
+    "v_variance": 1.8518518518518523
+  },
+  "result": "passed"
+}
