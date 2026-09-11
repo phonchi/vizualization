@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=857392ad" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -446,7 +446,8 @@
 \[\mathbb E[N]=\mu_B\mathbb E[G],\qquad
 \mathrm{Var}(N)=\mu_B\mathbb E[G^2].\]</div>
 <p>所以 <span class="math notranslate nohighlight">\(\mathrm{Var}(N)/\mathbb E[N]=\mathbb E[G^2]/\mathbb E[G]\ge1\)</span>，只要 <span class="math notranslate nohighlight">\(P(G&gt;1)&gt;0\)</span> 就嚴格大於一。這是完整獨立叢集模型的結果；有限時空窗截斷叢集時需要重新計算。</p>
-<p>再假設每事件直接後代數 <span class="math notranslate nohighlight">\(K\sim\mathrm{Poisson}(n)\)</span>、<span class="math notranslate nohighlight">\(n&lt;1\)</span>，利用 <span class="math notranslate nohighlight">\(G=1+\sum_{i=1}^{K}G_i\)</span>：</p>
+<p>本小節以 <span class="math notranslate nohighlight">\(g=\mathbb E[G]\)</span>、<span class="math notranslate nohighlight">\(v=\mathrm{Var}(G)\)</span> 表示完整家族大小的平均與變異數。
+再假設每事件直接後代數 <span class="math notranslate nohighlight">\(K\sim\mathrm{Poisson}(n)\)</span>、<span class="math notranslate nohighlight">\(n&lt;1\)</span>，利用 <span class="math notranslate nohighlight">\(G=1+\sum_{i=1}^{K}G_i\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[g=1+ng\Rightarrow g=\frac1{1-n},\qquad
 v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
@@ -454,7 +455,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 </section>
 <section id="e-3">
 <h2>E.3 負二項與二元分數<a class="headerlink" href="#e-3" title="Link to this heading">#</a></h2>
-<p>採負二項參數 <span class="math notranslate nohighlight">\(r&gt;0,0&lt;q&lt;1\)</span>，</p>
+<p>採負二項參數 <span class="math notranslate nohighlight">\(r&gt;0,0&lt;q&lt;1\)</span>。這一節的 <span class="math notranslate nohighlight">\(\mu\)</span>、<span class="math notranslate nohighlight">\(v\)</span> 分別表示計數 <span class="math notranslate nohighlight">\(N\)</span> 的平均與變異數，</p>
 <div class="math notranslate nohighlight">
 \[P(N=n)=\frac{\Gamma(n+r)}{\Gamma(r)n!}q^r(1-q)^n,
 \quad \mu=\frac{r(1-q)}q,\quad v=\frac{r(1-q)}{q^2}.\]</div>

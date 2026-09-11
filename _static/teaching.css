@@ -18,4 +18,8 @@
   .cell_output .js-plotly-plot {
     min-width: 760px;
   }
+  .cell_output .output.stream pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
 }

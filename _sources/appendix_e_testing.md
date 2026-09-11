@@ -29,6 +29,7 @@ $$\mathbb E[N]=\mu_B\mathbb E[G],\qquad
 
 所以 $\mathrm{Var}(N)/\mathbb E[N]=\mathbb E[G^2]/\mathbb E[G]\ge1$，只要 $P(G>1)>0$ 就嚴格大於一。這是完整獨立叢集模型的結果；有限時空窗截斷叢集時需要重新計算。
 
+本小節以 $g=\mathbb E[G]$、$v=\mathrm{Var}(G)$ 表示完整家族大小的平均與變異數。
 再假設每事件直接後代數 $K\sim\mathrm{Poisson}(n)$、$n<1$，利用 $G=1+\sum_{i=1}^{K}G_i$：
 
 $$g=1+ng\Rightarrow g=\frac1{1-n},\qquad
@@ -38,7 +39,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.$$
 
 ## E.3 負二項與二元分數
 
-採負二項參數 $r>0,0<q<1$，
+採負二項參數 $r>0,0<q<1$。這一節的 $\mu$、$v$ 分別表示計數 $N$ 的平均與變異數，
 
 $$P(N=n)=\frac{\Gamma(n+r)}{\Gamma(r)n!}q^r(1-q)^n,
 \quad \mu=\frac{r(1-q)}q,\quad v=\frac{r(1-q)}{q^2}.$$

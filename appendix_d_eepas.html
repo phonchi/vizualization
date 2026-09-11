@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=857392ad" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -450,7 +450,9 @@
 <p>反向斜率為 <span class="math notranslate nohighlight">\(b_{X|Y}=bv/(b^2v+\sigma_\delta^2)\)</span>；若 <span class="math notranslate nohighlight">\(b\ne0\)</span>，換回原座標得到</p>
 <div class="math notranslate nohighlight">
 \[\frac1{b_{X|Y}}=b\left(1+\frac{\sigma_\delta^2}{b^2v}\right).\]</div>
-<p>兩個方向一般不重合。相等誤差、<span class="math notranslate nohighlight">\(b=-1\)</span> 時，兩支為 <span class="math notranslate nohighlight">\(-1/(1+s^2)\)</span> 與 <span class="math notranslate nohighlight">\(-(1+s^2)\)</span>。這是有條件的誤差模型解釋，不能用兩條實測斜率就唯一辨認真斜率及所有誤差變異數。</p>
+<p>兩個方向一般不重合。若兩方向的誤差變異數相同，令
+<span class="math notranslate nohighlight">\(s^2=\sigma_\epsilon^2/v=\sigma_\delta^2/v\)</span>，表示誤差變異數相對於真實訊號變異數的比例。
+在 <span class="math notranslate nohighlight">\(b=-1\)</span> 的例子中，兩支為 <span class="math notranslate nohighlight">\(-1/(1+s^2)\)</span> 與 <span class="math notranslate nohighlight">\(-(1+s^2)\)</span>。這是有條件的誤差模型解釋，不能用兩條實測斜率就唯一辨認真斜率及所有誤差變異數。</p>
 <p>由樣本平方和也有恆等式</p>
 <div class="math notranslate nohighlight">
 \[\hat b_{Y|X}\hat b_{X|Y}
