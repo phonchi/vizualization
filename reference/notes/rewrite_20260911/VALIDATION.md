@@ -62,3 +62,9 @@ Sphinx將相同inline script分別以 `None` 與空字串註冊，造成Thebe重
 
 未修改使用者的 `EEPAS/`、`psi-modeling-explained/`、既有私人講義或PNG。
 未啟用付費服務；PDF原文與未發表材料未加入公開網站。
+
+## 發布確認
+
+來源提交：`5729f9471ae000a2beb3b186945ec404cf117136`。網站分支提交：`e6f04363bf714de8aaf46b3a263f1c5e1dcb0958`。
+GitHub Pages建置完成；全部34頁HTTP 200，內容SHA-256與本機驗收版本一致。
+線上網址：https://phonchi.github.io/vizualization/ 。逐頁結果見 [publication.json](publication.json)。

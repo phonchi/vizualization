@@ -1,0 +1,212 @@
+{
+  "verified_at": "2026-09-11T03:54:07.001182+00:00",
+  "url": "https://phonchi.github.io/vizualization/",
+  "source_commit": "5729f9471ae000a2beb3b186945ec404cf117136",
+  "site_commit": "e6f04363bf714de8aaf46b3a263f1c5e1dcb0958",
+  "pages": [
+    {
+      "page": "00_intro",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "f26e63dca61a9152b830d1b9483726d959dc9985936bce7ad8b760b8a69fdcd0"
+    },
+    {
+      "page": "09_forecasting_intro",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "54876d1a95211092c74ef517faf64ceeee4cd40391133ab851dc678c4442c0b2"
+    },
+    {
+      "page": "foundation_catalog",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8b4696ef4463cda7113d9d8374f42c662181f7e9a57749c86d9e5e525d7bbcfe"
+    },
+    {
+      "page": "foundation_randomness",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "3ccb6fcc0befa709715ab100e8d8831092fda579c5b59c167dc64f34f54d6108"
+    },
+    {
+      "page": "10_point_process",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "23a19a1808c1791c5623f4cc3ed36517ded9bfda75ff7afe624e98ee8855f7c8"
+    },
+    {
+      "page": "11_catalog_completeness_b",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "7425002ee727d312c22274310bb4e9598db5892725ac1ee7a391878aae6e0084"
+    },
+    {
+      "page": "12_clustering_laws",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "caff9747ec5ad9ce23202c255b69b94736c24e35bf169d78c992836f89181b4a"
+    },
+    {
+      "page": "foundation_inference",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "801561fa0cda51d7b7f8d01cd31476b164e30d4d6e95521ff7c8a6d085b83fda"
+    },
+    {
+      "page": "13_etas_structure",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8942db1b2ece143a340c47ceeb1d1e35e76f6583f9f206586e1aca2b142bc0dc"
+    },
+    {
+      "page": "14_etas_estimation",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "4b059b290f9d3fa7dcacd7cfb12efeb29c74d4a4d36d79976203f45ddee2f435"
+    },
+    {
+      "page": "15_psi_phenomenon",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "c8d9c97f6996207d55ef806410dd0f5f02bf08cfa042589289fd30cf1b51c52e"
+    },
+    {
+      "page": "16_eepas_ppe",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "dcd1bc1ca92956361f30d381525fbdc069df5a0abfaaaa7302efec75fa5c13ee"
+    },
+    {
+      "page": "17_testing_consistency",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "b3dcc51cb040d944c7f9a9df8e1bbfcde92746666b527fe9442e19a5ed8e67cf"
+    },
+    {
+      "page": "18_testing_comparison",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "89ab8da31ee7d5eb22a53695e713a58ab8bbe46e6a1e9ff91e55c430983292c3"
+    },
+    {
+      "page": "19_ensembles",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "a575f03ebff49123c8e277e3c16632d637117f15efe682f6f7689b269379448e"
+    },
+    {
+      "page": "20_recurrence_models",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "2ef85e77e374a2d4b9f707c287dddaf071be59bd59c896be64a9abbe04cb9198"
+    },
+    {
+      "page": "21_psha",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "fc5d416295f954518bda05187ee8f07e35740aaf04573e54983fb8ffbea66b09"
+    },
+    {
+      "page": "22_operational_systems",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "35514ef9bfe32656e72c131280f60c37138f146f14baacf4a94d7153cc1bba4c"
+    },
+    {
+      "page": "01_overview",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "39773f97a2c31c8d893d14d3ae955dbb9ae394b289ddfcc9a18cd7495b86c614"
+    },
+    {
+      "page": "02_download",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "5718d4c86dba6b601e5833d237a9a5265aca4058864681c875fbb374e74581b5"
+    },
+    {
+      "page": "03_groundwater",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "ea89ba3e1109c9f62fe7ed24156f3728dbcb0733d0a8de983c712b2c8d02e47d"
+    },
+    {
+      "page": "04_geomagnetic",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "208bde7cd706001dc37646ac4bec75322d2604c60d980c7bc35636eeebfb24b5"
+    },
+    {
+      "page": "05_seismic",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "3fa85229385e27113f518c966a0f4231064f4e96497cf9456ac5da6faa3b0d3c"
+    },
+    {
+      "page": "06_gnss",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "76a7623f9c5d4b0e67ff3cd71f0b66621b8636ea88193e0cfdf35a2c0c07b161"
+    },
+    {
+      "page": "07_case_hualien2024",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "d7577ac1e887efdabd0adecbec94205cb42f3db3c1815fc85997f53aa8550635"
+    },
+    {
+      "page": "08_explore_ideas",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "92edc01479b534650335eb6978608656c37ac1ac8732bc2b3ae41d340b34141e"
+    },
+    {
+      "page": "23_taiwan_outlook",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8d51a25f707ee3b7ef93b4008238a8c448ef4aa0dd521c5199220a17a2a46b71"
+    },
+    {
+      "page": "appendix_a_point_process",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "a067bc000c7b57c978be98127b89bfade8f7d514d613983e3af14ac2cdaa58dd"
+    },
+    {
+      "page": "appendix_b_catalog",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8d78ceafec8620dbe971d659708cfbb98eed67d92192e05d6b9d69c441a7005a"
+    },
+    {
+      "page": "appendix_c_etas",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "7a3a230dee95a5d3c1f096184d9afcee97dd8001314b224fcd2ba03102abfbc7"
+    },
+    {
+      "page": "appendix_d_eepas",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8e2a380fed6cc855cf719b6abe9c8dc449b30e624f78561ad7723654b4f4ae5f"
+    },
+    {
+      "page": "appendix_e_testing",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "39c4078d92ea82a029757fdfd15439202e90e68907cef948bcf4028d71d48be9"
+    },
+    {
+      "page": "appendix_f_hazard",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "6097c7a3cc915657aa4677e67ed76ca42f3356a7abdc9b5af3941a5fbd9cf518"
+    },
+    {
+      "page": "appendix_g_observations",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "b6ec398ef0955ddb6698c347d670de66aa55107b4b9718857589d9d7eee4f7f8"
+    }
+  ]
+}
