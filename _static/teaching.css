@@ -1,0 +1,21 @@
+/* Keep scientific axes, legends and annotations readable on narrow screens.
+   Overflow belongs to the individual figure, never the reading column. */
+@media (max-width: 600px) {
+  .cell_output:has(.js-plotly-plot) {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+  .cell_output:has(.js-plotly-plot)::before {
+    content: "圖表可左右滑動";
+    display: block;
+    position: sticky;
+    left: 0;
+    color: var(--pst-color-text-muted);
+    font-size: 0.8rem;
+    margin: 0.35rem 0 0.5rem;
+  }
+  .cell_output .js-plotly-plot {
+    min-width: 760px;
+  }
+}

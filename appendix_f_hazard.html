@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>附錄 F：複發時間與地震危害積分 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_f_hazard';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="附錄 G：觀測資料、處理與幾何細節" href="appendix_g_observations.html" />
+    <link rel="prev" title="附錄 E：預報檢驗與模型組合的推導" href="appendix_e_testing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從模型到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/appendix_f_hazard.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>附錄 F：複發時間與地震危害積分</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-1">F.1 存活函數、危害率與右設限</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-2-weibull">F.2 Weibull 與對數常態</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-3-bpt">F.3 BPT 的首達時間</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-4">F.4 截斷規模分布與事件率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-5">F.5 全機率積分與反聚合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-6-poisson">F.6 何時可以用 Poisson 零事件公式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="f">
+<h1>附錄 F：複發時間與地震危害積分<a class="headerlink" href="#f" title="Link to this heading">#</a></h1>
+<p>本附錄需要條件機率、積分與基本隨機過程。對應 <a class="reference internal" href="20_recurrence_models.html"><span class="doc">複發模型</span></a>與 <a class="reference internal" href="21_psha.html"><span class="doc">PSHA</span></a>；先掌握主文的圖與問題，再依需要閱讀推導。</p>
+<section id="f-1">
+<h2>F.1 存活函數、危害率與右設限<a class="headerlink" href="#f-1" title="Link to this heading">#</a></h2>
+<p>由 <span class="math notranslate nohighlight">\(S=1-F\)</span>、<span class="math notranslate nohighlight">\(S'=-f\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[h(t)=\frac{f(t)}{S(t)}=-\frac{d}{dt}\ln S(t),\qquad
+S(t)=\exp\left[-\int_0^th(u)\,du\right].\]</div>
+<p>所以已經等待 <span class="math notranslate nohighlight">\(T\)</span> 後的下一次事件機率為</p>
+<div class="math notranslate nohighlight">
+\[1-\frac{S(T+\Delta)}{S(T)}
+=1-\exp\left[-\int_T^{T+\Delta}h(u)\,du\right].\]</div>
+<p>這是一次間隔的條件存活關係，不要求整段更新過程具有獨立增量。事件發生後年齡會重設，不能繼續沿原來的 <span class="math notranslate nohighlight">\(h(u)\)</span> 來描述第二次破裂。</p>
+<p>若觀測從一次已知事件開始，完整間隔為 <span class="math notranslate nohighlight">\(x_1,\ldots,x_n\)</span>，末端還等待了 <span class="math notranslate nohighlight">\(c\)</span> 而沒有事件，概似為</p>
+<div class="math notranslate nohighlight">
+\[L(\theta)=\prod_{i=1}^nf_\theta(x_i)\,S_\theta(c).\]</div>
+<p>最後一項是右設限資訊。若一開始已知年齡為 <span class="math notranslate nohighlight">\(a\)</span>，第一個等待 <span class="math notranslate nohighlight">\(u\)</span> 的密度為 <span class="math notranslate nohighlight">\(f(a+u)/S(a)\)</span>；若年齡未知，就需要另外指定抽樣或先驗條件。平穩更新過程在任意時刻看到的剩餘等待，通常不等於原始間隔分布，這是長間隔較容易被抽到的結果。</p>
+</section>
+<section id="f-2-weibull">
+<h2>F.2 Weibull 與對數常態<a class="headerlink" href="#f-2-weibull" title="Link to this heading">#</a></h2>
+<p>Weibull 尺度 <span class="math notranslate nohighlight">\(\theta&gt;0\)</span>、形狀 <span class="math notranslate nohighlight">\(k&gt;0\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[F(t)=1-e^{-(t/\theta)^k},\quad
+h(t)=\frac{k}{\theta}(t/\theta)^{k-1},\quad
+\mathbb E[T]=\theta\Gamma(1+1/k).\]</div>
+<p>由換元 <span class="math notranslate nohighlight">\(u=(t/\theta)^k\)</span> 可得 <span class="math notranslate nohighlight">\(\mathbb E[T^r]=\theta^r\Gamma(1+r/k)\)</span>，因此</p>
+<div class="math notranslate nohighlight">
+\[c_v^2=\frac{\Gamma(1+2/k)}{\Gamma(1+1/k)^2}-1.\]</div>
+<p>對數常態若 <span class="math notranslate nohighlight">\(\ln T\sim N(\mu,\sigma^2)\)</span>，則 <span class="math notranslate nohighlight">\(\mathbb E[T]=e^{\mu+\sigma^2/2}\)</span>、<span class="math notranslate nohighlight">\(c_v^2=e^{\sigma^2}-1\)</span>。已知平均 <span class="math notranslate nohighlight">\(T_r\)</span> 和 <span class="math notranslate nohighlight">\(c_v\)</span> 時，<span class="math notranslate nohighlight">\(\sigma^2=\ln(1+c_v^2)\)</span>、<span class="math notranslate nohighlight">\(\mu=\ln T_r-\sigma^2/2\)</span>。</p>
+<p>其危害函數是 <span class="math notranslate nohighlight">\(\phi(z)/[t\sigma\bar\Phi(z)]\)</span>，<span class="math notranslate nohighlight">\(z=(\ln t-\mu)/\sigma\)</span>。由 Mills 比 <span class="math notranslate nohighlight">\(\phi(z)/\bar\Phi(z)\sim z\)</span>，長時間 <span class="math notranslate nohighlight">\(h(t)\sim(\ln t-\mu)/(\sigma^2t)\to0\)</span>。這是尾部條件化的結果，不是已觀測到的斷層卸載機制。</p>
+</section>
+<section id="f-3-bpt">
+<h2>F.3 BPT 的首達時間<a class="headerlink" href="#f-3-bpt" title="Link to this heading">#</a></h2>
+<p>令載入 <span class="math notranslate nohighlight">\(X(t)=\rho t+\sigma W_t\)</span>，<span class="math notranslate nohighlight">\(X(0)=0\)</span>，門檻 <span class="math notranslate nohighlight">\(a&gt;0\)</span>，<span class="math notranslate nohighlight">\(\rho,\sigma&gt;0\)</span>；首次到達時間 <span class="math notranslate nohighlight">\(\tau=\inf\{t:X(t)=a\}\)</span>。無漂移情形，由反射原理</p>
+<div class="math notranslate nohighlight">
+\[P(\tau\le t)=2\left[1-\Phi\left(\frac{a}{\sigma\sqrt t}\right)\right],\]</div>
+<p>微分得到 <span class="math notranslate nohighlight">\(f_0(t)=a(\sigma\sqrt{2\pi t^3})^{-1}e^{-a^2/(2\sigma^2t)}\)</span>。</p>
+<p>加入常漂移時，對已在 <span class="math notranslate nohighlight">\(t\)</span> 首次碰到 <span class="math notranslate nohighlight">\(a\)</span> 的路徑，漂移改變測度的因子為 <span class="math notranslate nohighlight">\(e^{\rho a/\sigma^2-\rho^2t/(2\sigma^2)}\)</span>。這一步使用布朗運動的指數鞅；乘回並配方得</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f(t)&amp;=\frac{a}{\sigma\sqrt{2\pi t^3}}
+\exp\left[-\frac{a^2-2\rho at+\rho^2t^2}{2\sigma^2t}\right]\\
+&amp;=\frac{a}{\sigma\sqrt{2\pi t^3}}
+\exp\left[-\frac{(a-\rho t)^2}{2\sigma^2t}\right].
+\end{aligned}\end{split}\]</div>
+<p>其 Laplace 變換為</p>
+<div class="math notranslate nohighlight">
+\[\mathbb E[e^{-s\tau}]=\exp\left[\frac{a}{\sigma^2}
+\left(\rho-\sqrt{\rho^2+2\sigma^2s}\right)\right].\]</div>
+<p>在 <span class="math notranslate nohighlight">\(s=0\)</span> 微分得 <span class="math notranslate nohighlight">\(\mathbb E[\tau]=a/\rho\)</span>、<span class="math notranslate nohighlight">\(\mathrm{Var}(\tau)=a\sigma^2/\rho^3\)</span>。設 <span class="math notranslate nohighlight">\(T_r=a/\rho\)</span>、<span class="math notranslate nohighlight">\(c_v^2=\sigma^2/(a\rho)\)</span>，即得到主文 <a class="reference internal" href="20_recurrence_models.html#equation-eq-bpt-pdf">(21)</a>。</p>
+<p>常用 inverse Gaussian 形狀尺度參數為平均 <span class="math notranslate nohighlight">\(T_r\)</span>、形狀 <span class="math notranslate nohighlight">\(T_r/c_v^2\)</span>。SciPy 的 <code class="docutils literal notranslate"><span class="pre">invgauss(mu,</span> <span class="pre">scale)</span></code> 則用 <code class="docutils literal notranslate"><span class="pre">mu=c_v**2</span></code>、<code class="docutils literal notranslate"><span class="pre">scale=T_r/c_v**2</span></code>；這是參數化對照，不代表名稱相同的參數可跨軟體直接複製。</p>
+<p>由密度可寫 <span class="math notranslate nohighlight">\(\ln f(t)=\mathrm{const}-(3/2)\ln t-t/(2c_v^2T_r)-T_r/(2c_v^2t)\)</span>。尾部 <span class="math notranslate nohighlight">\(S(t)\sim2c_v^2T_rf(t)\)</span>，故</p>
+<div class="math notranslate nohighlight">
+\[\lim_{t\to\infty}h(t)=\frac1{2c_v^2T_r}.\]</div>
+<p>離散步長模擬布朗路徑可能錯過步間首達，須做步長收斂或使用適當橋接修正；主文路徑圖僅提供直覺。</p>
+</section>
+<section id="f-4">
+<h2>F.4 截斷規模分布與事件率<a class="headerlink" href="#f-4" title="Link to this heading">#</a></h2>
+<p>令 <span class="math notranslate nohighlight">\(d=m_{\max}-m_{\min}&gt;0\)</span>，積分 <span class="math notranslate nohighlight">\(e^{-\beta(m-m_{\min})}\)</span> 後正規化，即得 <a class="reference internal" href="21_psha.html#equation-eq-trunc-gr">(23)</a>。其累積分布為</p>
+<div class="math notranslate nohighlight">
+\[F_M(m)=\frac{1-e^{-\beta(m-m_{\min})}}{1-e^{-\beta d}}.\]</div>
+<p>取 <span class="math notranslate nohighlight">\(U\sim\mathrm{Unif}(0,1)\)</span>，反解得</p>
+<div class="math notranslate nohighlight">
+\[M=m_{\min}-\beta^{-1}\ln[1-U(1-e^{-\beta d})].\]</div>
+<p>分部積分可得</p>
+<div class="math notranslate nohighlight">
+\[\mathbb E[M]=m_{\min}+\frac1\beta-\frac{d}{e^{\beta d}-1}.\]</div>
+<p><span class="math notranslate nohighlight">\(d\to\infty\)</span> 時回到 <span class="math notranslate nohighlight">\(m_{\min}+1/\beta\)</span>。如果原發生率是門檻 <span class="math notranslate nohighlight">\(m_a\)</span> 以上事件的年率 <span class="math notranslate nohighlight">\(\nu_a\)</span>，改成較高門檻 <span class="math notranslate nohighlight">\(m_b\)</span> 時，應乘以原分布的 <span class="math notranslate nohighlight">\(P(M\ge m_b)\)</span>；不能只重設密度而保持率不變。</p>
+</section>
+<section id="f-5">
+<h2>F.5 全機率積分與反聚合<a class="headerlink" href="#f-5" title="Link to this heading">#</a></h2>
+<p>給定震源 <span class="math notranslate nohighlight">\(s\)</span> 的規模距離聯合密度 <span class="math notranslate nohighlight">\(f_{M,R\mid s}\)</span>，一次事件超越門檻機率為</p>
+<div class="math notranslate nohighlight">
+\[q_s(x)=\int\!\!\int P(IM&gt;x\mid m,r,s)f_{M,R\mid s}(m,r)\,dm\,dr.\]</div>
+<p>乘年率並加總即為 <a class="reference internal" href="21_psha.html#equation-eq-psha">(22)</a>。對數常態地動假設下，可再展開標準化殘差 <span class="math notranslate nohighlight">\(\varepsilon\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{IM}(x)=\sum_s\nu_s\int\!\!\int\!\!\int_{\varepsilon_0(x,m,r,s)}^\infty
+\phi(e)f_{M,R\mid s}(m,r)\,de\,dm\,dr,\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\varepsilon_0=(\ln x-\mu_{\ln IM})/\sigma_{\ln IM}\)</span>。規模距離若相依，保留聯合密度；若截斷殘差分布，須對其重新正規化。</p>
+<p>令 <span class="math notranslate nohighlight">\(c_{jk}(x)\)</span> 是規模距離格對此積分的非負貢獻。若 <span class="math notranslate nohighlight">\(\lambda_{IM}(x)&gt;0\)</span>，反聚合權重 <span class="math notranslate nohighlight">\(w_{jk}=c_{jk}/\lambda_{IM}(x)\)</span> 相加為一。它給超越事件的相對來源，不是未來第一場地震的預報。</p>
+</section>
+<section id="f-6-poisson">
+<h2>F.6 何時可以用 Poisson 零事件公式<a class="headerlink" href="#f-6-poisson" title="Link to this heading">#</a></h2>
+<p>假設源事件為 Poisson，且給定事件標記後，各次是否超越門檻依指定獨立標記機制產生。獨立 thinning 使超越事件也是 Poisson；多個獨立 Poisson 震源相加仍為 Poisson。</p>
+<p>如果超越率為確定函數 <span class="math notranslate nohighlight">\(\nu_x(t)\)</span>，將時間切成小段，各段零事件機率為 <span class="math notranslate nohighlight">\(1-\nu_x(t_i)\Delta t+o(\Delta t)\)</span>。由獨立增量相乘、取對數並令步長趨零，</p>
+<div class="math notranslate nohighlight">
+\[P(N_x(T)=0)=\exp\left[-\int_0^T\nu_x(t)\,dt\right],\]</div>
+<p>即主文 <a class="reference internal" href="21_psha.html#equation-eq-nhpp">(25)</a>。對固定率，回歸期是 <span class="math notranslate nohighlight">\(1/\nu_x\)</span>，仍不表示等間隔。</p>
+<p>若強度為外生隨機過程且條件下為 Poisson（Cox），則是 <span class="math notranslate nohighlight">\(P(N=0)=\mathbb E[e^{-A}]\)</span>，<span class="math notranslate nohighlight">\(A=\int\nu_x(t)dt\)</span>，而不是 <span class="math notranslate nohighlight">\(e^{-\mathbb E[A]}\)</span>。例如等機率選 <span class="math notranslate nohighlight">\(A=0\)</span> 或 <span class="math notranslate nohighlight">\(2\)</span>，均值同為一，零事件機率卻是 <span class="math notranslate nohighlight">\((1+e^{-2})/2\)</span>，不等於 <span class="math notranslate nohighlight">\(e^{-1}\)</span>。</p>
+<p>ETAS 的強度由事件本身改變，不能直接當成外生 Cox 路徑使用這個條件混合公式。發布時應傳遞所有未來歷史，透過相應點過程方法或完整模擬求至少一次超越；若每條模擬還生成地動，須保留模型要求的標記相依性。</p>
+<p>更新過程的下一次破裂可用 F.1 的條件存活公式，但某次未超越地動門檻的破裂仍會重設斷層年齡。故不能直接把更新 hazard 乘超越比例，再不加說明地套非齊次 Poisson 公式。</p>
+</section>
+<section id="id1">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://itl.nist.gov/div898/handbook/eda/section3/eda362.htm">Related Distributions：Hazard Function 與 Survival Function</a> — NIST／SEMATECH，<em>e-Handbook of Statistical Methods</em>（免費）。先看機率密度、存活函數與危害函數的關係，釐清本章「已經等到現在，再發生的瞬時率」與一般發生機率的差別。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1785/0120010267">A Brownian model for recurrent earthquakes</a> — Mark V. Matthews、William L. Ellsworth、Paul A. Reasenberg（2002），<em>Bulletin of the Seismological Society of America</em>（全文可能需訂閱；<a class="reference external" href="https://pubs.usgs.gov/publication/70024443">USGS 免費摘要</a>）。BPT 複發模型的核心論文，從帶有布朗擾動的載入過程推到首達時間，銜接本章的物理直覺與長時間危害率。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1007/s11600-019-00284-4">Modeling the earthquake occurrence with time-dependent processes: a brief review</a> — Ourania Mangira、Christos Kourouklas、Dimitris Chorozoglou、Aggelos Iliopoulos、Eleftheria Papadimitriou（2019），<em>Acta Geophysica</em>（全文可能需訂閱）。將本章的更新過程、複發分布與應力釋放放回時間相依模型的全貌，閱讀時比較各模型適用的時間尺度、資料與假設。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1007/b97277">An Introduction to the Theory of Point Processes, Volume I: Elementary Theory and Methods, 2nd ed.</a> — D. J. Daley、D. Vere-Jones（2003），Springer（全文可能需訂閱）。第 2 章建立 Poisson 過程，第 4 章說明更新過程與等待時間，第 6–7 章連結群集、條件強度、概似與補償子；可按本章主題選讀。</p></li>
+<li><p><a class="reference external" href="https://scits.stanford.edu/sites/g/files/sbiybj22081/files/media/file/baker_2013_intro_psha_v2_0.pdf">Introduction to Probabilistic Seismic Hazard Analysis</a> — Jack W. Baker（2013），White Paper Version 2.0（免費教材）。本章 PSHA 推導的入門來源，依五個步驟走過震源、規模、距離、地動與積分；接著讀反聚合及回歸期，理解危害曲線背後有哪些事件在貢獻。</p></li>
+<li><p><a class="reference external" href="https://tem.tw/TEM2020/portfolio-overview.html">TEM 計畫概要與研究成果</a> — Taiwan Earthquake Model 計畫團隊，TEM2020 專頁（免費）。先看孕震構造、測地資料與危害度評估如何分工，再循頁面列出的論文了解臺灣模型的輸入來源。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1177/8755293020951587">Probabilistic seismic hazard assessment for Taiwan: TEM PSHA2020</a> — Chung-Han Chan 等（2020），<em>Earthquake Spectra</em>（出版社全文可能需訂閱；<a class="reference external" href="https://www.gep.ncu.edu.tw/storage/thesis/2020/2020%20Chung-Han%20Chan_ES2.pdf">中央大學免費全文</a>）。本章臺灣案例的正式文獻，說明孕震構造、地震目錄、地動預估式與場址效應如何納入 PSHA；可對照教材檢查每一類不確定性出現在哪一步。</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_e_testing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">附錄 E：預報檢驗與模型組合的推導</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix_g_observations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">附錄 G：觀測資料、處理與幾何細節</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-1">F.1 存活函數、危害率與右設限</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-2-weibull">F.2 Weibull 與對數常態</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-3-bpt">F.3 BPT 的首達時間</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-4">F.4 截斷規模分布與事件率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-5">F.5 全機率積分與反聚合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-6-poisson">F.6 何時可以用 Poisson 零事件公式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. 資料下載機制 &#8212; 台灣地球物理觀測資料探索</title>
+    <title>19. 資料產品與品質：取得資料之前先定義問題 &#8212; 地震統計與預報：從模型到台灣觀測</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -50,22 +51,20 @@
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '02_download';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. 地下水位觀測" href="03_groundwater.html" />
-    <link rel="prev" title="1. 台灣地球物理觀測總覽" href="01_overview.html" />
+    <link rel="next" title="20. 地下水位：含水層如何回應外界擾動" href="03_groundwater.html" />
+    <link rel="prev" title="18. 臺灣地球物理觀測總覽" href="01_overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -193,7 +192,7 @@
   
   
   
-    <p class="title logo__title">台灣地球物理觀測資料探索</p>
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -209,38 +208,51 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="00_intro.html">
-                    台灣地球物理觀測資料探索
+                    地震統計與預報：從模型到臺灣觀測
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地球物理觀測資料探索</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">1. 台灣地球物理觀測總覽</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. 資料下載機制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">3. 地下水位觀測</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">4. 地磁觀測</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">5. 地動觀測：波形與地震目錄</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">6. GNSS 地殼變形觀測</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">7. 案例分析：2024/4/3 花蓮地震 M7.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">8. 怎麼嚴謹地問「這和地震有關嗎？」</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：地震預報模型</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">9. 地震預報的問題設定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">10. 點過程：預報模型的共同語言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">11. 目錄統計 I：完整度與規模分布</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">12. 目錄統計 II：叢集的經驗律與除叢</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">13. ETAS I：條件強度、分支過程與模擬</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">14. ETAS II：估計、診斷、變體與作業引擎</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">15. Ψ：前兆尺度增加的解剖</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">16. EEPAS 與 PPE：把 Ψ 變成可運轉的預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">17. 預報檢驗 I：似然與一致性檢驗</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">18. 預報檢驗 II：比較、警報、功效與價值</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 模型組合：加法、乘法與權重學習</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">20. 時間相依複發模型：Weibull、BPT 與應力釋放</a></li>
-<li class="toctree-l1"><a class="reference internal" href="21_psha.html">21. PSHA：從發生率到地動危害</a></li>
-<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">22. 作業化系統：STEP、OEF 與機率溝通</a></li>
-<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">23. 台灣：資料、模型、缺口與下一步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">19. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
 </ul>
 
     </div>
@@ -376,7 +388,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>2. 資料下載機制</h1>
+    <h1>19. 資料產品與品質：取得資料之前先定義問題</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,16 +398,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gdms">2.1 GDMS 的下載流程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gdms-toolkit">2.2 用 gdms_toolkit 自動化</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">申請資料</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">查看下載清單</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.3 各類資料的檔案格式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.4 疑難排解</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.5 看懂波形頻道代碼</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">19.1 原始觀測、處理成果與衍生指標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">19.2 觀測視窗要包含背景</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">19.3 缺測、延遲與「沒有事件」</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">19.4 檔案格式背後的物理量</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">19.5 時間和頻道也是資料</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">19.6 從官方入口走到可引用的資料</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
 </ul>
             </nav>
         </div>
@@ -408,357 +417,139 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>2. 資料下載機制<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>本章說明 GDMS 的資料取得流程，以及本專案 <code class="docutils literal notranslate"><span class="pre">gdms_toolkit</span></code> 如何把整個流程
-自動化成幾行 Python。</p>
-<section id="gdms">
-<h2>2.1 GDMS 的下載流程<a class="headerlink" href="#gdms" title="Link to this heading">#</a></h2>
-<p>GDMS（<a class="reference external" href="https://gdms.cwa.gov.tw/">https://gdms.cwa.gov.tw/</a>）的資料下載採<strong>會員制＋非同步打包</strong>：</p>
-<blockquote>
-<div><p>免費註冊會員 → 登入 → 填下載表單（測網／測站／時間範圍）
-→ 系統背景打包（數分鐘） → 會員下載清單取得檔案</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><p><strong>註冊</strong>：首頁「登入」→「註冊成為會員」，填 Email 即可，免費。</p></li>
-<li><p><strong>填表單</strong>：「資料下載」頁依資料類型（地震波形／地球物理）填
-測網、測站、時間範圍送出。</p></li>
-<li><p><strong>取件</strong>：系統打包完成後，到「會員專區 → 下載清單」下載壓縮檔。</p></li>
-</ol>
-</section>
-<section id="gdms-toolkit">
-<h2>2.2 用 gdms_toolkit 自動化<a class="headerlink" href="#gdms-toolkit" title="Link to this heading">#</a></h2>
-<p>手動點網頁適合下載一兩筆；要系統性研究就需要程式化。<code class="docutils literal notranslate"><span class="pre">gdms_toolkit</span></code>
-模擬上述流程：</p>
+<h1>19. 資料產品與品質：取得資料之前先定義問題<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>上一章把測站放回地圖，這一章把每一筆資料放回產生它的流程。假設我們要問
+「花蓮地震後，某口井是否留下持續的水位偏移？」只靠地震清單不夠，還需要
+水位連續序列，以及可以解釋背景變化的氣壓、降雨和井的紀錄。若問
+「餘震發生率是否下降」，事件目錄才是主要材料。</p>
+<p>這個選擇會決定後面能做的推論。原始波形保留短時間震動的細節；事件目錄
+將多站波形整理成時間、位置與規模，便於統計，但不再保留所有訊號。GNSS
+原始觀測則還沒有直接給出位移。讀懂資料產品，是把物理問題翻譯成統計問題
+的第一步。</p>
+<section id="id2">
+<h2>19.1 原始觀測、處理成果與衍生指標<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>函式</p></th>
-<th class="head"><p>做什麼</p></th>
+<tr class="row-odd"><th class="head"><p>想回答的問題</p></th>
+<th class="head"><p>主要產品</p></th>
+<th class="head"><p>還需要的資訊</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GDMSSession()</span></code></p></td>
-<td><p>登入（帳密讀 <code class="docutils literal notranslate"><span class="pre">.env</span></code>）</p></td>
+<tr class="row-even"><td><p>震波何時到站</p></td>
+<td><p>波形</p></td>
+<td><p>時鐘、頻道、儀器響應</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">request_geophysical()</span></code></p></td>
-<td><p>申請地下水／地磁／GNSS 資料</p></td>
+<tr class="row-odd"><td><p>某區有多少地震</p></td>
+<td><p>事件目錄</p></td>
+<td><p>規模尺度、完整度、資料版本</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">request_waveform()</span></code></p></td>
-<td><p>申請連續地震波形（需指定頻道）</p></td>
+<tr class="row-even"><td><p>井水位是否偏移</p></td>
+<td><p>水位序列</p></td>
+<td><p>氣壓、水文背景及井的紀錄</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">list_my_downloads()</span></code></p></td>
-<td><p>查看打包狀態與下載連結</p></td>
+<tr class="row-odd"><td><p>地磁變化是否局部</p></td>
+<td><p>多站地磁</p></td>
+<td><p>頻帶、太空天氣、參考站品質</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fetch_download()</span></code> / <code class="docutils literal notranslate"><span class="pre">wait_and_fetch()</span></code></p></td>
-<td><p>下載到 <code class="docutils literal notranslate"><span class="pre">data/cache/</span></code>（自動快取）</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gdms_earthquake_catalog()</span></code></p></td>
-<td><p>直接取得地震目錄（DataFrame）</p></td>
+<tr class="row-even"><td><p>測站是否移動</p></td>
+<td><p>已解算座標序列</p></td>
+<td><p>參考框架、誤差及裝置變更</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>先建立登入 session（請先把 <code class="docutils literal notranslate"><span class="pre">.env.example</span></code> 複製成 <code class="docutils literal notranslate"><span class="pre">.env</span></code> 並填入帳密）：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gdms_toolkit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gt</span>
-
-<span class="n">gdms</span> <span class="o">=</span> <span class="n">gt</span><span class="o">.</span><span class="n">GDMSSession</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;登入成功！&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>登入成功！
-</pre></div>
-</div>
-</div>
-</div>
-<section id="id2">
-<h3>申請資料<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>下面示範本書各章使用的資料申請。<strong>注意</strong>：同樣的資料只需申請一次，
-這裡用「快取檔案不存在才申請」的寫法，避免重複打擾伺服器。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gdms_toolkit.download</span><span class="w"> </span><span class="kn">import</span> <span class="n">CACHE_DIR</span>
-
-<span class="n">requests_needed</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1"># label（也是檔名）: (函式, 參數)</span>
-    <span class="s2">&quot;edu-gw-hualien2024&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="s2">&quot;GW&quot;</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="s2">&quot;HWA,CHI,LIU,NAB,TUN,DON&quot;</span><span class="p">,</span>
-        <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-03-01&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2024-05-01&quot;</span><span class="p">),</span>
-    <span class="s2">&quot;edu-mag-hualien2024&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="s2">&quot;MAGNET&quot;</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="s2">&quot;HLN,XCG,YLI&quot;</span><span class="p">,</span>
-        <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-03-25&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2024-04-10&quot;</span><span class="p">),</span>   <span class="c1"># HLN/YLI 該期間無資料，僅回傳 XCG</span>
-    <span class="s2">&quot;edu-mag-csg&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="s2">&quot;MAGNET&quot;</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="s2">&quot;CSG&quot;</span><span class="p">,</span>
-        <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-03-25&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2024-04-10&quot;</span><span class="p">),</span>
-    <span class="s2">&quot;edu-mag-ttn&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="s2">&quot;MAGNET&quot;</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="s2">&quot;TTN&quot;</span><span class="p">,</span>
-        <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-03-25&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2024-04-10&quot;</span><span class="p">),</span>
-    <span class="s2">&quot;edu-gnss-hualien2024&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="s2">&quot;GNSS&quot;</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="s2">&quot;HUAL,SHUL&quot;</span><span class="p">,</span>
-        <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-03-30&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2024-04-05&quot;</span><span class="p">),</span>
-    <span class="s2">&quot;edu-wave-hualien2024&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;wave&quot;</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="s2">&quot;CWASN&quot;</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="s2">&quot;HWA,ESL&quot;</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="s2">&quot;HH?&quot;</span><span class="p">,</span>
-        <span class="n">start</span><span class="o">=</span><span class="s2">&quot;2024-04-02T23:30:00&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2024-04-03T00:30:00&quot;</span><span class="p">),</span>
-<span class="p">}</span>
-
-<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">requests_needed</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">cached</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">CACHE_DIR</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">.*&quot;</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">cached</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✓ </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> 已在快取：</span><span class="si">{</span><span class="n">cached</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">continue</span>
-    <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;kind&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;geo&quot;</span><span class="p">:</span>
-        <span class="n">gt</span><span class="o">.</span><span class="n">request_geophysical</span><span class="p">(</span><span class="n">gdms</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;network&quot;</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;station&quot;</span><span class="p">],</span>
-                               <span class="n">p</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">gt</span><span class="o">.</span><span class="n">request_waveform</span><span class="p">(</span><span class="n">gdms</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;network&quot;</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;station&quot;</span><span class="p">],</span>
-                            <span class="n">p</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">],</span> <span class="n">channel</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="s2">&quot;channel&quot;</span><span class="p">],</span>
-                            <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-    <span class="n">gt</span><span class="o">.</span><span class="n">wait_and_fetch</span><span class="p">(</span><span class="n">gdms</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✓ edu-gw-hualien2024 已在快取：edu-gw-hualien2024.tgz
-✓ edu-mag-hualien2024 已在快取：edu-mag-hualien2024.tgz
-✓ edu-mag-csg 已在快取：edu-mag-csg.tgz
-✓ edu-mag-ttn 已在快取：edu-mag-ttn.tgz
-✓ edu-gnss-hualien2024 已在快取：edu-gnss-hualien2024.tgz
-✓ edu-wave-hualien2024 已在快取：edu-wave-hualien2024.mseed
-</pre></div>
-</div>
-</div>
-</div>
+<p>連續序列和事件目錄也可以互相檢查。目錄突然變少時，波形或資料可用率能
+幫助分辨「真的較安靜」與「當時比較難偵測」。本章原始檔保留取得教材資料
+的程式；主文聚焦資料的意思，介面與重現細節見<a class="reference internal" href="appendix_g_observations.html"><span class="doc">附錄 G</span></a>。</p>
 </section>
 <section id="id3">
-<h3>查看下載清單<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="n">dl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">gt</span><span class="o">.</span><span class="n">list_my_downloads</span><span class="p">(</span><span class="n">gdms</span><span class="p">))</span>
-<span class="n">dl</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="s2">&quot;requested_at&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>type</th>
-      <th>label</th>
-      <th>requested_at</th>
-      <th>status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>181698</td>
-      <td>地磁</td>
-      <td>edu-mag-ttn</td>
-      <td>2026-07-22 15:55:22</td>
-      <td>unavailable</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>181697</td>
-      <td>地磁</td>
-      <td>edu-mag-csg</td>
-      <td>2026-07-22 15:55:12</td>
-      <td>unavailable</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>181696</td>
-      <td>地磁</td>
-      <td>edu-mag-yli</td>
-      <td>2026-07-22 15:49:10</td>
-      <td>error</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>181695</td>
-      <td>地磁</td>
-      <td>edu-mag-hln</td>
-      <td>2026-07-22 15:48:54</td>
-      <td>error</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>181694</td>
-      <td>地震 (資料)</td>
-      <td>edu-wave-hualien2024</td>
-      <td>2026-07-22 15:43:34</td>
-      <td>unavailable</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>181693</td>
-      <td>GNSS</td>
-      <td>edu-gnss-hualien2024</td>
-      <td>2026-07-22 15:42:45</td>
-      <td>unavailable</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>181692</td>
-      <td>地磁</td>
-      <td>edu-mag-hualien2024</td>
-      <td>2026-07-22 15:42:23</td>
-      <td>unavailable</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>181691</td>
-      <td>地下水</td>
-      <td>edu-gw-hualien2024</td>
-      <td>2026-07-22 15:42:14</td>
-      <td>unavailable</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
+<h2>19.2 觀測視窗要包含背景<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>只下載紅線附近的幾分鐘，很容易失去判斷異常的基準。檢查同震振盪需要
+高頻資料；估計日變化需要完整的日夜；比較季節或長期趨勢則需要更長紀錄。
+資料範圍影響檔案大小，也決定我們能否檢查其他可能的解釋。</p>
+<p>本書以 2024 花蓮事件為共同案例，保留地下水、地磁、波形及 GNSS 的資料
+產品。各產品的時間範圍並不完全相同，讀圖時須以圖上日期與原始 metadata
+為準。把不同產品放上共同時間軸，只能比較它們真正重疊的部分。</p>
 </section>
 <section id="id4">
-<h2>2.3 各類資料的檔案格式<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>19.3 缺測、延遲與「沒有事件」<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>資料未到站、尚未釋出和感測器記為缺值，都是觀測流程的狀態；它們與
+「儀器有正常記錄，而且沒有看到訊號」不同。事件目錄中沒有事件，也不能
+單靠空白判定當地完全安靜，還要問那個時段的偵測能力。</p>
+<p>對連續資料，應保留時間戳、缺值位置與原始品質標記。內插可以協助畫圖，
+卻不是補回一次真實觀測。若缺口剛好跨過主震，內插甚至可能畫出平滑曲線，
+使本來未知的同震反應看起來像沒有變化。</p>
+</section>
+<section id="id5">
+<h2>19.4 檔案格式背後的物理量<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>以下是本書快取資料採用的格式。格式名稱說明資料如何儲存，不保證內容已
+校正，也不保證每個欄位都有有效資料。</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>資料</p></th>
-<th class="head"><p>打包格式</p></th>
-<th class="head"><p>內容</p></th>
-<th class="head"><p>讀取工具</p></th>
+<th class="head"><p>本書使用的格式</p></th>
+<th class="head"><p>解讀上的關鍵</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>地下水</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">.tgz</span></code></p></td>
-<td><p>每日一個 CSV（<code class="docutils literal notranslate"><span class="pre">YYYYMMDD.站碼</span></code>），1 秒取樣</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">gt.read_groundwater()</span></code></p></td>
+<td><p>打包的每日 CSV</p></td>
+<td><p>水位、氣壓與水溫分別檢查</p></td>
 </tr>
 <tr class="row-odd"><td><p>地磁</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">.tgz</span></code></p></td>
-<td><p>IAGA-2002 秒資料（<code class="docutils literal notranslate"><span class="pre">站碼YYYYMMDDdsec.sec</span></code>）</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">gt.read_geomagnetic()</span></code></p></td>
+<td><p>IAGA-2002</p></td>
+<td><p>分量方向、缺值旗標及取樣間隔</p></td>
 </tr>
 <tr class="row-even"><td><p>GNSS</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">.tgz</span></code></p></td>
-<td><p>RINEX 觀測檔（<code class="docutils literal notranslate"><span class="pre">站碼DDD0.YYo.gz</span></code>）</p></td>
-<td><p>第 6 章</p></td>
+<td><p>RINEX</p></td>
+<td><p>偽距與載波相位，需解算才能得到座標</p></td>
 </tr>
-<tr class="row-odd"><td><p>波形</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">.mseed</span></code></p></td>
-<td><p>miniSEED 連續波形</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">gt.read_waveform()</span></code>（ObsPy）</p></td>
+<tr class="row-odd"><td><p>地震波形</p></td>
+<td><p>miniSEED</p></td>
+<td><p>儀器響應另查，counts 不等於物理單位</p></td>
 </tr>
 <tr class="row-even"><td><p>地震目錄</p></td>
-<td><p>JSON</p></td>
-<td><p>事件參數＋定位品質</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">gt.gdms_earthquake_catalog()</span></code></p></td>
+<td><p>事件參數列</p></td>
+<td><p>時間基準、規模尺度及定位品質</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>缺測值慣例：地下水 <code class="docutils literal notranslate"><span class="pre">9999</span></code>、地磁 <code class="docutils literal notranslate"><span class="pre">88888</span></code>——讀取器都已自動轉為 <code class="docutils literal notranslate"><span class="pre">NaN</span></code>。</p>
-<div class="warning admonition">
-<p class="admonition-title">禮貌原則</p>
-<p>GDMS 是公共研究資源。批次申請時請：一次申請合理的時間範圍（而不是
-一天一筆送幾百次）、重複使用 <code class="docutils literal notranslate"><span class="pre">data/cache/</span></code> 的快取、在迴圈中加
-<code class="docutils literal notranslate"><span class="pre">time.sleep()</span></code> 間隔。</p>
-</div>
-</section>
-<section id="id5">
-<h2>2.4 疑難排解<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>登入失敗</strong>：確認 <code class="docutils literal notranslate"><span class="pre">.env</span></code> 帳密；GDMS 登入 session 約一小時後自動過期，
-toolkit 每次執行都重新登入，通常不受影響。</p></li>
-<li><p><strong>打包很久</strong>：長時間範圍＋多測站的申請可能要等十幾分鐘，
-<code class="docutils literal notranslate"><span class="pre">wait_and_fetch()</span></code> 會自動輪詢。</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Err:</span> <span class="pre">No</span> <span class="pre">data</span> <span class="pre">available</span></code></strong>：該站該時段確實沒資料
-（儀器故障或尚未釋出），換個時段或測站。</p></li>
-</ul>
+<p>本書讀取器會把所使用產品的缺值旗標轉為 <code class="docutils literal notranslate"><span class="pre">NaN</span></code>。例如水位缺測時，水溫仍
+可能正常；不能因一欄缺失就把整個測站刪掉，也不能把其他欄位的正常當成
+水位可靠的證據。</p>
 </section>
 <section id="id6">
-<h2>2.5 看懂波形頻道代碼<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<p>申請波形時要指定頻道，這個代碼不是隨便編的。國際上通用的 SEED 命名
-規則用三個字母描述一個頻道：第一碼是取樣率與頻寬，第二碼是感測器類型，
-第三碼是方向。先看花蓮氣象站（HWA）實際有哪些頻道：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span> <span class="o">=</span> <span class="n">gt</span><span class="o">.</span><span class="n">list_channels</span><span class="p">(</span><span class="n">gdms</span><span class="p">,</span> <span class="s2">&quot;CWASN&quot;</span><span class="p">,</span> <span class="s2">&quot;HWA&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">channels</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;EH?&#39;, &#39;EHE&#39;, &#39;EHN&#39;, &#39;EHZ&#39;, &#39;HH?&#39;, &#39;HH1&#39;, &#39;HH2&#39;, &#39;HHZ&#39;, &#39;HL?&#39;, &#39;HLE&#39;, &#39;HLN&#39;, &#39;HLZ&#39;, &#39;HN?&#39;, &#39;HN1&#39;, &#39;HN2&#39;, &#39;HNE&#39;, &#39;HNN&#39;, &#39;HNZ&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>把常見的第一、二碼對照一下，就能讀懂這些代碼在說什麼：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>代碼</p></th>
-<th class="head"><p>意義</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HH?</span></code></p></td>
-<td><p>高取樣率（~100 Hz）寬頻地震儀，記錄地表速度</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">EH?</span></code></p></td>
-<td><p>高取樣率短週期地震儀</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HN?</span></code></p></td>
-<td><p>高取樣率加速度儀（強震），大地震不會爆表</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">?H?</span></code></p></td>
-<td><p>第二碼 H＝高增益地震儀；<code class="docutils literal notranslate"><span class="pre">?N?</span></code> 則是加速度儀</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">??Z</span> <span class="pre">/</span> <span class="pre">??N</span> <span class="pre">/</span> <span class="pre">??E</span></code></p></td>
-<td><p>第三碼是方向：垂直、南北、東西</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">??1</span> <span class="pre">/</span> <span class="pre">??2</span></code></p></td>
-<td><p>有些站水平向不對正南北，改用 1、2 編號</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>選頻道其實就是在選「用哪支感測器、看多快的震動」。研究遠震或微震用
-寬頻（<code class="docutils literal notranslate"><span class="pre">HH?</span></code>），分析強震動、做工程用途則要加速度（<code class="docutils literal notranslate"><span class="pre">HN?</span></code>）。同一個
-地震在不同頻道上的長相差很多，第 5 章會實際比較。</p>
-<p>想查完整規則，可參考
-<a class="reference external" href="https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/">IRIS 的 SEED 頻道命名說明</a>。</p>
+<h2>19.5 時間和頻道也是資料<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>本書地震目錄與多數圖採 UTC；臺灣當地時間為 UTC 加八小時，因此花蓮
+主震在當地是 4 月 3 日，在 UTC 是 4 月 2 日深夜。GNSS 的時間系統應按
+檔頭與解算產品查核，不能看到日期就直接假定與其他資料相同。</p>
+<p>頻道代碼則幫我們辨認感測器與方向。同一站的垂直分量和水平分量量到的
+並不是同一條曲線；把不同方向混接成長序列，可能製造沒有物理意義的階變。</p>
 </section>
 <section id="id7">
-<h2>參考資料與延伸閱讀<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<h2>19.6 從官方入口走到可引用的資料<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>GDMS 是本書觀測資料的官方查詢入口。實際申請時應依入口提供的產品說明
+確認測網、測站與時間範圍，並保留申請條件、取得日期及檔案版本。官方服務
+與已下載的教材快取是兩個層次：閱讀本書圖表不必重新申請同一批資料。</p>
+<p>SEED 頻道通常以三個字元描述頻帶／取樣、來源與方向。<code class="docutils literal notranslate"><span class="pre">HHZ</span></code> 的最後一碼
+表示垂直分量；<code class="docutils literal notranslate"><span class="pre">HH1</span></code>、<code class="docutils literal notranslate"><span class="pre">HH2</span></code> 則須再查水平軸的實際方位。<code class="docutils literal notranslate"><span class="pre">HN?</span></code> 的來源
+是加速度感測器，但是否飽和仍受儀器動態範圍限制，不能只憑代碼保證。
+完整代碼表、資料申請函式與疑難排查移到<a class="reference internal" href="appendix_g_observations.html"><span class="doc">附錄 G</span></a>，
+有需要重現時再回查。</p>
+<p>接下來從<a class="reference internal" href="03_groundwater.html"><span class="doc">地下水位</span></a>開始。它很適合練習這套讀法：
+曲線看起來只是水位升降，背後卻同時包含壓力、潮汐、氣象與含水層的反應。</p>
+</section>
+<section id="id8">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>操作入口・免費網站</strong>：中央氣象署，〈<a class="reference external" href="https://gdms.cwa.gov.tw/">臺灣地震與地球物理資料管理系統（GDMS）</a>〉。
-對照本章的查詢、申請與取件流程，查看官方資料項目及使用說明；資料下載需先註冊登入。</p></li>
-<li><p><strong>格式查詢・免費文件</strong>：FDSN，〈<a class="reference external" href="https://docs.fdsn.org/projects/source-identifiers/en/v1.0/channel-codes.html">Channel codes</a>〉。
+檢視官方資料產品、涵蓋範圍與使用說明；重現時依官方登入流程取得資料，與本書快取分開記錄。</p></li>
+<li><p><strong>格式查詢・免費檔案</strong>：FDSN，〈<a class="reference external" href="https://docs.fdsn.org/projects/source-identifiers/en/v1.0/channel-codes.html">Channel codes</a>〉。
 查閱 band、source 與 subsource codes，對照本章的 HHZ、HH1 與 HH2。重點是頻道代碼描述什麼訊號，不要只把它當成檔名的一部分。</p></li>
 <li><p><strong>核心論文</strong>：Beyreuther et al.（2010），〈<a class="reference external" href="https://doi.org/10.1785/gssrl.81.3.530">ObsPy: A Python Toolbox for Seismology</a>〉，<em>Seismological Research Letters</em>；<a class="reference external" href="https://www.seismosoc.org/Publications/SRL/SRL_81/srl_81-3_es/">出版學會免費全文</a>。
-了解下載後的波形為什麼適合交給 ObsPy 統一讀取與處理。論文中的程式介面屬於早期版本，實際寫程式時搭配<a class="reference external" href="https://docs.obspy.org/tutorial/">目前的官方教學</a>。</p></li>
+瞭解波形格式、儀器 metadata 與處理工具如何銜接。論文中的程式介面屬於早期版本，實際寫程式時搭配<a class="reference external" href="https://docs.obspy.org/tutorial/">目前的官方教學</a>。</p></li>
 </ul>
 </section>
 </section>
@@ -799,7 +590,7 @@ toolkit 每次執行都重新登入，通常不受影響。</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. 台灣地球物理觀測總覽</p>
+        <p class="prev-next-title">18. 臺灣地球物理觀測總覽</p>
       </div>
     </a>
     <a class="right-next"
@@ -807,7 +598,7 @@ toolkit 每次執行都重新登入，通常不受影響。</p></li>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3. 地下水位觀測</p>
+        <p class="prev-next-title">20. 地下水位：含水層如何回應外界擾動</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -829,16 +620,13 @@ toolkit 每次執行都重新登入，通常不受影響。</p></li>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gdms">2.1 GDMS 的下載流程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gdms-toolkit">2.2 用 gdms_toolkit 自動化</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">申請資料</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">查看下載清單</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.3 各類資料的檔案格式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.4 疑難排解</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.5 看懂波形頻道代碼</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">19.1 原始觀測、處理成果與衍生指標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">19.2 觀測視窗要包含背景</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">19.3 缺測、延遲與「沒有事件」</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">19.4 檔案格式背後的物理量</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">19.5 時間和頻道也是資料</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">19.6 從官方入口走到可引用的資料</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
 </ul>
   </nav></div>
 

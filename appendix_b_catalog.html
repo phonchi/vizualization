@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>附錄 B：目錄統計與叢集律的推導 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_b_catalog';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="附錄 C：ETAS 的分支、概似與推論" href="appendix_c_etas.html" />
+    <link rel="prev" title="附錄 A：點過程的機率、概似與模擬" href="appendix_a_point_process.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從模型到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/appendix_b_catalog.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>附錄 B：目錄統計與叢集律的推導</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-1-gr">B.1 從 GR 累積數到規模密度</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">B.2 連續規模的概似與有限樣本偏差</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-3-gr">B.3 離散 GR 與精確最大概似</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-4">B.4 半格近似與區間為何不對稱</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5 規模差、修剪與相關性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-6-omori">B.6 Omori 核：有限窗與無限時間</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-7-omori">B.7 Omori 的剖面概似</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8">B.8 空間核的尺度與正規化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-9">B.9 最大值與最大規模差</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-10-gr">B.10 除叢後的 GR 交點</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="b">
+<h1>附錄 B：目錄統計與叢集律的推導<a class="headerlink" href="#b" title="Link to this heading">#</a></h1>
+<p>本附錄接續 <a class="reference internal" href="11_catalog_completeness_b.html"><span class="doc">5. 目錄統計 I：完整度與規模分布</span></a> 與 <a class="reference internal" href="12_clustering_laws.html"><span class="doc">6. 目錄統計 II：叢集的經驗律與除叢</span></a>。先備知識為機率密度、期望值、微分與最大概似；不需要先讀完本附錄才能繼續主文。以下推導會在分布的支撐集中明確交代「資料的選取方式」，因為門檻、格距與時間窗都是估計問題的一部分。</p>
+<section id="b-1-gr">
+<h2>B.1 從 GR 累積數到規模密度<a class="headerlink" href="#b-1-gr" title="Link to this heading">#</a></h2>
+<p>固定分析區域與期間，設門檻以上的期望累積數為 <span class="math notranslate nohighlight">\(N(\ge m)=10^{a-bm}\)</span>，<span class="math notranslate nohighlight">\(m\ge m_0\)</span>。除以門檻以上的總量，得到</p>
+<div class="math notranslate nohighlight">
+\[S(m)=\frac{N(\ge m)}{N(\ge m_0)}=10^{-b(m-m_0)}=e^{-\beta(m-m_0)},\qquad\beta=b\ln10.\]</div>
+<p>對 <span class="math notranslate nohighlight">\(m\)</span> 取負導數，即為主文的 <a class="reference internal" href="11_catalog_completeness_b.html#equation-eq-gr-density">(4)</a>。這是未截斷 GR 的機率表示；若設上限 <span class="math notranslate nohighlight">\(M_{\max}\)</span>，須另除以 <span class="math notranslate nohighlight">\(1-e^{-\beta(M_{\max}-m_0)}\)</span>，其影響見附錄 C。</p>
+<p>若兩種規模尺度有確定關係 <span class="math notranslate nohighlight">\(M_2=a_sM_1+d_s\)</span>、<span class="math notranslate nohighlight">\(a_s&gt;0\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[a_1-b_1M_1=\left(a_1+\frac{b_1d_s}{a_s}\right)-\frac{b_1}{a_s}M_2.\]</div>
+<p>所以 <span class="math notranslate nohighlight">\(b_2=b_1/a_s\)</span>。這只處理代數轉換，不包含迴歸係數、規模量測與轉換殘差的不確定性。</p>
+</section>
+<section id="b-2">
+<h2>B.2 連續規模的概似與有限樣本偏差<a class="headerlink" href="#b-2" title="Link to this heading">#</a></h2>
+<p>設 <span class="math notranslate nohighlight">\(X_i=M_i-m_0\)</span> 是 <span class="math notranslate nohighlight">\(N\)</span> 個獨立、完整的指數樣本，則</p>
+<div class="math notranslate nohighlight">
+\[\ell(\beta)=N\ln\beta-\beta\sum_iX_i,\qquad
+\frac{\partial\ell}{\partial\beta}=\frac N\beta-\sum_iX_i.\]</div>
+<p>因此 <span class="math notranslate nohighlight">\(\widehat\beta=N/\sum_iX_i=1/\bar X\)</span>，<span class="math notranslate nohighlight">\(\widehat b=\widehat\beta/\ln10\)</span>。資訊量為 <span class="math notranslate nohighlight">\(N/\beta^2\)</span>，給出大樣本近似 <span class="math notranslate nohighlight">\(\operatorname{SE}(\widehat b)\simeq b/\sqrt N\)</span>。</p>
+<p>有限樣本時，<span class="math notranslate nohighlight">\(S_N=\sum_iX_i\sim\operatorname{Gamma}(N,\text{rate}=\beta)\)</span>，而不是未調整尺度的 <span class="math notranslate nohighlight">\(\bar X\)</span> 服從這個 Gamma 分布。對 <span class="math notranslate nohighlight">\(N&gt;1\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[\mathbb E[S_N^{-1}]=\frac\beta{N-1},\qquad
+\mathbb E[\widehat\beta]=\frac{N}{N-1}\beta.\]</div>
+<p>因此 <span class="math notranslate nohighlight">\((N-1)\widehat\beta/N\)</span> 在這個固定門檻的理想模型下無偏。若門檻由同一資料選出、規模離散或存在漏測，不能不加條件地沿用這個修正。</p>
+<p>對一般樣本標準差 <span class="math notranslate nohighlight">\(s_M\)</span>，delta method 給出 Shi–Bolt 型近似</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{SE}(\widehat b)\simeq\ln10\,\widehat b^2\frac{s_M}{\sqrt N}.\]</div>
+<p>理想指數模型下 <span class="math notranslate nohighlight">\(s_M\to1/(b\ln10)\)</span>，便回到 <span class="math notranslate nohighlight">\(b/\sqrt N\)</span>。這些公式只反映所假設抽樣結構下的隨機誤差。</p>
+</section>
+<section id="b-3-gr">
+<h2>B.3 離散 GR 與精確最大概似<a class="headerlink" href="#b-3-gr" title="Link to this heading">#</a></h2>
+<p>規模格點為 <span class="math notranslate nohighlight">\(m_0+k\Delta M\)</span>，<span class="math notranslate nohighlight">\(k=0,1,\ldots\)</span>。在固定格距、門檻以上完整的離散 GR 模型中，</p>
+<div class="math notranslate nohighlight">
+\[P(K=k)=(1-r)r^k,\qquad r=e^{-\beta\Delta M}.\]</div>
+<p>給定 <span class="math notranslate nohighlight">\(N\)</span> 筆格點資料，</p>
+<div class="math notranslate nohighlight">
+\[\ell(r)=N\ln(1-r)+\left(\sum_i k_i\right)\ln r.\]</div>
+<p>令導數為零，得 <span class="math notranslate nohighlight">\(\widehat r=\bar k/(1+\bar k)\)</span>。寫 <span class="math notranslate nohighlight">\(u=\bar m-m_0=\Delta M\bar k\)</span>，便得到主文 <a class="reference internal" href="11_catalog_completeness_b.html#equation-eq-b-exact">(5)</a>：</p>
+<div class="math notranslate nohighlight">
+\[\widehat b=\frac{1}{\Delta M\ln10}\ln\left(1+\frac{\Delta M}{u}\right).\]</div>
+<p>當 <span class="math notranslate nohighlight">\(u=0\)</span>，最優值在 <span class="math notranslate nohighlight">\(r=0\)</span>，對應 <span class="math notranslate nohighlight">\(b\to\infty\)</span>；資料無法給出有限斜率。若格距不固定或包含不同四捨五入規則，需使用相應的區間機率重新建立概似。</p>
+<p>用半格 <span class="math notranslate nohighlight">\(\delta=\Delta M/2\)</span> 表示，與文獻中的反雙曲餘切寫法相同，因為</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{arccoth}x=\tfrac12\ln\frac{x+1}{x-1},\qquad
+\frac1{\delta\ln10}\operatorname{arccoth}\frac{u+\delta}{\delta}
+=\frac1{2\delta\ln10}\ln\left(1+\frac{2\delta}{u}\right).\]</div>
+<p>這裡的「精確」指所假設離散模型的最大概似解，不代表估計量有限樣本無偏，也不代表目錄必然符合模型。</p>
+</section>
+<section id="b-4">
+<h2>B.4 半格近似與區間為何不對稱<a class="headerlink" href="#b-4" title="Link to this heading">#</a></h2>
+<p>令 <span class="math notranslate nohighlight">\(\delta=\Delta M/2\)</span>。在 <span class="math notranslate nohighlight">\(2\delta/u&lt;1\)</span> 的展開範圍內，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ b_{\rm exact}&amp;=\frac1{\ln10}\left(\frac1u-\frac\delta{u^2}+\frac{4\delta^2}{3u^3}+\cdots\right),\\
+ b_{\rm Utsu}&amp;=\frac1{\ln10}\frac1{u+\delta}
+ =\frac1{\ln10}\left(\frac1u-\frac\delta{u^2}+\frac{\delta^2}{u^3}+\cdots\right).
+\end{aligned}\end{split}\]</div>
+<p>差異從 <span class="math notranslate nohighlight">\(\delta^2/(3u^3\ln10)\)</span> 開始。這是兩種公式在相同 <span class="math notranslate nohighlight">\(u\)</span> 上的差異，不應說成近似式在每種抽樣情境都必然低估真實 <span class="math notranslate nohighlight">\(b\)</span>；估計的抽樣偏差與資料偏差還要分開。</p>
+<p>令 <span class="math notranslate nohighlight">\(f(u)=\ln(1+2\delta/u)/(2\delta\ln10)\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[f'(u)=-\frac1{\ln10\,u(u+2\delta)},\qquad
+f''(u)=\frac{2u+2\delta}{\ln10\,u^2(u+2\delta)^2}&gt;0.\]</div>
+<p>因此將 <span class="math notranslate nohighlight">\(u\)</span> 上的對稱區間轉換為 <span class="math notranslate nohighlight">\(b\)</span> 時，方向反轉且上側常較長。Tinti 與 Gasperini（2024）討論的離散近似區間，可用 <span class="math notranslate nohighlight">\(C=1+2\delta/u\)</span> 寫成</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+b_1&amp;=\frac1{2\delta\ln10}\ln\frac{C+\sqrt{C/N}}{1+\sqrt{C/N}},\\
+b_2&amp;=\frac1{2\delta\ln10}\ln\frac{C-\sqrt{C/N}}{1-\sqrt{C/N}}.
+\end{aligned}\end{split}\]</div>
+<p>這個近似需要平均值的分布足以使用相應漸近展開，且 <span class="math notranslate nohighlight">\(N&gt;C\)</span> 使端點有意義；它不是任意小樣本的精確涵蓋區間。正文的 bootstrap 圖比較區間形狀，並未替其在所有目錄上的涵蓋率做驗證。</p>
+</section>
+<section id="b-5">
+<h2>B.5 規模差、修剪與相關性<a class="headerlink" href="#b-5" title="Link to this heading">#</a></h2>
+<p>若 <span class="math notranslate nohighlight">\(X,Y\)</span> 獨立且同為 <span class="math notranslate nohighlight">\(\operatorname{Exp}(\beta)\)</span>，對 <span class="math notranslate nohighlight">\(d\ge0\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[f_{X-Y}(d)=\int_0^\infty\beta e^{-\beta(y+d)}\beta e^{-\beta y}\,dy
+=\frac\beta2e^{-\beta d}.\]</div>
+<p>由對稱性，<span class="math notranslate nohighlight">\(f_{X-Y}(d)=\beta e^{-\beta|d|}/2\)</span>。條件在 <span class="math notranslate nohighlight">\(X-Y&gt;d_0\)</span>，超額差值 <span class="math notranslate nohighlight">\(X-Y-d_0\)</span> 仍服從 <span class="math notranslate nohighlight">\(\operatorname{Exp}(\beta)\)</span>。這是差分式估計的理想起點；實際的漏測與配對選擇是否保留這個分布，需要另行分析。</p>
+<p>離散情形中，若 <span class="math notranslate nohighlight">\(K_1,K_2\)</span> 獨立服從 <span class="math notranslate nohighlight">\((1-r)r^k\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[P(K_1-K_2=j)=\frac{1-r}{1+r}r^{|j|}.\]</div>
+<p>零差值有自己的機率質量。若只保留非零絕對差，<span class="math notranslate nohighlight">\(P(|j|=k\mid|j|\ge1)=(1-r)r^{k-1}\)</span>，<span class="math notranslate nohighlight">\(k\ge1\)</span>，回到移位幾何分布。</p>
+<p>即使規模本身獨立，相鄰差 <span class="math notranslate nohighlight">\(D_i=X_{i+1}-X_i\)</span> 也共用觀測：</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{Cov}(D_i,D_{i+1})=-\frac1{\beta^2},\qquad
+\operatorname{Var}(D_i)=\frac2{\beta^2}.\]</div>
+<p>符號差的相關係數為 <span class="math notranslate nohighlight">\(-1/2\)</span>。<strong>取絕對值後不能沿用負相關結論</strong>。令 <span class="math notranslate nohighlight">\(A_i=|X_{i+1}-X_i|\)</span>，利用條件獨立與 <span class="math notranslate nohighlight">\(\mathbb E[|X-y|]=y-1/\beta+2e^{-\beta y}/\beta\)</span>，可得</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{Cov}(A_i,A_{i+1})=\frac1{3\beta^2},\qquad
+\operatorname{Var}(A_i)=\frac1{\beta^2}.\]</div>
+<p>所以相鄰絕對差在理想模型下是正相關。選取正差、修剪或採用其他配對後，相關性還會改變；不能把某一篇模擬中的有效樣本數比例當成通用修正係數。</p>
+</section>
+<section id="b-6-omori">
+<h2>B.6 Omori 核：有限窗與無限時間<a class="headerlink" href="#b-6-omori" title="Link to this heading">#</a></h2>
+<p>設 <span class="math notranslate nohighlight">\(c&gt;0\)</span>、<span class="math notranslate nohighlight">\(0\le S&lt;T&lt;\infty\)</span>。對有限的 <span class="math notranslate nohighlight">\(p\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I(S,T;c,p)=\int_S^T(t+c)^{-p}\,dt
+=\begin{cases}
+\dfrac{(T+c)^{1-p}-(S+c)^{1-p}}{1-p},&amp;p\ne1,\\
+\ln\dfrac{T+c}{S+c},&amp;p=1.
+\end{cases}\end{split}\]</div>
+<p>兩種寫法在 <span class="math notranslate nohighlight">\(p\to1\)</span> 時連續。只有把上限推到無限遠時，才需要 <span class="math notranslate nohighlight">\(p&gt;1\)</span>，並得到 <span class="math notranslate nohighlight">\(I(0,\infty;c,p)=c^{1-p}/(p-1)\)</span>。除以這個量，即得 <a class="reference internal" href="12_clustering_laws.html#equation-eq-omori-density">(6)</a>。</p>
+<p>若指定觸發期限 <span class="math notranslate nohighlight">\(T_c\)</span>，對所有有限 <span class="math notranslate nohighlight">\(p\)</span> 都可定義</p>
+<div class="math notranslate nohighlight">
+\[g_{T_c}(t)=\frac{(t+c)^{-p}}{I(0,T_c;c,p)}\mathbf1_{[0,T_c]}(t).\]</div>
+<p>這是改變觸發時間模型，不只是裁切觀測窗。若保持未正規化係數 <span class="math notranslate nohighlight">\(K\)</span> 不變，期限內產能為 <span class="math notranslate nohighlight">\(K I(0,T_c;c,p)\)</span>，會依期限而變；若改為保持正規化產能 <span class="math notranslate nohighlight">\(A\)</span> 不變，則改變的是後代的時間分配。這兩種操作需分清楚。</p>
+</section>
+<section id="b-7-omori">
+<h2>B.7 Omori 的剖面概似<a class="headerlink" href="#b-7-omori" title="Link to this heading">#</a></h2>
+<p>對固定 <span class="math notranslate nohighlight">\([S,T]\)</span> 中的 <span class="math notranslate nohighlight">\(N\)</span> 個事件，非齊次 Poisson 假設下</p>
+<div class="math notranslate nohighlight">
+\[\ell(K,c,p)=N\ln K-p\sum_i\ln(t_i+c)-K I(S,T;c,p).\]</div>
+<p>若 <span class="math notranslate nohighlight">\(N&gt;0\)</span>，令 <span class="math notranslate nohighlight">\(\partial\ell/\partial K=0\)</span>，可得 <span class="math notranslate nohighlight">\(\widehat K(c,p)=N/I\)</span>，代回後為</p>
+<div class="math notranslate nohighlight">
+\[\ell_{\rm prof}(c,p)=N\ln\frac N{I(S,T;c,p)}-p\sum_i\ln(t_i+c)-N.\]</div>
+<p>原本三個參數的搜尋降為兩個。若用負剖面概似的 Hessian 估計標準誤，需確認最優點在內部且資訊矩陣正定。對負變異數取絕對值再開根號，沒有統計依據；這種情況應標示區間無法由局部二次近似得到。<span class="math notranslate nohighlight">\(N=0\)</span> 時不能使用上式的同一數值流程。</p>
+</section>
+<section id="b-8">
+<h2>B.8 空間核的尺度與正規化<a class="headerlink" href="#b-8" title="Link to this heading">#</a></h2>
+<p>寫 <span class="math notranslate nohighlight">\(\sigma(m)=D e^{\gamma(m-m_0)}\)</span>，採用正文的各向同性核。極座標下面積元為 <span class="math notranslate nohighlight">\(r\,dr\,d\varphi\)</span>，令 <span class="math notranslate nohighlight">\(v=1+r^2/\sigma\)</span>，可得</p>
+<div class="math notranslate nohighlight">
+\[\int_{\mathbb R^2}f\,dx\,dy=(q-1)\int_1^\infty v^{-q}\,dv=1,\qquad q&gt;1.\]</div>
+<p>若面積尺度依 <span class="math notranslate nohighlight">\(10^{m-m_0}\)</span> 變化，<span class="math notranslate nohighlight">\(\gamma=\ln10\)</span>；相應長度尺度 <span class="math notranslate nohighlight">\(\sqrt\sigma\)</span> 的規模指數為 <span class="math notranslate nohighlight">\(\gamma/2\)</span>。經驗擬合的差異不能全歸因於記號：還可能包含區域、幾何、定位誤差與模型形狀的差異。</p>
+</section>
+<section id="b-9">
+<h2>B.9 最大值與最大規模差<a class="headerlink" href="#b-9" title="Link to this heading">#</a></h2>
+<p>設 <span class="math notranslate nohighlight">\(X_1,\ldots,X_N\)</span> 為固定數量的獨立 <span class="math notranslate nohighlight">\(\operatorname{Exp}(\beta)\)</span> 樣本，最大值的累積分布為</p>
+<div class="math notranslate nohighlight">
+\[P(X_{\max}\le x)=(1-e^{-\beta x})^N,\qquad x\ge0.\]</div>
+<p>由大到小排序 <span class="math notranslate nohighlight">\(X_{(1)}&gt;\cdots&gt;X_{(N)}\)</span>，定義 <span class="math notranslate nohighlight">\(D_k=X_{(k)}-X_{(k+1)}\)</span> 及 <span class="math notranslate nohighlight">\(D_N=X_{(N)}\)</span>。利用指數分布的無記憶性，最小值先以率 <span class="math notranslate nohighlight">\(N\beta\)</span> 出現，剩餘 <span class="math notranslate nohighlight">\(N-1\)</span> 個扣掉它後仍是獨立指數，遞迴得到 <span class="math notranslate nohighlight">\(D_k\sim\operatorname{Exp}(k\beta)\)</span> 且各間距獨立。因此</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mathbb E[X_{(1)}]&amp;=\frac1\beta\sum_{k=1}^N\frac1k,\\
+\operatorname{Var}(X_{(1)})&amp;=\frac1{\beta^2}\sum_{k=1}^N\frac1{k^2},\\
+\mathbb E[X_{(1)}-X_{(2)}]&amp;=\frac1\beta\quad(N\ge2).
+\end{aligned}\end{split}\]</div>
+<p>當 <span class="math notranslate nohighlight">\(N\to\infty\)</span>，最大值的標準差趨於 <span class="math notranslate nohighlight">\(\pi/(\sqrt6\beta)\)</span>，不會隨樣本數消失。最大與次大之差仍有整個指數分布，故 <span class="math notranslate nohighlight">\(1/\beta\)</span> 是期望，並非硬下界。</p>
+<p>若把某個主震規模固定、再獨立抽 <span class="math notranslate nohighlight">\(N\)</span> 個餘震規模，這個公式可以計算最大餘震的參考分布；若再要求餘震不得超過主震，便改變了抽樣條件，必須重新截斷分布。依最大值選群、依規模決定家族大小的情況，也不能直接使用固定 <span class="math notranslate nohighlight">\(N\)</span> 的獨立樣本結論。</p>
+</section>
+<section id="b-10-gr">
+<h2>B.10 除叢後的 GR 交點<a class="headerlink" href="#b-10-gr" title="Link to this heading">#</a></h2>
+<p>設兩條擬合直線為 <span class="math notranslate nohighlight">\(a-bm\)</span> 與 <span class="math notranslate nohighlight">\(a_{\rm main}-b_{\rm main}m\)</span>。相減令零即得 <a class="reference internal" href="12_clustering_laws.html#equation-eq-mx">(7)</a>，而累積數比值為</p>
+<div class="math notranslate nohighlight">
+\[r(m)=10^{a_{\rm main}-a+(b-b_{\rm main})m}.\]</div>
+<p>若 <span class="math notranslate nohighlight">\(b_{\rm main}&lt;b\)</span>，比值隨規模增加，通過交點後超過 1。子目錄的觀測計數不可能超過全目錄，因此不相容的是兩條擬合線的共同外推，而非真實資料違反集合關係。由此不能直接推斷完整 PSHA 的高估或低估，因為危害度還包含位置、地動模型與其他權重。</p>
+</section>
+<section id="id1">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tinti, S. 與 Gasperini, P.（2024），<a class="reference external" href="https://doi.org/10.1093/gji/ggae159">The estimation of b-value of the frequency–magnitude distribution and of its 1σ intervals from binned magnitude data</a>。離散最大概似、區間與差分方法的主要對照來源；<a class="reference external" href="https://cris.unibo.it/handle/11585/980514">免費機構版本</a>。</p></li>
+<li><p>SeismoStats 團隊，<a class="reference external" href="https://seismostats.readthedocs.io/latest/user/estimate_b.html">Estimate b-value</a> 與 <a class="reference external" href="https://seismostats.readthedocs.io/latest/user/estimate_mc.html">Estimate magnitude of completeness</a>。免費文件，可將本附錄的門檻、格距與估計前提對照到實際資料格式。</p></li>
+<li><p>Utsu, T., Ogata, Y. 與 Matsu’ura, R. S.（1995），<a class="reference external" href="https://doi.org/10.4294/jpe1952.43.1">The Centenary of the Omori Formula for a Decay Law of Aftershock Activity</a>。<a class="reference external" href="https://www.jstage.jst.go.jp/article/jpe1952/43/1/43_1_1/_article">免費全文</a>，對照有限觀測窗、<span class="math notranslate nohighlight">\(c,p\)</span> 與估計問題。</p></li>
+<li><p>Ogata, Y. 與 Zhuang, J.（2006），<a class="reference external" href="https://doi.org/10.1016/j.tecto.2005.10.016">Space–time ETAS models and an improved extension</a>。<a class="reference external" href="https://bemlar.ism.ac.jp/zhuang/pubs/ogata2006tectno.pdf">免費機構全文</a>，對照空間核和產能的分離；出版社可能需訂閱。</p></li>
+<li><p>Chan, C.-H. 與 Wu, Y.-M.（2013），<a class="reference external" href="https://doi.org/10.1016/j.jseaes.2013.05.006">Maximum magnitudes in aftershock sequences in Taiwan</a>。比較最大餘震的不同統計摘要及序列選取；出版社全文可能需訂閱。</p></li>
+<li><p>Mizrahi, L., Nandan, S. 與 Wiemer, S.（2021），<a class="reference external" href="https://doi.org/10.1785/0220200231">The Effect of Declustering on the Size Distribution of Mainshocks</a>。<a class="reference external" href="https://arxiv.org/abs/2012.09053">免費作者預印本</a>，用於理解選群如何改變規模分布及外推。</p></li>
+</ul>
+<p>返回 <a class="reference internal" href="11_catalog_completeness_b.html"><span class="doc">5. 目錄統計 I：完整度與規模分布</span></a> 或 <a class="reference internal" href="12_clustering_laws.html"><span class="doc">6. 目錄統計 II：叢集的經驗律與除叢</span></a>。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_a_point_process.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">附錄 A：點過程的機率、概似與模擬</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix_c_etas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">附錄 C：ETAS 的分支、概似與推論</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-1-gr">B.1 從 GR 累積數到規模密度</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">B.2 連續規模的概似與有限樣本偏差</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-3-gr">B.3 離散 GR 與精確最大概似</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-4">B.4 半格近似與區間為何不對稱</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5 規模差、修剪與相關性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-6-omori">B.6 Omori 核：有限窗與無限時間</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-7-omori">B.7 Omori 的剖面概似</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8">B.8 空間核的尺度與正規化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-9">B.9 最大值與最大規模差</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-10-gr">B.10 除叢後的 GR 交點</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

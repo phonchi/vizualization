@@ -1,0 +1,767 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>附錄 G：觀測資料、處理與幾何細節 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_g_observations';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="附錄 F：複發時間與地震危害積分" href="appendix_f_hazard.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從模型到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/appendix_g_observations.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>附錄 G：觀測資料、處理與幾何細節</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-1">G.1 資料產品與可重現的取得流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-2">G.2 缺值、時間與降取樣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-3">G.3 地下水的水頭、頻譜與氣壓斜率</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">頻譜峰值不是水位振幅</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">氣壓響應斜率與氣壓效率</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-4">G.4 波形頻道與物理校正</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-5-rinex">G.5 RINEX、座標轉換與地表位移</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">從地心直角座標到大地座標</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">從座標差到東、北、上</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-6">G.6 花蓮與大埔圖表的解讀範圍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="g">
+<h1>附錄 G：觀測資料、處理與幾何細節<a class="headerlink" href="#g" title="Link to this heading">#</a></h1>
+<p>本附錄承接臺灣觀測篇。主文保留觀測機制與讀圖所需的條件，這裡集中
+說明資料取得介面、取樣、單位與座標幾何。程式儲存在教材原始檔，閱讀
+下列說明不需要先登入資料服務或執行下載。</p>
+<section id="g-1">
+<h2>G.1 資料產品與可重現的取得流程<a class="headerlink" href="#g-1" title="Link to this heading">#</a></h2>
+<p>GDMS 提供不同類型的地震與地球物理資料。重現本書圖表時，應先使用
+對應的教材快取，並核對測站、日期、取樣與規模門檻；改下載另一版本的
+資料，不一定得到完全相同的事件數或時間序列。</p>
+<p>本專案的 <code class="docutils literal notranslate"><span class="pre">gdms_toolkit</span></code> 將登入、申請、查詢打包結果與下載分開。
+它是教材輔助工具，不應被誤認為官方保證穩定的公開 API。介面行為以
+專案程式及官方產品說明為準，服務的認證或欄位調整可能需要更新工具。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>介面</p></th>
+<th class="head"><p>用途</p></th>
+<th class="head"><p>對應原始檔</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GDMSSession</span></code></p></td>
+<td><p>建立已登入的工作階段</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gdms_toolkit/auth.py</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">request_geophysical</span></code></p></td>
+<td><p>申請地球物理資料</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gdms_toolkit/download.py</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">request_waveform</span></code>、<code class="docutils literal notranslate"><span class="pre">list_channels</span></code></p></td>
+<td><p>波形申請與頻道查詢</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gdms_toolkit/download.py</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">list_my_downloads</span></code>、<code class="docutils literal notranslate"><span class="pre">wait_and_fetch</span></code></p></td>
+<td><p>查詢打包與取得結果</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gdms_toolkit/download.py</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">read_groundwater</span></code>、<code class="docutils literal notranslate"><span class="pre">read_geomagnetic</span></code>、<code class="docutils literal notranslate"><span class="pre">read_waveform</span></code></p></td>
+<td><p>解析觀測產品</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gdms_toolkit/readers.py</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>專案需要 Python 3.10 以上；本機安裝依 repository 的環境說明。登入設定
+由本機 <code class="docutils literal notranslate"><span class="pre">.env</span></code> 讀入；帳密與 cookie 都是個人憑證，不能寫進公開教材或
+輸出紀錄。遇到驗證碼應使用官方互動登入流程，登入失敗與沒有觀測資料
+是不同問題。這裡不假定工作階段一定在某個固定分鐘數到期。</p>
+<p>申請後尚未完成打包、帳號看不到某資料，以及該站該期間沒有釋出資料，
+需要分別處理。保留原始申請條件與狀態即可協助追查，不能只由「無資料」
+回覆就斷定感測器壞了。重複分析應重用已取得的檔案，避免反覆申請。</p>
+</section>
+<section id="g-2">
+<h2>G.2 缺值、時間與降取樣<a class="headerlink" href="#g-2" title="Link to this heading">#</a></h2>
+<p>本書使用的地下水與地磁產品有各自的缺值旗標；讀取器把指定旗標轉為
+<code class="docutils literal notranslate"><span class="pre">NaN</span></code>，再依時間範圍取資料。遇到不同版本的產品，仍應查核旗標、單位
+與欄位順序。保留原始檔與可用率，才能分辨是資料處理改變了結果，還是
+觀測本身不同。</p>
+<p>UTC 與臺灣當地時間相差八小時。GNSS 原始觀測及解算產品另可能使用
+GNSS 時間系統，須按檔頭確認。若把兩種時間系統直接合併，即使曲線形狀
+都合理，也可能將到時或短暫反應錯開。</p>
+<p>設取樣間隔為 <span class="math notranslate nohighlight">\(\Delta t\)</span>，取樣頻率為 <span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span>。Nyquist
+頻率為 <span class="math notranslate nohighlight">\(f_s/2\)</span>，所以一秒資料的上限為 0.5 Hz，一分鐘資料約為
+0.0083 Hz。這只是取樣界線，實際可用頻帶還受儀器、抗混疊與噪訊影響。</p>
+<p>一分鐘平均會先把一段時間混合成一個值，與單純刪去多餘點不同。理想矩形
+平均窗的頻率響應具有 sinc 形狀，會衰減部分頻率；再降低取樣率時，
+高頻成分若未被足夠抑制，仍可能混疊。為畫長時間趨勢而平均的資料，
+不能再被當成完整保留短暫峰值的原始資料。</p>
+<p>單純每隔幾點取一點的顯示抽樣，也不等同經過適當抗混疊的研究用降取樣。
+花蓮案例的波形瀏覽圖使用前者，精確峰值與到時應回到原始波形處理。</p>
+</section>
+<section id="g-3">
+<h2>G.3 地下水的水頭、頻譜與氣壓斜率<a class="headerlink" href="#g-3" title="Link to this heading">#</a></h2>
+<p>在靜水近似下，水頭可寫為</p>
+<div class="math notranslate nohighlight">
+\[h=z+\frac{P_w}{\rho_w g},\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(z\)</span> 為高度，<span class="math notranslate nohighlight">\(P_w\)</span> 為相應壓力，<span class="math notranslate nohighlight">\(\rho_w\)</span> 為水密度。
+井水位能否代表含水層壓力水頭，取決於水力連通、井內儲水與排水條件。
+這個式子不足以把所有觀測井都視為直接孔隙壓力計，也沒有給出水位到地殼
+應變的通用換算。</p>
+<section id="id1">
+<h3>頻譜峰值不是水位振幅<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>SciPy 的 Welch 估計預設 <code class="docutils literal notranslate"><span class="pre">scaling=&quot;density&quot;</span></code>。水位單位若是 cm，
+頻率單位是 Hz，功率譜密度的單位就是 cm²/Hz。因此對某頻帶內的
+最大 PSD 開根號，得到 cm/√Hz，並不是 cm 振幅。這正是地下水章
+既有 <code class="docutils literal notranslate"><span class="pre">m2_amplitude</span></code> 輔助函式所計算的量；函式名稱沿用，正文稱為
+半日頻帶峰值指標。</p>
+<p>若 <span class="math notranslate nohighlight">\(S_h(f)\)</span> 是單邊功率譜密度，頻帶變異量可由</p>
+<div class="math notranslate nohighlight">
+\[V_{[f_1,f_2]}\approx\int_{f_1}^{f_2} S_h(f)\,\mathrm{d}f\]</div>
+<p>估計。只有在適當分離背景、頻帶包含完整峰值且訊號近似單一正弦等
+條件下，才可將 <span class="math notranslate nohighlight">\(\sqrt{2V_{[f_1,f_2]}}\)</span> 對應到該正弦振幅。
+正式潮汐分析還需分開接近的頻率及其相位，不能用一個峰值代替。</p>
+</section>
+<section id="id2">
+<h3>氣壓響應斜率與氣壓效率<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>主文示範對水位與氣壓取差分後作簡單迴歸，輸出斜率 <span class="math notranslate nohighlight">\(s\)</span> 的單位為
+cm/hPa。若採理想化線性反應的約定</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{d}h=-\frac{BE}{\rho_w g}\,\mathrm{d}P_a,\]</div>
+<p>則 <span class="math notranslate nohighlight">\(BE=-\rho_w g\,\mathrm{d}h/\mathrm{d}P_a\)</span> 是無量綱量。
+由 cm/hPa 換到 m/Pa，斜率需乘 <span class="math notranslate nohighlight">\(10^{-4}\)</span>；再乘水的重量密度與
+負號，才符合這個定義。因而不能把以 cm/hPa 輸出的數字直接叫作
+無量綱效率。</p>
+<p>差分不會保證消除潮汐、抽水與氣壓的延遲反應。原始示範先刪除缺值再
+差分，缺口兩端也可能成為相鄰有效紀錄；正式分析應另檢查時間間隔，
+避免把不等長差分混作同一種變化率。這個示範用來說明迴歸概念，
+不構成完整水文地質參數辨識。</p>
+</section>
+</section>
+<section id="g-4">
+<h2>G.4 波形頻道與物理校正<a class="headerlink" href="#g-4" title="Link to this heading">#</a></h2>
+<p>SEED 頻道代碼通常包含頻帶、來源及方向。下表協助閱讀本書用到的
+代碼；完整範圍仍以 FDSN 規範與個別站 metadata 為準。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>代碼例子</p></th>
+<th class="head"><p>可以先辨認的資訊</p></th>
+<th class="head"><p>不能只由代碼保證的資訊</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HHZ</span></code></p></td>
+<td><p>H 頻帶、高增益地震儀、垂直分量</p></td>
+<td><p>是否飽和、實際靈敏度</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HH1</span></code>、<code class="docutils literal notranslate"><span class="pre">HH2</span></code></p></td>
+<td><p>編號水平分量</p></td>
+<td><p>是否對準正北、正東</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HN?</span></code></p></td>
+<td><p>加速度感測器來源</p></td>
+<td><p>大震時一定不超出動態範圍</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>原始 counts 反映數位化後的儀器輸出。去均值、去趨勢或帶通濾波，不會
+自動完成儀器響應移除。比較不同儀器的實際速度、加速度或地動峰值前，
+需要正確的響應資訊、單位以及適合的頻帶處理。</p>
+<p>P、S 到時差與震源距離的簡單關係，也只能在已指定傳播速度等近似下
+使用。在均勻介質、同一路徑距離 <span class="math notranslate nohighlight">\(r\)</span> 的近似下，</p>
+<div class="math notranslate nohighlight">
+\[\Delta t_{SP}=r\left(\frac1{v_S}-\frac1{v_P}\right),
+\qquad r=\frac{v_Pv_S}{v_P-v_S}\Delta t_{SP}.\]</div>
+<p>這裡的 <span class="math notranslate nohighlight">\(r\)</span> 是傳播路徑的近似距離，不能不計深度就稱為震央距離。
+多站定位還需速度模型與到時誤差，正式做法不由單一固定乘數取代。</p>
+</section>
+<section id="g-5-rinex">
+<h2>G.5 RINEX、座標轉換與地表位移<a class="headerlink" href="#g-5-rinex" title="Link to this heading">#</a></h2>
+<p>RINEX 依版本定義標頭、觀測量與曆元格式。以教材中的 RINEX 2 檔名
+<code class="docutils literal notranslate"><span class="pre">hual0930.24o.gz</span></code> 為例，它包含站碼、年積日與年份等資訊；年積日必須
+按該年是否閏年解讀。標頭中的 <code class="docutils literal notranslate"><span class="pre">APPROX</span> <span class="pre">POSITION</span> <span class="pre">XYZ</span></code> 是地心直角
+近似座標，不是整天各曆元的精密位置。</p>
+<section id="id3">
+<h3>從地心直角座標到大地座標<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>設橢球長半軸為 <span class="math notranslate nohighlight">\(a\)</span>、第一偏心率平方為 <span class="math notranslate nohighlight">\(e^2\)</span>，大地緯度為 <span class="math notranslate nohighlight">\(\varphi\)</span>、
+經度為 <span class="math notranslate nohighlight">\(\ell\)</span>、橢球高為 <span class="math notranslate nohighlight">\(h\)</span>，令</p>
+<div class="math notranslate nohighlight">
+\[\nu(\varphi)=\frac{a}{\sqrt{1-e^2\sin^2\varphi}}.\]</div>
+<p>正向關係為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+X&amp;=(\nu+h)\cos\varphi\cos\ell,\\
+Y&amp;=(\nu+h)\cos\varphi\sin\ell,\\
+Z&amp;=[\nu(1-e^2)+h]\sin\varphi.
+\end{aligned}\end{split}\]</div>
+<p>反算時，經度由 <span class="math notranslate nohighlight">\(\operatorname{atan2}(Y,X)\)</span> 得到；緯度與橢球高可
+迭代求解。教材保留的短函式適合本例測站位置查核，不宣稱處理極點等
+所有數值邊界。橢球高也不等於相對平均海面的正高，兩者需要大地水準面
+資訊才能互換。</p>
+</section>
+<section id="id4">
+<h3>從座標差到東、北、上<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>若兩個時刻的精密座標已在同一框架中，先取差
+<span class="math notranslate nohighlight">\(\Delta\mathbf x=(\Delta X,\Delta Y,\Delta Z)^T\)</span>，再在參考位置
+以旋轉矩陣換成局部座標下的位移：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}\Delta E \\ \Delta N \\ \Delta U\end{pmatrix}
+=\begin{pmatrix}
+-\sin\ell&amp;\cos\ell&amp;0\\
+-\sin\varphi\cos\ell&amp;-\sin\varphi\sin\ell&amp;\cos\varphi\\
+\cos\varphi\cos\ell&amp;\cos\varphi\sin\ell&amp;\sin\varphi
+\end{pmatrix}\Delta\mathbf x.\end{split}\]</div>
+<p>這是幾何表示的轉換，並沒有消除座標誤差。對固定旋轉矩陣 <span class="math notranslate nohighlight">\(R\)</span>，
+共變異數的線性傳播為 <span class="math notranslate nohighlight">\(\Sigma_{ENU}=R\Sigma_{XYZ}R^T\)</span>。
+日解、較高頻解與長期速度產品有不同時間解析度，讀圖時必須使用
+對應的不確定性，不能用每日階變宣稱解析了秒級運動。</p>
+</section>
+</section>
+<section id="g-6">
+<h2>G.6 花蓮與大埔圖表的解讀範圍<a class="headerlink" href="#g-6" title="Link to this heading">#</a></h2>
+<p>花蓮水位示範的波動指標是相鄰一秒讀值差分的標準差，震前使用十分鐘、
+震後使用五分鐘。它不是對所有同震反應的充分統計量，也沒有在本書
+另行校準最小可檢測幅度。若要報告檢測能力，應事先指定訊號形狀及
+假警報控制，再以合適背景時窗或模擬評估。</p>
+<p>臺灣展望的大埔機率圖，來源為 Hsieh et al.（2025）§3.2 與 Table 2。
+原表第三列印為「4 Days」，但該節正文的觀測敘述與結論採七天，並列
+一、三、七、十天的模擬視窗。教材依正文保留七天標示與原有機率數值，
+明確記錄這個原文不一致；未自行重新模擬或改寫論文數值。</p>
+<p>這張圖中的不同時窗共享發報時刻，且彼此包含；不是四個獨立實驗。
+機率和實際次數也不共用量尺，不能由雙軸曲線的相對高度判斷預報
+偏高或偏低。計數評估需完整計數分布，二元評估則需將觀測轉成
+是否至少一次，並保留跨窗、跨事件的相依性。</p>
+</section>
+<section id="id5">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>中央氣象署，〈<a class="reference external" href="https://gdms.cwa.gov.tw/">臺灣地震與地球物理資料管理系統</a>〉，官方資料入口。查核產品、時間範圍與申請說明，與教材快取分開看；程式介面是本專案的輔助工具。</p></li>
+<li><p>FDSN，〈<a class="reference external" href="https://docs.fdsn.org/projects/source-identifiers/en/v1.0/channel-codes.html">Channel codes</a>〉，免費規範。核對頻帶、來源與方向代碼，並搭配測站響應資料讀取波形。</p></li>
+<li><p>IGS／RTCM RINEX Working Group，〈<a class="reference external" href="https://igs.org/wg/rinex/">RINEX</a>〉，免費格式文件。按原始檔版本選規格，特別區分標頭近似座標、時間系統與逐曆元觀測量。</p></li>
+<li><p>Sanz Subirana、Juan Zornoza、Hernández-Pajares（2011），〈<a class="reference external" href="https://gssc.esa.int/navipedia/index.php/Transformations_between_ECEF_and_ENU_coordinates">Transformations between ECEF and ENU coordinates</a>〉，ESA Navipedia，免費教材。對照局部座標旋轉矩陣與橢球緯度的幾何意義；轉換不會提升定位精度。</p></li>
+<li><p>SciPy 開發團隊，〈<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html">welch</a>〉，免費官方文件。重點檢視 <code class="docutils literal notranslate"><span class="pre">density</span></code> 與 <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> 的單位差異，理解為何 PSD 峰值開根號不直接是水位振幅。</p></li>
+<li><p>ObsPy 開發團隊，〈<a class="reference external" href="https://docs.obspy.org/tutorial/">Tutorial</a>〉，免費教材。從波形讀取、濾波與響應移除的區別，回查本書原始檔所做的處理。</p></li>
+<li><p>Roeloffs, E. A.（1988），〈<a class="reference external" href="https://doi.org/10.1007/BF00878996">Hydrologic precursors to earthquakes: A review</a>〉，<em>Pure and Applied Geophysics</em>，全文需訂閱。延伸水位、含水層反應與背景因素的關係；可先讀 USGS 的<a class="reference external" href="https://www.usgs.gov/faqs/how-does-earthquake-affect-groundwater-levels-and-water-quality-wells">免費地下水效應說明</a>。</p></li>
+<li><p>Hsieh、Chang、Tai、Chen、Lu（2025），〈<a class="reference external" href="https://doi.org/10.1007/s44195-025-00097-7">Fast report: performance of the ETAS model in forecasting aftershock occurrence and site-specific ground-shaking intensity for the 2025 Dapu, Taiwan, earthquake sequence</a>〉，<em>Terrestrial, Atmospheric and Oceanic Sciences</em>，免費全文。原始預報與觀測數值出自 §3.2、Table 2，閱讀時注意本附錄指出的視窗標示不一致。</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_f_hazard.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">附錄 F：複發時間與地震危害積分</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-1">G.1 資料產品與可重現的取得流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-2">G.2 缺值、時間與降取樣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-3">G.3 地下水的水頭、頻譜與氣壓斜率</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">頻譜峰值不是水位振幅</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">氣壓響應斜率與氣壓效率</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-4">G.4 波形頻道與物理校正</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-5-rinex">G.5 RINEX、座標轉換與地表位移</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">從地心直角座標到大地座標</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">從座標差到東、北、上</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-6">G.6 花蓮與大埔圖表的解讀範圍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

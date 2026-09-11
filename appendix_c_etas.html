@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>附錄 C：ETAS 的分支、概似與推論 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_c_etas';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="附錄 D：Ψ 的量測與 EEPAS 的核函數" href="appendix_d_eepas.html" />
+    <link rel="prev" title="附錄 B：目錄統計與叢集律的推導" href="appendix_b_catalog.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從模型到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/appendix_c_etas.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>附錄 C：ETAS 的分支、概似與推論</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-1">C.1 正規化與分支比</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">改變輸入門檻並不是單純刪除資料</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2">C.2 世代期望、平穩率與局部有限性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3">C.3 直接後代超過親代的機率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4">C.4 平均場家族的生成函數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5">C.5 分支法模擬與觀測窗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-6">C.6 有限時間與空間的概似積分</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-7-em">C.7 未知親代與 EM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-8">C.8 參數補償與資訊矩陣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-9-rj">C.9 R–J 的受限對照與全世代平均</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-10">C.10 後驗預報與診斷的條件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="c-etas">
+<h1>附錄 C：ETAS 的分支、概似與推論<a class="headerlink" href="#c-etas" title="Link to this heading">#</a></h1>
+<p>本附錄接續 <a class="reference internal" href="13_etas_structure.html"><span class="doc">8. ETAS I：把每個事件接進預報</span></a> 與 <a class="reference internal" href="14_etas_estimation.html"><span class="doc">9. ETAS II：從目錄估計模型，再檢查它</span></a>。需要機率密度、期望、概似與基本矩陣微分；涉及機率生成函數的段落會先定義符號。正文先解釋各個結果的直覺，這裡集中列出推導與適用條件。</p>
+<section id="c-1">
+<h2>C.1 正規化與分支比<a class="headerlink" href="#c-1" title="Link to this heading">#</a></h2>
+<p>使用 <a class="reference internal" href="13_etas_structure.html#equation-eq-etas-intensity">(8)</a>，時間、空間及新事件規模密度都正規化時，規模 <span class="math notranslate nohighlight">\(m\)</span> 的事件有平均 <span class="math notranslate nohighlight">\(\kappa(m)=Ae^{\alpha(m-m_0)}\)</span> 個直接後代。無上界 GR 下，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+n&amp;=\int_{m_0}^{\infty}\kappa(m)s(m)\,dm\\
+ &amp;=A\beta\int_0^{\infty}e^{-(\beta-\alpha)u}\,du
+ =\frac{A\beta}{\beta-\alpha},\qquad \alpha&lt;\beta.
+\end{aligned}\end{split}\]</div>
+<p>這給出正文 <a class="reference internal" href="13_etas_structure.html#equation-eq-branching-ratio">(9)</a> 的有限均值條件。<span class="math notranslate nohighlight">\(\alpha\ge\beta\)</span> 時平均直接後代數無限，不能使用有限均值的平穩分支公式；它不同於「有限歷史上的每一項條件率都無限」。</p>
+<p>若 <span class="math notranslate nohighlight">\(\Delta=M_{\max}-m_0&gt;0\)</span>，截斷規模密度為</p>
+<div class="math notranslate nohighlight">
+\[s_T(m)=\frac{\beta e^{-\beta(m-m_0)}}{1-e^{-\beta\Delta}},\qquad m_0\le m\le M_{\max}.\]</div>
+<p>因此</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}n_T=\frac{A\beta}{1-e^{-\beta\Delta}}
+\begin{cases}
+\dfrac{1-e^{-(\beta-\alpha)\Delta}}{\beta-\alpha},&amp;\alpha\ne\beta,\\
+\Delta,&amp;\alpha=\beta.
+\end{cases}\end{split}\]</div>
+<p>兩種寫法在 <span class="math notranslate nohighlight">\(\alpha\to\beta\)</span> 時相接，且對有限 <span class="math notranslate nohighlight">\(\alpha\)</span> 都有有限值。<span class="math notranslate nohighlight">\(\alpha&lt;\beta\)</span> 且 <span class="math notranslate nohighlight">\(\Delta\to\infty\)</span> 時回到未截斷公式。有限 <span class="math notranslate nohighlight">\(n_T\)</span> 仍可能大於 1；規模截斷與次臨界是不同條件。</p>
+<section id="id1">
+<h3>改變輸入門檻並不是單純刪除資料<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>若假設同一個直接觸發機制可向下延伸，將門檻降低 <span class="math notranslate nohighlight">\(d&gt;0\)</span>，規模尾端依 GR 增加 <span class="math notranslate nohighlight">\(e^{\beta d}\)</span> 倍，而親代產能相對新門檻需再調整 <span class="math notranslate nohighlight">\(e^{-\alpha d}\)</span>。在未截斷、相同形狀的外推假設下，<span class="math notranslate nohighlight">\(A'=Ae^{(\beta-\alpha)d}\)</span>，從而 <span class="math notranslate nohighlight">\(n'=ne^{(\beta-\alpha)d}\)</span>。</p>
+<p>這是指定模型外推，不是對任意重估 ETAS 的恆等式。若只是把小事件從觀測目錄刪掉，未觀測中間世代可能改變有效觸發核；固定上限時也須重新計算規模正規化。因此不能說 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span> 時分支比在所有門檻設定下都不變。</p>
+</section>
+</section>
+<section id="c-2">
+<h2>C.2 世代期望、平穩率與局部有限性<a class="headerlink" href="#c-2" title="Link to this heading">#</a></h2>
+<p>若每個成員的規模獨立抽自相同 <span class="math notranslate nohighlight">\(s(m)\)</span>，且 <span class="math notranslate nohighlight">\(n&lt;\infty\)</span>，第 <span class="math notranslate nohighlight">\(k\)</span> 代平均事件數為 <span class="math notranslate nohighlight">\(n^k\)</span>。完整家族包括始祖，故 <span class="math notranslate nohighlight">\(n&lt;1\)</span> 時</p>
+<div class="math notranslate nohighlight">
+\[\mathbb E[Y]=\sum_{k=0}^{\infty}n^k=\frac1{1-n}.\]</div>
+<p>在有限均值的平穩時間 ETAS 中，對條件率取期望可得</p>
+<div class="math notranslate nohighlight">
+\[\bar\lambda=\mu+n\bar\lambda,\qquad\bar\lambda=\frac\mu{1-n}.\]</div>
+<p>平均觸發率為 <span class="math notranslate nohighlight">\(n\bar\lambda\)</span>，其佔比為 <span class="math notranslate nohighlight">\(n\)</span>。有限窗實現、沒有窗前歷史的起始模擬，以及有空間外流的區域都不必滿足同樣的實現比例。</p>
+<p><span class="math notranslate nohighlight">\(n&gt;1\)</span> 時不存在這個正背景、有限均值的平穩解，但不能據此說每份有限目錄的概似都發散。若背景在有限窗可積、已知歷史有限、<span class="math notranslate nohighlight">\(c&gt;0\)</span> 且核局部可積，觀測歷史代入率後的有限窗積分可以有限。過程是否非爆炸還需要另行驗證其生成條件。例如有限規模上限使產能有界、<span class="math notranslate nohighlight">\(c&gt;0\)</span> 使時間核局部有界時，可以用線性出生率控制有限期間的增長；此時超臨界代表長期增長，並不等於有限時間內出現無限事件。</p>
+</section>
+<section id="c-3">
+<h2>C.3 直接後代超過親代的機率<a class="headerlink" href="#c-3" title="Link to this heading">#</a></h2>
+<p>給定始祖規模 <span class="math notranslate nohighlight">\(m_1\)</span>，其直接後代數 <span class="math notranslate nohighlight">\(K\sim\operatorname{Poisson}(\kappa(m_1))\)</span>。若每個後代獨立以機率 <span class="math notranslate nohighlight">\(\theta\)</span> 超過某個目標規模，其保留數的生成函數為</p>
+<div class="math notranslate nohighlight">
+\[\mathbb E[z^{K_&gt;}]=\mathbb E[(1-\theta+\theta z)^K]
+=\exp\{\kappa(m_1)\theta(z-1)\}.\]</div>
+<p>因此 <span class="math notranslate nohighlight">\(K_&gt;\sim\operatorname{Poisson}(\kappa(m_1)\theta)\)</span>，至少一個的機率為 <span class="math notranslate nohighlight">\(1-e^{-\kappa(m_1)\theta}\)</span>。未截斷 GR 且目標為親代本身時，<span class="math notranslate nohighlight">\(\theta=e^{-\beta(m_1-m_0)}\)</span>。</p>
+<p>若限定直接後代在時間區間 <span class="math notranslate nohighlight">\([a,b]\)</span>、空間區域 <span class="math notranslate nohighlight">\(\mathcal R\)</span>，再乘上對應核積分 <span class="math notranslate nohighlight">\(G\)</span>、<span class="math notranslate nohighlight">\(F\)</span> 即可。這是單一親代的直接後代計數；多世代的完整目標事件機率不能只乘一個固定的平均放大倍率後套入 Poisson 公式。</p>
+</section>
+<section id="c-4">
+<h2>C.4 平均場家族的生成函數<a class="headerlink" href="#c-4" title="Link to this heading">#</a></h2>
+<p>這一節改用一個較簡單的模型：每個事件的後代數均為 <span class="math notranslate nohighlight">\(\operatorname{Poisson}(n)\)</span>，與規模無關。它是正文灰色參考線的模型，不是規模依賴產能的 ETAS。</p>
+<p>令 <span class="math notranslate nohighlight">\(H(z)=\mathbb E[z^Y]\)</span>，始祖貢獻一個 <span class="math notranslate nohighlight">\(z\)</span>，每個後代再開啟一個同分布子家族，因此</p>
+<div class="math notranslate nohighlight">
+\[H(z)=z\,\mathbb E[H(z)^K]=z e^{n(H(z)-1)}.\]</div>
+<p><span class="math notranslate nohighlight">\(n&lt;1\)</span> 時 <span class="math notranslate nohighlight">\(H'(1)=1/(1-n)\)</span>。由 Lagrange 反演，其家族大小是 Borel 分布：</p>
+<div class="math notranslate nohighlight">
+\[P(Y=k)=\frac{e^{-nk}(nk)^{k-1}}{k!},\qquad k=1,2,\ldots.\]</div>
+<p>令單個後代超過始祖規模的機率為 <span class="math notranslate nohighlight">\(\theta\)</span>。在這個規模與繁衍獨立的平均場模型中，沒有任何後代超過始祖的機率為 <span class="math notranslate nohighlight">\(H(1-\theta)/(1-\theta)\)</span>。設 <span class="math notranslate nohighlight">\(w=H(1-\theta)\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[w=(1-\theta)e^{n(w-1)},\qquad
+P_&gt;=1-\frac{w}{1-\theta}.\]</div>
+<p>固定 <span class="math notranslate nohighlight">\(n&lt;1\)</span>、<span class="math notranslate nohighlight">\(\theta\to0\)</span> 時，<span class="math notranslate nohighlight">\(P_&gt;\simeq n\theta/(1-n)\)</span>。不能在這個近似下再任意令 <span class="math notranslate nohighlight">\(n\to1\)</span>；機率不會發散。</p>
+<p>對連續規模分布抽出的始祖，<span class="math notranslate nohighlight">\(\theta\)</span> 在 <span class="math notranslate nohighlight">\((0,1)\)</span> 均勻分布。當 <span class="math notranslate nohighlight">\(n\to1\)</span>，整體平均 <span class="math notranslate nohighlight">\(P_&gt;\)</span> 也不等於 1：單成員家族的機率為 <span class="math notranslate nohighlight">\(e^{-n}\)</span>，它們不可能出現更大後代，因此平均機率至多 <span class="math notranslate nohighlight">\(1-e^{-n}\)</span>。ETAS 的規模會影響家族大小，不能用此 Borel 模型作為其精確家族分布。</p>
+</section>
+<section id="c-5">
+<h2>C.5 分支法模擬與觀測窗<a class="headerlink" href="#c-5" title="Link to this heading">#</a></h2>
+<p>指定背景模型、規模分布、正規化觸發核及觀測範圍後，先生成背景事件；對每個待處理事件 <span class="math notranslate nohighlight">\(i\)</span>，抽取 <span class="math notranslate nohighlight">\(K_i\sim\operatorname{Poisson}(\kappa(m_i))\)</span>，再為各後代抽取相對時間、位置與規模，加入待處理佇列。處理到佇列為空或已宣告的計算限制為止。</p>
+<p>Omori 時間密度的累積分布為 <span class="math notranslate nohighlight">\(G(t)=1-(1+t/c)^{1-p}\)</span>，反函數抽樣可寫成</p>
+<div class="math notranslate nohighlight">
+\[\Delta t=c\left[(1-U)^{-1/(p-1)}-1\right],\qquad U\sim U(0,1),\quad p&gt;1.\]</div>
+<p>截斷規模的反函數為</p>
+<div class="math notranslate nohighlight">
+\[M=m_0-\frac1\beta\ln\left[1-U(1-e^{-\beta\Delta})\right].\]</div>
+<p>只有落在窗內的後代才列入輸出，但若允許窗外事件的後代回到區內，就不能把所有窗外生成事件直接丟棄。從有限起點開始、沒有暖機的模擬，也不是長期平穩樣本。家族大小上限是計算截斷，不是物理參數；應記錄是否觸及上限，而不能把未完成家族當成完整結果。</p>
+</section>
+<section id="c-6">
+<h2>C.6 有限時間與空間的概似積分<a class="headerlink" href="#c-6" title="Link to this heading">#</a></h2>
+<p>設評分窗為 <span class="math notranslate nohighlight">\([S,T]\times\mathcal R\)</span>，使用對新事件規模積分後的 <span class="math notranslate nohighlight">\(\lambda^*_{ST}\)</span>。忽略與參數無關常數時，</p>
+<div class="math notranslate nohighlight">
+\[\ell=\sum_{j:(t_j,z_j)\in[S,T]\times\mathcal R}\ln\lambda^*_{ST}(t_j,z_j)
+-\int_S^T\int_{\mathcal R}\lambda^*_{ST}(t,z)\,dz\,dt.\]</div>
+<p>窗前及鄰近區域的已知事件可以作為條件歷史，但不參與窗內事件求和。對 <span class="math notranslate nohighlight">\(t_i&lt;T\)</span>，定義</p>
+<div class="math notranslate nohighlight">
+\[a_i=\max(S,t_i)-t_i,\qquad b_i=T-t_i,\]</div>
+<p>則正規化 Omori 的時間佔比為</p>
+<div class="math notranslate nohighlight">
+\[G_i=(1+a_i/c)^{1-p}-(1+b_i/c)^{1-p}.\]</div>
+<p>只有 <span class="math notranslate nohighlight">\(t_i\ge S\)</span> 時才退化成 <span class="math notranslate nohighlight">\(1-(1+(T-t_i)/c)^{1-p}\)</span>。較早的事件不能漏掉第一個下限項。另令</p>
+<div class="math notranslate nohighlight">
+\[F_i=\int_{\mathcal R}f(z-z_i;m_i)\,dz,\]</div>
+<p>固定背景下的積分為</p>
+<div class="math notranslate nohighlight">
+\[(T-S)\int_{\mathcal R}\mu(z)\,dz+\sum_{i:t_i&lt;T}\kappa(m_i)G_iF_i.\]</div>
+<p><span class="math notranslate nohighlight">\(\kappa(m_i)G_iF_i\)</span> 是沿實際歷史對單個來源累積的窗內貢獻；整個補償子通常是依歷史變動的隨機量，不能無條件稱為預報起點已知的未來期望數。</p>
+<p>空間核若以來源為圓心，半徑 <span class="math notranslate nohighlight">\(R\)</span> 的圓內積分為</p>
+<div class="math notranslate nohighlight">
+\[F(R)=1-(1+R^2/\sigma)^{1-q},\qquad\sigma=De^{\gamma(m_i-m_0)}.\]</div>
+<p>若區域相對來源是星形、每條射線自 0 到 <span class="math notranslate nohighlight">\(R(\varphi)\)</span> 都在區域內，可再平均方位角得到 <span class="math notranslate nohighlight">\(F\)</span>。任意多邊形或區外來源可能有多段進出邊界，不能只放一個 <span class="math notranslate nohighlight">\(R(\varphi)\)</span>；須將每段徑向積分相加，或採其他可靠的區域積分法。核在 <span class="math notranslate nohighlight">\(\sigma&gt;0\)</span> 時原點有限，不需宣稱 Jacobian 消除了不存在的奇異點。</p>
+</section>
+<section id="c-7-em">
+<h2>C.7 未知親代與 EM<a class="headerlink" href="#c-7-em" title="Link to this heading">#</a></h2>
+<p>令潛在標籤 <span class="math notranslate nohighlight">\(Z_j=0\)</span> 表示背景，<span class="math notranslate nohighlight">\(Z_j=i\)</span> 表示事件 <span class="math notranslate nohighlight">\(i\)</span> 的直接後代。將事件 <span class="math notranslate nohighlight">\(j\)</span> 附近的率貢獻除以總率，便得到 <a class="reference internal" href="14_etas_estimation.html#equation-eq-rho-phi">(10)</a>。共同的新事件規模密度在分子分母消去。</p>
+<p>給定參數 <span class="math notranslate nohighlight">\(\theta^{(k)}\)</span> 的 E 步計算 <span class="math notranslate nohighlight">\(\phi_j^{(k)},\rho_{ij}^{(k)}\)</span>。M 步最大化期望完整資料對數概似，其結構為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Q(\theta\mid\theta^{(k)})={}&amp;\sum_j\phi_j^{(k)}\ln\mu(z_j)\\
+&amp;+\sum_j\sum_{i:t_i&lt;t_j}\rho_{ij}^{(k)}\ln\{\kappa(m_i)g(t_j-t_i)f(z_j-z_i;m_i)\}\\
+&amp;-\int_S^T\int_{\mathcal R}\lambda^*_{ST,\theta}(t,z)\,dz\,dt.
+\end{aligned}\end{split}\]</div>
+<p>這裡省略可分離的規模項，並假設分支模型的條件歷史處理一致。精確 E 步與使 <span class="math notranslate nohighlight">\(Q\)</span> 不下降的 M 步，可保證觀測概似不下降；不保證全域最大。Veen 與 Schoenberg（2008）的 EM 型方法應連同其邊界與計算近似閱讀。</p>
+<p>Zhuang et al.（2002）的背景估計包含加權變頻寬平滑。若任意加入頻寬重選、截斷或固定次數迭代，就不能直接引用精確 EM 的單調保證。正文地圖固定外部觸發參數，只示範背景權重更新，並未最大化上述完整 <span class="math notranslate nohighlight">\(Q\)</span>。</p>
+</section>
+<section id="c-8">
+<h2>C.8 參數補償與資訊矩陣<a class="headerlink" href="#c-8" title="Link to this heading">#</a></h2>
+<p>先考慮一個可分離的簡化模型：<span class="math notranslate nohighlight">\(\ell(\eta)=\sum_i\ell_i(u_i)\)</span>，<span class="math notranslate nohighlight">\(u_i=\eta_1+\eta_2\Delta m_i\)</span>。例如已知配對的空間核，可用 <span class="math notranslate nohighlight">\(\eta_1=\ln D\)</span>、<span class="math notranslate nohighlight">\(\eta_2=\gamma\)</span>。令 <span class="math notranslate nohighlight">\(w_i=-\mathbb E[\partial^2\ell_i/\partial u_i^2]&gt;0\)</span>、<span class="math notranslate nohighlight">\(W=\sum_iw_i\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I=\begin{pmatrix}\sum_iw_i&amp;\sum_iw_i\Delta m_i\\
+\sum_iw_i\Delta m_i&amp;\sum_iw_i\Delta m_i^2\end{pmatrix},\qquad
+\det I=W^2\operatorname{Var}_w(\Delta m).\end{split}\]</div>
+<p>因此 <span class="math notranslate nohighlight">\(I^{-1}_{22}=1/[W\operatorname{Var}_w(\Delta m)]\)</span>。當規模完全相同，參數只能透過一個線性組合出現；規模跨度與總資訊量都會影響估計精度。真實 ETAS 的親代未知、混合強度與其他參數會引入更多交叉項，不能將此簡化矩陣宣稱為完整 ETAS 的精確資訊矩陣。</p>
+<p>對負對數概似 <span class="math notranslate nohighlight">\(\xi\)</span> 使用 DFP 時，令 <span class="math notranslate nohighlight">\(s_k=\theta_{k+1}-\theta_k\)</span>、<span class="math notranslate nohighlight">\(y_k=\nabla\xi(\theta_{k+1})-\nabla\xi(\theta_k)\)</span>，反 Hessian 近似更新為</p>
+<div class="math notranslate nohighlight">
+\[H_{k+1}=H_k+\frac{s_ks_k^{\mathsf T}}{s_k^{\mathsf T}y_k}
+-\frac{H_ky_ky_k^{\mathsf T}H_k}{y_k^{\mathsf T}H_ky_k}.\]</div>
+<p>正定性需要合適初始矩陣與曲率條件。最佳化器內部的近似矩陣不一定足以作為統計共變異數；最後仍須檢查目標函數、座標轉換、參數邊界與局部二次近似。</p>
+</section>
+<section id="c-9-rj">
+<h2>C.9 R–J 的受限對照與全世代平均<a class="headerlink" href="#c-9-rj" title="Link to this heading">#</a></h2>
+<p>只保留一個指定主震 <span class="math notranslate nohighlight">\(M_m\)</span>，忽略背景與新事件再觸發，並採未截斷 GR，對目標規模 <span class="math notranslate nohighlight">\(M\ge m_0\)</span> 積分，可得</p>
+<div class="math notranslate nohighlight">
+\[R(t,M)=A(p-1)c^{p-1}e^{\alpha(M_m-m_0)}e^{-\beta(M-m_0)}(t+c)^{-p}.\]</div>
+<p>若 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span>，便是正文 <a class="reference internal" href="14_etas_estimation.html#equation-eq-rj-rate">(11)</a> 的形式，且在相同時間單位下</p>
+<div class="math notranslate nohighlight">
+\[10^{a'}=A(p-1)c^{p-1}.\]</div>
+<p>這個代數對照要求 <span class="math notranslate nohighlight">\(p&gt;1\)</span> 以使用上述正規化核，並只描述指定來源的直接後代。R–J 自身在有限窗可使用其他 <span class="math notranslate nohighlight">\(p\)</span>；實際對整段序列擬合得到的 <span class="math notranslate nohighlight">\(a',p\)</span> 也不必等於直接觸發核的參數。</p>
+<p>若恢復完整分支，給定始祖規模，其全世代後代期望數在次臨界、無窗截斷下為 <span class="math notranslate nohighlight">\(\kappa(M_m)/(1-n)\)</span>。時間率則是卷積之和：</p>
+<div class="math notranslate nohighlight">
+\[r_{\rm all}(t\mid M_m)=\kappa(M_m)\{g(t)+n(g*g)(t)+n^2(g*g*g)(t)+\cdots\}.\]</div>
+<p>每個卷積積分為 1，所以總積分具有 <span class="math notranslate nohighlight">\(1/(1-n)\)</span> 放大因子；但時間形狀通常不再是原來的 <span class="math notranslate nohighlight">\(g\)</span>。因此不能用這個總數關係，把實際 R–J 產能反推為唯一 ETAS 分支比。</p>
+</section>
+<section id="c-10">
+<h2>C.10 後驗預報與診斷的條件<a class="headerlink" href="#c-10" title="Link to this heading">#</a></h2>
+<p>貝氏參數後驗為 <span class="math notranslate nohighlight">\(p(\theta\mid\mathcal D)\propto L(\theta;\mathcal D)p(\theta)\)</span>。對未來事件集合 <span class="math notranslate nohighlight">\(B\)</span>，後驗預報將參數不確定性平均：</p>
+<div class="math notranslate nohighlight">
+\[P(N(B)\ge1\mid\mathcal D)=\int P_\theta(N(B)\ge1\mid H_{t_0})p(\theta\mid\mathcal D)\,d\theta.\]</div>
+<p>內層是給定參數的條件預報，仍須包含模型允許的未來級聯。後驗只反映指定先驗、概似和觀測模型，沒有建模的漏測、機制變化不會自動被納入。</p>
+<p>時間變換診斷使用補償子 <span class="math notranslate nohighlight">\(\tau_j=\int_0^{t_j}\lambda^*(u)du\)</span>。在正確強度與相應正則條件下，變換間隔應如單位指數分布；同資料估參數、選模型後，原始 KS 標準分布通常不再是正確校準，須透過模擬重估等方式處理。只檢查邊際分布也不足以確認間隔獨立。</p>
+</section>
+<section id="id2">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Jalilian, A.（2019），<a class="reference external" href="https://doi.org/10.18637/jss.v088.c01">ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data</a>。<a class="reference external" href="https://www.jstatsoft.org/article/view/v088c01">免費全文</a>，對照條件歷史、空間積分及估計流程。</p></li>
+<li><p>Reinhart, A.（2018），<a class="reference external" href="https://doi.org/10.1214/17-STS629">A Review of Self-Exciting Spatio-Temporal Point Processes and Their Applications</a>。<a class="reference external" href="https://arxiv.org/abs/1708.02647">免費作者預印本</a>，串起分支表示、邊界、估計與診斷。</p></li>
+<li><p>Daley, D. J. 與 Vere-Jones, D.（2003），<a class="reference external" href="https://doi.org/10.1007/b97277">An Introduction to the Theory of Point Processes, Volume I: Elementary Theory and Methods, Second Edition</a>。第 6 章群集與標記模型、第 7 章條件強度與概似為本附錄的理論背景；出版社全文可能需訂閱。</p></li>
+<li><p>Ogata, Y.（1988），<a class="reference external" href="https://doi.org/10.1080/01621459.1988.10478560">Statistical Models for Earthquake Occurrences and Residual Analysis for Point Processes</a>。<a class="reference external" href="https://bemlar.ism.ac.jp/zhuang/Refs/Refs/ogata1988.pdf">免費研究機構全文</a>，閱讀時間 ETAS 與模型殘差。</p></li>
+<li><p>Ogata, Y. 與 Zhuang, J.（2006），<a class="reference external" href="https://doi.org/10.1016/j.tecto.2005.10.016">Space–time ETAS models and an improved extension</a>。<a class="reference external" href="https://bemlar.ism.ac.jp/zhuang/pubs/ogata2006tectno.pdf">免費機構全文</a>，對照產能與空間尺度的分離；出版社可能需訂閱。</p></li>
+<li><p>Zhuang, J., Ogata, Y. 與 Vere-Jones, D.（2002），<a class="reference external" href="https://doi.org/10.1198/016214502760046925">Stochastic Declustering of Space-Time Earthquake Occurrences</a>。背景加權估計及隨機親代的主要來源；出版社全文可能需訂閱。</p></li>
+<li><p>Veen, A. 與 Schoenberg, F. P.（2008），<a class="reference external" href="https://doi.org/10.1198/016214508000000148">Estimation of Space–Time Branching Process Models in Seismology Using an EM–Type Algorithm</a>。未知親代如何形成不完整資料問題，以及 EM 型估計的計算方式；出版社全文可能需訂閱。</p></li>
+<li><p>Naylor, M., Serafini, F., Lindgren, F. 與 Main, I. G.（2023），<a class="reference external" href="https://doi.org/10.3389/fams.2023.1126759">Bayesian modeling of the temporal evolution of seismicity using the ETAS.inlabru package</a>。免費開放全文，用合成案例理解聯合後驗與漏測影響。</p></li>
+<li><p>Reasenberg, P. A. 與 Jones, L. M.（1989），<a class="reference external" href="https://doi.org/10.1126/science.243.4895.1173">Earthquake Hazard After a Mainshock in California</a>。R–J 餘震預報的原始來源；出版社全文可能需訂閱。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1007/s000240050275">Seismicity Analysis through Point-process Modeling: A Review</a> — Yosihiko Ogata，1999，<em>Pure and Applied Geophysics</em>，155:471–507。從條件強度一路連到概似、ETAS 與殘差，適合把本章放回統計地震學的發展脈絡；出版社全文可能需訂閱。</p></li>
+</ul>
+<p>返回 <a class="reference internal" href="13_etas_structure.html"><span class="doc">8. ETAS I：把每個事件接進預報</span></a> 或 <a class="reference internal" href="14_etas_estimation.html"><span class="doc">9. ETAS II：從目錄估計模型，再檢查它</span></a>。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_b_catalog.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">附錄 B：目錄統計與叢集律的推導</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix_d_eepas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">附錄 D：Ψ 的量測與 EEPAS 的核函數</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-1">C.1 正規化與分支比</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">改變輸入門檻並不是單純刪除資料</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2">C.2 世代期望、平穩率與局部有限性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3">C.3 直接後代超過親代的機率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4">C.4 平均場家族的生成函數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5">C.5 分支法模擬與觀測窗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-6">C.6 有限時間與空間的概似積分</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-7-em">C.7 未知親代與 EM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-8">C.8 參數補償與資訊矩陣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-9-rj">C.9 R–J 的受限對照與全世代平均</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-10">C.10 後驗預報與診斷的條件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

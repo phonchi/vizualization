@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>台灣地球物理觀測資料探索 &#8212; 台灣地球物理觀測資料探索</title>
+    <title>地震統計與預報：從模型到臺灣觀測 &#8212; 地震統計與預報：從模型到台灣觀測</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -50,23 +51,21 @@
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '00_intro';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. 台灣地球物理觀測總覽" href="01_overview.html" />
+    <link rel="next" title="1. 地震預報從什麼問題開始" href="09_forecasting_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -196,7 +195,7 @@
   
   
   
-    <p class="title logo__title">台灣地球物理觀測資料探索</p>
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -212,38 +211,51 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    台灣地球物理觀測資料探索
+                    地震統計與預報：從模型到臺灣觀測
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地球物理觀測資料探索</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">1. 台灣地球物理觀測總覽</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_download.html">2. 資料下載機制</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">3. 地下水位觀測</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">4. 地磁觀測</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">5. 地動觀測：波形與地震目錄</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">6. GNSS 地殼變形觀測</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">7. 案例分析：2024/4/3 花蓮地震 M7.2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">8. 怎麼嚴謹地問「這和地震有關嗎？」</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：地震預報模型</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">9. 地震預報的問題設定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">10. 點過程：預報模型的共同語言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">11. 目錄統計 I：完整度與規模分布</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">12. 目錄統計 II：叢集的經驗律與除叢</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">13. ETAS I：條件強度、分支過程與模擬</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">14. ETAS II：估計、診斷、變體與作業引擎</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">15. Ψ：前兆尺度增加的解剖</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">16. EEPAS 與 PPE：把 Ψ 變成可運轉的預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">17. 預報檢驗 I：似然與一致性檢驗</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">18. 預報檢驗 II：比較、警報、功效與價值</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 模型組合：加法、乘法與權重學習</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">20. 時間相依複發模型：Weibull、BPT 與應力釋放</a></li>
-<li class="toctree-l1"><a class="reference internal" href="21_psha.html">21. PSHA：從發生率到地動危害</a></li>
-<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">22. 作業化系統：STEP、OEF 與機率溝通</a></li>
-<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">23. 台灣：資料、模型、缺口與下一步</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
 </ul>
 
     </div>
@@ -379,7 +391,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>台灣地球物理觀測資料探索</h1>
+    <h1>地震統計與預報：從模型到臺灣觀測</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,11 +401,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">為什麼要觀測這些？</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">這個網站怎麼用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">環境準備</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">資料來源與引用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">從一份目錄開始</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">再回到臺灣，理解觀測能增加什麼</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">主文、補充與附錄怎麼配合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">參考資料與延伸閱讀</a></li>
 </ul>
             </nav>
         </div>
@@ -406,139 +417,90 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>台灣地球物理觀測資料探索<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>這是一個為研究生「打底」的教學網站，分成兩部。<strong>第一部</strong>帶你認識台灣四大類地球物理連續觀測資料（地下水位、地磁、地動、GNSS 地殼變形），學會從中央氣象署 GDMS（臺灣地震與地球物理資料管理系統）下載真實資料，並用 Python 做視覺化與探索，一起想清楚一個核心問題：</p>
-<blockquote>
-<div><p><strong>這些觀測量與地震之間有什麼關係？</strong></p>
-</div></blockquote>
-<p><strong>第二部</strong>接著走進地震預報的世界：當「找前兆」這條路困難重重（第一部會誠實地讓你看到有多難），科學社群這三十年來實際走通的路是什麼？答案是<strong>統計地震預報模型</strong>——從描述餘震叢集的 ETAS、捕捉前兆尺度增加的 EEPAS，到把預報變成日常業務的作業化系統與機率式地震危害度分析（PSHA）。第二部以觀念為主，帶你把這一整套思想走一遍。</p>
+<h1>地震統計與預報：從模型到臺灣觀測<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>地震接連發生時，我們想知道活動還會持續多久；一段時間沒有地震時，又可能
+想問，這份安靜是否代表什麼。要把這些疑問變成可信的判斷，需要同時理解
+資料怎麼來、隨機波動會有多大，以及模型究竟利用了哪些資訊。</p>
+<p>這個教學網站從這些問題出發，先建立地震統計與預報的基本觀念，再回到臺灣
+的物理觀測。你只需要基礎的機率與統計概念，不必先學過地震學、點過程或
+程式設計。閱讀時可以沿著章節往前，讓同一個問題逐步變得更清楚。</p>
 <section id="id2">
-<h2>為什麼要觀測這些？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>大地震發生前，地殼處於應力累積的狀態。應力的變化「理論上」可能在多種物理量上留下痕跡：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>觀測量</p></th>
-<th class="head"><p>可能的地震關聯</p></th>
-<th class="head"><p>對應章節</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>地下水位</p></td>
-<td><p>應力改變孔隙壓力 → 水位異常升降；地震時的同震階變（co-seismic step）</p></td>
-<td><p><a class="reference internal" href="03_groundwater.html"><span class="doc">3. 地下水位觀測</span></a></p></td>
-</tr>
-<tr class="row-odd"><td><p>地磁</p></td>
-<td><p>岩石應力改變磁化率（壓磁效應）、地殼流體移動產生電磁訊號</p></td>
-<td><p><a class="reference internal" href="04_geomagnetic.html"><span class="doc">4. 地磁觀測</span></a></p></td>
-</tr>
-<tr class="row-even"><td><p>地動</p></td>
-<td><p>地震活動度變化（b 值、前震序列）、波形本身</p></td>
-<td><p><a class="reference internal" href="05_seismic.html"><span class="doc">5. 地動觀測：波形與地震目錄</span></a></p></td>
-</tr>
-<tr class="row-odd"><td><p>GNSS</p></td>
-<td><p>板塊運動、震間閉鎖、同震位移、震後餘滑</p></td>
-<td><p><a class="reference internal" href="06_gnss.html"><span class="doc">6. GNSS 地殼變形觀測</span></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>要先講清楚：「地震前兆」到今天仍是沒有定論的開放問題，多數宣稱的前兆一經事後嚴格檢驗都站不住腳。所以這門課要練的，不只是把圖畫漂亮，而是先把資料處理的基本功打穩，再帶著健康的懷疑，去檢驗每一個看起來像「異常」的東西。</p>
+<h2>從一份目錄開始<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>第一部先把地震看成時間與空間中的事件。從目錄的計數、等待時間與規模，
+我們會發現平均率不足以描述所有現象：同樣多的事件，可以平均散佈，也可以
+擠在幾段期間。為瞭解釋這些差異，需要先理解隨機性與叢集，再學習讓預報
+隨新資料更新的條件強度。</p>
+<p>接著，完整度、規模分布與餘震衰減提供建模的材料，統計估計說明資料能讓
+我們知道多少。ETAS與EEPAS將這些想法組成不同的預報方式；檢驗與模型比較
+再帶我們判斷，描述過去的能力是否延續到未來。最後才把預報接到地動危害、
+公開資訊與實際使用。</p>
+<p>前段會反覆使用一組清楚標示的合成目錄，讓你看到同樣資料如何回答不同問題。
+其他圖表依教學需要使用真實目錄或模型模擬，文中會說明來源與用途；示意數字
+不當成臺灣的正式預報。</p>
+<p>從<a class="reference internal" href="09_forecasting_intro.html"><span class="doc">1. 地震預報從什麼問題開始</span></a>開始閱讀。</p>
 </section>
 <section id="id3">
-<h2>這個網站怎麼用<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p><strong>第一部：地球物理觀測資料探索</strong></p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="01_overview.html"><span class="doc">1. 台灣地球物理觀測總覽</span></a>：先看台灣有哪些測站、分布在哪裡。</p></li>
-<li><p><a class="reference internal" href="02_download.html"><span class="doc">2. 資料下載機制</span></a>：GDMS 的註冊、下載機制，以及本站的 <code class="docutils literal notranslate"><span class="pre">gdms_toolkit</span></code> 自動化工具。</p></li>
-<li><p>第 3 到 6 章：逐一認識四類資料，格式怎麼讀、怎麼畫、有哪些訊號藏在裡面。</p></li>
-<li><p><a class="reference internal" href="07_case_hualien2024.html"><span class="doc">7. 案例分析：2024/4/3 花蓮地震 M7.2</span></a>：以 2024 年 4 月 3 日花蓮外海 M7.2 地震為案例，把四類資料放在同一時間軸上對照。這一章的結果可能會顛覆你的預期。</p></li>
-<li><p><a class="reference internal" href="08_explore_ideas.html"><span class="doc">8. 怎麼嚴謹地問「這和地震有關嗎？」</span></a>：怎麼嚴謹地問「這和地震有關嗎？」，一份前兆研究的方法地圖。</p></li>
-</ol>
-<p><strong>第二部：地震預報模型</strong>（15 章，教科書式的深度）</p>
+<h2>再回到臺灣，理解觀測能增加什麼<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>第二部把前面學過的判斷帶到地下水、地磁、地動與GNSS。每一種觀測都先從
+物理機制與可以量到的訊號出發，再閱讀資料，分辨地震反應、環境影響與觀測
+限制。程式產生的圖是理解資料的工具，正文不以讀檔指令帶動敘事。</p>
+<p>2024年花蓮地震的案例將不同觀測放在共同時間軸上，讓我們練習整合證據。
+看到異常與證明可預報之間還有哪些步驟，會在研究方法與臺灣展望中接著討論。
+閱讀物理觀測時，仍要使用前面學過的統計判斷：資料支持什麼，
+以及還有哪些其他解釋。</p>
+<p>已熟悉統計模型、想先看觀測資料的讀者，也可以從<a class="reference internal" href="01_overview.html"><span class="doc">18. 臺灣地球物理觀測總覽</span></a>進入。</p>
+</section>
+<section id="id4">
+<h2>主文、補充與附錄怎麼配合<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>主文保留問題的動機、圖表解讀、必要公式與重要限制。短補充可選擇展開，
+長推導與演算法集中在第三部；不展開它們，也能沿著教學主線讀下去。
+需要追查某一步時，正文會連到對應附錄，附錄也提供回程連結。</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>章</p></th>
-<th class="head"><p>主題</p></th>
+<tr class="row-odd"><th class="head"><p>想繼續理解的內容</p></th>
+<th class="head"><p>閱讀入口</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="09_forecasting_intro.html"><span class="doc">9. 地震預報的問題設定</span></a></p></td>
-<td><p>地震預報的問題設定：預測／預報／預警與可預報性</p></td>
+<tr class="row-even"><td><p>機率、概似、時間變換與模擬</p></td>
+<td><p><a class="reference internal" href="appendix_a_point_process.html"><span class="doc">附錄 A：點過程的機率、概似與模擬</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="10_point_process.html"><span class="doc">10. 點過程：預報模型的共同語言</span></a></p></td>
-<td><p>點過程：預報模型的共同語言（條件強度、概似、模擬）</p></td>
+<tr class="row-odd"><td><p>完整度、規模估計與叢集律</p></td>
+<td><p><a class="reference internal" href="appendix_b_catalog.html"><span class="doc">附錄 B：目錄統計與叢集律的推導</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="11_catalog_completeness_b.html"><span class="doc">11. 目錄統計 I：完整度與規模分布</span></a></p></td>
-<td><p>目錄統計 I：完整度 <span class="math notranslate nohighlight">\(M_c\)</span> 與規模分布 <span class="math notranslate nohighlight">\(b\)</span> 值</p></td>
+<tr class="row-even"><td><p>ETAS分支、估計與診斷</p></td>
+<td><p><a class="reference internal" href="appendix_c_etas.html"><span class="doc">附錄 C：ETAS 的分支、概似與推論</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="12_clustering_laws.html"><span class="doc">12. 目錄統計 II：叢集的經驗律與除叢</span></a></p></td>
-<td><p>目錄統計 II：叢集的經驗律與除叢</p></td>
+<tr class="row-odd"><td><p>Ψ與EEPAS的量法和公式</p></td>
+<td><p><a class="reference internal" href="appendix_d_eepas.html"><span class="doc">附錄 D：Ψ 的量測與 EEPAS 的核函數</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="13_etas_structure.html"><span class="doc">13. ETAS I：條件強度、分支過程與模擬</span></a></p></td>
-<td><p>ETAS I：條件強度、分支過程與模擬</p></td>
+<tr class="row-even"><td><p>預報檢驗、比較與模型組合</p></td>
+<td><p><a class="reference internal" href="appendix_e_testing.html"><span class="doc">附錄 E：預報檢驗與模型組合的推導</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="14_etas_estimation.html"><span class="doc">14. ETAS II：估計、診斷、變體與作業引擎</span></a></p></td>
-<td><p>ETAS II：估計、診斷、變體與作業引擎</p></td>
+<tr class="row-odd"><td><p>複發模型與地動危害</p></td>
+<td><p><a class="reference internal" href="appendix_f_hazard.html"><span class="doc">附錄 F：複發時間與地震危害積分</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="15_psi_phenomenon.html"><span class="doc">15. Ψ：前兆尺度增加的解剖</span></a></p></td>
-<td><p>Ψ：前兆尺度增加的解剖</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="16_eepas_ppe.html"><span class="doc">16. EEPAS 與 PPE：把 Ψ 變成可運轉的預報</span></a></p></td>
-<td><p>EEPAS 與 PPE：把 Ψ 變成可運轉的預報</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="17_testing_consistency.html"><span class="doc">17. 預報檢驗 I：似然與一致性檢驗</span></a></p></td>
-<td><p>預報檢驗 I：似然與一致性檢驗</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="18_testing_comparison.html"><span class="doc">18. 預報檢驗 II：比較、警報、功效與價值</span></a></p></td>
-<td><p>預報檢驗 II：比較、警報、功效與價值</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="19_ensembles.html"><span class="doc">19. 模型組合：加法、乘法與權重學習</span></a></p></td>
-<td><p>模型組合：加法、乘法與權重學習</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="20_recurrence_models.html"><span class="doc">20. 時間相依複發模型：Weibull、BPT 與應力釋放</span></a></p></td>
-<td><p>時間相依複發模型：Weibull、BPT、應力釋放</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="21_psha.html"><span class="doc">21. PSHA：從發生率到地動危害</span></a></p></td>
-<td><p>PSHA：從發生率到地動危害</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="22_operational_systems.html"><span class="doc">22. 作業化系統：STEP、OEF 與機率溝通</span></a></p></td>
-<td><p>作業化系統：STEP、OEF 與機率溝通</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="23_taiwan_outlook.html"><span class="doc">23. 台灣：資料、模型、缺口與下一步</span></a></p></td>
-<td><p>台灣：資料、模型、缺口與下一步</p></td>
+<tr class="row-even"><td><p>觀測資料處理與重現指南</p></td>
+<td><p><a class="reference internal" href="appendix_g_observations.html"><span class="doc">附錄 G：觀測資料、處理與幾何細節</span></a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>第二部以<strong>觀念</strong>為主：每一章用文字與示意圖把模型的直覺講清楚，程式碼只是產生示意圖的工具（預設摺疊，有興趣才展開）。你不需要會寫這些模型，但讀完應該能看懂任何一篇地震預報論文在做什麼、以及該對它問哪些問題。</p>
-<p>每一章都是可以下載執行的 Jupyter Notebook（頁面右上角下載按鈕）。所有圖表用的都是真實 GDMS 資料，重跑、改站、改時間範圍，只要改幾行程式。</p>
-</section>
-<section id="id4">
-<h2>環境準備<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;本專案&gt;
-<span class="nb">cd</span><span class="w"> </span>vizualization
-python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w">            </span><span class="c1"># 安裝 gdms_toolkit</span>
-cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">        </span><span class="c1"># 填入你的 GDMS 帳號</span>
-</pre></div>
-</div>
+<p>原始notebook保留產生圖表的程式，適合想重現或延伸分析時使用。閱讀正文
+不需要安裝環境或申請資料；自己執行觀測分析時，請依重現指南準備資料，
+並遵守資料提供者的使用規範。</p>
 </section>
 <section id="id5">
-<h2>資料來源與引用<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>本站所有觀測資料來自中央氣象署「臺灣地震與地球物理資料管理系統」（GDMS，<a class="reference external" href="https://gdms.cwa.gov.tw/">https://gdms.cwa.gov.tw/</a>）。使用資料發表研究成果時，請依 GDMS 網站規範引用資料來源（含 DOI：<a class="reference external" href="https://doi.org/10.7914/SN/T5">10.7914/SN/T5</a>）。</p>
-</section>
-<section id="id6">
-<h2>參考資料與延伸閱讀<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>入門・免費網站</strong>：USGS，〈<a class="reference external" href="https://www.usgs.gov/faqs/can-you-predict-earthquakes">Can you predict earthquakes?</a>〉。
-先讀這篇短文，釐清「預測一次地震」與「估計地震機率」的差別，也想想為什麼事後找到異常還不能算預測成功。</p></li>
-<li><p><strong>台灣觀測背景・免費文章</strong>：蕭乃祺（2019），〈<a class="reference external" href="https://www.ntsec.edu.tw/liveSupply/detail.aspx?a=6829&amp;amp;cat=6841&amp;amp;lid=16154&amp;amp;p=1&amp;amp;print=1">臺灣地震測報的發展</a>〉，《科學研習》58 卷 6 期。
-從地震儀、GNSS 與地下水觀測的建置歷程，認識本站資料從何而來。文中的測站數與作業現況是當時的紀錄，可與本站測站清單對照。</p></li>
-<li><p><strong>進階・開放取用論文</strong>：Mizrahi et al.（2024），〈<a class="reference external" href="https://doi.org/10.1029/2023RG000823">Developing, Testing, and Communicating Earthquake Forecasts: Current Practices and Future Directions</a>〉，<em>Reviews of Geophysics</em>。
-建議先讀 Plain Language Summary，再看模型開發、檢驗與溝通三部分的關係；這正是第二部各章串起來要回答的問題。</p></li>
+<li><p>USGS，<a class="reference external" href="https://www.usgs.gov/faqs/can-you-predict-earthquakes">Can you predict earthquakes?</a>，免費官方說明。先釐清特定地震預測與機率判斷的差別，再進入本站的問題設定。</p></li>
+<li><p>Daley, D. J. 與 Vere-Jones, D.（2003），<a class="reference external" href="https://doi.org/10.1007/b97277">An Introduction to the Theory of Point Processes, Volume I，第二版</a>。本站點過程與隨機模型背景的主要教材，建議依各章指引選讀；全文需訂閱或館藏權限。</p></li>
+<li><p>Mizrahi, L. 等（2024），<a class="reference external" href="https://doi.org/10.1029/2023RG000823">Developing, Testing, and Communicating Earthquake Forecasts: Current Practices and Future Directions</a>，開放取用。先讀Plain Language Summary，再對照模型開發、檢驗與溝通如何形成一個完整流程。</p></li>
+<li><p>蕭乃祺（2019），<a class="reference external" href="https://www.ntsec.edu.tw/liveSupply/detail.aspx?a=6829&amp;amp;cat=6841&amp;amp;lid=16154&amp;amp;p=1&amp;amp;print=1">臺灣地震測報的發展</a>，《科學研習》58卷6期，免費文章。認識臺灣地震與地球物理觀測的建置背景；文內系統狀態是當時的歷史紀錄。</p></li>
 </ul>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -576,11 +538,11 @@ cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="01_overview.html"
+       href="09_forecasting_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. 台灣地球物理觀測總覽</p>
+        <p class="prev-next-title">1. 地震預報從什麼問題開始</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -602,11 +564,10 @@ cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">為什麼要觀測這些？</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">這個網站怎麼用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">環境準備</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">資料來源與引用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">從一份目錄開始</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">再回到臺灣，理解觀測能增加什麼</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">主文、補充與附錄怎麼配合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">參考資料與延伸閱讀</a></li>
 </ul>
   </nav></div>
 

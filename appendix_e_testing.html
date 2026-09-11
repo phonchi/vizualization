@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>附錄 E：預報檢驗與模型組合的推導 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b5690882" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_e_testing';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="附錄 F：複發時間與地震危害積分" href="appendix_f_hazard.html" />
+    <link rel="prev" title="附錄 D：Ψ 的量測與 EEPAS 的核函數" href="appendix_d_eepas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從模型到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/appendix_e_testing.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>附錄 E：預報檢驗與模型組合的推導</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-1-poisson">E.1 從 Poisson 計數到條件形狀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-4">E.4 模擬分位數的誤差</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-5">E.5 資訊增益與區間</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-6">E.6 警報面積與校準</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-7">E.7 成本與損失</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-8">E.8 凸組合的凹性與端點</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-9-kl">E.9 乘法修正的 KL 表達</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-10-logistic">E.10 混合分布、平均率與 logistic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="e">
+<h1>附錄 E：預報檢驗與模型組合的推導<a class="headerlink" href="#e" title="Link to this heading">#</a></h1>
+<p>本附錄需要機率分布、微分與期望值。對應 <a class="reference internal" href="17_testing_consistency.html"><span class="doc">一致性檢驗</span></a>、<a class="reference internal" href="18_testing_comparison.html"><span class="doc">模型比較</span></a>及 <a class="reference internal" href="19_ensembles.html"><span class="doc">模型組合</span></a>，各節推導後可回到主文的圖例。</p>
+<section id="e-1-poisson">
+<h2>E.1 從 Poisson 計數到條件形狀<a class="headerlink" href="#e-1-poisson" title="Link to this heading">#</a></h2>
+<p>獨立箱計數 <span class="math notranslate nohighlight">\(\omega_j\sim\mathrm{Poisson}(\Lambda_j)\)</span> 的乘積機率取對數，即得 <a class="reference internal" href="17_testing_consistency.html#equation-eq-jpoll">(15)</a>。總數 <span class="math notranslate nohighlight">\(N=\sum_j\omega_j\)</span> 的均值為 <span class="math notranslate nohighlight">\(\Lambda=\sum_j\Lambda_j\)</span>。條件在總數 <span class="math notranslate nohighlight">\(N=n\)</span> 上：</p>
+<div class="math notranslate nohighlight">
+\[P(\boldsymbol\omega\mid N=n)
+=\frac{n!}{\prod_j\omega_j!}\prod_j\left(\frac{\Lambda_j}{\Lambda}\right)^{\omega_j},
+\qquad \sum_j\omega_j=n.\]</div>
+<p>這是多項分布，率的整體尺度消去，只剩形狀。S 與 M 分別邊際化到空間和規模；cL 保留聯合形狀。模擬時固定 <span class="math notranslate nohighlight">\(n\)</span>，按正規化率分配事件，再對模擬與觀測使用相同統計量。</p>
+<p>若在固定 Poisson 點過程下使用很細的等體積箱，每箱最多一個事件，<span class="math notranslate nohighlight">\(\Lambda_j\approx\lambda(x_j)\Delta V\)</span>，可得</p>
+<div class="math notranslate nohighlight">
+\[\ln L_{\rm grid}\approx\sum_{i=1}^N\ln\lambda(x_i)-\int\lambda(x)\,dx
++N\ln\Delta V.\]</div>
+<p>同網格兩模型的最後一項抵消，但除以 <span class="math notranslate nohighlight">\(N\)</span> 仍留下 <span class="math notranslate nohighlight">\(\ln\Delta V\)</span>。因此每事件分數也不能直接消除跨網格尺度。一般歷史相依強度的連續概似使用順序條件化，不能由一組無條件獨立空間箱原封不動推出。</p>
+</section>
+<section id="e-2">
+<h2>E.2 叢集的變異數：一個明確的模型<a class="headerlink" href="#e-2" title="Link to this heading">#</a></h2>
+<p>令背景叢集數 <span class="math notranslate nohighlight">\(B\sim\mathrm{Poisson}(\mu_B)\)</span>，各叢集總大小 <span class="math notranslate nohighlight">\(G_i\ge1\)</span> 獨立同分布，且與 <span class="math notranslate nohighlight">\(B\)</span> 獨立。若 <span class="math notranslate nohighlight">\(N=\sum_{i=1}^B G_i\)</span>，全期望與全變異數給出</p>
+<div class="math notranslate nohighlight">
+\[\mathbb E[N]=\mu_B\mathbb E[G],\qquad
+\mathrm{Var}(N)=\mu_B\mathbb E[G^2].\]</div>
+<p>所以 <span class="math notranslate nohighlight">\(\mathrm{Var}(N)/\mathbb E[N]=\mathbb E[G^2]/\mathbb E[G]\ge1\)</span>，只要 <span class="math notranslate nohighlight">\(P(G&gt;1)&gt;0\)</span> 就嚴格大於一。這是完整獨立叢集模型的結果；有限時空窗截斷叢集時需要重新計算。</p>
+<p>再假設每事件直接後代數 <span class="math notranslate nohighlight">\(K\sim\mathrm{Poisson}(n)\)</span>、<span class="math notranslate nohighlight">\(n&lt;1\)</span>，利用 <span class="math notranslate nohighlight">\(G=1+\sum_{i=1}^{K}G_i\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[g=1+ng\Rightarrow g=\frac1{1-n},\qquad
+v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
+<p>故完整叢集計數的 Fano 比為 <span class="math notranslate nohighlight">\(1/(1-n)^2\)</span>。真實帶規模產能的 ETAS 直接後代數可能是混合 Poisson，並非每事件同均值的 Poisson；不能只憑分支比就將此數值套到任何有限窗 ETAS 計數。</p>
+</section>
+<section id="e-3">
+<h2>E.3 負二項與二元分數<a class="headerlink" href="#e-3" title="Link to this heading">#</a></h2>
+<p>採負二項參數 <span class="math notranslate nohighlight">\(r&gt;0,0&lt;q&lt;1\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[P(N=n)=\frac{\Gamma(n+r)}{\Gamma(r)n!}q^r(1-q)^n,
+\quad \mu=\frac{r(1-q)}q,\quad v=\frac{r(1-q)}{q^2}.\]</div>
+<p>若 <span class="math notranslate nohighlight">\(v&gt;\mu&gt;0\)</span>，則 <span class="math notranslate nohighlight">\(q=\mu/v\)</span>、<span class="math notranslate nohighlight">\(r=\mu^2/(v-\mu)\)</span>；<span class="math notranslate nohighlight">\(v\downarrow\mu\)</span> 時趨近 Poisson。這只指定邊際分布，沒有自動指定箱間聯合分布。</p>
+<p>若 Poisson 計數均值為 <span class="math notranslate nohighlight">\(\Lambda\)</span>，至少一次機率 <span class="math notranslate nohighlight">\(P=1-e^{-\Lambda}\)</span>。二元分數 BILL 為 <span class="math notranslate nohighlight">\(y\ln P+(1-y)\ln(1-P)\)</span>。<span class="math notranslate nohighlight">\(n=0\)</span> 時與 POLL 都為 <span class="math notranslate nohighlight">\(-\Lambda\)</span>；<span class="math notranslate nohighlight">\(n\ge1\)</span> 時兩者差為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mathrm{POLL}-\mathrm{BILL}
+&amp;=-\Lambda+n\ln\Lambda-\ln(n!)-\ln(1-e^{-\Lambda})\\
+&amp;=(n-1)\ln\Lambda-\ln(n!)-\frac\Lambda2+O(\Lambda^2).
+\end{aligned}\end{split}\]</div>
+<p>最後一步使用 <span class="math notranslate nohighlight">\((1-e^{-\Lambda})/\Lambda=1-\Lambda/2+O(\Lambda^2)\)</span>。因此稀少單事件箱的差異小，重複事件箱的差異可能很大。一般計數分布的至少一次機率應直接用 <span class="math notranslate nohighlight">\(1-P(N=0)\)</span>，不能只看均值。</p>
+</section>
+<section id="e-4">
+<h2>E.4 模擬分位數的誤差<a class="headerlink" href="#e-4" title="Link to this heading">#</a></h2>
+<p>固定觀測統計量 <span class="math notranslate nohighlight">\(s_{\rm obs}\)</span>，獨立模擬 <span class="math notranslate nohighlight">\(R\)</span> 次，令 <span class="math notranslate nohighlight">\(I_r=1\{s_r\le s_{\rm obs}\}\)</span>，<span class="math notranslate nohighlight">\(\hat\gamma=R^{-1}\sum_r I_r\)</span>。則</p>
+<div class="math notranslate nohighlight">
+\[R\hat\gamma\sim\mathrm{Binomial}(R,\gamma),\qquad
+\mathrm{SE}(\hat\gamma)=\sqrt{\frac{\gamma(1-\gamma)}R}.\]</div>
+<p>在 <span class="math notranslate nohighlight">\(\gamma=0.05\)</span> 時，<span class="math notranslate nohighlight">\(R=10^4\)</span> 對應標準誤約 <span class="math notranslate nohighlight">\(0.00218\)</span>。這只是模擬誤差，沒有包括模型參數不確定性。尾端或零次計數時應使用合適的二項區間；正式 Monte Carlo 檢定可預先採含觀測秩的加一修正，並處理 ties。</p>
+<p>多重檢驗若採 Bonferroni，以檢驗家族內實際數目 <span class="math notranslate nohighlight">\(J\)</span> 使用門檻 <span class="math notranslate nohighlight">\(\alpha/J\)</span>，不要求獨立。把相關檢驗直接折成較小的「有效數目」不保證同樣控制；需另行校準聯合拒絕機率。</p>
+</section>
+<section id="e-5">
+<h2>E.5 資訊增益與區間<a class="headerlink" href="#e-5" title="Link to this heading">#</a></h2>
+<p>同一目錄的階乘項相消，網格概似差為</p>
+<div class="math notranslate nohighlight">
+\[\ln L_Z-\ln L_1=(\Lambda_1-\Lambda_Z)
++\sum_{j,k}\omega_{jk}\ln\frac{\Lambda^Z_{jk}}{\Lambda^1_{jk}}.\]</div>
+<p>每個事件所在箱重複一次，把後項改寫為 <span class="math notranslate nohighlight">\(\sum_nd_n\)</span>，除以 <span class="math notranslate nohighlight">\(N&gt;0\)</span> 即得 <a class="reference internal" href="18_testing_comparison.html#equation-eq-igpe">(16)</a>。若 <span class="math notranslate nohighlight">\(N=0\)</span>，仍有總分差，但每事件資訊增益未定義。</p>
+<p>樣本變異數可寫成</p>
+<div class="math notranslate nohighlight">
+\[s_d^2=\frac{\sum_n(d_n-\bar d)^2}{N-1}
+=\frac{\sum_nd_n^2}{N-1}-\frac{(\sum_nd_n)^2}{N(N-1)}.\]</div>
+<p>將總量差視為固定平移、事件貢獻近似獨立時，常見區間為 <span class="math notranslate nohighlight">\(\mathrm{IGPE}\pm t_{N-1,1-\alpha/2}s_d/\sqrt N\)</span>。事件相關會改變均值變異數：</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Var}(\bar d)=\frac1{N^2}\left[\sum_n\mathrm{Var}(d_n)
++2\sum_{i&lt;j}\mathrm{Cov}(d_i,d_j)\right].\]</div>
+<p>所以叢集中的區間可能需要區塊或模型式校準。未拒絕零增益不等於分數恰好相同，也不等於通過等價性檢定。</p>
+<p>AICc 型修正採 <span class="math notranslate nohighlight">\(\mathrm{AICc}=-2\ln L+2k+2k(k+1)/(N-k-1)\)</span>，兩模型相減、除以 <span class="math notranslate nohighlight">\(2N\)</span> 即得 <a class="reference internal" href="18_testing_comparison.html#equation-eq-igpec">(17)</a>。分母要求 <span class="math notranslate nohighlight">\(N&gt;k+1\)</span>；此為有條件近似，非所有相依點過程的通用修正。</p>
+</section>
+<section id="e-6">
+<h2>E.6 警報面積與校準<a class="headerlink" href="#e-6" title="Link to this heading">#</a></h2>
+<p>令 <span class="math notranslate nohighlight">\(\nu(\tau)\)</span> 是警報比例 <span class="math notranslate nohighlight">\(\tau\)</span> 下的漏報率，常用面積摘要為</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{AS}(\tau)=\frac1\tau\int_0^\tau[1-\nu(u)]\,du,\quad \tau&gt;0.\]</div>
+<p>若在所選參考測度下隨機警報，<span class="math notranslate nohighlight">\(\nu=1-\tau\)</span>，故 <span class="math notranslate nohighlight">\(\mathrm{AS}(\tau)=\tau/2\)</span>；只有完整範圍 <span class="math notranslate nohighlight">\(\tau=1\)</span> 時基準為 <span class="math notranslate nohighlight">\(1/2\)</span>。等面積與背景率加權使用不同參考測度。</p>
+<p>Brier 分解在預報實際取離散值 <span class="math notranslate nohighlight">\(P_k\)</span> 的分組下精確成立。第 <span class="math notranslate nohighlight">\(k\)</span> 組大小 <span class="math notranslate nohighlight">\(n_k\)</span>、觀測比例 <span class="math notranslate nohighlight">\(\bar y_k\)</span>，<span class="math notranslate nohighlight">\(\bar y=\sum_kn_k\bar y_k/N\)</span>，先展開</p>
+<div class="math notranslate nohighlight">
+\[\frac1{n_k}\sum_{i\in k}(P_k-y_i)^2
+=(P_k-\bar y_k)^2+\bar y_k(1-\bar y_k).\]</div>
+<p>交叉項因組內殘差和為零而消去。再用全變異數，得</p>
+<div class="math notranslate nohighlight">
+\[S_B=\underbrace{\sum_k\frac{n_k}N(P_k-\bar y_k)^2}_{\mathrm{REL}}
+-\underbrace{\sum_k\frac{n_k}N(\bar y_k-\bar y)^2}_{\mathrm{RES}}
++\underbrace{\bar y(1-\bar y)}_{\mathrm{UNC}}.\]</div>
+<p>若只是將不同連續預報任意分箱，以箱平均代入不一定保持精確分解。對真實機率 <span class="math notranslate nohighlight">\(Q\)</span>，期望單次 Brier 分數為 <span class="math notranslate nohighlight">\(Q(P-1)^2+(1-Q)P^2=(P-Q)^2+Q(1-Q)\)</span>，唯一最小值在 <span class="math notranslate nohighlight">\(P=Q\)</span>，這就是嚴格適當性。</p>
+</section>
+<section id="e-7">
+<h2>E.7 成本與損失<a class="headerlink" href="#e-7" title="Link to this heading">#</a></h2>
+<p>假設行動成本 <span class="math notranslate nohighlight">\(C\)</span>、不行動且事件發生損失 <span class="math notranslate nohighlight">\(L\)</span>、行動可完全避免該損失，<span class="math notranslate nohighlight">\(0&lt;\alpha=C/L&lt;1\)</span>。已知事件機率 <span class="math notranslate nohighlight">\(P\)</span> 時，比較 <span class="math notranslate nohighlight">\(C\)</span> 與 <span class="math notranslate nohighlight">\(PL\)</span>，得到門檻 <span class="math notranslate nohighlight">\(P&gt;\alpha\)</span>。</p>
+<p>若事件比例為 <span class="math notranslate nohighlight">\(s\)</span>，警報比例 <span class="math notranslate nohighlight">\(\tau\)</span>，漏報比例 <span class="math notranslate nohighlight">\(\nu\)</span>，每次平均支出除以 <span class="math notranslate nohighlight">\(L\)</span> 為 <span class="math notranslate nohighlight">\(e_f=\alpha\tau+s\nu\)</span>。只用長期比例的最佳基準為 <span class="math notranslate nohighlight">\(e_c=\min(\alpha,s)\)</span>；完美預報為 <span class="math notranslate nohighlight">\(e_p=\alpha s\)</span>。因此相對價值</p>
+<div class="math notranslate nohighlight">
+\[V=\frac{\min(\alpha,s)-(\alpha\tau+s\nu)}{\min(\alpha,s)-\alpha s},\qquad 0&lt;s&lt;1.\]</div>
+<p>此式依賴相同成本、完全防護及可及時行動等假設，並不推出所有預報的價值峰值必在 <span class="math notranslate nohighlight">\(\alpha=s\)</span>。實際行動門檻改變時，<span class="math notranslate nohighlight">\(\tau,\nu\)</span> 也會改變。</p>
+</section>
+<section id="e-8">
+<h2>E.8 凸組合的凹性與端點<a class="headerlink" href="#e-8" title="Link to this heading">#</a></h2>
+<p>固定率函數 <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span>，令 <span class="math notranslate nohighlight">\(\lambda_r=(1-r)\lambda_1+r\lambda_2\)</span>，在事件處率皆正，總積分為 <span class="math notranslate nohighlight">\(\Lambda_r=(1-r)\Lambda_1+r\Lambda_2\)</span>。對數概似的導數是</p>
+<div class="math notranslate nohighlight">
+\[\ell'(r)=\sum_n\frac{\lambda_2(n)-\lambda_1(n)}{\lambda_r(n)}-(\Lambda_2-\Lambda_1),\]</div>
+<div class="math notranslate nohighlight">
+\[\ell''(r)=-\sum_n\frac{[\lambda_2(n)-\lambda_1(n)]^2}{\lambda_r(n)^2}\le0.\]</div>
+<p>至少一個觀測事件處兩率不同時才嚴格凹。兩函數可在未觀測處不同，卻在所有事件處相同，故函數不相同不足以保證嚴格性。</p>
+<p>嚴格凹情形有唯一最大值；在 <span class="math notranslate nohighlight">\((0,1)\)</span> 內的條件為 <span class="math notranslate nohighlight">\(\ell'(0)&gt;0\)</span> 且 <span class="math notranslate nohighlight">\(\ell'(1)&lt;0\)</span>。若 <span class="math notranslate nohighlight">\(\Lambda_1=\Lambda_2\)</span>，令 <span class="math notranslate nohighlight">\(\rho_n=\lambda_2(n)/\lambda_1(n)\)</span>，條件簡化成</p>
+<div class="math notranslate nohighlight">
+\[\overline\rho&gt;1,\qquad\overline{\rho^{-1}}&gt;1.\]</div>
+<p>若樣本平均 <span class="math notranslate nohighlight">\(\overline{\ln\rho}=0\)</span> 恰成立，且事件處比值非常數，AM–GM 可推出兩條件。但統計檢驗未顯著不代表這個精確等式。反例是所有事件處 <span class="math notranslate nohighlight">\(\rho_n=2\)</span> 且總量相同，此時概似隨 <span class="math notranslate nohighlight">\(r\)</span> 增加，最佳值在端點 <span class="math notranslate nohighlight">\(r=1\)</span>。</p>
+<p>Jensen 另給出 <span class="math notranslate nohighlight">\(\ell(r)\ge(1-r)\ell(0)+r\ell(1)\)</span>；這是低於最佳成分與否都可能的下界，不是保證超過最佳成分。</p>
+</section>
+<section id="e-9-kl">
+<h2>E.9 乘法修正的 KL 表達<a class="headerlink" href="#e-9-kl" title="Link to this heading">#</a></h2>
+<p>將基準與修正後空間分布正規化為 <span class="math notranslate nohighlight">\(w_j,q_j\)</span>，且 <span class="math notranslate nohighlight">\(q_j=w_jm_j\)</span>、<span class="math notranslate nohighlight">\(\sum_jq_j=1\)</span>。任意真實分布 <span class="math notranslate nohighlight">\(p\)</span> 下，</p>
+<div class="math notranslate nohighlight">
+\[\sum_jp_j\ln m_j
+=\sum_jp_j\ln\frac{q_j}{w_j}
+=D_{\rm KL}(p\|w)-D_{\rm KL}(p\|q).\]</div>
+<p>若 <span class="math notranslate nohighlight">\(p=w\)</span>，增益為 <span class="math notranslate nohighlight">\(-D_{\rm KL}(w\|q)\le0\)</span>，表示對本來正確的基準做不必要修正會受損；不表示任何乘法修正都會系統性失敗。</p>
+<p>加法若保留 <span class="math notranslate nohighlight">\(q_j\ge\pi_1w_j\)</span>、<span class="math notranslate nohighlight">\(\pi_1&gt;0\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[D_{\rm KL}(p\|q)\le D_{\rm KL}(p\|w)+\ln(1/\pi_1).\]</div>
+<p>它限制相對基準的損失，但不保證候選基準本身足夠好。各式需在所比較支撐上有正率或採適當無窮大慣例。</p>
+</section>
+<section id="e-10-logistic">
+<h2>E.10 混合分布、平均率與 logistic<a class="headerlink" href="#e-10-logistic" title="Link to this heading">#</a></h2>
+<p>先抽模型指標 <span class="math notranslate nohighlight">\(I\)</span>，<span class="math notranslate nohighlight">\(P(I=i)=\pi_i\)</span>，再抽 <span class="math notranslate nohighlight">\(N\mid I=i\sim\mathrm{Poisson}(\Lambda_i)\)</span>。全變異數給出</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Var}(N)=\sum_i\pi_i\Lambda_i+\sum_i\pi_i(\Lambda_i-\bar\Lambda)^2,
+\qquad\bar\Lambda=\sum_i\pi_i\Lambda_i.\]</div>
+<p>相較之下，<span class="math notranslate nohighlight">\(N\sim\mathrm{Poisson}(\bar\Lambda)\)</span> 只有第一項。混合 Poisson 通常不是負二項；以負二項近似還需額外理由。</p>
+<p>若 logistic 迴歸為 <span class="math notranslate nohighlight">\(\ln[P/(1-P)]=b_0+\sum_ib_i\ln\phi_i\)</span>，直接取指數得到</p>
+<div class="math notranslate nohighlight">
+\[\frac{P}{1-P}=e^{b_0}\prod_i\phi_i^{b_i}.\]</div>
+<p>這是勝算的乘冪關係，不是點過程率的等式。由係數再建立非負率權重，需要特定轉換與獨立檢驗；截去負係數或移除截距是方法設計，並非 logistic 理論必然要求。</p>
+</section>
+<section id="id1">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.cseptesting.org/getting_started/theory.html">Theory of CSEP Tests</a> — pyCSEP 開發團隊，官方文件（免費）。先對照各檢驗的目標、模擬方式與分位數分數，再看 N、S、M 與 conditional L-test 的程式範例，可把本章公式接到實際檢驗流程。</p></li>
+<li><p><a class="reference external" href="https://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/zechar.pdf_2063069264.pdf">Evaluating earthquake predictions and earthquake forecasts: a guide for students and new researchers</a> — J. Douglas Zechar（2010），CORSSA 免費教材（DOI：10.5078/corssa-77337879）。從「觀測是否與預報一致」出發整理檢驗方法，適合先建立觀念，再回頭理解本章為何要拆開事件數、空間與規模。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1093/gji/ggac018">Prospective evaluation of multiplicative hybrid earthquake forecasting models in California</a> — J. A. Bayona、W. H. Savran、D. A. Rhoades、M. J. Werner（2022），<em>Geophysical Journal International</em>（免費全文）。本章 Poisson／二元似然、負二項計數與多重檢定的主要實例來源；閱讀時留意餘震叢集如何影響各種評分。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1007/b97277">An Introduction to the Theory of Point Processes, Volume I: Elementary Theory and Methods, 2nd ed.</a> — D. J. Daley、D. Vere-Jones（2003），Springer（全文可能需訂閱）。第 2 章建立 Poisson 過程，第 4 章說明更新過程與等待時間，第 6–7 章連結群集、條件強度、概似與補償子；可按本章主題選讀。</p></li>
+<li><p><a class="reference external" href="https://docs.cseptesting.org/getting_started/theory.html#forecast-comparison-tests">Theory of CSEP Tests：Forecast comparison tests</a> — pyCSEP 開發團隊，官方文件（免費）。從資訊增益 IGPE 的定義與 T-test 範例開始，對照本章的基準模型、率修正與信賴區間，理解「分數較高」與「差異顯著」的區別。</p></li>
+<li><p><a class="reference external" href="https://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/zechar.pdf_2063069264.pdf">Evaluating earthquake predictions and earthquake forecasts: a guide for students and new researchers</a> — J. Douglas Zechar（2010），CORSSA 免費教材（DOI：10.5078/corssa-77337879）。接著閱讀警報式預測與誤差圖的部分，比較不同評估方法回答的問題，銜接本章的 Molchan 圖與面積技能分數。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1093/gji/ggad030">Statistical power of spatial earthquake forecast tests</a> — Asim M. Khawaja 等（2023），<em>Geophysical Journal International</em>；<a class="reference external" href="https://gfzpublic.gfz.de/pubman/item/item_5015770_1">免費機構典藏全文</a>。以空間檢驗說明樣本量與網格如何改變統計功效，正好延伸本章「透過檢驗不等於模型有辨識力」的討論；可接著比較等寬網格與 Quadtree 的設計。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1785/0220240209">Enhancing the Statistical Evaluation of Earthquake Forecasts—An Application to Italy</a> — Jonas R. Brehmer、Kristof Kraus、Tilmann Gneiting、Marcus Herrmann、Warner Marzocchi（2025），<em>Seismological Research Letters</em>（出版社全文可能需訂閱；<a class="reference external" href="https://arxiv.org/abs/2405.10712">免費作者稿</a>）。從義大利預報案例延伸本章的模型比較、可靠度圖與校準，重點是評分函數如何對應預報目標，以及如何分開檢查校準與鑑別力。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1029/2023RG000823">Developing, Testing, and Communicating Earthquake Forecasts: Current Practices and Future Directions</a> — Leila Mizrahi 等（2024），<em>Reviews of Geophysics</em>（免費全文）。先讀模型發展與各國作業系統中組合模型的段落，瞭解為何需要結合不同預報，以及權重選擇如何與檢驗制度連在一起。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1785/0120080063">Mixture Models for Improved Short-Term Earthquake Forecasting</a> — David A. Rhoades、Matthew C. Gerstenberger（2009），<em>Bulletin of the Seismological Society of America</em>（全文可能需訂閱；<a class="reference external" href="https://central.scec.org/node/3964">SCEC 免費摘要</a>）。本章加法組合的原始案例，將 STEP 與 EEPAS 的不同時間尺度結合；重點是凸組合如何利用互補資訊，以及回溯估出的權重仍須接受前瞻檢驗。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1093/gji/ggac018">Prospective evaluation of multiplicative hybrid earthquake forecasting models in California</a> — J. A. Bayona、W. H. Savran、D. A. Rhoades、M. J. Werner（2022），<em>Geophysical Journal International</em>（免費全文）。對照本章乘法 hybrid 的前瞻測試，觀察回溯資訊增益為何未必延續到未來；適合與前一篇的組合動機一起讀。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1093/gji/ggad020">Maximizing the forecasting skill of an ensemble model</a> — Marcus Herrmann、Warner Marzocchi（2023），<em>Geophysical Journal International</em>（免費全文）。本章 logistic 權重學習的主要來源；重點是直接最佳化整體組合的技巧，而非只依各成分模型的單獨成績配權重。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1785/0120140035">Regional Earthquake Likelihood Models II: Information Gains of Multiplicative Hybrids</a> — D. A. Rhoades、M. C. Gerstenberger、A. Christophersen、J. D. Zechar、D. Schorlemmer、M. J. Werner、T. H. Jordan（2014），<em>Bulletin of the Seismological Society of America</em>（出版社全文可能需訂閱；<a class="reference external" href="https://research-information.bris.ac.uk/files/49915043/Rhoades_Hybrids_RELM_BSSA_2014.pdf">Bristol 大學免費全文</a>）。本章乘法 hybrid、保序轉換與正規化的直接來源；讀完建構方法後，對照上面的 Bayona 等人前瞻測試，區分擬合改善與未來預報表現。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.3389/fams.2023.1126759">Bayesian modeling of the temporal evolution of seismicity using the ETAS.inlabru package</a> — Mark Naylor、Francesco Serafini、Finn Lindgren、Ian G. Main（2023），Frontiers in Applied Mathematics and Statistics（免費全文）。對照模型間差異與單一模型內的參數不確定性；貝氏 ETAS 的後驗分布並不等同於模型組合權重。</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_d_eepas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">附錄 D：Ψ 的量測與 EEPAS 的核函數</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix_f_hazard.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">附錄 F：複發時間與地震危害積分</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-1-poisson">E.1 從 Poisson 計數到條件形狀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-4">E.4 模擬分位數的誤差</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-5">E.5 資訊增益與區間</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-6">E.6 警報面積與校準</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-7">E.7 成本與損失</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-8">E.8 凸組合的凹性與端點</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-9-kl">E.9 乘法修正的 KL 表達</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-10-logistic">E.10 混合分布、平均率與 logistic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
