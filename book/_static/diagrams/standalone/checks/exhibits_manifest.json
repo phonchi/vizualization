@@ -1,0 +1,91 @@
+{
+  "count": 14,
+  "generated_at_utc": "2026-09-13T14:18:49.699Z",
+  "exhibits": [
+    {
+      "slug": "d01_forecast_pipeline",
+      "kind": "pipeline",
+      "fragment_sha256": "f20ef5ab892190551ef2f6232f33bbb78b403a08688e22afe677c9aa70841f50",
+      "standalone_sha256": "2ba099920b8cde4ea5db576addeaf45ed01c2ae994e45fe80b769d4670e5801f"
+    },
+    {
+      "slug": "d02_regions_s_r",
+      "kind": "map",
+      "fragment_sha256": "d34d7c49f9e112d8da4eb8ffb76cf8be16dddc7912d779804b9e5070cec490f4",
+      "standalone_sha256": "de2bba1d5bfe8402c630e97a2ce10bea410694ff639625b03ef1ad8e2dcc4ed8"
+    },
+    {
+      "slug": "d03_timeline_windows",
+      "kind": "timeline",
+      "fragment_sha256": "5044a58892cd9b8eb980f3e0e6ddcf00cc9110fd740822e9cfad0505dee2c5df",
+      "standalone_sha256": "6b33141a455b14517bef22fdbfc9283a77622cc5d3fe32c8b5225ec8b2751aa0"
+    },
+    {
+      "slug": "d03_thresholds",
+      "kind": "magnitude",
+      "fragment_sha256": "f4728e22f6d3aa5f09e1110d115fd24c900ec8d5b77e22eea0eea876ec8029fb",
+      "standalone_sha256": "c495943fca5d11d57fda5197e2f40bbeeda8ea22cbd91b19efd6176cdacf9557"
+    },
+    {
+      "slug": "d04_density_to_counts",
+      "kind": "integration",
+      "fragment_sha256": "b27205bdafb50d549607c7ab4fd118b5c02bd2f3c1362442b3006969c7b18d3b",
+      "standalone_sha256": "7c7258fe23d28c4b0cf07c3c60a0f3e44990ecaa2cf1a7beddb5d0f50674ac45"
+    },
+    {
+      "slug": "d06_quantile_pvalue",
+      "kind": "distribution",
+      "fragment_sha256": "827b4c59776b8abc09584d0f80f1db687403d3b0f3f7c2cd8c8497f80cb66cad",
+      "standalone_sha256": "5f9d51705ad0f8594cfde99362ca9ea7aa40770d5901547ef99186237f0d0839"
+    },
+    {
+      "slug": "d09_kernel_smoothing",
+      "kind": "kernel",
+      "fragment_sha256": "ae01b6cac4cd0a03f07cc4a1c1b07ee6bba281bf13f0650a1ca23e7f4fce4c20",
+      "standalone_sha256": "7306f452c40371a061e5d8039a30073a7571113c9d20af69259cae49e59bb602"
+    },
+    {
+      "slug": "d11_hawkes_process",
+      "kind": "hawkes",
+      "fragment_sha256": "cad9083ab5084f6ac7598dbadb26252f6a163fc3ad888ac094fe12118d080060",
+      "standalone_sha256": "9d6532d315f2204d22d8a75cee342a823d3d5f4eb52b7638150c9219013c1448"
+    },
+    {
+      "slug": "d12_etas_branching",
+      "kind": "branching",
+      "fragment_sha256": "ff9178339bf392cbf9d5f2201b63535c5ebf8f113100e3d85520a962959dff2f",
+      "standalone_sha256": "9b7cb850b840fbb2518277d72b5ed35fd7f63ea17abcbff0c46ad271ad0792d3"
+    },
+    {
+      "slug": "d15_eepas_kernels",
+      "kind": "product",
+      "fragment_sha256": "f51e3b4e2c2e93688c5f6ca26756a7d29b9fbc1f6e168aca1a285c69342a811b",
+      "standalone_sha256": "93ed825c2c799d4c44a355858f8da11e12cd64705c439ebd8305299aa7d9fbd8"
+    },
+    {
+      "slug": "d16_csep_tests_flow",
+      "kind": "matrix",
+      "fragment_sha256": "e5eaa54a538ecb0e53cb6277400dcae10be44b4ea6d97ac1fd24f7742c4ce223",
+      "standalone_sha256": "1cce99ce76aa08825bbdd35169275c8c54e2c8ea5a44663ce92976b6e8d27326"
+    },
+    {
+      "slug": "d19_convex_mix",
+      "kind": "mix",
+      "fragment_sha256": "fd810ff928338b79066dbe07a9122334d96b018f32fd1266f7fd439898c5a3e4",
+      "standalone_sha256": "0a74a24963a5e3823d000257cd8acf2318a956ec27bb3ef70175203f7cec493c"
+    },
+    {
+      "slug": "d20_model_family",
+      "kind": "family",
+      "fragment_sha256": "ab68e306ef4d9474aed7652ca0eedcf7938326c3e2ee2560271fd44ed96e04e9",
+      "standalone_sha256": "2d4bae983def011d4a4d9088eace6b931c7ebee6994434e3c6e7b6684839e360"
+    },
+    {
+      "slug": "d03_forecast_protocols",
+      "kind": "protocol",
+      "fragment_sha256": "f03de84fd28e1ad9a06af826d9c9d1d33fe5d9c2d967284ea59c7e730b96f02c",
+      "standalone_sha256": "3f4ca96f97bc375c2bf80addaa8698adeb13b3f461f50a7258ed48926f8ebc80"
+    }
+  ],
+  "browser_status": "pending; main agent coordinates"
+}

@@ -1,0 +1,16 @@
+Running as unit: run-r210a425fd3a544f8af3800a4d9ecf2d2.scope; invocation ID: d211d66d2b154d41afb0804a1e2054ec
+{"diagram": "d01_forecast_pipeline", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d02_regions_s_r", "reduced_motion_keyboard": true, "animated": false, "offscreen_pauses": null}
+{"diagram": "d03_timeline_windows", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d03_forecast_protocols", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d03_thresholds", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d04_density_to_counts", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d06_quantile_pvalue", "reduced_motion_keyboard": true, "animated": false, "offscreen_pauses": null}
+{"diagram": "d09_kernel_smoothing", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d11_hawkes_process", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d12_etas_branching", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d15_eepas_kernels", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d16_csep_tests_flow", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d19_convex_mix", "reduced_motion_keyboard": true, "animated": true, "offscreen_pauses": true}
+{"diagram": "d20_model_family", "reduced_motion_keyboard": true, "animated": false, "offscreen_pauses": null}
+LIFECYCLE PASSED

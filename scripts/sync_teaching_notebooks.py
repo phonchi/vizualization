@@ -2,6 +2,10 @@
 
 Run with the project's Python. This does not execute notebooks or contact GDMS.
 """
+
+from _teaching_runtime import prepare_plotting_environment
+prepare_plotting_environment()
+
 from pathlib import Path
 from collections import defaultdict, deque
 import copy
@@ -31,7 +35,7 @@ def sync():
             if candidate.exists():
                 prior = nbformat.read(candidate, as_version=4)
                 for cell in prior.cells:
-                    if cell.cell_type == "code" and cell.get("outputs"):
+                    if cell.cell_type == "code" and (cell.get("outputs") or cell.get("execution_count") is not None):
                         prior_outputs[cell.source.strip()] = cell
         notebook = jupytext.read(source)
         restored, missing = 0, []
@@ -48,6 +52,8 @@ def sync():
             cell.metadata["tags"] = tags
             old = prior_outputs.get(cell.source.strip())
             if old is not None:
+                if "remove-output" not in tags and any(o.get("output_type")=="stream" and o.get("name")=="stderr" and o.get("text") for o in old.outputs):
+                    raise RuntimeError(f"{source.name}: cached stderr must be resolved by execution before synchronization")
                 cell.outputs = copy.deepcopy(old.outputs)
                 cell.execution_count = old.get("execution_count")
                 restored += 1
@@ -75,7 +81,7 @@ def sync():
         jupytext.write(notebook, source, fmt="py:percent")
         report.append({"page": source.stem, "restored_output_cells": restored,
                        "code_changed_vs_build": changed, "cells_without_cached_output": missing})
-    target = ROOT / os.environ.get("TEACHING_REPORT_DIR", "reference/notes/rewrite_20260913") / "notebook_sync.json"
+    target = ROOT / os.environ.get("TEACHING_REPORT_DIR", "reference/notes/refresh_20260913_exhibition") / "notebook_sync.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n")
     print(json.dumps(report, ensure_ascii=False, indent=2))

@@ -1,0 +1,1720 @@
+{
+  "snapshot": "2026-09-13",
+  "scope": "59個本地PDF的書目與概念位置登錄；非59篇全文審計",
+  "source_count": 59,
+  "binary_duplicate_groups": 2,
+  "additional_same_paper_groups": 3,
+  "source_index": "reference/document_cache/references/document_index.jsonl",
+  "entries": [
+    {
+      "id": "REF-01",
+      "source": "ETAS/[1995] Omori.pdf",
+      "title": "The Centenary of the Omori Formula for a Decay Law of Aftershock Activity",
+      "year": "1995",
+      "concepts": [
+        "Omori",
+        "有限窗",
+        "早期漏測"
+      ],
+      "locations": [
+        "10",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "Omori率及早期漏測；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "d51d399a3c5dde799e0db5adbf7faa477a35ef51e7ec5b4b0e18a9ae341ce086",
+      "canonical_id": "REF-01",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/etas-1995-omori-pdf-0bab138f.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 73673
+    },
+    {
+      "id": "REF-02",
+      "source": "ETAS/[1998] ETAS.pdf",
+      "title": "Space-Time Point-Process Models for Earthquake Occurrences",
+      "year": "1998（書目交叉辨識；原PDF未核）",
+      "concepts": [
+        "時空ETAS",
+        "原文抽取不可用"
+      ],
+      "locations": [
+        "12",
+        "13",
+        "C"
+      ],
+      "coverage_status": "unverified-original",
+      "verification_depth": "unread-extraction-unusable",
+      "pdf_pages_read": [],
+      "verification_note": "ok只是工具狀態；24字元全為分頁。標題年份交叉辨識，原PDF未核。",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "53dee4206e2c372e4d75f9211f3471df948a59719b44a8c82a862e96566b8116",
+      "canonical_id": "REF-02",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/etas-1998-etas-pdf-5cf760e1.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 0
+    },
+    {
+      "id": "REF-03",
+      "source": "ETAS/[1999] Review_model.pdf",
+      "title": "Seismicity Analysis through Point-process Modeling: A Review",
+      "year": "1999",
+      "concepts": [
+        "Hawkes",
+        "條件強度",
+        "更新",
+        "應力釋放"
+      ],
+      "locations": [
+        "11",
+        "12",
+        "A",
+        "C",
+        "F"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        26,
+        27,
+        28,
+        29,
+        33
+      ],
+      "verification_note": "Hawkes/更新/應力釋放與時間變換；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "79a95b12ced546973d0b4bf105257c2e8f26a2b392b106c2624fb75784a706f2",
+      "canonical_id": "REF-03",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/etas-1999-review-model-pdf-937250f4.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 80839
+    },
+    {
+      "id": "REF-04",
+      "source": "ETAS/[2002] ETAS_Declustering.pdf",
+      "title": "Stochastic Declustering of Space-Time Earthquake Occurrences",
+      "year": "2002",
+      "concepts": [
+        "隨機除叢",
+        "親代與背景權重"
+      ],
+      "locations": [
+        "13",
+        "C"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "1085b2f84d04acd8c7668a536e5a1850dab3c2315961950d59c38f9edbbbccbf",
+      "canonical_id": "REF-04",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/etas-2002-etas-declustering-pdf-dbdcbcb4.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 42863
+    },
+    {
+      "id": "REF-05",
+      "source": "ETAS/[2008] ETAS using EM.pdf",
+      "title": "Estimation of Space–Time Branching Process Models in Seismology Using an EM–Type Algorithm",
+      "year": "2008",
+      "concepts": [
+        "潛在親代",
+        "EM估計"
+      ],
+      "locations": [
+        "13",
+        "C"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "f3b7c79e6d790a4eb807043be223a17c985287972759754c11fe68e4e2d15554",
+      "canonical_id": "REF-05",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/etas-2008-etas-using-em-pdf-8813be2c.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 45645
+    },
+    {
+      "id": "REF-06",
+      "source": "ETAS/[2018] Review_model.pdf",
+      "title": "A Review of Self-Exciting Spatio-Temporal Point Processes and Their Applications",
+      "year": "2018",
+      "concepts": [
+        "Hawkes",
+        "分支",
+        "標記與ground process"
+      ],
+      "locations": [
+        "11",
+        "12",
+        "A",
+        "C"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "verification_note": "Hawkes、分支、marked/ground、概似；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "81351999b504582f13cd462a9c4d8d349680d296762143668d51cac8097de443",
+      "canonical_id": "REF-06",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/etas-2018-review-model-pdf-00718d71.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 73530
+    },
+    {
+      "id": "REF-07",
+      "source": "ETAS/[2023] Bayes ETAS.pdf",
+      "title": "Bayesian modeling of the temporal evolution of seismicity using the ETAS.inlabru package",
+      "year": "2023",
+      "concepts": [
+        "貝氏ETAS",
+        "近似後驗"
+      ],
+      "locations": [
+        "13",
+        "A",
+        "C"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2
+      ],
+      "verification_note": "後驗模式與近似；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "ce74f97d8d9aeb6bfb6cd540f1b6f1388f82a8b5cbf323f6fd4b8fc77adbdae5",
+      "canonical_id": "REF-07",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/etas-2023-bayes-etas-pdf-b7ff5607.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 61618
+    },
+    {
+      "id": "REF-08",
+      "source": "Ensemble/[2009] Mixture Models for Improved Short-Term Earthquake Forecasting.pdf",
+      "title": "Mixture Models for Improved Short-Term Earthquake Forecasting",
+      "year": "2009",
+      "concepts": [
+        "STEP–EEPAS混合",
+        "時間互補"
+      ],
+      "locations": [
+        "19",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "1ba07e602a1e3273300d2c27efb265f5bb87326ae9ea301515bea0365ac020c2",
+      "canonical_id": "REF-08",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/ensemble-2009-mixture-models-for-improved-short-term-earthquake-forecasting-pdf-8f7dcfc9.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 35751
+    },
+    {
+      "id": "REF-09",
+      "source": "Ensemble/[2014] Multiplicative models.pdf",
+      "title": "Regional Earthquake Likelihood Models II: Information Gains of Multiplicative Hybrids",
+      "year": "2014",
+      "concepts": [
+        "乘法hybrid",
+        "資訊增益"
+      ],
+      "locations": [
+        "19",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "0581d6ce2aeddd0fa4439ea8ed9bc2b5040705d8605d5e5cf3c51a15703fc45d",
+      "canonical_id": "REF-09",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/ensemble-2014-multiplicative-models-pdf-24d8b7b7.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 43133
+    },
+    {
+      "id": "REF-10",
+      "source": "Ensemble/[2022] Testing Multiplicative models in California.pdf",
+      "title": "Prospective evaluation of multiplicative hybrid earthquake forecasting models in California",
+      "year": "2022",
+      "concepts": [
+        "乘法hybrid",
+        "前瞻檢驗"
+      ],
+      "locations": [
+        "19",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置；同篇/版本關係：REF-41",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "756425a6954156216eb31e128befd5fb99e4b157f737dae2e7ce6623ebb22f34",
+      "canonical_id": "REF-41",
+      "duplicate_type": "same-paper-with-cover",
+      "cache_text_path": "reference/document_cache/text/ensemble-2022-testing-multiplicative-models-in-california-pdf-89298f70.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 61509
+    },
+    {
+      "id": "REF-11",
+      "source": "Ensemble/[2023] Maximizing the forecasting skill of an ensemble model.pdf",
+      "title": "Maximizing the forecasting skill of an ensemble model",
+      "year": "2023",
+      "concepts": [
+        "logistic權重",
+        "組合分數"
+      ],
+      "locations": [
+        "19",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "2ff617145d15c7485daa435857f08d89dd26a953793ce6365ffa04c591e93645",
+      "canonical_id": "REF-11",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/ensemble-2023-maximizing-the-forecasting-skill-of-an-ensemble-model-pdf-dcb81dcb.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 57292
+    },
+    {
+      "id": "REF-12",
+      "source": "Intro_to_the_theory_of_point_processes.pdf",
+      "title": "An Introduction to the Theory of Point Processes, Volume I: Elementary Theory and Methods, Second Edition",
+      "year": "2003",
+      "concepts": [
+        "Poisson",
+        "更新",
+        "群集",
+        "條件強度"
+      ],
+      "locations": [
+        "4",
+        "11",
+        "A",
+        "C",
+        "F"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "只核書名版次；本輪未重讀全書或定理",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "df8ab4e75948dd14faf1fa093441130cf1b1b327f50f3a82df069c2d7838856d",
+      "canonical_id": "REF-12",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/intro-to-the-theory-of-point-processes-pdf-990b372b.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 940003
+    },
+    {
+      "id": "REF-13",
+      "source": "Psi regression/[2021] Space Time Tradeoff.pdf",
+      "title": "Space-Time Trade-Off of Precursory Seismicity in New Zealand and California Revealed by a Medium-Term Earthquake Forecasting Model",
+      "year": "2021",
+      "concepts": [
+        "Ψ時空抵換",
+        "迴歸方向"
+      ],
+      "locations": [
+        "14",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2
+      ],
+      "verification_note": "時空抵換問題設定；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "48622a04b33c57190f587b61b083d964af763e071738b5ac02dd3b3018334d18",
+      "canonical_id": "REF-13",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/psi-regression-2021-space-time-tradeoff-pdf-a184829c.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 30998
+    },
+    {
+      "id": "REF-14",
+      "source": "Psi regression/[2024] psi.pdf",
+      "title": "Algorithmic Identification of the Precursory Scale Increase Phenomenon in Earthquake Catalogs",
+      "year": "2024",
+      "concepts": [
+        "自動Ψ搜尋",
+        "累積規模異常"
+      ],
+      "locations": [
+        "14",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2
+      ],
+      "verification_note": "自動搜尋及C(t)定義；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "52ac9140de17db6c438ea09a63bde526dc9d6fc4da0cc9ac7f978d4eff814138",
+      "canonical_id": "REF-14",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/psi-regression-2024-psi-pdf-65c7a04c.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 62937
+    },
+    {
+      "id": "REF-15",
+      "source": "Taiwan/[2011] Omori Law Taiwan.pdf",
+      "title": "New Empirical Tests of the Multifractal Omori Law for Taiwan",
+      "year": "2012；檔名2011",
+      "concepts": [
+        "多重分形應力活化",
+        "p與主震規模"
+      ],
+      "locations": [
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "dda223ff023f72393d5a6f64e4d0478581a5b99a3288fbf073e862e16f661a0d",
+      "canonical_id": "REF-15",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2011-omori-law-taiwan-pdf-8aa1544f.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 43936
+    },
+    {
+      "id": "REF-16",
+      "source": "Taiwan/[2012] Aftershock Statistics of the 1999 Chi–Chi, Taiwan Earthquake and the Concept of Omori Times.pdf",
+      "title": "Aftershock Statistics of the 1999 Chi–Chi, Taiwan Earthquake and the Concept of Omori Times",
+      "year": "2013卷期；2012版權",
+      "concepts": [
+        "集集餘震",
+        "Omori times"
+      ],
+      "locations": [
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "f17953b37eeb692e5fe1f39e7a70c72d554863783160e0daf8034ebe487e9e36",
+      "canonical_id": "REF-16",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2012-aftershock-statistics-of-the-1999-chi-chi-taiwan-earthquake-and-the-concept-of-270af775.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 22957
+    },
+    {
+      "id": "REF-17",
+      "source": "Taiwan/[2012] New Empirical Tests of the Multifractal Omori Law for Taiwan.pdf",
+      "title": "New Empirical Tests of the Multifractal Omori Law for Taiwan",
+      "year": "2012",
+      "concepts": [
+        "與REF-15同篇不同PDF"
+      ],
+      "locations": [
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置；同篇/版本關係：REF-15",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "59441877ddc6f62f8c5525b86eb27809a71429b26d8dd670a19cfcca1322c9e6",
+      "canonical_id": "REF-15",
+      "duplicate_type": "same-paper-different-pdf",
+      "cache_text_path": "reference/document_cache/text/taiwan-2012-new-empirical-tests-of-the-multifractal-omori-law-for-taiwan-pdf-7b54060d.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 46081
+    },
+    {
+      "id": "REF-18",
+      "source": "Taiwan/[2013] Taiwan Bath.pdf",
+      "title": "Maximum magnitudes in aftershock sequences in Taiwan",
+      "year": "2013",
+      "concepts": [
+        "最大餘震",
+        "Båth",
+        "GR"
+      ],
+      "locations": [
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "77f5c3182d9479f4a860611d48af8de99ca3f60c75744768b80a102ade974500",
+      "canonical_id": "REF-18",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2013-taiwan-bath-pdf-44471637.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 29803
+    },
+    {
+      "id": "REF-19",
+      "source": "Taiwan/[2015] b-Values Observations in Taiwan A Review.pdf",
+      "title": "b-Values Observations in Taiwan: A Review",
+      "year": "2015",
+      "concepts": [
+        "台灣b值",
+        "時空異質性"
+      ],
+      "locations": [
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "b90fe82970de2302f099fa3966db8490302da5ecf3cdc757f464a104cbadeded",
+      "canonical_id": "REF-19",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2015-b-values-observations-in-taiwan-a-review-pdf-212f224d.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 82180
+    },
+    {
+      "id": "REF-20",
+      "source": "Taiwan/[2016] An updated and refined catalog of earthquakes in Taiwan (1900–2014) with homogenized M w magnitudes.pdf",
+      "title": "An updated and refined catalog of earthquakes in Taiwan (1900–2014) with homogenized Mw magnitudes",
+      "year": "2016",
+      "concepts": [
+        "均一化規模",
+        "歷史目錄"
+      ],
+      "locations": [
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "9b355421c2ea491eecc155b4f9ddaae095777986670a3c0970f369af8ca57070",
+      "canonical_id": "REF-20",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2016-an-updated-and-refined-catalog-of-earthquakes-in-taiwan-1900-2014-with-homogen-04f0c35e.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 19811
+    },
+    {
+      "id": "REF-21",
+      "source": "Taiwan/[2016] Studies on Aftershocks in Taiwan A Review.pdf",
+      "title": "Studies on Aftershocks in Taiwan: A Review",
+      "year": "2016",
+      "concepts": [
+        "台灣餘震",
+        "空間時間與機制"
+      ],
+      "locations": [
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "571cc603e161f1d2e7bd1774f4ef8aeca549486f831ec65d1b3529789897e827",
+      "canonical_id": "REF-21",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2016-studies-on-aftershocks-in-taiwan-a-review-pdf-8f6042a8.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 79112
+    },
+    {
+      "id": "REF-22",
+      "source": "Taiwan/[2024] AutoBats CMT Catalog.pdf",
+      "title": "Taiwan Regional Moment Tensor Solution: The AutoBATS CMT Catalog",
+      "year": "2024-01-30講稿",
+      "concepts": [
+        "AutoBATS",
+        "CMT",
+        "規模比較"
+      ],
+      "locations": [
+        "29",
+        "G"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "講稿/報告；公開授權未全面核實，不重傳PDF",
+      "sha256": "697d34414ccf62395627a53318fbddf198bb969af2e8a1a39474766212adc186",
+      "canonical_id": "REF-22",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2024-autobats-cmt-catalog-pdf-ed9e72fe.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 2271
+    },
+    {
+      "id": "REF-23",
+      "source": "Taiwan/[2024] Some characteristics of foreshocks and aftershocks of the 2022 ML6.8 Chihshang, Taiwan, earthquake sequence.pdf",
+      "title": "Some characteristics of foreshocks and aftershocks of the 2022 ML 6.8 Chihshang, Taiwan, earthquake sequence",
+      "year": "2024",
+      "concepts": [
+        "池上前震與餘震"
+      ],
+      "locations": [
+        "29"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "82768e999f5d17b094ccf0758c57b50f545c1e49afbe1d620a49ccecf13c6714",
+      "canonical_id": "REF-23",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2024-some-characteristics-of-foreshocks-and-aftershocks-of-the-2022-ml6-8-chihshang-28de2cb5.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 55684
+    },
+    {
+      "id": "REF-24",
+      "source": "Taiwan/[2025] Fast_Report_Dapu_ETAS.pdf",
+      "title": "Fast report: performance of the ETAS model in forecasting aftershock occurrence and site-specific ground-shaking intensity for the 2025 Dapu, Taiwan, earthquake sequence",
+      "year": "2025",
+      "concepts": [
+        "台灣ETAS",
+        "場址地動"
+      ],
+      "locations": [
+        "29",
+        "F"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "21a5579427065f454cc34bb6585982f1dedaab1c8e32188672a0f9fc3faea5de",
+      "canonical_id": "REF-24",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2025-fast-report-dapu-etas-pdf-41557a1f.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 26258
+    },
+    {
+      "id": "REF-25",
+      "source": "Taiwan/[2026] Taiwan_EEPAS.pdf",
+      "title": "First Application of the EEPAS Earthquake Forecasting Model to Taiwan: Catalog Sensitivity, Lead-Time Compensation, and Retrospective Validation",
+      "year": "2026稿件；審稿中",
+      "concepts": [
+        "僅書目隔離"
+      ],
+      "locations": [
+        "隔離"
+      ],
+      "coverage_status": "excluded-embargo",
+      "verification_depth": "metadata-only-embargo",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "只記書目，不採用稿件研究內容",
+      "publication_restriction": "審稿中隔離：不得公開未發表數字結果、檢驗分數、加速倍數或內部圖表；公開程式與義大利資料、已發表設定及參數仍可使用；台灣EEPAS正文僅說在地化工作正在進行中。公開repo不等於稿件授權。",
+      "sha256": "e351a3366827adaf10d9c91a2d1a30bcd4bf782d7bc9e4bd37274dae8337251e",
+      "canonical_id": "REF-25",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2026-taiwan-eepas-pdf-1a715424.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 65561
+    },
+    {
+      "id": "REF-26",
+      "source": "Taiwan/[2026] Taiwan_EEPAS_sup.pdf",
+      "title": "Electronic Supplement for: First Application of the EEPAS Earthquake Forecasting Model to Taiwan",
+      "year": "2026審稿中補充",
+      "concepts": [
+        "僅書目隔離"
+      ],
+      "locations": [
+        "隔離"
+      ],
+      "coverage_status": "excluded-embargo",
+      "verification_depth": "metadata-only-embargo",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "只記書目，不採用稿件研究內容",
+      "publication_restriction": "審稿中隔離：不得公開未發表數字結果、檢驗分數、加速倍數或內部圖表；公開程式與義大利資料、已發表設定及參數仍可使用；台灣EEPAS正文僅說在地化工作正在進行中。公開repo不等於稿件授權。",
+      "sha256": "f40178c1d58f5203d44570b04aea79cd91290ecc34eeda94a2f9e9db19a7bc21",
+      "canonical_id": "REF-26",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-2026-taiwan-eepas-sup-pdf-fabd0430.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 42356
+    },
+    {
+      "id": "REF-27",
+      "source": "Taiwan/臺灣地區112年中大型地震震源資訊之快速彙整與提供 .pdf",
+      "title": "臺灣地區112年中大型地震震源資訊之快速彙整與提供",
+      "year": "112年度（2023）；正式出版日未核",
+      "concepts": [
+        "RMT",
+        "震源反演",
+        "技術報告"
+      ],
+      "locations": [
+        "29",
+        "G"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "講稿/報告；公開授權未全面核實，不重傳PDF",
+      "sha256": "5173e01e67e416588ca029e88223a09dbb92d9b71d6aaa9e861311ff2a43ab9c",
+      "canonical_id": "REF-27",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-112-pdf-bd92db88.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 144650
+    },
+    {
+      "id": "REF-28",
+      "source": "Taiwan/臺灣預報發展.pdf",
+      "title": "臺灣地震測報的發展",
+      "year": "出版年未核",
+      "concepts": [
+        "觀測網",
+        "速報",
+        "預警發展"
+      ],
+      "locations": [
+        "21",
+        "29",
+        "G"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "講稿/報告；公開授權未全面核實，不重傳PDF",
+      "sha256": "142c3c3af274c5fa9ba5e358d1b6be01bf08e12c781fb0324dcf1c9ef146762f",
+      "canonical_id": "REF-28",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/taiwan-pdf-c053a36f.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 5918
+    },
+    {
+      "id": "REF-29",
+      "source": "[2004] rhoades2004.pdf",
+      "title": "Long-range Earthquake Forecasting with Every Earthquake a Precursor According to Scale",
+      "year": "2004",
+      "concepts": [
+        "EEPAS原式",
+        "三核",
+        "權重"
+      ],
+      "locations": [
+        "9",
+        "14",
+        "15",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        4
+      ],
+      "verification_note": "三核與事件權重原式；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "69b1182c4912437e01570dfae2b09becbeef6f16168ef94564112d50d486562a",
+      "canonical_id": "REF-29",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2004-rhoades2004-pdf-4a333f89.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 45218
+    },
+    {
+      "id": "REF-30",
+      "source": "[2006] Space–time ETAS models and an improved extension.pdf",
+      "title": "Space–time ETAS models and an improved extension",
+      "year": "2006",
+      "concepts": [
+        "ETAS空間核",
+        "規模尺度"
+      ],
+      "locations": [
+        "12",
+        "13",
+        "C"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "06172a5e38f383587c3ff4c023291e4df7b38488b5d8d4b0d0342b9d0b240bdb",
+      "canonical_id": "REF-30",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2006-space-time-etas-models-and-an-improved-extension-pdf-8ca2ed32.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 39921
+    },
+    {
+      "id": "REF-31",
+      "source": "[2007] Application of the EEPAS Model to Forecasting for CA.pdf",
+      "title": "Application of the EEPAS Model to Forecasting Earthquakes of Moderate Magnitude in Southern California",
+      "year": "2007",
+      "concepts": [
+        "跨地區與目標規模"
+      ],
+      "locations": [
+        "15",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "f69899aa045d5a3772d237c865ed61dd1a1108bf67146a640be40b614a4620ac",
+      "canonical_id": "REF-31",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2007-application-of-the-eepas-model-to-forecasting-for-ca-pdf-2ae9b6d4.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 17749
+    },
+    {
+      "id": "REF-32",
+      "source": "[2007] Rhoades.pdf",
+      "title": "Application of the EEPAS Model to Forecasting Earthquakes of Moderate Magnitude in Southern California",
+      "year": "2007",
+      "concepts": [
+        "同REF-31二進位重複"
+      ],
+      "locations": [
+        "15",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置；同篇/版本關係：REF-31",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "f69899aa045d5a3772d237c865ed61dd1a1108bf67146a640be40b614a4620ac",
+      "canonical_id": "REF-31",
+      "duplicate_type": "binary-identical",
+      "cache_text_path": "reference/document_cache/text/2007-rhoades-pdf-4ba1dfe1.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 17749
+    },
+    {
+      "id": "REF-33",
+      "source": "[2009] Long-range earthquake forecasting allowing for aftershocks.pdf",
+      "title": "Long-range earthquake forecasting allowing for aftershocks",
+      "year": "2009",
+      "concepts": [
+        "EAS",
+        "預報主震的餘震貢獻"
+      ],
+      "locations": [
+        "15",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2
+      ],
+      "verification_note": "對未來主震添加餘震的模型角色；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "aac12e642e6eb18e640a1507cda9a9bf1d39959808fe77e56662c8cc90215aa5",
+      "canonical_id": "REF-33",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2009-long-range-earthquake-forecasting-allowing-for-aftershocks-pdf-f6538506.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 41298
+    },
+    {
+      "id": "REF-34",
+      "source": "[2011] Japan.pdf",
+      "title": "Application of a long-range forecasting model to earthquakes in the Japan mainland testing region",
+      "year": "2011",
+      "concepts": [
+        "EEPAS日本與跨規模應用"
+      ],
+      "locations": [
+        "15",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "9fd449d5f00474c266ba6bb5c8152175247efcc7f8ee2c4bc4e59a8cc649db59",
+      "canonical_id": "REF-34",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2011-japan-pdf-b659a19c.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 35565
+    },
+    {
+      "id": "REF-35",
+      "source": "[2017] ETAS_R.pdf",
+      "title": "ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data",
+      "year": "2019；檔名2017",
+      "concepts": [
+        "marked Hawkes",
+        "條件歷史",
+        "ETAS估計"
+      ],
+      "locations": [
+        "3",
+        "11",
+        "12",
+        "13",
+        "A",
+        "C"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "verification_note": "真年份、marked Hawkes、核與穩定性；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "2bd191fc088ff91ba2d21ee9773824ae4cf3eec832bd25b30e38fc26937e4a01",
+      "canonical_id": "REF-35",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2017-etas-r-pdf-b90af711.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 84560
+    },
+    {
+      "id": "REF-36",
+      "source": "[2017] SEDA.pdf",
+      "title": "SEDA: A software package for the Statistical Earthquake Data Analysis",
+      "year": "2017",
+      "concepts": [
+        "完整度",
+        "統計地震軟體"
+      ],
+      "locations": [
+        "7",
+        "8",
+        "13"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "b7d1a7d1e3460cfece110355b60e9cc913ae33baede6b3a81993810a21a80a0a",
+      "canonical_id": "REF-36",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2017-seda-pdf-b8a19cd4.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 48919
+    },
+    {
+      "id": "REF-37",
+      "source": "[2019] Brief Revie Process.pdf",
+      "title": "Modeling the earthquake occurrence with time-dependent processes: a brief review",
+      "year": "2019",
+      "concepts": [
+        "更新",
+        "Weibull/Lognormal/BPT"
+      ],
+      "locations": [
+        "20",
+        "F"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        4
+      ],
+      "verification_note": "複發分布與更新過程；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "fe309921ba71e0c234796d363cf9f8c6f402d510b8fab0457da53399a1c028c0",
+      "canonical_id": "REF-37",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2019-brief-revie-process-pdf-84d63eb8.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 54490
+    },
+    {
+      "id": "REF-38",
+      "source": "[2021] Estimate b.pdf",
+      "title": "The Effect of Declustering on the Size Distribution of Mainshocks",
+      "year": "2020作者稿；2021發表版",
+      "concepts": [
+        "除叢選擇效應",
+        "b值"
+      ],
+      "locations": [
+        "7",
+        "10",
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置；同篇/版本關係：REF-43",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "f954999ad73db520efb4701bcd737354d1677371f1a6a8905af70e0a909687c3",
+      "canonical_id": "REF-43",
+      "duplicate_type": "author-manuscript-vs-published",
+      "cache_text_path": "reference/document_cache/text/2021-estimate-b-pdf-04894138.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 75030
+    },
+    {
+      "id": "REF-39",
+      "source": "[2022] A 20-Year Journey of Forecasting with the EETAS model.pdf",
+      "title": "A 20-Year Journey of Forecasting with the “Every Earthquake a Precursor According to Scale” Model",
+      "year": "2022；檔名EETAS錯字",
+      "concepts": [
+        "EEPAS",
+        "Janus",
+        "時間補償"
+      ],
+      "locations": [
+        "14",
+        "15",
+        "19",
+        "D",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        8
+      ],
+      "verification_note": "Janus與EEPAS變體概念表；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "a2ba1cebfe40ee67445cc7f49f3005a3e626cc6d641a487ead3db37696233a78",
+      "canonical_id": "REF-39",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2022-a-20-year-journey-of-forecasting-with-the-eetas-model-pdf-62e402fd.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 84627
+    },
+    {
+      "id": "REF-40",
+      "source": "[2022] Pycesp.pdf",
+      "title": "pyCSEP: A Python Toolkit for Earthquake Forecast Developers",
+      "year": "2022",
+      "concepts": [
+        "預報格式",
+        "目錄",
+        "一致性檢驗"
+      ],
+      "locations": [
+        "3",
+        "16",
+        "17",
+        "18",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "01a47d53448323f9bec0fbffe7fc4a1dbdc1447f1cd314950092cd1b21dd60b4",
+      "canonical_id": "REF-40",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2022-pycesp-pdf-ffce7391.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 47345
+    },
+    {
+      "id": "REF-41",
+      "source": "[2022] Tests.pdf",
+      "title": "Prospective evaluation of multiplicative hybrid earthquake forecasting models in California",
+      "year": "2022",
+      "concepts": [
+        "與REF-10同篇",
+        "二元與乘法評分"
+      ],
+      "locations": [
+        "17",
+        "19",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "6bb44ad2d012b6ca2edc5f5ce1a7cff9b05c37ac8a7dc62b7ee8c89e6da8b7b9",
+      "canonical_id": "REF-41",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2022-tests-pdf-e0cd21a2.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 60862
+    },
+    {
+      "id": "REF-42",
+      "source": "[2023] Application of the EEPAS earthquake forecasting model to Italy.pdf",
+      "title": "Application of the EEPAS earthquake forecasting model to Italy",
+      "year": "2023",
+      "concepts": [
+        "義大利規格",
+        "參數",
+        "檢驗",
+        "三核"
+      ],
+      "locations": [
+        "2",
+        "3",
+        "9",
+        "12",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "D",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        3,
+        4,
+        8,
+        9,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "verification_note": "規格、表3、負二項/二元檢驗、附錄核與ETAS；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "a4daeb6efb1559b28d43c08b2286ceb6d041ea94fdda4709835939a8b0448190",
+      "canonical_id": "REF-42",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2023-application-of-the-eepas-earthquake-forecasting-model-to-italy-pdf-bdafafc3.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 59076
+    },
+    {
+      "id": "REF-43",
+      "source": "[2023] Calibrated ETAS.pdf",
+      "title": "The Effect of Declustering on the Size Distribution of Mainshocks",
+      "year": "2021；檔名Calibrated ETAS與2023皆錯",
+      "concepts": [
+        "除叢與規模分布",
+        "非新校準ETAS"
+      ],
+      "locations": [
+        "7",
+        "10",
+        "29",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "e8873cfa6b487148b9c546c5dbc631fd20e9d02c18397531fb38caeba936b449",
+      "canonical_id": "REF-43",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2023-calibrated-etas-pdf-b6ba62ca.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 45837
+    },
+    {
+      "id": "REF-44",
+      "source": "[2023] Italy_EEPAS.pdf",
+      "title": "Application of the EEPAS earthquake forecasting model to Italy",
+      "year": "2023",
+      "concepts": [
+        "同REF-42二進位重複"
+      ],
+      "locations": [
+        "2",
+        "3",
+        "9",
+        "12",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "D",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        3,
+        4,
+        8,
+        9,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "verification_note": "與REF-42同一PDF共享選段核對；選段核對，不是全文或數值實驗驗證；同篇/版本關係：REF-42",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "a4daeb6efb1559b28d43c08b2286ceb6d041ea94fdda4709835939a8b0448190",
+      "canonical_id": "REF-42",
+      "duplicate_type": "binary-identical",
+      "cache_text_path": "reference/document_cache/text/2023-italy-eepas-pdf-43e63f37.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 59076
+    },
+    {
+      "id": "REF-45",
+      "source": "[2023] SimpleETAS.pdf",
+      "title": "SimplETAS: A Benchmark Earthquake Forecasting Model Suitable for Operational Purposes and Seismic Hazard Analysis",
+      "year": "2023線上；2024卷期",
+      "concepts": [
+        "七形狀固定",
+        "兩振幅",
+        "MPS19"
+      ],
+      "locations": [
+        "12",
+        "13",
+        "C"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2,
+        3
+      ],
+      "verification_note": "Hawkes家族、固定參數理由與背景；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "dcfb2984ab46f9daac517d334a874c83d9659cb5c2dc5c6de9b442860e46a20d",
+      "canonical_id": "REF-45",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2023-simpleetas-pdf-8ec49889.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 44757
+    },
+    {
+      "id": "REF-46",
+      "source": "[2023] Stat_power_test.pdf",
+      "title": "Statistical power of spatial earthquake forecast tests",
+      "year": "2023",
+      "concepts": [
+        "S-test功效",
+        "事件數"
+      ],
+      "locations": [
+        "18",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2
+      ],
+      "verification_note": "功效與S-test問題設定；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "f8cdf6915a1802b287b2914ba8b9df43f0d7a977b15a56401865af6871bf5764",
+      "canonical_id": "REF-46",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2023-stat-power-test-pdf-0ba6f080.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 62620
+    },
+    {
+      "id": "REF-47",
+      "source": "[2023] Tests.pdf",
+      "title": "Are Regionally Calibrated Seismicity Models More Informative than Global Models? Insights from California, New Zealand, and Italy",
+      "year": "2023",
+      "concepts": [
+        "全球/區域基準",
+        "資訊比較"
+      ],
+      "locations": [
+        "18",
+        "20",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "11ec7ff09c16c029b545ffe67fbc84dd6b1410d421c9f1ea984ee6467396a5e7",
+      "canonical_id": "REF-47",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2023-tests-pdf-3a1c69b5.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 35187
+    },
+    {
+      "id": "REF-48",
+      "source": "[2023] The need for open, transdisciplinary.pdf",
+      "title": "The need for open, transdisciplinary, and ethical science in seismology",
+      "year": "2023",
+      "concepts": [
+        "開放科學",
+        "研究溝通"
+      ],
+      "locations": [
+        "20"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "3b6eaa6894f5755deced9269e410319af30cbcf8a5a01aeb1f63d04b63cce948",
+      "canonical_id": "REF-48",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2023-the-need-for-open-transdisciplinary-pdf-ec44a811.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 41858
+    },
+    {
+      "id": "REF-49",
+      "source": "[2024] Estimate b.pdf",
+      "title": "The estimation of b-value of the frequency–magnitude distribution and of its 1σ intervals from binned magnitude data",
+      "year": "2024",
+      "concepts": [
+        "離散GR",
+        "區間",
+        "正差/絕對差/配對"
+      ],
+      "locations": [
+        "7",
+        "8",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "verification_note": "離散估計、正差/絕對差、配對；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "ba90ce94198f5eb98404711019917e2ec6020af0314b603ebafb3d720cf15992",
+      "canonical_id": "REF-49",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2024-estimate-b-pdf-afb85315.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 93057
+    },
+    {
+      "id": "REF-50",
+      "source": "[2024] Italy_exp.pdf",
+      "title": "Comparative evaluation of earthquake forecasting models: An application to Italy",
+      "year": "2024 arXiv v1；現行出版狀態未核",
+      "concepts": [
+        "一致性分數",
+        "校準/鑑別",
+        "非EEPAS論文"
+      ],
+      "locations": [
+        "18",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2
+      ],
+      "verification_note": "預印本與校準/一致性分數；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "本地是預印本，不聲稱已發表；不公開全文快取",
+      "sha256": "adbb3e3fff662852937df9af810e36e40c377a61325c578dcef78fccfb1c8e2b",
+      "canonical_id": "REF-50",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2024-italy-exp-pdf-646b604c.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 75094
+    },
+    {
+      "id": "REF-51",
+      "source": "[2024] Ncom.pdf",
+      "title": "Abnormal low-magnitude seismicity preceding large-magnitude earthquakes",
+      "year": "2024",
+      "concepts": [
+        "隨機森林異常分類",
+        "回溯",
+        "FEM"
+      ],
+      "locations": [
+        "14"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        2,
+        6,
+        7,
+        8
+      ],
+      "verification_note": "投票比例、案例、FEM及訓練分工；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "526008a82b3d28503a692bc46ac961c354fc054cdaa073b49ca21db36997b478",
+      "canonical_id": "REF-51",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2024-ncom-pdf-90855902.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 64558
+    },
+    {
+      "id": "REF-52",
+      "source": "[2024] New Pycsep.pdf",
+      "title": "New Features in the pyCSEP Toolkit for Earthquake Forecast Development and Evaluation",
+      "year": "2024",
+      "concepts": [
+        "QuadTree",
+        "檢驗",
+        "目錄式預報"
+      ],
+      "locations": [
+        "3",
+        "17",
+        "E"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        5
+      ],
+      "verification_note": "QuadTree與預報格式；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "bcc1c05501908c91b2f1beacf2a2d7ecfab12458b3714debd73ec112b6c28692",
+      "canonical_id": "REF-52",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2024-new-pycsep-pdf-83746ea1.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 66726
+    },
+    {
+      "id": "REF-53",
+      "source": "[2024] OEF_Review.pdf",
+      "title": "Developing, Testing, and Communicating Earthquake Forecasts: Current Practices and Future Directions",
+      "year": "2024",
+      "concepts": [
+        "OEF",
+        "R–J/STEP/ETAS",
+        "溝通"
+      ],
+      "locations": [
+        "1",
+        "13",
+        "20",
+        "F"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        8
+      ],
+      "verification_note": "OEF與STEP定位；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "cafd7dbbb9cedf0145ef1fefed20450f747a5704f1de748f13eb9a6ae083e073",
+      "canonical_id": "REF-53",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2024-oef-review-pdf-90d21f31.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 306036
+    },
+    {
+      "id": "REF-54",
+      "source": "[2024] soft_intro.pdf",
+      "title": "Long-term communication of aftershock forecasts: The Canterbury earthquake sequence in New Zealand",
+      "year": "2024",
+      "concepts": [
+        "預報溝通",
+        "非軟體導論"
+      ],
+      "locations": [
+        "20"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "front-matter-only",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "僅首頁書目/摘要；正文未核讀，章節僅主題位置",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "f7b98cc7c47f7febec5bb99121cfe768da99b35e473b3ab9611fceef88164f82",
+      "canonical_id": "REF-54",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2024-soft-intro-pdf-084e7a08.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 105156
+    },
+    {
+      "id": "REF-55",
+      "source": "[2025] EEPAS_Software.pdf",
+      "title": "The EEPAS Model Revisited: Statistical Formalism and a High-Performance, Reproducible Open-Source Framework",
+      "year": "2025稿件；submitted to GJI",
+      "concepts": [
+        "僅書目隔離"
+      ],
+      "locations": [
+        "隔離"
+      ],
+      "coverage_status": "excluded-embargo",
+      "verification_depth": "metadata-only-embargo",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "只記書目，不採用稿件研究內容",
+      "publication_restriction": "審稿中隔離：不得公開未發表數字結果、檢驗分數、加速倍數或內部圖表；公開程式與義大利資料、已發表設定及參數仍可使用；台灣EEPAS正文僅說在地化工作正在進行中。公開repo不等於稿件授權。",
+      "sha256": "f55270b763b9ecdffea84146955ce27350373620943372e3299b68f0f7b7953e",
+      "canonical_id": "REF-55",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2025-eepas-software-pdf-8c66998a.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 85111
+    },
+    {
+      "id": "REF-56",
+      "source": "[2025] SeismosStats.pdf",
+      "title": "SeismoStats: A Python Package for Statistical Seismology",
+      "year": "2025 arXiv v1；現行出版狀態未核",
+      "concepts": [
+        "b-positive/b-more-positive",
+        "完整度",
+        "軟體"
+      ],
+      "locations": [
+        "7",
+        "8",
+        "B"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        15,
+        17,
+        18
+      ],
+      "verification_note": "預印本、b-positive與延伸名稱；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "本地是預印本，不聲稱已發表；不公開全文快取",
+      "sha256": "514ed01e2ac34a1284c260b9d0856d85c69428d13c5a9723ac2d349de7a16567",
+      "canonical_id": "REF-56",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2025-seismosstats-pdf-1a6a5468.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 49362
+    },
+    {
+      "id": "REF-57",
+      "source": "[2026  PyEEPAS_sup.pdf",
+      "title": "Supplementary Materials for: PyEEPAS: An Open-Source Python Framework for EEPAS Earthquake Forecasting with Formal Statistical Foundations",
+      "year": "2026-04-08審稿中補充",
+      "concepts": [
+        "僅書目隔離"
+      ],
+      "locations": [
+        "隔離"
+      ],
+      "coverage_status": "excluded-embargo",
+      "verification_depth": "metadata-only-embargo",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "只記書目，不採用稿件研究內容",
+      "publication_restriction": "審稿中隔離：不得公開未發表數字結果、檢驗分數、加速倍數或內部圖表；公開程式與義大利資料、已發表設定及參數仍可使用；台灣EEPAS正文僅說在地化工作正在進行中。公開repo不等於稿件授權。",
+      "sha256": "728d76bb380857aab343991aeb3aeef9416e6c1d39b1a7123d77303035f0bd0d",
+      "canonical_id": "REF-57",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2026-pyeepas-sup-pdf-f4570b6d.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 41881
+    },
+    {
+      "id": "REF-58",
+      "source": "[2026] PyEEPAS.pdf",
+      "title": "PyEEPAS: An Open-Source Python Framework for EEPAS Earthquake Forecasting with Formal Statistical Foundations",
+      "year": "2026審稿中稿件",
+      "concepts": [
+        "僅書目隔離",
+        "公開repo另論"
+      ],
+      "locations": [
+        "隔離"
+      ],
+      "coverage_status": "excluded-embargo",
+      "verification_depth": "metadata-only-embargo",
+      "pdf_pages_read": [
+        1
+      ],
+      "verification_note": "只記書目，不採用稿件研究內容",
+      "publication_restriction": "審稿中隔離：不得公開未發表數字結果、檢驗分數、加速倍數或內部圖表；公開程式與義大利資料、已發表設定及參數仍可使用；台灣EEPAS正文僅說在地化工作正在進行中。公開repo不等於稿件授權。",
+      "sha256": "d157dbb60119ae42f3a10166c29c1509d30a88a0bae0d57e65eb3f0c70f6e87f",
+      "canonical_id": "REF-58",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/2026-pyeepas-pdf-61fb0c44.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 43985
+    },
+    {
+      "id": "REF-59",
+      "source": "entropy-22-01264.pdf",
+      "title": "The Effect of Catalogue Lead Time on Medium-Term Earthquake Forecasting with Application to New Zealand Data",
+      "year": "2020；22為卷號",
+      "concepts": [
+        "catalogue lead time",
+        "缺失早期前兆"
+      ],
+      "locations": [
+        "15",
+        "D"
+      ],
+      "coverage_status": "topic-mapped-not-full-audit",
+      "verification_depth": "selected-passages",
+      "pdf_pages_read": [
+        1,
+        4
+      ],
+      "verification_note": "catalogue lead time的原文定義；選段核對，不是全文或數值實驗驗證",
+      "publication_restriction": "僅自寫摘要與來源連結；不公開原PDF或全文快取",
+      "sha256": "6ac50e8343898b9ab2d7fabcea966969cbb2b5cf0140ee327e22a0a060a04b95",
+      "canonical_id": "REF-59",
+      "duplicate_type": null,
+      "cache_text_path": "reference/document_cache/text/entropy-22-01264-pdf-90a65af4.txt",
+      "extractor_status": "ok",
+      "meaningful_text_characters": 49497
+    }
+  ]
+}

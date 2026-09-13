@@ -5,13 +5,14 @@ from hashlib import sha256
 from pathlib import Path
 import argparse
 import json
+import os
 import time
 import requests
 import yaml
 
 ROOT=Path(__file__).resolve().parents[1]
 HTML=ROOT/'book/_build/html'
-OUT=ROOT/'reference/notes/rewrite_20260913/continuation/publication.json'
+OUT=ROOT/os.environ.get('TEACHING_REPORT_DIR','reference/notes/refresh_20260913_exhibition')/'publication.json'
 
 
 def main():
@@ -21,7 +22,10 @@ def main():
     args=parser.parse_args()
     toc=yaml.safe_load((ROOT/'book/_toc.yml').read_text())
     files=[toc['root']+'.html']+[c['file']+'.html' for p in toc['parts'] for c in p['chapters']]
-    files+=['index.html','_static/teaching.css','_static/teaching_theme.js','_static/reading/biondini2023_fig8.png']
+    reading_count=len(files)
+    files+=['index.html',*[f'_static/{n}' for n in ['teaching.css','museum.css','exhibits.css','teaching_theme.js','museum.js','exhibits.js']], '_static/reading/biondini2023_fig8.png','_static/diagrams/data/italy_exhibit_data.json']
+    files += [str(p.relative_to(HTML)) for p in sorted((HTML/'_static/diagrams/standalone').glob('d*.html')) if '.archify.' not in p.name and '.visual-check.' not in p.name]
+    OUT.parent.mkdir(parents=True,exist_ok=True)
     local={name:sha256((HTML/name).read_bytes()).hexdigest() for name in files}
     history=[]
     def fetch(name):
@@ -38,7 +42,7 @@ def main():
         passed=all(r['matched'] for r in results)
         history.append(dict(attempt=attempt,matched=sum(r['matched'] for r in results)))
         report=dict(timestamp_utc=datetime.now(timezone.utc).isoformat(),base=args.base,
-                    passed=passed,reading_pages=len(files)-4,results=results,attempts=history)
+                    passed=passed,reading_pages=reading_count,results=results,attempts=history)
         OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         print(json.dumps(dict(attempt=attempt,matched=history[-1]['matched'],total=len(files),passed=passed)),flush=True)
         if passed:return

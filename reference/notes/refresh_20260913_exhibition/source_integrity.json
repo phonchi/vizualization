@@ -1,0 +1,665 @@
+{
+  "checked_at_utc": "2026-09-13T14:55:45.401774+00:00",
+  "scope": {
+    "reading_pages": "all 37 entries from current book/_toc.yml",
+    "pairing": "exact code and markdown cell sources; metadata/output equality is not required",
+    "checks": [
+      "Jupytext source equality",
+      "Python AST",
+      "control characters in human/code sources",
+      "internal HTML targets and fragment ids",
+      "local linked assets and CSS URL/import dependencies"
+    ],
+    "excluded": [
+      "browser execution",
+      "build execution",
+      "notebook execution",
+      "external URL availability",
+      "semantic math review",
+      "JavaScript-computed URLs not present in HTML/CSS"
+    ]
+  },
+  "passed": true,
+  "counts": {
+    "python_ast_passed": 28,
+    "reading_pages": 37,
+    "internal_references": 2993,
+    "asset_references": 1160,
+    "html_references": 1833,
+    "notebook_pairs": 28,
+    "pair_source_equal": 28,
+    "unique_checked_anchors": 390,
+    "unique_local_assets": 80,
+    "css_files_checked": 13,
+    "actionable_failures": 0
+  },
+  "failures": [],
+  "pairs": [
+    {
+      "py": "book/01_forecast_question.py",
+      "ipynb": "book/01_forecast_question.ipynb",
+      "py_sha256": "c2b8e8a51bc95e5e1a6ebe56efe6fc20e6141c70cfcdd2d617a9b61a9f3deb9e",
+      "ipynb_sha256": "218cdf2c3652468cfe3d2dc098b4996dde8243c9f8d4064dbeb3cbf56ea45789",
+      "cells": 17,
+      "code_cells": 9,
+      "markdown_cells": 8,
+      "source_equal": true
+    },
+    {
+      "py": "book/02_reading_horus.py",
+      "ipynb": "book/02_reading_horus.ipynb",
+      "py_sha256": "922f238bb5eeb0d75d3f43697bb187fca3b7a766499a155991789eac793e25ee",
+      "ipynb_sha256": "52c3b6e448d1bb15858e0168110e8e15fdda9cefa94bfb82eeb2c74ac2a04a67",
+      "cells": 30,
+      "code_cells": 14,
+      "markdown_cells": 16,
+      "source_equal": true
+    },
+    {
+      "py": "book/03_experiment_spec.py",
+      "ipynb": "book/03_experiment_spec.ipynb",
+      "py_sha256": "b4c01501c9cc75af8b7c84a2d7ba4e611b60b609aeca344851ab18b246ed6b3e",
+      "ipynb_sha256": "2298f6e9e9b6fcae5f05d8e5c660d7ac565809f5b38ba181e35f863f90a0d38b",
+      "cells": 28,
+      "code_cells": 12,
+      "markdown_cells": 16,
+      "source_equal": true
+    },
+    {
+      "py": "book/04_poisson_and_sup.py",
+      "ipynb": "book/04_poisson_and_sup.ipynb",
+      "py_sha256": "a9448513d65cec08f0b4bf44a279ddab82ab366b6b9acdb0d6676e4c07337c52",
+      "ipynb_sha256": "9fcc8f2f2e30bf38c44fb0fb40aeaa50bd802bf363858c6a736620e12c7c4d61",
+      "cells": 16,
+      "code_cells": 9,
+      "markdown_cells": 7,
+      "source_equal": true
+    },
+    {
+      "py": "book/05_likelihood_estimation.py",
+      "ipynb": "book/05_likelihood_estimation.ipynb",
+      "py_sha256": "703bb7a567c97ddfe97038a511a1600ffc3bb22ffeb314de2e98f05babe36dae",
+      "ipynb_sha256": "5c4c23e7533c0609c2da2adc32e2e3302bb0eda670aa715287fef48a84b0bcd7",
+      "cells": 10,
+      "code_cells": 6,
+      "markdown_cells": 4,
+      "source_equal": true
+    },
+    {
+      "py": "book/06_simulation_tests_scores.py",
+      "ipynb": "book/06_simulation_tests_scores.ipynb",
+      "py_sha256": "b73a5bde476a4625115015793d4e338b5ef0ca3b295706b92ef51a8e030b395f",
+      "ipynb_sha256": "ba2b2fe96208dc1ba1e5f1826eff920b11ea689ee3167721be797d1eee77ec0a",
+      "cells": 13,
+      "code_cells": 7,
+      "markdown_cells": 6,
+      "source_equal": true
+    },
+    {
+      "py": "book/07_gr_bvalue.py",
+      "ipynb": "book/07_gr_bvalue.ipynb",
+      "py_sha256": "fee28879611e7445949cda72938f086ececa85484724459e3d45cc809d8aa1b9",
+      "ipynb_sha256": "e4137990608c966ee994ab3f94d806fd8e3ae81a7e07a9cdc356ac90c65165f6",
+      "cells": 13,
+      "code_cells": 6,
+      "markdown_cells": 7,
+      "source_equal": true
+    },
+    {
+      "py": "book/08_completeness.py",
+      "ipynb": "book/08_completeness.ipynb",
+      "py_sha256": "44afb4403ea423c1dc06fd3ae680ec42bf2d6f99c49c74861ed4defb331f0668",
+      "ipynb_sha256": "008d9f1d10adb574d3cf9ffc280196d90797b6a4e0060e398b099b781c20f671",
+      "cells": 16,
+      "code_cells": 8,
+      "markdown_cells": 8,
+      "source_equal": true
+    },
+    {
+      "py": "book/09_ppe_forecast.py",
+      "ipynb": "book/09_ppe_forecast.ipynb",
+      "py_sha256": "bc7c8099294522dea504b70ebd40773a6bfc488bb81efbc9269765b338486571",
+      "ipynb_sha256": "da58e57917557c3f66068c5195ccf05b009c382ee184492866ff585d39b183d8",
+      "cells": 18,
+      "code_cells": 10,
+      "markdown_cells": 8,
+      "source_equal": true
+    },
+    {
+      "py": "book/10_clustering_laws.py",
+      "ipynb": "book/10_clustering_laws.ipynb",
+      "py_sha256": "2b7aa42342ecc79be16d5cd6ca64aaa860024a75b6a93bbb9cf7fd965fbd2c52",
+      "ipynb_sha256": "e3ea6dea8c773c7f82778cc3a7050c5636fae2bdb4db9d0ab6a1ec482b78bc1e",
+      "cells": 8,
+      "code_cells": 4,
+      "markdown_cells": 4,
+      "source_equal": true
+    },
+    {
+      "py": "book/11_conditional_intensity.py",
+      "ipynb": "book/11_conditional_intensity.ipynb",
+      "py_sha256": "36a0fd817d640eccb6c967f981c5fd90fbfd5b3f114bd9e6022d643355f14c4e",
+      "ipynb_sha256": "6113aa2f15cfb984aaeed17c95a831298f4273f55536c7aa5a12bd6fc9d173c5",
+      "cells": 10,
+      "code_cells": 5,
+      "markdown_cells": 5,
+      "source_equal": true
+    },
+    {
+      "py": "book/12_etas_structure.py",
+      "ipynb": "book/12_etas_structure.ipynb",
+      "py_sha256": "09013f62e436f312e23ff27b0c18de29b008c3804deb0e123f4e8defdd04c14c",
+      "ipynb_sha256": "630c1f45fe461fae1a9e7ec0a791fee94153c4939e9e994abf1fb1c73f5cfb88",
+      "cells": 18,
+      "code_cells": 8,
+      "markdown_cells": 10,
+      "source_equal": true
+    },
+    {
+      "py": "book/13_etas_italy_forecast.py",
+      "ipynb": "book/13_etas_italy_forecast.ipynb",
+      "py_sha256": "8680d5c1580d1cc7c00c0d36f75e126e6327b9f831961c3cc8b60243872c5df0",
+      "ipynb_sha256": "fd7422df1daae280e0dc72c33ac55d72100d6e31db5adae783bdca04d97e7ff7",
+      "cells": 19,
+      "code_cells": 8,
+      "markdown_cells": 11,
+      "source_equal": true
+    },
+    {
+      "py": "book/14_psi_precursory_scale.py",
+      "ipynb": "book/14_psi_precursory_scale.ipynb",
+      "py_sha256": "2568e98c09e4f586b2d4d3cab0748137758a822f41cf69c50f056df7249dcced",
+      "ipynb_sha256": "a0d44437ab33c3e74e46ea06928fb558ea10dd5c945251b240c272a9193cdfb4",
+      "cells": 15,
+      "code_cells": 6,
+      "markdown_cells": 9,
+      "source_equal": true
+    },
+    {
+      "py": "book/15_eepas_italy_forecast.py",
+      "ipynb": "book/15_eepas_italy_forecast.ipynb",
+      "py_sha256": "c62f260fbc8aa9d183693ebe44ce30b787fe15e2bcb20dc27bf631616274109c",
+      "ipynb_sha256": "13e03348c4e10d5d4e6939c49cfb86cd29525ab92ec3a2f8468a233a82f43c73",
+      "cells": 13,
+      "code_cells": 7,
+      "markdown_cells": 6,
+      "source_equal": true
+    },
+    {
+      "py": "book/16_test_number.py",
+      "ipynb": "book/16_test_number.ipynb",
+      "py_sha256": "7207fa6ce803f43bcd9945ac45e62f0cd047df4cf2d14dcd9f4c51b0618f072a",
+      "ipynb_sha256": "ce66642c92d68de73c6944a5a42887507451fd39157ec7c8e5903b58a1446f2e",
+      "cells": 21,
+      "code_cells": 9,
+      "markdown_cells": 12,
+      "source_equal": true
+    },
+    {
+      "py": "book/17_test_space_magnitude.py",
+      "ipynb": "book/17_test_space_magnitude.ipynb",
+      "py_sha256": "0b5c63623f3b510948b775173bf0cb776c964b925e532921eeb2e7318f598eba",
+      "ipynb_sha256": "c3ed38e35535933f50f936ec3d71975287685020823798053362ac21584690b6",
+      "cells": 19,
+      "code_cells": 9,
+      "markdown_cells": 10,
+      "source_equal": true
+    },
+    {
+      "py": "book/18_test_comparison.py",
+      "ipynb": "book/18_test_comparison.ipynb",
+      "py_sha256": "23001cf355b84ce81abaaf5aa4f9a7ebda08ae89ed2cc9abc9861d52869281b4",
+      "ipynb_sha256": "346b5c79ba0c503953fcdc7027b3e9a117bcdf08f5cb7804bc7b14a22fbe46f4",
+      "cells": 16,
+      "code_cells": 8,
+      "markdown_cells": 8,
+      "source_equal": true
+    },
+    {
+      "py": "book/19_ensembles.py",
+      "ipynb": "book/19_ensembles.ipynb",
+      "py_sha256": "74a25d36abfff7f484d17ed909da9c6758efe4caa2c633e621a7c8a3411dae2f",
+      "ipynb_sha256": "7365c94ed3c19e4e223ad26fe008e31c449cea677ce20cd97545e1201fa7cbd6",
+      "cells": 16,
+      "code_cells": 8,
+      "markdown_cells": 8,
+      "source_equal": true
+    },
+    {
+      "py": "book/20_beyond_forecast.py",
+      "ipynb": "book/20_beyond_forecast.ipynb",
+      "py_sha256": "0d00410035d34b398b3acc23373cc0d04c79a2e418608e167fcf858bfd4e7076",
+      "ipynb_sha256": "87ca9411891b3a0588feeabcd3ee3ecfc90310a7d95e538bf6bf9579709cd199",
+      "cells": 15,
+      "code_cells": 7,
+      "markdown_cells": 8,
+      "source_equal": true
+    },
+    {
+      "py": "book/01_overview.py",
+      "ipynb": "book/01_overview.ipynb",
+      "py_sha256": "84e87efb578d60b74a9b3d73ff070acff10739fe4b986b1834a40393fcde2907",
+      "ipynb_sha256": "fee8202a75566ad33d01e133d29b927e929cd460091d10b8fd1762759e1cf974",
+      "cells": 11,
+      "code_cells": 5,
+      "markdown_cells": 6,
+      "source_equal": true
+    },
+    {
+      "py": "book/02_download.py",
+      "ipynb": "book/02_download.ipynb",
+      "py_sha256": "ed9d65985d732d0eabb1bfbe7dd5c59d45e20aa86bef1639cfbb734cfe60a998",
+      "ipynb_sha256": "c845543c894e194ed829a8a621d16a79aea04386ea7333e24e5c581a8f6570bf",
+      "cells": 10,
+      "code_cells": 4,
+      "markdown_cells": 6,
+      "source_equal": true
+    },
+    {
+      "py": "book/03_groundwater.py",
+      "ipynb": "book/03_groundwater.ipynb",
+      "py_sha256": "2f11187ed9790e76f97aa5c2d06af14ab9e9eaf8f078a1681726cad3775babe7",
+      "ipynb_sha256": "656adbebeca610a1d44a2ce9640811f5a6094931322a9c602b9e1f04b48bf75e",
+      "cells": 19,
+      "code_cells": 9,
+      "markdown_cells": 10,
+      "source_equal": true
+    },
+    {
+      "py": "book/04_geomagnetic.py",
+      "ipynb": "book/04_geomagnetic.ipynb",
+      "py_sha256": "2e91f047c0825f1b4f0d81eb4fcd78e0dda31e1390dc273b13b25dff13b8ab0b",
+      "ipynb_sha256": "8d1bbf94dc86d100fa7b2167a2104285e9da3db2151f99a80d67dede5e90d640",
+      "cells": 16,
+      "code_cells": 8,
+      "markdown_cells": 8,
+      "source_equal": true
+    },
+    {
+      "py": "book/05_seismic.py",
+      "ipynb": "book/05_seismic.ipynb",
+      "py_sha256": "c35ec0bc70b218b2c5c1ed759fa0770fcf2865acb05f51b37d8332efef73e486",
+      "ipynb_sha256": "48e53a81ceef2e84c8a61506d11552c88e69877271431099a117c72b2aab53f5",
+      "cells": 23,
+      "code_cells": 11,
+      "markdown_cells": 12,
+      "source_equal": true
+    },
+    {
+      "py": "book/06_gnss.py",
+      "ipynb": "book/06_gnss.ipynb",
+      "py_sha256": "bc6d5d2b60e66711aedfb0dfd160cc2903937152c9d20607eafe2d15bbfa1e8d",
+      "ipynb_sha256": "8ec9230f90b95cbf52918e77302a7db959b4d7891b43dc5e625357fd940fd1f4",
+      "cells": 11,
+      "code_cells": 5,
+      "markdown_cells": 6,
+      "source_equal": true
+    },
+    {
+      "py": "book/07_case_hualien2024.py",
+      "ipynb": "book/07_case_hualien2024.ipynb",
+      "py_sha256": "a0b3be017482ed1f6dc635874357b8b2eb4e7a0f6f2b0361b30c2ce169bd2eb8",
+      "ipynb_sha256": "0e0676c0707e5ab2edd83ffda168f69c2160a4e57b1fbf5cb31c0ed84977cb3a",
+      "cells": 19,
+      "code_cells": 9,
+      "markdown_cells": 10,
+      "source_equal": true
+    },
+    {
+      "py": "book/23_taiwan_outlook.py",
+      "ipynb": "book/23_taiwan_outlook.ipynb",
+      "py_sha256": "58c3276d826b01830adc232118c805c5c334f232b0aea3faa2404be14fc4ddbb",
+      "ipynb_sha256": "ff0d98bd398767140f0d57046b9f9d8f2f472b0aa9ee35cb9bf404e7b0f79092",
+      "cells": 30,
+      "code_cells": 11,
+      "markdown_cells": 19,
+      "source_equal": true
+    }
+  ],
+  "sources": [
+    {
+      "file": "book/00_intro.md",
+      "sha256": "8dfa69234fcdc959658b4aecaecf0fd352d16c39419940026f82e979ab18aa31"
+    },
+    {
+      "file": "book/01_forecast_question.py",
+      "sha256": "c2b8e8a51bc95e5e1a6ebe56efe6fc20e6141c70cfcdd2d617a9b61a9f3deb9e"
+    },
+    {
+      "file": "book/02_reading_horus.py",
+      "sha256": "922f238bb5eeb0d75d3f43697bb187fca3b7a766499a155991789eac793e25ee"
+    },
+    {
+      "file": "book/03_experiment_spec.py",
+      "sha256": "b4c01501c9cc75af8b7c84a2d7ba4e611b60b609aeca344851ab18b246ed6b3e"
+    },
+    {
+      "file": "book/04_poisson_and_sup.py",
+      "sha256": "a9448513d65cec08f0b4bf44a279ddab82ab366b6b9acdb0d6676e4c07337c52"
+    },
+    {
+      "file": "book/05_likelihood_estimation.py",
+      "sha256": "703bb7a567c97ddfe97038a511a1600ffc3bb22ffeb314de2e98f05babe36dae"
+    },
+    {
+      "file": "book/06_simulation_tests_scores.py",
+      "sha256": "b73a5bde476a4625115015793d4e338b5ef0ca3b295706b92ef51a8e030b395f"
+    },
+    {
+      "file": "book/07_gr_bvalue.py",
+      "sha256": "fee28879611e7445949cda72938f086ececa85484724459e3d45cc809d8aa1b9"
+    },
+    {
+      "file": "book/08_completeness.py",
+      "sha256": "44afb4403ea423c1dc06fd3ae680ec42bf2d6f99c49c74861ed4defb331f0668"
+    },
+    {
+      "file": "book/09_ppe_forecast.py",
+      "sha256": "bc7c8099294522dea504b70ebd40773a6bfc488bb81efbc9269765b338486571"
+    },
+    {
+      "file": "book/10_clustering_laws.py",
+      "sha256": "2b7aa42342ecc79be16d5cd6ca64aaa860024a75b6a93bbb9cf7fd965fbd2c52"
+    },
+    {
+      "file": "book/11_conditional_intensity.py",
+      "sha256": "36a0fd817d640eccb6c967f981c5fd90fbfd5b3f114bd9e6022d643355f14c4e"
+    },
+    {
+      "file": "book/12_etas_structure.py",
+      "sha256": "09013f62e436f312e23ff27b0c18de29b008c3804deb0e123f4e8defdd04c14c"
+    },
+    {
+      "file": "book/13_etas_italy_forecast.py",
+      "sha256": "8680d5c1580d1cc7c00c0d36f75e126e6327b9f831961c3cc8b60243872c5df0"
+    },
+    {
+      "file": "book/14_psi_precursory_scale.py",
+      "sha256": "2568e98c09e4f586b2d4d3cab0748137758a822f41cf69c50f056df7249dcced"
+    },
+    {
+      "file": "book/15_eepas_italy_forecast.py",
+      "sha256": "c62f260fbc8aa9d183693ebe44ce30b787fe15e2bcb20dc27bf631616274109c"
+    },
+    {
+      "file": "book/16_test_number.py",
+      "sha256": "7207fa6ce803f43bcd9945ac45e62f0cd047df4cf2d14dcd9f4c51b0618f072a"
+    },
+    {
+      "file": "book/17_test_space_magnitude.py",
+      "sha256": "0b5c63623f3b510948b775173bf0cb776c964b925e532921eeb2e7318f598eba"
+    },
+    {
+      "file": "book/18_test_comparison.py",
+      "sha256": "23001cf355b84ce81abaaf5aa4f9a7ebda08ae89ed2cc9abc9861d52869281b4"
+    },
+    {
+      "file": "book/19_ensembles.py",
+      "sha256": "74a25d36abfff7f484d17ed909da9c6758efe4caa2c633e621a7c8a3411dae2f"
+    },
+    {
+      "file": "book/20_beyond_forecast.py",
+      "sha256": "0d00410035d34b398b3acc23373cc0d04c79a2e418608e167fcf858bfd4e7076"
+    },
+    {
+      "file": "book/01_overview.py",
+      "sha256": "84e87efb578d60b74a9b3d73ff070acff10739fe4b986b1834a40393fcde2907"
+    },
+    {
+      "file": "book/02_download.py",
+      "sha256": "ed9d65985d732d0eabb1bfbe7dd5c59d45e20aa86bef1639cfbb734cfe60a998"
+    },
+    {
+      "file": "book/03_groundwater.py",
+      "sha256": "2f11187ed9790e76f97aa5c2d06af14ab9e9eaf8f078a1681726cad3775babe7"
+    },
+    {
+      "file": "book/04_geomagnetic.py",
+      "sha256": "2e91f047c0825f1b4f0d81eb4fcd78e0dda31e1390dc273b13b25dff13b8ab0b"
+    },
+    {
+      "file": "book/05_seismic.py",
+      "sha256": "c35ec0bc70b218b2c5c1ed759fa0770fcf2865acb05f51b37d8332efef73e486"
+    },
+    {
+      "file": "book/06_gnss.py",
+      "sha256": "bc6d5d2b60e66711aedfb0dfd160cc2903937152c9d20607eafe2d15bbfa1e8d"
+    },
+    {
+      "file": "book/07_case_hualien2024.py",
+      "sha256": "a0b3be017482ed1f6dc635874357b8b2eb4e7a0f6f2b0361b30c2ce169bd2eb8"
+    },
+    {
+      "file": "book/08_explore_ideas.md",
+      "sha256": "38750fb26e2df10b86ac9d4b7f44dade08c69b641a21de45b06d62802fe6ff38"
+    },
+    {
+      "file": "book/23_taiwan_outlook.py",
+      "sha256": "58c3276d826b01830adc232118c805c5c334f232b0aea3faa2404be14fc4ddbb"
+    },
+    {
+      "file": "book/appendix_a_point_process.md",
+      "sha256": "7796290c64ef69d0a0396c57062366e76fff7f2bef952f222bbab30d62445300"
+    },
+    {
+      "file": "book/appendix_b_catalog.md",
+      "sha256": "de91054553b1e41beed428958968931c490ed29f9810aee0ef06cd37629d41be"
+    },
+    {
+      "file": "book/appendix_c_etas.md",
+      "sha256": "fad3699d665422bfc367bad22adc83ae79dbcfab40a62ceb92797528ae04cc36"
+    },
+    {
+      "file": "book/appendix_d_eepas.md",
+      "sha256": "59993672edee17dcbe182e4244a1f3e71d14864cbd214aff0ed6bdb99a2bbc2b"
+    },
+    {
+      "file": "book/appendix_e_testing.md",
+      "sha256": "f1867a3bbba45467e988ce52f7dd197c3421c54784ec41319d3bbddfdc861555"
+    },
+    {
+      "file": "book/appendix_f_hazard.md",
+      "sha256": "d558f5a052ea3a1393762fc0935001a35588578eac0a66dcf1aab42acc8cddeb"
+    },
+    {
+      "file": "book/appendix_g_observations.md",
+      "sha256": "a6680cc7c533b4a67af1bf1c63caffc69020ef80224730a32725b4257cc57ff3"
+    }
+  ],
+  "built_pages": [
+    {
+      "file": "book/_build/html/00_intro.html",
+      "sha256": "a3bd522d3e743e1550d87bc560fd57434a6cbfa0cc1b52a792132fd4b43f85db"
+    },
+    {
+      "file": "book/_build/html/01_forecast_question.html",
+      "sha256": "78a993126a1c03c9f8f9bbd5e06cdcb81f080c7c30d385d44a1ec972c8d25fce"
+    },
+    {
+      "file": "book/_build/html/02_reading_horus.html",
+      "sha256": "83f1030e757141c6ddfd2f10571dffa186a281bab633664fa4fad01827891ecf"
+    },
+    {
+      "file": "book/_build/html/03_experiment_spec.html",
+      "sha256": "d2e6f067ab345b13f1d695b7e62f4997670d726e5921e2aa061809adfc9fdde9"
+    },
+    {
+      "file": "book/_build/html/04_poisson_and_sup.html",
+      "sha256": "737ddf9583eae5713d81f57b6110d5425eff5c7cf21a81b261ca2753f3823185"
+    },
+    {
+      "file": "book/_build/html/05_likelihood_estimation.html",
+      "sha256": "de322c9a54602f13bccef1bcc8b34f91d77243d23a183738e8039967011d560a"
+    },
+    {
+      "file": "book/_build/html/06_simulation_tests_scores.html",
+      "sha256": "36e1e4003e0ff8790d910a4dbb487f61f78045e456b6123b0483d0266751d850"
+    },
+    {
+      "file": "book/_build/html/07_gr_bvalue.html",
+      "sha256": "c220dbc784fbca569e546b039c9c2d0c3b8d5543cf031071bcb766589cf9e1ee"
+    },
+    {
+      "file": "book/_build/html/08_completeness.html",
+      "sha256": "f0632901a3d69c75de08891527c9095c8a544e85dd5cf0a0ab36611f91fb4718"
+    },
+    {
+      "file": "book/_build/html/09_ppe_forecast.html",
+      "sha256": "628be38e091b0ecd9dfdfbfb0f2bc2d5f3599c0ab25a186cea8cb1bf63e2ed2b"
+    },
+    {
+      "file": "book/_build/html/10_clustering_laws.html",
+      "sha256": "43492c8ca6be233d9facc774f9668f3fdc3935a0643bd906f0df0dec2e49dcd3"
+    },
+    {
+      "file": "book/_build/html/11_conditional_intensity.html",
+      "sha256": "2a5e28294e7775088f3d2e1f22bee4f85f189025056895fc129def278747fa83"
+    },
+    {
+      "file": "book/_build/html/12_etas_structure.html",
+      "sha256": "d6139586a7693853d07b810f9f4dba08ba8e1bcf1eb363166284b1240b7cf51b"
+    },
+    {
+      "file": "book/_build/html/13_etas_italy_forecast.html",
+      "sha256": "f21a2ad951b4bf4e05619150fcfc134e74c7422d5e24b3cbbf47335887466266"
+    },
+    {
+      "file": "book/_build/html/14_psi_precursory_scale.html",
+      "sha256": "ffc9226f91c576d7ed2f7c5f61523401a79117674a233fa963d29b00b3d2fcec"
+    },
+    {
+      "file": "book/_build/html/15_eepas_italy_forecast.html",
+      "sha256": "2d98673d5690113e677faed00e242a8fce7f70d653436fcaa837ea4a55f3e940"
+    },
+    {
+      "file": "book/_build/html/16_test_number.html",
+      "sha256": "a84f269245f163243b613f6c53a9ad8dff9d8ad17f95fba2b3bd8694ad302db5"
+    },
+    {
+      "file": "book/_build/html/17_test_space_magnitude.html",
+      "sha256": "f850acbe53177030e4222c296ad42ce40a753f20eec23c4f1c98c98b6d44645b"
+    },
+    {
+      "file": "book/_build/html/18_test_comparison.html",
+      "sha256": "4d7be9fd2f9fab683c2fc0401b6ab773fed6811594a19ffa7b2f0a206abd9d97"
+    },
+    {
+      "file": "book/_build/html/19_ensembles.html",
+      "sha256": "3ff8153ecaddffac70b8677bd624ef8b7bddb20eb55319b416b7dde05efed6f5"
+    },
+    {
+      "file": "book/_build/html/20_beyond_forecast.html",
+      "sha256": "fbc42ee611f7d527605ed6e8a1dfd9e67beaf5e6c19b49e4665d2d5101086b6e"
+    },
+    {
+      "file": "book/_build/html/01_overview.html",
+      "sha256": "dc6e0243f5afa43f27bf03d4085c8a18714ba0874536cd397141ae16567edfc7"
+    },
+    {
+      "file": "book/_build/html/02_download.html",
+      "sha256": "050c81dfb6136e9d197d6af7be7ddfa5d9f8bfc3dacdb3cac1068a82462a7f3e"
+    },
+    {
+      "file": "book/_build/html/03_groundwater.html",
+      "sha256": "8c7f472bcf3a601c18af3d95dcebdf82b5507faafd0150e5e30d28861e1cfe56"
+    },
+    {
+      "file": "book/_build/html/04_geomagnetic.html",
+      "sha256": "7db6d2cee69561edaa2aee7cd13560da475759615d6d2759a0c584d7dc8b6643"
+    },
+    {
+      "file": "book/_build/html/05_seismic.html",
+      "sha256": "7482823de49f0e4cad22fdf912dd9caa4d822847dab242453bf98c31711520e0"
+    },
+    {
+      "file": "book/_build/html/06_gnss.html",
+      "sha256": "bba8903e6a806b92df0d036c67c9fcb26c2ae80d20ca9e0f07695cc00af22188"
+    },
+    {
+      "file": "book/_build/html/07_case_hualien2024.html",
+      "sha256": "ea605ce2c3ababc5d8bc8ac282ceddaca09709a0bda06e8e83aa723d3e2d395d"
+    },
+    {
+      "file": "book/_build/html/08_explore_ideas.html",
+      "sha256": "6a5fe724e01a4309d2a0382c6f96637b9427bc5509eb910b85230f9d73443006"
+    },
+    {
+      "file": "book/_build/html/23_taiwan_outlook.html",
+      "sha256": "8fba8318ebc554f46f38e628c245b6b4eb67398dee3f6f76018ad163f4c5232a"
+    },
+    {
+      "file": "book/_build/html/appendix_a_point_process.html",
+      "sha256": "a35b62ed538cd6e9c889f767518bcc2052b5c735914be4f26668d8e9a915b54f"
+    },
+    {
+      "file": "book/_build/html/appendix_b_catalog.html",
+      "sha256": "f8b4b0ee53b4f2a71d7f9c3af898314bb3d1da8df091b382cb1b8d8a95cb675f"
+    },
+    {
+      "file": "book/_build/html/appendix_c_etas.html",
+      "sha256": "b99fcea2b38a314e4e06f9b79bff8e288b5e08afed380a055fad6308b4461c3e"
+    },
+    {
+      "file": "book/_build/html/appendix_d_eepas.html",
+      "sha256": "6b527e111d2aa2e66e22962e42e84553d117a4d2381a9c26bebdd356d8f50320"
+    },
+    {
+      "file": "book/_build/html/appendix_e_testing.html",
+      "sha256": "a3d0153ef191200c40a2110795646f5acea2a87cd1a770a02c384217102a2e0e"
+    },
+    {
+      "file": "book/_build/html/appendix_f_hazard.html",
+      "sha256": "bd3d33b73fe3df04af1927a4ae960f7f5cc383251bb4ea566a4a49c94313bc13"
+    },
+    {
+      "file": "book/_build/html/appendix_g_observations.html",
+      "sha256": "9e95c60fb844328264b3e8d36ea0cded3865aea982b4b50ac30ccb8f0f5c4214"
+    }
+  ],
+  "external_hosts_skipped": {
+    "cdn.jsdelivr.net": 32,
+    "doi.org": 118,
+    "www.usgs.gov": 7,
+    "www.ntsec.edu.tw": 2,
+    "cdn.plot.ly": 27,
+    "cseptesting.org": 1,
+    "horus.bo.ingv.it": 1,
+    "cris.unibo.it": 3,
+    "ocw.mit.edu": 2,
+    "arxiv.org": 9,
+    "www.corssa.org": 6,
+    "seismostats.readthedocs.io": 3,
+    "www.earth-prints.org": 15,
+    "github.com": 7,
+    "www.jstatsoft.org": 4,
+    "bemlar.ism.ac.jp": 5,
+    "gfzpublic.gfz.de": 4,
+    "central.scec.org": 2,
+    "research-information.bris.ac.uk": 2,
+    "earthquake.usgs.gov": 2,
+    "scits.stanford.edu": 2,
+    "itl.nist.gov": 2,
+    "www.fdsn.org": 1,
+    "scweb.cwa.gov.tw": 1,
+    "gdms.cwa.gov.tw": 2,
+    "docs.fdsn.org": 2,
+    "www.seismosoc.org": 2,
+    "docs.obspy.org": 3,
+    "pubs.usgs.gov": 2,
+    "docs.scipy.org": 2,
+    "kp.gfz.de": 1,
+    "tao.cgu.org.tw": 2,
+    "geodesy.unr.edu": 1,
+    "igs.org": 2,
+    "eos.org": 1,
+    "tec.earth.sinica.edu.tw": 1,
+    "www.cwa.gov.tw": 1,
+    "drive.google.com": 1,
+    "www.jstage.jst.go.jp": 1,
+    "academic.oup.com": 1,
+    "docs.cseptesting.org": 2,
+    "tem.tw": 1,
+    "www.gep.ncu.edu.tw": 1,
+    "gssc.esa.int": 1
+  }
+}

@@ -142,8 +142,8 @@ _DIAGRAM_DIR = None
 def show_diagram(name: str, caption: str | None = None):
     """嵌入 book/_static/diagrams/<name>.html；缺圖即失敗，避免發布占位說明。
 
-    示意圖為自包含 HTML（inline SVG＋CSS＋少量 JS，無外部資源），
-    由 diagram-design／archify 產出並經瀏覽器驗收後放進 _static/diagrams/。
+    互動展件隨輸出帶入本機 CSS／JS，讓 notebook 也保留靜態樣式；
+    瀏覽器單例保護避免與網站共用資產重複註冊。
     """
     from pathlib import Path
 
@@ -157,6 +157,11 @@ def show_diagram(name: str, caption: str | None = None):
         html = path.read_text(encoding="utf-8")
     else:
         raise FileNotFoundError(f"缺少教學示意圖：{path}")
+    if 'class="quake-exhibit"' in html:
+        static = _DIAGRAM_DIR.parent
+        css = (static / 'exhibits.css').read_text(encoding='utf-8')
+        js = (static / 'exhibits.js').read_text(encoding='utf-8')
+        html = '<style>' + css + '</style>' + html + '<script>' + js + '</script>'
     if caption:
         html += f'<p class="diagram-caption">{caption}</p>'
     display(HTML(f'<div class="teaching-diagram" data-diagram="{name}">{html}</div>'))

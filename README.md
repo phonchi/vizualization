@@ -6,7 +6,7 @@
 - 第二部：台灣地球物理觀測，9章。從觀測機制與資料品質，逐步讀地下水、地磁、地動與GNSS，接到花蓮案例與台灣展望。
 - 第三部：A–G技術附錄。長推導、演算法與資料操作集中查閱，與主文往返連結。
 
-正文以直覺、動機和圖例為主，短補充預設收合。網站不顯示程式輸入，原始notebook保留可重現性。
+正文以直覺、動機和圖例為主，互動科學展以地圖、時間軸、Hawkes率曲線、分支、分布及比較視圖帶入概念。網站不顯示程式輸入，原始notebook保留可重現性。
 第一部採新檔名及 01–20 章號；第二部保留檔名，顯示 21–29 章。舊第一部網址由新版章序取代。
 
 ## 原始資料與程式
@@ -59,7 +59,7 @@ python scripts/build_teaching_offline.py
 `scripts/execute_teaching_pages.py` 可明確選頁並停用外部請求。直接使用
 `jupyter-book build book/` 則遵循原有快取執行設定，可能執行尚未快取的程式，
 資料取得頁不應在無帳號或缺資料時盲目重跑。
-本次改編的離線建置、圖表執行與瀏覽器驗收記錄見 `reference/notes/rewrite_20260913/continuation/`。
+本次改編的離線建置、圖表執行與瀏覽器驗收記錄見 `reference/notes/refresh_20260913_exhibition/`。
 
 完整重現觀測分析需依附錄G準備公開資料；來源規範見中央氣象署GDMS，DOI：
 [10.7914/SN/T5](https://doi.org/10.7914/SN/T5)。
@@ -67,3 +67,25 @@ python scripts/build_teaching_offline.py
 ## 發布
 
 本機建置輸出在 `book/_build/html/`。只有明確授權後才commit、push或透過ghp-import發布；不在一般建置時自動發布。
+
+## 展件與品質檢查
+
+十四個互動展件共用 `book/_static/exhibits.css`／`exhibits.js`，各自有不同的幾何與操作。
+重建展件與離線預覽：
+
+```bash
+python book/_static/diagrams/sources/build_teaching_diagrams.py
+```
+
+新展件來源或共用資產修改後，重新執行使用該展件的章節，讓保存的輸出與來源一致。
+執行入口會先準備可寫的 Matplotlib 快取；未處理的 stderr 不可進入公開 notebook。
+建置工具會檢查公開內容是否殘留警告、粗體標記或缺圖占位。
+
+```bash
+OPENBLAS_NUM_THREADS=1 python scripts/verify_teaching_math.py
+python scripts/verify_teaching_presentation.py
+```
+
+瀏覽器驗收另需 Playwright 與 Chromium；本機使用既有安裝，在3GB記憶體上限內逐頁執行
+`check_exhibition_browser.py`、`check_exhibition_lifecycle.py`及`check_exhibit_geometry.py`。
+文獻來源、去重與核對深度見本輪 `literature_coverage.md`；59個PDF登錄不等於59篇全文核讀。

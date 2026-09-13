@@ -1,0 +1,104 @@
+{
+  "historical_only": true,
+  "superseded_reason": "replaced by fourteen science exhibition widgets",
+  "original_receipt": [
+    {
+      "file": "book/_static/diagrams/d01_forecast_pipeline.html",
+      "sha256": "22cf49fa54a212da36194d5140cf9a16275ef1b6f45398032f8080b8759dc18e",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d01_forecast_pipeline.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d01_forecast_pipeline.html",
+      "sha256": "2aba93bc7d66577b8681d6d4c9a8533e22a8f976d05d8f7765eb4cf6b56f74d9",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d01_forecast_pipeline.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d09_kernel_smoothing.html",
+      "sha256": "2070a6cd0de2f759aad6b79034defd3e2bf469eb342f116c60e05d0568b1525a",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d09_kernel_smoothing.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d09_kernel_smoothing.html",
+      "sha256": "8d07aed3041b299c6f5f71b494a761f2743b983f6c99a25a87dc1a8632bcde39",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d09_kernel_smoothing.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d12_etas_branching.html",
+      "sha256": "3f4767451500999d2ce47cb98392cd4bb097140e3ea606da32eac27af0764063",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d12_etas_branching.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d12_etas_branching.html",
+      "sha256": "9199a3f712e4cd3d8516cdbc601041b0d06413e171d5a426ea8b726dbcf32fcd",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d12_etas_branching.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d15_eepas_kernels.html",
+      "sha256": "c034e59d0475282690e61cc68b8f96c47204f859963fd39128b2a84e6b4d32dd",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d15_eepas_kernels.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d15_eepas_kernels.html",
+      "sha256": "73d3be60e7c4cacd3f0de4b0e87c03f097436b04e2dd801b0967b6377d043e70",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d15_eepas_kernels.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d16_csep_tests_flow.html",
+      "sha256": "211a50a604630b83e3f9b942534172a9d85166bdd9b96f2130a8ff62fc037d73",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d16_csep_tests_flow.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d16_csep_tests_flow.html",
+      "sha256": "3bfdfe98a3fee753f0582f9a87d09b21952257296886f20f2ffe522400f1471a",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d16_csep_tests_flow.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d19_convex_mix.html",
+      "sha256": "0bb6f16855ce278218a89eedfbf0a333e2ff4a23d48f557317a897d2a50dfae9",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d19_convex_mix.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d19_convex_mix.html",
+      "sha256": "9aafbbb6966702fe76ea6d00b5900c71fa9770351b12048ae6a9e2715e48b3e0",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d19_convex_mix.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d20_model_family.html",
+      "sha256": "058ebd2720b06f5978504c2e687310fadd02e018f559121e6675c9eb6d8a0799",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d20_model_family.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d20_model_family.html",
+      "sha256": "0e085ba49325710bc1f8d450a2fd7f2be7b36329276e44aa1d93535a28e6bc4d",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d20_model_family.html\n"
+    }
+  ]
+}

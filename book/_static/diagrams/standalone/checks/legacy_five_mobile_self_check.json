@@ -1,72 +1,9 @@
-[
-  {
-    "file": "book/_static/diagrams/d02_regions_s_r.html",
-    "sha256": "3a14bb221007c7cff3334a3a6506fe9933b41c5e591d4fd53699a88e9a2cf92d",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/d02_regions_s_r.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/standalone/d02_regions_s_r.html",
-    "sha256": "94a905cb7105893307042c280f520b30b0e6b77f0a2aa5fe6963f6acf7adca84",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/standalone/d02_regions_s_r.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/d03_thresholds.html",
-    "sha256": "8d01e389ab4a5071fca6033945e9902eb72f33a49db90c6655e2abe679d33352",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/d03_thresholds.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/standalone/d03_thresholds.html",
-    "sha256": "b619bb2e433452c36832f1bc72a0a82ca22083b638d66523a4240ef8d9147b1e",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/standalone/d03_thresholds.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/d03_timeline_windows.html",
-    "sha256": "5957b3b5b190414d66ea5c1bd56d5aece1fdabbbe71bccede1ef77a19bdecc87",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/d03_timeline_windows.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/standalone/d03_timeline_windows.html",
-    "sha256": "32ea254f5985ba74f730ebeae3c3497cd0b683f3c30b06aa132830ba5c601d50",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/standalone/d03_timeline_windows.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/d04_density_to_counts.html",
-    "sha256": "a6b46fffa099d471ad5669c23b8c711de95f78dd0ed7a6c81d2637500fcc26b4",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/d04_density_to_counts.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/standalone/d04_density_to_counts.html",
-    "sha256": "56a7d200953075a4c53d50b4ac43eca2874eef22bc4e5c99ba2d7b2eb54f7758",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/standalone/d04_density_to_counts.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/d06_quantile_pvalue.html",
-    "sha256": "2ba58f28ad6123a264b37b2fffda4511f731651b4a638aaaa686fc4517600e74",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/d06_quantile_pvalue.html\n"
-  },
-  {
-    "file": "book/_static/diagrams/standalone/d06_quantile_pvalue.html",
-    "sha256": "3ab36936c49bfec55e685a599493a8177a6dddad056b606ba65844e441b260c0",
-    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
-    "exit_code": 0,
-    "output": "OK book/_static/diagrams/standalone/d06_quantile_pvalue.html\n"
-  }
-]
+{
+  "historical_only": true,
+  "archive": "book/_static/diagrams/standalone/checks/history/before-exhibition-20260913T132825Z/legacy_five_mobile_self_check.json",
+  "current_receipts": [
+    "exhibits_manifest.json",
+    "exhibits_static.json",
+    "exhibit_fragments_self_check.json"
+  ]
+}

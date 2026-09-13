@@ -21,10 +21,11 @@ html:
 sphinx:
   local_extensions:
     teaching_render: _ext
+    museum_layout: _ext
   config:
     html_static_path: ["_static"]
-    html_css_files: ["teaching.css"]
-    html_js_files: ["teaching_theme.js"]
+    html_css_files: ["teaching.css", "museum.css", "exhibits.css"]
+    html_js_files: ["teaching_theme.js", "museum.js", "exhibits.js"]
     togglebutton_hint: "展開補充"
     togglebutton_hint_hide: "收合補充"
     html_show_copyright: false

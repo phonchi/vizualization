@@ -1,0 +1,338 @@
+[
+  {
+    "device": "desktop-light",
+    "name": "d01_forecast_pipeline",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d20_model_family",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d02_regions_s_r",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d03_timeline_windows",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d03_forecast_protocols",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d03_thresholds",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d04_density_to_counts",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d06_quantile_pvalue",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d09_kernel_smoothing",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d11_hawkes_process",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d12_etas_branching",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d15_eepas_kernels",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d16_csep_tests_flow",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-light",
+    "name": "d19_convex_mix",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d01_forecast_pipeline",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d20_model_family",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d02_regions_s_r",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d03_timeline_windows",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d03_forecast_protocols",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d03_thresholds",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d04_density_to_counts",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d06_quantile_pvalue",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d09_kernel_smoothing",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d11_hawkes_process",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d12_etas_branching",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d15_eepas_kernels",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d16_csep_tests_flow",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-light",
+    "name": "d19_convex_mix",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d01_forecast_pipeline",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d20_model_family",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d02_regions_s_r",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d03_timeline_windows",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d03_forecast_protocols",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d03_thresholds",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d04_density_to_counts",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d06_quantile_pvalue",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d09_kernel_smoothing",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d11_hawkes_process",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d12_etas_branching",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d15_eepas_kernels",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d16_csep_tests_flow",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "desktop-dark",
+    "name": "d19_convex_mix",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d01_forecast_pipeline",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d20_model_family",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d02_regions_s_r",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d03_timeline_windows",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d03_forecast_protocols",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d03_thresholds",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d04_density_to_counts",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d06_quantile_pvalue",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d09_kernel_smoothing",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d11_hawkes_process",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d12_etas_branching",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d15_eepas_kernels",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d16_csep_tests_flow",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  },
+  {
+    "device": "mobile-dark",
+    "name": "d19_convex_mix",
+    "skip_link_hidden_without_focus": true,
+    "capture": "document clip below fixed navigation"
+  }
+]

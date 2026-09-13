@@ -9,6 +9,10 @@ CPTI15.mat 直接讀 EEPAS/data/。
     python scripts/fetch_italy_data.py            # 下載 + 轉換快取
     python scripts/fetch_italy_data.py --forecasts  # 另外預先計算四張預報 × 40 窗
 """
+
+from _teaching_runtime import prepare_plotting_environment
+prepare_plotting_environment()
+
 import argparse
 import datetime as dt
 import subprocess

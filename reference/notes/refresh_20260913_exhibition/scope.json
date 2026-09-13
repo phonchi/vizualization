@@ -1,0 +1,11 @@
+{
+  "base_commit": "f7781f2152f67706cda663ab35732999ca694a38",
+  "started_utc": "2026-09-13T13:15:45.181401+00:00",
+  "scope": "First part Italy, second part Taiwan; interactive science exhibition; no new tunable model experiments; core concepts in main and details in appendices",
+  "known_defects": [
+    "Matplotlib stderr cached in chapters1 and7",
+    "unparsed bold in7 chapters",
+    "homogeneous diagrams and page layout",
+    "Hawkes and other key concept gaps"
+  ]
+}

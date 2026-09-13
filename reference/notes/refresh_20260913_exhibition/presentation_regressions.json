@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "original Chinese punctuation case reproduces unparsed emphasis",
+      "passed": true
+    },
+    {
+      "name": "normalized definition has a real strong element",
+      "passed": true
+    },
+    {
+      "name": "code fence is preserved exactly",
+      "passed": true
+    },
+    {
+      "name": "content after code fence is still normalized",
+      "passed": true
+    },
+    {
+      "name": "admonition and following prose both normalize",
+      "passed": true
+    },
+    {
+      "name": "fresh executed empty output overrides stale cached stderr",
+      "passed": true
+    },
+    {
+      "name": "unresolved cached stderr stops synchronization",
+      "passed": true
+    },
+    {
+      "name": "unusable configured path falls back without Matplotlib stderr",
+      "passed": true
+    }
+  ],
+  "corrected_example": "**規模**（magnitude）衡量地震大小。"
+}

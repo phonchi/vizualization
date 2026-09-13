@@ -1,0 +1,22 @@
+{
+  "passed": false,
+  "combinations": 6,
+  "failures": [
+    {
+      "page": "03_experiment_spec",
+      "device": "desktop-light"
+    },
+    {
+      "page": "11_conditional_intensity",
+      "device": "desktop-light"
+    },
+    {
+      "page": "03_experiment_spec",
+      "device": "mobile-light"
+    },
+    {
+      "page": "11_conditional_intensity",
+      "device": "mobile-light"
+    }
+  ]
+}

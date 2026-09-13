@@ -252,7 +252,12 @@ fig
 # Bayona 等人的前瞻研究提供一個提醒。
 # 部分乘法混合曾在回溯期改善分數。
 # 到了新一期，優勢未能維持。
-# 乘法混合（multiplicative hybrid）以相乘結合率場。
+# **乘法混合**（multiplicative hybrid）用正乘子調整基準率場。
+# **輔助模型**（conjugate model）提供調整空間配置的資訊。
+# 它也可以是應變等分格資料，不必已是完整預報。
+# Rhoades 等（2014）先作保序轉換，再估整體尺度。
+# 所以不是把任意兩張帶單位的率圖直接相乘。
+# 附錄 E 用小型向量展示建構與正規化。
 # 該研究的組合法與本章的凸組合不同。
 # 但兩者都必須面對時間外的資料。
 #
@@ -312,3 +317,4 @@ display(HTML(italy.spec_card([
 #   [免費摘要](https://central.scec.org/node/3964)。從不同時間尺度理解加法組合。
 # - Bayona 等（2022），[乘法混合的前瞻評估](https://doi.org/10.1093/gji/ggac018)。
 #   免費全文。重點讀回溯改善與前瞻表現的落差。
+# - Rhoades 等（2014），[乘法 hybrid 的資訊增益](https://doi.org/10.1785/0120140035)。[免費機構全文](https://research-information.bris.ac.uk/files/49915043/Rhoades_Hybrids_RELM_BSSA_2014.pdf)；式 2–3 對照基準、輔助資訊與保序轉換。

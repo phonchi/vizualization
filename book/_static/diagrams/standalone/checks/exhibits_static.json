@@ -1,0 +1,159 @@
+{
+  "checked_at_utc": "2026-09-13T14:18:49.743Z",
+  "checks": [
+    {
+      "slug": "d01_forecast_pipeline",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d02_regions_s_r",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d03_timeline_windows",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d03_thresholds",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d04_density_to_counts",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d06_quantile_pvalue",
+      "states": 60,
+      "passed": true
+    },
+    {
+      "slug": "d09_kernel_smoothing",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d11_hawkes_process",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d12_etas_branching",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d15_eepas_kernels",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d16_csep_tests_flow",
+      "states": 100,
+      "passed": true
+    },
+    {
+      "slug": "d19_convex_mix",
+      "states": 20,
+      "passed": true
+    },
+    {
+      "slug": "d20_model_family",
+      "states": 100,
+      "passed": true
+    },
+    {
+      "slug": "d03_forecast_protocols",
+      "states": 60,
+      "passed": true
+    }
+  ],
+  "total_states": 520,
+  "hawkes_semantics": {
+    "exact_boundaries": [
+      {
+        "time": 2,
+        "history_count": 0,
+        "raster_count": 0,
+        "total": 0.3,
+        "passed": true
+      },
+      {
+        "time": 5,
+        "history_count": 1,
+        "raster_count": 1,
+        "total": 0.44923587074228766,
+        "passed": true
+      },
+      {
+        "time": 5.8,
+        "history_count": 2,
+        "raster_count": 2,
+        "total": 1.1913014835383329,
+        "passed": true
+      }
+    ],
+    "one_event_component_plus_background": {
+      "background": 0.3,
+      "history": [
+        2
+      ],
+      "components": [
+        0.695054053846763
+      ],
+      "total": 0.9950540538467629
+    },
+    "component_svg_zero_baseline": true
+  },
+  "protocol_semantics": {
+    "retrospective_in_or_out_of_sample": true,
+    "pseudo_is_subset": true,
+    "delayed_isolation": true,
+    "partial_known_unknown": true,
+    "revised_catalogue_limit": true
+  },
+  "browser_singleton": {
+    "repeated_loads": 2,
+    "existing_api_preserved": true,
+    "mount_calls": 2,
+    "node_export_preserved": true
+  },
+  "slider_precision": {
+    "step_percent": 0.1,
+    "forward_steps": 1000,
+    "backward_steps": 1000,
+    "passed": true
+  },
+  "math_examples": [
+    "raw 2.45 enters input",
+    "Hawkes background .3 before event",
+    "fixed mixture 14",
+    "discrete upper tail .85",
+    "raw 4.95 enters target"
+  ],
+  "data": {
+    "cells": 177,
+    "history_events": 128,
+    "targets": 25,
+    "windows": 40
+  },
+  "files": [
+    {
+      "file": "book/_static/exhibits.js",
+      "sha256": "d2c79be3ab948f8efdd4a0c936743d996be1de0e17d1aefd53898a5910945889"
+    },
+    {
+      "file": "book/_static/exhibits.css",
+      "sha256": "3169bbb91594566c063b943175a801f601281c01271c1fdc0a4289c60b50927b"
+    },
+    {
+      "file": "book/_static/diagrams/sources/exhibits.json",
+      "sha256": "44a22d86d78383dbde5e46c1d429f230708e95a9f95736499a96e9b97409eee0"
+    }
+  ],
+  "browser_status": "not run; main agent coordinates"
+}

@@ -1,29 +1,37 @@
 # reference/notes/ 索引
 
-`reference/` 下約 40 篇論文的結構化中文筆記，按主題分成 9 個檔案，供第二部
-「地震預報模型」各章撰寫使用。每篇筆記含：書目、模型／方法概述、關鍵觀念
-與公式（LaTeX）、教學洞見、與台灣的關聯。
+目前教材採20章義大利主線、第二部21–29章與附錄。新版來源入口：
 
-**⚠️ Embargo**：`[2026] PyEEPAS`(+sup) 與 `[2026] Taiwan_EEPAS`(+sup) 為審稿中
-論文，對應筆記節僅含方法背景，其任何數字、參數、圖表、結果**不得出現於教學
-網站**。`[2025] EEPAS_Software`（submitted to GJI）與 EEPAS_TW-main.zip 的程式
-與結果比照辦理。
+- [逐來源概念覆蓋與核對深度](refresh_20260913_exhibition/literature_coverage.md)
+- [機器可讀覆蓋資料](refresh_20260913_exhibition/coverage.json)
 
-**檔案勘誤（ingest 時發現）**：
-- `[2007] Rhoades.pdf` ＝ `[2007] Application...CA.pdf`（md5 相同，取一份）
-- `[2023] Italy_EEPAS.pdf` ＝ `[2023] Application...Italy.pdf`（md5 相同，取一份）
-- `[2023] Calibrated ETAS.pdf` 內容實為 Mizrahi et al. 2021（SRL declustering 論文），與 `[2021] Estimate b.pdf` 同篇
-- `Taiwan/[2011] Omori Law Taiwan.pdf` 與 `Taiwan/[2012] New Empirical Tests...pdf` 為同一篇（Tsai, Ouillon & Sornette 2012 BSSA）
-- `[2024] Italy_exp.pdf` 非 EEPAS 論文，實為 Brehmer et al. 2024 預報評分方法論
-- `[2024] soft_intro.pdf` 非軟體導論，實為 Wein et al. 2024 餘震預報溝通研究
-- `entropy-22-01264.pdf` 的 22 是卷號，實際年份 2020（Rhoades et al., EEPAS 前置時間）
+新版登錄涵蓋59個實際PDF檔案，包括2組二進位重複與3組同篇不同版本。
+**登錄不等於59篇全文已核讀。** 部分只核對首頁；ETAS/[1998] ETAS.pdf雖被抽取工具標成ok，快取實際只有分頁字元，原文仍未核。
+原始PDF與全文文字快取位於被忽略的本地資料，不公開到網站。
+
+**Embargo**：2025 EEPAS_Software、2026 PyEEPAS（含補充）、2026 Taiwan_EEPAS（含補充）仍按審稿中處理。
+不得公開這些稿件的方法、數字、參數、圖表或研究結果；台灣EEPAS正文只能說「在地化工作正在進行中」。
+舊筆記含有稿件摘要與數值，不代表它們已獲准成為教材來源。
+可用的是已發表EEPAS文獻、Biondini 2023義大利設定/參數，以及明確公開的PyEEPAS GitHub程式與義大利資料；
+公開repo不等於解禁稿件結果，也不授權公開EEPAS_TW內部內容。
+
+**已核實的錯名／版本**：
+- 2007兩份CA EEPAS、2023兩份Italy EEPAS為二進位相同檔。
+- Calibrated ETAS實為Mizrahi等2021除叢與規模分布論文；Estimate b為其2020作者稿。
+- 兩份台灣Multifractal Omori為Tsai等2012同篇不同PDF。
+- 根目錄2022 Tests與Ensemble同名研究為Bayona等2022同篇版本。
+- ETAS_R真正年份2019；Ncom為Girona–Drymoni2024異常低規模地震研究。
+- Italy_exp本地是2024預印本評分研究；soft_intro是2024預報溝通研究。
+- entropy-22真正年份2020；22是卷號。完整書目與核對範圍見新版表。
+
+下方保留早期九份主題筆記與歷史章號，供查找素材；不作目前章序或公開授權的依據。
 
 ## 主題檔案 → 章節對應
 
 2026-09-09 全站延伸閱讀已按目前第 01–23 章重新核對，含原始 PDF 與公開連結：
 [首頁與第一部](reading_00_08_verified.md)、[第 09–16 章](reading_09_16_verified.md)、
 [第 17–23 章](reading_17_23_verified.md)。以下舊筆記的供應章號保留原記錄；
-定位目前教材請以 `book/_toc.yml`、`book/_conventions.md` 與上述核實稿為準。
+定位目前教材先用新版覆蓋表，再參照 `book/_toc.yml`、`book/_conventions.md` 與上述核實稿為準。
 
 | 檔案 | 內容 | 主要供應章節 |
 |---|---|---|

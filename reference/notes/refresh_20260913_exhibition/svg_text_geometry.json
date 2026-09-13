@@ -1,0 +1,510 @@
+{
+  "passed": true,
+  "states": 84,
+  "results": [
+    {
+      "diagram": "d01_forecast_pipeline",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d01_forecast_pipeline",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d01_forecast_pipeline",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d01_forecast_pipeline",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d01_forecast_pipeline",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d01_forecast_pipeline",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d02_regions_s_r",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d02_regions_s_r",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d02_regions_s_r",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d02_regions_s_r",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d02_regions_s_r",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d02_regions_s_r",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d03_forecast_protocols",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d03_forecast_protocols",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d03_forecast_protocols",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d03_forecast_protocols",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d03_forecast_protocols",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d03_forecast_protocols",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d03_thresholds",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d03_thresholds",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d03_thresholds",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d03_thresholds",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d03_thresholds",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d03_thresholds",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d03_timeline_windows",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d03_timeline_windows",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d03_timeline_windows",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d03_timeline_windows",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d03_timeline_windows",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d03_timeline_windows",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d04_density_to_counts",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d04_density_to_counts",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d04_density_to_counts",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d04_density_to_counts",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d04_density_to_counts",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d04_density_to_counts",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d06_quantile_pvalue",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d06_quantile_pvalue",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d06_quantile_pvalue",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d06_quantile_pvalue",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d06_quantile_pvalue",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d06_quantile_pvalue",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d09_kernel_smoothing",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d09_kernel_smoothing",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d09_kernel_smoothing",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d09_kernel_smoothing",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d09_kernel_smoothing",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d09_kernel_smoothing",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d11_hawkes_process",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d11_hawkes_process",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d11_hawkes_process",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d11_hawkes_process",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d11_hawkes_process",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d11_hawkes_process",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d12_etas_branching",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d12_etas_branching",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d12_etas_branching",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d12_etas_branching",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d12_etas_branching",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d12_etas_branching",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d15_eepas_kernels",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d15_eepas_kernels",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d15_eepas_kernels",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d15_eepas_kernels",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d15_eepas_kernels",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d15_eepas_kernels",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d16_csep_tests_flow",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d16_csep_tests_flow",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d16_csep_tests_flow",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d16_csep_tests_flow",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d16_csep_tests_flow",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d16_csep_tests_flow",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d19_convex_mix",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d19_convex_mix",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d19_convex_mix",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d19_convex_mix",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d19_convex_mix",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d19_convex_mix",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d20_model_family",
+      "width": 354,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d20_model_family",
+      "width": 354,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d20_model_family",
+      "width": 354,
+      "progress": 1,
+      "outside": []
+    },
+    {
+      "diagram": "d20_model_family",
+      "width": 1100,
+      "progress": 0,
+      "outside": []
+    },
+    {
+      "diagram": "d20_model_family",
+      "width": 1100,
+      "progress": 0.55,
+      "outside": []
+    },
+    {
+      "diagram": "d20_model_family",
+      "width": 1100,
+      "progress": 1,
+      "outside": []
+    }
+  ]
+}

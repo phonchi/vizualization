@@ -1,0 +1,55 @@
+{
+  "page": "12_etas_structure",
+  "status": "passed",
+  "seconds": 1.17,
+  "outputs": 10,
+  "method": "in-process IPython",
+  "cells": [
+    {
+      "cell": 1,
+      "seconds": 0.0002
+    },
+    {
+      "cell": 2,
+      "seconds": 0.0001
+    },
+    {
+      "cell": 4,
+      "seconds": 0.0005
+    },
+    {
+      "cell": 6,
+      "seconds": 0.0207
+    },
+    {
+      "cell": 8,
+      "seconds": 0.0005
+    },
+    {
+      "cell": 10,
+      "seconds": 0.0136
+    },
+    {
+      "cell": 14,
+      "seconds": 1.0403
+    },
+    {
+      "cell": 16,
+      "seconds": 0.0003
+    }
+  ],
+  "source_sha256": "09013f62e436f312e23ff27b0c18de29b008c3804deb0e123f4e8defdd04c14c",
+  "toolkit_sha256": {
+    "__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86",
+    "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3",
+    "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38",
+    "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded",
+    "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335",
+    "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737",
+    "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec",
+    "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec",
+    "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72",
+    "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f",
+    "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"
+  }
+}

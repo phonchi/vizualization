@@ -1,4 +1,8 @@
 """Build the book using saved notebook outputs, without data/API execution."""
+
+from _teaching_runtime import prepare_plotting_environment
+prepare_plotting_environment()
+
 from pathlib import Path
 import subprocess
 import sys
@@ -16,7 +20,10 @@ if 'html_static_path' in settings:
 override=BOOK/'_build/offline_config.yml'
 override.parent.mkdir(parents=True,exist_ok=True)
 override.write_text(yaml.safe_dump(config,allow_unicode=True,sort_keys=False))
-raise SystemExit(subprocess.call([
+code=subprocess.call([
     str(Path(sys.executable).parent/'jupyter-book'),'build',str(BOOK),
     '--config',str(override),'--all','-W','--keep-going',
-],cwd=ROOT))
+],cwd=ROOT)
+if code:
+    raise SystemExit(code)
+raise SystemExit(subprocess.call([sys.executable,str(ROOT/"scripts/check_rendered_teaching_content.py")],cwd=ROOT))

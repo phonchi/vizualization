@@ -1,4 +1,8 @@
 """Execute explicitly selected teaching pages with external downloads disabled."""
+
+from _teaching_runtime import prepare_plotting_environment
+prepare_plotting_environment()
+
 from pathlib import Path
 import argparse
 import ast
@@ -12,7 +16,7 @@ import nbformat
 from nbclient import NotebookClient
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/os.environ.get('TEACHING_REPORT_DIR','reference/notes/rewrite_20260913')
+OUT=ROOT/os.environ.get('TEACHING_REPORT_DIR','reference/notes/refresh_20260913_exhibition/execution')
 GUARD='''import requests
 def _offline_request(*args, **kwargs):
     raise RuntimeError("Teaching validation is offline; prepare the local cache first")
@@ -21,7 +25,7 @@ import gdms_toolkit as _gt
 _gt.GDMSSession = _offline_request
 '''
 
-def execute_in_process(notebook):
+def execute_in_process(notebook, diagnostics_path):
     """Socket-free execution with IPython rich outputs, one fresh namespace per page."""
     from IPython.core.interactiveshell import InteractiveShell
     from IPython.utils.capture import capture_output
@@ -44,10 +48,12 @@ def execute_in_process(notebook):
                     display(value)
         seconds=time.monotonic()-started
         cell.outputs=[]
-        for name in ('stdout','stderr'):
-            content=getattr(captured,name)
-            if content:
-                cell.outputs.append(nbformat.v4.new_output('stream',name=name,text=content))
+        if captured.stderr:
+            with diagnostics_path.open('a') as diagnostic:
+                diagnostic.write(f'CELL {i-1} STDERR\n'+captured.stderr+'\n')
+            raise RuntimeError(f'Unexpected stderr in cell {i-1}; see {diagnostics_path}')
+        if captured.stdout:
+            cell.outputs.append(nbformat.v4.new_output('stream',name='stdout',text=captured.stdout))
         for output in captured.outputs:
             cell.outputs.append(nbformat.v4.new_output('display_data',data=output.data,metadata=output.metadata))
         cell.execution_count=len(timings)+1
@@ -79,12 +85,16 @@ def main():
         print(f'START {name}',flush=True)
         try:
             if args.in_process:
-                timings=execute_in_process(notebook)
+                timings=execute_in_process(notebook,OUT/f'{name}_diagnostics.log')
             else:
                 client=NotebookClient(notebook,timeout=30,kernel_name='python3',resources={'metadata':{'path':str(ROOT)}})
                 client.execute()
                 timings=[]
             notebook.cells.pop(0)
+            stderr=[o.get('text','') for c in notebook.cells for o in c.get('outputs',[]) if o.get('output_type')=='stream' and o.get('name')=='stderr']
+            if stderr:
+                (OUT/f'{name}_diagnostics.log').write_text('\n'.join(stderr))
+                raise RuntimeError(f'Unexpected notebook stderr: {name}')
             for c in notebook.cells:
                 if c.cell_type=='code':
                     tags=[t for t in c.metadata.get('tags',[]) if t!='hide-input']

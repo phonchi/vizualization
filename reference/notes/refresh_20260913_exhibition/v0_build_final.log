@@ -1,0 +1,127 @@
+Running Jupyter-Book v1.0.4.post1
+Source Folder: /home/phonchi/vizualization/book
+Config Path: /home/phonchi/vizualization/book/_build/offline_config.yml
+Output Path: /home/phonchi/vizualization/book/_build/html
+[01mRunning Sphinx v7.4.7[39;49;00m
+[01mloading translations [en]... [39;49;00mdone
+[etoc] Changing master_doc to '00_intro'
+[etoc] Excluded 4 extra file(s) not in toc
+[01mmyst v3.0.1:[39;49;00m MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'linkify', 'colon_fence', 'substitution', 'dollarmath', 'tasklist'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('mailto', 'http', 'https'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+[01mmyst-nb v1.4.0:[39;49;00m NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, eval_name_regex='^[a-zA-Z_][a-zA-Z0-9_]*$', execution_mode='off', execution_cache_path='', execution_excludepatterns=[], execution_timeout=600, execution_in_temp=False, execution_allow_errors=False, execution_raise_on_error=False, execution_show_tb=False, merge_streams=True, render_plugin='default', remove_code_source=False, remove_code_outputs=False, scroll_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /home/phonchi/vizualization/book/_build/.jupyter_cache
+[01msphinx-multitoc-numbering v0.1.3:[39;49;00m Loaded
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mwriting output... [39;49;00m
+[01mbuilding [html]: [39;49;00mtargets for 37 source files that are out of date
+[01mupdating environment: [39;49;00m[new config] 37 added, 0 changed, 0 removed
+[01mreading sources... [39;49;00m[  3%] [35m00_intro[39;49;00m
+[01mreading sources... [39;49;00m[  5%] [35m01_forecast_question[39;49;00m
+[01mreading sources... [39;49;00m[  8%] [35m01_overview[39;49;00m
+[01mreading sources... [39;49;00m[ 11%] [35m02_download[39;49;00m
+[01mreading sources... [39;49;00m[ 14%] [35m02_reading_horus[39;49;00m
+[01mreading sources... [39;49;00m[ 16%] [35m03_experiment_spec[39;49;00m
+[01mreading sources... [39;49;00m[ 19%] [35m03_groundwater[39;49;00m
+[01mreading sources... [39;49;00m[ 22%] [35m04_geomagnetic[39;49;00m
+[01mreading sources... [39;49;00m[ 24%] [35m04_poisson_and_sup[39;49;00m
+[01mreading sources... [39;49;00m[ 27%] [35m05_likelihood_estimation[39;49;00m
+[01mreading sources... [39;49;00m[ 30%] [35m05_seismic[39;49;00m
+[01mreading sources... [39;49;00m[ 32%] [35m06_gnss[39;49;00m
+[01mreading sources... [39;49;00m[ 35%] [35m06_simulation_tests_scores[39;49;00m
+[01mreading sources... [39;49;00m[ 38%] [35m07_case_hualien2024[39;49;00m
+[01mreading sources... [39;49;00m[ 41%] [35m07_gr_bvalue[39;49;00m
+[01mreading sources... [39;49;00m[ 43%] [35m08_completeness[39;49;00m
+[01mreading sources... [39;49;00m[ 46%] [35m08_explore_ideas[39;49;00m
+[01mreading sources... [39;49;00m[ 49%] [35m09_ppe_forecast[39;49;00m
+[01mreading sources... [39;49;00m[ 51%] [35m10_clustering_laws[39;49;00m
+[01mreading sources... [39;49;00m[ 54%] [35m11_conditional_intensity[39;49;00m
+[01mreading sources... [39;49;00m[ 57%] [35m12_etas_structure[39;49;00m
+[01mreading sources... [39;49;00m[ 59%] [35m13_etas_italy_forecast[39;49;00m
+[01mreading sources... [39;49;00m[ 62%] [35m14_psi_precursory_scale[39;49;00m
+[01mreading sources... [39;49;00m[ 65%] [35m15_eepas_italy_forecast[39;49;00m
+[01mreading sources... [39;49;00m[ 68%] [35m16_test_number[39;49;00m
+[01mreading sources... [39;49;00m[ 70%] [35m17_test_space_magnitude[39;49;00m
+[01mreading sources... [39;49;00m[ 73%] [35m18_test_comparison[39;49;00m
+[01mreading sources... [39;49;00m[ 76%] [35m19_ensembles[39;49;00m
+[01mreading sources... [39;49;00m[ 78%] [35m20_beyond_forecast[39;49;00m
+[01mreading sources... [39;49;00m[ 81%] [35m23_taiwan_outlook[39;49;00m
+[01mreading sources... [39;49;00m[ 84%] [35mappendix_a_point_process[39;49;00m
+[01mreading sources... [39;49;00m[ 86%] [35mappendix_b_catalog[39;49;00m
+[01mreading sources... [39;49;00m[ 89%] [35mappendix_c_etas[39;49;00m
+[01mreading sources... [39;49;00m[ 92%] [35mappendix_d_eepas[39;49;00m
+[01mreading sources... [39;49;00m[ 95%] [35mappendix_e_testing[39;49;00m
+[01mreading sources... [39;49;00m[ 97%] [35mappendix_f_hazard[39;49;00m
+[01mreading sources... [39;49;00m[100%] [35mappendix_g_observations[39;49;00m
+
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mcopying assets... [39;49;00m
+[01mcopying downloadable files... [39;49;00m[ 50%] [33m_static/downloads/09_ppe_testing_01deg.tsv[39;49;00m
+[01mcopying downloadable files... [39;49;00m[100%] [33m_static/reading/biondini2023_fig8.png[39;49;00m
+
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mcopying assets: [39;49;00mdone
+[01mwriting output... [39;49;00m[  3%] [32m00_intro[39;49;00m
+[01mwriting output... [39;49;00m[  5%] [32m01_forecast_question[39;49;00m
+[01mwriting output... [39;49;00m[  8%] [32m01_overview[39;49;00m
+[01mwriting output... [39;49;00m[ 11%] [32m02_download[39;49;00m
+[01mwriting output... [39;49;00m[ 14%] [32m02_reading_horus[39;49;00m
+[01mwriting output... [39;49;00m[ 16%] [32m03_experiment_spec[39;49;00m
+[01mwriting output... [39;49;00m[ 19%] [32m03_groundwater[39;49;00m
+[01mwriting output... [39;49;00m[ 22%] [32m04_geomagnetic[39;49;00m
+[01mwriting output... [39;49;00m[ 24%] [32m04_poisson_and_sup[39;49;00m
+[01mwriting output... [39;49;00m[ 27%] [32m05_likelihood_estimation[39;49;00m
+[01mwriting output... [39;49;00m[ 30%] [32m05_seismic[39;49;00m
+[01mwriting output... [39;49;00m[ 32%] [32m06_gnss[39;49;00m
+[01mwriting output... [39;49;00m[ 35%] [32m06_simulation_tests_scores[39;49;00m
+[01mwriting output... [39;49;00m[ 38%] [32m07_case_hualien2024[39;49;00m
+[01mwriting output... [39;49;00m[ 41%] [32m07_gr_bvalue[39;49;00m
+[01mwriting output... [39;49;00m[ 43%] [32m08_completeness[39;49;00m
+[01mwriting output... [39;49;00m[ 46%] [32m08_explore_ideas[39;49;00m
+[01mwriting output... [39;49;00m[ 49%] [32m09_ppe_forecast[39;49;00m
+[01mwriting output... [39;49;00m[ 51%] [32m10_clustering_laws[39;49;00m
+[01mwriting output... [39;49;00m[ 54%] [32m11_conditional_intensity[39;49;00m
+[01mwriting output... [39;49;00m[ 57%] [32m12_etas_structure[39;49;00m
+[01mwriting output... [39;49;00m[ 59%] [32m13_etas_italy_forecast[39;49;00m
+[01mwriting output... [39;49;00m[ 62%] [32m14_psi_precursory_scale[39;49;00m
+[01mwriting output... [39;49;00m[ 65%] [32m15_eepas_italy_forecast[39;49;00m
+[01mwriting output... [39;49;00m[ 68%] [32m16_test_number[39;49;00m
+[01mwriting output... [39;49;00m[ 70%] [32m17_test_space_magnitude[39;49;00m
+[01mwriting output... [39;49;00m[ 73%] [32m18_test_comparison[39;49;00m
+[01mwriting output... [39;49;00m[ 76%] [32m19_ensembles[39;49;00m
+[01mwriting output... [39;49;00m[ 78%] [32m20_beyond_forecast[39;49;00m
+[01mwriting output... [39;49;00m[ 81%] [32m23_taiwan_outlook[39;49;00m
+[01mwriting output... [39;49;00m[ 84%] [32mappendix_a_point_process[39;49;00m
+[01mwriting output... [39;49;00m[ 86%] [32mappendix_b_catalog[39;49;00m
+[01mwriting output... [39;49;00m[ 89%] [32mappendix_c_etas[39;49;00m
+[01mwriting output... [39;49;00m[ 92%] [32mappendix_d_eepas[39;49;00m
+[01mwriting output... [39;49;00m[ 95%] [32mappendix_e_testing[39;49;00m
+[01mwriting output... [39;49;00m[ 97%] [32mappendix_f_hazard[39;49;00m
+[01mwriting output... [39;49;00m[100%] [32mappendix_g_observations[39;49;00m
+
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[ 33%] [33m_build/jupyter_execute/38e75fcbdacfd1f2dd310e14739077c22f128761cbe674a45f900c5fd82d842d.png[39;49;00m
+[01mcopying images... [39;49;00m[ 67%] [33m_build/jupyter_execute/4e8369ae3c50b67b3634d61705d4ac8e9b5b26ce2cd3fa4dbe9bdfd8286fbaa2.png[39;49;00m
+[01mcopying images... [39;49;00m[100%] [33m_static/reading/biondini2023_fig8.png[39;49;00m
+
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded.[39;49;00m
+
+The HTML pages are in book/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    book/_build/html/
+You can look at your book by opening this file in a browser:
+    book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/phonchi/vizualization/book/_build/html/index.html            
+
+[92m===============================================================================[0m
+

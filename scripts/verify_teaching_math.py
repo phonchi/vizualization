@@ -3,12 +3,18 @@
 Run from the repository environment. This script never rebuilds forecast caches.
 Evidence and export round-trip examples go to rewrite_20260913/continuation/.
 """
+
+from _teaching_runtime import prepare_plotting_environment
+prepare_plotting_environment()
+
 from dataclasses import asdict
 from datetime import datetime, timezone
 from hashlib import sha256
 from math import factorial
+from fractions import Fraction
 from pathlib import Path
 import json
+import os
 
 import numpy as np
 import pandas as pd
@@ -19,7 +25,7 @@ from gdms_toolkit import csep_teaching as csep, italy, italy_models as models
 from gdms_toolkit.teaching import learning_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'reference/notes/rewrite_20260913/continuation'
+OUT = ROOT / os.environ.get('TEACHING_REPORT_DIR','reference/notes/refresh_20260913_exhibition/math')
 ROWS = []
 PROVENANCE = {}
 SEED = 20260915
@@ -193,6 +199,171 @@ def kernel_checks():
     check('EEPAS magnitude midpoint accuracy in selected example', mag[0, 0], truth, 3e-4)
 
 
+
+def model_concept_checks():
+    """Small synthetic fixtures for new prose; not full forecasting implementations."""
+    PROVENANCE['concept_fixtures'] = {
+        'hawkes_scene': {'background': .3, 'amplitude': 1.5, 'decay_days': 1.3,
+                         'event_days': [2., 5., 5.8], 'stationary_claim': False},
+        'stationary_hawkes': {'background': .3, 'offspring_mean': .6,
+                             'assumption': 'nonnegative integrable kernel, n < 1'},
+        'stress_release': {'initial_state': .4, 'loading': .2, 'gamma': .7,
+                           'reference_rate': .3, 'event_day': 2., 'release': .8,
+                           'units': 'dimensionless synthetic state; days'},
+        'score_distribution': {'counts': [0, 4], 'probabilities': [.75, .25],
+                               'mean': 1., 'variance': 3.},
+        'multiplicative_fixture': {'baseline': [2, 3, 5], 'conjugate': [0, 1, 2],
+                                   'transformation': 'ln(1+z)', 'target_total': 10},
+        'time_completeness': {
+            'catalogue_lead_definition': 'target time minus catalogue start',
+            'lag_definition': 'target time minus input cutoff; cutoff = issue minus delay',
+            'endpoint_fixture': {'catalog_start': 0., 'issue': 100., 'delay': 10., 'target': 125., 'window_end': 150.},
+            'input_magnitudes': [3., 4.], 'target_magnitudes': [5., 6.],
+            'assumption': 'two-source quadrature fixture, no spatial boundaries; not full GR integration'},
+        'eas_temporal_fixture': {'mainshock_rate': .2, 'direct_offspring_mean': .6,
+                                 'decay_days': 2., 'forecast_days': 5.,
+                                 'assumption': 'constant future mainshock rate, exponential first-generation kernel'},
+    }
+    amplitude, decay, background = 1.5, 1.3, .3
+    check('Hawkes display exponential area is 1.95',
+          quad(lambda lag: amplitude*np.exp(-lag/decay), 0, np.inf)[0], 1.95)
+    require('Hawkes display fixture is not subcritical', amplitude*decay > 1)
+    events = np.array([2., 5., 5.8])
+    # Match the published scene expression, then compare scalar past-only sums.
+    times = np.array([0., 2., 2.+1e-7, 5., 5.8, 6.])
+    vector_rate = np.full(times.shape, background)
+    for event in events:
+        vector_rate += np.where(times > event,
+                                amplitude*np.exp(-np.maximum(times-event, 0)/decay), 0.)
+    scalar_rate = np.array([
+        background+sum(amplitude*np.exp(-(now-event)/decay)
+                       for event in events if event < now)
+        for now in times])
+    check('Hawkes scene vector and causal past-only sum agree',
+          np.max(abs(vector_rate-scalar_rate)), 0.)
+    check('Hawkes left rate at first event excludes self', vector_rate[1], background)
+    check('Hawkes left rate at second event includes only earlier event',
+          vector_rate[3], background+amplitude*np.exp(-3/decay))
+    check('Hawkes left rate at third event includes two earlier events',
+          vector_rate[4], background+amplitude*(np.exp(-3.8/decay)+np.exp(-.8/decay)))
+    check('Hawkes immediate right contribution approaches kernel amplitude',
+          vector_rate[2]-background, amplitude, 2e-7)
+    # Separate subcritical example: never insert n=1.95 into this formula.
+    n = .6
+    by_generations = background*sum(n**generation for generation in range(100))
+    mean_rate = background/(1-n)
+    check('subcritical Hawkes mean vs summed immigration generations', mean_rate, by_generations)
+    check('subcritical Hawkes mean satisfies stationary balance', mean_rate, background+n*mean_rate)
+    require('stationary Hawkes fixture uses its own n below one', 0 <= n < 1)
+
+    initial, loading, response, ref, event, release = .4, .2, .7, .3, 2., .8
+    before_loading = ref*np.exp(response*initial)
+    before_event = ref*np.exp(response*(initial+loading*event))
+    after_event = ref*np.exp(response*(initial+loading*event-release))
+    check('stress-release positive loading rate ratio', before_event/before_loading,
+          np.exp(response*loading*event))
+    require('stress-release positive loading raises rate', before_event > before_loading)
+    check('stress-release event rate drop ratio', after_event/before_event, np.exp(-response*release))
+    require('stress-release positive release lowers positive rate', 0 < after_event < before_event)
+    after_state = initial+loading*event-release
+    require('stress-release fixture does not reset to initial state', not np.isclose(after_state, initial))
+
+    baseline = [Fraction(2), Fraction(3), Fraction(5)]
+    multipliers = [Fraction(1), Fraction(2), Fraction(3)]
+    unnormalized = [a*b for a, b in zip(baseline, multipliers)]
+    require('multiplicative three-cell unnormalized exact total', sum(unnormalized) == 23)
+    normalized = [value*Fraction(10, 23) for value in unnormalized]
+    require('multiplicative three-cell exact normalized fractions',
+            normalized == [Fraction(20, 23), Fraction(60, 23), Fraction(150, 23)]
+            and sum(normalized) == 10)
+    transformed = np.array([2., 3., 5.])*np.exp(np.log1p([0., 1., 2.]))
+    check('multiplicative log-transform normalization vs exact fractions',
+          np.max(abs(transformed*10/transformed.sum()-np.array([float(v) for v in normalized]))), 0.)
+
+    # Deliberately non-Poisson: support {0, 4}, mean 1 and variance 3.
+    values, probabilities = [0, 4], [Fraction(3, 4), Fraction(1, 4)]
+    mu = sum(Fraction(value)*probability for value, probability in zip(values, probabilities))
+    variance = sum(probability*(value-mu)**2 for value, probability in zip(values, probabilities))
+    require('score fixture is overdispersed, non-Poisson with exact mean',
+            mu == 1 and variance == 3)
+    def score(rate, count):
+        return count*np.log(rate)-rate-np.log(factorial(count))
+    for candidate in [.25, .5, 1., 2., 4.]:
+        difference = sum(float(probability)*(score(float(mu), value)-score(candidate, value))
+                         for value, probability in zip(values, probabilities))
+        analytic = candidate-float(mu)+float(mu)*np.log(float(mu)/candidate)
+        check(f'non-Poisson exact expected score difference lambda={candidate}', difference, analytic)
+        require(f'mean-consistent Poisson-form score lambda={candidate}', difference >= -1e-12)
+    # Conditional mean optimality says nothing about Poisson tail calibration.
+
+    catalog_start, issue, delay, target, window_end = 0., 100., 10., 125., 150.
+    catalog_lead = target-catalog_start
+    time_lag = target-(issue-delay)
+    horizon = window_end-issue
+    check('catalogue lead time is catalog start to target', catalog_lead, 125.)
+    check('input delay is data cutoff to issue', issue-(issue-delay), 10.)
+    check('time lag includes target offset after issue', time_lag, 35.)
+    check('forecast horizon is issue to window end', horizon, 50.)
+    check('oldest source lag endpoint recovers catalog start', target-catalog_lead, catalog_start)
+    check('newest source lag endpoint recovers issue minus delay', target-time_lag, issue-delay)
+    check('usable history length differs from catalogue lead with positive lag',
+          catalog_lead-time_lag, issue-delay-catalog_start)
+
+    P = models.PARAMS['EEPAS']
+    source_mag = np.array([3., 4.])
+    beta = italy.SPEC.b_value*np.log(10)
+    lead = 10**(P['aT']+P['bT']*3.5)
+    log_means = P['aT']+P['bT']*source_mag
+    cdf_mass = models.eepas_time_mass(np.zeros(2), source_mag, 0., lead)
+    # Independent integration in log10-time coordinates, not the erf code.
+    integrated = np.array([
+        quad(lambda u: np.exp(-.5*((u-center)/P['sT'])**2)/(P['sT']*np.sqrt(2*np.pi)),
+             -np.inf, np.log10(lead))[0] for center in log_means])
+    check('time completeness source CDF vs direct log-time quadrature',
+          np.max(abs(cdf_mass-integrated)), 0., 1e-9)
+    def completeness(target_magnitude, temporal_mass):
+        weights = np.exp(-beta*source_mag)*np.exp(
+            -.5*((target_magnitude-P['aM']-P['bM']*source_mag)/P['sM'])**2)
+        # eta is independent of source magnitude for the fixed bM=1 NW fixture;
+        # Gaussian normalization and other common factors cancel in the ratio.
+        return np.dot(weights, temporal_mass)/weights.sum()
+    require('completeness fixture uses constant eta condition bM=1', P['bM'] == 1.)
+    for target_magnitude in [5., 6.]:
+        fraction = completeness(target_magnitude, cdf_mass)
+        check(f'time completeness weighted ratio M={target_magnitude}', fraction,
+              completeness(target_magnitude, integrated))
+        check(f'time completeness infinite-history ratio M={target_magnitude}',
+              completeness(target_magnitude, np.ones(2)), 1.)
+        require(f'time completeness lies in unit interval M={target_magnitude}', 0 <= fraction <= 1)
+    require('specified EEPAS scaling gives lower completeness for larger target',
+            completeness(6., cdf_mass) < completeness(5., cdf_mass))
+    # Rate-balance identity for the two compensation endpoints; synthetic values.
+    mix, fraction, full_rate = .18, .4, 2.
+    finite_signal = (1-mix)*fraction*full_rate
+    smooth = (mix+(1-mix)*(1-fraction))*full_rate+finite_signal
+    signal = mix*full_rate+finite_signal/fraction
+    check('EEPAS smooth compensation restores assumed average', smooth, full_rate)
+    check('EEPAS signal compensation restores assumed average', signal, full_rate)
+
+    main_rate, direct_mean, decay, horizon = .2, .6, 2., 5.
+    offspring_rate = quad(lambda u: main_rate*direct_mean/decay*np.exp(-(horizon-u)/decay),
+                          0, horizon)[0]
+    check('EAS synthetic future-mainshock temporal convolution', offspring_rate,
+          main_rate*direct_mean*(1-np.exp(-horizon/decay)))
+    expected_children = quad(lambda u: main_rate*direct_mean*(1-np.exp(-(horizon-u)/decay)),
+                             0, horizon)[0]
+    check('EAS finite-window expected direct children by convolution',
+          expected_children, main_rate*direct_mean*(horizon-decay*(1-np.exp(-horizon/decay))))
+    require('EAS finite-window fixture does not count all infinite-time offspring',
+            0 < expected_children < main_rate*horizon*direct_mean)
+    PROVENANCE['concept_fixture_limits'] = [
+        'These synthetic checks verify selected formulas, not Hawkes, stress-release or EAS forecast implementations.',
+        'The n=1.95 display and n=0.6 stationary examples are distinct parameter settings.',
+        'Two-magnitude completeness checks do not verify the continuous input-magnitude integral or spatial boundaries.',
+        'Non-Poisson mean-score consistency does not establish Poisson-calibrated tests or confidence intervals.',
+        'No new forecast cache or scientific fitted result is produced by these checks.',
+    ]
+
 def boundary_checks():
     # Include a gap between windows to distinguish start and end checks.
     windows = pd.DataFrame(dict(t1=[10., 30.], t2=[20., 40.]))
@@ -303,7 +474,12 @@ def main():
         cache_rebuilt=False,
     )
     source_paths = [ROOT/'scripts/verify_teaching_math.py', ROOT/'gdms_toolkit/csep_teaching.py',
-                    ROOT/'gdms_toolkit/italy.py', ROOT/'gdms_toolkit/italy_models.py']
+                    ROOT/'gdms_toolkit/italy.py', ROOT/'gdms_toolkit/italy_models.py',
+                    ROOT/'book/11_conditional_intensity.py',
+                    ROOT/'book/appendix_a_point_process.md',
+                    ROOT/'book/appendix_d_eepas.md',
+                    ROOT/'book/appendix_e_testing.md',
+                    ROOT/'book/appendix_f_hazard.md']
     paper_text = Path('/tmp/italy_eepas_source.txt')
     if paper_text.is_file():
         source_paths.append(paper_text)
@@ -314,6 +490,7 @@ def main():
         score_checks()
         kernel_checks()
         boundary_checks()
+        model_concept_checks()
         cache_checks()
         from unittest.mock import patch
         from tempfile import TemporaryDirectory

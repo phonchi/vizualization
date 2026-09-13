@@ -1,0 +1,236 @@
+START 01_forecast_question
+/home/phonchi/vizualization/.venv/lib/python3.13/site-packages/IPython/paths.py:59: UserWarning: IPython dir '/home/phonchi/.ipython' is not a writable location, using a temp directory.
+  warn("IPython dir '{0}' is not a writable location,"
+  cell -1: 0.400s
+  cell 1: 0.004s
+  cell 3: 0.069s
+  cell 4: 0.206s
+  cell 5: 1.083s
+  cell 7: 0.841s
+  cell 9: 0.041s
+  cell 11: 0.023s
+  cell 13: 0.001s
+  cell 15: 0.000s
+{"page": "01_forecast_question", "status": "passed", "seconds": 3.01, "outputs": 8, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0035}, {"cell": 3, "seconds": 0.0693}, {"cell": 4, "seconds": 0.2058}, {"cell": 5, "seconds": 1.0831}, {"cell": 7, "seconds": 0.8407}, {"cell": 9, "seconds": 0.0409}, {"cell": 11, "seconds": 0.0229}, {"cell": 13, "seconds": 0.0006}, {"cell": 15, "seconds": 0.0002}], "source_sha256": "c2b8e8a51bc95e5e1a6ebe56efe6fc20e6141c70cfcdd2d617a9b61a9f3deb9e", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 02_reading_horus
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 1.299s
+  cell 4: 0.005s
+  cell 6: 0.001s
+  cell 8: 0.001s
+  cell 10: 0.041s
+  cell 13: 0.029s
+  cell 15: 0.002s
+  cell 18: 0.001s
+  cell 20: 0.021s
+  cell 22: 0.005s
+  cell 24: 0.083s
+  cell 25: 0.029s
+  cell 28: 0.001s
+{"page": "02_reading_horus", "status": "passed", "seconds": 1.62, "outputs": 13, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 1.2992}, {"cell": 4, "seconds": 0.005}, {"cell": 6, "seconds": 0.0006}, {"cell": 8, "seconds": 0.001}, {"cell": 10, "seconds": 0.0414}, {"cell": 13, "seconds": 0.0287}, {"cell": 15, "seconds": 0.0021}, {"cell": 18, "seconds": 0.0006}, {"cell": 20, "seconds": 0.0215}, {"cell": 22, "seconds": 0.0048}, {"cell": 24, "seconds": 0.0825}, {"cell": 25, "seconds": 0.0292}, {"cell": 28, "seconds": 0.0007}], "source_sha256": "922f238bb5eeb0d75d3f43697bb187fca3b7a766499a155991789eac793e25ee", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 03_experiment_spec
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 1.004s
+  cell 4: 0.001s
+  cell 7: 0.001s
+  cell 9: 0.075s
+  cell 11: 0.001s
+  cell 13: 0.000s
+  cell 16: 0.027s
+  cell 18: 0.006s
+  cell 20: 0.003s
+  cell 22: 0.337s
+  cell 26: 0.001s
+{"page": "03_experiment_spec", "status": "passed", "seconds": 1.55, "outputs": 12, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 1.0038}, {"cell": 4, "seconds": 0.0006}, {"cell": 7, "seconds": 0.0005}, {"cell": 9, "seconds": 0.0748}, {"cell": 11, "seconds": 0.0006}, {"cell": 13, "seconds": 0.0004}, {"cell": 16, "seconds": 0.0267}, {"cell": 18, "seconds": 0.0056}, {"cell": 20, "seconds": 0.0029}, {"cell": 22, "seconds": 0.3366}, {"cell": 26, "seconds": 0.0006}], "source_sha256": "bd4937efc8ac8dc83967a4570002eb1afb4d8d87d86f25aa6de1885890ae1ba3", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 04_poisson_and_sup
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 3: 0.728s
+  cell 5: 0.015s
+  cell 7: 0.001s
+  cell 9: 0.016s
+  cell 11: 0.319s
+  cell 12: 0.292s
+  cell 14: 0.000s
+{"page": "04_poisson_and_sup", "status": "passed", "seconds": 1.47, "outputs": 8, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 3, "seconds": 0.7275}, {"cell": 5, "seconds": 0.0149}, {"cell": 7, "seconds": 0.0005}, {"cell": 9, "seconds": 0.0157}, {"cell": 11, "seconds": 0.3194}, {"cell": 12, "seconds": 0.2916}, {"cell": 14, "seconds": 0.0004}], "source_sha256": "c0da521371a0f19a73546f25839400550d32409231e7599d01982ea1540ab26b", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 05_likelihood_estimation
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 3: 0.736s
+  cell 5: 0.016s
+  cell 6: 0.001s
+  cell 8: 0.000s
+{"page": "05_likelihood_estimation", "status": "passed", "seconds": 0.84, "outputs": 5, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 3, "seconds": 0.7358}, {"cell": 5, "seconds": 0.0161}, {"cell": 6, "seconds": 0.0008}, {"cell": 8, "seconds": 0.0003}], "source_sha256": "703bb7a567c97ddfe97038a511a1600ffc3bb22ffeb314de2e98f05babe36dae", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 06_simulation_tests_scores
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 3: 0.757s
+  cell 5: 0.001s
+  cell 7: 0.006s
+  cell 9: 0.014s
+  cell 11: 0.000s
+{"page": "06_simulation_tests_scores", "status": "passed", "seconds": 0.88, "outputs": 6, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 3, "seconds": 0.7567}, {"cell": 5, "seconds": 0.0006}, {"cell": 7, "seconds": 0.0062}, {"cell": 9, "seconds": 0.0142}, {"cell": 11, "seconds": 0.0004}], "source_sha256": "51e3800af34ae3baaaee27ae2d82d55a6ec652aec80548dbeba797d7eebea34e", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 07_gr_bvalue
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 4: 0.744s
+  cell 7: 0.000s
+  cell 9: 0.082s
+  cell 11: 0.000s
+{"page": "07_gr_bvalue", "status": "passed", "seconds": 0.92, "outputs": 7, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 4, "seconds": 0.7438}, {"cell": 7, "seconds": 0.0005}, {"cell": 9, "seconds": 0.0821}, {"cell": 11, "seconds": 0.0005}], "source_sha256": "fee28879611e7445949cda72938f086ececa85484724459e3d45cc809d8aa1b9", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 08_completeness
+  cell -1: 0.001s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 4: 0.759s
+  cell 6: 0.049s
+  cell 8: 0.344s
+  cell 10: 0.026s
+  cell 12: 0.001s
+  cell 14: 0.000s
+{"page": "08_completeness", "status": "passed", "seconds": 1.28, "outputs": 11, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 4, "seconds": 0.7592}, {"cell": 6, "seconds": 0.0487}, {"cell": 8, "seconds": 0.3439}, {"cell": 10, "seconds": 0.0257}, {"cell": 12, "seconds": 0.0005}, {"cell": 14, "seconds": 0.0003}], "source_sha256": "44afb4403ea423c1dc06fd3ae680ec42bf2d6f99c49c74861ed4defb331f0668", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 09_ppe_forecast
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 3: 0.957s
+  cell 5: 0.017s
+  cell 7: 0.015s
+  cell 8: 0.001s
+  cell 10: 0.301s
+  cell 12: 1.439s
+  cell 14: 0.313s
+  cell 16: 0.000s
+{"page": "09_ppe_forecast", "status": "passed", "seconds": 3.14, "outputs": 14, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 3, "seconds": 0.9567}, {"cell": 5, "seconds": 0.0171}, {"cell": 7, "seconds": 0.0145}, {"cell": 8, "seconds": 0.0006}, {"cell": 10, "seconds": 0.3009}, {"cell": 12, "seconds": 1.4394}, {"cell": 14, "seconds": 0.3126}, {"cell": 16, "seconds": 0.0005}], "source_sha256": "736b082695c097d308a2cebc929ea609b636a286b5de6fd027a049aa67b2a8c1", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 10_clustering_laws
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.779s
+  cell 4: 0.023s
+  cell 6: 0.000s
+{"page": "10_clustering_laws", "status": "passed", "seconds": 0.89, "outputs": 4, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.7787}, {"cell": 4, "seconds": 0.0227}, {"cell": 6, "seconds": 0.0004}], "source_sha256": "2b7aa42342ecc79be16d5cd6ca64aaa860024a75b6a93bbb9cf7fd965fbd2c52", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 11_conditional_intensity
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.017s
+  cell 4: 0.001s
+  cell 6: 0.734s
+  cell 8: 0.000s
+{"page": "11_conditional_intensity", "status": "passed", "seconds": 0.84, "outputs": 5, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0174}, {"cell": 4, "seconds": 0.0005}, {"cell": 6, "seconds": 0.7337}, {"cell": 8, "seconds": 0.0005}], "source_sha256": "6bdee9aa17173d1771976426d4484d210a22dfd0e1a82ae739cd1a0b1f6cbcbc", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 12_etas_structure
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 4: 0.000s
+  cell 6: 0.021s
+  cell 8: 0.000s
+  cell 10: 0.014s
+  cell 14: 1.058s
+  cell 16: 0.000s
+{"page": "12_etas_structure", "status": "passed", "seconds": 1.19, "outputs": 10, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 4, "seconds": 0.0004}, {"cell": 6, "seconds": 0.0207}, {"cell": 8, "seconds": 0.0005}, {"cell": 10, "seconds": 0.0137}, {"cell": 14, "seconds": 1.0578}, {"cell": 16, "seconds": 0.0004}], "source_sha256": "09013f62e436f312e23ff27b0c18de29b008c3804deb0e123f4e8defdd04c14c", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 13_etas_italy_forecast
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 4: 1.007s
+  cell 6: 0.364s
+  cell 10: 0.038s
+  cell 13: 0.321s
+  cell 14: 0.301s
+  cell 17: 0.001s
+{"page": "13_etas_italy_forecast", "status": "passed", "seconds": 2.13, "outputs": 11, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 4, "seconds": 1.0071}, {"cell": 6, "seconds": 0.3644}, {"cell": 10, "seconds": 0.0384}, {"cell": 13, "seconds": 0.321}, {"cell": 14, "seconds": 0.3007}, {"cell": 17, "seconds": 0.0005}], "source_sha256": "8680d5c1580d1cc7c00c0d36f75e126e6327b9f831961c3cc8b60243872c5df0", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 14_psi_precursory_scale
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 4: 0.023s
+  cell 7: 0.027s
+  cell 10: 0.745s
+  cell 13: 0.000s
+{"page": "14_psi_precursory_scale", "status": "passed", "seconds": 0.89, "outputs": 8, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0002}, {"cell": 4, "seconds": 0.0229}, {"cell": 7, "seconds": 0.0267}, {"cell": 10, "seconds": 0.7452}, {"cell": 13, "seconds": 0.0004}], "source_sha256": "0352da32f726cf8d37bca0689c2622a65f11bb322c4418afd7242ffd4754d5a4", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 15_eepas_italy_forecast
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.021s
+  cell 4: 0.001s
+  cell 6: 1.023s
+  cell 7: 0.026s
+  cell 9: 0.028s
+  cell 11: 0.000s
+{"page": "15_eepas_italy_forecast", "status": "passed", "seconds": 1.2, "outputs": 7, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.021}, {"cell": 4, "seconds": 0.0006}, {"cell": 6, "seconds": 1.0234}, {"cell": 7, "seconds": 0.0257}, {"cell": 9, "seconds": 0.0284}, {"cell": 11, "seconds": 0.0004}], "source_sha256": "d6c3cd1c1121b56545d81f3637d22ed0976ec01fc01fe37973a58c474dac672e", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 16_test_number
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.724s
+  cell 4: 0.015s
+  cell 6: 0.002s
+  cell 8: 0.000s
+  cell 10: 0.017s
+  cell 11: 0.001s
+  cell 14: 0.016s
+  cell 19: 0.000s
+{"page": "16_test_number", "status": "passed", "seconds": 0.87, "outputs": 11, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.7237}, {"cell": 4, "seconds": 0.0146}, {"cell": 6, "seconds": 0.0016}, {"cell": 8, "seconds": 0.0004}, {"cell": 10, "seconds": 0.0174}, {"cell": 11, "seconds": 0.0015}, {"cell": 14, "seconds": 0.016}, {"cell": 19, "seconds": 0.0004}], "source_sha256": "7207fa6ce803f43bcd9945ac45e62f0cd047df4cf2d14dcd9f4c51b0618f072a", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 17_test_space_magnitude
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.726s
+  cell 4: 0.001s
+  cell 6: 0.000s
+  cell 8: 0.064s
+  cell 10: 0.062s
+  cell 13: 0.081s
+  cell 15: 0.049s
+  cell 17: 0.000s
+{"page": "17_test_space_magnitude", "status": "passed", "seconds": 1.08, "outputs": 12, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.7261}, {"cell": 4, "seconds": 0.0011}, {"cell": 6, "seconds": 0.0004}, {"cell": 8, "seconds": 0.0643}, {"cell": 10, "seconds": 0.0625}, {"cell": 13, "seconds": 0.0806}, {"cell": 15, "seconds": 0.0489}, {"cell": 17, "seconds": 0.0003}], "source_sha256": "0b5c63623f3b510948b775173bf0cb776c964b925e532921eeb2e7318f598eba", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 18_test_comparison
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.745s
+  cell 4: 0.020s
+  cell 6: 0.012s
+  cell 8: 0.016s
+  cell 10: 0.017s
+  cell 12: 0.786s
+  cell 14: 0.000s
+{"page": "18_test_comparison", "status": "passed", "seconds": 1.7, "outputs": 11, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.7454}, {"cell": 4, "seconds": 0.0195}, {"cell": 6, "seconds": 0.012}, {"cell": 8, "seconds": 0.0155}, {"cell": 10, "seconds": 0.0165}, {"cell": 12, "seconds": 0.786}, {"cell": 14, "seconds": 0.0004}], "source_sha256": "aa4b38424ecf4519b09abf9aa147d38024eee71a91fec84e4231610ffd2bd144", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 19_ensembles
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.721s
+  cell 4: 0.001s
+  cell 6: 0.018s
+  cell 9: 0.351s
+  cell 11: 0.003s
+  cell 12: 0.295s
+  cell 14: 0.000s
+{"page": "19_ensembles", "status": "passed", "seconds": 1.48, "outputs": 10, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.7207}, {"cell": 4, "seconds": 0.0005}, {"cell": 6, "seconds": 0.0181}, {"cell": 9, "seconds": 0.3514}, {"cell": 11, "seconds": 0.0034}, {"cell": 12, "seconds": 0.2946}, {"cell": 14, "seconds": 0.0004}], "source_sha256": "74a25d36abfff7f484d17ed909da9c6758efe4caa2c633e621a7c8a3411dae2f", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 20_beyond_forecast
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.000s
+  cell 4: 0.000s
+  cell 7: 0.015s
+  cell 9: 0.020s
+  cell 11: 0.001s
+  cell 13: 0.000s
+{"page": "20_beyond_forecast", "status": "passed", "seconds": 0.13, "outputs": 9, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.0001}, {"cell": 4, "seconds": 0.0004}, {"cell": 7, "seconds": 0.015}, {"cell": 9, "seconds": 0.0198}, {"cell": 11, "seconds": 0.0014}, {"cell": 13, "seconds": 0.0003}], "source_sha256": "cc881fa3e5b1c9c6d1e1da59f126c6500c3ee028c6bffb577a33d268e0a78036", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
+START 23_taiwan_outlook
+  cell -1: 0.000s
+  cell 1: 0.000s
+  cell 2: 0.286s
+  cell 5: 0.043s
+  cell 8: 0.032s
+  cell 10: 0.014s
+  cell 12: 0.031s
+  cell 14: 0.017s
+  cell 16: 0.001s
+  cell 18: 0.018s
+  cell 21: 0.034s
+  cell 24: 0.015s
+{"page": "23_taiwan_outlook", "status": "passed", "seconds": 0.59, "outputs": 11, "method": "in-process IPython", "cells": [{"cell": 1, "seconds": 0.0001}, {"cell": 2, "seconds": 0.286}, {"cell": 5, "seconds": 0.0429}, {"cell": 8, "seconds": 0.0316}, {"cell": 10, "seconds": 0.0142}, {"cell": 12, "seconds": 0.0307}, {"cell": 14, "seconds": 0.0172}, {"cell": 16, "seconds": 0.0009}, {"cell": 18, "seconds": 0.0177}, {"cell": 21, "seconds": 0.0339}, {"cell": 24, "seconds": 0.0146}], "source_sha256": "58c3276d826b01830adc232118c805c5c334f232b0aea3faa2404be14fc4ddbb", "toolkit_sha256": {"__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86", "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3", "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38", "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded", "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335", "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737", "italy_models.py": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec", "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec", "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72", "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f", "viz.py": "24e45158e7c3072cf6a0ddd0403ca8ea4bbd667caae14f669dfe1b96f8fc1c42"}}
