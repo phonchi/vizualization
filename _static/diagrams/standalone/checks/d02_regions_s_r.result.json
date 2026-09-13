@@ -1,0 +1,76 @@
+{
+  "name": "d02_regions_s_r",
+  "fragment_kb": 6.3,
+  "viewports": {
+    "1440x900": {
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "svgWidth": 1408,
+      "scrollHeight": 1127,
+      "no_h_overflow": true,
+      "screenshot": "d02_regions_s_r_1440x900.png"
+    },
+    "390x844": {
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "svgWidth": 358,
+      "scrollHeight": 844,
+      "no_h_overflow": true,
+      "screenshot": "d02_regions_s_r_390x844.png"
+    },
+    "dark_1440x900": {
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "svgWidth": 1408,
+      "scrollHeight": 1127,
+      "no_h_overflow": true,
+      "screenshot": "d02_regions_s_r_dark_1440x900.png",
+      "sample_text_fill": "rgb(233, 238, 244)",
+      "svg_bg_fill": "rgb(30, 35, 43)"
+    }
+  },
+  "hover": [
+    {
+      "hot": "dg-d02-hot-s",
+      "tip": "dg-d02-tip-s",
+      "hidden_before": true,
+      "visible_on_hover": true,
+      "visible_on_focus": true,
+      "hidden_after": true,
+      "ok": true
+    },
+    {
+      "hot": "dg-d02-hot-r",
+      "tip": "dg-d02-tip-r",
+      "hidden_before": true,
+      "visible_on_hover": true,
+      "visible_on_focus": true,
+      "hidden_after": true,
+      "ok": true
+    },
+    {
+      "hot": "dg-d02-hot-b",
+      "tip": "dg-d02-tip-b",
+      "hidden_before": true,
+      "visible_on_hover": true,
+      "visible_on_focus": true,
+      "hidden_after": true,
+      "ok": true
+    }
+  ],
+  "steps": [],
+  "errors": [],
+  "static": {
+    "external_refs": [],
+    "unprefixed_ids": [],
+    "hardcoded_hex": [],
+    "has_viewbox": true,
+    "has_html_tags": false,
+    "has_script": false,
+    "min_font_px": 12.0
+  },
+  "ok": true,
+  "historical_only": true,
+  "superseded_by": "480 viewBox mobile redesign; see legacy_five_mobile_self_check.json and main-agent continuation/browser receipts",
+  "scope_note": "This receipt and its screenshots describe the earlier 720-viewBox version, not the current diagram."
+}

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>附錄 A：點過程的機率、概似與模擬 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+    <title>附錄 A：記號、統計工具與點過程 &#8212; 地震統計與預報：從模型到台灣觀測</title>
   
   
   
@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=857392ad" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,10 +63,11 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_a_point_process';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="附錄 B：目錄統計與叢集律的推導" href="appendix_b_catalog.html" />
-    <link rel="prev" title="26. 臺灣展望：把觀測、預報與驗證接起來" href="23_taiwan_outlook.html" />
+    <link rel="next" title="附錄 B：目錄、完整度與叢集律" href="appendix_b_catalog.html" />
+    <link rel="prev" title="29. 臺灣展望：把觀測、預報與驗證接起來" href="23_taiwan_outlook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -210,46 +211,49 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="00_intro.html">
-                    地震統計與預報：從模型到臺灣觀測
+                    地震統計與預報：從一份義大利實驗到臺灣觀測
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：一份地震預報實驗，從資料到檢驗</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
-<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
-<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 把模型加起來：凸組合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
-<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">21. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 A：點過程的機率、概似與模擬</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 A：記號、統計工具與點過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
@@ -390,7 +394,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>附錄 A：點過程的機率、概似與模擬</h1>
+    <h1>附錄 A：記號、統計工具與點過程</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,18 +404,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">從下一事件的危害率得到存活函式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">將事件密度與最後的空白連乘</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">標記分解不等於所有參數都能分開估</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">補償子、殘差與時間變換</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">稀疏化與分支模擬</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">描述平均與描述事件對</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">固定事件總數後的間隔與計數</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">一階與二階資訊</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">符號回查</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1">A.1 讀者版記號表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2">A.2 兩套術語對照</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-3-poisson">A.3 Poisson 過程與計數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-4-mle-bootstrap">A.4 概似、MLE 與 bootstrap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-5-p">A.5 分位數、p 值與對數分數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-6-aickl">A.6 AIC、KL 與貝氏推論</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-7">A.7 下一事件與點過程概似</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-8">A.8 補償子、殘差與時間變換</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-9">A.9 稀疏化與分支模擬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-10">A.10 固定總數與事件對</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
 </ul>
             </nav>
         </div>
@@ -424,217 +427,566 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a">
-<h1>附錄 A：點過程的機率、概似與模擬<a class="headerlink" href="#a" title="Link to this heading">#</a></h1>
-<p>這裡接續<a class="reference internal" href="10_point_process.html"><span class="doc">4. 點過程：把歷史轉成可更新的發生率</span></a>。正文先建立率如何隨歷史更新的直覺，本附錄
-補上機率與概似的推導、時間變換的條件，以及生成圖表所用的抽樣原理。
-只想沿主文學習，可以回到<a class="reference internal" href="11_catalog_completeness_b.html"><span class="doc">5. 目錄統計 I：完整度與規模分布</span></a>。</p>
-<section id="id1">
-<h2>從下一事件的危害率得到存活函式<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>給定時間 <span class="math notranslate nohighlight">\(t_0\)</span> 的歷史 <span class="math notranslate nohighlight">\(H_{t_0}\)</span>，令 <span class="math notranslate nohighlight">\(T_1\)</span> 是下一事件時間，
-<span class="math notranslate nohighlight">\(S_0(t)=P(T_1&gt;t\mid H_{t_0})\)</span>。在直到 <span class="math notranslate nohighlight">\(t\)</span> 都沒有新事件的條件下，
-令 <span class="math notranslate nohighlight">\(\lambda_0(t)\)</span> 為相應的危害率。對小量 <span class="math notranslate nohighlight">\(h&gt;0\)</span>，</p>
-<div class="math notranslate nohighlight">
-\[S_0(t+h)=S_0(t)[1-\lambda_0(t)h+o(h)].\]</div>
-<p>假設所需的絕對連續性與局部可積性成立，取極限得到
-<span class="math notranslate nohighlight">\(S'_0(t)=-\lambda_0(t)S_0(t)\)</span>。以 <span class="math notranslate nohighlight">\(S_0(t_0)=1\)</span> 積分：</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\frac{\mathrm d}{\mathrm dt}\log S_0(t)&amp;=-\lambda_0(t),\\
-S_0(t)&amp;=\exp\left[-\int_{t_0}^t\lambda_0(u)\,\mathrm du\right],\\
-f_0(t)&amp;=\lambda_0(t)S_0(t).
-\end{aligned}\end{split}\]</div>
-<p>對只含可觀測事件歷史與已知協變數的模型，<span class="math notranslate nohighlight">\(\lambda_0\)</span> 可由「無新事件」的
-路徑求得。含未觀測外部隨機狀態時，必須使用相對於所給資訊的正確危害率，
-不能將某一條任意外部狀態路徑代入，當成條件於較少資訊的存活機率。</p>
-<p>這是下一個任意事件的結果。若目標是 <span class="math notranslate nohighlight">\(m\ge m_T\)</span>，其他規模的事件仍可
-先發生並影響後續目標事件，因此一般不能將目前歷史凍結、乘上一個規模比例
-後就當成完整的目標預報。在點過程模型下，常以給定目前歷史的未來目錄模擬
-計算目標事件出現比例。這個問題也不同於把一條已觀測的補償子稱作未來期望數。</p>
-</section>
-<section id="id2">
-<h2>將事件密度與最後的空白連乘<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>對 <span class="math notranslate nohighlight">\(0&lt;t_1&lt;\cdots&lt;t_N\le T\)</span>，條件於觀察開始前的歷史，使用每次等待的
-條件密度，最後再乘上 <span class="math notranslate nohighlight">\((t_N,T]\)</span> 無事件的條件機率。沿已觀測歷史評估強度後，</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-L(\theta)&amp;=\left\{\prod_{i=1}^N\lambda^*_\theta(t_i)
-\exp\left[-\int_{t_{i-1}}^{t_i}\lambda^*_\theta(u)\,\mathrm du\right]\right\}
-\exp\left[-\int_{t_N}^{T}\lambda^*_\theta(u)\,\mathrm du\right]\\
-&amp;=\left\{\prod_{i=1}^N\lambda^*_\theta(t_i)\right\}
-\exp\left[-\int_0^T\lambda^*_\theta(u)\,\mathrm du\right].
-\end{aligned}\end{split}\]</div>
-<p>取對數即得到正文的<a class="reference internal" href="10_point_process.html#equation-eq-pp-loglik">(2)</a>。這是相對於事件時間的密度形式，
-不是某一串精確實數時間發生的正機率。它適用於具有相應條件密度、強度局部
-可積且不爆發的常見簡單點過程；不能不加條件地推廣到所有隨機點集合。</p>
-<p>空間與規模加入後，觀察區為 <span class="math notranslate nohighlight">\(S\)</span>、輸入規模下限為 <span class="math notranslate nohighlight">\(m_0\)</span>：</p>
-<div class="math notranslate nohighlight">
-\[\ell(\theta)=\sum_i\log\lambda^*_\theta(t_i,x_i,y_i,m_i)
--\int_0^T\int_S\int_{m_0}^{\infty}\lambda^*_\theta(t,x,y,m)
-\,\mathrm dm\,\mathrm dx\,\mathrm dy\,\mathrm dt.\]</div>
-<p>求和只包含評估窗內事件，歷史則可能需要窗前或區域外的補充事件。
-比較概似時須固定資料、觀察範圍、規模門檻與座標測度。每事件正規化不會
-自動消除不同單位、網格、目標或背景選擇的差異。</p>
-</section>
-<section id="id3">
-<h2>標記分解不等於所有參數都能分開估<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>若 <span class="math notranslate nohighlight">\(\lambda^*(t,x,y,m)=\lambda^*_{\theta}(t,x,y)s_\beta(m)\)</span>，且
-<span class="math notranslate nohighlight">\(s_\beta\)</span> 在規模範圍積分為一，則</p>
-<div class="math notranslate nohighlight">
-\[\ell=\sum_i\log s_\beta(m_i)+\sum_i\log\lambda^*_{\theta}(t_i,x_i,y_i)
--\int_0^T\int_S\lambda^*_{\theta}(t,x,y)\,\mathrm dx\,\mathrm dy\,\mathrm dt.\]</div>
-<p>要分別最佳化，還需要兩部分的參數空間彼此獨立。例如將觸發產能指數設為
-<span class="math notranslate nohighlight">\(\alpha=\beta\)</span>，會使時空項也依賴 <span class="math notranslate nohighlight">\(\beta\)</span>，此時不能只最大化規模項。
-當次規模按固定密度抽取，也不表示過去規模不影響未來時間或位置。</p>
-</section>
-<section id="id4">
-<h2>補償子、殘差與時間變換<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>定義 <span class="math notranslate nohighlight">\(\Lambda(t)=\int_0^t\lambda^*(u)\,\mathrm du\)</span>。在常見可積性條件下，
-<span class="math notranslate nohighlight">\(N(t)-\Lambda(t)\)</span> 是鞅，因而 <span class="math notranslate nohighlight">\(E[N(t)]=E[\Lambda(t)]\)</span>。
-對歷史相依模型，<span class="math notranslate nohighlight">\(\Lambda(t)\)</span> 通常隨觀測歷史變化。給定 <span class="math notranslate nohighlight">\(H_{t_0}\)</span> 的未來
-期望數則滿足</p>
-<div class="math notranslate nohighlight">
-\[E[N(T)-N(t_0)\mid H_{t_0}]
-=E\left[\int_{t_0}^T\lambda^*(u)\,\mathrm du\mid H_{t_0}\right],\]</div>
-<p>不能省略外側對未來歷史的期望。</p>
-<p>對可預測權重 <span class="math notranslate nohighlight">\(h\)</span>（只依賴事件之前可取得的資訊），在適當可積性下，</p>
-<div class="math notranslate nohighlight">
-\[E\left[\sum_i h(t_i,x_i,y_i)\right]
-=E\left[\int h(t,x,y)\lambda^*(t,x,y)\,\mathrm dt\,\mathrm dx\,\mathrm dy\right].\]</div>
-<p>因此兩者之差形成零平均的加權殘差。<span class="math notranslate nohighlight">\(h=1\)</span>、<span class="math notranslate nohighlight">\(1/\lambda^*\)</span> 或
-<span class="math notranslate nohighlight">\(1/\sqrt{\lambda^*}\)</span> 強調不同區域，但率接近零時後兩者可能數值不穩定，
-需要檢查可積性與估計誤差。用事後知道的家族分類當作可預測權重，不符合上述條件。</p>
-<p>當累積強度連續、可作相應時間變換且終將趨於無限時，令
-<span class="math notranslate nohighlight">\(\tau_i=\Lambda(t_i)\)</span>。下一事件存活公式給出</p>
-<div class="math notranslate nohighlight">
-\[P(\tau_{i+1}-\tau_i&gt;s\mid H_{t_i})=e^{-s}.\]</div>
-<p>條件分布不依賴歷史，逐次套用可得獨立單位指數間隔。若強度有零值區段，
-應使用廣義反函式處理平臺；若只觀察有限期間，則有邊界與截尾效應。
-再由機率積分變換，得到正文<a class="reference internal" href="10_point_process.html#equation-eq-time-rescale">(3)</a>。
-用同一資料估參數後，不能假裝強度是事先已知的真值；可採參數模擬並重新擬合，
-校準診斷統計量的參考分布。</p>
-</section>
-<section id="id5">
-<h2>稀疏化與分支模擬<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>稀疏化需要每一步都有對候選區間有效的上界 <span class="math notranslate nohighlight">\(\bar\lambda\)</span>。以該率提出
-候選時間 <span class="math notranslate nohighlight">\(s\)</span>，再以 <span class="math notranslate nohighlight">\(\lambda^*(s)/\bar\lambda\)</span> 接受。接受後更新事件歷史，
-拒絕則不加入歷史。若上界不再有效，必須縮短區間或更新上界；將大於一的比值
-直接截為一，不能修復錯誤的提案機制。</p>
-<p>正文的正規化Omori核在事件之間遞減，背景率又固定，因此事件後的當下強度
-是直到下一事件之前的有效上界。若核有延遲峰值，或背景率會上升，就需要
-另找對候選區間有效的界，不能直接複製正文的選法。</p>
-<p>具有相應Poisson分支表示的線性自激發模型，可以先抽背景事件，再抽每個事件的
-後代數、延遲及位置。初始歷史、空間邊界與窗外後代處理必須和預定模型一致。
-正文的兩種方法比較使用空歷史；若目標是平穩目錄，需處理觀察前歷史，而不是
-直接假定空歷史等同穩態。</p>
-<p>對無限時間可正規化的Omori核，<span class="math notranslate nohighlight">\(p&gt;1,c&gt;0\)</span> 時，</p>
-<div class="math notranslate nohighlight">
-\[g(u)=\frac{p-1}{c}(1+u/c)^{-p},\qquad
-G(u)=1-(1+u/c)^{1-p}.\]</div>
-<p>令 <span class="math notranslate nohighlight">\(U\sim U(0,1)\)</span>，反解 <span class="math notranslate nohighlight">\(G(u)=U\)</span> 得
-<span class="math notranslate nohighlight">\(u=c[(1-U)^{-1/(p-1)}-1]\)</span>。這個 <span class="math notranslate nohighlight">\(p&gt;1\)</span> 的限制來自無限時間正規化；
-有限窗的未正規化衰減率可以有 <span class="math notranslate nohighlight">\(p\le1\)</span>，見<a class="reference internal" href="appendix_b_catalog.html"><span class="doc">附錄 B：目錄統計與叢集律的推導</span></a>。</p>
-<p>對平面上各向同性的核
-<span class="math notranslate nohighlight">\(f(x,y)=(q-1)(\pi\sigma)^{-1}(1+r^2/\sigma)^{-q}\)</span>，<span class="math notranslate nohighlight">\(q&gt;1,\sigma&gt;0\)</span>，
-極座標面積元素是 <span class="math notranslate nohighlight">\(r\,\mathrm dr\,\mathrm d\vartheta\)</span>，因此</p>
-<div class="math notranslate nohighlight">
-\[P(R\le r)=\int_0^r2\pi u f(u)\,\mathrm du
-=1-(1+r^2/\sigma)^{1-q}.\]</div>
-<p>半徑可抽為 <span class="math notranslate nohighlight">\(R=\sqrt{\sigma[(1-U)^{-1/(q-1)}-1]}\)</span>，角度均勻抽於
-<span class="math notranslate nohighlight">\([0,2\pi)\)</span>。<span class="math notranslate nohighlight">\(\sigma\)</span> 是面積尺度，<span class="math notranslate nohighlight">\(\sqrt{\sigma}\)</span> 才是長度尺度。
-計算時需避免端點造成溢位，並按預定觀察窗處理長尾樣本；直接截短延遲再保留
-為窗內事件，會改變原模型。</p>
-</section>
-<section id="id6">
-<h2>描述平均與描述事件對<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<section id="id7">
-<h3>固定事件總數後的間隔與計數<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<p><a class="reference internal" href="foundation_randomness.html"><span class="doc">3. 隨機性與叢集：平均之外還有什麼</span></a>的均勻序列是將 <span class="math notranslate nohighlight">\(N\)</span> 個獨立均勻點放在 <span class="math notranslate nohighlight">\([0,T]\)</span>
-後排序。包含兩端在內的 <span class="math notranslate nohighlight">\(N+1\)</span> 個間隔可交換；任一間隔 <span class="math notranslate nohighlight">\(W\)</span> 的存活機率為</p>
-<div class="math notranslate nohighlight">
-\[P(W&gt;w\mid N)=\left(1-\frac{w}{T}\right)^N,\qquad 0\le w\le T.\]</div>
-<p>以內部某個間隔為例，要求它大於 <span class="math notranslate nohighlight">\(w\)</span>，再把它右側所有點向左平移 <span class="math notranslate nohighlight">\(w\)</span>，
-可將允許區域對應到長度 <span class="math notranslate nohighlight">\(T-w\)</span> 的有序點區域。<span class="math notranslate nohighlight">\(N\)</span> 維體積比就是上式。
-因此平均間隔為 <span class="math notranslate nohighlight">\(T/(N+1)\)</span>；指數參考的平均 <span class="math notranslate nohighlight">\(T/N\)</span> 是未固定總數的另一種設定。
-正文只取內部完整間隔，但其邊際分布仍是上式，指數不會因取了 <span class="math notranslate nohighlight">\(N-1\)</span> 個間隔
-而改成 <span class="math notranslate nohighlight">\(N-1\)</span>。這些間隔也不是互相獨立的。</p>
-<p>若把時間平均切成 <span class="math notranslate nohighlight">\(k\)</span> 箱，固定總數下的箱計數服從多項分布，各箱平均為 <span class="math notranslate nohighlight">\(N/k\)</span>。
-以分母 <span class="math notranslate nohighlight">\(k-1\)</span> 計算樣本變異數 <span class="math notranslate nohighlight">\(s^2\)</span> 時，</p>
-<div class="math notranslate nohighlight">
-\[E[s^2]=\frac{k(N/k)(1-1/k)}{k-1}=\frac Nk,
-\qquad E\!\left[\frac{s^2}{N/k}\right]=1.\]</div>
-<p>所以固定總數不改變這個Fano統計量的期望基準，但單一實現與少量箱數仍會
-造成波動；這個期望等式本身不是顯著性檢定。</p>
-</section>
-<section id="id8">
-<h3>一階與二階資訊<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
-<p>對時間區間 <span class="math notranslate nohighlight">\(B\)</span>，一階矩測度 <span class="math notranslate nohighlight">\(M(B)=E[N(B)]\)</span> 描述平均計數；
-二階階乘矩測度描述不同事件對，例如</p>
-<div class="math notranslate nohighlight">
-\[M^{[2]}(B\times C)=E\!\left[\sum_{i\ne j}
-\mathbf1_{\{t_i\in B\}}\mathbf1_{\{t_j\in C\}}\right].\]</div>
-<p>排除 <span class="math notranslate nohighlight">\(i=j\)</span> 可避免把每個事件與自身配對。兩份目錄可有相同的一階結構，
-但不同的事件對結構。非均勻背景與邊界會影響比較，因此簡單比較近鄰數量
-不會自動辨認物理觸發。這是<a class="reference internal" href="foundation_randomness.html"><span class="doc">3. 隨機性與叢集：平均之外還有什麼</span></a>二階統計的形式化版本。</p>
-</section>
-</section>
-<section id="id9">
-<h2>符號回查<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<h1>附錄 A：記號、統計工具與點過程<a class="headerlink" href="#a" title="Link to this heading">#</a></h1>
+<p><strong>對應主文章</strong>：
+第 3 章 <a class="reference internal" href="03_experiment_spec.html"><span class="doc">3. 標準預報實驗規格：把題目一次說清楚</span></a>；
+第 4 章 <a class="reference internal" href="04_poisson_and_sup.html"><span class="doc">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</span></a>；
+第 5 章 <a class="reference internal" href="05_likelihood_estimation.html"><span class="doc">5. 統計工具箱 II：概似與估計</span></a>；
+第 6 章 <a class="reference internal" href="06_simulation_tests_scores.html"><span class="doc">6. 統計工具箱 III：模擬、檢定與分數</span></a>；
+第 11 章 <a class="reference internal" href="11_conditional_intensity.html"><span class="doc">11. 讓率隨歷史更新：條件強度與點過程概似</span></a>。</p>
+<p>本附錄提供記號回查與工具推導。
+主文先說用途，附錄再列適用條件。
+先備知識為基礎機率、微分與積分。</p>
+<section id="a-1">
+<h2>A.1 讀者版記號表<a class="headerlink" href="#a-1" title="Link to this heading">#</a></h2>
+<p>條件強度（conditional intensity）是歷史下的瞬時率。
+率密度還須指定面積與規模單位。
+格內期望數則已完成這些積分。</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>符號</p></th>
-<th class="head"><p>意義</p></th>
-<th class="head"><p>使用時留意</p></th>
+<tr class="row-odd"><th class="head"><p>概念</p></th>
+<th class="head"><p>記號</p></th>
+<th class="head"><p>定義或單位</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H_t\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(t\)</span> 以前的事件歷史</p></td>
-<td><p>不含未來事件</p></td>
+<tr class="row-even"><td><p>事件</p></td>
+<td><p><span class="math notranslate nohighlight">\((t_i,x_i,y_i,m_i)\)</span></p></td>
+<td><p>時間、位置與取整規模</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda^*\)</span></p></td>
-<td><p>條件率或率密度</p></td>
-<td><p>交代時間、空間與規模單位</p></td>
+<tr class="row-odd"><td><p>時間</p></td>
+<td><p><span class="math notranslate nohighlight">\(t_i\)</span></p></td>
+<td><p>自 1960-01-01 起算的天數</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Lambda(t)\)</span></p></td>
-<td><p>沿歷史累積的條件率</p></td>
-<td><p>一般是隨機補償子</p></td>
+<tr class="row-even"><td><p>位置</p></td>
+<td><p><span class="math notranslate nohighlight">\((x_i,y_i)\)</span></p></td>
+<td><p>投影公里座標</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Lambda_{jk}\)</span></p></td>
-<td><p>預報網格期望數</p></td>
-<td><p>依已宣告預報條件定義</p></td>
+<tr class="row-odd"><td><p>歷史</p></td>
+<td><p><span class="math notranslate nohighlight">\(H_t\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(t\)</span> 之前可取得的事件</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\omega_{jk}\)</span></p></td>
-<td><p>網格觀測數</p></td>
-<td><p>和預報使用同樣目標</p></td>
+<tr class="row-even"><td><p>條件強度</p></td>
+<td><p><span class="math notranslate nohighlight">\(\lambda^*(t,x,y,m)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\lambda(t,x,y,m\mid H_t)\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(M_c,m_0,m_T\)</span></p></td>
-<td><p>完整度、輸入門檻、目標門檻</p></td>
-<td><p>三者目的不同</p></td>
+<tr class="row-odd"><td><p>格內期望數</p></td>
+<td><p><span class="math notranslate nohighlight">\(\Lambda_{jk}\)</span></p></td>
+<td><p>指定窗、格 <span class="math notranslate nohighlight">\(j\)</span>、規模箱 <span class="math notranslate nohighlight">\(k\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(b,\beta=b\ln10\)</span></p></td>
-<td><p>規模分布斜率</p></td>
-<td><p><span class="math notranslate nohighlight">\(\beta\)</span> 不作其他模型的形狀參數</p></td>
+<tr class="row-even"><td><p>觀測數</p></td>
+<td><p><span class="math notranslate nohighlight">\(\omega_{jk}\)</span></p></td>
+<td><p>同窗、同格箱的事件數</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mu(x,y)\)</span></p></td>
-<td><p>ETAS背景率</p></td>
-<td><p>是模型成分，不等同物理分類</p></td>
+<tr class="row-odd"><td><p>完整度</p></td>
+<td><p><span class="math notranslate nohighlight">\(M_c\)</span></p></td>
+<td><p>目錄可充分記錄的規模下限</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(A,K\)</span></p></td>
-<td><p>正規化／未正規化核的產能係數</p></td>
-<td><p>不直接跨參數化比較</p></td>
+<tr class="row-even"><td><p>輸入門檻</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_0\)</span></p></td>
+<td><p>模型納入歷史事件的下限</p></td>
+</tr>
+<tr class="row-odd"><td><p>目標門檻</p></td>
+<td><p><span class="math notranslate nohighlight">\(m_T\)</span></p></td>
+<td><p>預報與檢驗的規模下限</p></td>
+</tr>
+<tr class="row-even"><td><p>機率</p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\cdot)\)</span></p></td>
+<td><p>一律以大寫 <span class="math notranslate nohighlight">\(P\)</span> 表示</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>回到<a class="reference internal" href="10_point_process.html"><span class="doc">4. 點過程：把歷史轉成可更新的發生率</span></a>，或接著讀<a class="reference internal" href="11_catalog_completeness_b.html"><span class="doc">5. 目錄統計 I：完整度與規模分布</span></a>。</p>
+<p>Gutenberg–Richter 律簡稱 GR 律。
+它描述規模增加時的事件數衰減。
+核函數（kernel）分配單個來源的貢獻。
+產能（productivity）控制其總量。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>概念</p></th>
+<th class="head"><p>記號</p></th>
+<th class="head"><p>定義或提醒</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GR 斜率</p></td>
+<td><p><span class="math notranslate nohighlight">\(b,\beta\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\beta=b\ln10\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>GR 密度</p></td>
+<td><p><span class="math notranslate nohighlight">\(s(m)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\beta e^{-\beta(m-m_0)}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Omori 時間密度</p></td>
+<td><p><span class="math notranslate nohighlight">\(g(\tau)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((p-1)c^{-1}(1+\tau/c)^{-p}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>產能</p></td>
+<td><p><span class="math notranslate nohighlight">\(\kappa(m)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(K e^{\alpha(m-m_0)}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>分支比</p></td>
+<td><p><span class="math notranslate nohighlight">\(n\)</span></p></td>
+<td><p>每事件的平均直接後代數</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPE 參數</p></td>
+<td><p><span class="math notranslate nohighlight">\(a,d,s\)</span></p></td>
+<td><p>權重、平滑距離與底率</p></td>
+</tr>
+<tr class="row-even"><td><p>PPE 空間項</p></td>
+<td><p><span class="math notranslate nohighlight">\(h_0(x,y)\)</span></p></td>
+<td><p>過去震央的平滑貢獻</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEPAS 規模核</p></td>
+<td><p><span class="math notranslate nohighlight">\(a_M,b_M,\sigma_M\)</span></p></td>
+<td><p>截距、斜率與散布</p></td>
+</tr>
+<tr class="row-even"><td><p>EEPAS 時間核</p></td>
+<td><p><span class="math notranslate nohighlight">\(a_T,b_T,\sigma_T\)</span></p></td>
+<td><p>對數時間的截距、斜率與散布</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEPAS 空間核</p></td>
+<td><p><span class="math notranslate nohighlight">\(b_A,\sigma_A\)</span></p></td>
+<td><p>規模斜率與長度尺度</p></td>
+</tr>
+<tr class="row-even"><td><p>EEPAS 修正</p></td>
+<td><p><span class="math notranslate nohighlight">\(\eta(m),\Delta(m)\)</span></p></td>
+<td><p>產能正規化與門檻保留比例</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEPAS 混合權重</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu_E\)</span></p></td>
+<td><p>背景成分的係數</p></td>
+</tr>
+<tr class="row-even"><td><p>Ψ 尺度</p></td>
+<td><p><span class="math notranslate nohighlight">\(M_P,T_P,A_P,M_m\)</span></p></td>
+<td><p>前兆規模、時間、面積與主震規模</p></td>
+</tr>
+<tr class="row-odd"><td><p>累積規模異常</p></td>
+<td><p><span class="math notranslate nohighlight">\(C(t)\)</span></p></td>
+<td><p>去除全窗平均趨勢的累積量</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>PPE 是 Proximity to Past Earthquakes。
+它以過去震央的鄰近程度分配率。
+EEPAS 的全名如下。
+Every Earthquake a Precursor According to Scale。
+模型讓每個事件依規模貢獻前兆訊息。
+Ψ 指前兆尺度增加現象。
+英文為 precursory scale increase。
+其量測定義見 <a class="reference internal" href="14_psi_precursory_scale.html"><span class="doc">14. 大地震之前，小地震先變多變大？Ψ 現象</span></a>。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>概念</p></th>
+<th class="head"><p>記號</p></th>
+<th class="head"><p>定義或提醒</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>逐箱 Poisson 對數概似</p></td>
+<td><p>POLL</p></td>
+<td><p>Poisson log-likelihood</p></td>
+</tr>
+<tr class="row-odd"><td><p>聯合 Poisson 對數概似</p></td>
+<td><p>jPOLL</p></td>
+<td><p>joint Poisson log-likelihood</p></td>
+</tr>
+<tr class="row-even"><td><p>二元對數概似</p></td>
+<td><p>BILL</p></td>
+<td><p>binary log-likelihood</p></td>
+</tr>
+<tr class="row-odd"><td><p>數量檢驗尾機率</p></td>
+<td><p><span class="math notranslate nohighlight">\(\delta_1,\delta_2\)</span></p></td>
+<td><p>含等號的上尾與下尾</p></td>
+</tr>
+<tr class="row-even"><td><p>分位數分數</p></td>
+<td><p><span class="math notranslate nohighlight">\(q\)</span></p></td>
+<td><p>模擬統計量不大於觀測的比例</p></td>
+</tr>
+<tr class="row-odd"><td><p>每事件資訊增益</p></td>
+<td><p>IGPE</p></td>
+<td><p>information gain per earthquake</p></td>
+</tr>
+<tr class="row-even"><td><p>BPT 平均複發時間</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_r\)</span></p></td>
+<td><p>與時間軸同單位</p></td>
+</tr>
+<tr class="row-odd"><td><p>間隔變異係數</p></td>
+<td><p><span class="math notranslate nohighlight">\(c_v\)</span></p></td>
+<td><p>標準差除以平均間隔</p></td>
+</tr>
+<tr class="row-even"><td><p>Weibull 形狀</p></td>
+<td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p>不使用 <span class="math notranslate nohighlight">\(\beta\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Janus 組合權重</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pi_{\rm ETAS}\)</span></p></td>
+<td><p>ETAS 成分的權重</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>BPT 指 Brownian passage time。
+它以隨機載入的首達時間描述複發。
+Janus 指結合不同時間尺度的組合模型。
+相關推導見 <a class="reference internal" href="appendix_f_hazard.html"><span class="doc">附錄 F：複發時間與地震危害積分</span></a>。
+組合方法見 <a class="reference internal" href="19_ensembles.html"><span class="doc">19. 把模型加起來：凸組合</span></a>。</p>
+<p><span class="math notranslate nohighlight">\(\beta\)</span> 只表示 <span class="math notranslate nohighlight">\(b\ln10\)</span>。
+<span class="math notranslate nohighlight">\(p\)</span> 用於 Omori 指數；檢定時寫「p 值」。
+ETAS 空間尾指數也沿用文獻的 <span class="math notranslate nohighlight">\(q\)</span>。
+它與分位數分數須依上下文區分。
+表中的 <span class="math notranslate nohighlight">\(g\)</span> 要求 <span class="math notranslate nohighlight">\(p&gt;1,c&gt;0\)</span>。
+不同核正規化下的 <span class="math notranslate nohighlight">\(K\)</span> 不可直接互換。
+具體換算見 <a class="reference internal" href="appendix_c_etas.html"><span class="doc">附錄 C：ETAS 的分支、概似與推論</span></a>。</p>
 </section>
-<section id="id10">
-<h2>參考資料與延伸閱讀<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<section id="a-2">
+<h2>A.2 兩套術語對照<a class="headerlink" href="#a-2" title="Link to this heading">#</a></h2>
+<p>CSEP 是地震可預報性協作研究計畫。
+英文為 Collaboratory for the Study of Earthquake Predictability。
+本站採其預報實驗用語。
+ETAS 是類流行病餘震序列模型。
+英文為 Epidemic-Type Aftershock Sequence。
+下表對照 Jalilian（2019）的 R 套件用語。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>本站用語</p></th>
+<th class="head"><p>英文</p></th>
+<th class="head"><p>ETAS R 對照</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>測試區 <span class="math notranslate nohighlight">\(R\)</span></p></td>
+<td><p>testing region</p></td>
+<td><p>study region</p></td>
+</tr>
+<tr class="row-odd"><td><p>收集區 <span class="math notranslate nohighlight">\(S\)</span></p></td>
+<td><p>collection／neighbourhood region</p></td>
+<td><p>complementary events 所在區</p></td>
+</tr>
+<tr class="row-even"><td><p>學習期、測試期</p></td>
+<td><p>learning／testing period</p></td>
+<td><p>依該次分析指定 study period</p></td>
+</tr>
+<tr class="row-odd"><td><p>目標地震</p></td>
+<td><p>target events</p></td>
+<td><p>target events</p></td>
+</tr>
+<tr class="row-even"><td><p>提供歷史的事件</p></td>
+<td><p>precursor／trigger</p></td>
+<td><p>complementary events 的對應角色</p></td>
+</tr>
+<tr class="row-odd"><td><p>十進位天數</p></td>
+<td><p>decimal days，自 1960-01-01</p></td>
+<td><p>自 <code class="docutils literal notranslate"><span class="pre">time.begin</span></code> 起算</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>收集區提供可能影響測試區的事件。
+目標事件才進入指定評估窗的求和。
+目標事件發生後，也可成為後續歷史。
+「前兆」與「觸發源」仍屬不同模型概念。
+術語對照不代表已辨認物理因果。</p>
+<p>區域邊界稱多邊形（polygon）。
+ETAS R 要求頂點逆時針排列。
+EEPAS 框架要求順時針排列。
+兩者的時間原點也必須明確換算。</p>
+</section>
+<section id="a-3-poisson">
+<h2>A.3 Poisson 過程與計數<a class="headerlink" href="#a-3-poisson" title="Link to this heading">#</a></h2>
+<p>Poisson 過程以独立增量描述事件。
+此處的率 <span class="math notranslate nohighlight">\(\lambda(t)\)</span> 是確定函數。
+令 <span class="math notranslate nohighlight">\(N(B)\)</span> 為時間區間 <span class="math notranslate nohighlight">\(B\)</span> 的事件數。
+將區間切細，每段多事件機率可忽略。
+各段獨立的 Bernoulli 計數取極限，得到</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Lambda(B)&amp;=\int_B\lambda(t)\,dt,\\
+P(N(B)=n)&amp;=e^{-\Lambda(B)}\frac{\Lambda(B)^n}{n!},\\
+\mathbb E[N(B)]&amp;=\operatorname{Var}(N(B))=\Lambda(B),\\
+P(N(B)\ge1)&amp;=1-e^{-\Lambda(B)}.
+\end{aligned}\end{split}\]</div>
+<p>齊次（homogeneous）表示率固定。
+此時長度 <span class="math notranslate nohighlight">\(T\)</span> 的期望數為 <span class="math notranslate nohighlight">\(\lambda T\)</span>。
+非齊次表示率可隨時間改變。
+非齊次本身不代表事件互相觸發。</p>
+<p>過度離散（overdispersion）指變異數大於平均。
+叢集可造成這種現象。
+混合不同年份的率也可能如此。
+不能只憑計數變異就判定觸發機制。</p>
+</section>
+<section id="a-4-mle-bootstrap">
+<h2>A.4 概似、MLE 與 bootstrap<a class="headerlink" href="#a-4-mle-bootstrap" title="Link to this heading">#</a></h2>
+<p>概似（likelihood）比較参数對資料的支持。
+它是固定資料後的參數函數。
+最大概似估計簡稱 MLE。
+英文為 maximum likelihood estimation。</p>
+<p>固定觀察期長 <span class="math notranslate nohighlight">\(T\)</span>，觀測數為 <span class="math notranslate nohighlight">\(N\)</span>。
+齊次 Poisson 的對數概似為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ell(\lambda)&amp;=N\ln(\lambda T)-\lambda T-\ln(N!),\\
+\ell'(\lambda)&amp;=N/\lambda-T,\\
+\widehat\lambda&amp;=N/T.
+\end{aligned}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(N&gt;0\)</span> 時，二階導數為負。
+<span class="math notranslate nohighlight">\(N=0\)</span> 時，最大值位於零率邊界。
+資訊量（information）描述概似的曲率。
+其期望值為 <span class="math notranslate nohighlight">\(I(\lambda)=T/\lambda\)</span>。
+標準誤（standard error）近似為</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{SE}(\widehat\lambda)\simeq\frac{\sqrt N}{T}.\]</div>
+<p>零事件時，此近似不能表示沒有不確定性。
+應回到完整計數分布建立區間。
+概似歸一化也不會自動變成參數機率。</p>
+<p>Bootstrap 是重抽樣估計法。
+它用重抽的資料近似估計量變動。
+普通版本從原樣本有放回抽樣。
+每份樣本重新估參數，再取經驗分位數。
+參數式版本則從擬合模型產生資料。</p>
+<p>地震序列常有相依性。
+逐事件重抽可能破壞叢集結構。
+區塊重抽樣保留一段內的相依。
+模型式模擬則依賴生成模型正確。
+所報區間須註明採用哪種抽樣單位。</p>
+</section>
+<section id="a-5-p">
+<h2>A.5 分位數、p 值與對數分數<a class="headerlink" href="#a-5-p" title="Link to this heading">#</a></h2>
+<p>統計量（statistic）是資料的一個摘要。
+令觀測值為 <span class="math notranslate nohighlight">\(s_{\rm obs}\)</span>。
+虛無模型產生 <span class="math notranslate nohighlight">\(B\)</span> 個模擬值 <span class="math notranslate nohighlight">\(s_r\)</span>。
+分位數分數估計其下尾位置：</p>
+<div class="math notranslate nohighlight">
+\[\widehat q=\frac1B\sum_{r=1}^B\mathbf1\{s_r\le s_{\rm obs}\}.\]</div>
+<p>若低分才是不相容證據，便採下尾檢定。
+連續分布下，其 p 值為 <span class="math notranslate nohighlight">\(q\)</span>。
+若高分才是證據，則採上尾。
+離散分布須保留等號機率。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+P(S\ge s)&amp;=1-F_S(s^-),\\
+P(S\le s)&amp;=F_S(s),\\
+p_{\rm two}&amp;=\min\{1,2\min[P(S\le s),P(S\ge s)]\}.
+\end{aligned}\end{split}\]</div>
+<p>最後一式是等尾雙尾慣例。
+它不是每種檢定唯一的雙尾定義。
+離散資料不可一律使用 <span class="math notranslate nohighlight">\(1-q\)</span> 作上尾。
+模擬零次落入尾端，也不表示機率為零。</p>
+<p>對數分數（log score）獎勵觀測處的機率。
+給觀測 <span class="math notranslate nohighlight">\(y\)</span> 的分數為 <span class="math notranslate nohighlight">\(\ln P(y)\)</span>。
+連續觀測改用相同測度下的密度。
+兩模型相減得到對數概似比。
+網格、單位與目標不同時，不可直接比較。</p>
+</section>
+<section id="a-6-aickl">
+<h2>A.6 AIC、KL 與貝氏推論<a class="headerlink" href="#a-6-aickl" title="Link to this heading">#</a></h2>
+<p>KL 散度比較兩個分布的差異。
+全名為 Kullback–Leibler divergence。
+令真實分布為 <span class="math notranslate nohighlight">\(P\)</span>，候選分布為 <span class="math notranslate nohighlight">\(Q\)</span>。
+在離散且支撐相容的情況下，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+D_{\rm KL}(P\Vert Q)&amp;=\sum_zP(z)\ln\frac{P(z)}{Q(z)}\ge0,\\
+\mathbb E_P[\ln Q(Z)]&amp;=\mathbb E_P[\ln P(Z)]-D_{\rm KL}(P\Vert Q).
+\end{aligned}\end{split}\]</div>
+<p>提高期望對數分數，相當於減少 KL 損失。
+有限測試資料只能估計這個期望。
+它不能直接揭露未知真實分布。</p>
+<p>AIC 是赤池資訊準則。
+英文為 Akaike information criterion。
+令自由參數數目為 <span class="math notranslate nohighlight">\(d\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{AIC}=-2\ell(\widehat\theta)+2d.\]</div>
+<p>懲罰項近似修正訓練分數的樂觀偏差。
+較小的 AIC 較受此準則支持。
+推導需要正則性與大樣本近似。
+相依資料、邊界參數須另查條件。
+AIC 權重也不是自動得到的後驗機率。</p>
+<p>貝氏推論（Bayesian inference）結合先驗與資料。
+先驗密度記為 <span class="math notranslate nohighlight">\(\pi(\theta)\)</span>。
+後驗密度記為 <span class="math notranslate nohighlight">\(\pi(\theta\mid\mathcal D)\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\pi(\theta\mid\mathcal D)=
+\frac{L(\theta;\mathcal D)\pi(\theta)}
+{\int L(u;\mathcal D)\pi(u)\,du}.\]</div>
+<p>以形狀、率參數定義 Gamma 先驗。
+令 <span class="math notranslate nohighlight">\(\lambda\sim\operatorname{Gamma}(a,r)\)</span>。
+Poisson 資料給出</p>
+<div class="math notranslate nohighlight">
+\[\lambda\mid N\sim\operatorname{Gamma}(a+N,r+T).\]</div>
+<p>這是共軛（conjugate）更新。
+意思是後驗仍屬同一分布族。
+未來長度 <span class="math notranslate nohighlight">\(h\)</span> 的計數變異數為</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{Var}(N_{\rm future}\mid\mathcal D)
+=h\mathbb E[\lambda\mid\mathcal D]
++h^2\operatorname{Var}(\lambda\mid\mathcal D).\]</div>
+<p>第一項來自事件本身的波動。
+第二項來自未知參數。
+ETAS 的後驗預報還須整合未來觸發。
+模型未描述的漏測也不會自動消失。</p>
+</section>
+<section id="a-7">
+<h2>A.7 下一事件與點過程概似<a class="headerlink" href="#a-7" title="Link to this heading">#</a></h2>
+<p>存活函數（survival function）表示尚未發生。
+令 <span class="math notranslate nohighlight">\(S_0(t)=P(T_1&gt;t\mid H_{t_0})\)</span>。
+沿沒有新事件的路徑，危害率記為 <span class="math notranslate nohighlight">\(\lambda_0(t)\)</span>。
+小時間段的乘法關係給出</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S_0(t+h)&amp;=S_0(t)[1-\lambda_0(t)h+o(h)],\\
+S'_0(t)&amp;=-\lambda_0(t)S_0(t),\\
+S_0(t)&amp;=\exp\left[-\int_{t_0}^t\lambda_0(u)\,du\right],\\
+f_0(t)&amp;=\lambda_0(t)S_0(t).
+\end{aligned}\end{split}\]</div>
+<p>此式要求相應密度存在且率局部可積。
+若還有未知外部狀態，須一併平均。
+不能任取一條外部路徑代入。</p>
+<p>連乘每次等待密度，再乘最後空白，得到</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+L(\theta)&amp;=\prod_{i=1}^N\lambda^*_\theta(t_i)
+\exp\left[-\int_0^T\lambda^*_\theta(u)\,du\right],\\
+\ell(\theta)&amp;=\sum_{i=1}^N\ln\lambda^*_\theta(t_i)
+-\int_0^T\lambda^*_\theta(u)\,du.
+\end{aligned}\end{split}\]</div>
+<p>這是事件時間的密度概似。
+精確實數時間本身沒有正機率。
+過程須簡單、非爆炸且符合可積條件。
+非爆炸指有限期間不產生無限事件。</p>
+<p>令評估窗為 <span class="math notranslate nohighlight">\([a,b]\times R\times[m_T,m_u)\)</span>。
+加上位置與規模後，</p>
+<div class="math notranslate nohighlight">
+\[\ell(\theta)=\sum_{i\in\mathcal I}\ln\lambda^*_\theta(t_i,x_i,y_i,m_i)
+-\int_a^b\int_R\int_{m_T}^{m_u}\lambda^*_\theta(t,x,y,m)\,dm\,dx\,dy\,dt.\]</div>
+<p><span class="math notranslate nohighlight">\(\mathcal I\)</span> 只含評估窗內的目標事件。
+<span class="math notranslate nohighlight">\(S\)</span> 內及窗前事件可提供歷史。
+估計輸入事件模型時，須另換評估門檻。
+求和與積分必須使用同一觀察範圍。</p>
+<p>若強度分解為 <span class="math notranslate nohighlight">\(\lambda^*_{ST}s(m)\)</span>，規模項可分開。
+分開估參數還要求參數空間獨立。
+例如 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span> 會把兩項重新連結。
+當次規模獨立，也不代表歷史規模無作用。</p>
+</section>
+<section id="a-8">
+<h2>A.8 補償子、殘差與時間變換<a class="headerlink" href="#a-8" title="Link to this heading">#</a></h2>
+<p>補償子（compensator）是沿歷史累積的率。
+本節只看時間，定義 <span class="math notranslate nohighlight">\(A(t)=\int_0^t\lambda^*(u)\,du\)</span>。
+鞅（martingale）的未來增量條件期望為零。
+適當条件下，<span class="math notranslate nohighlight">\(N(t)-A(t)\)</span> 是鞅。
+因此</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mathbb E[N(t)]&amp;=\mathbb E[A(t)],\\
+\mathbb E[N(T)-N(t_0)\mid H_{t_0}]
+&amp;=\mathbb E\left[\int_{t_0}^T\lambda^*(u)\,du\mid H_{t_0}\right].
+\end{aligned}\end{split}\]</div>
+<p>外側期望包含所有可能的未來歷史。
+目前歷史凍結後的積分通常只是近似。
+尤其小事件可能先出現，再觸發目標事件。</p>
+<p>殘差（residual）比較觀測與模型預期。
+可預測權重 <span class="math notranslate nohighlight">\(v\)</span> 只使用事件前的資訊。
+相應加權殘差為</p>
+<div class="math notranslate nohighlight">
+\[R_v=\sum_i v(t_i)-\int v(t)\lambda^*(t)\,dt.\]</div>
+<p>適當可積條件下，<span class="math notranslate nohighlight">\(\mathbb E[R_v]=0\)</span>。
+倒數率權重會放大低率處的誤差。
+事後家族標籤不可當成可預測資訊。</p>
+<p>時間變換（time rescaling）改用累積率計時。
+若 <span class="math notranslate nohighlight">\(A\)</span> 連續且終將趨於無限，令 <span class="math notranslate nohighlight">\(\tau_i=A(t_i)\)</span>。
+正確強度下，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+P(\tau_{i+1}-\tau_i&gt;s\mid H_{t_i})&amp;=e^{-s},\\
+U_i&amp;=1-e^{-(\tau_i-\tau_{i-1})}.
+\end{aligned}\end{split}\]</div>
+<p>變換間隔應獨立且服從單位指數分布。
+<span class="math notranslate nohighlight">\(U_i\)</span> 應獨立且服從均勻分布。
+率為零的平臺須用廣義反函數處理。
+有限窗另有末端截尾。</p>
+<p>Q–Q 圖對照兩分布的相同分位數。
+KS 統計量是累積分布的最大距離。
+兩者只檢查邊際形狀仍不夠。
+間隔相依性也須檢查。
+同資料估參數後，應模擬並重新擬合。
+如此才能校準診斷的參考分布。</p>
+</section>
+<section id="a-9">
+<h2>A.9 稀疏化與分支模擬<a class="headerlink" href="#a-9" title="Link to this heading">#</a></h2>
+<p>稀疏化（thinning）先提候選，再決定保留。
+它需要候選區間內有效的上界 <span class="math notranslate nohighlight">\(\bar\lambda\)</span>。</p>
+<ol class="arabic simple">
+<li><p>以 <span class="math notranslate nohighlight">\(\bar\lambda\)</span> 產生候選等待時間。</p></li>
+<li><p>以 <span class="math notranslate nohighlight">\(\lambda^*(s)/\bar\lambda\)</span> 保留候選。</p></li>
+<li><p>接受後更新歷史與上界。</p></li>
+<li><p>拒絕後只推進時間。</p></li>
+<li><p>到觀察窗末端時停止。</p></li>
+</ol>
+<p>比值大於一表示上界失效。
+直接截成一不能修復抽樣機制。
+固定背景與遞減 Omori 核可用當下率作界。
+延遲峰值或上升背景須另找上界。</p>
+<p>分支模擬（branching simulation）先抽背景。
+每個事件再生成直接後代。
+後代仍能繼續繁衍。
+它需要模型具有相應 Poisson 分支表示。</p>
+<p>Omori 核的反函數抽樣為</p>
+<div class="math notranslate nohighlight">
+\[\tau=c[(1-U)^{-1/(p-1)}-1],\qquad U\sim\operatorname{Unif}(0,1).\]</div>
+<p>這裡要求 <span class="math notranslate nohighlight">\(p&gt;1\)</span>。
+對面積尺度 <span class="math notranslate nohighlight">\(v&gt;0\)</span> 的空間核，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+h(r)&amp;=\frac{q-1}{\pi v}(1+r^2/v)^{-q},\qquad q&gt;1,\\
+P(R\le r)&amp;=1-(1+r^2/v)^{1-q},\\
+R&amp;=\sqrt{v[(1-U)^{-1/(q-1)}-1]}.
+\end{aligned}\end{split}\]</div>
+<p>角度均勻抽於 <span class="math notranslate nohighlight">\([0,2\pi)\)</span>。
+推導使用極座標面積元 <span class="math notranslate nohighlight">\(r\,dr\,d\vartheta\)</span>。
+<span class="math notranslate nohighlight">\(\sqrt v\)</span> 才是長度尺度。
+長尾樣本不能直接壓到窗邊。
+區外事件若能觸發區內後代，仍須保留。
+空歷史起步也不等於平穩目錄。</p>
+</section>
+<section id="a-10">
+<h2>A.10 固定總數與事件對<a class="headerlink" href="#a-10" title="Link to this heading">#</a></h2>
+<p>固定 <span class="math notranslate nohighlight">\(N\)</span> 個均勻時間點，再排序。
+包含兩端的間隔共有 <span class="math notranslate nohighlight">\(N+1\)</span> 個。
+任一間隔 <span class="math notranslate nohighlight">\(W\)</span> 滿足</p>
+<div class="math notranslate nohighlight">
+\[P(W&gt;w\mid N)=\left(1-\frac wT\right)^N,\qquad 0\le w\le T.\]</div>
+<p>平均間隔為 <span class="math notranslate nohighlight">\(T/(N+1)\)</span>。
+這些間隔互相相依。
+它們不是未固定總數的獨立指數間隔。</p>
+<p>時間切成 <span class="math notranslate nohighlight">\(J\)</span> 個等長箱後，計數服從多項分布。
+若樣本變異數分母為 <span class="math notranslate nohighlight">\(J-1\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[\mathbb E[s_N^2]=N/J.\]</div>
+<p>Fano 比（Fano factor）是變異數除以平均。
+上述固定總數設定的期望基準仍為一。
+單次比值偏離一，不等於顯著叢集。</p>
+<p>一階矩描述平均計數。
+二階階乘矩描述不同事件對。
+對區間 <span class="math notranslate nohighlight">\(B,C\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[M^{[2]}(B\times C)=\mathbb E\left[
+\sum_{i\ne j}\mathbf1\{t_i\in B\}\mathbf1\{t_j\in C\}\right].\]</div>
+<p>排除自身配對後，才能比較事件對結構。
+相同平均率仍可有不同叢集程度。
+非均勻背景與邊界也會改變近鄰數。</p>
+</section>
+<section id="id1">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Daley, D. J. 與 Vere-Jones, D.（2003），<a class="reference external" href="https://doi.org/10.1007/b97277">An Introduction to the Theory of Point Processes, Volume I，第二版</a>。第5.4節支撐事件對，第6.3–6.4節處理群集與標記，第7.2–7.6節處理本附錄的強度、概似、時間變換和模擬；全文需訂閱或館藏權限。</p></li>
-<li><p>Ogata, Y.（1999），<a class="reference external" href="https://doi.org/10.1007/s000240050275">Seismicity Analysis through Point-process Modeling: A Review</a>。附錄A整理地震點過程的概似、診斷與模擬，可與一般教材對照；出版社全文可能需訂閱。</p></li>
-<li><p>Reinhart, A.（2018），<a class="reference external" href="https://doi.org/10.1214/17-STS629">A Review of Self-Exciting Spatio-Temporal Point Processes and Their Applications</a>；<a class="reference external" href="https://arxiv.org/abs/1708.02647">免費作者預印本</a>。第2–3節說明分支表示、估計與殘差工具，適合作為教材與應用之間的橋梁。</p></li>
-<li><p>Jalilian, A.（2019），<a class="reference external" href="https://doi.org/10.18637/jss.v088.c01">ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data</a>，<a class="reference external" href="https://www.jstatsoft.org/article/view/v088c01">免費全文</a>。對照時間核、空間核及研究區邊界的具體定義。</p></li>
+<li><p>Gallager（2011），<a class="reference external" href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/mit6_262s11_chap02/">Poisson Processes</a>。免費講義。先讀等待時間與計數的關係。</p></li>
+<li><p>Reinhart（2018），<a class="reference external" href="https://doi.org/10.1214/17-STS629">自激發時空點過程綜述</a>。<a class="reference external" href="https://arxiv.org/abs/1708.02647">免費作者稿</a>。串起估計、分支與殘差。</p></li>
+<li><p>Daley 與 Vere-Jones（2003），<a class="reference external" href="https://doi.org/10.1007/b97277">點過程理論，卷一</a>。需館藏或訂閱。回查事件對、標記與時間變換。</p></li>
+<li><p>Ogata（1999），<a class="reference external" href="https://doi.org/10.1007/s000240050275">地震點過程建模綜述</a>。全文可能需訂閱。對照地震概似與模擬。</p></li>
+<li><p>Jalilian（2019），<a class="reference external" href="https://doi.org/10.18637/jss.v088.c01">ETAS R 套件</a>。免費全文。核對兩區域與歷史事件用語。</p></li>
+<li><p>Naylor 等（2023），<a class="reference external" href="https://doi.org/10.3389/fams.2023.1126759">ETAS.inlabru 貝氏建模</a>。免費全文。比較參數不確定性與事件波動。</p></li>
+<li><p>Biondini 等（2023），<a class="reference external" href="https://doi.org/10.1093/gji/ggad123">EEPAS 在義大利的應用</a>。<a class="reference external" href="https://www.earth-prints.org/handle/2122/17084">免費機構版本</a>。把記號對回義大利實驗。</p></li>
+<li><p>Savran 等（2022），<a class="reference external" href="https://doi.org/10.21105/joss.03658">pyCSEP 工具介紹</a>。免費全文。連結預報格式與統計檢驗。</p></li>
 </ul>
 </section>
 </section>
@@ -675,7 +1027,7 @@ G(u)=1-(1+u/c)^{1-p}.\]</div>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">26. 臺灣展望：把觀測、預報與驗證接起來</p>
+        <p class="prev-next-title">29. 臺灣展望：把觀測、預報與驗證接起來</p>
       </div>
     </a>
     <a class="right-next"
@@ -683,7 +1035,7 @@ G(u)=1-(1+u/c)^{1-p}.\]</div>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">附錄 B：目錄統計與叢集律的推導</p>
+        <p class="prev-next-title">附錄 B：目錄、完整度與叢集律</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -705,18 +1057,17 @@ G(u)=1-(1+u/c)^{1-p}.\]</div>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">從下一事件的危害率得到存活函式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">將事件密度與最後的空白連乘</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">標記分解不等於所有參數都能分開估</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">補償子、殘差與時間變換</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">稀疏化與分支模擬</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">描述平均與描述事件對</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">固定事件總數後的間隔與計數</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">一階與二階資訊</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">符號回查</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1">A.1 讀者版記號表</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2">A.2 兩套術語對照</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-3-poisson">A.3 Poisson 過程與計數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-4-mle-bootstrap">A.4 概似、MLE 與 bootstrap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-5-p">A.5 分位數、p 值與對數分數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-6-aickl">A.6 AIC、KL 與貝氏推論</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-7">A.7 下一事件與點過程概似</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-8">A.8 補償子、殘差與時間變換</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-9">A.9 稀疏化與分支模擬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-10">A.10 固定總數與事件對</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
 </ul>
   </nav></div>
 

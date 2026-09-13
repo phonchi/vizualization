@@ -1,0 +1,87 @@
+{
+  "historical_only": true,
+  "superseded_reason": "Main-agent touch/hover media-query repair regenerated all 12 diagrams. Original receipt retained below; current checks are at parent checks directory.",
+  "archived_at_utc": "2026-09-13T11:27:00.482837+00:00",
+  "original_receipt": {
+    "checked_at_utc": "2026-09-13T11:01:00.922023+00:00",
+    "files": [
+      {
+        "file": "book/_static/diagrams/d01_forecast_pipeline.html",
+        "sha256": "ff9c276d33769ee76e4a30b3e7df2f3c607397c8a3e8fef85adfc917a250f0f6",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d02_regions_s_r.html",
+        "sha256": "c571d30f8ea72e78f191ef1ec16b262d430ca9d7ce46becc1c16b4b518f70873",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d03_thresholds.html",
+        "sha256": "17dc48379509ee4f873c8d0fb73b93ee61eb416d24b04418894c8e46b1cf84d3",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d03_timeline_windows.html",
+        "sha256": "51949d197c3254d4ff9d767566b36416e05a1a59f53a147e3d880990d565d242",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d04_density_to_counts.html",
+        "sha256": "fbe4c2d6f26716f4926400543bcd6fab03a5bf6c36ed44b3c2ef96f4dc5aa7d0",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d06_quantile_pvalue.html",
+        "sha256": "6aea74c488ac7e7cdb4b9185ec7cb78f790d7dc634ea0f6a13f0ccdbfcac169d",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d09_kernel_smoothing.html",
+        "sha256": "0fd5c14100c96ba2c4ba5c341de13df72a353b5bb19fcbaa5d9e0e2f922c074e",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d12_etas_branching.html",
+        "sha256": "5cdc4f11ae1bac19d31de51c8d86a9c94775b6bf047e27c5c1a8330be22e5957",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d15_eepas_kernels.html",
+        "sha256": "7d8bc2bcb27604482082060c7c1f3ed34cdd3c4825ba5688702665072c567277",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d16_csep_tests_flow.html",
+        "sha256": "36facf37ff843726f2b7a5fec39644a730ee68f0dfd3abefda2bbaaba2f308e5",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d19_convex_mix.html",
+        "sha256": "2d3150d206481b4fbb7c168225c52eb5bcb2c5320315abc0ea7dc0b53ea93701",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      },
+      {
+        "file": "book/_static/diagrams/d20_model_family.html",
+        "sha256": "159532a1317a5b87e99dd8b6d17b75f616d3d358cfb2b866db8c7bd1331c9b11",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20
+      }
+    ],
+    "unique_ids": 112,
+    "svg_per_fragment": 1,
+    "remote_dependencies": 0,
+    "all_self_contained": true,
+    "browser_status": "not run by this agent; main agent owns mobile/full-book acceptance"
+  }
+}

@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6. 統計工具箱 III：模擬、檢定與分數 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_simulation_tests_scores';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. 大小地震的比例：GR 律與 b 值" href="07_gr_bvalue.html" />
+    <link rel="prev" title="5. 統計工具箱 II：概似與估計" href="05_likelihood_estimation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從一份義大利實驗到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：一份地震預報實驗，從資料到檢驗</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. 統計工具箱 III：模擬、檢定與分數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 把模型加起來：凸組合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">21. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/06_simulation_tests_scores.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>6. 統計工具箱 III：模擬、檢定與分數</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1 先說清楚要檢查哪一句話</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2 從排序位置走到尾端機率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3 拒絕與未拒絕各能說到哪裡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.4 分數回答：這份預報給結果多少支持</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.5 把三個問題放回同一張桌上</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.6 一個分數需要哪些陪伴資訊</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.7 本章填入的規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="iii">
+<h1>6. 統計工具箱 III：模擬、檢定與分數<a class="headerlink" href="#iii" title="Link to this heading">#</a></h1>
+<p>如果模型預期十年約十多顆，最後卻觀察到更多顆，
+這個差距只是隨機波動，還是模型需要重看？
+上一章學會用資料估計率。
+本章固定那個率，讓模型生成許多可能的未來。
+再把真正觀測的位置，放進模擬分布中。</p>
+<section id="id1">
+<h2>6.1 先說清楚要檢查哪一句話<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>**虛無假設（null hypothesis）**是檢定暫時採用的資料生成規則。
+本章的假設是：測試期間總數服從 Poisson 分布，
+其期望數由學習期估計率與測試長度決定。
+這包含分布形式與數值，不能只寫「預報正確」。</p>
+<p>**統計量（test statistic）**是用資料計算、供檢定比較的摘要。
+本章選整個測試期間的事件總數 <span class="math notranslate nohighlight">\(N\)</span>。
+它回答數量是否相容，沒有檢查位置與規模配置。
+同樣總數的兩張地圖，可能給出完全不同的位置。</p>
+<p>**顯著水準（significance level）**是事前選定的拒絕門檻，記為 <span class="math notranslate nohighlight">\(\alpha\)</span>。
+本章示範 <span class="math notranslate nohighlight">\(\alpha=0.05\)</span>。
+它控制假設成立時，檢定錯誤拒絕的頻率上限。
+離散計數下，實際頻率可能小於這個上限。</p>
+<p>下面讀取 SUP 快取的測試期總期望數。
+快取使用第 3 章同一批發報窗。
+觀測也按相同窗、格與規模箱計數。
+這讓分子分母都回答同一份規格。</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">        <script>
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.7.0.min"</script>
+        </div><div class="output text_html"><div style="height:420px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="3f97ad07-151e-4eef-b13a-f7f71e54f99c" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3f97ad07-151e-4eef-b13a-f7f71e54f99c")) {                    Plotly.newPlot(                        "3f97ad07-151e-4eef-b13a-f7f71e54f99c",                        [{"histnorm":"probability","marker":{"color":"#2a78d6"},"name":"\u6a21\u578b\u6a21\u64ec\u7e3d\u6578","x":{"dtype":"i1","bdata":"DwkJCw4HDBMMDQsLDxILCgwGEAcPCQwMCgUPDREMEQwKCA4NEBAPCQ0GDgoOCwsLDA8MDwwDBgwNERANCwgOCAcPBwoJCAgIDQ0KCgkKDgYNFBELDQULDAwIDwoJBw0KCQwKDAoEDgwHEQkPDBULEAoMDhEKCgwPCQwNCgkUCgwRCxERDA0OCQwIDxQNCQsNCQoKCAoNCwoTCgoLCxUKCQYMCAwHFA0MEAwIEAoODAsJDgwIDg4ICQsNDg4QDxQGEQ4PDxAFCwsJEAsKEA4SEgUGCw8RCQ8PDQ4SBwkIDAsKDhILEREMDA4MDwkHEAwPCwgMEwoTBgoSEQsLDwgSCQgKEQ0ODw8LCwYKDA0MCwoLCwsODQgMCg8RCg8NDg4OCwgLDQ8OCQcOCxAOCwwLCRAMDRAKCwkNDhAQCBAKCgwHDQ0RDREKDAQIEQwLDgsLDQoQCRIMDw8UDxMQCwYQEQsQEBINDRELEAYODAkMEAkNDQwJCQsPCQoUBhIHBw8LDgwHEBQLCwsKDBIMDgoUCg0JDQ0RDQcKCg8LDAwLDBMOCQ4ODg0HBQkKDAgMCw8RDAwODQoKBhAJEwwNDAwMDg8FDQgTBgoODAwGEQ4LDAgOCwwOCwoJCgwKDAgKCwkICwwJCQkLCQ4MDw0ICgwGDAgMEBMLFRALCwsNDQsMBwoJBw0KCgkOBw0SDQcTBw0RGAkEBQ4MDwkLDhYODQwMCwsJDAMMFQwJChEMCwoNDBIIExMLBwwMEQkVDQoKDREKCw0LDAwLBg8GDQ4NCwkUEAoPCwsKCwcXCA0OCw4QDxYJDhENDwwJDg4KDwsLCwgIFA0JDRIMCwsMDA8OCAwPCQ4IBwwJDwwOFAkPEA8QCA8OCgoLBw0FCgoNBw8QDg0MCQ8NDwcLDgkGCAsJEgYRCQwGDg4OEg0NCxQJBg0NDAwGDwwJCgoODBUODA0PCAwUDw4JDhAMDgwQDAgXCwwLBRAMCw8KCAsLCAsLCgQIFAcICg0RCwkLDA0KEgoTEAwRDgsLEQoMDhELCREPCgwLDQkLDwoKDwYKDg8NDRANCwoLCgkKDxELEA4KDwoMDwkTChMJDgsPCg0KBg4MBwwRDgsLDwoOCAgICwgHDBELCwYMDgkQCxELDgkODA4PEQUGEAgLEBEOEBAGDgoNDxANDAoOCgsLCwwNCwsPDgwODw0OFA8KDQkNDhIJDQoFBA4KDggRDwwMEREJCQYPCQ0JBw4SCw4IDQoJBBUPDQwPEg8LEA4NChAPCw0NDgsWEBEQDAkMDQcICwkPEg4MDQ4VDQsRCxQJDgsPBwwaDhEOCwwKBw4FCw4WDAgRDQoFDAoMEw4OBxEQCg8RDQ4JDRENEAcOBwQQDAoQDQwRDw4NCwsJCQoTCQoPDA0ODAgNDwkQCgwKDAsRCgUJFhAHEBAPDgwRCQYICwwGCwcIDAoSCwYKDhERDg0LDA0KDAoJDwgLDAcSDxMPCgsIBQoPCwsMChcHDQsPDg0OBwgJCgkICQwGCRQLBAYTDwoMDw8JCwoNCg0IChILBgsNDgsMEg8LCgoMEwoICxMKDw0NBxUMCxASDggMBwwLCA0MEhELEgwREQwFCQwMEwwMCw8NCw4NDAsHDw0JDAoLDwkLEBAJEwkOEg0LCgcOFA0VEQ0LCggJCwwMDQgJCQ8XERANERAGDA4IDwkLBREMCgoPBw4PEAwUDQwQDhEKBQgMDQ8HEAsKCwsMDAoSCgwIEgkNEg8JCwgPDAgNEQwJDAsKDgoODwwQDgwLDwkLCA0KBBITDQ4IEgcPCAYNCgsLBxQKDwULERAPDgkLCQsMDw0LDxINDg0IDw4ICQsHBxUKDAgQCA0PDQgJDAgNDwwJDRIICAUJDBELDwwNDQsKCw4MEw4JBwsLCgsPCQwJEAYKEhQOBg0PCg4TCw8LBgkICxIIDA8OCggODwwNDgsICwsMEQoLDBEJCgkKDhIMDQ8KDAoQDRIIDQwODgkDDAsEBg4LCAgKCwsPDQwICwgJEg8NCwgMCAkFDg0OCgsQCw0KFAkJCwsMCQ0PCxANCAsLCA0JDA4PCQcPCQgGCQ0NCxEMEwkHCg8JEw4LDgsMDwkOCgsPEg0RCAsNBhIHDRAIDQkPEgwHDRAMEAkPDw8HDAsMDg0MCAoLDQwLCgcKDQkNCQ0MEg8PCw8HDhMRDBEKDwYGEAQREwoHCAsICQ8PBwgPDA4OCREJDwoREA8LEQgQDw4SDBgJDw8HCQwPEAkUCgoJDgsMDwUJDAsODQ0RBQ4LCg8NBgwODgsKDQwJBwkLCgULERAQDQwSAwwTCQkSEAcSEBIHCQkKCwwNEA0JDAoSDw0JCBERCggMCw8NCxEKCQ8LEhMNDAoHERIMDggODwkLCgsNBwoLCgsICQ8ICgoPBwgOCg8LCgcRDAkLDQkMCgkQCQwDDQ0LCgwOChIPDA4RCQsLDREHDw0JDAkMDA4MEAsPCg8NCggGDAgNDQoLDxAMCg4EDAgODw4NDg0JCwgJDA0GCQkMDQ8PEggMCQsJDA0HDQgHEA4KChMNFA8KCQcPEA0HCQwOCggQCgoIDQ0GDBARExEICg4ODgYNDw0KDBAIDwoNDwsNDREICA4KDw0ODw8KCg4JDQ8GDQgRDQwHDgYMDQ0NCxEHEw8JDAkYCgcLCAcMCgwQDBENFQcHCwcMDgsKCw4PCgwQChQLCw0MDgoLDgsJDgsGCg0IBwgPDwsOCQsKEQ0PCQsOCAYPEg8SDxALDgoPChARCAoOCg0GDBQLDAoPBg8MEQ8MBgoSCg0NCRENDAkJChIQDwYOCg0NAwkMCQwKEQkQDA8NCAoHEAwOCwsMDQkNCwkQBwoOCg4PCg8MBhIHDgsPBxMKCgwNCwQUCAwNDxEOCQsIDw4NBwMMEAkMCg8LCg8PDhIKEBEMDggLDAwLDwgJDQsKCgkJDAoRDQ8MEwgRCw8KDBASDxQNCQkJDwsMCQcLCg0MCw4LDgcQDQ8KCQsKEgkPDAwPCwoHCQoKCxAJDwkKDAoPDgwMCAoNDA0IDA4HCg4KChEICwsMCQwJEA0JCw4KDwoLCg4MCwsKBg0LCw0QBwgQERIJFhAKDRAJDg4PCw8RCQ8IDQ4MEQoKEA0RCgwNEQoNDQkUDwwJCwsGCwsLDgsLBg8QEA8KEQ8OEwsMBwwODgkPCgoMCgoJEgsJCwoODQwKDAkODgwJEgsPDAwPEQwKDQkPCgYIEQwMCxAJCwoUEQgPDBENBwkNFBUKEg4JDw0PCQwOBxIICBMSDAkMCgcJDg0ODwkOBwwKEg8JDwQKEQwJDg0VChAICg8ODA0HDQ8NDBEOFg4LDwsIBhINCA0KDBcOEQ4RCwgLFQsJBg0NBgkNCQ4JBwwNDBINDAoMBg8REAwMBwsKBQoMCRAMDwoNDw4UCQwJEAoWEA4VChEPBgcHCAsKCgwWEgoPCxMMEAwIBwYNBxANDhEHCw4JDBAJBQsQDA8LCxAMCA0ODAsPDQ4KDQsMEAoLCxMPDQgKCgwNDwwKDQ4QDAgOCBIODwsMCQwIEgwKDw8MCgwLBA0OEQ4KCg8PDggLBQgPCggMEwoPCQ8LCwYJDgwOCwoLCQ8JDQ0ICRAMDgkGCgUODwwLCwsOBAsLDQ8KCgcRDAoPDggJBAkIDRQJDAgODxEKDgoMCQ8MDAsKDAsLDgsXDQ8HDRAMCg0NCwkLEg4PDQoSEQ4NCwYSDAsPDAoKDQkFCgkJEQsRCxMODQ4OBwwLCBITEQcKFhEICwsPCAwMDAUNCAIICgsRDA0NCg8EDAoLCQ8SDQ0WCAkKDgkKDAoJEwwUDg0MCgwLDhIQChEKDQ0HBw8UFQ4GEQsREA0GDhMMCQcMEwUNBgsQEwkTBQ0LDA4HDQ4MEQgNDxIJDAkLDgwJCg4LFw0ODQ0PBQ0QCgkGDAkNEgsICw0LCg0PBRAMCRAVEA4NChEUDQ8IDAsNDw0RDAoODAcREAkGCg0LEw8NDwsLCQwMEAYLDQoOChMR"},"xbins":{"size":1,"start":-0.5},"type":"histogram"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"shapes":[{"line":{"color":"#e34948"},"type":"line","x0":25,"x1":25,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"annotations":[{"showarrow":false,"text":"\u5be6\u969b\u7e3d\u6578 25","x":25,"xanchor":"left","xref":"x","y":1,"yanchor":"top","yref":"y domain"}],"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x unified","title":{"text":"SUP \u671f\u671b 12.25 \u9846\uff1a3,000 \u6b21\u8a08\u6578\u6a21\u64ec"},"xaxis":{"title":{"text":"\u6e2c\u8a66\u7a97\u5408\u8a08\u4e8b\u4ef6\u6578"}},"yaxis":{"title":{"text":"\u6a21\u64ec\u6bd4\u4f8b"}},"height":420},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('3f97ad07-151e-4eef-b13a-f7f71e54f99c');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p>圖上的每次抽樣代表整組測試窗的總數。
+它不是從實際地震中重抽幾顆。
+3000 次模擬只是近似計數分布。
+模擬還把估計率當成固定已知。
+上一章的參數不確定性，尚未被整合進來。</p>
+</section>
+<section id="id2">
+<h2>6.2 從排序位置走到尾端機率<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>**分位數分數（quantile score）**描述觀測統計量在模擬分布中的位置。
+本站採用「模擬值小於或等於觀測值」的比例：</p>
+<div class="math notranslate nohighlight">
+\[\widehat q=\frac{\#\{N^{(r)}\le N_{\rm obs}\}}{B}.\]</div>
+<p><span class="math notranslate nohighlight">\(B\)</span> 是模擬次數，<span class="math notranslate nohighlight">\(N^{(r)}\)</span> 是第 <span class="math notranslate nohighlight">\(r\)</span> 次結果。
+<span class="math notranslate nohighlight">\(q\)</span> 接近 1，表示觀測值偏大。
+<span class="math notranslate nohighlight">\(q\)</span> 接近 0，表示觀測值偏小。
+它不是「模型正確的機率」。</p>
+<p>**p 值（p-value）**是在虛無假設下，出現至少同樣極端結果的機率。
+「極端」必須先由檢定問題定義。
+只問是否太多，是上尾問題。
+只問是否太少，是下尾問題。
+同時關心兩個方向，則是雙尾問題。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="teaching-diagram" data-diagram="d06_quantile_pvalue"><style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d06_quantile_pvalue{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d06_quantile_pvalue *{box-sizing:border-box}
+.dg-d06_quantile_pvalue svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d06_quantile_pvalue svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d06_quantile_pvalue svg .name{font-weight:600}
+.dg-d06_quantile_pvalue svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d06_quantile_pvalue .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d06_quantile_pvalue .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d06_quantile_pvalue .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d06_quantile_pvalue .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d06_quantile_pvalue .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d06_quantile_pvalue .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d06_quantile_pvalue .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d06_quantile_pvalue .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d06_quantile_pvalue .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d06_quantile_pvalue .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d06_quantile_pvalue .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d06_quantile_pvalue .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d06_quantile_pvalue .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d06_quantile_pvalue .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d06_quantile_pvalue .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d06_quantile_pvalue .details p,.dg-d06_quantile_pvalue .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d06_quantile_pvalue .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d06_quantile_pvalue [hidden]{display:none}
+.dg-d06_quantile_pvalue .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d06_quantile_pvalue .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d06_quantile_pvalue svg [data-detail-mark]{transition:none}}
+@media print{.dg-d06_quantile_pvalue .choices{display:none}.dg-d06_quantile_pvalue [hidden]{display:block}.dg-d06_quantile_pvalue.enhanced svg [data-detail-mark]{opacity:1}.dg-d06_quantile_pvalue .details{min-height:0}}
+.dg-d06_quantile_pvalue svg [data-detail-mark]{opacity:1!important}
+.dg-d06_quantile_pvalue:has(#dg-d06_quantile_pvalue-choice-statistic:checked) [data-detail]:not([data-detail="statistic"]){display:none}
+.dg-d06_quantile_pvalue:has(#dg-d06_quantile_pvalue-choice-quantile:checked) [data-detail]:not([data-detail="quantile"]){display:none}
+.dg-d06_quantile_pvalue:has(#dg-d06_quantile_pvalue-choice-tails:checked) [data-detail]:not([data-detail="tails"]){display:none}
+.dg-d06_quantile_pvalue:has(#dg-d06_quantile_pvalue-choice-decision:checked) [data-detail]:not([data-detail="decision"]){display:none}
+.dg-d06_quantile_pvalue svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d06_quantile_pvalue:has(label:hover) [data-detail]{display:none!important}
+.dg-d06_quantile_pvalue:has(label[for="dg-d06_quantile_pvalue-choice-statistic"]:hover) [data-detail="statistic"]{display:block!important}
+.dg-d06_quantile_pvalue:has(label:hover) [data-detail]{display:none!important}
+.dg-d06_quantile_pvalue:has(label[for="dg-d06_quantile_pvalue-choice-quantile"]:hover) [data-detail="quantile"]{display:block!important}
+.dg-d06_quantile_pvalue:has(label:hover) [data-detail]{display:none!important}
+.dg-d06_quantile_pvalue:has(label[for="dg-d06_quantile_pvalue-choice-tails"]:hover) [data-detail="tails"]{display:block!important}
+.dg-d06_quantile_pvalue:has(label:hover) [data-detail]{display:none!important}
+.dg-d06_quantile_pvalue:has(label[for="dg-d06_quantile_pvalue-choice-decision"]:hover) [data-detail="decision"]{display:block!important}}
+@media print{.dg-d06_quantile_pvalue [data-detail]{display:block!important}.dg-d06_quantile_pvalue [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d06_quantile_pvalue" data-teaching-widget="d06_quantile_pvalue"><p class="intro">下面是可逐顆數出的合成例子，不是義大利的檢驗分數。</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-labelledby="dg-d06_quantile_pvalue-title dg-d06_quantile_pvalue-desc"><title id="dg-d06_quantile_pvalue-title">分位數分數，怎麼接回 p 值？</title><desc id="dg-d06_quantile_pvalue-desc">20次合成模擬中有7次統計量不大於觀測值2，因此q為0.35；其中4次同值，上尾需包含這些同值，為17除以20。</desc><text x="24" y="32" class="name" text-anchor="start">1．固定統計量與判斷方向</text><text x="24" y="72" class="name" text-anchor="start">2．模擬，也計算同一統計量</text><text x="24" y="112" class="name" text-anchor="start">3．看觀測值在模擬分布的位置</text><path d="M 48 336 H 440" class="edge"/><rect x="64" y="312" width="36" height="24" class="fill"/><text x="82" y="300" class="sub" text-anchor="middle">1</text><text x="82" y="368" class="sub" text-anchor="middle">0</text><rect x="116" y="288" width="36" height="48" class="fill"/><text x="134" y="276" class="sub" text-anchor="middle">2</text><text x="134" y="368" class="sub" text-anchor="middle">1</text><rect x="168" y="240" width="36" height="96" class="fill"/><text x="186" y="228" class="sub" text-anchor="middle">4</text><text x="186" y="368" class="sub" text-anchor="middle">2</text><rect x="220" y="192" width="36" height="144" class="node"/><text x="238" y="180" class="sub" text-anchor="middle">6</text><text x="238" y="368" class="sub" text-anchor="middle">3</text><rect x="272" y="240" width="36" height="96" class="node"/><text x="290" y="228" class="sub" text-anchor="middle">4</text><text x="290" y="368" class="sub" text-anchor="middle">4</text><rect x="324" y="288" width="36" height="48" class="node"/><text x="342" y="276" class="sub" text-anchor="middle">2</text><text x="342" y="368" class="sub" text-anchor="middle">5</text><rect x="376" y="312" width="36" height="24" class="node"/><text x="394" y="300" class="sub" text-anchor="middle">1</text><text x="394" y="368" class="sub" text-anchor="middle">6</text><path d="M 186 160 V 340" class="curve"/><text x="194" y="152" class="name" text-anchor="start">觀測值 = 2</text><text x="240" y="408" class="sub" text-anchor="middle">20 次合成模擬；7 次不大於 2</text><text x="240" y="452" class="name" text-anchor="middle">q = 7 / 20 = 0.35</text></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d06_quantile_pvalue-choice-statistic" name="dg-d06_quantile_pvalue-choice" value="statistic" aria-controls="dg-d06_quantile_pvalue-panel-statistic" checked><label for="dg-d06_quantile_pvalue-choice-statistic">先指定問題</label></span><span><input type="radio" id="dg-d06_quantile_pvalue-choice-quantile" name="dg-d06_quantile_pvalue-choice" value="quantile" aria-controls="dg-d06_quantile_pvalue-panel-quantile" ><label for="dg-d06_quantile_pvalue-choice-quantile">q：排序比例</label></span><span><input type="radio" id="dg-d06_quantile_pvalue-choice-tails" name="dg-d06_quantile_pvalue-choice" value="tails" aria-controls="dg-d06_quantile_pvalue-panel-tails" ><label for="dg-d06_quantile_pvalue-choice-tails">同值也要算進尾端</label></span><span><input type="radio" id="dg-d06_quantile_pvalue-choice-decision" name="dg-d06_quantile_pvalue-choice" value="decision" aria-controls="dg-d06_quantile_pvalue-panel-decision" ><label for="dg-d06_quantile_pvalue-choice-decision">q 不總是 p 值</label></span></div><div class="details" aria-live="polite"><section id="dg-d06_quantile_pvalue-panel-statistic" data-detail="statistic" aria-label="先指定問題"><h4>先指定問題</h4><p>先選統計量及「極端」的方向。例如總數太多是上尾問題；對數概似太低是下尾問題。不能看完觀測位置，再挑讓結果最顯著的一端。</p></section><section id="dg-d06_quantile_pvalue-panel-quantile" data-detail="quantile" aria-label="q：排序比例"><h4>q：排序比例</h4><p>每根柱表示合成模擬次數，從統計量 0 到 6 依序為 1、2、4、6、4、2、1，合計 20。觀測值為 2；模擬值 ≤ 2 有 7 次，所以 q = 0.35。</p></section><section id="dg-d06_quantile_pvalue-panel-tails" data-detail="tails" aria-label="同值也要算進尾端"><h4>同值也要算進尾端</h4><p>此例與觀測值同為 2 的模擬有 4 次。下尾比例是 7/20；上尾比例是 1−7/20+4/20=17/20。直接用 1−q 會漏掉同值。</p></section><section id="dg-d06_quantile_pvalue-panel-decision" data-detail="decision" aria-label="q 不總是 p 值"><h4>q 不總是 p 值</h4><p>q 是觀測值的排序位置；只有事先指定下尾檢定時，它才近似該下尾 p 值。上尾及雙尾需採各自規則。模擬比例有抽樣誤差，q 小也不是模型為假的機率。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>
+<p class="diagram-caption">先決定哪一端算極端，再把觀測值的排序位置換成尾端機率。</p></div></div></div>
+</div>
+<p>Poisson 計數是整數，有許多同值。
+本章用包含觀測值的兩個尾端：</p>
+<div class="math notranslate nohighlight">
+\[p_{\rm upper}=P(N\ge N_{\rm obs}),\qquad
+p_{\rm lower}=P(N\le N_{\rm obs}).\]</div>
+<p>若 <span class="math notranslate nohighlight">\(q=P(N\le N_{\rm obs})\)</span>，
+上尾是 <span class="math notranslate nohighlight">\(1-q+P(N=N_{\rm obs})\)</span>。
+直接寫成 <span class="math notranslate nohighlight">\(1-q\)</span>，會漏掉觀測值那一格。
+兩個含等號尾端的和，因此可能大於 1。</p>
+<p>本章採用的雙尾規則是</p>
+<div class="math notranslate nohighlight">
+\[p_{\rm two}=\min\{1,\,2\min(p_{\rm lower},p_{\rm upper})\}.\]</div>
+<p>離散分布還有其他雙尾定義，結果未必相同。
+所以報 p 值時，必須連規則一起報。
+這個等尾規則與第 16 章的兩端檢查銜接。
+我們同時列模擬比例與解析機率供對照。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>量</th>
+      <th>模擬近似</th>
+      <th>Poisson 解析值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>下尾／分位數分數</td>
+      <td>0.999667</td>
+      <td>0.999584</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>上尾（含等號）</td>
+      <td>0.000333</td>
+      <td>0.000908</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>本章雙尾規則</td>
+      <td>0.000667</td>
+      <td>0.001816</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>很小的尾端機率，可能只由幾次模擬決定。
+若一次也沒抽到，近似比例雖是零，真機率未必為零。
+增加模擬可以降低抽樣誤差，但不會修正錯誤模型。
+這裡有 Poisson 解析分布，因此能直接核對尾端。
+後面空間檢驗較複雜，才更依賴模擬。</p>
+</section>
+<section id="id3">
+<h2>6.3 拒絕與未拒絕各能說到哪裡<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>若 p 值低於事前門檻，就拒絕這組假設。
+含義是：這個計數在該模型下相當極端。
+原因可能是率偏低，也可能是變異太小。
+單一總數無法把這兩種原因完全分開。
+地震序列也會讓多個事件彼此相關。</p>
+<p>若沒有拒絕，只能說尚未找到足夠的不相容證據。
+「未拒絕」不等於「證實」。
+資料少、變異大時，很不同的模型也可能通過。
+**統計功效（statistical power）**是指定替代情況下，檢定能拒絕虛無假設的機率。
+第 18 章會用模擬展示這個能力。</p>
+<p>假設是在看結果前選定的。
+若看到失敗才換分布，再把通過當成驗證，
+就低估了選擇規則帶來的影響。
+第 16 章會事先並列不同計數變異假設。
+它們回答不同條件下的問題，不能互相替代。</p>
+</section>
+<section id="id4">
+<h2>6.4 分數回答：這份預報給結果多少支持<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>**對數分數（logarithmic score）**是預報給實際結果的機率取自然對數。
+本書採數值越大越好的方向。
+若某種結果的機率很低，發生後就得到較低分。
+它獎勵適當配置機率，沒有要求每次都猜中。</p>
+<p>對 Poisson 總數而言，完整分數是</p>
+<div class="math notranslate nohighlight">
+\[S(\Lambda,N)=N\ln\Lambda-\Lambda-\ln N!.\]</div>
+<p><span class="math notranslate nohighlight">\(N\ln\Lambda\)</span> 讓事件出現時的較高率得到支持。
+<span class="math notranslate nohighlight">\(-\Lambda\)</span> 則讓無限制提高總量付出代價。
+即使只用總數，也不能只保留第一項。
+否則把所有率提高，就會永遠得分更好。</p>
+<p>下面比較兩個事先標為示意的期望數。
+A 是 SUP 的期望數；B 是它的兩倍。
+B 用來看懂分數，不是新訓練的預報模型。
+觀測總數相同，兩條曲線的分數就能相減。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="height:420px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="70212d68-7125-4a9a-a964-d4f4e60ef436" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("70212d68-7125-4a9a-a964-d4f4e60ef436")) {                    Plotly.newPlot(                        "70212d68-7125-4a9a-a964-d4f4e60ef436",                        [{"line":{"color":"#2a78d6"},"name":"A\uff1aSUP","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMA=="},"y":{"dtype":"f8","bdata":"VLyLUJp\u002fKMBA6\u002fNRznwjwJR7lwbNuR\u002fALhoTqC8ZGsCABqJqKJ8VwKXHbeugCRLA+FqR2ZddDsDQQ0s2oeMJwPSqJ3sjewbArGl1+90DBMB0esu8X2QCwGht63kTiAHAkMdfPPpdAcCIDzJtztcBwOiGqolo6QLAuIqYyE6IBMBYgDPNYasGwIC7zpSdSgnAsAjb1OheDMCQd4Dg7uEPwGiLyrAA5xHAkMDS\u002ff8OFMBQAUI8omYWwCA5+z3J6xjAcK0U\u002f4ScG8Dg0dv9DXcewIweEjvgvCDAnC57KoxRIsAU8Ijh1vgjwISe5BUZsiXAFMOP1bZ8J8DcPBxpHlgpwNydMlrHQyvABDvQmDE\u002fLcBkraa65EkvwJ5saai3sTDAGshiKLPFMcB+ON5GsuAywDK4SiCFAjTAXtEPTv4qNcAaNyq28lk2wBYkkF85jzfALgPKSqvKOMAuuEBOIww6wCZa1PV9UzvA3upcZZmgPMCSCsM9VfM9wCpAaYSSSz\u002fAg7dTxplUQMA="},"type":"scatter"},{"line":{"color":"#eb6834"},"name":"B\uff1a\u5169\u500d\u671f\u671b\uff08\u793a\u610f\uff09","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMA=="},"y":{"dtype":"f8","bdata":"VLyLUJp\u002fOMD6AUg5wkw1wHAZ\u002fDlcyzLARy9jysKxMMAYMR7GncMtwApulNb1lSrAWT1SJ6fFJ8DwE5FORUQlwBmK2K9BByPAJ1b8H4wGIcBwbcTAkHcewLAfdT+iQxvAjAXQQM1oGMBM4ln57t8VwLzWtqfzohPAZJFOZ56sEcDoiXkTv\u002fAPwJA2VhtqBA3AQPWjmySNCsCg1YrnmYQIwGDm4Kgb5QbAUMIyg4mpBcBAtVJAPc0EwHCWBoT6SwTAoPB6RuEhBMDwqkqEYksEwADzHLU2xQTAoKQCs1WMBcAgHHvP750GwEBHK+Fn9wfAIEsZIE6WCcCgo4yuW3gLwECZJ7Numw3AgH\u002ff7Yb9D8AwXb1aYU4RwLBtNieuuxLAUJQ8x9NFFMCwDkvhB+wVwDDGHeeKrRfAsONSPqeJGcBQM91+sH8bwBCglcQCjx3AQNWdEQK3H8AAsczfjPsgwEhRBP9dJyLAGM8lrrBeI8DoagIvRKEkwHgyX4za7iXAmOzrbDhHJ8A="},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"shapes":[{"line":{"color":"#e34948"},"type":"line","x0":25,"x1":25,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x unified","title":{"text":"\u76f8\u540c\u7d50\u679c\uff0c\u5728\u5169\u4efd\u8a08\u6578\u9810\u5831\u4e0b\u7684\u5c0d\u6578\u5206\u6578"},"xaxis":{"title":{"text":"\u89c0\u5bdf\u5230\u7684\u7e3d\u6578"}},"yaxis":{"title":{"text":"\u5c0d\u6578\u5206\u6578\uff08\u8d8a\u5927\u8d8a\u597d\uff09"}},"height":420},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('70212d68-7125-4a9a-a964-d4f4e60ef436');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p>圖上不同總數，可能由不同模型得較高分。
+模型不會因為這次勝出，就被證明永遠較好。
+若 B 是看過本次總數後才選的，
+其分數差只能作回顧描述，不能當前瞻成效。
+因此，正式比較要固定規則，再累積未見資料。</p>
+<p>**概似比（likelihood ratio）**將同一結果在兩個模型下的概似相除。
+取對數後，就變成分數之差：</p>
+<div class="math notranslate nohighlight">
+\[\ln\frac{L_B}{L_A}=S_B-S_A
+=N\ln\frac{\Lambda_B}{\Lambda_A}-(\Lambda_B-\Lambda_A).\]</div>
+<p>差值大於零，表示 B 對這份結果給較多支持。
+差值等於零，表示這項計分無法區分兩者。
+這是相對比較，並沒有檢查兩者是否都很差。
+上半章的一致性檢定與這裡的比較，角色不同。</p>
+<p>**資訊增益（information gain）**以相對對數分數描述新預報增加的支持。
+若換了基準，增益也會改變。
+第 18 章會擴充到事件位置、規模與逐事件平均。
+那時還要處理區間與事件相依，不能只看正負號。</p>
+</section>
+<section id="id5">
+<h2>6.5 把三個問題放回同一張桌上<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>概似估計問「哪些參數支持學習資料」。
+一致性檢定問「測試資料是否出乎模型預期」。
+模型比較問「相同結果在哪張預報下較受支持」。
+三者可能使用同一條對數公式，用途卻不相同。</p>
+<p>例如把測試期總數直接除以測試長度，
+可以得到回顧性的最佳固定率。
+這個數字可以作診斷，卻不能回填到已發出的預報。
+資料的時間角色，比公式看起來是否熟悉更重要。</p>
+</section>
+<section id="id6">
+<h2>6.6 一個分數需要哪些陪伴資訊<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>若只看到「分數提高」，先問比較用了哪批事件。
+兩個模型必須在同一組時間、空間與規模箱上計算。
+少算一些沒有事件的區域，也可能提高分數。
+但那等於改了問題，不能算成模型進步。</p>
+<p>同樣地，先選出表現最好的一窗再報分數，
+會隱藏其他窗的結果。
+本書的正式比較使用事先固定的全部測試窗。
+逐窗圖用來找差異出現在哪裡，
+不能再據此刪掉不利於某模型的窗。</p>
+<p>總數檢驗也沒有替地震逐顆認證。
+如果一段序列貢獻很多目標事件，
+總數雖然增加，獨立的資訊未必等比例增加。
+第 16 章會先看逐窗累積，
+第 18 章再討論比較區間的相依限制。</p>
+<p>因此，一份可讀的評估至少交代模型、資料與規則。
+數值保留到適當精度，尾端方向寫清楚。
+模擬結果附上次數，解析結果註明分布。
+讀者才有辦法重算，也才知道結論的範圍。</p>
+</section>
+<section id="id7">
+<h2>6.7 本章填入的規格欄位<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>評分欄先分成一致性與比較。
+正式的空間、規模與數量檢驗名稱留待後面。
+目前只用總數，避免太早混入所有模型。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="spec-card"><div class="spec-title">預報實驗規格卡</div><div class="spec-row"><div class="spec-key">共同實驗規格</div><div class="spec-val">沿用第 3–4 章的資料、窗、格與規模箱</div></div><div class="spec-row"><div class="spec-key">一致性</div><div class="spec-val">統計量 → 模型分布 → 分位數與指定尾端；α=0.05</div></div><div class="spec-row"><div class="spec-key">比較</div><div class="spec-val">相同觀測的對數分數差；基準先固定</div></div><div class="spec-row"><div class="spec-key">正式檢驗</div><div class="spec-val">待填（第 16–18 章）</div></div><div class="spec-row"><div class="spec-key">完整度與規模比例</div><div class="spec-val">待填（第 7–8 章）</div></div></div></div></div>
+</div>
+<p>三個統計工具章至此完成。
+下一章 <a class="reference internal" href="07_gr_bvalue.html"><span class="doc">7. 大小地震的比例：GR 律與 b 值</span></a> 回到地震目錄：相同總數如何分到大小地震？</p>
+</section>
+<section id="id8">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Zechar（2010），<a class="reference external" href="https://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/zechar.pdf_2063069264.pdf">地震預報評估入門</a>。CORSSA 免費教材，先讀檢驗目的，再看分數的定義。</p></li>
+<li><p>Biondini、Rhoades 與 Gasperini（2023），<a class="reference external" href="https://doi.org/10.1093/gji/ggad123">義大利 EEPAS 實驗</a>。對照一致性檢驗與模型比較兩組結果，留意各自使用的分布假設。</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_likelihood_estimation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5. 統計工具箱 II：概似與估計</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_gr_bvalue.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7. 大小地震的比例：GR 律與 b 值</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1 先說清楚要檢查哪一句話</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2 從排序位置走到尾端機率</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3 拒絕與未拒絕各能說到哪裡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.4 分數回答：這份預報給結果多少支持</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.5 把三個問題放回同一張桌上</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.6 一個分數需要哪些陪伴資訊</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.7 本章填入的規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

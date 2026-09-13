@@ -1,0 +1,52 @@
+{
+  "historical_only": true,
+  "superseded_reason": "Main-agent touch/hover media-query repair regenerated all 12 diagrams. Original receipt retained below; current checks are at parent checks directory.",
+  "archived_at_utc": "2026-09-13T11:27:00.482837+00:00",
+  "original_receipt": {
+    "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+    "names": [
+      "d01_forecast_pipeline",
+      "d09_kernel_smoothing",
+      "d12_etas_branching",
+      "d15_eepas_kernels",
+      "d16_csep_tests_flow",
+      "d19_convex_mix",
+      "d20_model_family"
+    ],
+    "files": [
+      {
+        "file": "book/_static/diagrams/d01_forecast_pipeline.html",
+        "sha256": "ff9c276d33769ee76e4a30b3e7df2f3c607397c8a3e8fef85adfc917a250f0f6"
+      },
+      {
+        "file": "book/_static/diagrams/d09_kernel_smoothing.html",
+        "sha256": "0fd5c14100c96ba2c4ba5c341de13df72a353b5bb19fcbaa5d9e0e2f922c074e"
+      },
+      {
+        "file": "book/_static/diagrams/d12_etas_branching.html",
+        "sha256": "5cdc4f11ae1bac19d31de51c8d86a9c94775b6bf047e27c5c1a8330be22e5957"
+      },
+      {
+        "file": "book/_static/diagrams/d15_eepas_kernels.html",
+        "sha256": "7d8bc2bcb27604482082060c7c1f3ed34cdd3c4825ba5688702665072c567277"
+      },
+      {
+        "file": "book/_static/diagrams/d16_csep_tests_flow.html",
+        "sha256": "36facf37ff843726f2b7a5fec39644a730ee68f0dfd3abefda2bbaaba2f308e5"
+      },
+      {
+        "file": "book/_static/diagrams/d19_convex_mix.html",
+        "sha256": "2d3150d206481b4fbb7c168225c52eb5bcb2c5320315abc0ea7dc0b53ea93701"
+      },
+      {
+        "file": "book/_static/diagrams/d20_model_family.html",
+        "sha256": "159532a1317a5b87e99dd8b6d17b75f616d3d358cfb2b866db8c7bd1331c9b11"
+      }
+    ],
+    "unique_ids": 66,
+    "svg_per_fragment": 1,
+    "remote_dependencies": 0,
+    "all_self_contained": true,
+    "browser_status": "not run by this agent; main agent owns full-book browser acceptance"
+  }
+}

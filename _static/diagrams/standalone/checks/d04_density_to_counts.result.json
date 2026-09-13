@@ -1,0 +1,86 @@
+{
+  "name": "d04_density_to_counts",
+  "fragment_kb": 8.5,
+  "viewports": {
+    "1440x900": {
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "svgWidth": 1408,
+      "scrollHeight": 900,
+      "no_h_overflow": true,
+      "screenshot": "d04_density_to_counts_1440x900.png"
+    },
+    "390x844": {
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "svgWidth": 358,
+      "scrollHeight": 844,
+      "no_h_overflow": true,
+      "screenshot": "d04_density_to_counts_390x844.png"
+    },
+    "dark_1440x900": {
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "svgWidth": 1408,
+      "scrollHeight": 900,
+      "no_h_overflow": true,
+      "screenshot": "d04_density_to_counts_dark_1440x900.png",
+      "sample_text_fill": "rgb(233, 238, 244)",
+      "svg_bg_fill": "rgb(30, 35, 43)"
+    }
+  },
+  "hover": [
+    {
+      "hot": "dg-d04-hot-1",
+      "tip": "dg-d04-tip-1",
+      "hidden_before": true,
+      "visible_on_hover": true,
+      "visible_on_focus": true,
+      "hidden_after": true,
+      "ok": true
+    },
+    {
+      "hot": "dg-d04-hot-2",
+      "tip": "dg-d04-tip-2",
+      "hidden_before": true,
+      "visible_on_hover": true,
+      "visible_on_focus": true,
+      "hidden_after": true,
+      "ok": true
+    },
+    {
+      "hot": "dg-d04-hot-3",
+      "tip": "dg-d04-tip-3",
+      "hidden_before": true,
+      "visible_on_hover": true,
+      "visible_on_focus": true,
+      "hidden_after": true,
+      "ok": true
+    },
+    {
+      "hot": "dg-d04-hot-4",
+      "tip": "dg-d04-tip-4",
+      "hidden_before": true,
+      "visible_on_hover": true,
+      "visible_on_focus": true,
+      "hidden_after": true,
+      "ok": true
+    }
+  ],
+  "steps": [],
+  "errors": [],
+  "static": {
+    "external_refs": [],
+    "unprefixed_ids": [],
+    "hardcoded_hex": [],
+    "has_viewbox": true,
+    "has_html_tags": false,
+    "has_script": false,
+    "min_font_px": 12.0,
+    "text_overflow": []
+  },
+  "ok": true,
+  "historical_only": true,
+  "superseded_by": "480 viewBox mobile redesign; see legacy_five_mobile_self_check.json and main-agent continuation/browser receipts",
+  "scope_note": "This receipt and its screenshots describe the earlier 720-viewBox version, not the current diagram."
+}

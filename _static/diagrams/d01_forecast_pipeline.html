@@ -1,0 +1,49 @@
+<style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d01_forecast_pipeline{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d01_forecast_pipeline *{box-sizing:border-box}
+.dg-d01_forecast_pipeline svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d01_forecast_pipeline svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d01_forecast_pipeline svg .name{font-weight:600}
+.dg-d01_forecast_pipeline svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d01_forecast_pipeline .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d01_forecast_pipeline .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d01_forecast_pipeline .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d01_forecast_pipeline .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d01_forecast_pipeline .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d01_forecast_pipeline .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d01_forecast_pipeline .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d01_forecast_pipeline .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d01_forecast_pipeline .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d01_forecast_pipeline .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d01_forecast_pipeline .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d01_forecast_pipeline .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d01_forecast_pipeline .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d01_forecast_pipeline .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d01_forecast_pipeline .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d01_forecast_pipeline .details p,.dg-d01_forecast_pipeline .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d01_forecast_pipeline .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d01_forecast_pipeline [hidden]{display:none}
+.dg-d01_forecast_pipeline .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d01_forecast_pipeline .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d01_forecast_pipeline svg [data-detail-mark]{transition:none}}
+@media print{.dg-d01_forecast_pipeline .choices{display:none}.dg-d01_forecast_pipeline [hidden]{display:block}.dg-d01_forecast_pipeline.enhanced svg [data-detail-mark]{opacity:1}.dg-d01_forecast_pipeline .details{min-height:0}}
+
+.dg-d01_forecast_pipeline:has(#dg-d01_forecast_pipeline-choice-catalog:checked) [data-detail]:not([data-detail="catalog"]){display:none}
+.dg-d01_forecast_pipeline:has(#dg-d01_forecast_pipeline-choice-spec:checked) [data-detail]:not([data-detail="spec"]){display:none}
+.dg-d01_forecast_pipeline:has(#dg-d01_forecast_pipeline-choice-model:checked) [data-detail]:not([data-detail="model"]){display:none}
+.dg-d01_forecast_pipeline:has(#dg-d01_forecast_pipeline-choice-forecast:checked) [data-detail]:not([data-detail="forecast"]){display:none}
+.dg-d01_forecast_pipeline:has(#dg-d01_forecast_pipeline-choice-test:checked) [data-detail]:not([data-detail="test"]){display:none}
+.dg-d01_forecast_pipeline svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d01_forecast_pipeline:has(label:hover) [data-detail]{display:none!important}
+.dg-d01_forecast_pipeline:has(label[for="dg-d01_forecast_pipeline-choice-catalog"]:hover) [data-detail="catalog"]{display:block!important}
+.dg-d01_forecast_pipeline:has(label:hover) [data-detail]{display:none!important}
+.dg-d01_forecast_pipeline:has(label[for="dg-d01_forecast_pipeline-choice-spec"]:hover) [data-detail="spec"]{display:block!important}
+.dg-d01_forecast_pipeline:has(label:hover) [data-detail]{display:none!important}
+.dg-d01_forecast_pipeline:has(label[for="dg-d01_forecast_pipeline-choice-model"]:hover) [data-detail="model"]{display:block!important}
+.dg-d01_forecast_pipeline:has(label:hover) [data-detail]{display:none!important}
+.dg-d01_forecast_pipeline:has(label[for="dg-d01_forecast_pipeline-choice-forecast"]:hover) [data-detail="forecast"]{display:block!important}
+.dg-d01_forecast_pipeline:has(label:hover) [data-detail]{display:none!important}
+.dg-d01_forecast_pipeline:has(label[for="dg-d01_forecast_pipeline-choice-test"]:hover) [data-detail="test"]{display:block!important}}
+@media print{.dg-d01_forecast_pipeline [data-detail]{display:block!important}.dg-d01_forecast_pipeline [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d01_forecast_pipeline" data-teaching-widget="d01_forecast_pipeline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 536" role="img" aria-labelledby="dg-d01_forecast_pipeline-title dg-d01_forecast_pipeline-desc"><title id="dg-d01_forecast_pipeline-title">一份預報實驗如何完成</title><desc id="dg-d01_forecast_pipeline-desc">從 HORUS 目錄依序訂規格、定模型、發出格內期望數預報，最後對照測試期事件。</desc><path d="M 240 96 v 24 m -8 -8 l 8 8 l 8 -8" class="edge"/><path d="M 240 200 v 24 m -8 -8 l 8 8 l 8 -8" class="edge"/><path d="M 240 304 v 24 m -8 -8 l 8 8 l 8 -8" class="edge"/><path d="M 240 408 v 24 m -8 -8 l 8 8 l 8 -8" class="edge"/><g data-detail-mark="catalog"><rect x="64" y="16" width="352" height="80" rx="8" class="node "/><text x="240.0" y="48" class="name" text-anchor="middle">讀目錄</text><text x="240.0" y="76" class="sub" text-anchor="middle">何時、何地、多大</text></g><g data-detail-mark="spec"><rect x="64" y="120" width="352" height="80" rx="8" class="node "/><text x="240.0" y="152" class="name" text-anchor="middle">訂規格</text><text x="240.0" y="180" class="sub" text-anchor="middle">先把題目寫清楚</text></g><g data-detail-mark="model"><rect x="64" y="224" width="352" height="80" rx="8" class="node "/><text x="240.0" y="256" class="name" text-anchor="middle">定模型</text><text x="240.0" y="284" class="sub" text-anchor="middle">只用當時已知資訊</text></g><g data-detail-mark="forecast"><rect x="64" y="328" width="352" height="80" rx="8" class="node focal"/><text x="240.0" y="360" class="name" text-anchor="middle">發預報</text><text x="240.0" y="388" class="sub" text-anchor="middle">各格箱的期望數</text></g><g data-detail-mark="test"><rect x="64" y="432" width="352" height="80" rx="8" class="node "/><text x="240.0" y="464" class="name" text-anchor="middle">做檢驗</text><text x="240.0" y="492" class="sub" text-anchor="middle">與之後的事件對照</text></g></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d01_forecast_pipeline-choice-catalog" name="dg-d01_forecast_pipeline-choice" value="catalog" aria-controls="dg-d01_forecast_pipeline-panel-catalog" checked><label for="dg-d01_forecast_pipeline-choice-catalog">讀目錄</label></span><span><input type="radio" id="dg-d01_forecast_pipeline-choice-spec" name="dg-d01_forecast_pipeline-choice" value="spec" aria-controls="dg-d01_forecast_pipeline-panel-spec" ><label for="dg-d01_forecast_pipeline-choice-spec">訂規格</label></span><span><input type="radio" id="dg-d01_forecast_pipeline-choice-model" name="dg-d01_forecast_pipeline-choice" value="model" aria-controls="dg-d01_forecast_pipeline-panel-model" ><label for="dg-d01_forecast_pipeline-choice-model">定模型</label></span><span><input type="radio" id="dg-d01_forecast_pipeline-choice-forecast" name="dg-d01_forecast_pipeline-choice" value="forecast" aria-controls="dg-d01_forecast_pipeline-panel-forecast" ><label for="dg-d01_forecast_pipeline-choice-forecast">發預報</label></span><span><input type="radio" id="dg-d01_forecast_pipeline-choice-test" name="dg-d01_forecast_pipeline-choice" value="test" aria-controls="dg-d01_forecast_pipeline-panel-test" ><label for="dg-d01_forecast_pipeline-choice-test">做檢驗</label></span></div><div class="details" aria-live="polite"><section id="dg-d01_forecast_pipeline-panel-catalog" data-detail="catalog" aria-label="讀目錄"><h4>讀目錄</h4><p>讀取 HORUS 的時間、震央、深度與規模；先決定哪些事件可收進實驗。</p></section><section id="dg-d01_forecast_pipeline-panel-spec" data-detail="spec" aria-label="訂規格"><h4>訂規格</h4><p>把收集區 S、測試區 R、規模門檻、發報窗與評分方式寫清楚，再開始比較。</p></section><section id="dg-d01_forecast_pipeline-panel-model" data-detail="model" aria-label="定模型"><h4>定模型</h4><p>用學習期決定參數；發報後，模型只能依事先約定的規則加入新歷史。</p></section><section id="dg-d01_forecast_pipeline-panel-forecast" data-detail="forecast" aria-label="發預報"><h4>發預報</h4><p>輸出的是各格、各規模箱、各預報窗的期望數，不是某顆地震必定發生的宣告。</p></section><section id="dg-d01_forecast_pipeline-panel-test" data-detail="test" aria-label="做檢驗"><h4>做檢驗</h4><p>用測試期真正發生的目標地震檢驗預報；看完結果再改模型，便需要新的測試資料。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>

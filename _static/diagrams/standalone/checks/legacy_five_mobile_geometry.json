@@ -1,0 +1,37 @@
+[
+  {
+    "file": "book/_static/diagrams/standalone/d02_regions_s_r.html",
+    "sha256": "94a905cb7105893307042c280f520b30b0e6b77f0a2aa5fe6963f6acf7adca84",
+    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+    "exit_code": 0,
+    "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+  },
+  {
+    "file": "book/_static/diagrams/standalone/d03_thresholds.html",
+    "sha256": "b619bb2e433452c36832f1bc72a0a82ca22083b638d66523a4240ef8d9147b1e",
+    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+    "exit_code": 0,
+    "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+  },
+  {
+    "file": "book/_static/diagrams/standalone/d03_timeline_windows.html",
+    "sha256": "32ea254f5985ba74f730ebeae3c3497cd0b683f3c30b06aa132830ba5c601d50",
+    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+    "exit_code": 0,
+    "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+  },
+  {
+    "file": "book/_static/diagrams/standalone/d04_density_to_counts.html",
+    "sha256": "56a7d200953075a4c53d50b4ac43eca2874eef22bc4e5c99ba2d7b2eb54f7758",
+    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+    "exit_code": 0,
+    "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+  },
+  {
+    "file": "book/_static/diagrams/standalone/d06_quantile_pvalue.html",
+    "sha256": "3ab36936c49bfec55e685a599493a8177a6dddad056b606ba65844e441b260c0",
+    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+    "exit_code": 0,
+    "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+  }
+]

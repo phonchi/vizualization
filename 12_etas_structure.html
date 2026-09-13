@@ -1,0 +1,952 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12. ETAS：把叢集寫成分支過程 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '12_etas_structure';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="13. ETAS 在義大利：估兩個參數、出一張三個月預報" href="13_etas_italy_forecast.html" />
+    <link rel="prev" title="11. 讓率隨歷史更新：條件強度與點過程概似" href="11_conditional_intensity.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從一份義大利實驗到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：一份地震預報實驗，從資料到檢驗</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. ETAS：把叢集寫成分支過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 把模型加起來：凸組合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">21. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/12_etas_structure.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>12. ETAS：把叢集寫成分支過程</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1 從一條親子連線開始</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.2 五個組成，各回答一個問題</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k">12.3 K 的數字，要連同公式一起讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">12.4 平均一顆，會接出幾顆？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.5 規模上限與「七釘二估」</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">從一個格箱，讀回整條公式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.6 先看模型交出的預報</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">本章填入的規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="etas">
+<h1>12. ETAS：把叢集寫成分支過程<a class="headerlink" href="#etas" title="Link to this heading">#</a></h1>
+<p>一顆地震之後，常接著多顆地震。
+第 11 章已把新事件接進條件強度。
+本章再問：新事件能再引發下一批嗎？</p>
+<p>一棵家族樹可以表達這件事。
+分支過程（branching process）讓個體產生後代。
+後代也遵循相同的繁殖規則。
+ETAS 用這個結構描述地震叢集。
+其英文全名為 Epidemic-Type Aftershock Sequence。
+中文可稱流行型餘震序列模型。</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<section id="id1">
+<h2>12.1 從一條親子連線開始<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>樹上的一條線連接兩顆模擬事件。
+親代（parent）是直接引發該事件的來源。
+子代（offspring）是這條線另一端的事件。
+世代（generation）記錄事件離根部幾層。
+背景事件列為第零代。</p>
+<p>第一代事件也能產生第二代。
+因此，餘震可以成為其他地震的親代。
+ETAS 先讓每顆事件遵守相同規則。
+模型再由規模決定平均產能。
+模型無須先挑出最大的一顆。</p>
+<p>目錄中的一列只有時間、位置與規模。
+HORUS 沒有記錄真實的親子連線。
+下圖的線是生成資料時留下的資訊。
+真實事件的親代須以機率表達。
+第 13 章會計算這些機率。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="teaching-diagram" data-diagram="d12_etas_branching"><style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d12_etas_branching{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d12_etas_branching *{box-sizing:border-box}
+.dg-d12_etas_branching svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d12_etas_branching svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d12_etas_branching svg .name{font-weight:600}
+.dg-d12_etas_branching svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d12_etas_branching .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d12_etas_branching .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d12_etas_branching .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d12_etas_branching .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d12_etas_branching .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d12_etas_branching .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d12_etas_branching .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d12_etas_branching .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d12_etas_branching .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d12_etas_branching .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d12_etas_branching .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d12_etas_branching .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d12_etas_branching .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d12_etas_branching .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d12_etas_branching .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d12_etas_branching .details p,.dg-d12_etas_branching .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d12_etas_branching .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d12_etas_branching [hidden]{display:none}
+.dg-d12_etas_branching .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d12_etas_branching .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d12_etas_branching svg [data-detail-mark]{transition:none}}
+@media print{.dg-d12_etas_branching .choices{display:none}.dg-d12_etas_branching [hidden]{display:block}.dg-d12_etas_branching.enhanced svg [data-detail-mark]{opacity:1}.dg-d12_etas_branching .details{min-height:0}}
+
+.dg-d12_etas_branching:has(#dg-d12_etas_branching-choice-background:checked) [data-detail]:not([data-detail="background"]){display:none}
+.dg-d12_etas_branching:has(#dg-d12_etas_branching-choice-first:checked) [data-detail]:not([data-detail="first"]){display:none}
+.dg-d12_etas_branching:has(#dg-d12_etas_branching-choice-second:checked) [data-detail]:not([data-detail="second"]){display:none}
+.dg-d12_etas_branching svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d12_etas_branching:has(label:hover) [data-detail]{display:none!important}
+.dg-d12_etas_branching:has(label[for="dg-d12_etas_branching-choice-background"]:hover) [data-detail="background"]{display:block!important}
+.dg-d12_etas_branching:has(label:hover) [data-detail]{display:none!important}
+.dg-d12_etas_branching:has(label[for="dg-d12_etas_branching-choice-first"]:hover) [data-detail="first"]{display:block!important}
+.dg-d12_etas_branching:has(label:hover) [data-detail]{display:none!important}
+.dg-d12_etas_branching:has(label[for="dg-d12_etas_branching-choice-second"]:hover) [data-detail="second"]{display:block!important}}
+@media print{.dg-d12_etas_branching [data-detail]{display:block!important}.dg-d12_etas_branching [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d12_etas_branching" data-teaching-widget="d12_etas_branching"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" role="img" aria-labelledby="dg-d12_etas_branching-title dg-d12_etas_branching-desc"><title id="dg-d12_etas_branching-title">ETAS：事件也可以生出事件</title><desc id="dg-d12_etas_branching-desc">一顆背景事件產生兩個第一代後代，其中一個再產生第二代；分支比是平均直接後代數。</desc><path d="M 216 92 V 112 Q 216 120 208 120 H 120 Q 112 120 112 128 V 152" class="edge"/><path d="M 264 92 V 112 Q 264 120 272 120 H 360 Q 368 120 368 128 V 152" class="edge"/><path d="M 112 216 V 248 Q 112 256 120 256 H 232 Q 240 256 240 264 V 288" class="edge"/><g data-detail-mark="background"><rect x="128" y="16" width="224" height="76" rx="8" class="node focal"/><text x="240.0" y="48" class="name" text-anchor="middle">背景事件</text><text x="240.0" y="76" class="sub" text-anchor="middle">第 0 代</text></g><g data-detail-mark="first"><rect x="24" y="152" width="176" height="64" rx="8" class="node "/><text x="112.0" y="184" class="name" text-anchor="middle">直接後代 A</text><rect x="280" y="152" width="176" height="64" rx="8" class="node "/><text x="368.0" y="184" class="name" text-anchor="middle">直接後代 B</text></g><g data-detail-mark="second"><rect x="128" y="288" width="224" height="76" rx="8" class="node "/><text x="240.0" y="320" class="name" text-anchor="middle">A 的直接後代</text><text x="240.0" y="348" class="sub" text-anchor="middle">根事件的第 2 代</text></g><text x="240" y="412" class="sub" text-anchor="middle">連線表示觸發親子關係</text></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d12_etas_branching-choice-background" name="dg-d12_etas_branching-choice" value="background" aria-controls="dg-d12_etas_branching-panel-background" checked><label for="dg-d12_etas_branching-choice-background">背景事件</label></span><span><input type="radio" id="dg-d12_etas_branching-choice-first" name="dg-d12_etas_branching-choice" value="first" aria-controls="dg-d12_etas_branching-panel-first" ><label for="dg-d12_etas_branching-choice-first">第 1 代</label></span><span><input type="radio" id="dg-d12_etas_branching-choice-second" name="dg-d12_etas_branching-choice" value="second" aria-controls="dg-d12_etas_branching-panel-second" ><label for="dg-d12_etas_branching-choice-second">第 2 代</label></span></div><div class="details" aria-live="polite"><section id="dg-d12_etas_branching-panel-background" data-detail="background" aria-label="背景事件"><h4>背景事件</h4><p>背景機制產生第 0 代事件。這些事件可以觸發後代，也可能沒有後代。</p></section><section id="dg-d12_etas_branching-panel-first" data-detail="first" aria-label="第 1 代"><h4>第 1 代</h4><p>這張示意樹有兩顆直接後代；真實模型的數量是隨機的，不能把這張樹的 2 當作分支比。</p></section><section id="dg-d12_etas_branching-panel-second" data-detail="second" aria-label="第 2 代"><h4>第 2 代</h4><p>後代還能觸發自己的後代。分支比 n 指平均直接後代數；多代總數是另一個量。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>
+<p class="diagram-caption">分支示意：背景為第 0 代。連線表示模擬中指定的親子關係。</p></div></div></div>
+</div>
+</section>
+<section id="id2">
+<h2>12.2 五個組成，各回答一個問題<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>下面的式子先寫背景，再加歷史貢獻。
+背景率（background rate）描述獨立移入的活動。
+<span class="math notranslate nohighlight">\(\mu_0(x,y)\)</span> 是指定的參考率密度。
+<span class="math notranslate nohighlight">\(\nu\)</span> 調整背景的大小。</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^*(t,x,y,m)=s(m)\left[\nu\mu_0(x,y)
++\sum_{t_i&lt;t}\kappa(m_i)g(t-t_i)h_i(x,y)\right].
+\]</div>
+<p>式中的五個組成如下。
+密度（density）表示每單位範圍的份量。
+密度乘上小區間，才近似該區間的份量。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>組成</p></th>
+<th class="head"><p>回答的問題</p></th>
+<th class="head"><p>讀法</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\nu\mu_0\)</span></p></td>
+<td><p>沒有新增事件時呢？</p></td>
+<td><p>背景提供基本率</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\kappa(m_i)\)</span></p></td>
+<td><p>直接後代有多少？</p></td>
+<td><p>規模越大，產能越高</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(g(\tau)\)</span></p></td>
+<td><p>後代何時出現？</p></td>
+<td><p>時間核分配等待時間</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(h_i(x,y)\)</span></p></td>
+<td><p>後代出現在哪裡？</p></td>
+<td><p>空間核分配位置</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(s(m)\)</span></p></td>
+<td><p>後代有多大？</p></td>
+<td><p>GR 密度分配規模</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>時間差 <span class="math notranslate nohighlight">\(\tau=t-t_i\)</span> 以天計。
+核（kernel）是分配事件貢獻的函數。
+本章的時間核在正時間積分為一。
+空間核在整個平面積分為一。
+規模核在輸入門檻以上積分為一。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\kappa(m_i)&amp;=K e^{\alpha(m_i-m_0)},\\
+g(\tau)&amp;=\frac{p-1}{c}(1+\tau/c)^{-p},\quad \tau&gt;0,\\
+s(m)&amp;=\beta e^{-\beta(m-m_0)},\quad \beta=b\ln10,\\
+d_i^2&amp;=D^2e^{\gamma(m_i-m_0)},\\
+h_i(x,y)&amp;=\frac{q-1}{\pi d_i^2}
+\left(1+\frac{(x-x_i)^2+(y-y_i)^2}{d_i^2}\right)^{-q}.
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(D\)</span> 的單位是公里；<span class="math notranslate nohighlight">\(c\)</span> 的單位是天。
+<span class="math notranslate nohighlight">\(p&gt;1\)</span> 與 <span class="math notranslate nohighlight">\(q&gt;1\)</span> 讓兩個核可積分。
+<span class="math notranslate nohighlight">\(\alpha\)</span> 控制產能隨規模增加的速度。
+<span class="math notranslate nohighlight">\(\gamma\)</span> 控制空間尺度增加的速度。
+<span class="math notranslate nohighlight">\(b\)</span> 控制大小地震的比例。</p>
+<p>一顆大事件會增加更多總貢獻。
+它的空間分布也可能更寬。
+這兩件事分別由 <span class="math notranslate nohighlight">\(\alpha\)</span> 與 <span class="math notranslate nohighlight">\(\gamma\)</span> 控制。
+較寬的分布會把貢獻分到較遠處。
+中心峰值因此未必同時升高。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>時間核固定 c=0.004 天。空間核固定 q=1.5。右圖是面密度，環帶機率還須乘上環帶面積。</p>
+<div class="output text_html">        <script>
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.7.0.min"</script>
+        </div><div class="output text_html"><div style="height:440px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="d0a66129-1f95-49a8-b5f7-29b884c6fd29" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("d0a66129-1f95-49a8-b5f7-29b884c6fd29")) {                    Plotly.newPlot(                        "d0a66129-1f95-49a8-b5f7-29b884c6fd29",                        [{"line":{"color":"#2a78d6"},"name":"p=1.042","x":{"dtype":"f8","bdata":"\u002fKnx0k1iUD\u002fljvCzM0lRP3tUJ5rPPFI\u002f9OUlqNQ9Uz++AQTd\u002f0xUPzgqW58Ya1U\u002fhCrnT\u002fGYVj9MATnkZ9dXP27z7YlmJ1k\u002fD8viUuSJWj\u002fm4uHq5f9bPwWXUVd+il0\u002fsw1wwc8qXz9oh9glBnFgP4BnbXm7WGE\u002ffpvDPTJNYj+QJlw2Hk9jP98BHAw9X2Q\u002fp+nC2FZ+ZT9Mng+6Pq1mPxzM\u002fWzT7Gc\u002fRMGP8f89aT8UY5w3vKFqP7hzINUNGWw\u002fozmZxgilbT9X+vU50EZvPxXCWrLLf3A\u002fhZzmMlFocT9A3P+Zo11yPyQ1qUx3YHM\u002fXmktnopxdD97YxNcppF1P+GpxmGewXY\u002fVcBgNFICeD8xBQanrVR5P6fnToipuXo\u002fovo8WUwyfD++bUIOq799P+Dc6drpYn8\u002fWhxahJ6OgD+LY+Xs9HeBP2T3FbwjboI\u002fEFcB+d9xgz9LJfGh6IOEP9n\u002f1DgHpYU\u002ffZxvVxDWhj86IaxL5BeIP0Ctjrxva4k\u002fpFs5WKzRij91toWLoUuMP3ScuUNl2o0\u002fnwnmuhx\u002fjz91BcOnfp2QP181\u002frOmh5E\u002fiq9LsbJ+kj88W2VJWIOTP9hcLSZXlpQ\u002fdhuefnm4lT+DfnyrlOqWP8G6OcSJLZg\u002fPAt4REaCmT+fDKy6xOmaPz4kW4ANZZw\u002fSG5+fDf1nT+HI5nwaJufPwKjjChsrKA\u002fR9jQlGaXoT\u002f3s\u002fKGUI+iP0el4kvglKM\u002fPn21OdaopD8UFBM9\u002fculP94ebm4r\u002f6Y\u002fkO9yr0JDqD894yBRMZmpP02iCMPyAas\u002fyg8wTJB+rD9h3CPOIRCuP3QuxpLOt68\u002ft9q4Eme7sD8HagicNKexP1qraEr9n7I\u002f1TiTDnimsz+1RWrrZbu0PyZV5oOS37U\u002fKiDUsNQTtz8Gx9AeD1m4P4J6+PQwsLk\u002fGy7ChDYauz\u002f5o4kDKpi8PwhCUE4kK74\u002ffKFEuE3Uvz\u002fzW1Ryb8rAPyxqW9YQt8E\u002fjT4XCbmwwj\u002foxJ2fH7jDP1fTOUoGzsQ\u002fdmTYYjnzxT8NBk2DkCjHPzT72yPvbsg\u002fSqZ+QkXHyT\u002fVOl0TkDLLP2d7\u002f7rascw\u002f6G29Ej9Gzj9FeQB45vDPP4epdlOF2dA\u002fMMSLUPvG0T9HI3TQg8HSP1GvNQ3XydM\u002fLq0fZbfg1D+07rfp8QbWP6FChvZePdc\u002fBAct0OKE2D+02kNMbt7ZP2rcb4L\u002fSts\u002fybA7h6LL3D+1szgxcmHeP0IlfXTMBuA\u002fVCNCwqjo4D\u002fU2WYX9NbhPxInAa5d0uI\u002f+h+bZZ7b4z9M0CRLefPkP1HUYSi8GuY\u002f2UM8G0BS5z9oNGw16proP5A56SSs9ek\u002fn7+h5YRj6z\u002fC7\u002fp8geXsP379or+9fO4\u002fPaojkTIV8D8uEOTK2ffwP06NxTf75vE\u002fFjpMr0bj8j+EDBu3de3zP8S7XwtMBvU\u002fKjbBLpgu9j\u002fegDoCNGf3P4eqUWUFsfg\u002fi6Eg3\u002f4M+j\u002fMOaxQIHz7P3eFDLF3\u002f\u002fw\u002fgd3w0yGY\u002fj+0yYidpSMAQJSnlHkYBwFAv0uMvhD3AUDyee\u002fhPvQCQLZDDxBd\u002fwNA7nz0tC8ZBUBmgs8MhkIGQL6HW7w6fAdA6HulcTTHCEAhvayNZiQKQOBYWtfRlAtAOHFSOIUZDUC3nyqEnrMOQLDpS6UlMhBAfBuX2mQWEUCDF6u4NAcSQM48kVNGBRNA83jeflQRFECGuxRXJCwVQC+BlNKFVhZA4AqJWlSRF0DotD9sd90YQJ8RYUPjOxpAP\u002fOIjZmtG0B2dcEnqjMdQHZbbOYzzx5AcOEWtLJAIEBJojn6viUhQIiSHTNnFyJAQRzkEV0WI0D6T\u002fwRXCMkQOjF\u002fwAqPyVAyGEmkJdqJkCX7rvtgKYnQPxpCGfO8yhAcA4iE3VTKkCatyaHd8YrQI8oYZTmTS1AdAXmEOLqLkC8Ap7VTE8wQJ6A1eQmNTFA4wjrOqgnMkBNAKcqgyczQGxo6ddzNTRARp0CwkBSNUBHx6lVu342QM5W\u002fIbAuzdAH8b3czkKOUBAHOUPHGs6QDc9NNhr3ztAngVMkzpoPUBUgdsZqQY\u002fQHsjoBX0XUBAWRPPppxEQUA1eybd9zdCQIsqpau4OENAZ2kz35tHRED8AXipaGVFQNXVUTPxkkZA6LRhNxPRR0A5GRaluCBJQCessEzYgkpAvBPElHb4S0CEfa85poJNQPSzpBeJIk9A76bmf6hsUEB62ZVMIFRRQB+p7iZWSFJAGEG2ov1JU0ByDXU21FlUQBWAyMaheFVAbD9gOTmnVkAy1RIQeeZXQKLmewxMN1lAAUec3KmaWkC30\u002frQlxFcQCoIzJwpnV1A95StIII+X0BJh0UgantgQCd+pOKxY2FACBxuJcNYYkD4Wb4dUltjQPstVuwcbGRAZntqKeyLZUALUSV4k7tmQNTsRSLy+2dA5fNRvPNNaUD+nNDSkLJqQGYuD6HPKmxAHzX10cS3bUAEQXZLlFpvQEpfmwI5inBA3eKAdVFzcUBuMdvlPmlyQPkFriq2bHNAOM+LD3Z+dEAhPOLgR591QAAAAAAA0HZA"},"y":{"dtype":"f8","bdata":"9FeCWq6kIEAwt6gFWHQgQLNThVZ\u002fQiBA55TJLCUPIECgmeQ4l7QfQOyJ2\u002fvrRx9AbTi1+VHYHkBc4S5K1WUeQNEpttuE8B1A0G0chXJ4HUBKFUQSs\u002f0cQCyjR0tegBxA8hum9Y4AHEBCrA\u002fPYn4bQFwUgIH6+RpAjRtqkHlzGkBD5M8+BusZQJL9Pm7JYBlAWfvDdu7UGECdkwf4okcYQBAJ5qMWuRdAC0HwAnspF0AodmMzA5kWQA02QKPjBxZAt3BCxlF2FUA6E5LIg+QUQABLFT+wUhRAJJNa1g3BE0DVpxgB0y8TQHQpRac1nxJA7P+\u002f1moPEkBfhIl2poARQDdZbP0a8xBAYw\u002fyLPlmEEDKncei37gPQHSz\u002fQ5Xpw5AYVnREK2ZDUBlD6H4MJAMQEI7GqgsiwtAJczLU+SKCkAsqzFTlo8JQEioH\u002f96mQhAIJg7nsSoB0CGTwRfn70GQAnvtl4x2AVAfyY+vJr4BED1Gzi29R4EQAGdB9NWSwNAzSXUEc19AkBf11EjYrYBQK9HJqka9QBARaPAevY5AEDIfQTd4Qn\u002fP92TP0wCrP0\u002fEylkujRa\u002fD+fKv5xWBT7PzaiLzFG2vk\u002fSJ\u002f6yNCr+D\u002f+fSq6xYj3P\u002fV8m87tcPY\u002fS\u002f3MrQ1k9T\u002fRF9dr5mH0P9SyBhI2avM\u002fzGWLILh88j\u002fvz8cIJpnxP3JH9583v\u002fA\u002fL4b1E0fd7z8+\u002fnQ4P07uPwFGRHHC0Ow\u002fmlCkQTtk6z\u002fNJ2aDFAjqP8DNS++5u+g\u002foGsyl5h+5z97nqdSH1DmP7b+mR6\u002fL+U\u002fZB7fcOsc5D8Pq0+AGhfjP3CWPYLFHeI\u002fLZwI3mgw4T8Lk5NXhE7gP0U4smI2794\u002fspmxjWhW3T9Pah5AtNHbP+jYRv01YNo\u002fQL3YyhEB2T+BQ841c7PXPy66XE6NdtY\u002fkczym5pJ1T9vqkAK3SvUP+IOMtCdHNM\u002fSPSvUS0b0j8dLu784ibRP2k8+CMdP9A\u002fGhVBpoHGzj9d+stJcyXNP56Hqifzmcs\u002fkK27lfEiyj8jxQvpar\u002fIP0A9uRJnbsc\u002faVL\u002fO\u002fkuxj+P6\u002fthPwDFPxxDs\u002fFh4cM\u002fYxzDZJPRwj\u002fK3CffD9DBP1fdZ84c3MA\u002f5i7ZFBHqvz9BtovwUzS+P0bbEV7Albw\u002f4mHoPSQNuz93Zu91XJm5PwZZd0lUObg\u002fCNhutgTstj+z78rXc7C1P7MkOU20hbQ\u002fO9shqORqsz\u002f8+fndLl+yP0IB3L\u002fHYbE\u002f0Bhbd+5xsD9DcfsQ2B2vP9fnkrElcK0\u002f0\u002f6LdnzZqz+cb7UCpFiqP1lEzyB07Kg\u002fMiDy99OTpz+QWOdIuU2mP7dbK7QnGaU\u002f7HxSCDD1oz\u002fPZ4eY7+CiPwEn2pqP26E\u002fY8AWjkTkoD\u002fuuLVNm\u002fSfP4JmRYfoOZ4\u002fDAANzxaXnD8k+8V23gqbPzS4USoJlJk\u002fhm8hCnExmD9cleXQ\u002f+GWP2DGBgSupJU\u002fkgluLoJ4lD90DiYlkFyTP3\u002f3YlX4T5I\u002fPDOCG+dRkT\u002fv3JcilGGQP\u002fcgRpiD\u002fI4\u002fCA8NP3lOjT9\u002fas2BtbeLP\u002fbKJN72Noo\u002fcT89EA3LiD+kbsQo2HKHP08FAq9HLYY\u002fOFZ0zln5hD\u002fZzmCPGtaDP0BrzBmjwoI\u002f86ZWAhm+gT+vhHegrceAP0lVTts6vX8\u002f0n322V4Efj9XTJc1aWN8P8wM68cO2Xo\u002flfSwSBZkeT8PcF1YVwN4P5Ufy5e5tXY\u002fkC5AzDN6dT9iKyQPy090P5umygiSNXM\u002fDKK+Nagqcj8YQAI2OS5xP642vSV8P3A\u002fGI+2\u002fWW7bj+A2kQGVBBtP7YanVxufGs\u002f5KyMX3P+aT9A\u002fQTXMpVoP5PDiwONP2c\u002fhw2UunH8ZT8FtxCP38pkP0ALmgXjqWM\u002frO6I05WYYj8+K3IoHpZhP7FFdAGuoWA\u002ftlyjCwV1Xz\u002fMU7DYxr9dP236OdJEIlw\u002faYE3RjWbWj\u002fLhZdiYClZPxMziz2fy1c\u002fWNUv69qAVj8CNd+fC0hVPzHUeN43IFQ\u002fAWT\u002fsXMIUz8giO7x3\u002f9RP1ZOtZCpBVE\u002flZzJ8wgZUD\u002femqCpgnJOPwuGuVZAy0w\u002fndWiPfk6Sz9fBeL\u002fbcBJP2TlbJNwWkg\u002fCn0dUuMHRz+A6isWuMdFP8FB+mLvmEQ\u002fwhWImZd6Qz9Kf+w3zGtCP7gdPiO1a0E\u002fNsJY+4V5QD+Fc\u002fDv+ig\u002fP8kJTp3Jdz0\u002fboANQh7eOz\u002fMMP3lsVo6P\u002fe+xFBP7Dg\u002f1X9VE9KRNz8qQLmeJUo2P6YhhmdEFDU\u002fH0ZIFTfvMz\u002fndju9E9oyP9brtyf90zE\u002fE8+9HyLcMD9GQSaYeeMvP\u002fdj3iIkKC4\u002fgkJs+uGELD9wDJtwZPgqP4rgMwNvgSk\u002fLdR1X9YeKD+O7kFzf88mPx3lPItekiU\u002fDLEyfXZmJD981BHe10ojP0tc3UKgPiI\u002fdmT9i\u002flAIT9aIl46GVEgP7+Nqpt\u002f3B4\u002fY9WZWHAvHT9NY3QirpkbP+fa2An1GRo\u002fyoqPthKvGD\u002fOpAhz5VcXP5FoIEVbExY\u002fWN1wE3HgFD\u002fctoLWMb4TPw93ONW1qxI\u002f"},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"#1baf7a"},"name":"p=1.3","x":{"dtype":"f8","bdata":"\u002fKnx0k1iUD\u002fljvCzM0lRP3tUJ5rPPFI\u002f9OUlqNQ9Uz++AQTd\u002f0xUPzgqW58Ya1U\u002fhCrnT\u002fGYVj9MATnkZ9dXP27z7YlmJ1k\u002fD8viUuSJWj\u002fm4uHq5f9bPwWXUVd+il0\u002fsw1wwc8qXz9oh9glBnFgP4BnbXm7WGE\u002ffpvDPTJNYj+QJlw2Hk9jP98BHAw9X2Q\u002fp+nC2FZ+ZT9Mng+6Pq1mPxzM\u002fWzT7Gc\u002fRMGP8f89aT8UY5w3vKFqP7hzINUNGWw\u002fozmZxgilbT9X+vU50EZvPxXCWrLLf3A\u002fhZzmMlFocT9A3P+Zo11yPyQ1qUx3YHM\u002fXmktnopxdD97YxNcppF1P+GpxmGewXY\u002fVcBgNFICeD8xBQanrVR5P6fnToipuXo\u002fovo8WUwyfD++bUIOq799P+Dc6drpYn8\u002fWhxahJ6OgD+LY+Xs9HeBP2T3FbwjboI\u002fEFcB+d9xgz9LJfGh6IOEP9n\u002f1DgHpYU\u002ffZxvVxDWhj86IaxL5BeIP0Ctjrxva4k\u002fpFs5WKzRij91toWLoUuMP3ScuUNl2o0\u002fnwnmuhx\u002fjz91BcOnfp2QP181\u002frOmh5E\u002fiq9LsbJ+kj88W2VJWIOTP9hcLSZXlpQ\u002fdhuefnm4lT+DfnyrlOqWP8G6OcSJLZg\u002fPAt4REaCmT+fDKy6xOmaPz4kW4ANZZw\u002fSG5+fDf1nT+HI5nwaJufPwKjjChsrKA\u002fR9jQlGaXoT\u002f3s\u002fKGUI+iP0el4kvglKM\u002fPn21OdaopD8UFBM9\u002fculP94ebm4r\u002f6Y\u002fkO9yr0JDqD894yBRMZmpP02iCMPyAas\u002fyg8wTJB+rD9h3CPOIRCuP3QuxpLOt68\u002ft9q4Eme7sD8HagicNKexP1qraEr9n7I\u002f1TiTDnimsz+1RWrrZbu0PyZV5oOS37U\u002fKiDUsNQTtz8Gx9AeD1m4P4J6+PQwsLk\u002fGy7ChDYauz\u002f5o4kDKpi8PwhCUE4kK74\u002ffKFEuE3Uvz\u002fzW1Ryb8rAPyxqW9YQt8E\u002fjT4XCbmwwj\u002foxJ2fH7jDP1fTOUoGzsQ\u002fdmTYYjnzxT8NBk2DkCjHPzT72yPvbsg\u002fSqZ+QkXHyT\u002fVOl0TkDLLP2d7\u002f7rascw\u002f6G29Ej9Gzj9FeQB45vDPP4epdlOF2dA\u002fMMSLUPvG0T9HI3TQg8HSP1GvNQ3XydM\u002fLq0fZbfg1D+07rfp8QbWP6FChvZePdc\u002fBAct0OKE2D+02kNMbt7ZP2rcb4L\u002fSts\u002fybA7h6LL3D+1szgxcmHeP0IlfXTMBuA\u002fVCNCwqjo4D\u002fU2WYX9NbhPxInAa5d0uI\u002f+h+bZZ7b4z9M0CRLefPkP1HUYSi8GuY\u002f2UM8G0BS5z9oNGw16proP5A56SSs9ek\u002fn7+h5YRj6z\u002fC7\u002fp8geXsP379or+9fO4\u002fPaojkTIV8D8uEOTK2ffwP06NxTf75vE\u002fFjpMr0bj8j+EDBu3de3zP8S7XwtMBvU\u002fKjbBLpgu9j\u002fegDoCNGf3P4eqUWUFsfg\u002fi6Eg3\u002f4M+j\u002fMOaxQIHz7P3eFDLF3\u002f\u002fw\u002fgd3w0yGY\u002fj+0yYidpSMAQJSnlHkYBwFAv0uMvhD3AUDyee\u002fhPvQCQLZDDxBd\u002fwNA7nz0tC8ZBUBmgs8MhkIGQL6HW7w6fAdA6HulcTTHCEAhvayNZiQKQOBYWtfRlAtAOHFSOIUZDUC3nyqEnrMOQLDpS6UlMhBAfBuX2mQWEUCDF6u4NAcSQM48kVNGBRNA83jeflQRFECGuxRXJCwVQC+BlNKFVhZA4AqJWlSRF0DotD9sd90YQJ8RYUPjOxpAP\u002fOIjZmtG0B2dcEnqjMdQHZbbOYzzx5AcOEWtLJAIEBJojn6viUhQIiSHTNnFyJAQRzkEV0WI0D6T\u002fwRXCMkQOjF\u002fwAqPyVAyGEmkJdqJkCX7rvtgKYnQPxpCGfO8yhAcA4iE3VTKkCatyaHd8YrQI8oYZTmTS1AdAXmEOLqLkC8Ap7VTE8wQJ6A1eQmNTFA4wjrOqgnMkBNAKcqgyczQGxo6ddzNTRARp0CwkBSNUBHx6lVu342QM5W\u002fIbAuzdAH8b3czkKOUBAHOUPHGs6QDc9NNhr3ztAngVMkzpoPUBUgdsZqQY\u002fQHsjoBX0XUBAWRPPppxEQUA1eybd9zdCQIsqpau4OENAZ2kz35tHRED8AXipaGVFQNXVUTPxkkZA6LRhNxPRR0A5GRaluCBJQCessEzYgkpAvBPElHb4S0CEfa85poJNQPSzpBeJIk9A76bmf6hsUEB62ZVMIFRRQB+p7iZWSFJAGEG2ov1JU0ByDXU21FlUQBWAyMaheFVAbD9gOTmnVkAy1RIQeeZXQKLmewxMN1lAAUec3KmaWkC30\u002frQlxFcQCoIzJwpnV1A95StIII+X0BJh0UgantgQCd+pOKxY2FACBxuJcNYYkD4Wb4dUltjQPstVuwcbGRAZntqKeyLZUALUSV4k7tmQNTsRSLy+2dA5fNRvPNNaUD+nNDSkLJqQGYuD6HPKmxAHzX10cS3bUAEQXZLlFpvQEpfmwI5inBA3eKAdVFzcUBuMdvlPmlyQPkFriq2bHNAOM+LD3Z+dEAhPOLgR591QAAAAAAA0HZA"},"y":{"dtype":"f8","bdata":"1vyuRLUOTEDqW1r6L6lLQAoJeXvMQEtAV03adpTVSkCQkPZzlGdKQLz4L+3b9klA\u002f0eSZX2DSUCm+m95jg1JQIJhQOknlUhANP0rnmUaSEDv5sGnZp1HQJ2vYjJNHkdABcgCdj6dRkCjDgCdYhpGQL8846LklUVAjCQGK\u002fIPRUCEazpPu4hEQPvosGZyAERAUzOHxUt3Q0A3OIZ1fe1CQD\u002f4wOg+Y0JAPZPkpsjYQUAEtSn2U05BQPcj8oAaxEBAdMoy+VU6QEBCobR1f2I\u002fQGFH29wgUj5ALW4sWv9DPUBvb7JOhzg8QE3FRp8hMDtApQaGEzMrOkBQn6LAGyo5QJ9G3YE2LThAE8YlgNg0N0D7OhvKUEE2QAPXUv3nUjVAGZJ5AeBpNEDTjZLVc4YzQAhQQ2\u002fXqDJA23zSqzfRMUBXJDdSuv8wQHiGVyV+NDBAVRy\u002fCjbfLkCa+NM9RGItQPuIJ0088itAVCvvPiePKkC6ef9VAjkpQLUW7MC\u002f7ydAX+92VUezJkCi5jVVd4MlQETFdjglYCRA6W2VfB5JI0CIci1zKT4iQE4NzA8GPyFA1gMIsm5LIEBmTFDUMcYeQPs2im1sCx1A\u002fuAsdOllG0CfDbjL\u002f9QZQB31JToCWBhANvS9lUDuFkC4d4zcCJcVQOyVHDWoURRAwx5l2GsdE0DEWSXlofkRQIJNLR2a5RBAaEmFGk3BD0BwMf1AONQNQL\u002fLRkCmAgxAFO8CQk9LCkBGBS2\u002f86wIQH4QOBhdJgdAXR+AD162BUD6S4Yo01sEQN5DZe6iFQNAHh3dI77iAUC+RkDfH8IAQP3a4yibZf8\u002foLYSHq5n\u002fT+CQR29rIj7PwY1SG3fxvk\u002f77idiaIg+D8or9z6ZZT2P4pmpMKsIPU\u002f5nJ5egzE8z8LZAHJLH3yP6jCls\u002fGSvE\u002fz3gdkqQr8D+1u5O1QD3uP2dYtDZIRew\u002fvo8mmlFt6j9p3Eyha7PoP2tD+53AFec\u002fyp2QN5WS5T\u002ffQAE1RyjkP8M7CE1M1eI\u002fHqZ+\u002fTCY4T+tY6hql2\u002fgP1HXNY5stN4\u002fSF15ia+t3D\u002fuhHQescjaP6BaYqBNA9k\u002fnj9teoJb1z+wrZRfbM\u002fVP3rEZY5FXdQ\u002fir9gKGQD0z8TJMqcOMDRPzWkjyZMktA\u002fJcyruX7wzj8fN2qrkeHMP7BuPLVn9co\u002fAleyW74pyT94TgvBd3zHP7HOBXGY68U\u002fDDlAS0V1xD94zeqKwRfDP3Fpiups0cE\u002fOY6N4sGgwD\u002fL4PECqAi\u002fP7FN7Lic9bw\u002fYlwrLuQFuz95OzoCKje5P+\u002fJhZJAh7c\u002f8guEhx70tT89q3OH3Hu0P8VkrwyzHLM\u002fKYGlXfjUsT+r4ZekHqOwP8tCu0pkC68\u002fUT\u002fnHq\u002f2rD8lvHrVlAWrPw221jq3Nak\u002fLb4eE+CEpz8vBfSB\u002fvClP4TkHZwkeKQ\u002f60eeIIUYoz8qbtJWcdChP9JHYQ9XnqA\u002fznCwi30Bnz8GXOrBk+ycP4TAcx9i+5o\u002f4Cr\u002fgoUrmT\u002f1I7puw3qXP2WtkloH55U\u002f+yv7MmBulD\u002fxsV4B\u002fg6TP21morsvx5E\u002fPlE5OGGVkD9lYuyIMvCOPxeW1rXv24w\u002fZMmU72jrij8r+64SORyJP0S0PvUjbIc\u002fxX9\u002frRPZhT9cuFQGFmGEP3SryR5aAoM\u002fJB\u002fBMS67gT8FeDaD\u002fYmAP+ltOuGc2n4\u002f0+UmRIHHfD+s5IK0Fth6P3V2x8X3CXk\u002f6fo7KOhadz83dKjp0ch1P5k+yeTCUXQ\u002fuKZvXOrzcj868G2\u002flq1xP\u002fZEnZIzfXA\u002fb8jx\u002fI7Cbj+74Of75LBsP30qrVjYwmo\u002fHjQoYAT2aD9f3FuBLUhnP8YOsIs+t2U\u002fujViHEZBZD8\u002f9fo3dORiPymc2wwYn2E\u002fxCUn3J1vYD\u002fzvfEMGqleP73sC3QMmVw\u002fe0rff4OsWj\u002f4wWLNG+FYPy2ccw+bNFc\u002f4lG8TO2kVT8kUO1MIjBUP8pNHjJr1FI\u002fjJpkOxiQUT\u002fEEN2tlmFQP6aGLsPdjk4\u002f07L234SATD8i9NkClZVKP7HPJ3Csy0g\u002fTUGta5IgRz92Wml3NJJFP\u002fXZmsGjHkQ\u002f9nb6vhLEQj813Svu0oBBP1QDosFSU0A\u002fspvFWjd0Pj\u002fVLYSsoGc8PyfRqsBVfjo\u002fTVcQtfa1OD\u002fr6beKTAw3P+I0BGZGfzU\u002fkf01\u002fvYMND\u002fWYAk5krMyP4ppe+9qcTE\u002f24L02PBEMD\u002f2c4c0XVkuP3UHBuyPTiw\u002f8w1MOPBmKj9\u002f7jYtIKAoPxH8GaLq9yY\u002fnX\u002fWc0BsJT8arSX2NfsjP9uh6JAAoyI\u002fBQqJhvRhIT+e5afggjYgP4yoDgFvPh4\u002f8SaRoW41HD+KSYEsfU8aP2gvmbs+ihg\u002fL8hkCoDjFj8Hj3m6M1kVP6XCv8Zv6RM\u002fa+uiImuSEj9M8jWCe1IRP5HUiUgTKBA\u002fMcRKM38jDj+qSHEbTRwMP7WRnwYLOAo\u002fN73fHF90CD+wK1cFGM8GP29VvywqRgU\u002fibLLOq3XAz99s1Sz2YECP94aVsAGQwE\u002f17YBIqgZAD9zfK2EmAj+PgNdtNM0A\u002fw+"},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"#2a78d6"},"name":"\u8f38\u5165\u898f\u6a21 3.0","x":{"dtype":"f8","bdata":"AAAAAAAAAABQm4HpOsfKP1Cbgek6x9o\u002ffDQhL2wV5D9Qm4HpOsfqPxIB8dGEvPA\u002ffDQhL2wV9D\u002fmZ1GMU273P1Cbgek6x\u002fo\u002fus6xRiIg\u002fj8SAfHRhLwAQMcaiYD4aAJAfDQhL2wVBEAxTrnd38EFQOZnUYxTbgdAm4HpOscaCUBQm4HpOscKQAW1GZiucwxAus6xRiIgDkBv6En1lcwPQBIB8dGEvBBA7A09qb6SEUDHGomA+GgSQKIn1VcyPxNAfDQhL2wVFEBWQW0GpusUQDFOud3fwRVADFsFtRmYFkDmZ1GMU24XQMB0nWONRBhAm4HpOscaGUB2jjUSAfEZQFCbgek6xxpAKqjNwHSdG0AFtRmYrnMcQODBZW\u002foSR1Aus6xRiIgHkCU2\u002f0dXPYeQG\u002foSfWVzB9ApfpK5mdRIEASAfHRhLwgQH8Hl72hJyFA7A09qb6SIUBaFOOU2\u002f0hQMcaiYD4aCJANCEvbBXUIkCiJ9VXMj8jQA8ue0NPqiNAfDQhL2wVJEDpOscaiYAkQFZBbQam6yRAxEcT8sJWJUAxTrnd38ElQJ5UX8n8LCZADFsFtRmYJkB5YaugNgMnQOZnUYxTbidAU273d3DZJ0DAdJ1jjUQoQC57Q0+qryhAm4HpOscaKUAIiI8m5IUpQHaONRIB8SlA45Tb\u002fR1cKkBQm4HpOscqQL2hJ9VXMitAKqjNwHSdK0CYrnOskQgsQAW1GZiucyxAcru\u002fg8veLEDgwWVv6EktQE3IC1sFtS1Aus6xRiIgLkAn1VcyP4suQJTb\u002fR1c9i5AAuKjCXlhL0Bv6En1lcwvQG73d3DZGzBApfpK5mdRMEDb\u002fR1c9oYwQBIB8dGEvDBASQTERxPyMEB\u002fB5e9oScxQLYKajMwXTFA7A09qb6SMUAjERAfTcgxQFoU45Tb\u002fTFAkBe2CmozMkDHGomA+GgyQP4dXPaGnjJANCEvbBXUMkBrJALiowkzQKIn1VcyPzNA2CqozcB0M0APLntDT6ozQEUxTrnd3zNAfDQhL2wVNECzN\u002fSk+ko0QOk6xxqJgDRAID6akBe2NEBWQW0Gpus0QI1EQHw0ITVAxEcT8sJWNUD6SuZnUYw1QDFOud3fwTVAaFGMU273NUCeVF\u002fJ\u002fCw2QNVXMj+LYjZADFsFtRmYNkBCXtgqqM02QHlhq6A2AzdAr2R+FsU4N0DmZ1GMU243QB1rJALiozdAU273d3DZN0CKccrt\u002fg44QMB0nWONRDhA93dw2Rt6OEAue0NPqq84QGR+FsU45ThAm4HpOscaOUDShLywVVA5QAiIjybkhTlAP4tinHK7OUB2jjUSAfE5QKyRCIiPJjpA45Tb\u002fR1cOkAZmK5zrJE6QFCbgek6xzpAh55UX8n8OkC9oSfVVzI7QPSk+krmZztAKqjNwHSdO0Bhq6A2A9M7QJiuc6yRCDxAzrFGIiA+PEAFtRmYrnM8QDy47A09qTxAcru\u002fg8vePECpvpL5WRQ9QODBZW\u002foST1AFsU45XZ\u002fPUBNyAtbBbU9QIPL3tCT6j1Aus6xRiIgPkDx0YS8sFU+QCfVVzI\u002fiz5AXtgqqM3APkCU2\u002f0dXPY+QMve0JPqKz9AAuKjCXlhP0A45XZ\u002fB5c\u002fQG\u002foSfWVzD9A03WONRIBQEBu93dw2RtAQAl5YaugNkBApfpK5mdRQEBAfDQhL2xAQNv9HVz2hkBAd38Hl72hQEASAfHRhLxAQK2C2gxM10BASQTERxPyQEDkha2C2gxBQH8Hl72hJ0FAG4mA+GhCQUC2CmozMF1BQFGMU273d0FA7A09qb6SQUCIjybkha1BQCMREB9NyEFAvpL5WRTjQUBaFOOU2\u002f1BQPWVzM+iGEJAkBe2CmozQkAsmZ9FMU5CQMcaiYD4aEJAYpxyu7+DQkD+HVz2hp5CQJmfRTFOuUJANCEvbBXUQkDQohin3O5CQGskAuKjCUNABqbrHGskQ0CiJ9VXMj9DQD2pvpL5WUNA2CqozcB0Q0BzrJEIiI9DQA8ue0NPqkNAqq9kfhbFQ0BFMU653d9DQOGyN\u002fSk+kNAfDQhL2wVREAXtgpqMzBEQLM39KT6SkRATrnd38FlREDpOscaiYBEQIW8sFVQm0RAID6akBe2REC7v4PL3tBEQFZBbQam60RA8sJWQW0GRUCNREB8NCFFQCjGKbf7O0VAxEcT8sJWRUBfyfwsinFFQPpK5mdRjEVAlszPohinRUAxTrnd38FFQMzPohin3EVAaFGMU273RUAD03WONRJGQJ5UX8n8LEZAOtZIBMRHRkDVVzI\u002fi2JGQHDZG3pSfUZADFsFtRmYRkCn3O7v4LJGQEJe2CqozUZA3d\u002fBZW\u002foRkB5YaugNgNHQBTjlNv9HUdAr2R+FsU4R0BL5mdRjFNHQOZnUYxTbkdAgek6xxqJR0AdayQC4qNHQLjsDT2pvkdAU273d3DZR0Dv7+CyN\u002fRHQIpxyu3+DkhAJfOzKMYpSEDAdJ1jjURIQFz2hp5UX0hA93dw2Rt6SECS+VkU45RIQC57Q0+qr0hAyfwsinHKSEBkfhbFOOVIQAAAAAAAAElA"},"y":{"dtype":"f8","bdata":"p8Zp1HcUvj\u002fkZ8cmxa28Pw+OpcsFEbk\u002fm\u002ftG8MyCtD9M\u002fbtUYxmwP2Olm0IewKg\u002fiLfBVIzooj\u002fyKUkZkvqcP2ujutz2Y5Y\u002fTxyKlTd9kT+SyQxjEaaLP3pNqiuqHoY\u002fk5p2wIfngT\u002f2RMjZtU59P06WC0p3PHg\u002fxhiNH3A8dD\u002fxUMr\u002fCwxxPwDz5\u002fkw9Ww\u002f2HjDzjTIaD\u002f48jdxaVtlP\u002fgiA8tHhmI\u002fA+Q6pO4pYD+9HlE+OF1cP4b2O1u7A1k\u002fLEowqH8qVj8m\u002fyltsLpTP7NmfQMgolE\u002fH0W8gXKkTz8CX6YyaH5MP0U1Z\u002fX2vkk\u002fW2TCCW9WRz9D0w+w5TdFP8TLa3OoWEM\u002fYCFvPM+vQT9XKu7b5TVAP7R1yjVPyT0\u002ftSGYcZFtOz\u002f+mj+ClU85P70JB7yyZzc\u002fdK9ktVuvNT+b7k7k7yA0P+8vVKyVtzI\u002fW30bLxtvMT+RG6iN3EMwPyDFFyBdZS4\u002fBTK9wJlxLD9p9HBhlqcqP2fN84oRAyk\u002fVJ8N70uAJz9tH9ut9hsmP+\u002fu6U0k0yQ\u002fYCNu8zujIz8hF+937okiPwEJuhQthSE\u002fVFsVYCGTID+HKYfQTGQfP7Sb0ICFwR0\u002fDT55tUY7HD9KUg8jLs8aP7mniIoVexk\u002fsknn9As9GD\u002f6rvnJTxMXP1P6laNJ\u002fBU\u002frHFcw4f2FD8xc\u002fQUugAUP3LP+6muGRM\u002fQemen05AEj95ZR9gm3MRP5BngjSsshA\u002fq4aLOFj5Dz9YwcPEr6EOP5J3HdD4XA0\u002f0C2MPeopDD8vfLVXVQcLP801dWEj9Ak\u002fB2woZ1PvCD9skEhJ+PcHP9Ar0fk2DQc\u002fu8265kQuBj8a2YmMZloFP3HFiyzukAQ\u002fC8TkojrRAz9xZQVZthoDPyxYhlHWbAI\u002fSMTBShnHAT9B6M\u002f1BikBP84A0T8vkgA\u002fl3eqqykCAD\u002fm8SN1KfH+PkKz3sMq6v0+q+6NGq3u\u002fD5jYgRWEf77PsOlFobCF\u002fs+zb6cLDU7+j50B5KM5mf5PukH1Adcnfg++QwoiiLb9z5LDFIAziD3PrBdJtr4bfY+KmmblkPC9T4wBvlYVB31PsNFWYbWfvQ+LQrCanrm8z7yaDDl9FPzPrmZ\u002fhn\u002fxvI+2lsbK1Y\u002f8j6ucZb1urzxPvg9EdTxPvE+RtisZcLF8D5FMBhZ91DwPsxk0na8wO8+h9TmlI7n7j7i3KqUChbuPpwU+bvaS+0+I1rHxK2I7D5fZK+YNszrPhFWHxEsFus+mvLXu0hm6j42n2WjSrzpPio3SBvzF+k+GfeDjwZ56D4VcltXTN\u002fnPtSv94qOSuc+AUzI25m65j5zvWlvPS\u002fmPrba47xKqOU+7UkWbJUl5T7y0ys386bkPmuU8M07LOQ+2sLpuki14z6\u002fVhBK9UHjPkwaEnEe0uI+Z9\u002f+uKJl4j6UfkkpYvzhPq0SBjQ+luE+A4tQoxkz4T6gMciH2NLgPuspDihgdeA+GTU28ZYa4D7FczTQyITfPgJLBDdi2d4+i3wlLs0y3j6n3u2t3pDdPmbjb3ht89w+ywVzA1Ja3D4gLKBjZsXbPuo2zziGNNs+azdkm46n2j619KsKXh7aPql7KFzUmNk+zHi\u002fq9IW2T4VCb1MO5jYPqeNnrvxHNg+WNyZkNqk1z5y5tVy2y\u002fXPpqhSgzbvdY+Y6Q+\u002fsBO1j6EglnWdeLVPsyDQgTjeNU+s9fDz\u002fIR1T4e42pPkK3UPqq6nl+nS9Q+a0gmmiTs0z7oABhO9Y7TPp5pLXgHNNM+8At1u0nb0j6AwV1aq4TSPvuTFjAcMNI+y7I+qozd0T4+ROHC7YzRPuEWufowPtE+5nK4U0jx0D7OgtFLJqbQPmn++9e9XNA+jvN0XwIV0D4JbGtuz53PPulUPjvEFM8+oZCtbMyOzj43qaUM0gvOPg31JuC\u002fi80+WBANYIEOzT7waSeyApTMPjjpnqIwHMw+3emknfimyz54\u002fmepSDTLPqMbS2APxMo+Lvtb6ztWyj6HsgX9verJPiSg\u002fMuFgck+I\u002fpgDoQayT6BbBX1qbXIPrdXRyfpUsg+lmAmvjPyxz5lIMlAfJPHPojhPKC1Nsc+g2++M9Pbxj7\u002fGhq1yILGPosqMT2KK8Y+0gejQAzWxT47jpiMQ4LFPpv0r0MlMMU+4N4H26bfxD6pNmgXvpDEPjJ7hwphQ8Q+PElrEIb3wz5H6+LMI63DPoPQGikxZMM+lddHUaUcwz7PZmmyd9bCPgRYIfifkcI+XMqgChZOwj4u96gM0gvCPuwxn1nMysE+H0Wzg\u002f2KwT7wZxdSXkzBPvEQSb\u002fnDsE+XvNp95LSwD5WfKhWWZfAPgott2c0XcA+4jZS4h0kwD5niaVTH9i\u002fPr7HnpcHar8+vwqS\u002fej9vj4ILMhBuJO+PrNjWm1qK74+ifnR0\u002fTEvT6pXt0QTWC9PsbXGQZp\u002fbw+COnw2D6cvD5mvojwxDy8PivTxvPx3rs+fSNkx7yCuz5SOxKMHCi7Pl98sJwIz7o+tvyQjHh3uj69ZcwlZCG6Pg9CpGfDzLk+yy7zhI55uT47aqrivSe5PkpAXBZK17g+"},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"line":{"color":"#1baf7a"},"name":"\u8f38\u5165\u898f\u6a21 5.0","x":{"dtype":"f8","bdata":"AAAAAAAAAABQm4HpOsfKP1Cbgek6x9o\u002ffDQhL2wV5D9Qm4HpOsfqPxIB8dGEvPA\u002ffDQhL2wV9D\u002fmZ1GMU273P1Cbgek6x\u002fo\u002fus6xRiIg\u002fj8SAfHRhLwAQMcaiYD4aAJAfDQhL2wVBEAxTrnd38EFQOZnUYxTbgdAm4HpOscaCUBQm4HpOscKQAW1GZiucwxAus6xRiIgDkBv6En1lcwPQBIB8dGEvBBA7A09qb6SEUDHGomA+GgSQKIn1VcyPxNAfDQhL2wVFEBWQW0GpusUQDFOud3fwRVADFsFtRmYFkDmZ1GMU24XQMB0nWONRBhAm4HpOscaGUB2jjUSAfEZQFCbgek6xxpAKqjNwHSdG0AFtRmYrnMcQODBZW\u002foSR1Aus6xRiIgHkCU2\u002f0dXPYeQG\u002foSfWVzB9ApfpK5mdRIEASAfHRhLwgQH8Hl72hJyFA7A09qb6SIUBaFOOU2\u002f0hQMcaiYD4aCJANCEvbBXUIkCiJ9VXMj8jQA8ue0NPqiNAfDQhL2wVJEDpOscaiYAkQFZBbQam6yRAxEcT8sJWJUAxTrnd38ElQJ5UX8n8LCZADFsFtRmYJkB5YaugNgMnQOZnUYxTbidAU273d3DZJ0DAdJ1jjUQoQC57Q0+qryhAm4HpOscaKUAIiI8m5IUpQHaONRIB8SlA45Tb\u002fR1cKkBQm4HpOscqQL2hJ9VXMitAKqjNwHSdK0CYrnOskQgsQAW1GZiucyxAcru\u002fg8veLEDgwWVv6EktQE3IC1sFtS1Aus6xRiIgLkAn1VcyP4suQJTb\u002fR1c9i5AAuKjCXlhL0Bv6En1lcwvQG73d3DZGzBApfpK5mdRMEDb\u002fR1c9oYwQBIB8dGEvDBASQTERxPyMEB\u002fB5e9oScxQLYKajMwXTFA7A09qb6SMUAjERAfTcgxQFoU45Tb\u002fTFAkBe2CmozMkDHGomA+GgyQP4dXPaGnjJANCEvbBXUMkBrJALiowkzQKIn1VcyPzNA2CqozcB0M0APLntDT6ozQEUxTrnd3zNAfDQhL2wVNECzN\u002fSk+ko0QOk6xxqJgDRAID6akBe2NEBWQW0Gpus0QI1EQHw0ITVAxEcT8sJWNUD6SuZnUYw1QDFOud3fwTVAaFGMU273NUCeVF\u002fJ\u002fCw2QNVXMj+LYjZADFsFtRmYNkBCXtgqqM02QHlhq6A2AzdAr2R+FsU4N0DmZ1GMU243QB1rJALiozdAU273d3DZN0CKccrt\u002fg44QMB0nWONRDhA93dw2Rt6OEAue0NPqq84QGR+FsU45ThAm4HpOscaOUDShLywVVA5QAiIjybkhTlAP4tinHK7OUB2jjUSAfE5QKyRCIiPJjpA45Tb\u002fR1cOkAZmK5zrJE6QFCbgek6xzpAh55UX8n8OkC9oSfVVzI7QPSk+krmZztAKqjNwHSdO0Bhq6A2A9M7QJiuc6yRCDxAzrFGIiA+PEAFtRmYrnM8QDy47A09qTxAcru\u002fg8vePECpvpL5WRQ9QODBZW\u002foST1AFsU45XZ\u002fPUBNyAtbBbU9QIPL3tCT6j1Aus6xRiIgPkDx0YS8sFU+QCfVVzI\u002fiz5AXtgqqM3APkCU2\u002f0dXPY+QMve0JPqKz9AAuKjCXlhP0A45XZ\u002fB5c\u002fQG\u002foSfWVzD9A03WONRIBQEBu93dw2RtAQAl5YaugNkBApfpK5mdRQEBAfDQhL2xAQNv9HVz2hkBAd38Hl72hQEASAfHRhLxAQK2C2gxM10BASQTERxPyQEDkha2C2gxBQH8Hl72hJ0FAG4mA+GhCQUC2CmozMF1BQFGMU273d0FA7A09qb6SQUCIjybkha1BQCMREB9NyEFAvpL5WRTjQUBaFOOU2\u002f1BQPWVzM+iGEJAkBe2CmozQkAsmZ9FMU5CQMcaiYD4aEJAYpxyu7+DQkD+HVz2hp5CQJmfRTFOuUJANCEvbBXUQkDQohin3O5CQGskAuKjCUNABqbrHGskQ0CiJ9VXMj9DQD2pvpL5WUNA2CqozcB0Q0BzrJEIiI9DQA8ue0NPqkNAqq9kfhbFQ0BFMU653d9DQOGyN\u002fSk+kNAfDQhL2wVREAXtgpqMzBEQLM39KT6SkRATrnd38FlREDpOscaiYBEQIW8sFVQm0RAID6akBe2REC7v4PL3tBEQFZBbQam60RA8sJWQW0GRUCNREB8NCFFQCjGKbf7O0VAxEcT8sJWRUBfyfwsinFFQPpK5mdRjEVAlszPohinRUAxTrnd38FFQMzPohin3EVAaFGMU273RUAD03WONRJGQJ5UX8n8LEZAOtZIBMRHRkDVVzI\u002fi2JGQHDZG3pSfUZADFsFtRmYRkCn3O7v4LJGQEJe2CqozUZA3d\u002fBZW\u002foRkB5YaugNgNHQBTjlNv9HUdAr2R+FsU4R0BL5mdRjFNHQOZnUYxTbkdAgek6xxqJR0AdayQC4qNHQLjsDT2pvkdAU273d3DZR0Dv7+CyN\u002fRHQIpxyu3+DkhAJfOzKMYpSEDAdJ1jjURIQFz2hp5UX0hA93dw2Rt6SECS+VkU45RIQC57Q0+qr0hAyfwsinHKSEBkfhbFOOVIQAAAAAAAAElA"},"y":{"dtype":"f8","bdata":"0Ysyqo11qD8L8gNyKfynP69PzSiMpqY\u002fg8pPHzevpD+nZzozR1+iP6OdDmEe858\u002fBhrtYXtdmz+4xPucjTaXP57aOSRWlpM\u002flNj5l\u002fV+kD84PrAGv8yLP55dqTFWeoc\u002f2QIksWDlgz\u002fJCfIJYu6AP0i6Onsj83w\u002fFz1I3LreeD8sV8YGd3h1P5a58YhmoHI\u002fMicHJ6A8cD8jdScSZ3BsP2iuYl1zBGk\u002fsmDoPhYaZj8b9hvpNJtjP9EEabnddWE\u002frqNNweU2Xz9ap2mPAQBcP6Bi7BBvM1k\u002fOl3ThQDBVj9dUvPlUJtUP5JmuDU9t1I\u002fmCG7InkLUT8ZxaA5ciBPP8D52MTafUw\u002fC+yp6BQkSj8efZtUuAlIPwEeqnjCJkY\u002fIp5SF1t0RD9Iqr+no+xCPyUFg2mPikE\u002f0U89fMJJQD\u002fJUMxL7Uw+P2F+O2\u002fJOjw\u002f3J+1bmNXOj\u002fah2I\u002fvp04P\u002f4Zw1F7CTc\u002f4RqqUsSWNT8QMEliOEI0P+R83yrcCDM\u002f0E0fXAzoMT9xe4gmct0wPwAVs8fyzS8\u002fnxNxUJAFLj+YT\u002foGb14sP9SZQoea1So\u002fKY9zIm1oKT8pk5eKhhQoP10ERrrD1yY\u002fUw5c6jewJT8eIQ9vJpwkP5dkrFv9mSM\u002fDoZc0VCoIj9DKHPh1sUhP0ttUu9j8SA\u002f3PLbgOcpID9B8cPd0tweP0sYQ9IOfB0\u002fxz0khuUvHD\u002fXBqsA3fYaP2N2sDGbzxk\u002f8BiN2+K4GD8Ofs3SkLEXP6oIZYmZuBY\u002fWJRs3AbNFT8O76Ic9u0UP30l5EqWGhQ\u002fz1eogiZSEz9FeliN9JMSP4Bw65lb3xE\u002f3BTMFMMzET+AGYScnZAQP2zlJSDQ6g8\u002f\u002fcRqaFHDDj8acWfa3KkNPzIWKBagnQw\u002f1POXTNedCz8cTYgWzKkKP+L0XmbUwAk\u002fZOjEkVHiCD9tmPdwrw0IP9PjoJFjQgc\u002f135Te+x\u002fBj9RifwD0cUFP8c+yLKfEwU\u002fOLIfMO5oBD9IDInBWMUDP5JRU9CBKAM\u002fhckSehGSAj+8HwwqtQECP\u002fukwjofdwE\u002f6vzxngbyAD9fT02RJnIAP7D825R87v8+UEfUeCEC\u002fz4Rwi+nyB7+PpMNHHgFRP0+Usj5VnFx\u002fD5QswZeq6b7Ps49WflX4\u002fo+5mWVkCAn+j7WbdA2s3H5PpsmJWDCwvg+8KKFnAQa+D5UKWFXNHf3PjlNvpsP2vY+eU5x3FdC9j7BUR7A0a\u002f1Pr\u002fHvfBEIvU+hn1f7nuZ9D65Zu7kQxX0PqZGvIRslfM+bf6g3ccZ8z7jfX08KqLyPj8t9gpqLvI+kig8sV++8T632r955VHxPo9zqnbX6PA+n2P+aBOD8D6Oe0GpeCDwPnIZKyPQge8+i\u002fBM0ofI7j4M+qyh3xTuPvKhJmKhZu0+kVWAUZm97D6krET6lRnsPsyPfhVoeus+Ob44buLf6j6eW6PG2UnqPkZKxL4kuOk+SwSZvJsq6T6\u002fcJLVGKHoPu\u002fXVLl3G+g+S5+nnZWZ5z4Q3oErURvnPusoIm2KoOY+biYhvSIp5j7jm2+2\u002fLTlPnWpMSX8Q+U+m+Fp+AXW5D6Mymc0AGvkPk0q7uXRAuQ+rEEGFmOd4z4Oz3W+nDrjPrBazr5o2uI+M+oM0rF84j5\u002fysGEYyHiPnSmuCtqyOE+4J4Z27Jx4T4FjfxdKx3hPj0GaC7CyuA+RR22bWZ64D4pPFndByzgPsCU968tv98+2ErrlQgq3z7ffSVgg5jePtH2TA+CCt4+AGDPpel\u002f3T4cuSIdoPjcPlHziFuMdNw+p9NOKpbz2z4doH8spnXbPo98B9al+to+jbY+Y3+C2j7Zk9jQHQ3aPrqGMNRsmtk+2vTw01gq2T75Aw\u002fhzrzYPqUgF7C8Udg+ODDGkhDp1z7CmetxuYLXPvuGkMemHtc+Y\u002fFgmci81j6qP1NzD13WPmNki2Js\u002f9U++5h28NCj1T49+BweL0rVPs1gpl958tQ+ISsQmKKc1D48YBEVnkjUPiA9K4tf9tM+8OzjEdul0z4FfykgBVfTPvc424jSCdM+EH13dzi+0j7DlOxsLHTSPl7FijykK9I+fikWCZbk0T553fZB+J7RPukfhqDBWtE+lRh3JekX0T7iCFoWZtbQPl64OPsvltA+LP9KnD5X0D6wXcL\u002fiRnQPvI8V88Uus8+sxfLn3BDzz4NnVfYGM\u002fOPrcrakz\u002fXM4+OGrHNxbtzT5j1g87UH\u002fNPoQnZligE80+CBQ28PmpzD7cGxq+UELMPnYJ39WY3Ms+C+ujoMZ4yz5FVBXazhbLPmfGwo2mtso+nCqNFENYyj6WVi0SmvvJPkaf0XKhoMk+sInRaE9HyT7Hs3Zqmu\u002fIPlMa2i95mcg+6OnUsOJEyD4mEwQjzvHHPpTi3fcyoMc+JuXY2ghQxz6waqOvRwHHPtz+apDns8Y+ojgzzOBnxj4rRzvlKx3GPtepcY\u002fB08U+x4b1rpqLxT5CGqVWsETFPg6+uMb7\u002fsQ+7w1qa3a6xD49s6bbGXfEPvZmztffNMQ+7b17SMLzwz5fV1c9u7PDPtsK9evEdMM+"},"type":"scatter","xaxis":"x2","yaxis":"y2"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.45],"title":{"text":"\u7b49\u5f85\u5929\u6578"},"type":"log"},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"\u6bcf\u5929"},"type":"log"},"xaxis2":{"anchor":"y2","domain":[0.55,1.0],"title":{"text":"\u8ddd\u96e2\uff08km\uff09"}},"yaxis2":{"anchor":"x2","domain":[0.0,1.0],"title":{"text":"\u6bcf\u5e73\u65b9\u516c\u91cc"},"type":"log"},"annotations":[{"font":{"size":16},"showarrow":false,"text":"\u7b49\u5f85\u6642\u9593\u5bc6\u5ea6","x":0.225,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"\u8ddd\u9707\u592e\u7684\u9762\u5bc6\u5ea6","x":0.775,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"}],"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"legend":{"orientation":"h","y":-0.25},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x unified","height":440},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('d0a66129-1f95-49a8-b5f7-29b884c6fd29');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+</section>
+<section id="k">
+<h2>12.3 K 的數字，要連同公式一起讀<a class="headerlink" href="#k" title="Link to this heading">#</a></h2>
+<p>Biondini 表 3 列出 <span class="math notranslate nohighlight">\(K=0.029\)</span>。
+原文把時間項寫成 <span class="math notranslate nohighlight">\(K_B(\tau+c)^{-p}\)</span>。
+此處用 <span class="math notranslate nohighlight">\(K_B\)</span> 標示那套係數。
+本站預報快取也採這套寫法。</p>
+<div class="math notranslate nohighlight">
+\[
+K=K_B\frac{c^{1-p}}{p-1}.
+\]</div>
+<p>換算後的 <span class="math notranslate nohighlight">\(K\)</span> 才是門檻事件的平均產能。
+正規化（normalization）把密度積分調為一。
+把同一數字直接搬到正規化核旁邊，
+會改變整個模型的觸發量。</p>
+<p>名目門檻也須一起核對。
+快取使用取整規模 <span class="math notranslate nohighlight">\(2.5\)</span> 作產能參考。
+實驗規格的有效輸入邊界為 <span class="math notranslate nohighlight">\(2.45\)</span>。
+下方換算固定採快取的參考規模。
+比較論文時，要同時核對核與門檻。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>依原文時間核換算，K=0.871。在無上限 GR 假設下，n=1.579。這是參數推算值，並非從本章目錄重新估計。</p>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>12.4 平均一顆，會接出幾顆？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>假設每顆事件平均產生半顆直接後代。
+十顆事件便平均接出五顆第一代。
+那五顆又平均接出兩顆半第二代。
+半顆描述重複實驗的平均數。
+每次抽到的事件數仍是整數。</p>
+<p>分支比（branching ratio）記為 <span class="math notranslate nohighlight">\(n\)</span>。
+它是對親代規模平均後的直接後代數。
+將產能乘上規模密度，再積分即可得到。</p>
+<div class="math notranslate nohighlight">
+\[
+n=\int_{m_0}^{\infty}\kappa(m)s(m)\,dm
+=\frac{K\beta}{\beta-\alpha},\qquad \alpha&lt;\beta.
+\]</div>
+<p><span class="math notranslate nohighlight">\(n&lt;1\)</span> 稱次臨界（subcritical）。
+每代的期望規模逐漸縮小。
+<span class="math notranslate nohighlight">\(n=1\)</span> 稱臨界（critical）。
+<span class="math notranslate nohighlight">\(n&gt;1\)</span> 稱超臨界（supercritical）。
+後者具有家族持續增長的可能。</p>
+<p>一顆背景事件的全家族平均大小為</p>
+<div class="math notranslate nohighlight">
+\[
+1+n+n^2+\cdots=\frac{1}{1-n},\qquad n&lt;1.
+\]</div>
+<p>這個和包含背景事件本身。
+它涵蓋無限時間與整個空間。
+三個月內、義大利區內的數量較受限。
+因此，這個和只能幫助理解世代累積。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>合成分支示例：起始 80 顆，n=0.55。每顆採相同產能，只展示世代關係。</p>
+<div class="output text_html"><div style="height:390px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="9602e44b-4e95-40d0-9481-84af58e467bc" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("9602e44b-4e95-40d0-9481-84af58e467bc")) {                    Plotly.newPlot(                        "9602e44b-4e95-40d0-9481-84af58e467bc",                        [{"marker":{"color":"#2a78d6"},"name":"\u4e00\u6b21\u6a21\u64ec","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQ=="},"y":[80,35,18,11,8,2,0,0,0,0],"type":"bar"},{"line":{"color":"#1baf7a"},"name":"\u7406\u8ad6\u5e73\u5747","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQ=="},"y":{"dtype":"f8","bdata":"AAAAAAAAVEAAAAAAAABGQDQzMzMzMzhAIYXrUbieKkDXeOkmMUgdQETPZtXnGhBAy7CKNzK3AUBGjxg9t3zzPzQ3zlyWb+U\u002fujxJmViU1z8="},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x unified","xaxis":{"title":{"text":"\u4e16\u4ee3"}},"yaxis":{"title":{"text":"\u4e8b\u4ef6\u6578"}},"height":390},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('9602e44b-4e95-40d0-9481-84af58e467bc');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+</section>
+<section id="id4">
+<h2>12.5 規模上限與「七釘二估」<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>當 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span>，大規模端仍持續貢獻。
+無上限積分因而發散。
+若模型指定最大規模 <span class="math notranslate nohighlight">\(M_{\max}\)</span>，
+就要一起改用截斷後的規模密度。
+令 <span class="math notranslate nohighlight">\(L=M_{\max}-m_0\)</span>，可得</p>
+<div class="math notranslate nohighlight">
+\[
+n=\frac{K\beta L}{1-e^{-\beta L}},\qquad \alpha=\beta.
+\]</div>
+<p>這個有限值依賴指定的上限。
+截斷（truncation）保留指定範圍，並重新分配機率。
+只截掉圖的右端，並未完成模型截斷。
+模型須在抽樣與積分時使用相同上限。</p>
+<p>九個參數可以分成兩組。
+七個形狀參數是 <span class="math notranslate nohighlight">\(b,c,p,D,\gamma,\alpha,q\)</span>。
+兩個大小參數是 <span class="math notranslate nohighlight">\(\nu,K\)</span>。
+本書把固定前組、估計後組稱為「七釘二估」。
+這借用 simplETAS 的精簡估計思路。
+本書的固定值取自義大利研究。
+這套示範與 simplETAS 的完整設定有別。</p>
+<p>固定的七個值仍含研究假設。
+資料較少時，固定形狀能減少估計負擔。
+形狀若不合，兩個大小參數便會代為吸收差異。
+下一章會把這個代價寫在估計圖旁。</p>
+<section id="id5">
+<h3>從一個格箱，讀回整條公式<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>一個方格只占空間核的一部分。
+預報先對方格內的位置積分。
+接著對三個月與目標規模箱積分。
+三個積分共同決定該格箱的期望數。</p>
+<p>輸入地震的規模可能低於目標門檻。
+模型仍可讓它對目標規模箱貢獻少量率。
+規模核決定這份貢獻有多少。
+所以，輸入事件與預報目標分屬兩個集合。</p>
+<p>圖上的每個點是一筆抽樣結果。
+圖上的線則是反覆抽樣的平均。
+平均線下降時，單次抽樣仍可能上升。
+因此，一代突然增加可以出現在次臨界模型。
+判斷分支比需要整體模型與資料。</p>
+<p>世代圖只追蹤有限層數。
+最後一欄之後仍可能有少量後代。
+本圖把後面的世代省略以方便閱讀。
+理論平均線也只畫出相同的層數。</p>
+<p>一個背景事件可以恰好沒有後代。
+另一個背景事件可能接出很大的家族。
+平均家族大小並未指定每棵樹的大小。
+這也是計數變異可能偏大的來源。</p>
+<p><span class="math notranslate nohighlight">\(\nu\)</span> 調高時，更多背景事件進入系統。
+<span class="math notranslate nohighlight">\(K\)</span> 調高時，每個既有事件增加更多後代。
+兩種改動都能提高總率。
+但它們產生的時間與位置分布不同。
+資料中的間隔與距離可幫助區分兩者。</p>
+<p>一份預報若只列出期望數，
+便還沒完整指定未來目錄的抽樣方式。
+完整 ETAS 會讓新抽到的事件繼續繁殖。
+固定率的 Poisson 抽樣則維持既定率。
+兩者即使平均接近，計數分布也可能不同。</p>
+<p>地圖邊緣的事件會把後代分到區外。
+收集區內、測試區外的事件也可向內貢獻。
+這兩個方向一起構成邊界效應。
+本書保留收集區歷史來描述向內的貢獻。
+格內積分則只留下測試區接到的部分。</p>
+</section>
+</section>
+<section id="id6">
+<h2>12.6 先看模型交出的預報<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>下圖把各窗的預報加成一張地圖。
+本站 ETAS 近似採背景加第一代觸發。
+第一代的親代限於各次發報前已知事件。
+發報後才出生的後代，要等下次更新才加入。</p>
+<p>藍色方格表示期望數，紅點表示目標地震。
+深色格與紅點重疊，只是位置對照。
+本章只疊圖不評分。
+正式評分在第 16–18 章。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>40 窗合計期望 7.50 顆；疊上 25 顆目標地震。各窗歷史分別更新。只疊圖不評分，評分在第 16–18 章。</p>
+<div class="output text_html"><div style="height:520px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="c942e7fc-5c8f-49e5-9c71-4cb2807a0d66" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c942e7fc-5c8f-49e5-9c71-4cb2807a0d66")) {                    Plotly.newPlot(                        "c942e7fc-5c8f-49e5-9c71-4cb2807a0d66",                        [{"colorbar":{"ticktext":["10\u207b\u2074","10\u207b\u00b3","10\u207b\u00b2","10\u207b\u00b9","1"],"tickvals":[-4,-3,-2,-1,0],"title":{"text":"\u6bcf\u683c\u671f\u671b\u6578"}},"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"customdata":{"dtype":"f8","bdata":"bnQG5JQvlT9OtjIKDK+VP4nZhl6ybJM\u002f7RG\u002fmSWXkz+ghpet2neVP23un6CxeJU\u002fE6w3inETpj\u002f1NtASoGCnP\u002fCU7G04IZc\u002f36Pzt1tHkz\u002f8ueYAyxyTP837IBUHmpM\u002fDq4\u002fyQ7\u002flT+cw\u002fKIyH+UPxMsuyJn\u002f5U\u002fI9tVNrwtmz\u002fM1HSPd3qYP\u002fhcGMGYe5k\u002fNEpD\u002fdEomD\u002fsoCVeaLGTP\u002f8DiLFI95M\u002fzPL0Ogl3kz+5+c7TGmuUP2wzGMRmvpg\u002ffGbFhhyAnT+yrygmmFmfPxV4t2Y2vZU\u002fmGQLHgs3lT8JkIX1M7OTP4nAnz\u002fKmpQ\u002f\u002f+tlGq\u002f5lj9vtpn1GuWTP9r9NM\u002fGu5M\u002fGbcN5hKxkz+Yj6SStXWUP87HkwTOSpk\u002fxQRDXb\u002fBlD+\u002fbFt+xneZPyRFwTLVDpQ\u002fLhTXun1alj+JsNs441WdPy\u002fz3NoDuZw\u002feuz53iJDnD+6QFux0++lP5lvbeFnAdo\u002fqyOR6GOyqD8Nt7cV7haUPwY7pBjtvKU\u002fM1WayIhqoT9T86X4SWKUP0BBbDAzbZU\u002fYv\u002fmdQf\u002fpT8eWRvxjA+sP5i4bRxTkaY\u002fOoF3lZuKnD8nUzV6YHiaP1fA6s2Orpo\u002fQxWYEDawlz9qvGSmi4mWP7YM2wAoVpk\u002fkHjPqeIUtj8fOVnQsEqqPzpIlRYzgLA\u002fgLQ0pOksrz9tQUUXtfOkP8R8kIwc05c\u002fa26PxOnrlT+ODkpTBwaXP5Sze2KLZ5U\u002fqz4vJGuVqj80BIHgoiiiP\u002fULkFFzSK0\u002fp7+b4tCqmD9ftHSvtTeeP1heciCFkZM\u002fp24MNk1plj+2buF5Hg6fPyqxeX5ESpc\u002fBKHHEFwxrD9BBiSpNM+0P7SQY8N\u002f1qE\u002fzAbzQQynpD+\u002fxNikjBKVP302P+VMfJc\u002f0KL343cPmT+bUx5njGmWPwwrFvwsN78\u002f02I+ZacG6T+l7sALlwmkP3sJoYjIx5Y\u002f0HIAUo0Ymz\u002fXCf+8\u002f7SwP4ZkRUYkVeY\u002ffL9FpSTAoj89T1NNunaTP3jTv6Syg5Q\u002f\u002fymt3XDMmj9AZz2wp1a8Pxm5qoCinKc\u002ff68VvQfplD9\u002fkOoGjB2VPz3E8EEmXJM\u002fJ3J735danz8A56Kf0G6bP8D6mI3QMac\u002fIrTbwW35oD9DNolZQsisP4P1dhNPkKA\u002fgz6SLLZXpj+dMapjNtuaPwBXLyiHz5Y\u002fUXzuC5OylD+h7ZLrxs2cP7Rs+Yrr7Kk\u002f7qIGed7vpj+z7IcjclSXP1V8gjZZK5o\u002fjhJY0T\u002fPlT\u002fXrtnrQTyTP4P++mqJ4JQ\u002f7WanhWy6oz8XRIOtd7WgP0QiXwWmj5U\u002fUJFiu0ZylD\u002fYv\u002fv0ceqTP2PK6b9LFJQ\u002fAFShPE1OlD\u002fPtW1jA7OWP93VAbMefZQ\u002fWyz4tzKbpD+EtxvByLmpP1QQPX9LkJg\u002fCyGs8X7+kz\u002fYB7lTYV6TP3iRzwaXwJM\u002f2Vg2IBBHlz8CMXdwDWCaP5WqPI6ISJo\u002fXFRLQIMjlD\u002fLd03+CSehP0uFrJQEy7k\u002fd7FO8B+Wmj9i8KFqxOygP+OXy9vBh6I\u002fvXtNMAbPnD8gTHSPV0eePy3+PLwOiqQ\u002f79hI+qkroT\u002fT0XAU79ugP+BKl\u002fblbpc\u002f+g5jMpF2nT+QUDE2YwKcP95dLRIyxKo\u002fLpzn0AHqqT9l0V\u002fHtxegP9EKJEu0SKA\u002fbO0tvlTslT\u002fMFVN\u002f0IaUP09HiVc2s5c\u002frM7FKM9wlT\u002feOCswg7yVP7cwERNlF6U\u002ffuwip5ZUrz\u002fdbE9hxPu3P7ai9VsY+aE\u002fWKslutwvoD+6I0J68RmXP43nIzZzrpo\u002f8RDgfVj7lj\u002filW6M4dygP1ZDWnoqvqU\u002fTF7tX5zHyD+6dbStIsOTP\u002fDEElhU2Jk\u002f0XBvaebpmz\u002f9Nha6sXCXP0WIWhxUDaI\u002f","shape":"177, 1"},"geojson":{"type":"FeatureCollection","features":[{"type":"Feature","id":0,"geometry":{"type":"Polygon","coordinates":[[[10.272661679174789,46.61237317533564],[10.827190234097188,46.61940301741628],[10.8188529514902,47.00154078718607],[10.260386411272165,46.99441700368526],[10.272661679174789,46.61237317533564]]]}},{"type":"Feature","id":1,"geometry":{"type":"Polygon","coordinates":[[[10.827190234097284,46.61940301741628],[11.381886913429419,46.6237448305193],[11.377491968419148,47.005940633314786],[10.818852951490298,47.00154078718607],[10.827190234097284,46.61940301741628]]]}},{"type":"Feature","id":2,"geometry":{"type":"Polygon","coordinates":[[[11.936672236795538,46.625397015618994],[12.491466643460567,46.6243589640628],[12.494961200072376,47.00656297617939],[11.936221924966699,47.00761490413512],[11.936672236795538,46.625397015618994]]]}},{"type":"Feature","id":3,"geometry":{"type":"Polygon","coordinates":[[[8.085192436497545,46.17609122650357],[8.63443563340007,46.19360403224608],[8.610876851162532,46.575186274471655],[8.05781148114875,46.55744002596391],[8.085192436497545,46.17609122650357]]]}},{"type":"Feature","id":4,"geometry":{"type":"Polygon","coordinates":[[[10.284689457260853,46.23030127523001],[10.835359366901853,46.23723847833165],[10.827190234097188,46.61940301741632],[10.272661679174787,46.61237317533568],[10.284689457260853,46.23030127523001]]]}},{"type":"Feature","id":5,"geometry":{"type":"Polygon","coordinates":[[[11.93711346395223,46.24315346934504],[12.48804258317689,46.242129101618985],[12.491466643460567,46.62435896406282],[11.936672236795538,46.62539701561902],[11.93711346395223,46.24315346934504]]]}},{"type":"Feature","id":6,"geometry":{"type":"Polygon","coordinates":[[[12.488042583176854,46.242129101618985],[13.038902978234942,46.23845033370885],[13.046190564452377,46.620631058272544],[12.49146664346053,46.62435896406282],[12.488042583176854,46.242129101618985]]]}},{"type":"Feature","id":7,"geometry":{"type":"Polygon","coordinates":[[[13.038902978235026,46.23845033370884],[13.58961712986273,46.23211850630352],[13.6007644947042,46.614214671303706],[13.046190564452461,46.620631058272544],[13.038902978235026,46.23845033370884]]]}},{"type":"Feature","id":8,"geometry":{"type":"Polygon","coordinates":[[[7.0227080908155175,45.7523585915287],[7.567062706237578,45.77482600567085],[7.536497092269264,46.1559480149635],[6.988425205241656,46.13318168607025],[7.0227080908155175,45.7523585915287]]]}},{"type":"Feature","id":9,"geometry":{"type":"Polygon","coordinates":[[[8.11202545877796,45.794704542150534],[8.65752258023656,45.81198708189779],[8.634435633400074,46.19360403224603],[8.08519243649755,46.176091226503516],[8.11202545877796,45.794704542150534]]]}},{"type":"Feature","id":10,"geometry":{"type":"Polygon","coordinates":[[[9.203479840441299,45.82666742445737],[9.749822610233304,45.83874029485021],[9.734260821896692,46.22071398077467],[9.184150596264288,46.20848008396333],[9.203479840441299,45.82666742445737]]]}},{"type":"Feature","id":11,"geometry":{"type":"Polygon","coordinates":[[[9.749822610233268,45.83874029485021],[10.296475925330457,45.84820134942737],[10.284689457260882,46.23030127522995],[9.734260821896655,46.22071398077467],[9.749822610233268,45.83874029485021]]]}},{"type":"Feature","id":12,"geometry":{"type":"Polygon","coordinates":[[[10.296475925330432,45.84820134942737],[10.843364550931149,45.85504718070175],[10.835359366901855,46.2372384783316],[10.284689457260855,46.23030127522995],[10.296475925330432,45.84820134942737]]]}},{"type":"Feature","id":13,"geometry":{"type":"Polygon","coordinates":[[[10.843364550931245,45.85504718070175],[11.390413046917581,45.85927532114572],[11.386193201007195,46.24152306348175],[10.835359366901953,46.2372384783316],[10.843364550931245,45.85504718070175]]]}},{"type":"Feature","id":14,"geometry":{"type":"Polygon","coordinates":[[[11.390413046917546,45.85927532114572],[11.937545833514621,45.86088424594497],[11.937113463952267,46.24315346934498],[11.386193201007158,46.24152306348175],[11.390413046917546,45.85927532114572]]]}},{"type":"Feature","id":15,"geometry":{"type":"Polygon","coordinates":[[[11.937545833514585,45.86088424594497],[12.484687257260694,45.85987337470222],[12.48804258317689,46.24212910161893],[11.93711346395223,46.24315346934498],[11.937545833514585,45.86088424594497]]]}},{"type":"Feature","id":16,"geometry":{"type":"Polygon","coordinates":[[[12.484687257260658,45.85987337470222],[13.031761657141365,45.85624307208574],[13.038902978234942,46.23845033370878],[12.488042583176854,46.24212910161893],[12.484687257260658,45.85987337470222]]]}},{"type":"Feature","id":17,"geometry":{"type":"Polygon","coordinates":[[[13.031761657141448,45.85624307208574],[13.578693430740653,45.84999464742188],[13.58961712986273,46.232118506303465],[13.038902978235026,46.23845033370878],[13.031761657141448,45.85624307208574]]]}},{"type":"Feature","id":18,"geometry":{"type":"Polygon","coordinates":[[[13.578693430740618,45.84999464742188],[14.12540710026101,45.84113035323199],[14.1401076489079,46.22313592585492],[13.589617129862694,46.232118506303465],[13.578693430740618,45.84999464742188]]]}},{"type":"Feature","id":19,"geometry":{"type":"Polygon","coordinates":[[[7.0563094975174545,45.37149038150925],[7.5970200957316925,45.39366287760702],[7.567062706237576,45.77482600567088],[7.022708090815515,45.752358591528726],[7.0563094975174545,45.37149038150925]]]}},{"type":"Feature","id":20,"geometry":{"type":"Polygon","coordinates":[[[7.597020095731658,45.39366287760702],[8.138324035116815,45.41328028580829],[8.112025458777996,45.79470454215056],[7.567062706237541,45.77482600567088],[7.597020095731658,45.39366287760702]]]}},{"type":"Feature","id":21,"geometry":{"type":"Polygon","coordinates":[[[8.68014932180483,45.43033565127115],[9.222423519156557,45.44482291681182],[9.203479840441334,45.8266674244574],[8.657522580236643,45.81198708189782],[8.68014932180483,45.43033565127115]]]}},{"type":"Feature","id":22,"geometry":{"type":"Polygon","coordinates":[[[9.222423519156523,45.44482291681182],[9.765073808161471,45.4567369295102],[9.749822610233304,45.83874029485023],[9.203479840441299,45.8266674244574],[9.222423519156523,45.44482291681182]]]}},{"type":"Feature","id":23,"geometry":{"type":"Polygon","coordinates":[[[9.765073808161436,45.4567369295102],[10.308027048664444,45.46607344634471],[10.296475925330455,45.84820134942739],[9.749822610233268,45.83874029485023],[9.765073808161436,45.4567369295102]]]}},{"type":"Feature","id":24,"geometry":{"type":"Polygon","coordinates":[[[10.308027048664423,45.46607344634471],[10.85120984129004,45.47282913884301],[10.843364550931149,45.85504718070178],[10.29647592533043,45.84820134942739],[10.308027048664423,45.46607344634471]]]}},{"type":"Feature","id":25,"geometry":{"type":"Polygon","coordinates":[[[10.851209841290133,45.47282913884301],[11.39454858993151,45.47700159673706],[11.390413046917581,45.859275321145724],[10.843364550931243,45.85504718070178],[10.851209841290133,45.47282913884301]]]}},{"type":"Feature","id":26,"geometry":{"type":"Polygon","coordinates":[[[11.394548589931473,45.47700159673706],[11.937969564668707,45.47858933061361],[11.937545833514621,45.860884245944995],[11.390413046917544,45.859275321145724],[11.394548589931473,45.47700159673706]]]}},{"type":"Feature","id":27,"geometry":{"type":"Polygon","coordinates":[[[11.93796956466867,45.47858933061361],[12.481398964979915,45.47759177355362],[12.484687257260694,45.85987337470225],[11.937545833514585,45.860884245944995],[11.93796956466867,45.47858933061361]]]}},{"type":"Feature","id":28,"geometry":{"type":"Polygon","coordinates":[[[12.481398964979878,45.47759177355362],[13.024762983106802,45.47400928175666],[13.031761657141367,45.85624307208577],[12.484687257260658,45.85987337470225],[12.481398964979878,45.47759177355362]]]}},{"type":"Feature","id":29,"geometry":{"type":"Polygon","coordinates":[[[6.552756740598226,44.96618202298881],[7.089245977932597,44.990577562623365],[7.056309497517369,45.37149038150927],[6.516263732125803,45.34677064245514],[6.552756740598226,44.96618202298881]]]}},{"type":"Feature","id":30,"geometry":{"type":"Polygon","coordinates":[[[7.089245977932681,44.990577562623365],[7.626384060322242,45.012459031505585],[7.597020095731691,45.39366287760704],[7.056309497517453,45.371490381509275],[7.089245977932681,44.990577562623365]]]}},{"type":"Feature","id":31,"geometry":{"type":"Polygon","coordinates":[[[8.702327088957672,45.04864996469592],[9.240991052675067,45.062946715226374],[9.222423519156555,45.44482291681185],[8.680149321804828,45.43033565127118],[8.702327088957672,45.04864996469592]]]}},{"type":"Feature","id":32,"geometry":{"type":"Polygon","coordinates":[[[9.240991052675032,45.062946715226374],[9.780022011372488,45.074703981091815],[9.76507380816147,45.45673692951023],[9.222423519156521,45.44482291681185],[9.240991052675032,45.062946715226374]]]}},{"type":"Feature","id":33,"geometry":{"type":"Polygon","coordinates":[[[9.780022011372452,45.074703981091815],[10.31934858707532,45.08391761685519],[10.308027048664444,45.46607344634474],[9.765073808161436,45.45673692951023],[9.780022011372452,45.074703981091815]]]}},{"type":"Feature","id":34,"geometry":{"type":"Polygon","coordinates":[[[10.319348587075297,45.08391761685519],[10.858899153322884,45.090584370666285],[10.85120984129004,45.47282913884304],[10.308027048664421,45.46607344634474],[10.319348587075297,45.08391761685519]]]}},{"type":"Feature","id":35,"geometry":{"type":"Polygon","coordinates":[[[10.858899153322978,45.090584370666285],[11.398601895078269,45.09470188778098],[11.394548589931508,45.47700159673709],[10.851209841290133,45.47282913884304],[10.858899153322978,45.090584370666285]]]}},{"type":"Feature","id":36,"geometry":{"type":"Polygon","coordinates":[[[11.398601895078235,45.09470188778098],[11.93838486904228,45.09626871311317],[11.937969564668707,45.47858933061363],[11.394548589931473,45.47700159673709],[11.398601895078235,45.09470188778098]]]}},{"type":"Feature","id":37,"geometry":{"type":"Polygon","coordinates":[[[7.121533523662734,44.609620629067216],[7.6551688970042076,44.63121485914312],[7.626384060322241,45.01245903150561],[7.089245977932678,44.99057756262339],[7.121533523662734,44.609620629067216]]]}},{"type":"Feature","id":38,"geometry":{"type":"Polygon","coordinates":[[[7.655168897004172,44.63121485914312],[8.1893695061488,44.65032027756184],[8.164101190331143,45.03181876404626],[7.626384060322204,45.01245903150561],[7.655168897004172,44.63121485914312]]]}},{"type":"Feature","id":39,"geometry":{"type":"Polygon","coordinates":[[[8.189369506148767,44.65032027756184],[8.724066729900466,44.66693024333158],[8.702327088957588,45.04864996469595],[8.164101190331108,45.03181876404626],[8.189369506148767,44.65032027756184]]]}},{"type":"Feature","id":40,"geometry":{"type":"Polygon","coordinates":[[[8.72406672990055,44.666930243331585],[9.259191539884617,44.681038973039385],[9.240991052675065,45.062946715226396],[8.702327088957672,45.04864996469595],[8.72406672990055,44.666930243331585]]]}},{"type":"Feature","id":41,"geometry":{"type":"Polygon","coordinates":[[[9.259191539884581,44.681038973039385],[9.794674556148946,44.6926415469797],[9.780022011372488,45.07470398109184],[9.240991052675032,45.062946715226396],[9.259191539884581,44.681038973039385]]]}},{"type":"Feature","id":42,"geometry":{"type":"Polygon","coordinates":[[[9.79467455614891,44.6926415469797],[10.33044610350084,44.70173391438161],[10.31934858707532,45.08391761685521],[9.780022011372452,45.07470398109184],[9.79467455614891,44.6926415469797]]]}},{"type":"Feature","id":43,"geometry":{"type":"Polygon","coordinates":[[[10.330446103500817,44.70173391438161],[10.86643626846339,44.70831289772239],[10.858899153322882,45.090584370666306],[10.319348587075297,45.08391761685521],[10.330446103500817,44.70173391438161]]]}},{"type":"Feature","id":44,"geometry":{"type":"Polygon","coordinates":[[[10.866436268463485,44.708312897722394],[11.402574956733586,44.712376196117354],[11.398601895078269,45.09470188778101],[10.858899153322978,45.090584370666306],[10.866436268463485,44.708312897722394]]]}},{"type":"Feature","id":45,"geometry":{"type":"Polygon","coordinates":[[[11.402574956733549,44.712376196117354],[11.938791951021363,44.71392238777776],[11.93838486904228,45.09626871311318],[11.398601895078233,45.09470188778101],[11.402574956733549,44.712376196117354]]]}},{"type":"Feature","id":46,"geometry":{"type":"Polygon","coordinates":[[[11.93879195102133,44.71392238777776],[12.475016969149827,44.71295093153099],[12.478176064244364,45.095284292813155],[11.938384869042242,45.09626871311318],[11.93879195102133,44.71392238777776]]]}},{"type":"Feature","id":47,"geometry":{"type":"Polygon","coordinates":[[[6.623605216798674,44.2048604025178],[7.153187588341126,44.22862006333011],[7.121533523662657,44.60962062906714],[6.588531545388708,44.58554507888909],[6.623605216798674,44.2048604025178]]]}},{"type":"Feature","id":48,"geometry":{"type":"Polygon","coordinates":[[[7.153187588341208,44.22862006333011],[7.683388420867805,44.24993074390514],[7.655168897004214,44.63121485914306],[7.12153352366274,44.609620629067145],[7.153187588341208,44.22862006333011]]]}},{"type":"Feature","id":49,"geometry":{"type":"Polygon","coordinates":[[[8.214141139472664,44.26878512161897],[8.745378725994314,44.28517670549346],[8.724066729900471,44.66693024333151],[8.189369506148768,44.65032027756177],[8.214141139472664,44.26878512161897]]]}},{"type":"Feature","id":50,"geometry":{"type":"Polygon","coordinates":[[[8.745378725994396,44.28517670549346],[9.277033771589869,44.29909984295813],[9.25919153988462,44.681038973039314],[8.724066729900551,44.66693024333151],[8.745378725994396,44.28517670549346]]]}},{"type":"Feature","id":51,"geometry":{"type":"Polygon","coordinates":[[[9.277033771589835,44.29909984295813],[9.809038530109849,44.31054972575662],[9.794674556148948,44.69264154697963],[9.259191539884585,44.68103897303931],[9.277033771589835,44.29909984295813]]]}},{"type":"Feature","id":52,"geometry":{"type":"Polygon","coordinates":[[[9.809038530109815,44.31054972575662],[10.341324972167419,44.3195223949842],[10.330446103500842,44.701733914381535],[9.794674556148914,44.69264154697963],[9.809038530109815,44.31054972575662]]]}},{"type":"Feature","id":53,"geometry":{"type":"Polygon","coordinates":[[[10.341324972167396,44.3195223949842],[10.873824839791379,44.32601474524427],[10.86643626846339,44.70831289772232],[10.330446103500819,44.701733914381535],[10.341324972167396,44.3195223949842]]]}},{"type":"Feature","id":54,"geometry":{"type":"Polygon","coordinates":[[[10.873824839791471,44.32601474524427],[11.406469701552819,44.330024527914816],[11.402574956733586,44.71237619611728],[10.866436268463486,44.70831289772232],[10.873824839791471,44.32601474524427]]]}},{"type":"Feature","id":55,"geometry":{"type":"Polygon","coordinates":[[[11.406469701552783,44.330024527914816],[11.939191008050953,44.33155035351654],[11.938791951021363,44.71392238777769],[11.40257495673355,44.71237619611728],[11.406469701552783,44.330024527914816]]]}},{"type":"Feature","id":56,"geometry":{"type":"Polygon","coordinates":[[[11.939191008050917,44.33155035351654],[12.47192014764533,44.33059169317773],[12.475016969149825,44.71295093153092],[11.93879195102133,44.71392238777769],[11.939191008050917,44.33155035351654]]]}},{"type":"Feature","id":57,"geometry":{"type":"Polygon","coordinates":[[[7.184223109519893,43.847576336868016],[7.711055984751985,43.86860706132384],[7.683388420867804,44.24993074390515],[7.153187588341207,44.228620063330126],[7.184223109519893,43.847576336868016]]]}},{"type":"Feature","id":58,"geometry":{"type":"Polygon","coordinates":[[[7.711055984751952,43.86860706132384],[8.238427839744078,43.88721358646431],[8.2141411394727,44.268785121619],[7.683388420867769,44.24993074390515],[7.711055984751952,43.86860706132384]]]}},{"type":"Feature","id":59,"geometry":{"type":"Polygon","coordinates":[[[8.238427839744046,43.88721358646431],[8.766273206777312,43.903389566962616],[8.745378725994312,44.28517670549348],[8.214141139472664,44.26878512161899],[8.238427839744046,43.88721358646431]]]}},{"type":"Feature","id":60,"geometry":{"type":"Polygon","coordinates":[[[9.823120782422578,43.928428617346235],[10.351990386347982,43.93728311744381],[10.341324972167419,44.31952239498422],[9.809038530109813,44.310549725756644],[9.823120782422578,43.928428617346235]]]}},{"type":"Feature","id":61,"geometry":{"type":"Polygon","coordinates":[[[10.351990386347959,43.93728311744381],[10.881068397313284,43.94368994218689],[10.873824839791377,44.326014745244294],[10.341324972167396,44.31952239498422],[10.351990386347959,43.93728311744381]]]}},{"type":"Feature","id":62,"geometry":{"type":"Polygon","coordinates":[[[10.881068397313376,43.94368994218689],[11.410287991258272,43.9476468936837],[11.406469701552819,44.33002452791483],[10.873824839791471,44.326014745244294],[10.881068397313376,43.94368994218689]]]}},{"type":"Feature","id":63,"geometry":{"type":"Polygon","coordinates":[[[11.410287991258237,43.9476468936837],[11.939582230920736,43.94915261381648],[11.939191008050953,44.33155035351656],[11.406469701552783,44.33002452791483],[11.410287991258237,43.9476468936837]]]}},{"type":"Feature","id":64,"geometry":{"type":"Polygon","coordinates":[[[11.939582230920703,43.94915261381648],[12.468884119316453,43.948206585653324],[12.47192014764533,44.33059169317775],[11.939191008050917,44.33155035351656],[11.939582230920703,43.94915261381648]]]}},{"type":"Feature","id":65,"geometry":{"type":"Polygon","coordinates":[[[12.468884119316419,43.948206585653324],[12.998126653339884,43.944809133985764],[13.004588502316102,44.327148879191945],[12.471920147645296,44.33059169317775],[12.468884119316419,43.948206585653324]]]}},{"type":"Feature","id":66,"geometry":{"type":"Polygon","coordinates":[[[7.738184497938325,43.48724417958833],[8.262240965455836,43.50560595772195],[8.238427839744077,43.88721358646434],[7.71105598475195,43.86860706132387],[7.738184497938325,43.48724417958833]]]}},{"type":"Feature","id":67,"geometry":{"type":"Polygon","coordinates":[[[9.836927933512476,43.54627832314743],[10.36244736573761,43.55501614333956],[10.35199038634798,43.93728311744383],[9.823120782422576,43.92842861734626],[9.836927933512476,43.54627832314743]]]}},{"type":"Feature","id":68,"geometry":{"type":"Polygon","coordinates":[[[10.362447365737587,43.55501614333956],[10.88817035298227,43.561338521263565],[10.881068397313284,43.94368994218692],[10.351990386347959,43.93728311744383],[10.362447365737587,43.55501614333956]]]}},{"type":"Feature","id":69,"geometry":{"type":"Polygon","coordinates":[[[10.888170352982362,43.561338521263565],[11.414031625288978,43.56524330828695],[11.410287991258272,43.947646893683725],[10.881068397313376,43.94368994218692],[10.888170352982362,43.561338521263565]]]}},{"type":"Feature","id":70,"geometry":{"type":"Polygon","coordinates":[[[11.414031625288942,43.56524330828695],[11.939965804036742,43.56672917674349],[11.939582230920736,43.94915261381651],[11.410287991258237,43.947646893683725],[11.414031625288942,43.56524330828695]]]}},{"type":"Feature","id":71,"geometry":{"type":"Polygon","coordinates":[[[11.939965804036706,43.56672917674349],[12.465907453278003,43.56579562129452],[12.468884119316453,43.94820658565335],[11.939582230920703,43.94915261381651],[11.939965804036706,43.56672917674349]]]}},{"type":"Feature","id":72,"geometry":{"type":"Polygon","coordinates":[[[12.465907453277968,43.56579562129452],[12.991791131189446,43.56244295944726],[12.998126653339884,43.94480913398578],[12.468884119316419,43.94820658565335],[12.465907453277968,43.56579562129452]]]}},{"type":"Feature","id":73,"geometry":{"type":"Polygon","coordinates":[[[12.991791131189526,43.56244295944726],[13.517551441535513,43.55667233122915],[13.527242877378285,43.93896142499094],[12.998126653339966,43.94480913398578],[12.991791131189526,43.56244295944726]]]}},{"type":"Feature","id":74,"geometry":{"type":"Polygon","coordinates":[[[9.850466384298,43.16409894616219],[10.37270076346864,43.17272153712261],[10.362447365737612,43.55501614333949],[9.836927933512476,43.54627832314737],[9.850466384298,43.16409894616219]]]}},{"type":"Feature","id":75,"geometry":{"type":"Polygon","coordinates":[[[10.372700763468616,43.17272153712261],[10.895134005472753,43.17896051898066],[10.888170352982272,43.561338521263494],[10.362447365737589,43.55501614333949],[10.372700763468616,43.17272153712261]]]}},{"type":"Feature","id":76,"geometry":{"type":"Polygon","coordinates":[[[10.895134005472846,43.17896051898067],[11.417702343320782,43.1828137909505],[11.414031625288978,43.56524330828689],[10.888170352982364,43.561338521263494],[10.895134005472846,43.17896051898067]]]}},{"type":"Feature","id":77,"geometry":{"type":"Polygon","coordinates":[[[11.417702343320746,43.18281379095049],[11.940341905679666,43.184280054943564],[11.939965804036742,43.566729176743436],[11.414031625288942,43.56524330828689],[11.417702343320746,43.18281379095049]]]}},{"type":"Feature","id":78,"geometry":{"type":"Polygon","coordinates":[[[11.940341905679633,43.184280054943564],[12.462988766169858,43.18335881688164],[12.465907453278001,43.56579562129445],[11.939965804036706,43.566729176743436],[11.940341905679633,43.184280054943564]]]}},{"type":"Feature","id":79,"geometry":{"type":"Polygon","coordinates":[[[12.462988766169822,43.18335881688164],[12.985578992769772,43.18005038719681],[12.991791131189444,43.562442959447196],[12.465907453277968,43.56579562129445],[12.462988766169822,43.18335881688164]]]}},{"type":"Feature","id":80,"geometry":{"type":"Polygon","coordinates":[[[12.98557899276985,43.18005038719681],[13.508048697232315,43.17435588051725],[13.517551441535511,43.55667233122909],[12.991791131189526,43.562442959447196],[12.98557899276985,43.18005038719681]]]}},{"type":"Feature","id":81,"geometry":{"type":"Polygon","coordinates":[[[13.508048697232281,43.17435588051725],[14.030334084414022,43.16627721453972],[14.043123085039454,43.548485698018744],[13.517551441535478,43.55667233122909],[13.508048697232281,43.17435588051725]]]}},{"type":"Feature","id":82,"geometry":{"type":"Polygon","coordinates":[[[10.382755272785559,42.79039936618575],[10.901962544723204,42.79655597566976],[10.895134005472753,43.17896051898069],[10.372700763468616,43.172721537122634],[10.382755272785559,42.79039936618575]]]}},{"type":"Feature","id":83,"geometry":{"type":"Polygon","coordinates":[[[10.901962544723295,42.79655597566976],[11.421301827664076,42.80035836527224],[11.417702343320782,43.182813790950526],[10.895134005472846,43.17896051898069],[10.901962544723295,42.79655597566976]]]}},{"type":"Feature","id":84,"geometry":{"type":"Polygon","coordinates":[[[11.42130182766404,42.80035836527224],[11.94071070825068,42.801805265642955],[11.940341905679666,43.184280054943585],[11.417702343320746,43.182813790950526],[11.42130182766404,42.80035836527224]]]}},{"type":"Feature","id":85,"geometry":{"type":"Polygon","coordinates":[[[11.940710708250647,42.801805265642955],[12.460126720250118,42.80089619364448],[12.462988766169858,43.18335881688167],[11.940341905679633,43.184280054943585],[11.940710708250647,42.801805265642955]]]}},{"type":"Feature","id":86,"geometry":{"type":"Polygon","coordinates":[[[12.460126720250084,42.80089619364448],[12.979487392010027,42.79763145283455],[12.985578992769772,43.18005038719683],[12.462988766169822,43.18335881688167],[12.460126720250084,42.80089619364448]]]}},{"type":"Feature","id":87,"geometry":{"type":"Polygon","coordinates":[[[12.979487392010107,42.79763145283455],[13.498730293925906,42.792012133163006],[13.508048697232317,43.17435588051727],[12.98557899276985,43.18005038719683],[12.979487392010107,42.79763145283455]]]}},{"type":"Feature","id":88,"geometry":{"type":"Polygon","coordinates":[[[13.498730293925872,42.792012133163006],[14.017793085825867,42.784040109883826],[14.030334084414022,43.16627721453975],[13.508048697232283,43.17435588051727],[13.498730293925872,42.792012133163006]]]}},{"type":"Feature","id":89,"geometry":{"type":"Polygon","coordinates":[[[11.424831705545973,42.41787705922918],[11.94107237850536,42.41930483064694],[11.94071070825068,42.80180526564298],[11.42130182766404,42.80035836527227],[11.424831705545973,42.41787705922918]]]}},{"type":"Feature","id":90,"geometry":{"type":"Polygon","coordinates":[[[11.941072378505327,42.41930483064694],[12.457320021580141,42.418407777266154],[12.460126720250118,42.800896193644505],[11.940710708250647,42.80180526564298],[11.941072378505327,42.41930483064694]]]}},{"type":"Feature","id":91,"geometry":{"type":"Polygon","coordinates":[[[12.457320021580108,42.418407777266154],[12.973513576004752,42.415186195963265],[12.979487392010027,42.79763145283458],[12.460126720250084,42.800896193644505],[12.457320021580108,42.418407777266154]]]}},{"type":"Feature","id":92,"geometry":{"type":"Polygon","coordinates":[[[12.973513576004832,42.41518619596326],[13.489592023416721,42.40964115270243],[13.498730293925908,42.79201213316304],[12.979487392010107,42.79763145283457],[12.973513576004832,42.41518619596326]]]}},{"type":"Feature","id":93,"geometry":{"type":"Polygon","coordinates":[[[13.489592023416686,42.40964115270243],[14.005494431389181,42.401774481485376],[14.017793085825867,42.784040109883854],[13.498730293925872,42.79201213316304],[13.489592023416686,42.40964115270243]]]}},{"type":"Feature","id":94,"geometry":{"type":"Polygon","coordinates":[[[11.42829355128356,42.03536990518401],[11.941427077776465,42.03677877633841],[11.94107237850536,42.419304830646965],[11.424831705545973,42.4178770592292],[11.42829355128356,42.03536990518401]]]}},{"type":"Feature","id":95,"geometry":{"type":"Polygon","coordinates":[[[11.94142707777643,42.03677877633841],[12.454567418296321,42.03589359788687],[12.457320021580143,42.41840777726618],[11.941072378505327,42.419304830646965],[11.94142707777643,42.03677877633841]]]}},{"type":"Feature","id":96,"geometry":{"type":"Polygon","coordinates":[[[12.454567418296287,42.03589359788687],[12.967654881339461,42.03271466021007],[12.973513576004754,42.415186195963294],[12.457320021580108,42.41840777726618],[12.454567418296287,42.03589359788687]]]}},{"type":"Feature","id":97,"geometry":{"type":"Polygon","coordinates":[[[12.967654881339541,42.03271466021006],[13.480629814237982,42.02724300595223],[13.489592023416721,42.409641152702456],[12.973513576004832,42.41518619596329],[12.967654881339541,42.03271466021006]]]}},{"type":"Feature","id":98,"geometry":{"type":"Polygon","coordinates":[[[13.480629814237949,42.02724300595223],[13.993432646927085,42.019480429007295],[14.005494431389183,42.401774481485404],[13.489592023416687,42.409641152702456],[13.480629814237949,42.02724300595223]]]}},{"type":"Feature","id":99,"geometry":{"type":"Polygon","coordinates":[[[13.993432646927051,42.019480429007295],[14.506003935558045,42.0094294727757],[14.521159998800089,42.3915887825461],[14.005494431389149,42.40177448148541],[13.993432646927051,42.019480429007295]]]}},{"type":"Feature","id":100,"geometry":{"type":"Polygon","coordinates":[[[14.506003935558134,42.00942947277569],[15.01828440587293,41.99709342769562],[15.036528100949596,42.379087419793855],[14.521159998800181,42.3915887825461],[14.506003935558134,42.00942947277569]]]}},{"type":"Feature","id":101,"geometry":{"type":"Polygon","coordinates":[[[11.941774962186086,41.65422713367528],[12.451867698963857,41.65335369010605],[12.454567418296321,42.035893597886805],[11.94142707777643,42.03677877633833],[11.941774962186086,41.65422713367528]]]}},{"type":"Feature","id":102,"geometry":{"type":"Polygon","coordinates":[[[12.451867698963824,41.65335369010605],[12.96190873059047,41.65021689324569],[12.967654881339461,42.03271466021],[12.454567418296287,42.035893597886805],[12.451867698963824,41.65335369010605]]]}},{"type":"Feature","id":103,"geometry":{"type":"Polygon","coordinates":[[[12.961908730590547,41.65021689324569],[13.4718397263111,41.644817763058676],[13.48062981423798,42.027243005952165],[12.96765488133954,42.03271466020999],[12.961908730590547,41.65021689324569]]]}},{"type":"Feature","id":104,"geometry":{"type":"Polygon","coordinates":[[[13.471839726311066,41.644817763058676],[13.98160243479709,41.637158054431424],[13.993432646927081,42.019480429007224],[13.480629814237947,42.027243005952165],[13.471839726311066,41.644817763058676]]]}},{"type":"Feature","id":105,"geometry":{"type":"Polygon","coordinates":[[[13.981602434797056,41.637158054431424],[14.491138726084523,41.62724025548871],[14.506003935558041,42.00942947277563],[13.99343264692705,42.019480429007224],[13.981602434797056,41.637158054431424]]]}},{"type":"Feature","id":106,"geometry":{"type":"Polygon","coordinates":[[[14.491138726084612,41.62724025548871],[15.000390633287292,41.6150675852091],[15.018284405872928,41.997093427695546],[14.50600393555813,42.00942947277563],[14.491138726084612,41.62724025548871]]]}},{"type":"Feature","id":107,"geometry":{"type":"Polygon","coordinates":[[[15.000390633287257,41.6150675852091],[15.509300394008871,41.60064399034453],[15.530214996260954,41.9824763280538],[15.018284405872896,41.997093427695546],[15.000390633287257,41.6150675852091]]]}},{"type":"Feature","id":108,"geometry":{"type":"Polygon","coordinates":[[[15.509300394008836,41.60064399034453],[16.017810491378576,41.583974141650415],[16.041736900417963,41.96558294808317],[15.53021499626092,41.9824763280538],[15.509300394008836,41.60064399034453]]]}},{"type":"Feature","id":109,"geometry":{"type":"Polygon","coordinates":[[[16.01781049137854,41.583974141650415],[16.525863694635618,41.56506342943408],[16.552791609528217,41.94641879735424],[16.041736900417934,41.96558294808317],[16.01781049137854,41.583974141650415]]]}},{"type":"Feature","id":110,"geometry":{"type":"Polygon","coordinates":[[[12.449219691007999,41.270788092983906],[12.956272628989419,41.26769294680248],[12.96190873059047,41.65021689324572],[12.451867698963824,41.65335369010607],[12.449219691007999,41.270788092983906]]]}},{"type":"Feature","id":111,"geometry":{"type":"Polygon","coordinates":[[[12.956272628989495,41.26769294680248],[13.463217945852387,41.262365497543584],[13.4718397263111,41.6448177630587],[12.96190873059055,41.65021689324572],[12.956272628989495,41.26769294680248]]]}},{"type":"Feature","id":112,"geometry":{"type":"Polygon","coordinates":[[[13.463217945852353,41.262365497543584],[13.96999866705364,41.2548074621444],[13.98160243479709,41.637158054431445],[13.471839726311066,41.6448177630587],[13.463217945852353,41.262365497543584]]]}},{"type":"Feature","id":113,"geometry":{"type":"Polygon","coordinates":[[[13.969998667053606,41.2548074621444],[14.476557934787936,41.24502127495238],[14.491138726084523,41.62724025548873],[13.981602434797056,41.637158054431445],[13.969998667053606,41.2548074621444]]]}},{"type":"Feature","id":114,"geometry":{"type":"Polygon","coordinates":[[[14.476557934788024,41.24502127495238],[14.982839048116176,41.233010085421256],[15.000390633287292,41.61506758520912],[14.491138726084612,41.62724025548873],[14.476557934788024,41.24502127495238]]]}},{"type":"Feature","id":115,"geometry":{"type":"Polygon","coordinates":[[[14.982839048116142,41.233010085421256],[15.488785502808204,41.21877775513473],[15.509300394008871,41.60064399034456],[15.00039063328726,41.61506758520912],[14.982839048116142,41.233010085421256]]]}},{"type":"Feature","id":116,"geometry":{"type":"Polygon","coordinates":[[[15.488785502808172,41.21877775513473],[15.994341030830178,41.20232885416366],[16.017810491378576,41.583974141650444],[15.50930039400884,41.60064399034456],[15.488785502808172,41.21877775513473]]]}},{"type":"Feature","id":117,"geometry":{"type":"Polygon","coordinates":[[[15.994341030830148,41.20232885416366],[16.499449639403657,41.18366865676441],[16.525863694635618,41.56506342943411],[16.017810491378544,41.583974141650444],[15.994341030830148,41.20232885416366]]]}},{"type":"Feature","id":118,"geometry":{"type":"Polygon","coordinates":[[[12.950744161243653,40.8851428766896],[13.454760780517478,40.879886286346355],[13.463217945852389,41.262365497543605],[12.956272628989497,41.2676929468025],[12.950744161243653,40.8851428766896]]]}},{"type":"Feature","id":119,"geometry":{"type":"Polygon","coordinates":[[[13.958616378929372,40.872428759017495],[14.462255330692349,40.86277267671461],[14.47655793478794,41.24502127495241],[13.969998667053606,41.25480746214443],[13.958616378929372,40.872428759017495]]]}},{"type":"Feature","id":120,"geometry":{"type":"Polygon","coordinates":[[[14.462255330692434,40.86277267671461],[14.965622160959008,40.850921121228176],[14.982839048116176,41.23301008542128],[14.476557934788028,41.24502127495241],[14.462255330692434,40.86277267671461]]]}},{"type":"Feature","id":121,"geometry":{"type":"Polygon","coordinates":[[[14.965622160958972,40.850921121228176],[15.468661584167288,40.83687787125078],[15.488785502808208,41.21877775513476],[14.982839048116144,41.23301008542128],[14.965622160958972,40.850921121228176]]]}},{"type":"Feature","id":122,"geometry":{"type":"Polygon","coordinates":[[[15.468661584167252,40.83687787125078],[15.97131854204913,40.820647398856124],[15.994341030830181,41.20232885416369],[15.488785502808172,41.21877775513476],[15.468661584167252,40.83687787125078]]]}},{"type":"Feature","id":123,"geometry":{"type":"Polygon","coordinates":[[[15.971318542049099,40.820647398856124],[16.473538241233637,40.80223486534087],[16.499449639403657,41.18366865676444],[15.994341030830148,41.20232885416369],[15.971318542049099,40.820647398856124]]]}},{"type":"Feature","id":124,"geometry":{"type":"Polygon","coordinates":[[[16.473538241233726,40.802234865340864],[16.975266190380896,40.781646116437756],[17.004055649569356,41.16280313642699],[16.499449639403746,41.18366865676443],[16.473538241233726,40.802234865340864]]]}},{"type":"Feature","id":125,"geometry":{"type":"Polygon","coordinates":[[[12.945320988503585,40.50256674280743],[13.44646465477065,40.49738020986391],[13.454760780517478,40.87988628634629],[12.950744161243653,40.885142876689535],[12.945320988503585,40.50256674280743]]]}},{"type":"Feature","id":126,"geometry":{"type":"Polygon","coordinates":[[[13.446464654770617,40.49738020986391],[13.94745076261826,40.49002205448259],[13.958616378929403,40.872428759017424],[13.454760780517445,40.87988628634629],[13.446464654770617,40.49738020986391]]]}},{"type":"Feature","id":127,"geometry":{"type":"Polygon","coordinates":[[[13.947450762618228,40.49002205448259],[14.448224879650153,40.480494607726506],[14.462255330692345,40.86277267671454],[13.95861637892937,40.872428759017424],[13.947450762618228,40.49002205448259]]]}},{"type":"Feature","id":128,"geometry":{"type":"Polygon","coordinates":[[[14.448224879650244,40.4804946077265],[14.948732718753615,40.4688008855144],[14.965622160959004,40.85092112122811],[14.46225533069243,40.86277267671454],[14.448224879650244,40.4804946077265]]]}},{"type":"Feature","id":129,"geometry":{"type":"Polygon","coordinates":[[[14.948732718753579,40.4688008855144],[15.448920175015385,40.45494458583938],[15.468661584167284,40.83687787125072],[14.965622160958969,40.85092112122811],[14.948732718753579,40.4688008855144]]]}},{"type":"Feature","id":130,"geometry":{"type":"Polygon","coordinates":[[[15.448920175015353,40.45494458583938],[15.948733362318748,40.43893008536468],[15.971318542049127,40.82064739885606],[15.468661584167249,40.83687787125072],[15.448920175015353,40.45494458583938]]]}},{"type":"Feature","id":131,"geometry":{"type":"Polygon","coordinates":[[[15.948733362318716,40.43893008536468],[16.448118649556008,40.420762435402956],[16.47353824123363,40.8022348653408],[15.971318542049096,40.82064739885606],[15.948733362318716,40.43893008536468]]]}},{"type":"Feature","id":132,"geometry":{"type":"Polygon","coordinates":[[[16.448118649556097,40.42076243540295],[16.947022696396264,40.400447357287554],[16.97526619038089,40.78164611643769],[16.47353824123372,40.8022348653408],[16.448118649556097,40.42076243540295]]]}},{"type":"Feature","id":133,"geometry":{"type":"Polygon","coordinates":[[[16.947022696396246,40.400447357287554],[17.445392488546776,40.377991237144364],[17.476448236781653,40.7588876769094],[16.975266190380868,40.7816461164377],[16.947022696396246,40.400447357287554]]]}},{"type":"Feature","id":134,"geometry":{"type":"Polygon","coordinates":[[[17.44539248854674,40.377991237144364],[17.943175372450604,40.35340112007496],[17.977030602362294,40.733966744534],[17.476448236781618,40.75888767690941],[17.44539248854674,40.377991237144364]]]}},{"type":"Feature","id":135,"geometry":{"type":"Polygon","coordinates":[[[14.932163695866445,40.086649571323015],[15.429553077335784,40.07297814460155],[15.448920175015388,40.454944585839414],[14.948732718753583,40.46880088551441],[14.932163695866445,40.086649571323015]]]}},{"type":"Feature","id":136,"geometry":{"type":"Polygon","coordinates":[[[15.429553077335752,40.07297814460156],[15.926576131131336,40.057177220037],[15.948733362318752,40.438930085364696],[15.448920175015356,40.454944585839414],[15.429553077335752,40.07297814460156]]]}},{"type":"Feature","id":137,"geometry":{"type":"Polygon","coordinates":[[[15.926576131131302,40.057177220037],[16.42318035263094,40.03925174182326],[16.448118649556008,40.420762435402985],[15.948733362318716,40.438930085364696],[15.926576131131302,40.057177220037]]]}},{"type":"Feature","id":138,"geometry":{"type":"Polygon","coordinates":[[[17.909959380920494,39.972787235913685],[18.404369334054863,39.946426025241934],[18.44031908936151,40.326684703762176],[17.943175372450696,40.353401120074984],[17.909959380920494,39.972787235913685]]]}},{"type":"Feature","id":139,"geometry":{"type":"Polygon","coordinates":[[[15.410552348269398,39.69097879201404],[15.904837778924648,39.67538910622278],[15.926576131131336,40.05717722003702],[15.429553077335754,40.07297814460158],[15.410552348269398,39.69097879201404]]]}},{"type":"Feature","id":140,"geometry":{"type":"Polygon","coordinates":[[[15.904837778924618,39.67538910622278],[16.398713164945445,39.657703154477126],[16.42318035263094,40.03925174182327],[15.926576131131304,40.05717722003702],[15.904837778924618,39.67538910622278]]]}},{"type":"Feature","id":141,"geometry":{"type":"Polygon","coordinates":[[[16.39871316494553,39.65770315447712],[16.892127363484093,39.637926418892874],[16.919313517241147,40.01920731012767],[16.423180352631032,40.03925174182327],[16.39871316494553,39.65770315447712]]]}},{"type":"Feature","id":142,"geometry":{"type":"Polygon","coordinates":[[[15.883509516325102,39.293566044551866],[16.37470721517623,39.27611703859589],[16.398713164945445,39.65770315447715],[15.904837778924618,39.67538910622281],[15.883509516325102,39.293566044551866]]]}},{"type":"Feature","id":143,"geometry":{"type":"Polygon","coordinates":[[[16.374707215176315,39.276117038595885],[16.865453293348235,39.25660512073773],[16.892127363484096,39.6379264188929],[16.398713164945534,39.65770315447715],[16.374707215176315,39.276117038595885]]]}},{"type":"Feature","id":144,"geometry":{"type":"Polygon","coordinates":[[[16.86545329334821,39.25660512073773],[17.35569794850745,39.23503628223726],[17.38502953421204,39.61606501897365],[16.892127363484075,39.6379264188929],[16.86545329334821,39.25660512073773]]]}},{"type":"Feature","id":145,"geometry":{"type":"Polygon","coordinates":[[[15.862582823871552,38.91170833319817],[16.351152934689015,38.89449375510248],[16.374707215176226,39.276117038595814],[15.883509516325098,39.2935660445518],[15.862582823871552,38.91170833319817]]]}},{"type":"Feature","id":146,"geometry":{"type":"Polygon","coordinates":[[[16.351152934689104,38.894493755102474],[16.839280700013585,38.87524384645143],[16.865453293348228,39.25660512073767],[16.37470721517631,39.276117038595814],[16.351152934689104,38.894493755102474]]]}},{"type":"Feature","id":147,"geometry":{"type":"Polygon","coordinates":[[[16.839280700013564,38.87524384645143],[17.326917324392046,38.85396447347661],[17.355697948507444,39.23503628223718],[16.865453293348207,39.25660512073767],[16.839280700013564,38.87524384645143]]]}},{"type":"Feature","id":148,"geometry":{"type":"Polygon","coordinates":[[[14.381956594669637,38.568667457098414],[14.86895877916936,38.557737404969956],[14.884312122280743,38.9400110940113],[14.394710405307594,38.95109061870897],[14.381956594669637,38.568667457098414]]]}},{"type":"Feature","id":149,"geometry":{"type":"Polygon","coordinates":[[[14.868958779169327,38.557737404969956],[15.355672576008281,38.54478569691914],[15.373619444050151,38.92688232583271],[14.884312122280711,38.9400110940113],[14.868958779169327,38.557737404969956]]]}},{"type":"Feature","id":150,"geometry":{"type":"Polygon","coordinates":[[[15.842049442194595,38.52981626813145],[16.32804104654683,38.512833660931705],[16.35115293468902,38.8944937551025],[15.862582823871552,38.9117083331982],[15.842049442194595,38.52981626813145]]]}},{"type":"Feature","id":151,"geometry":{"type":"Polygon","coordinates":[[[16.328041046546915,38.5128336609317],[16.813599299480096,38.49384302085407],[16.83928070001359,38.87524384645145],[16.351152934689104,38.8944937551025],[16.328041046546915,38.5128336609317]]]}},{"type":"Feature","id":152,"geometry":{"type":"Polygon","coordinates":[[[14.369442472235981,38.18621574196113],[14.853893854007106,38.17543361039414],[14.86895877916936,38.55773740496997],[14.381956594669637,38.568667457098435],[14.369442472235981,38.18621574196113]]]}},{"type":"Feature","id":153,"geometry":{"type":"Polygon","coordinates":[[[14.853893854007074,38.17543361039414],[15.338062673930201,38.162657126387636],[15.355672576008285,38.54478569691918],[14.868958779169327,38.55773740496997],[14.853893854007074,38.17543361039414]]]}},{"type":"Feature","id":154,"geometry":{"type":"Polygon","coordinates":[[[15.33806267393017,38.162657126387636],[15.821901362628779,38.14789014335596],[15.84204944219463,38.529816268131476],[15.355672576008253,38.54478569691918],[15.33806267393017,38.162657126387636]]]}},{"type":"Feature","id":155,"geometry":{"type":"Polygon","coordinates":[[[15.821901362628743,38.14789014335596],[16.305362555001405,38.13113710933462],[16.32804104654683,38.51283366093172],[15.842049442194599,38.529816268131476],[15.821901362628743,38.14789014335596]]]}},{"type":"Feature","id":156,"geometry":{"type":"Polygon","coordinates":[[[16.30536255500149,38.13113710933461],[16.788399118962722,38.11240306317373],[16.8135992994801,38.49384302085411],[16.328041046546918,38.51283366093172],[16.30536255500149,38.13113710933461]]]}},{"type":"Feature","id":157,"geometry":{"type":"Polygon","coordinates":[[[11.944909988270734,37.827313420401445],[12.42753858053775,37.826550349923124],[12.429768228632444,38.20934465812676],[11.944622678857396,38.21011824082685],[11.944909988270734,37.827313420401445]]]}},{"type":"Feature","id":158,"geometry":{"type":"Polygon","coordinates":[[[12.427538580537718,37.826550349923124],[12.910125351561513,37.82380991584402],[12.914871101414276,38.206566473049854],[12.429768228632412,38.20934465812676],[12.427538580537718,37.826550349923124]]]}},{"type":"Feature","id":159,"geometry":{"type":"Polygon","coordinates":[[[12.910125351561586,37.82380991584402],[13.39262311657792,37.81909294165653],[13.399883147351824,38.2017845265485],[12.91487110141435,38.206566473049854],[12.910125351561586,37.82380991584402]]]}},{"type":"Feature","id":160,"geometry":{"type":"Polygon","coordinates":[[[13.392623116577887,37.81909294165653],[13.874984745423221,37.81240084430444],[13.88475627320185,38.19500026560056],[13.399883147351792,38.2017845265485],[13.392623116577887,37.81909294165653]]]}},{"type":"Feature","id":161,"geometry":{"type":"Polygon","coordinates":[[[13.874984745423191,37.81240084430444],[14.357163191382016,37.803735632973876],[14.369442472235894,38.18621574196107],[13.884756273201818,38.19500026560056],[13.874984745423191,37.81240084430444]]]}},{"type":"Feature","id":162,"geometry":{"type":"Polygon","coordinates":[[[14.3571631913821,37.803735632973876],[14.83911151990206,37.79309990738049],[14.853893854007103,38.17543361039408],[14.369442472235978,38.18621574196107],[14.3571631913821,37.803735632973876]]]}},{"type":"Feature","id":163,"geometry":{"type":"Polygon","coordinates":[[[14.83911151990203,37.79309990738049],[15.320782937131511,37.780496855556045],[15.3380626739302,38.162657126387586],[14.85389385400707,38.17543361039408],[14.83911151990203,37.79309990738049]]]}},{"type":"Feature","id":164,"geometry":{"type":"Polygon","coordinates":[[[15.32078293713148,37.78049685555605],[15.802130818235165,37.765930251138286],[15.821901362628775,38.1478901433559],[15.338062673930168,38.162657126387586],[15.32078293713148,37.78049685555605]]]}},{"type":"Feature","id":165,"geometry":{"type":"Polygon","coordinates":[[[15.802130818235133,37.765930251138286],[16.283108735443356,37.74940445016906],[16.305362555001402,38.13113710933455],[15.82190136262874,38.1478901433559],[15.802130818235133,37.765930251138286]]]}},{"type":"Feature","id":166,"geometry":{"type":"Polygon","coordinates":[[[12.425350757965171,37.443730987853456],[12.905468616818737,37.44102792250207],[12.910125351561513,37.82380991584404],[12.427538580537718,37.82655034992315],[12.425350757965171,37.443730987853456]]]}},{"type":"Feature","id":167,"geometry":{"type":"Polygon","coordinates":[[[12.90546861681881,37.44102792250207],[13.38549923588669,37.43637526297943],[13.39262311657792,37.81909294165656],[12.910125351561588,37.82380991584404],[12.90546861681881,37.44102792250207]]]}},{"type":"Feature","id":168,"geometry":{"type":"Polygon","coordinates":[[[13.385499235886659,37.43637526297943],[13.86539641922988,37.42977439692288],[13.874984745423221,37.81240084430447],[13.392623116577887,37.81909294165656],[13.385499235886659,37.43637526297943]]]}},{"type":"Feature","id":169,"geometry":{"type":"Polygon","coordinates":[[[13.865396419229848,37.42977439692288],[14.345114051423316,37.421227291980074],[14.357163191382016,37.8037356329739],[13.874984745423191,37.81240084430447],[13.865396419229848,37.42977439692288]]]}},{"type":"Feature","id":170,"geometry":{"type":"Polygon","coordinates":[[[14.345114051423403,37.421227291980074],[14.824606125264271,37.41073649414951],[14.83911151990206,37.793099907380515],[14.357163191382103,37.8037356329739],[14.345114051423403,37.421227291980074]]]}},{"type":"Feature","id":171,"geometry":{"type":"Polygon","coordinates":[[[14.824606125264241,37.41073649414951],[15.303826769311486,37.39830512563587],[15.320782937131515,37.78049685555607],[14.83911151990203,37.793099907380515],[14.824606125264241,37.41073649414951]]]}},{"type":"Feature","id":172,"geometry":{"type":"Polygon","coordinates":[[[13.855987662227967,37.04712105865632],[14.333290492450077,37.03869088306156],[14.345114051423316,37.421227291980095],[13.865396419229848,37.429774396922895],[13.855987662227967,37.04712105865632]]]}},{"type":"Feature","id":173,"geometry":{"type":"Polygon","coordinates":[[[14.33329049245016,37.038690883061555],[14.810372187608863,37.0283435701552],[14.824606125264271,37.41073649414953],[14.345114051423403,37.421227291980095],[14.33329049245016,37.038690883061555]]]}},{"type":"Feature","id":174,"geometry":{"type":"Polygon","coordinates":[[[14.81037218760883,37.02834357015521],[15.287187771338226,37.016082177886446],[15.303826769311488,37.39830512563589],[14.824606125264241,37.41073649414953],[14.81037218760883,37.02834357015521]]]}},{"type":"Feature","id":175,"geometry":{"type":"Polygon","coordinates":[[[14.321688090384951,36.656126572606816],[14.796404387625707,36.645921336189545],[14.810372187608863,37.028343570155215],[14.33329049245016,37.03869088306158],[14.321688090384951,36.656126572606816]]]}},{"type":"Feature","id":176,"geometry":{"type":"Polygon","coordinates":[[[14.796404387625675,36.645921336189545],[15.270859734343748,36.63382825376219],[15.28718777133823,37.01608217788647],[14.81037218760883,37.02834357015522],[14.796404387625675,36.645921336189545]]]}}]},"hovertemplate":"\u683c %{location}\u003cbr\u003e\u671f\u671b\u6578 %{customdata[0]:.3g}\u003cextra\u003e\u003c\u002fextra\u003e","locations":{"dtype":"i2","bdata":"AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsAPAA9AD4APwBAAEEAQgBDAEQARQBGAEcASABJAEoASwBMAE0ATgBPAFAAUQBSAFMAVABVAFYAVwBYAFkAWgBbAFwAXQBeAF8AYABhAGIAYwBkAGUAZgBnAGgAaQBqAGsAbABtAG4AbwBwAHEAcgBzAHQAdQB2AHcAeAB5AHoAewB8AH0AfgB\u002fAIAAgQCCAIMAhACFAIYAhwCIAIkAigCLAIwAjQCOAI8AkACRAJIAkwCUAJUAlgCXAJgAmQCaAJsAnACdAJ4AnwCgAKEAogCjAKQApQCmAKcAqACpAKoAqwCsAK0ArgCvALAA"},"marker":{"line":{"color":"rgba(36,48,64,0.35)","width":0.5}},"name":"\u9810\u5831","z":{"dtype":"f8","bdata":"PCSADbTy+r\u002fj+D5BYcn6vyaYHEoZjfu\u002fm+McSPp9+79d2XPDJ9v6v+w28THi2vq\u002fkMB1zXnY9b9rEhTHk3L1v8gFZwqLVvq\u002fdppllYGa+782DMsp6qn7v\u002fXutMX0fPu\u002fCbq5Ruyv+r+CrLx4US37v1lWAV7Qr\u002fq\u002fFg3bTJc3+b\u002f4r\u002fz6u\u002fH5v7\u002f+mUkzqvm\u002fVTpBVBAJ+r9yY9nwr3T7v0JmwFozXPu\u002fzu7nameJ+79oCCp0VzT7v8TgNK+N3vm\u002faMVOesWl+L9RfirUmTn4v1skr6TYxPq\u002fGkKl80Hw+r90llHNDXT7vzmdz+YvJPu\u002fevdm6nVi+r\u002fVOhzfiWL7vxjYKEcIcfu\u002fqHiJGc50+7\u002fco1KEvDD7v2wzzheOt\u002fm\u002f\u002fWtl7RgX+7\u002f+WsMePqv5vwyyiBUGVPu\u002fQ6JqVUWT+r8EERG2vq\u002f4v1rMLglM1fi\u002f8E3HuAvy+L9z8GXauOP1v157N9UGCNm\u002fWn+TLekQ9b+V2xqJOFH7v1QSFz\u002fr8\u002fW\u002fUBa60Tp+97+5n8olWDf7v0GeqXCb3vq\u002fyuH\u002fwune9b\u002fkaMVnwS30v8Bb96xJsfW\u002f+c0DRI\u002fg+L+n1z\u002fUkmb5v52YnDNoWPm\u002f5WLvjRgs+r8knnUZtIT6v2+L1WhwtPm\u002fTMtMzQAH8b8SAayhlqH0vzU7zatADfO\u002fuvbabINy879i1wWEbjX2v2Ey1zvjIfq\u002fvV+TKfu1+r\u002fK7dwhu176vwtT5TVx4Pq\u002fzXM+fvKN9L+RHbyE9DP3v9sddWzp4fO\u002ftnzu5Q\u002fk+b9JbSH4Cnv4v3g9AIH5f\u002fu\u002f9dZ4QKyO+r8GNVe8aEr4vwZUsRFBSvq\u002fMzniJ2cl9L\u002fNN8Vaj3Dxvyjq3sqqU\u002fe\u002fRwvVCQpP9r8uIvxJQPz6v1y4Y5FjO\u002fq\u002f3YeToO7H+b9cz9KomI76v0BHrLlqPu2\u002fP9VkdIlUu79ZMhd10oT2v9lyBvidcfq\u002fG8z+3wM9+b994+rlJ\u002ffyv569Mr24\u002fsO\u002fz2zRS+f69r8Hpj2Yg4n7v+K0b+j9K\u002fu\u002fLAI\u002fQaRQ+b\u002fbfuZYbpbuv\u002fYo1zDUYPW\u002fm4wyw\u002f4J+79EdjHaoPj6vzW9nDAHk\u002fu\u002fb+izJmE5+L+I91mQByf5v4+AZMOLgPW\u002fyDkMYvCr97\u002fkON4TmAD0v4xBHyKA1\u002fe\u002fFuv9vx3D9b\u002f\u002fu33I0Ez5v1rZKpxBb\u002fq\u002fxgKCIS8c+79px6MBSND4v0fYnKaLuvS\u002ftXq+pWmU9b8RHmJTOEf6v59UUP3oevm\u002fRdk3HRe\u002f+r8ic2UEg577vxNcAuPRDPu\u002fVmYkZ32g9r+ywknY+sf3v0TvgGd40\u002fq\u002fWFLhF+cx+79n14errGD7v\u002feKudYhUvu\u002fUKhsvys++7\u002f0vgTB9nf6v\u002f\u002fw6qc4Lvu\u002fX7W91wdT9r8JpEbqTcj0v+BZWHuM6\u002fm\u002fT5mpQrFZ+78RSkdEOpL7vwHBOJZWb\u002fu\u002ftH9E5TVL+r\u002fMMNlu+Gz5v3wi+XAtc\u002fm\u002fezD\u002fvN9M+79ezP1wXZn3v3TaRPNF5e+\u002fhNXOEMhe+b\u002fTZdE2IbH3vwYpWU7sD\u002fe\u002fRRvh\u002ffrP+L81MOCkc3f4v6iE4fDRWPa\u002fO7+lC36X97+4UxLpDbj3v9HeMNFbP\u002fq\u002fl4bCWwWo+L+opAlzCQL5vzElSxLDgfS\u002fyha5kVO79L\u002fKgBPP0gr4v9UUDtTL9fe\u002fzRotQdm1+r8GS5287yr7v0SJlT43K\u002fq\u002fhm1L5G\u002fd+r92uUXuEcX6v6NYnJuiKfa\u002f35DAIbFp87+8\u002f1cYCHTwv7ybL7o9Rve\u002fcPSks20A+L9CZecOu1j6v5uzO2NvWPm\u002fKhI+R\u002fVh+r\u002f6jRL8qbf3v7Ds582F8\u002fW\u002fdti\u002fMtPR5r+u5\u002fNlcW77v0dJGH8Xkfm\u002fejFrTx8I+b+cyKaA0z76v3t2KIdvPve\u002f"},"type":"choropleth"},{"hoverinfo":"skip","lat":{"dtype":"f8","bdata":"ZmZmZmaGQUBmZmZmZoZBQPyp8dJNckNAGy\u002fdJAahRUCyne+nxmtGQCGwcmiRHUdAmG4Sg8BaR0DpJjEIrFxHQPYoXI\u002fCxUdA16NwPQrHR0Cmm8QgsEJHQDvfT42X7kVATDeJQWDVREA\u002fNV66SdxDQGZmZmZmhkFA"},"line":{"color":"rgba(36,48,64,0.7)","width":1.5},"lon":{"dtype":"f8","bdata":"2c73U+NlMEAGgZVDi+wnQMl2vp8aLxtA7nw\u002fNV46G0Atsp3vp8YYQPhT46WbRBhALbKd76fGHECwcmiR7fwhQKwcWmQ7XyVARIts5\u002fvpJ0BGtvP91LgtQEoMAiuHli1AhxbZzvfzMUBg5dAi25kzQNnO91PjZTBA"},"mode":"lines","name":"\u6536\u96c6\u5340 S","type":"scattergeo"},{"hovertemplate":"%{text}\u003cextra\u003e\u003c\u002fextra\u003e","lat":{"dtype":"f8","bdata":"c2iR7XxvRkC0yHa+n3JGQPJBz2bVb0ZAgy9MpgpuRkDjpZvEIGhGQIiFWtO8a0ZA5j+k375uRkBa9bnaim1GQNXnaiv270NAzF1LyAcVRkCNKO0NvhBGQDcawFsgwUVAirDh6ZWyRED+ZffkYVlFQBPyQc9mZUVA1edqK\u002fZvRUDdtYR80HNFQDXvOEVHakVA5j+k375+RUD2KFyPwkVFQIcW2c73Q0VA1QloImxARUAxmSoYlTxFQOQUHcnl70RA30+Nl27SQkA="},"lon":{"dtype":"f8","bdata":"hetRuB4FJUD0\u002fdR46YYmQLU3+MJkiiZA5\u002fup8dJNJkDEsS5uo+EmQMSxLm6jISZAL90kBoH1JUBvEoPAyuElQNxGA3gLBDBAFR3J5T\u002fkJEBoImx4ekUkQFK4HoXrcStArthfdk\u002feLEBkO99PjXcqQLAD54woTSpAHcnlP6Q\u002fKkDKMsSxLi4qQEdy+Q\u002fpNypAvp8aL91EKkDLEMe6uI0qQKg1zTtOkSpA5\u002fup8dKNKkAibHh6pYwqQF8pyxDHui1ACKwcWmQ7LkA="},"marker":{"color":"#e34948","line":{"color":"white","width":0.8},"size":{"dtype":"f8","bdata":"AAAAAAAAEEAyMzMzMzMlQGRmZmZmZhJAAAAAAAAAEEDOzMzMzMwUQM7MzMzMzCJAAAAAAAAAHEBkZmZmZmYSQDIzMzMzMxdAAAAAAAAAEEAyMzMzMzMXQGRmZmZmZhJAzszMzMzMFEBnZmZmZmYmQAAAAAAAABxAAAAAAAAAHEAyMzMzMzMlQDIzMzMzMytAAAAAAAAAEEAyMzMzMzMXQGdmZmZmZiBAZGZmZmZmHkDOzMzMzMwUQDIzMzMzMxdAZGZmZmZmEkA="}},"mode":"markers","name":"\u76ee\u6a19\u5730\u9707\uff08\u4e8b\u5f8c\u758a\u5716\uff09","text":["Mw 5.0","Mw 6.1","Mw 5.1","Mw 5.0","Mw 5.2","Mw 5.9","Mw 5.5","Mw 5.1","Mw 5.3","Mw 5.0","Mw 5.3","Mw 5.1","Mw 5.2","Mw 6.2","Mw 5.5","Mw 5.5","Mw 6.1","Mw 6.6","Mw 5.0","Mw 5.3","Mw 5.7","Mw 5.6","Mw 5.2","Mw 5.3","Mw 5.1"],"type":"scattergeo"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"geo":{"projection":{"type":"mercator"},"fitbounds":"locations","visible":false,"showcountries":true,"countrycolor":"rgba(120,130,150,0.5)","showcoastlines":true,"coastlinecolor":"rgba(120,130,150,0.5)","showland":true,"landcolor":"rgba(238,242,247,0.6)"},"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"legend":{"orientation":"h","y":-0.02},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x unified","title":{"text":"ETAS\uff1a\u80cc\u666f\uff0b\u7b2c\u4e00\u4ee3\uff0c\u6e2c\u8a66\u671f\u5408\u8a08"},"height":520},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('c942e7fc-5c8f-49e5-9c71-4cb2807a0d66');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+</section>
+<section id="id7">
+<h2>本章填入的規格欄位<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="spec-card"><div class="spec-title">預報實驗規格卡</div><div class="spec-row"><div class="spec-key">ETAS 結構</div><div class="spec-val">背景、產能、時間核、空間核、規模核</div></div><div class="spec-row"><div class="spec-key">本站預報差異</div><div class="spec-val">背景＋發報前歷史的第一代觸發</div></div><div class="spec-row"><div class="spec-key">形狀參數</div><div class="spec-val">採 Biondini 表 3；K 須連同時間核讀取</div></div><div class="spec-row"><div class="spec-key">兩參數估計示範</div><div class="spec-val">待填（第 13 章）</div></div><div class="spec-row"><div class="spec-key">數量檢驗</div><div class="spec-val">待填（第 16 章）</div></div><div class="spec-row"><div class="spec-key">位置與規模檢驗</div><div class="spec-val">待填（第 17 章）</div></div></div></div></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\nu\)</span> 與 <span class="math notranslate nohighlight">\(K\)</span> 的估計接在下一章：
+<a class="reference internal" href="13_etas_italy_forecast.html"><span class="doc">ETAS 在義大利</span></a>。</p>
+</section>
+<section id="id8">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Jalilian（2019），<a class="reference external" href="https://www.jstatsoft.org/article/view/v088c01">時空 ETAS 模型與估計</a>。免費全文。先讀條件強度，再讀親代機率。</p></li>
+<li><p>Ogata 與 Zhuang（2006），<a class="reference external" href="https://doi.org/10.1016/j.tecto.2005.10.016">時空 ETAS 的空間核</a>。<a class="reference external" href="https://bemlar.ism.ac.jp/zhuang/pubs/ogata2006tectno.pdf">免費作者全文</a>。對照規模如何改變影響範圍。</p></li>
+<li><p>Biondini、Rhoades 與 Gasperini（2023），<a class="reference external" href="https://doi.org/10.1093/gji/ggad123">義大利 EEPAS 實驗</a>。<a class="reference external" href="https://www.earth-prints.org/handle/2122/17084">免費機構全文</a>。表 3 提供參數。附錄列出模型公式。</p></li>
+<li><p>Mancini 與 Marzocchi（2023 線上發表），<a class="reference external" href="https://doi.org/10.1785/0220230199">simplETAS</a>。<a class="reference external" href="https://github.com/smancini2/simplETAS">免費作者程式</a>。對照精簡參數的動機。</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="11_conditional_intensity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">11. 讓率隨歷史更新：條件強度與點過程概似</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="13_etas_italy_forecast.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">13. ETAS 在義大利：估兩個參數、出一張三個月預報</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1 從一條親子連線開始</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.2 五個組成，各回答一個問題</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k">12.3 K 的數字，要連同公式一起讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">12.4 平均一顆，會接出幾顆？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.5 規模上限與「七釘二估」</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">從一個格箱，讀回整條公式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.6 先看模型交出的預報</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">本章填入的規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

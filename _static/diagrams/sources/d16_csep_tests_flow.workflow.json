@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "CSEP 檢驗：固定條件，再模擬比較",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    {
+      "id": "prepare",
+      "label": "準備資料"
+    },
+    {
+      "id": "method",
+      "label": "指定方法"
+    },
+    {
+      "id": "evaluate",
+      "label": "預報與對照"
+    }
+  ],
+  "mainPath": [
+    "forecast",
+    "question",
+    "simulate",
+    "score",
+    "quantile"
+  ],
+  "nodes": [
+    {
+      "id": "forecast",
+      "lane": "prepare",
+      "col": 0,
+      "type": "database",
+      "label": "取出預報",
+      "sublabel": "各格箱的期望數",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "question",
+      "lane": "prepare",
+      "col": 1,
+      "type": "backend",
+      "label": "選定問題",
+      "sublabel": "N、S、M、cL 或 L",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "simulate",
+      "lane": "method",
+      "col": 1,
+      "type": "backend",
+      "label": "生成參考目錄",
+      "sublabel": "依所選檢驗固定總數或模擬總數",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "score",
+      "lane": "evaluate",
+      "col": 1,
+      "type": "backend",
+      "label": "計算同一統計量",
+      "sublabel": "觀測目錄與模擬目錄",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "quantile",
+      "lane": "evaluate",
+      "col": 2,
+      "type": "backend",
+      "label": "比較所在位置",
+      "sublabel": "尾機率或模擬分位數",
+      "width": 192,
+      "height": 80
+    }
+  ],
+  "edges": [
+    {
+      "id": "forecast-to-question",
+      "from": "forecast",
+      "to": "question",
+      "role": "main"
+    },
+    {
+      "id": "question-to-simulate",
+      "from": "question",
+      "to": "simulate",
+      "role": "main"
+    },
+    {
+      "id": "simulate-to-score",
+      "from": "simulate",
+      "to": "score",
+      "role": "main"
+    },
+    {
+      "id": "score-to-quantile",
+      "from": "score",
+      "to": "quantile",
+      "role": "main"
+    }
+  ]
+}

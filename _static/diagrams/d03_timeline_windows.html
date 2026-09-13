@@ -1,0 +1,43 @@
+<style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d03_timeline_windows{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d03_timeline_windows *{box-sizing:border-box}
+.dg-d03_timeline_windows svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d03_timeline_windows svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d03_timeline_windows svg .name{font-weight:600}
+.dg-d03_timeline_windows svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d03_timeline_windows .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d03_timeline_windows .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d03_timeline_windows .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d03_timeline_windows .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d03_timeline_windows .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d03_timeline_windows .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d03_timeline_windows .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d03_timeline_windows .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d03_timeline_windows .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d03_timeline_windows .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d03_timeline_windows .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d03_timeline_windows .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d03_timeline_windows .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d03_timeline_windows .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d03_timeline_windows .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d03_timeline_windows .details p,.dg-d03_timeline_windows .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d03_timeline_windows .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d03_timeline_windows [hidden]{display:none}
+.dg-d03_timeline_windows .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d03_timeline_windows .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d03_timeline_windows svg [data-detail-mark]{transition:none}}
+@media print{.dg-d03_timeline_windows .choices{display:none}.dg-d03_timeline_windows [hidden]{display:block}.dg-d03_timeline_windows.enhanced svg [data-detail-mark]{opacity:1}.dg-d03_timeline_windows .details{min-height:0}}
+.dg-d03_timeline_windows svg [data-detail-mark]{opacity:1!important}
+.dg-d03_timeline_windows:has(#dg-d03_timeline_windows-choice-periods:checked) [data-detail]:not([data-detail="periods"]){display:none}
+.dg-d03_timeline_windows:has(#dg-d03_timeline_windows-choice-windows:checked) [data-detail]:not([data-detail="windows"]){display:none}
+.dg-d03_timeline_windows:has(#dg-d03_timeline_windows-choice-cutoff:checked) [data-detail]:not([data-detail="cutoff"]){display:none}
+.dg-d03_timeline_windows svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d03_timeline_windows:has(label:hover) [data-detail]{display:none!important}
+.dg-d03_timeline_windows:has(label[for="dg-d03_timeline_windows-choice-periods"]:hover) [data-detail="periods"]{display:block!important}
+.dg-d03_timeline_windows:has(label:hover) [data-detail]{display:none!important}
+.dg-d03_timeline_windows:has(label[for="dg-d03_timeline_windows-choice-windows"]:hover) [data-detail="windows"]{display:block!important}
+.dg-d03_timeline_windows:has(label:hover) [data-detail]{display:none!important}
+.dg-d03_timeline_windows:has(label[for="dg-d03_timeline_windows-choice-cutoff"]:hover) [data-detail="cutoff"]{display:block!important}}
+@media print{.dg-d03_timeline_windows [data-detail]{display:block!important}.dg-d03_timeline_windows [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d03_timeline_windows" data-teaching-widget="d03_timeline_windows"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 568" role="img" aria-labelledby="dg-d03_timeline_windows-title dg-d03_timeline_windows-desc"><title id="dg-d03_timeline_windows-title">三段期間，與每次發報的資料截止</title><desc id="dg-d03_timeline_windows-desc">暖機提供歷史、學習期定參數、測試期發40個91.31天窗；PPE與EEPAS的來源截止在發報前50天，ETAS使用發報前歷史。</desc><g data-detail-mark="periods"><rect x="40" y="16" width="400" height="72" rx="8" class="node "/><text x="240.0" y="48" class="name" text-anchor="middle">暖機期 1960–1989</text><text x="240.0" y="76" class="sub" text-anchor="middle">提供較早的歷史</text><rect x="40" y="104" width="400" height="72" rx="8" class="node "/><text x="240.0" y="136" class="name" text-anchor="middle">學習期 1990–2011</text><text x="240.0" y="164" class="sub" text-anchor="middle">估計或選定參數</text><rect x="40" y="192" width="400" height="72" rx="8" class="node focal"/><text x="240.0" y="224" class="name" text-anchor="middle">測試期 2012–2021</text><text x="240.0" y="252" class="sub" text-anchor="middle">依序發報，再對照觀測</text></g><g data-detail-mark="windows"><text x="240" y="308" class="name" text-anchor="middle">40 個窗 × 91.31 天</text><text x="240" y="340" class="sub" text-anchor="middle">每窗固定自己的已知歷史</text></g><g data-detail-mark="cutoff"><text x="24" y="384" class="name" text-anchor="start">一個發報窗的時間軸</text><rect x="130" y="424" width="110" height="32" class="node"/><rect x="240" y="424" width="200.882" height="32" class="focal"/><path d="M 24 440 H 456 M 130 404 V 468 M 240 400 V 468 M 440.882 416 V 468" class="edge"/><text x="130" y="496" class="sub" text-anchor="middle">−50 天</text><text x="240" y="496" class="name" text-anchor="middle">發報 t₀</text><text x="432" y="496" class="sub" text-anchor="middle">窗終點</text><text x="240" y="540" class="name" text-anchor="middle">PPE／EEPAS：只收截止前的來源</text></g></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d03_timeline_windows-choice-periods" name="dg-d03_timeline_windows-choice" value="periods" aria-controls="dg-d03_timeline_windows-panel-periods" checked><label for="dg-d03_timeline_windows-choice-periods">1．三段期間</label></span><span><input type="radio" id="dg-d03_timeline_windows-choice-windows" name="dg-d03_timeline_windows-choice" value="windows" aria-controls="dg-d03_timeline_windows-panel-windows" ><label for="dg-d03_timeline_windows-choice-windows">2．逐窗發報</label></span><span><input type="radio" id="dg-d03_timeline_windows-choice-cutoff" name="dg-d03_timeline_windows-choice" value="cutoff" aria-controls="dg-d03_timeline_windows-panel-cutoff" ><label for="dg-d03_timeline_windows-choice-cutoff">3．50 天延遲</label></span></div><div class="details" aria-live="polite"><section id="dg-d03_timeline_windows-panel-periods" data-detail="periods" aria-label="1．三段期間"><h4>1．三段期間</h4><p>上方是期間用途卡，卡片寬度不表示年數。暖機期提供早期歷史，但小規模事件不完整；學習期決定模型參數，測試期不拿未來事件重選參數。</p></section><section id="dg-d03_timeline_windows-panel-windows" data-detail="windows" aria-label="2．逐窗發報"><h4>2．逐窗發報</h4><p>測試期共有 40 個互不重疊的 91.31 天窗，不是精確日曆季。最後一窗到 2021-12-31 09:36，年底餘下 0.6 天不評分。新事件可以進入後續窗的歷史，不能改寫先前預報。</p></section><section id="dg-d03_timeline_windows-panel-cutoff" data-detail="cutoff" aria-label="3．50 天延遲"><h4>3．50 天延遲</h4><p>下方時間軸的灰帶是發報前 50 天，藍帶是接下來 91.31 天。PPE 與 EEPAS 在發報時排除這段近期來源，整窗固定來源集合；ETAS 使用發報前歷史。SUP 使用學習期估出的固定率。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>

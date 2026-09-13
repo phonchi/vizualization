@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=857392ad" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,6 +63,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_d_eepas';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="附錄 E：預報檢驗與模型組合的推導" href="appendix_e_testing.html" />
@@ -210,46 +211,49 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="00_intro.html">
-                    地震統計與預報：從模型到臺灣觀測
+                    地震統計與預報：從一份義大利實驗到臺灣觀測
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：一份地震預報實驗，從資料到檢驗</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
-<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
-<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 把模型加起來：凸組合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
-<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">21. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
@@ -407,6 +411,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-5">D.5 對數常態的三個時間摘要</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-6">D.6 規模權重與有限輸入門檻</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7 空間卷積與時間截斷</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-8">D.8 義大利的三階段擬合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-9">D.9 發報截止與格箱積分</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
 </ul>
             </nav>
@@ -421,10 +427,10 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="d-eepas">
 <h1>附錄 D：Ψ 的量測與 EEPAS 的核函數<a class="headerlink" href="#d-eepas" title="Link to this heading">#</a></h1>
-<p>本附錄需要條件機率、簡單線性迴歸與一變數積分。它補足 <a class="reference internal" href="15_psi_phenomenon.html"><span class="doc">Ψ</span></a>及 <a class="reference internal" href="16_eepas_ppe.html"><span class="doc">EEPAS</span></a>的計算；讀完每節可回到對應主文繼續閱讀。</p>
+<p>本附錄需要條件機率、簡單線性迴歸與一變數積分。它補足 <a class="reference internal" href="14_psi_precursory_scale.html"><span class="doc">Ψ</span></a>及 <a class="reference internal" href="15_eepas_italy_forecast.html"><span class="doc">EEPAS</span></a>的計算；讀完每節可回到對應主文繼續閱讀。</p>
 <section id="d-1">
 <h2>D.1 累積規模異常的性質與限制<a class="headerlink" href="#d-1" title="Link to this heading">#</a></h2>
-<p>令 <span class="math notranslate nohighlight">\(q_i=M_i-(m_c-0.1)&gt;0\)</span>，<span class="math notranslate nohighlight">\(A(t)=\sum_{t_s&lt;t_i\le t}q_i\)</span>，<span class="math notranslate nohighlight">\(D=t_f-t_s\)</span>。由主文 <a class="reference internal" href="15_psi_phenomenon.html#equation-eq-cumag">(12)</a>，<span class="math notranslate nohighlight">\(k=A(t_f)/D\)</span>，故</p>
+<p>令 <span class="math notranslate nohighlight">\(q_i=M_i-(m_c-0.1)&gt;0\)</span>，<span class="math notranslate nohighlight">\(A(t)=\sum_{t_s&lt;t_i\le t}q_i\)</span>，<span class="math notranslate nohighlight">\(D=t_f-t_s\)</span>。由第 14 章累積規模異常的定義，<span class="math notranslate nohighlight">\(k=A(t_f)/D\)</span>，故</p>
 <div class="math notranslate nohighlight">
 \[C(t_s)=0,\qquad C(t_f)=A(t_f)-\frac{A(t_f)}D D=0.\]</div>
 <p>事件間斜率為 <span class="math notranslate nohighlight">\(-k\)</span>，在事件處跳升 <span class="math notranslate nohighlight">\(q_i\)</span>。取內部切點 <span class="math notranslate nohighlight">\(u\)</span>，記切點前後的平均累積速率為</p>
@@ -484,7 +490,7 @@
 \[h(x,y\mid x_i,y_i,m_i)=\frac{1}{2\pi v_i}
 \exp\left[-\frac{(x-x_i)^2+(y-y_i)^2}{2v_i}\right],\qquad
 v_i=\sigma_A^2 10^{b_Am_i}.\]</div>
-<p><span class="math notranslate nohighlight">\(g\)</span> 對整條實線正規化，<span class="math notranslate nohighlight">\(h\)</span> 對平面正規化；實際預報區域或規模範圍只會收到其中一部分，不能把有限區域積分直接當成一。空間座標須為相同長度單位，不能將經緯度差直接視為公裡。</p>
+<p><span class="math notranslate nohighlight">\(g\)</span> 對整條實線正規化，<span class="math notranslate nohighlight">\(h\)</span> 對平面正規化；實際預報區域或規模範圍只會收到其中一部分，不能把有限區域積分直接當成一。空間座標須為相同長度單位，不能將經緯度差直接視為公里。</p>
 <p>三核相乘表達給定輸入事件後的可分離假設。面積尺度回歸只決定尺度如何隨規模變動，不唯一決定圓對稱常態形狀。若以圓形常態內含質量 <span class="math notranslate nohighlight">\(q\)</span> 的面積表示，</p>
 <div class="math notranslate nohighlight">
 \[P(R\le r)=1-e^{-r^2/(2v_i)},\qquad
@@ -529,7 +535,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 <p>可得保留比例</p>
 <div class="math notranslate nohighlight">
 \[\Delta(m)=\Phi\left(\frac{m-a_M-b_Mm_0-\beta\sigma_M^2}{\sigma_M}\right).\]</div>
-<p>有限門檻下的時變長期規模率為理想值乘 <span class="math notranslate nohighlight">\(\Delta(m)\)</span>。以 <span class="math notranslate nohighlight">\(1/\Delta(m)\)</span> 補償或使用其他補償版本，都須說明假設；<span class="math notranslate nohighlight">\(\Delta\)</span> 很小時會放大模型誤差。若平均權重隨規模改變，前面的常數 <span class="math notranslate nohighlight">\(\bar w\)</span> 不能照搬。</p>
+<p>有限門檻下的長期平均規模率為理想值乘 <span class="math notranslate nohighlight">\(\Delta(m)\)</span>。以 <span class="math notranslate nohighlight">\(1/\Delta(m)\)</span> 補償或使用其他補償版本，都須說明假設；<span class="math notranslate nohighlight">\(\Delta\)</span> 很小時會放大模型誤差。若平均權重隨規模改變，前面的常數 <span class="math notranslate nohighlight">\(\bar w\)</span> 不能照搬。</p>
 </section>
 <section id="d-7">
 <h2>D.7 空間卷積與時間截斷<a class="headerlink" href="#d-7" title="Link to this heading">#</a></h2>
@@ -547,6 +553,47 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 \[F_i(T_1-t_i)-F_i(T_0-t_i),\]</div>
 <p>其中 <span class="math notranslate nohighlight">\(F_i(u)=0\)</span> 於 <span class="math notranslate nohighlight">\(u\le0\)</span>。目錄開始前事件的貢獻仍未知，不能只靠這個有限窗積分恢復；需指定過去活動模型或使用文獻的完整度補償方法。</p>
 </section>
+<section id="d-8">
+<h2>D.8 義大利的三階段擬合<a class="headerlink" href="#d-8" title="Link to this heading">#</a></h2>
+<p>Biondini 等（2023）第 3 節將 <span class="math notranslate nohighlight">\(b_M\)</span> 全程固定為一，其餘參數分成三次最佳化。以下 <span class="math notranslate nohighlight">\(\mu_E\)</span> 對應原文的 <span class="math notranslate nohighlight">\(\mu\)</span>。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>階段</p></th>
+<th class="head"><p>固定參數</p></th>
+<th class="head"><p>估計參數</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>第一次</p></td>
+<td><p><span class="math notranslate nohighlight">\(b_T=0.40,b_A=0.35,\sigma_M=0.32,\sigma_T=0.23\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(a_T,a_M,\sigma_A,\mu_E\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>第二次</p></td>
+<td><p>第一次得到的 <span class="math notranslate nohighlight">\(a_T,a_M,\sigma_A\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(b_T,b_A,\sigma_M,\sigma_T,\mu_E\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>第三次</p></td>
+<td><p><span class="math notranslate nohighlight">\(b_M=1\)</span></p></td>
+<td><p>上述八個參數一起估計</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>第三次以先前結果為起始值；<span class="math notranslate nohighlight">\(\mu_E\)</span> 是三次都重新估計的參數。這套安排提供可解釋的起點，但不是全域最佳保證。第 15 章直接使用論文表 3 的 EEPAS-NW 已發表結果，不在教學頁執行最佳化。</p>
+</section>
+<section id="d-9">
+<h2>D.9 發報截止與格箱積分<a class="headerlink" href="#d-9" title="Link to this heading">#</a></h2>
+<p>本站時間以天、位置以公里計。設發報時間為 <span class="math notranslate nohighlight">\(t_0\)</span>、delay 為 <span class="math notranslate nohighlight">\(d=50\)</span> 天，該窗來源集合固定為 <span class="math notranslate nohighlight">\(I_0=\{i:t_i\le t_0-d,m_i\ge m_0\}\)</span>。在窗 <span class="math notranslate nohighlight">\([t_0,t_1)\)</span>、空間格 <span class="math notranslate nohighlight">\(R_j\)</span>、規模箱 <span class="math notranslate nohighlight">\(B_k\)</span> 中，時變部分的期望數為</p>
+<div class="math notranslate nohighlight">
+\[\Lambda^{\mathrm{var}}_{jk}=
+\sum_{i\in I_0}\eta(m_i)
+\left[\int_{t_0}^{t_1}f_i(t)\,dt\right]
+\left[\int_{B_k}\frac{g_i(m)}{\Delta(m)}\,dm\right]
+\left[\int_{R_j}h_i(x,y)\,dx\,dy\right].\]</div>
+<p>最後再加 <span class="math notranslate nohighlight">\(\mu_E\Lambda^{\mathrm{PPE}}_{jk}\)</span>。可分離假設使三個低維積分相乘；<span class="math notranslate nohighlight">\(g_i/\Delta\)</span> 是補償後的規模貢獻，不能再當成總積分為一的原始密度。</p>
+<p>對方格 <span class="math notranslate nohighlight">\([x_0,x_1]\times[y_0,y_1]\)</span>，空間積分等於兩個常態累積分布差的乘積。本站時間積分也使用累積分布差，規模箱使用五個中點近似。模型總數的驗證必須涵蓋這些有限區域積分，不能只檢查無限範圍核正規化。</p>
+<p>完整歷史的可用起點、發報截止與 50 天 delay 是三個不同設定。規模門檻補償也不會恢復目錄起點以前的事件；時間完整度延伸須另外指定模型。暖機資料早期漏測的影響，見第 8 章及 Rhoades 等（2020）。</p>
+</section>
 <section id="id1">
 <h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -558,7 +605,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 <li><p><a class="reference external" href="https://doi.org/10.1093/gji/ggad123">Application of the EEPAS earthquake forecasting model to Italy</a> — Emanuele Biondini、David A. Rhoades、Paolo Gasperini，2023，<em>Geophysical Journal International</em>；出版社全文可能需訂閱，<a class="reference external" href="https://www.earth-prints.org/handle/2122/17084">免費機構典藏全文</a>。將本章公式連到義大利目錄的實際應用，閱讀 PPE、ETAS 與 EEPAS 的比較時，特別留意學習期、測試期和預報時間窗。</p></li>
 <li><p><a class="reference external" href="https://doi.org/10.3390/e22111264">The Effect of Catalogue Lead Time on Medium-Term Earthquake Forecasting with Application to New Zealand Data</a> — David A. Rhoades、Sepideh J. Rastin、Annemarie Christophersen，2020，<em>Entropy</em>；免費開放全文。說明目錄開始前遺漏的事件如何影響 EEPAS，適合延伸本章的 lead time 與時間完整度補償推導。</p></li>
 <li><p><a class="reference external" href="https://doi.org/10.1111/j.1365-246X.2008.04083.x">Long-range earthquake forecasting allowing for aftershocks</a> — D. A. Rhoades，2009，<em>Geophysical Journal International</em>；<a class="reference external" href="https://academic.oup.com/gji/article/178/1/244/644120">出版社網頁全文</a>可免費閱讀。閱讀 EEPAS 如何加入預報事件的餘震貢獻，對照本章 EAS 延伸與「降低輸入餘震權重」的不同角色。</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.5047/eps.2010.08.002">Application of a long-range forecasting model to earthquakes in the Japan mainland testing region</a> — David A. Rhoades（2011），Earth, Planets and Space（免費全文）。檢視不同目標規模的擬合差異與主文增益圖的回溯條件。</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.5047/eps.2010.08.002">Application of a long-range forecasting model to earthquakes in the Japan mainland testing region</a> — David A. Rhoades（2011），Earth, Planets and Space（免費全文）。檢視不同目標規模的擬合差異與已發表比較的回溯條件。</p></li>
 </ul>
 </section>
 </section>
@@ -636,6 +683,8 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-5">D.5 對數常態的三個時間摘要</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-6">D.6 規模權重與有限輸入門檻</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7 空間卷積與時間截斷</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-8">D.8 義大利的三階段擬合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-9">D.9 發報截止與格箱積分</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
 </ul>
   </nav></div>

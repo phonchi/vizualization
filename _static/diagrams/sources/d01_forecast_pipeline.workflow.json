@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "一份預報實驗如何完成",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    {
+      "id": "prepare",
+      "label": "準備資料"
+    },
+    {
+      "id": "method",
+      "label": "指定方法"
+    },
+    {
+      "id": "evaluate",
+      "label": "預報與對照"
+    }
+  ],
+  "mainPath": [
+    "catalog",
+    "spec",
+    "model",
+    "forecast",
+    "test"
+  ],
+  "nodes": [
+    {
+      "id": "catalog",
+      "lane": "prepare",
+      "col": 0,
+      "type": "database",
+      "label": "讀目錄",
+      "sublabel": "HORUS：何時、何地、多大",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "spec",
+      "lane": "prepare",
+      "col": 1,
+      "type": "backend",
+      "label": "訂規格",
+      "sublabel": "區域、門檻、學習與測試期",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "model",
+      "lane": "method",
+      "col": 1,
+      "type": "backend",
+      "label": "定模型",
+      "sublabel": "只用當時可取得的資訊",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "forecast",
+      "lane": "evaluate",
+      "col": 1,
+      "type": "backend",
+      "label": "發預報",
+      "sublabel": "每格、每箱的期望數",
+      "width": 192,
+      "height": 80
+    },
+    {
+      "id": "test",
+      "lane": "evaluate",
+      "col": 2,
+      "type": "backend",
+      "label": "做檢驗",
+      "sublabel": "對照後來發生的目標地震",
+      "width": 192,
+      "height": 80
+    }
+  ],
+  "edges": [
+    {
+      "id": "catalog-to-spec",
+      "from": "catalog",
+      "to": "spec",
+      "role": "main"
+    },
+    {
+      "id": "spec-to-model",
+      "from": "spec",
+      "to": "model",
+      "role": "main"
+    },
+    {
+      "id": "model-to-forecast",
+      "from": "model",
+      "to": "forecast",
+      "role": "main"
+    },
+    {
+      "id": "forecast-to-test",
+      "from": "forecast",
+      "to": "test",
+      "role": "main"
+    }
+  ]
+}

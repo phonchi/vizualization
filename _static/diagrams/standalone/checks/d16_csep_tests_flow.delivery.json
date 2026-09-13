@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/home/phonchi/vizualization/book/_static/diagrams/sources/d16_csep_tests_flow.workflow.json",
+  "output": "/home/phonchi/vizualization/book/_static/diagrams/standalone/d16_csep_tests_flow.archify.html",
+  "specification": {
+    "sha256": "89ea598dc37652ffbaaedd0963f548ea0ea1a21eebba6d38796a054b64cef232",
+    "bytes": 2117
+  },
+  "artifact": {
+    "sha256": "0fe57ad989c203f74dd187f668dddb30cbcab6cdcdd7e7ef3daa877a4bdcb9d5",
+    "bytes": 702335
+  },
+  "validation": {
+    "checksPassed": 9,
+    "checkCount": 9,
+    "compositionProfile": "showcase",
+    "compositionStatus": "pass",
+    "errors": 0,
+    "warnings": 0
+  }
+}

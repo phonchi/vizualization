@@ -1,0 +1,941 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>20. 預報之後：讀一篇論文、進入決策，與回到儀器 &#8212; 地震統計與預報：從模型到台灣觀測</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = '展開補充';</script>
+    <script>let toggleHintHide = '收合補充';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '20_beyond_forecast';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="21. 臺灣地球物理觀測總覽" href="01_overview.html" />
+    <link rel="prev" title="19. 把模型加起來：凸組合" href="19_ensembles.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震統計與預報：從模型到台灣觀測</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    地震統計與預報：從一份義大利實驗到臺灣觀測
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：一份地震預報實驗，從資料到檢驗</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 把模型加起來：凸組合</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">21. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/20_beyond_forecast.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>20. 預報之後：讀一篇論文、進入決策，與回到儀器</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">20.1 在方法段旁邊，寫下規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20.2 在結果圖旁邊，寫下分數的分母</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">20.3 在結論旁邊，留下適用範圍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">20.4 同一顆地震，各場址搖動不同</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard">20.5 等待時間的 hazard，與地動危害分開讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">20.6 預報表如何走到使用者手上？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">20.7 本章填入的規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>20. 預報之後：讀一篇論文、進入決策，與回到儀器<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>一張格網預報，已經走過三類檢驗。
+第 19 章還把兩張預報加成一張。
+本章先拿規格卡去讀原論文。
+再追問：格內的地震期望數，如何連到地面搖動？</p>
+<p>一列儀器記錄，是整條工作線的起點。
+從波形到目錄，再到預報與決策，
+每一步都會改變數字所代表的東西。
+本章沿這條線回望第一部。
+最後把待查欄位交給第二部。</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<section id="id2">
+<h2>20.1 在方法段旁邊，寫下規格欄位<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>1990–2011 與 2012–2021 是兩段明確的日期。
+先在紙上圈出這些數字，再讀作者的理由。
+旁註（annotation）是緊貼原句的閱讀說明。
+每條旁註都指出設定、證據或尚待查明之處。
+以下使用摘述，只保留必要的英文短語。</p>
+<p><a class="reference external" href="https://doi.org/10.1093/gji/ggad123">Biondini 等（2023）</a>
+在 APPLICATION TO ITALY 節寫出學習與測試分工。
+下面選讀該節第二段，共兩句。
+右欄將每句接回本站的規格卡。
+兩句必須連著讀，才能看見資料如何分工。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>方法句摘述</p></th>
+<th class="head"><p>逐句旁註</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>作者用 1990–2011 擬合 EEPAS。理由是目錄品質改善。短語是「accuracy and completeness」。</p></td>
+<td><p>先填學習期間。完整度指目錄可靠收錄的規模範圍。英文為 completeness。這個理由需連到門檻證據。</p></td>
+</tr>
+<tr class="row-odd"><td><p>作者用 2012–2021 作擬前瞻測試。</p></td>
+<td><p>再填測試期間。擬前瞻是按歷史順序重演發報。英文為 pseudo-prospective。每次發報的資料截止也要核對。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>「獨立測試期」先描述資料用途的分離。
+它不能單獨證明所有研究設計都事前固定。
+同節的研究區選擇用到 2021 年前的資訊。
+因此，本站稱為既有研究區的重演。
+這個旁註把時間分工與選區證據放回同一頁。</p>
+<p>177 格是已採用的研究區結果。
+格子的選法會影響哪些事件進入評估。
+讀者應另查深度、規模與目錄版本。
+本站測試目錄為 25 顆，原論文為 27 顆。
+日期相同，仍可能因版本而得到不同計數。</p>
+</section>
+<section id="id3">
+<h2>20.2 在結果圖旁邊，寫下分數的分母<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Fig. 8 比較不同發報窗長的模型表現。
+下圖保留原論文的座標、模型標籤與區間。</p>
+<p><a class="reference download internal" download="" href="_downloads/9072cd5ba1b8bdb933ee62a8f0b4bf65/biondini2023_fig8.png"><span class="xref download myst"><img alt="Biondini 2023 Fig. 8：五種預報窗長下各模型相對 SUP 的每活動箱資訊增益與信賴區間" src="_images/biondini2023_fig8.png" /></span></a></p>
+<p>點圖可開啟大圖，放大比較模型標籤與信賴區間。</p>
+<p>圖：Biondini、Rhoades 與 Gasperini（2023），Fig. 8，p. 1692。
+來源：<a class="reference external" href="https://doi.org/10.1093/gji/ggad123">原論文</a>。黑線為 95%，灰線為 97.5% 信賴區間。
+先從最左的三個月窗開始讀，再往右比較窗長。
+原圖使用每活動箱資訊增益，簡稱 IGPA。
+英文為 information gain per active bin。
+活動箱（active bin）指至少有一顆事件的格箱。</p>
+<p>一箱若有兩顆，IGPA 仍只算一個活動箱。
+第 18 章的 IGPE 則按事件數平均。
+原論文還使用二元分數作比較。
+因此，兩種增益的分母與評分都須核對。
+本站數字不能直接填回原圖。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>結果描述摘述</p></th>
+<th class="head"><p>逐句旁註</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>正文指出，最短窗長「3 months」由 ETAS 系列表現較好。</p></td>
+<td><p>先圈窗長，再圈模型版本。這是作者那份測試目錄的結果。本站 ETAS 採第一代近似。</p></td>
+</tr>
+<tr class="row-odd"><td><p>正文接著指出，較長窗長由 EEPAS 系列表現較好。</p></td>
+<td><p>結論隨窗長改變。它沒有給出所有情境共用的冠軍。</p></td>
+</tr>
+<tr class="row-even"><td><p>圖說以 SUP 為零點，並畫出兩組信賴界限。</p></td>
+<td><p>先看零點，再看區間。基準、區間水準與多重判斷要一起讀。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>一個高於零的中心點，先表示相對分數較高。
+區間是否跨零，才影響差異的判讀。
+原圖的黑、灰線對應不同信賴水準。
+旁註對照上方原圖，沒有重畫或估讀數值。
+讀者可以沿章末免費全文逐項核對。</p>
+</section>
+<section id="id4">
+<h2>20.3 在結論旁邊，留下適用範圍<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>結論段把 EEPAS 的優勢連到較長預報窗。
+同一句也提醒目標樣本有限。
+短語「small number of target shocks」保留了這層語氣。
+摘述是：EEPAS 可能較適合較長期預報。
+小樣本使這個比較仍需審慎看待。</p>
+<p>這一句的旁註應保留「可能」與「較長期」。
+前者對應證據強度，後者對應使用情境。
+若只抄「EEPAS 較好」，兩項條件都消失了。
+把句子變短，仍要保留作者真正比較的範圍。
+這就是從原文走到可讀教材的關鍵。</p>
+<p>一篇論文可以用三種記號來讀。
+日期與門檻旁邊寫「設定」。
+圖表與分數旁邊寫「證據」。
+結論的情境與語氣旁邊寫「範圍」。
+三者能互相對上，才形成完整的論證。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="teaching-diagram" data-diagram="d20_model_family"><style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d20_model_family{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d20_model_family *{box-sizing:border-box}
+.dg-d20_model_family svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d20_model_family svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d20_model_family svg .name{font-weight:600}
+.dg-d20_model_family svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d20_model_family .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d20_model_family .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d20_model_family .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d20_model_family .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d20_model_family .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d20_model_family .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d20_model_family .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d20_model_family .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d20_model_family .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d20_model_family .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d20_model_family .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d20_model_family .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d20_model_family .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d20_model_family .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d20_model_family .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d20_model_family .details p,.dg-d20_model_family .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d20_model_family .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d20_model_family [hidden]{display:none}
+.dg-d20_model_family .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d20_model_family .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d20_model_family svg [data-detail-mark]{transition:none}}
+@media print{.dg-d20_model_family .choices{display:none}.dg-d20_model_family [hidden]{display:block}.dg-d20_model_family.enhanced svg [data-detail-mark]{opacity:1}.dg-d20_model_family .details{min-height:0}}
+
+.dg-d20_model_family:has(#dg-d20_model_family-choice-fixed:checked) [data-detail]:not([data-detail="fixed"]){display:none}
+.dg-d20_model_family:has(#dg-d20_model_family-choice-ppe:checked) [data-detail]:not([data-detail="ppe"]){display:none}
+.dg-d20_model_family:has(#dg-d20_model_family-choice-etas:checked) [data-detail]:not([data-detail="etas"]){display:none}
+.dg-d20_model_family:has(#dg-d20_model_family-choice-eepas:checked) [data-detail]:not([data-detail="eepas"]){display:none}
+.dg-d20_model_family svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-fixed"]:hover) [data-detail="fixed"]{display:block!important}
+.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-ppe"]:hover) [data-detail="ppe"]{display:block!important}
+.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-etas"]:hover) [data-detail="etas"]{display:block!important}
+.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-eepas"]:hover) [data-detail="eepas"]{display:block!important}}
+@media print{.dg-d20_model_family [data-detail]{display:block!important}.dg-d20_model_family [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d20_model_family" data-teaching-widget="d20_model_family"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 488" role="img" aria-labelledby="dg-d20_model_family-title dg-d20_model_family-desc"><title id="dg-d20_model_family-title">四種預報：差別在於如何使用歷史</title><desc id="dg-d20_model_family-desc">SUP 是固定空間基準；本站 PPE 隨已知來源緩慢更新並使用 50 天延遲；ETAS 與 EEPAS 分別由觸發與前兆尺度描述歷史貢獻。</desc><rect x="112" y="16" width="256" height="64" rx="8" class="node focal"/><text x="240.0" y="48" class="name" text-anchor="middle">格箱率預報</text><path d="M 216 80 V 104 Q 216 112 208 112 H 96 Q 88 112 88 120 V 144" class="edge"/><path d="M 264 80 V 104 Q 264 112 272 112 H 336 Q 344 112 344 120 V 144" class="edge"/><g data-detail-mark="fixed"><rect x="16" y="144" width="144" height="88" rx="8" class="node "/><text x="88.0" y="176" class="name" text-anchor="middle">SUP</text><text x="88.0" y="204" class="sub" text-anchor="middle">固定基準</text></g><rect x="224" y="144" width="240" height="88" rx="8" class="node "/><text x="344.0" y="176" class="name" text-anchor="middle">使用歷史資訊</text><text x="344.0" y="204" class="sub" text-anchor="middle">依發報規則更新</text><path d="M 280 232 V 252 Q 280 260 272 260 H 96 Q 88 260 88 268 V 328" class="edge"/><path d="M 344 232 V 276 Q 344 284 336 284 H 248 Q 240 284 240 292 V 328" class="edge"/><path d="M 392 232 V 328" class="edge"/><g data-detail-mark="ppe"><rect x="16" y="328" width="144" height="80" rx="8" class="node "/><text x="88.0" y="360" class="name" text-anchor="middle">PPE</text><text x="88.0" y="388" class="sub" text-anchor="middle">緩慢更新</text></g><g data-detail-mark="etas"><rect x="168" y="328" width="144" height="80" rx="8" class="node "/><text x="240.0" y="360" class="name" text-anchor="middle">ETAS</text><text x="240.0" y="388" class="sub" text-anchor="middle">觸發活動</text></g><g data-detail-mark="eepas"><rect x="320" y="328" width="144" height="80" rx="8" class="node "/><text x="392.0" y="360" class="name" text-anchor="middle">EEPAS</text><text x="392.0" y="388" class="sub" text-anchor="middle">前兆尺度</text></g><text x="240" y="456" class="name" text-anchor="middle">成分可組合，但權重須先定</text></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d20_model_family-choice-fixed" name="dg-d20_model_family-choice" value="fixed" aria-controls="dg-d20_model_family-panel-fixed" checked><label for="dg-d20_model_family-choice-fixed">SUP</label></span><span><input type="radio" id="dg-d20_model_family-choice-ppe" name="dg-d20_model_family-choice" value="ppe" aria-controls="dg-d20_model_family-panel-ppe" ><label for="dg-d20_model_family-choice-ppe">PPE</label></span><span><input type="radio" id="dg-d20_model_family-choice-etas" name="dg-d20_model_family-choice" value="etas" aria-controls="dg-d20_model_family-panel-etas" ><label for="dg-d20_model_family-choice-etas">ETAS</label></span><span><input type="radio" id="dg-d20_model_family-choice-eepas" name="dg-d20_model_family-choice" value="eepas" aria-controls="dg-d20_model_family-panel-eepas" ><label for="dg-d20_model_family-choice-eepas">EEPAS</label></span></div><div class="details" aria-live="polite"><section id="dg-d20_model_family-panel-fixed" data-detail="fixed" aria-label="SUP"><h4>SUP</h4><p>本站 SUP 在等面積格中均勻配置空間率，使用學習期決定的固定率。它是後面三個模型共同的簡單比較基準。</p></section><section id="dg-d20_model_family-panel-ppe" data-detail="ppe" aria-label="PPE"><h4>PPE</h4><p>本站 PPE 的來源目錄逐窗更新，來源須早於發報時刻 50 天。固定的是參數，並非來源或空間權重；時間項也隨目錄累積長度緩慢改變。</p></section><section id="dg-d20_model_family-panel-etas" data-detail="etas" aria-label="ETAS"><h4>ETAS</h4><p>ETAS 以觸發核描述事件後的叢集。本站格網版本只納入背景與已知歷史的第一代貢獻。變化的時間尺度依核參數、歷史與發報窗而定。</p></section><section id="dg-d20_model_family-panel-eepas" data-detail="eepas" aria-label="EEPAS"><h4>EEPAS</h4><p>EEPAS 依前兆尺度把事件貢獻分配到規模、時間與空間。本站使用 50 天資料延遲；較長時間尺度是本實驗的設定與解讀，不是所有 EEPAS 的固定範圍。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>
+<p class="diagram-caption">時間尺度與更新方式是閱讀模型論文的兩個線索。</p></div></div></div>
+</div>
+</section>
+<section id="id5">
+<h2>20.4 同一顆地震，各場址搖動不同<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>一格預報「可能有地震」，還沒描述某棟樓的搖動。
+地動（ground motion）是場址的地面運動。
+地震到場址的距離會改變它。
+規模與地下介質也會改變它。
+所以事件發生率還需要一個地動轉換。</p>
+<p>地動預估式稱為 GMPE。
+英文是 ground-motion prediction equation。
+它按規模、距離與場址條件給出地動分布。
+同樣條件下，地動仍會有散布。
+預估式因此提供分布，而非單一確定搖動值。</p>
+<p>一個場址的地動門檻可記作 <span class="math notranslate nohighlight">\(a\)</span>。
+地動危害（seismic hazard）描述超過此門檻的可能性。
+機率式地震危害分析簡稱 PSHA。
+英文是 probabilistic seismic hazard analysis。
+它把可能地震與地動分布合計起來。</p>
+<p>Baker 的入門教材把這件事拆成五步。
+先辨認能影響場址的震源。
+再描述各規模的發生率。
+接著描述震源到場址的距離分布。
+第四步給出條件地動分布。
+第五步把大小、位置與地動的不確定性積分。</p>
+<div class="math notranslate nohighlight">
+\[\nu(a)=\int\!\!\int
+\lambda(m,r)P(Y&gt;a\mid m,r)\,\mathrm{d}r\,\mathrm{d}m.\]</div>
+<p><span class="math notranslate nohighlight">\(Y\)</span> 是場址地動，<span class="math notranslate nohighlight">\(r\)</span> 是震源距離。
+<span class="math notranslate nohighlight">\(\lambda(m,r)\)</span> 是每年每單位規模與距離的事件率。
+<span class="math notranslate nohighlight">\(\nu(a)\)</span> 是每年的地動超越率。
+超越率（exceedance rate）表示每年超過門檻的期望次數。
+這個年率式假定評估期間的發生率可視為固定。</p>
+<p>下圖只用兩個合成震源，展示合計的樣子。
+峰值地表加速度稱為 PGA。
+英文是 peak ground acceleration。
+橫軸用重力加速度 <span class="math notranslate nohighlight">\(g\)</span> 作單位。
+曲線愈往右，要求的搖動門檻愈高。
+合成參數用於教學，沒有代入義大利場址。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>圖：2 個合成震源；年率 0.020、0.005。地動中位數 0.12、0.30 g；對數標準差 0.55。</p>
+<div class="output text_html">        <script>
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.7.0.min"</script>
+        </div><div class="output text_html"><div style="height:525px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="233c0690-9002-472d-b80a-863056db41fa" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("233c0690-9002-472d-b80a-863056db41fa")) {                    Plotly.newPlot(                        "233c0690-9002-472d-b80a-863056db41fa",                        [{"line":{"color":"#008300","dash":"dot"},"name":"\u5408\u6210\u9707\u6e90 1","x":{"dtype":"f8","bdata":"exSuR+F6hD9EHdcUMC6FPx2nK8Wg54U\u002feTVzCWmnhj+ueYhowG2HP1n0bE\u002fgOog\u002fMVjpIQQPiT+Dfr9LaeqJPxXoclJPzYo\u002fbPCs5\u002fe3iz90BkL8pqqMP7Ns3dOipY0\u002fmDJZGTSpjj8eS8jzpbWPPwxsHA6jZZA\u002fXHsaejL1kD\u002fDSITOqomRP1x66Qc3I5I\u002fRo41mwPCkj+I+Y6CPmaTP6L4pkoXEJQ\u002fRux9IL+\u002flD8GP6DfaHWVP9Ty3yBJMZY\u002fFhqPSZbzlj\u002fQpD+biLyXP18RDURajJg\u002fzrd0b0djmT+jkMFXjkGaP\u002f2BEFhvJ5s\u002fzWry\u002fiwVnD\u002flULEhDAudP4RGPvBTCZ4\u002fDszNCU4Qnz8cUxRJIxCgP\u002fup2yPGnKA\u002fSUMnTTguoT\u002fAmmHho8ShP+iQpm00YKI\u002fIGxf\u002fBYBoz++P00ieqejP85\u002fBQyOU6Q\u002f\u002fqjki4QFpT+oBnsokb2lP+3Ddyvpe6Y\u002f8ZkWscNApz9nkhS4WQyoP2d9MDLm3qg\u002fd+E7Faa4qT\u002faVsFs2JmqPyRqRWy+gqs\u002fVk8ngptzrD9e3CZrtWytP1VylUZUbq4\u002f2a03q8J4rz829W7eJkawP6nsXKGi1LA\u002ftdE73\u002f1nsT8aoxBCYwCyPy6Laen+nbI\u002fg0ckd\u002f5Asz\u002feaaQckemzP6NFfajnl7Q\u002fin6TlDRMtT8OULoUrAa2P7TI0CWEx7Y\u002fg1ljnfSOtz8ZQNY5N124P9d5HbOHMrk\u002f8BYHzCMPuj9B7xxkS\u002fO6PzfmIopA37s\u002fRhg3j0fTvD\u002fhe5kap8+9P9ivID6o1L4\u002fL+Nhi5bivz9l+8gU4HzAP0IXE\u002fY6DcE\u002fTn8dtYWiwT823mOL6zzCP\u002f0Z0yyZ3MI\u002fwbC61LyBwz\u002fpZi9ThizEP+Mm4xon3cQ\u002fQxR2T9KTxT\u002fJ90TUvFDGP19NuVsdFMc\u002fU2Mfdyzexz92IAenJK\u002fIP\u002f8uNGxCh8k\u002fy3MiWcRmyj9b5CMk603LPx36HLr5PMw\u002fFzDlUTU0zT\u002frJlGA5TPOP4Y87ExUPM8\u002f38uzI+cm0D9GbuJOUbTQP815oZmRRtE\u002fWsQJXNLd0T+mDvBgP3rSPw\u002fkkvIFHNM\u002fHn2351TD0z9GcDmxXHDUP04eEWhPI9U\u002f3+nU22Dc1T8ibbmhxpvWP4wFFSS4Ydc\u002fkzNrsm4u2D9ycwSSJQLZPw5dFw8a3dk\u002fzwKIjou\u002f2j\u002fLskKgu6nbP91qNxLum9w\u002flH77A2mW3T\u002fcHRf7dJneP3udBPhcpd8\u002f0srzRTdd4D\u002fzD4H3fOzgP7Va9wupgOE\u002farPSaeYZ4j8FsSlvYbjiP7z7hf5HXOM\u002fWkctjMkF5D8Vnt4rF7XkP0H2B59jauU\u002f4y94Y+Ml5j+ju5HCzOfmP2RRAuFXsOc\u002fdkMEz75\u002f6D9bIy6ZPVbpPx+W1VkSNOo\u002fvWAKS30Z6z+J4S7ZwAbsP91YM7Yh\u002fOw\u002fN5J57eb57T9jsGb4WQDvP4iI1GnjB\u002fA\u002fNjicCj6U8D\u002ftVYuBZSXxP+Pca9WDu\u002fE\u002fmdP7fMRW8j8C04JrVPfyPza71R1infM\u002fBFrMpx1J9D8Z6SzCuPr0P3ZrEdlmsvU\u002fYhXLGl1w9j\u002f1DUiH0jT3PwAAAAAAAPg\u002f"},"y":{"dtype":"f8","bdata":"7itDF916lD9Br+my23qUP6UF+t7ZepQ\u002fe8\u002fNetd6lD9qOuxc1HqUP+044FDQepQ\u002fJvaWFMt6lD8U5DBVxHqUP4DsLKu7epQ\u002fsVrSlbB6lD\u002faFrt1onqUP9\u002faXIaQepQ\u002fPz9t1nl6lD8nAvo+XXqUP9HjDFk5epQ\u002fBRSxcQx6lD83rC981HmUPyRPWQKPeZQ\u002fOgW1Ejl5lD+OE3Asz3iUP2Qj8ChNeJQ\u002fCuLwIq53lD+CkCBb7HaUP7YEPBoBdpQ\u002fR5O6kOR0lD+nWC20jXOUP3tsixrycZQ\u002fq6G90wVwlD\u002fHXthBu22UP+5\u002fkPACa5Q\u002f9JWYbMtnlD8fjLUbAWSUP7fuexaOX5Q\u002fmrPIBFpalD9\u002fUyj+SVSUP6Hfe29ATZQ\u002f\u002fhVEBx1FlD+1uQyqvDuUP0IPfXD5MJQ\u002fmLuTsKoklD+p7YoTpRaUP\u002fhXzLm6BpQ\u002fdfs5brv0kz+9VeDpdOCTP+zF5yizyZM\u002fZfxN0UCwkz94npWr55OTP7oSMy1xdJM\u002fAWYLFKdRkz+htN8RVCuTP+Zf\u002f4VEAZM\u002fKPwYQ0fTkj\u002fxJ4FeLqGSP2OPywXQapI\u002fTKYhVwcwkj8zk2A4tfCRP8a4uCjBrJE\u002fqFFRCBpkkT8OR1XRthaRP4TBzj2XxJA\u002fHBTXVcRtkD9EweHhUBKQP341l3qzZI8\u002fWs6yCwycjj97v+NKDsuNP2zmM2gx8ow\u002fqkoXYgASjD8tf0QlGSuLP1xeh1srPoo\u002fwynA7PZLiT8WGR03SlWIP6SMYwUAW4c\u002feiHCS\u002f1dhj+naRi1Ll+FP9r+1wuGX4Q\u002fM9SSivdfgz+cIuwgd2GCP8Oq7rn1ZIE\u002fG7nBkF5rgD+HVa1AKet+P1q063PgCH0\u002fV48jm3kxez+f+QTbbWZ5PwNlmCsVqXc\u002frhXPeqP6dT\u002fYsmlsJlx0PxPAyryDznI\u002fjjaHSHhScT9nvbNtL9FvPyQ2QoOZIm0\u002f1yy1JLSZaj9NwHJRtzZoP3MuFHqR+WU\u002fqSJUHezhYz82I9MaMe9hPxcokpeQIGA\u002fKbNzng7qXD+aSO1aytZZPy0JmBeoBFc\u002fGopW5LxwVD\u002fhZmt27BdSPyp7+wDs7U8\u002fgb320gAVTD9EuP1yS55IPxPM7Df7gkU\u002fh\u002f3WvE28Qj8Ip322n0NAPyM96Rz3JDw\u002fMjlmf0tFOD9B1cz5Tdw0P7w8q2eo3jE\u002fccCTKVKDLj\u002fsDfPklfYpPwNPFrd0BCY\u002fhXp4hK2bIj+M7z2gxlgfPzaEFQUtUBo\u002fLegmkzQDFj\u002ff9EyZDVoSP8yBLpyjfg4\u002fH5ZiNMA\u002fCT8lcK\u002fJa9UEP45aSNyNIQE\u002f34xuhFIT\u002fD6WswCVFu32PgETplf5p\u002fI+LTopLdVB7j6S0MGvTnPoPiU+RYRisOM+ARbXYz2Z3z7NgKM3YkTZPk6PJmQhItQ+qd7Kd+r4zz42UojFC0zJPlb4rVDg8cM+yUBbc79Wvz4EBIo2rYi4PrnGaYd1I7M+MZCnpt3ArT6ebfIzsAunPkaiOChjyaE+lwzuu5hbmz7kNopT8faUPkScwH0UApA+Y8BVKQ5ciD51HR2MvneCPrxflVjX5ns+gf46rn8AdT47IMDH4oBvPvVP9OEPi2c+"},"type":"scatter"},{"line":{"color":"#4a3aa7","dash":"dot"},"name":"\u5408\u6210\u9707\u6e90 2","x":{"dtype":"f8","bdata":"exSuR+F6hD9EHdcUMC6FPx2nK8Wg54U\u002feTVzCWmnhj+ueYhowG2HP1n0bE\u002fgOog\u002fMVjpIQQPiT+Dfr9LaeqJPxXoclJPzYo\u002fbPCs5\u002fe3iz90BkL8pqqMP7Ns3dOipY0\u002fmDJZGTSpjj8eS8jzpbWPPwxsHA6jZZA\u002fXHsaejL1kD\u002fDSITOqomRP1x66Qc3I5I\u002fRo41mwPCkj+I+Y6CPmaTP6L4pkoXEJQ\u002fRux9IL+\u002flD8GP6DfaHWVP9Ty3yBJMZY\u002fFhqPSZbzlj\u002fQpD+biLyXP18RDURajJg\u002fzrd0b0djmT+jkMFXjkGaP\u002f2BEFhvJ5s\u002fzWry\u002fiwVnD\u002flULEhDAudP4RGPvBTCZ4\u002fDszNCU4Qnz8cUxRJIxCgP\u002fup2yPGnKA\u002fSUMnTTguoT\u002fAmmHho8ShP+iQpm00YKI\u002fIGxf\u002fBYBoz++P00ieqejP85\u002fBQyOU6Q\u002f\u002fqjki4QFpT+oBnsokb2lP+3Ddyvpe6Y\u002f8ZkWscNApz9nkhS4WQyoP2d9MDLm3qg\u002fd+E7Faa4qT\u002faVsFs2JmqPyRqRWy+gqs\u002fVk8ngptzrD9e3CZrtWytP1VylUZUbq4\u002f2a03q8J4rz829W7eJkawP6nsXKGi1LA\u002ftdE73\u002f1nsT8aoxBCYwCyPy6Laen+nbI\u002fg0ckd\u002f5Asz\u002feaaQckemzP6NFfajnl7Q\u002fin6TlDRMtT8OULoUrAa2P7TI0CWEx7Y\u002fg1ljnfSOtz8ZQNY5N124P9d5HbOHMrk\u002f8BYHzCMPuj9B7xxkS\u002fO6PzfmIopA37s\u002fRhg3j0fTvD\u002fhe5kap8+9P9ivID6o1L4\u002fL+Nhi5bivz9l+8gU4HzAP0IXE\u002fY6DcE\u002fTn8dtYWiwT823mOL6zzCP\u002f0Z0yyZ3MI\u002fwbC61LyBwz\u002fpZi9ThizEP+Mm4xon3cQ\u002fQxR2T9KTxT\u002fJ90TUvFDGP19NuVsdFMc\u002fU2Mfdyzexz92IAenJK\u002fIP\u002f8uNGxCh8k\u002fy3MiWcRmyj9b5CMk603LPx36HLr5PMw\u002fFzDlUTU0zT\u002frJlGA5TPOP4Y87ExUPM8\u002f38uzI+cm0D9GbuJOUbTQP815oZmRRtE\u002fWsQJXNLd0T+mDvBgP3rSPw\u002fkkvIFHNM\u002fHn2351TD0z9GcDmxXHDUP04eEWhPI9U\u002f3+nU22Dc1T8ibbmhxpvWP4wFFSS4Ydc\u002fkzNrsm4u2D9ycwSSJQLZPw5dFw8a3dk\u002fzwKIjou\u002f2j\u002fLskKgu6nbP91qNxLum9w\u002flH77A2mW3T\u002fcHRf7dJneP3udBPhcpd8\u002f0srzRTdd4D\u002fzD4H3fOzgP7Va9wupgOE\u002farPSaeYZ4j8FsSlvYbjiP7z7hf5HXOM\u002fWkctjMkF5D8Vnt4rF7XkP0H2B59jauU\u002f4y94Y+Ml5j+ju5HCzOfmP2RRAuFXsOc\u002fdkMEz75\u002f6D9bIy6ZPVbpPx+W1VkSNOo\u002fvWAKS30Z6z+J4S7ZwAbsP91YM7Yh\u002fOw\u002fN5J57eb57T9jsGb4WQDvP4iI1GnjB\u002fA\u002fNjicCj6U8D\u002ftVYuBZSXxP+Pca9WDu\u002fE\u002fmdP7fMRW8j8C04JrVPfyPza71R1infM\u002fBFrMpx1J9D8Z6SzCuPr0P3ZrEdlmsvU\u002fYhXLGl1w9j\u002f1DUiH0jT3PwAAAAAAAPg\u002f"},"y":{"dtype":"f8","bdata":"sZeSR+F6dD\u002fOp4VH4Xp0P6fYckfhenQ\u002fAppXR+F6dD8TSTBH4Xp0P83C90bhenQ\u002fnMymRuF6dD+gRDNG4Xp0P44Fj0XhenQ\u002fx2OmROF6dD\u002fcIF5D4Xp0P4inkEHhenQ\u002fH1QKP+F6dD9ae4Q74Xp0PybKnjbhenQ\u002fDnzWL+F6dD\u002fowHom4Xp0P2V8nRnhenQ\u002f2lD\u002fB+F6dD\u002fAn\u002fXv4Hp0P0jTSM\u002fgenQ\u002fY9oIo+B6dD+nP1Vn4Hp0P7aoFRfgenQ\u002fdNKeq996dD\u002fFQj8c33p0P\u002fTlrV3eenQ\u002fDKBTYd16dD8qfWcU3Hp0Pyeb017aenQ\u002fJSDXIdh6dD9Nklc21Xp0Pzqt0WrRenQ\u002fq2LXgMx6dD+AEgYqxnp0PxQ5XQS+enQ\u002fj+balbN6dD9YVUBHpnp0Pyb\u002f3V2VenQ\u002fbrpD9H96dD9l1q7xZHp0P8UDDgBDenQ\u002fd0pxgBh6dD9hj7t943l0Pxd+a52heXQ\u002fnUpTDlB5dD9T9hl163h0PzjZZdZveHQ\u002f7m6Xfth3dD\u002fREgXnH3d0P6mutJg\u002fdnQ\u002fRJifDDB1dD9rF5+J6HN0P0NfNQBfcnQ\u002f2iF\u002f5IdwdD\u002feIbUGVm50P6H4wmq6a3Q\u002fQTmYH6RodD\u002fCjfoWAGV0PwOUwf64YHQ\u002fCCSHHLdbdD+MIvcs4FV0P5rDB0gXT3Q\u002fgbp8yzxHdD9cvitNLj50P9hvhZbGM3Q\u002fh3npqt0ndD\u002f6NEbaSBp0P43UceHaCnQ\u002fyOOLGWT5cz9fAIm3suVzP0V9zxyTz3M\u002foyCCOdC2cz9lz74ANJtzP6i7su6HfHM\u002fnyL2n5Vacz9K\u002fSh5JzVzP877Sl0JDHM\u002fs\u002fzGcAnfcj9krajm+K1yP\u002fM89tSseHI\u002fXWC0DP8+cj8HzbTxzgByPyoo+00CvnE\u002fDF9GHIZ2cT8oKChFTypxP\u002fYyDUpb2XA\u002fs6ew2bCDcD\u002fYfq5JYClwP4ilhOIHlW8\u002fedJ1w4DObj+744fziP9tPySnuKKSKG0\u002fI3w3+iNKbD8x2JFQ1mRrP0o2WgxVeWo\u002fACAEOFyIaT+I7I7LtpJoP7d8ZrI8mWc\u002fG0CPldCcZj+zhbNzXZ5lPzwT7xHUnmQ\u002fLoU4USifYz9kiP10TqBiP7uG6Wc4o2E\u002fPJvaC9OoYD8bTXxDB2RfP0VK36pKf10\u002fO4SN8Q2lWz8Yz5nv0dZZPx7CQR33FVg\u002f2g3Zj7pjVj8fZxSSM8FUP25xON5RL1M\u002fMmbsfNyuUT8lnbpHcUBQP6yHexUKyU0\u002f+Itie8g2Sz\u002fVYFeTaMpIPw\u002fFiJzqg0Y\u002fCBuwrQhjRD9DGyTeO2dCP6xsrwnCj0A\u002fHxi3FEi3PT\u002f2zKqGeJM6P46U57F6sTc\u002fX8dB53EONT9PYLXbTKcyP3ONFKHSeDA\u002fg\u002ffQEV7\u002fLD9z2WaN\u002fHApPy7DmV2vPyY\u002fWhlt7q5kIz8uGprPTtkgP0FajrsZLh0\u002fjJ\u002f8WTwvGT\u002fIH35z86kVP4Qx2OLBkhI\u002fKDYNspi9Dz\u002fN39rzxAcLP9PgZuQI8QY\u002fCjHUv8pnAz8Rejja1VsAP98PKvepfPs+cvZqSpED9z5bWKv78zPzPrVtsGOs7+8+M7uHBRV36j5RKY2GF9vlPsWzGUyq\u002fOE+"},"type":"scatter"},{"line":{"color":"#2a78d6","width":3},"name":"\u5408\u8a08","x":{"dtype":"f8","bdata":"exSuR+F6hD9EHdcUMC6FPx2nK8Wg54U\u002feTVzCWmnhj+ueYhowG2HP1n0bE\u002fgOog\u002fMVjpIQQPiT+Dfr9LaeqJPxXoclJPzYo\u002fbPCs5\u002fe3iz90BkL8pqqMP7Ns3dOipY0\u002fmDJZGTSpjj8eS8jzpbWPPwxsHA6jZZA\u002fXHsaejL1kD\u002fDSITOqomRP1x66Qc3I5I\u002fRo41mwPCkj+I+Y6CPmaTP6L4pkoXEJQ\u002fRux9IL+\u002flD8GP6DfaHWVP9Ty3yBJMZY\u002fFhqPSZbzlj\u002fQpD+biLyXP18RDURajJg\u002fzrd0b0djmT+jkMFXjkGaP\u002f2BEFhvJ5s\u002fzWry\u002fiwVnD\u002flULEhDAudP4RGPvBTCZ4\u002fDszNCU4Qnz8cUxRJIxCgP\u002fup2yPGnKA\u002fSUMnTTguoT\u002fAmmHho8ShP+iQpm00YKI\u002fIGxf\u002fBYBoz++P00ieqejP85\u002fBQyOU6Q\u002f\u002fqjki4QFpT+oBnsokb2lP+3Ddyvpe6Y\u002f8ZkWscNApz9nkhS4WQyoP2d9MDLm3qg\u002fd+E7Faa4qT\u002faVsFs2JmqPyRqRWy+gqs\u002fVk8ngptzrD9e3CZrtWytP1VylUZUbq4\u002f2a03q8J4rz829W7eJkawP6nsXKGi1LA\u002ftdE73\u002f1nsT8aoxBCYwCyPy6Laen+nbI\u002fg0ckd\u002f5Asz\u002feaaQckemzP6NFfajnl7Q\u002fin6TlDRMtT8OULoUrAa2P7TI0CWEx7Y\u002fg1ljnfSOtz8ZQNY5N124P9d5HbOHMrk\u002f8BYHzCMPuj9B7xxkS\u002fO6PzfmIopA37s\u002fRhg3j0fTvD\u002fhe5kap8+9P9ivID6o1L4\u002fL+Nhi5bivz9l+8gU4HzAP0IXE\u002fY6DcE\u002fTn8dtYWiwT823mOL6zzCP\u002f0Z0yyZ3MI\u002fwbC61LyBwz\u002fpZi9ThizEP+Mm4xon3cQ\u002fQxR2T9KTxT\u002fJ90TUvFDGP19NuVsdFMc\u002fU2Mfdyzexz92IAenJK\u002fIP\u002f8uNGxCh8k\u002fy3MiWcRmyj9b5CMk603LPx36HLr5PMw\u002fFzDlUTU0zT\u002frJlGA5TPOP4Y87ExUPM8\u002f38uzI+cm0D9GbuJOUbTQP815oZmRRtE\u002fWsQJXNLd0T+mDvBgP3rSPw\u002fkkvIFHNM\u002fHn2351TD0z9GcDmxXHDUP04eEWhPI9U\u002f3+nU22Dc1T8ibbmhxpvWP4wFFSS4Ydc\u002fkzNrsm4u2D9ycwSSJQLZPw5dFw8a3dk\u002fzwKIjou\u002f2j\u002fLskKgu6nbP91qNxLum9w\u002flH77A2mW3T\u002fcHRf7dJneP3udBPhcpd8\u002f0srzRTdd4D\u002fzD4H3fOzgP7Va9wupgOE\u002farPSaeYZ4j8FsSlvYbjiP7z7hf5HXOM\u002fWkctjMkF5D8Vnt4rF7XkP0H2B59jauU\u002f4y94Y+Ml5j+ju5HCzOfmP2RRAuFXsOc\u002fdkMEz75\u002f6D9bIy6ZPVbpPx+W1VkSNOo\u002fvWAKS30Z6z+J4S7ZwAbsP91YM7Yh\u002fOw\u002fN5J57eb57T9jsGb4WQDvP4iI1GnjB\u002fA\u002fNjicCj6U8D\u002ftVYuBZSXxP+Pca9WDu\u002fE\u002fmdP7fMRW8j8C04JrVPfyPza71R1infM\u002fBFrMpx1J9D8Z6SzCuPr0P3ZrEdlmsvU\u002fYhXLGl1w9j\u002f1DUiH0jT3PwAAAAAAAPg\u002f"},"y":{"dtype":"f8","bdata":"2tEnaZWZmT80GcsElJmZP8+71jCSmZk\u002f\u002fLWjzI+ZmT+vTLiujJmZP6ApnqKImZk\u002fTalAZoOZmT88tb2mfJmZP+StkPxzmZk\u002fo\u002fP75miZmT8Rn5LGWpmZP8EEwdZImZk\u002fR9QvJjKZmT\u002f+INuNFZmZP1qWtKbxmJk\u002fCLOmvcSYmT9xXM7FjJiZPz2uwEhHmJk\u002fcNm0VPGXmT9+e21oh5eZPzZYwlwFl5k\u002foxizS2aWmT9s4PV0pJWZP+RuASC5lJk\u002f5Eeie5yTmT9YKT17RZKZP\u002fjl9rGpkJk\u002frokSLL2OmT8SPvJGcoyZP7hmRYi5iZk\u002f\u002fV0OdYGGmT+ycEtptoKZPwZaMHFCfpk\u002fRYz+JA15mT8f2KmI+3KZP+Ytk\u002fDva5k\u002fos+67MljmT8Lz9w7ZlqZPwyP9MeeT5k\u002fNKqkrUpDmT9Co\u002fZPPjWZP+nYz3lLJZk\u002fE05WjkETmT+VOU\u002fJ7f6YP3KlQpAb6Jg\u002fDM\u002fi1JTOmD8NHNyIIrKYPwiJzCKNkpg\u002fvEGxM51vmD9V+aALHEmYP5CLLGzUHpg\u002fOeJARpPwlz\u002fM7eiAKL6XPzTn2MVnh5c\u002fwm5BUClMlz+q2w26SgyXP+52acOvx5Y\u002f+F83EEN+lj9+6hPX9i+WP4Umf33F3JU\u002fHt34HLKElT\u002fniR\u002ftyCeVP6aLTY8fxpQ\u002fzZW4ONVflD9Uz7y4EvWTPyxPu1kKhpM\u002ftwPGm\u002fcSkz\u002fVzDPJHpySP1EkIGbMIZI\u002f1A3DfFSkkT+jzHDJESSRP6Ol5clkoZA\u002f5phBtLIckD9a0Xe1yCyPP65cMQPKHY4\u002fguWNWkINjT9BoYDdCvyLP6oolGj66oo\u002fdDclSePaiT92AasTkcyIP6b4cKTGwIc\u002f2vfrUzy4hj9T41xmnrOFP5bGybyLs4Q\u002fXbqKy5S4gz+A7cjYOsOCP4T5a4Pv04E\u002fIO8bkRTrgD\u002fGLkQA\u002fAiAP9Zt47LQW34\u002fqH8VdBq0fD8EUn0iIBt7P8xqZg4SkXk\u002fZs\u002fFCwgWeD+0fbK1A6p2PzAv9tHyTHU\u002fyvyew7H+cz9qyIL8Db9yP6dAGV\u002fIjXE\u002flELdg5dqcD8kOemuU6puPwbyLRJPmmw\u002fjjT2hWikaj919rxR4cdoP8C55DX3A2c\u002fnloQe+ZXZT9QkF2P68JjP8fMDDlERGI\u002fRImzaDDbYD9oBA1u5Q1fP02RLDehjVw\u002f6IUL1SQ0Wj\u002fcyLJOBgBYP047G3Xg71U\u002fg3V7LVICVD8efL6x\u002fTVSPxkcD9uHiVA\u002f\u002fmjHDS\u002f3TT9x\u002f4BGqhVLPyytS9bUa0g\u002fakT2sAT3RT9FEr+akrRDP1Xyc+faoUE\u002f7QD+PH14Pz8v2PrvSQI8P771YUf62zg\u002fMBGrkIAANj\u002fUbjNR52ozP2S3NrVVFjE\u002fM7Dv\u002fCf8LT959SOfHzsqP6j3umjA4CY\u002f1URMmJLkIz93O7D+fj4hPwTKE76ozR0\u002fjwzKV5esGT\u002fYR1goFgwWP5\u002fY9bhP3xI\u002fNOpTFE4aED+Dqaq082MLP1zDB3EuOAc\u002fIw1M8YGeAz9\u002fjt+8w4UAP1ASIUmyvPs+86G9Zkk09z6WksN441jzPjrMMAm9E\u002fA+MDHkBBah6j5x6VRpmPrlPhWo+1s1FOI+"},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"size":13},"margin":{"l":60,"r":20,"t":50,"b":40},"xaxis":{"title":{"text":"PGA \u9580\u6abb\uff08g\uff09"},"type":"log"},"yaxis":{"title":{"text":"\u6bcf\u5e74\u8d85\u8d8a\u7387"},"type":"log"},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x unified","title":{"text":"\u5408\u6210\u5730\u52d5\u5371\u5bb3\u66f2\u7dda"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('233c0690-9002-472d-b80a-863056db41fa');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+</section>
+<section id="hazard">
+<h2>20.5 等待時間的 hazard，與地動危害分開讀<a class="headerlink" href="#hazard" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(T\)</span> 表示下一次指定事件的等待時間。
+存活函數（survival function）寫作 <span class="math notranslate nohighlight">\(S(t)=P(T&gt;t)\)</span>。
+它表示等到 <span class="math notranslate nohighlight">\(t\)</span> 仍未發生的機率。
+危害函數（hazard function）則是已等到此刻後的瞬時率。
+兩個英文都有 hazard，指的量卻需看上下文。</p>
+<div class="math notranslate nohighlight">
+\[h(t)=\frac{f_T(t)}{S(t)},\qquad
+P(t&lt;T\le t+\mathrm{d}t\mid T&gt;t)\approx h(t)\mathrm{d}t.\]</div>
+<p><span class="math notranslate nohighlight">\(f_T\)</span> 是等待時間的機率密度。
+<span class="math notranslate nohighlight">\(h(t)\)</span> 的單位是時間的倒數。
+它描述指定事件在尚未發生條件下的發生率。
+前節的地動超越率則針對場址門檻。
+兩者不能只因中文都譯作危害就互換。</p>
+<p>一條常數 <span class="math notranslate nohighlight">\(h(t)\)</span> 對應指數等待時間。
+一條上升的 <span class="math notranslate nohighlight">\(h(t)\)</span> 則表示等愈久，條件率愈高。
+下圖是兩種合成分布的對照。
+它不替任何真實斷層選定複發模型。
+完整推導可接著讀附錄 F。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>圖：兩條合成分布都使用尺度 100 年；尺度參數在不同分布中未必等於平均等待時間。</p>
+<div class="output text_html"><div style="height:525px; width:100%;">            <script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.7.0.min.js" integrity="sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA=" crossorigin="anonymous"></script>                <div id="adeb9359-2d00-415b-b3fd-45ee0868316f" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("adeb9359-2d00-415b-b3fd-45ee0868316f")) {                    Plotly.newPlot(                        "adeb9359-2d00-415b-b3fd-45ee0868316f",                        [{"legendgroup":"\u5e38\u6578\u77ac\u6642\u7387","line":{"color":"#2a78d6"},"name":"\u5e38\u6578\u77ac\u6642\u7387","x":{"dtype":"f8","bdata":"AAAAAAAAAABFeFKQ\u002fHn1P0V4UpD8eQVANNo9bH0bEEBFeFKQ\u002fHkVQFYWZ7R72BpANNo9bH0bIEA8KUj+vMoiQEV4UpD8eSVATsdcIjwpKEBWFme0e9gqQF9lcUa7hy1ANNo9bH0bMEC4AUM1HXMxQDwpSP68yjJAwVBNx1wiNEBFeFKQ\u002fHk1QMmfV1mc0TZATsdcIjwpOEDS7mHr24A5QFYWZ7R72DpA2z1sfRswPEBfZXFGu4c9QOOMdg9b3z5ANNo9bH0bQED2bcBQTcdAQLgBQzUdc0FAepXFGe0eQkA8KUj+vMpCQP+8yuKMdkNAwVBNx1wiRECD5M+rLM5EQEV4UpD8eUVABwzVdMwlRkDJn1dZnNFGQIsz2j1sfUdATsdcIjwpSEAQW98GDNVIQNLuYevbgElAlILkz6ssSkBWFme0e9hKQBiq6ZhLhEtA2z1sfRswTECd0e5h69tMQF9lcUa7h01AIfnzKoszTkDjjHYPW99OQKUg+fMqi09ANNo9bH0bUEAVJH9eZXFQQPZtwFBNx1BA17cBQzUdUUC4AUM1HXNRQJlLhCcFyVFAepXFGe0eUkBb3wYM1XRSQDwpSP68ylJAHXOJ8KQgU0D\u002fvMrijHZTQOAGDNV0zFNAwVBNx1wiVECimo65RHhUQIPkz6sszlRAZC4RnhQkVUBFeFKQ\u002fHlVQCbCk4Lkz1VABwzVdMwlVkDoVRZntHtWQMmfV1mc0VZAqumYS4QnV0CLM9o9bH1XQG19GzBU01dATsdcIjwpWEAvEZ4UJH9YQBBb3wYM1VhA8aQg+fMqWUDS7mHr24BZQLM4o93D1llAlILkz6ssWkB1zCXCk4JaQFYWZ7R72FpAN2CopmMuW0AYqumYS4RbQPnzKosz2ltA2z1sfRswXEC8h61vA4ZcQJ3R7mHr21xAfhswVNMxXUBfZXFGu4ddQECvsjij3V1AIfnzKoszXkACQzUdc4leQOOMdg9b315AxNa3AUM1X0ClIPnzKotfQIZqOuYS4V9ANNo9bH0bYEAkf15lcUZgQBUkf15lcWBABcmfV1mcYED2bcBQTcdgQOYS4UlB8mBA17cBQzUdYUDIXCI8KUhhQLgBQzUdc2FAqaZjLhGeYUCZS4QnBclhQIrwpCD582FAepXFGe0eYkBrOuYS4UliQFvfBgzVdGJATIQnBcmfYkA8KUj+vMpiQC3OaPew9WJAHXOJ8KQgY0AOGKrpmEtjQP+8yuKMdmNA72Hr24ChY0DgBgzVdMxjQNCrLM5o92NAwVBNx1wiZECx9W3AUE1kQKKajrlEeGRAkj+vsjijZECD5M+rLM5kQHOJ8KQg+WRAZC4RnhQkZUBU0zGXCE9lQEV4UpD8eWVANh1zifCkZUAmwpOC5M9lQBdntHvY+mVABwzVdMwlZkD4sPVtwFBmQOhVFme0e2ZA2fo2YKimZkDJn1dZnNFmQLpEeFKQ\u002fGZAqumYS4QnZ0CbjrlEeFJnQIsz2j1sfWdAfNj6NmCoZ0BtfRswVNNnQF0iPClI\u002fmdATsdcIjwpaEA+bH0bMFRoQC8RnhQkf2hAH7a+DRiqaEAQW98GDNVoQAAAAAAAAGlA"},"y":{"dtype":"f8","bdata":"AAAAAAAA8D\u002fvhe5jxpLvP+T5u5gBJ+8\u002fM7bhpay87j\u002fAktCjwlPuP3P7trs+7O0\u002fU8xHJxyG7T+u8IEwViHtP6nCeDHovew\u002fuygdlM1b7D9wbgfSAfvrPw3WQXSAm+s\u002flOATE0U96z+ySc5VS+DqPz+1l\u002fKOhOo\u002f7Qs6rgsq6j\u002fHhPBbvdDpP0BZNt2feOk\u002fgiGWIa8h6T\u002fG1nkm58voP3R5+\u002fZDd+g\u002f6li2q8Ej6D+1+phqXNHnPyOft2YQgOc\u002fE2Ef4Nkv5z\u002f27qkjteDmP+ba0YqekuY\u002f6n+He5JF5j9QegZojfnlPzKxq86LruU\u002fPu\u002fLOYpk5T\u002fGCIs\u002fhRvlP0eNs4F50+Q\u002fhAKPrWOM5D9Xp757QEbkP328FLAMAeQ\u002fflFuGcW84z\u002f9k42RZnnjP6uf9PztNuM\u002fLM3ASlj14j81foZ0orTiPz9lLX7JdOI\u002fI0fNdco14j8KNYtzovfhPwI9d5lOuuE\u002fuI9qE8x94T+9GeYWGELhP8qO8eIvB+E\u002fhOX6vxDN4D9AQrb\u002ft5PgPz1P\u002fvwiW+A\u002f+gC1G08j4D84ikmRc9jfPxM1xPLAa98\u002flyJbWIEA3z+wYazPr5beP8eGOHdHLt4\u002fxAkpfkPH3T\u002fGaBckn2HdP\u002f8M1bhV\u002fdw\u002f\u002f+4znGKa3D8D+M89wTjcP6gd2Rxt2Ns\u002fmjXex2F52z+3fpjcmhvbP1LdtwcUv9o\u002fGcivBMlj2j9a44SdtQnaP0RIm6rVsNk\u002f4HWFEiVZ2T+B6dPJnwLZP2hc5dJBrdg\u002fa6S3PQdZ2D96Nbkn7AXYP9BBm7vss9c\u002fuHYkMQVj1z\u002faUwTNMRPXP+4ap+BuxNY\u002f1VUKyrh21j8i8ZHzCyrWPwPp3dNk3tU\u002fpIag7b+T1T8gLHXPGUrVPxKttxNvAdU\u002f6TFcYLy51D8ppMdm\u002fnLUP8GhqOMxLdQ\u002fpvXQnlPo0z\u002f6kw9rYKTTP+wXCyZVYdM\u002fo8EcuC4f0z948isU6t3SP9klijeEndI\u002fG2XPKfpd0j+oNLf8SB\u002fSP+f4\u002fctt4dE\u002fN9E+vWWk0T+L59H\u002fLWjRP+Eyq8zDLNE\u002fW6s5ZiTy0D8Z7kYYTbjQP7lP1zc7f9A\u002fpFsKI+xG0D8Bv\u002ftAXQ\u002fQP2s7SQMYsc8\u002fFKB6u+tEzz9bDz+tMNrOPw61UezhcM4\u002fV2Q7nfoIzj\u002ffPBn1daLNP+4TZDlPPc0\u002ffZ64v4HZzD8AWqDtCHfMPy8xWzjgFcw\u002fWdqpJAO2yz\u002fC7JhGbVfLP6OqTEEa+so\u002fa33NxgWeyj+zIdWXK0PKP+OAnIOH6ck\u002f0zWqZxWRyT9xuqEv0TnJP\u002f07E9W248g\u002ftRNMX8KOyD+94Sfj7zrIPxRI4oI76Mc\u002ffEPpbaGWxz8uILDgHUbHP1YIgySt9sY\u002fQipbj0uoxj8vdLOD9VrGP9jjXXCnDsY\u002fsGdZ0F3DxT\u002fiT6gqFXnFPypNJxLKL8U\u002fp\u002ftkJXnnxD\u002fG93kOH6DEP2N74YK4WcQ\u002fbYFSQ0IUxD8Vbpkbuc\u002fDP\u002fo5cuIZjMM\u002fWh5jeWFJwz\u002fEwJfMjAfDP27cvNKYxsI\u002fm2fcjIKGwj9jMzoGR0fCPzUEMVTjCMI\u002fiiEQllTLwT8JW\u002fn0l47BP8yBv6OqUsE\u002f"},"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"\u5e38\u6578\u77ac\u6642\u7387","line":{"color":"#2a78d6"},"name":"\u5e38\u6578\u77ac\u6642\u7387","showlegend":false,"x":{"dtype":"f8","bdata":"AAAAAAAAAABFeFKQ\u002fHn1P0V4UpD8eQVANNo9bH0bEEBFeFKQ\u002fHkVQFYWZ7R72BpANNo9bH0bIEA8KUj+vMoiQEV4UpD8eSVATsdcIjwpKEBWFme0e9gqQF9lcUa7hy1ANNo9bH0bMEC4AUM1HXMxQDwpSP68yjJAwVBNx1wiNEBFeFKQ\u002fHk1QMmfV1mc0TZATsdcIjwpOEDS7mHr24A5QFYWZ7R72DpA2z1sfRswPEBfZXFGu4c9QOOMdg9b3z5ANNo9bH0bQED2bcBQTcdAQLgBQzUdc0FAepXFGe0eQkA8KUj+vMpCQP+8yuKMdkNAwVBNx1wiRECD5M+rLM5EQEV4UpD8eUVABwzVdMwlRkDJn1dZnNFGQIsz2j1sfUdATsdcIjwpSEAQW98GDNVIQNLuYevbgElAlILkz6ssSkBWFme0e9hKQBiq6ZhLhEtA2z1sfRswTECd0e5h69tMQF9lcUa7h01AIfnzKoszTkDjjHYPW99OQKUg+fMqi09ANNo9bH0bUEAVJH9eZXFQQPZtwFBNx1BA17cBQzUdUUC4AUM1HXNRQJlLhCcFyVFAepXFGe0eUkBb3wYM1XRSQDwpSP68ylJAHXOJ8KQgU0D\u002fvMrijHZTQOAGDNV0zFNAwVBNx1wiVECimo65RHhUQIPkz6sszlRAZC4RnhQkVUBFeFKQ\u002fHlVQCbCk4Lkz1VABwzVdMwlVkDoVRZntHtWQMmfV1mc0VZAqumYS4QnV0CLM9o9bH1XQG19GzBU01dATsdcIjwpWEAvEZ4UJH9YQBBb3wYM1VhA8aQg+fMqWUDS7mHr24BZQLM4o93D1llAlILkz6ssWkB1zCXCk4JaQFYWZ7R72FpAN2CopmMuW0AYqumYS4RbQPnzKosz2ltA2z1sfRswXEC8h61vA4ZcQJ3R7mHr21xAfhswVNMxXUBfZXFGu4ddQECvsjij3V1AIfnzKoszXkACQzUdc4leQOOMdg9b315AxNa3AUM1X0ClIPnzKotfQIZqOuYS4V9ANNo9bH0bYEAkf15lcUZgQBUkf15lcWBABcmfV1mcYED2bcBQTcdgQOYS4UlB8mBA17cBQzUdYUDIXCI8KUhhQLgBQzUdc2FAqaZjLhGeYUCZS4QnBclhQIrwpCD582FAepXFGe0eYkBrOuYS4UliQFvfBgzVdGJATIQnBcmfYkA8KUj+vMpiQC3OaPew9WJAHXOJ8KQgY0AOGKrpmEtjQP+8yuKMdmNA72Hr24ChY0DgBgzVdMxjQNCrLM5o92NAwVBNx1wiZECx9W3AUE1kQKKajrlEeGRAkj+vsjijZECD5M+rLM5kQHOJ8KQg+WRAZC4RnhQkZUBU0zGXCE9lQEV4UpD8eWVANh1zifCkZUAmwpOC5M9lQBdntHvY+mVABwzVdMwlZkD4sPVtwFBmQOhVFme0e2ZA2fo2YKimZkDJn1dZnNFmQLpEeFKQ\u002fGZAqumYS4QnZ0CbjrlEeFJnQIsz2j1sfWdAfNj6NmCoZ0BtfRswVNNnQF0iPClI\u002fmdATsdcIjwpaEA+bH0bMFRoQC8RnhQkf2hAH7a+DRiqaEAQW98GDNVoQAAAAAAAAGlA"},"y":{"dtype":"f8","bdata":"exSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002fexSuR+F6hD97FK5H4XqEP3sUrkfheoQ\u002f"},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"legendgroup":"\u4e0a\u5347\u77ac\u6642\u7387","line":{"color":"#4a3aa7"},"name":"\u4e0a\u5347\u77ac\u6642\u7387","x":{"dtype":"f8","bdata":"AAAAAAAAAABFeFKQ\u002fHn1P0V4UpD8eQVANNo9bH0bEEBFeFKQ\u002fHkVQFYWZ7R72BpANNo9bH0bIEA8KUj+vMoiQEV4UpD8eSVATsdcIjwpKEBWFme0e9gqQF9lcUa7hy1ANNo9bH0bMEC4AUM1HXMxQDwpSP68yjJAwVBNx1wiNEBFeFKQ\u002fHk1QMmfV1mc0TZATsdcIjwpOEDS7mHr24A5QFYWZ7R72DpA2z1sfRswPEBfZXFGu4c9QOOMdg9b3z5ANNo9bH0bQED2bcBQTcdAQLgBQzUdc0FAepXFGe0eQkA8KUj+vMpCQP+8yuKMdkNAwVBNx1wiRECD5M+rLM5EQEV4UpD8eUVABwzVdMwlRkDJn1dZnNFGQIsz2j1sfUdATsdcIjwpSEAQW98GDNVIQNLuYevbgElAlILkz6ssSkBWFme0e9hKQBiq6ZhLhEtA2z1sfRswTECd0e5h69tMQF9lcUa7h01AIfnzKoszTkDjjHYPW99OQKUg+fMqi09ANNo9bH0bUEAVJH9eZXFQQPZtwFBNx1BA17cBQzUdUUC4AUM1HXNRQJlLhCcFyVFAepXFGe0eUkBb3wYM1XRSQDwpSP68ylJAHXOJ8KQgU0D\u002fvMrijHZTQOAGDNV0zFNAwVBNx1wiVECimo65RHhUQIPkz6sszlRAZC4RnhQkVUBFeFKQ\u002fHlVQCbCk4Lkz1VABwzVdMwlVkDoVRZntHtWQMmfV1mc0VZAqumYS4QnV0CLM9o9bH1XQG19GzBU01dATsdcIjwpWEAvEZ4UJH9YQBBb3wYM1VhA8aQg+fMqWUDS7mHr24BZQLM4o93D1llAlILkz6ssWkB1zCXCk4JaQFYWZ7R72FpAN2CopmMuW0AYqumYS4RbQPnzKosz2ltA2z1sfRswXEC8h61vA4ZcQJ3R7mHr21xAfhswVNMxXUBfZXFGu4ddQECvsjij3V1AIfnzKoszXkACQzUdc4leQOOMdg9b315AxNa3AUM1X0ClIPnzKotfQIZqOuYS4V9ANNo9bH0bYEAkf15lcUZgQBUkf15lcWBABcmfV1mcYED2bcBQTcdgQOYS4UlB8mBA17cBQzUdYUDIXCI8KUhhQLgBQzUdc2FAqaZjLhGeYUCZS4QnBclhQIrwpCD582FAepXFGe0eYkBrOuYS4UliQFvfBgzVdGJATIQnBcmfYkA8KUj+vMpiQC3OaPew9WJAHXOJ8KQgY0AOGKrpmEtjQP+8yuKMdmNA72Hr24ChY0DgBgzVdMxjQNCrLM5o92NAwVBNx1wiZECx9W3AUE1kQKKajrlEeGRAkj+vsjijZECD5M+rLM5kQHOJ8KQg+WRAZC4RnhQkZUBU0zGXCE9lQEV4UpD8eWVANh1zifCkZUAmwpOC5M9lQBdntHvY+mVABwzVdMwlZkD4sPVtwFBmQOhVFme0e2ZA2fo2YKimZkDJn1dZnNFmQLpEeFKQ\u002fGZAqumYS4QnZ0CbjrlEeFJnQIsz2j1sfWdAfNj6NmCoZ0BtfRswVNNnQF0iPClI\u002fmdATsdcIjwpaEA+bH0bMFRoQC8RnhQkf2hAH7a+DRiqaEAQW98GDNVoQAAAAAAAAGlA"},"y":{"dtype":"f8","bdata":"AAAAAAAA8D+sq5Ivhv7vPwDi0yYZ+u8\u002fqQkvH7ry7z\u002f+QWEia+jvPw\u002f+iAkv2+8\u002fnFDWewnL7z83wdzs\u002frfvP5m\u002fh5oUou8\u002f3wWzilCJ7z8FdWiIuW3vP0EwxSBXT+8\u002f8vOHnzEu7z\u002fl2koLUgrvP0\u002f5aiHC4+4\u002fUWegUYy67j8qhUm5u47uP2txbB5cYO4\u002fJNVx6nkv7j8yU5wkIvztP0UOQGxixu0\u002fBN298kiO7T+J5EV15FPtP1JvZTZEF+0\u002frvFj93fY7D98RHPxj5fsP6czt86cVOw\u002fRI8oo68P7D9\u002f\u002fFfl2cjrP2zOFGctgOs\u002fmjb8Tbw16z\u002fZIfULmenqP8YWnVfWm+o\u002f\u002fmmqJIdM6j+RFkicvvvpP06BbxWQqek\u002fN2JEDQ9W6T9EAXcfTwHpP4PisP5jq+g\u002fzOkPbWFU6D+h57M0W\u002fznP7ZnYiBlo+c\u002f3X1E9JJJ5z8tMMJm+O7mP+P8fhmpk+Y\u002fONh6krg35j8o2lo1OtvlP+et3DxBfuU\u002fRq13tOAg5T\u002fGaC5yK8PkP7sykxA0ZeQ\u002f+BcC6QwH5D\u002fFgxIOyKjjPy6fQkZ3SuM\u002fZ03eBizs4j8XeCNv943iPxIvpUPqL+I\u002fj+\u002fu6RTS4T9jN2lkh3ThPzpZgE5RF+E\u002fmFcO2YG64D+lXQjHJ17gP1k+cGpRAuA\u002fG2oUQxlO3z84662ozZjeP4rco+TZ5N0\u002fdOXm4FYy3T\u002f0u+yOXIHcP10gweQB0ts\u002fcA2b2lwk2z\u002fRTfRognjaP+xfIYeGztk\u002fR0xnKnwm2T\u002fx0IxFdYDYP8gG5MiC3Nc\u002f7mrJorQ61z9FAJXAGZvWP\u002fwJ+g\u002fA\u002fdU\u002fVLHRgLRi1T\u002fLvUwHA8rUP8hfiJ62M9Q\u002f9OqBS9mf0z8gPmUgdA7TP9B7MUCPf9I\u002f4p6v4jHz0T8BZLZYYmnRP6nwthAm4tA\u002fS5WNm4Fd0D\u002fM\u002fyNj8bbPP4RgxG8cuM4\u002fR\u002fzGi4i+zT8iCepVOMrMPyaWnegs28s\u002fYR4S5mXxyj\u002ftOI6E4QzKP0NhApucLck\u002fovbRrZJTyD+8usj7vX7HP3BFNIsXr8Y\u002fAhcZN5fkxT\u002fsJ3u8Mx\u002fFPx8SssfiXsQ\u002fqizBAZmjwz8xNqwdSu3CP\u002fZuweXoO8I\u002fDUvSSGePwT9gMFRntufAPwj\u002fYqDGRMA\u002fFuQ+PQ9Nvz8UacfJ0Bm+P4iykbWu77w\u002fDGXwsYTOuz\u002f0todqLba6P4YqBJ2Cprk\u002fntlOMF2fuD8C4DdLlaC3PywUkGoCqrY\u002f49+rdnu7tT8oqEnY1tS0PzLS1ozq9bM\u002fEgsPOowesz9dEPJAkU6yP9fJDNDOhbE\u002fURQT9RnEsD+cKMitRwmwPzchaPBZqq4\u002fhDxKxD1PrT+Sq\u002fkv5QCsPwxpkOX6vqo\u002f1WFHCyqJqT8Ae9dUHl+oP+cCdhuEQKc\u002fArdvdAgtpj92QmZGWSSlP0HINF0lJqQ\u002faq+AfBwyoz+of\u002fxw70eiP+8pYyBQZ6E\u002fG5oymPGPoD92ylk2EIOfPyWpT1uS950\u002fy9llQdd8nD\u002fD0zg4TxKbP3nfu05tt5k\u002f4PHzYqdrmD\u002fneaYvdi6XPyv5DlhV\u002f5U\u002fN4yuccPdlD\u002f+v0gMQsmTP\u002fQ8IbhVwZI\u002f"},"type":"scatter","xaxis":"x","yaxis":"y"},{"legendgroup":"\u4e0a\u5347\u77ac\u6642\u7387","line":{"color":"#4a3aa7"},"name":"\u4e0a\u5347\u77ac\u6642\u7387","showlegend":false,"x":{"dtype":"f8","bdata":"AAAAAAAAAABFeFKQ\u002fHn1P0V4UpD8eQVANNo9bH0bEEBFeFKQ\u002fHkVQFYWZ7R72BpANNo9bH0bIEA8KUj+vMoiQEV4UpD8eSVATsdcIjwpKEBWFme0e9gqQF9lcUa7hy1ANNo9bH0bMEC4AUM1HXMxQDwpSP68yjJAwVBNx1wiNEBFeFKQ\u002fHk1QMmfV1mc0TZATsdcIjwpOEDS7mHr24A5QFYWZ7R72DpA2z1sfRswPEBfZXFGu4c9QOOMdg9b3z5ANNo9bH0bQED2bcBQTcdAQLgBQzUdc0FAepXFGe0eQkA8KUj+vMpCQP+8yuKMdkNAwVBNx1wiRECD5M+rLM5EQEV4UpD8eUVABwzVdMwlRkDJn1dZnNFGQIsz2j1sfUdATsdcIjwpSEAQW98GDNVIQNLuYevbgElAlILkz6ssSkBWFme0e9hKQBiq6ZhLhEtA2z1sfRswTECd0e5h69tMQF9lcUa7h01AIfnzKoszTkDjjHYPW99OQKUg+fMqi09ANNo9bH0bUEAVJH9eZXFQQPZtwFBNx1BA17cBQzUdUUC4AUM1HXNRQJlLhCcFyVFAepXFGe0eUkBb3wYM1XRSQDwpSP68ylJAHXOJ8KQgU0D\u002fvMrijHZTQOAGDNV0zFNAwVBNx1wiVECimo65RHhUQIPkz6sszlRAZC4RnhQkVUBFeFKQ\u002fHlVQCbCk4Lkz1VABwzVdMwlVkDoVRZntHtWQMmfV1mc0VZAqumYS4QnV0CLM9o9bH1XQG19GzBU01dATsdcIjwpWEAvEZ4UJH9YQBBb3wYM1VhA8aQg+fMqWUDS7mHr24BZQLM4o93D1llAlILkz6ssWkB1zCXCk4JaQFYWZ7R72FpAN2CopmMuW0AYqumYS4RbQPnzKosz2ltA2z1sfRswXEC8h61vA4ZcQJ3R7mHr21xAfhswVNMxXUBfZXFGu4ddQECvsjij3V1AIfnzKoszXkACQzUdc4leQOOMdg9b315AxNa3AUM1X0ClIPnzKotfQIZqOuYS4V9ANNo9bH0bYEAkf15lcUZgQBUkf15lcWBABcmfV1mcYED2bcBQTcdgQOYS4UlB8mBA17cBQzUdYUDIXCI8KUhhQLgBQzUdc2FAqaZjLhGeYUCZS4QnBclhQIrwpCD582FAepXFGe0eYkBrOuYS4UliQFvfBgzVdGJATIQnBcmfYkA8KUj+vMpiQC3OaPew9WJAHXOJ8KQgY0AOGKrpmEtjQP+8yuKMdmNA72Hr24ChY0DgBgzVdMxjQNCrLM5o92NAwVBNx1wiZECx9W3AUE1kQKKajrlEeGRAkj+vsjijZECD5M+rLM5kQHOJ8KQg+WRAZC4RnhQkZUBU0zGXCE9lQEV4UpD8eWVANh1zifCkZUAmwpOC5M9lQBdntHvY+mVABwzVdMwlZkD4sPVtwFBmQOhVFme0e2ZA2fo2YKimZkDJn1dZnNFmQLpEeFKQ\u002fGZAqumYS4QnZ0CbjrlEeFJnQIsz2j1sfWdAfNj6NmCoZ0BtfRswVNNnQF0iPClI\u002fmdATsdcIjwpaEA+bH0bMFRoQC8RnhQkf2hAH7a+DRiqaEAQW98GDNVoQAAAAAAAAGlA"},"y":{"dtype":"f8","bdata":"AAAAAAAAAADAFsla85cxP8AWyVrzl0E\u002fIKItCO1jSj\u002fAFsla85dRP29cezHw\u002fVU\u002fIKItCO1jWj\u002fP59\u002fe6cleP8AWyVrzl2E\u002fmDkixvHKYz9vXHsx8P1lP0h\u002f1JzuMGg\u002fIKItCO1jaj\u002f3xIZz65ZsP8\u002fn397pyW4\u002fVIUcJXR+cD\u002fAFsla85dxPyuodZBysXI\u002fmDkixvHKcz8Ey877cOR0P29cezHw\u002fXU\u002f3O0nZ28Xdz9If9Sc7jB4P7MQgdJtSnk\u002fIKItCO1jej+MM9o9bH17P\u002ffEhnPrlnw\u002fY1YzqWqwfT\u002fP59\u002fe6cl+Pzx5jBRp438\u002fVIUcJXR+gD8KzvK\u002fMwuBP8AWyVrzl4E\u002fdl+f9bIkgj8rqHWQcrGCP+HwSysyPoM\u002fmDkixvHKgz9OgvhgsVeEPwTLzvtw5IQ\u002fuhOlljBxhT9vXHsx8P2FPyWlUcyvioY\u002f3O0nZ28Xhz+SNv4BL6SHP0h\u002f1JzuMIg\u002f\u002fseqN669iD+zEIHSbUqJP2lZV20t14k\u002fIKItCO1jij\u002fW6gOjrPCKP4wz2j1sfYs\u002fQnyw2CsKjD\u002f3xIZz65aMP60NXQ6rI40\u002fY1YzqWqwjT8ZnwlEKj2OP8\u002fn397pyY4\u002fhTC2ealWjz88eYwUaeOPP\u002flgsVcUOJA\u002fVIUcJXR+kD+vqYfy08SQPwrO8r8zC5E\u002fZfJdjZNRkT\u002fAFsla85eRPxs7NChT3pE\u002fdl+f9bIkkj\u002fQgwrDEmuSPyuodZBysZI\u002fhszgXdL3kj\u002fh8EsrMj6TPz0Vt\u002fiRhJM\u002fmDkixvHKkz\u002fzXY2TURGUP06C+GCxV5Q\u002fqaZjLhGelD8Ey877cOSUP1\u002fvOcnQKpU\u002fuhOlljBxlT8UOBBkkLeVP29cezHw\u002fZU\u002fyoDm\u002fk9Elj8lpVHMr4qWP4DJvJkP0ZY\u002f3O0nZ28Xlz83EpM0z12XP5I2\u002fgEvpJc\u002f7Vppz47qlz9If9Sc7jCYP6OjP2pOd5g\u002f\u002fseqN669mD9Y7BUFDgSZP7MQgdJtSpk\u002fDjXsn82QmT9pWVdtLdeZP8R9wjqNHZo\u002fIKItCO1jmj96xpjVTKqaP9bqA6Os8Jo\u002fMA9vcAw3mz+MM9o9bH2bP+ZXRQvMw5s\u002fQnyw2CsKnD+doBumi1CcP\u002ffEhnPrlpw\u002fU+nxQEvdnD+tDV0OqyOdPwkyyNsKap0\u002fY1YzqWqwnT+\u002fep52yvadPxmfCUQqPZ4\u002fdcN0EYqDnj\u002fP59\u002fe6cmePysMS6xJEJ8\u002fhTC2ealWnz\u002fgVCFHCZ2fPzx5jBRp458\u002fy877cOQUoD\u002f5YLFXFDigPybzZj5EW6A\u002fVIUcJXR+oD+BF9ILpKGgP6+ph\u002fLTxKA\u002f3Ds92QPooD8KzvK\u002fMwuhPzdgqKZjLqE\u002fZfJdjZNRoT+ShBN0w3ShP8AWyVrzl6E\u002f7qh+QSO7oT8bOzQoU96hP0jN6Q6DAaI\u002fdl+f9bIkoj+j8VTc4keiP9CDCsMSa6I\u002f\u002fhXAqUKOoj8rqHWQcrGiP1k6K3ei1KI\u002fhszgXdL3oj+0XpZEAhujP+HwSysyPqM\u002fD4MBEmJhoz89Fbf4kYSjP2qnbN\u002fBp6M\u002fmDkixvHKoz\u002fFy9esIe6jP\u002fNdjZNREaQ\u002fIPBCeoE0pD9OgvhgsVekP3sUrkfheqQ\u002f"},"type":"scatter","xaxis":"x2","yaxis":"y2"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.45],"title":{"text":"\u5df2\u7b49\u5f85\u5e74\u6578"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"S(t)"}},"xaxis2":{"anchor":"y2","domain":[0.55,1.0],"title":{"text":"\u5df2\u7b49\u5f85\u5e74\u6578"}},"yaxis2":{"anchor":"x2","domain":[0.0,1.0],"title":{"text":"h(t)\uff08\u6bcf\u5e74\uff09"}},"annotations":[{"font":{"size":16},"showarrow":false,"text":"\u4ecd\u672a\u767c\u751f\u7684\u6a5f\u7387","x":0.225,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"\u5df2\u7b49\u5230\u6b64\u523b\u7684\u77ac\u6642\u7387","x":0.775,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"}],"font":{"size":13},"margin":{"l":60,"r":30,"t":80,"b":100},"legend":{"orientation":"h","y":-0.24},"colorway":["#2a78d6","#eb6834","#1baf7a","#eda100","#e87ba4","#008300","#4a3aa7","#e34948"],"hovermode":"x unified","title":{"text":"\u5408\u6210\u7b49\u5f85\u6642\u9593\uff1a\u6a5f\u7387\u8207\u77ac\u6642\u7387"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('adeb9359-2d00-415b-b3fd-45ee0868316f');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div></div></div>
+</div>
+<p><span class="math notranslate nohighlight">\(1/\nu(a)\)</span> 稱為回歸期（return period）。
+它把長期超越率換成平均間隔的尺度。
+例如年率越小，回歸期就越長。
+它仍容許短時間內連續超越門檻。
+若超越次數服從固定率 Poisson，
+期間 <span class="math notranslate nohighlight">\(\Delta t\)</span> 的機率為 <span class="math notranslate nohighlight">\(1-e^{-\nu(a)\Delta t}\)</span>。</p>
+<p>一個場址的損失還需要建築與暴露資訊。
+風險（risk）描述事件帶來的損失可能性。
+同樣的地動，在不同建築可能造成不同損失。
+因此，危害曲線還沒給出全部決策答案。
+行動成本與能減少的損失也必須具體列出。</p>
+</section>
+<section id="id6">
+<h2>20.6 預報表如何走到使用者手上？<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>USGS 的 OAF 頁面同時呈現窗長與規模門檻。
+作業型餘震預報稱為 OAF。
+英文是 operational aftershock forecasting。
+它會隨序列觀測更新預報。
+讀表時要一起保留發布時間、區域與有效期間。
+細節見 <a class="reference external" href="https://earthquake.usgs.gov/data/oaf/overview.php">USGS 官方說明</a>。</p>
+<p>下表模仿「選定門檻、比較窗長」的讀法。
+所有期望數都是合成值。
+時間窗彼此包含，所以較長窗機率較高。
+這張表僅示範格式，沒有提供官方預報。
+它也沒有使用任何美國或第二部的資料。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>OAF 讀表示意：固定合成規模門檻 Mw≥5.0；合成期望數採 0.08 ln(1+t/0.5)。</p>
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>發布後天數</th>
+      <th>合成期望數</th>
+      <th>至少一顆機率</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>0.088</td>
+      <td>8.4%</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>0.217</td>
+      <td>19.5%</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>0.329</td>
+      <td>28.0%</td>
+    </tr>
+    <tr>
+      <td>365</td>
+      <td>0.528</td>
+      <td>41.0%</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<p>OEF-Italy 則提供另一種制度案例。
+作業型地震預報簡稱 OEF。
+英文是 operational earthquake forecasting。
+它持續更新地震機率，供社會使用。
+Mizrahi 等人的 2024 年回顧記錄了義大利系統。
+該系統把多個成分模型結合成預報。
+這裡引用出版時的描述，未宣稱今日配置相同。</p>
+<p>一個預報訊息應先讓使用者找到自己。
+哪個地區、哪段時間、哪個規模門檻？
+接著才讀機率、期望數與更新時間。
+如果行動需要地動門檻，
+資訊提供者就應說明如何從事件率轉換。
+第 19 章的混合率本身還沒有完成這項工作。</p>
+</section>
+<section id="id7">
+<h2>20.7 本章填入的規格欄位<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>一張義大利卡換成另一地區的卡，
+最先要重查的是儀器、目錄與尺度。
+第二部會回到觀測來源，逐步補齊資料條件。
+下卡將轉用台灣時的欄位全部標為待定。
+章號標示首次接手位置，後續章節再補細節。
+這些空欄也避免把義大利參數直接搬走。</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="spec-card"><div class="spec-title">義大利卡換台灣卡：待查欄位</div><div class="spec-row"><div class="spec-key">儀器與資料來源</div><div class="spec-val">待定；待填（第 21 章）</div></div><div class="spec-row"><div class="spec-key">目錄與規模尺度</div><div class="spec-val">待定；待填（第 29 章）</div></div><div class="spec-row"><div class="spec-key">深度、收集區 S 與測試區 R</div><div class="spec-val">待定；待填（第 29 章）</div></div><div class="spec-row"><div class="spec-key">完整度與輸入、目標門檻</div><div class="spec-val">待定；待填（第 29 章）</div></div><div class="spec-row"><div class="spec-key">三期、發報窗與資料延遲</div><div class="spec-val">待定；待填（第 29 章）</div></div><div class="spec-row"><div class="spec-key">格箱、模型參數與比較基準</div><div class="spec-val">待定；待填（第 29 章）</div></div><div class="spec-row"><div class="spec-key">地動、場址與使用情境</div><div class="spec-val">待定；待填（第 29 章）</div></div></div></div></div>
+</div>
+<p>一個機率數字，最後仍要回到可查的觀測。
+第二部從儀器與測網重新接起這條線。
+接著讀：<a class="reference internal" href="01_overview.html"><span class="doc">21. 回到儀器與觀測資料</span></a>。</p>
+</section>
+<section id="id8">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Biondini、Rhoades 與 Gasperini（2023），<a class="reference external" href="https://doi.org/10.1093/gji/ggad123">義大利 EEPAS 實驗</a>。
+<a class="reference external" href="https://www.earth-prints.org/handle/2122/17084">免費機構全文</a>。先對照研究區與測試期，再讀檢驗。</p></li>
+<li><p>Baker（2013），<a class="reference external" href="https://scits.stanford.edu/sites/g/files/sbiybj22081/files/media/file/baker_2013_intro_psha_v2_0.pdf">PSHA 入門教材</a>。
+免費全文。依五步流程閱讀危害積分與回歸期。</p></li>
+<li><p>NIST，<a class="reference external" href="https://itl.nist.gov/div898/handbook/eda/section3/eda362.htm">存活函數與危害函數</a>。
+免費手冊。核對密度、存活機率與瞬時率的關係。</p></li>
+<li><p>USGS，<a class="reference external" href="https://earthquake.usgs.gov/data/oaf/overview.php">餘震預報說明</a>。
+免費官方頁面。對照時間窗、機率與預報表。</p></li>
+<li><p>Mizrahi 等（2024），<a class="reference external" href="https://doi.org/10.1029/2023RG000823">預報發展、檢驗與溝通</a>。
+免費回顧。從義大利制度追讀模型與使用者的連結。</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="19_ensembles.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">19. 把模型加起來：凸組合</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">21. 臺灣地球物理觀測總覽</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">20.1 在方法段旁邊，寫下規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">20.2 在結果圖旁邊，寫下分數的分母</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">20.3 在結論旁邊，留下適用範圍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">20.4 同一顆地震，各場址搖動不同</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hazard">20.5 等待時間的 hazard，與地動危害分開讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">20.6 預報表如何走到使用者手上？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">20.7 本章填入的規格欄位</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">參考資料與延伸閱讀</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 地球物理資料教學團隊
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

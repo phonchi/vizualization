@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=857392ad" />
+    <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,6 +63,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_e_testing';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="附錄 F：複發時間與地震危害積分" href="appendix_f_hazard.html" />
@@ -210,46 +211,49 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="00_intro.html">
-                    地震統計與預報：從模型到臺灣觀測
+                    地震統計與預報：從一份義大利實驗到臺灣觀測
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：地震統計與預報</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">第一部：一份地震預報實驗，從資料到檢驗</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="09_forecasting_intro.html">1. 地震預報從什麼問題開始</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_catalog.html">2. 從地震目錄提出統計問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_randomness.html">3. 隨機性與叢集：平均之外還有什麼</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_point_process.html">4. 點過程：把歷史轉成可更新的發生率</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_catalog_completeness_b.html">5. 目錄統計 I：完整度與規模分布</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_clustering_laws.html">6. 目錄統計 II：叢集的經驗律與除叢</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foundation_inference.html">7. 從描述到估計：資料能讓我們知道多少</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_etas_structure.html">8. ETAS I：把每個事件接進預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_etas_estimation.html">9. ETAS II：從目錄估計模型，再檢查它</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_psi_phenomenon.html">10. Ψ：從震前活動看統計證據</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_eepas_ppe.html">11. EEPAS 與 PPE：讓尺度關係成為機率預報</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_testing_consistency.html">12. 預報檢驗 I：觀測是否符合模型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_testing_comparison.html">13. 預報檢驗 II：新增資訊是否有幫助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">14. 模型組合：利用不同尺度的資訊</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_recurrence_models.html">15. 複發模型：已經等了多久，也是資訊</a></li>
-<li class="toctree-l1"><a class="reference internal" href="21_psha.html">16. PSHA：從地震發生走到場址搖晃</a></li>
-<li class="toctree-l1"><a class="reference internal" href="22_operational_systems.html">17. 作業化預報：讓資料、模型與使用者接得起來</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_ensembles.html">19. 把模型加起來：凸組合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">第二部：台灣地球物理觀測</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">18. 臺灣地球物理觀測總覽</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_download.html">19. 資料產品與品質：取得資料之前先定義問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">20. 地下水位：含水層如何回應外界擾動</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">21. 地磁觀測：共同背景與局部變化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">22. 地動觀測：波形如何成為地震目錄</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">23. GNSS：從衛星訊號到地表位移</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">24. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">25. 從觀測現象到可檢驗的證據</a></li>
-<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">26. 臺灣展望：把觀測、預報與驗證接起來</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">21. 臺灣地球物理觀測總覽</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">第三部：技術附錄</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：點過程的機率、概似與模擬</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄統計與叢集律的推導</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">附錄 E：預報檢驗與模型組合的推導</a></li>
@@ -400,9 +404,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-0">E.0 同一份預報陣列如何進入檢驗</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">十欄匯出與重新分格</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">教學版檢驗的統計量</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-1-poisson">E.1 從 Poisson 計數到條件形狀</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">每事件資訊增益的兩種版本</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-4">E.4 模擬分位數的誤差</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-5">E.5 資訊增益與區間</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-6">E.6 警報面積與校準</a></li>
@@ -410,7 +422,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-8">E.8 凸組合的凹性與端點</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-9-kl">E.9 乘法修正的 KL 表達</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-10-logistic">E.10 混合分布、平均率與 logistic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">參考資料與延伸閱讀</a></li>
 </ul>
             </nav>
         </div>
@@ -424,10 +436,55 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="e">
 <h1>附錄 E：預報檢驗與模型組合的推導<a class="headerlink" href="#e" title="Link to this heading">#</a></h1>
-<p>本附錄需要機率分布、微分與期望值。對應 <a class="reference internal" href="17_testing_consistency.html"><span class="doc">一致性檢驗</span></a>、<a class="reference internal" href="18_testing_comparison.html"><span class="doc">模型比較</span></a>及 <a class="reference internal" href="19_ensembles.html"><span class="doc">模型組合</span></a>，各節推導後可回到主文的圖例。</p>
+<p>本附錄需要機率分布、微分與期望值。對應 <a class="reference internal" href="17_test_space_magnitude.html"><span class="doc">一致性檢驗</span></a>、<a class="reference internal" href="18_test_comparison.html"><span class="doc">模型比較</span></a>及 <a class="reference internal" href="19_ensembles.html"><span class="doc">模型組合</span></a>，各節推導後可回到主文的圖例。</p>
+<section id="e-0">
+<h2>E.0 同一份預報陣列如何進入檢驗<a class="headerlink" href="#e-0" title="Link to this heading">#</a></h2>
+<p>一個預報窗的資料是 177 格 × 25 個規模箱。
+每個元素是期望數，觀測使用相同格箱的整數計數。
+時間窗為左閉右開；規模先取整到 0.1，再放入左閉右開的名目規模箱。
+第一部的 40 個 91.31 天窗口共覆蓋 3652.4 天；年底剩餘 0.6 天不評分。
+目前目錄在這段尾端沒有目標地震。若換版本，必須重新檢查，不能把尾端事件塞進最後一窗。</p>
+<section id="id1">
+<h3>十欄匯出與重新分格<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>CSEP 文字檔依序列出 <code class="docutils literal notranslate"><span class="pre">LON_0</span> <span class="pre">LON_1</span> <span class="pre">LAT_0</span> <span class="pre">LAT_1</span> <span class="pre">Z_0</span> <span class="pre">Z_1</span> <span class="pre">MAG_0</span> <span class="pre">MAG_1</span> <span class="pre">RATE</span> <span class="pre">FLAG</span></code>。
+前八欄界定經緯度、深度與規模的上下界，<code class="docutils literal notranslate"><span class="pre">RATE</span></code> 為該窗的格箱期望數，<code class="docutils literal notranslate"><span class="pre">FLAG</span></code> 為啟用旗標。
+檔案外另保存時間窗、目錄版本、模型參數及單位。十欄本身不足以指定整個實驗。
+本站示範檔含一行欄名；外部讀取器是否接受欄名，須依其格式設定處理。</p>
+<p>177 格是投影座標中的方格，不能只把四角反投影後的外接矩形當成相同幾何。
+<code class="docutils literal notranslate"><span class="pre">write_csep_10col</span></code> 只展示欄位順序。外接框彼此可能重疊，不能直接拿來評分。
+<code class="docutils literal notranslate"><span class="pre">write_csep_10col_regridded</span></code> 才把各格期望數分配到不重疊的 0.1° 經緯度格。</p>
+<p>令來源格 <span class="math notranslate nohighlight">\(c\)</span> 與輸出格 <span class="math notranslate nohighlight">\(g\)</span> 的交集面積比例為 <span class="math notranslate nohighlight">\(\widetilde W_{gc}\)</span>。
+本站在輸出格內用 <span class="math notranslate nohighlight">\(5\times5\)</span> 個中點取樣，轉到投影座標後判定來源格。
+這是面積近似；為使每個來源格的全部期望數都被分配，再令</p>
+<div class="math notranslate nohighlight">
+\[W_{gc}=\frac{\widetilde W_{gc}}{\sum_h\widetilde W_{hc}},\qquad
+\Lambda'_{gk}=\sum_c W_{gc}\Lambda_{ck}.\]</div>
+<p>於是 <span class="math notranslate nohighlight">\(\sum_g W_{gc}=1\)</span>，故每個規模箱都滿足
+<span class="math notranslate nohighlight">\(\sum_g\Lambda'_{gk}=\sum_c\Lambda_{ck}\)</span>。
+若某個來源格完全沒有取樣點，程式會報錯；增加取樣密度後才能輸出。
+完全不與 R 相交的格省略，邊界格分得部分期望數。
+欄正規化消除總量誤差，沒有消除邊界取樣誤差；提高解析度仍需做收斂檢查。
+第 16–18 章的評分始終使用原始 177 格，不混用重新分格結果。</p>
+</section>
+<section id="id2">
+<h3>教學版檢驗的統計量<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>本書使用完整的 Poisson 計數對數機率，包括同箱多事件的階乘項：</p>
+<div class="math notranslate nohighlight" id="equation-eq-jpoll">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-jpoll" title="Link to this equation">#</a></span>\[\ell=\sum_j[-\Lambda_j+\omega_j\ln\Lambda_j-\ln(\omega_j!)].\]</div>
+<p>約定 <span class="math notranslate nohighlight">\(0\ln0=0\)</span>；零率箱出現事件時，分數為負無窮。
+cL 固定觀測總數，將率正規化後模擬多項計數；L 同時模擬 Poisson 總數。
+S 先加總時間與規模，M 先加總時間與空間。
+本書聯合 cL／L 保留窗、格、規模，因此也檢查時間分配。
+不同軟體若採省略階乘項的點事件分數，模擬排序可能不同，不能僅憑檢驗名稱直接對照數值。</p>
+<p>分位數分數是模擬分數不大於觀測值的比例，包含同分。
+實作僅容許浮點捨入尺度的誤差，不任意調整統計門檻。
+模擬每次只儲存抽中的箱，不配置「模擬數 × 全部格箱」矩陣。
+這保留相同的多項抽樣分布，且記憶體不隨兩者乘積成長。</p>
+</section>
+</section>
 <section id="e-1-poisson">
 <h2>E.1 從 Poisson 計數到條件形狀<a class="headerlink" href="#e-1-poisson" title="Link to this heading">#</a></h2>
-<p>獨立箱計數 <span class="math notranslate nohighlight">\(\omega_j\sim\mathrm{Poisson}(\Lambda_j)\)</span> 的乘積機率取對數，即得 <a class="reference internal" href="17_testing_consistency.html#equation-eq-jpoll">(15)</a>。總數 <span class="math notranslate nohighlight">\(N=\sum_j\omega_j\)</span> 的均值為 <span class="math notranslate nohighlight">\(\Lambda=\sum_j\Lambda_j\)</span>。條件在總數 <span class="math notranslate nohighlight">\(N=n\)</span> 上：</p>
+<p>獨立箱計數 <span class="math notranslate nohighlight">\(\omega_j\sim\mathrm{Poisson}(\Lambda_j)\)</span> 的乘積機率取對數，即得 <a class="reference internal" href="#equation-eq-jpoll">(3)</a>。總數 <span class="math notranslate nohighlight">\(N=\sum_j\omega_j\)</span> 的均值為 <span class="math notranslate nohighlight">\(\Lambda=\sum_j\Lambda_j\)</span>。條件在總數 <span class="math notranslate nohighlight">\(N=n\)</span> 上：</p>
 <div class="math notranslate nohighlight">
 \[P(\boldsymbol\omega\mid N=n)
 =\frac{n!}{\prod_j\omega_j!}\prod_j\left(\frac{\Lambda_j}{\Lambda}\right)^{\omega_j},
@@ -468,6 +525,19 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 &amp;=(n-1)\ln\Lambda-\ln(n!)-\frac\Lambda2+O(\Lambda^2).
 \end{aligned}\end{split}\]</div>
 <p>最後一步使用 <span class="math notranslate nohighlight">\((1-e^{-\Lambda})/\Lambda=1-\Lambda/2+O(\Lambda^2)\)</span>。因此稀少單事件箱的差異小，重複事件箱的差異可能很大。一般計數分布的至少一次機率應直接用 <span class="math notranslate nohighlight">\(1-P(N=0)\)</span>，不能只看均值。</p>
+<section id="id3">
+<h3>每事件資訊增益的兩種版本<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>在相同網格與觀測下比較模型 A 與 B，<span class="math notranslate nohighlight">\(N&gt;0\)</span> 時，</p>
+<div class="math notranslate nohighlight" id="equation-eq-igpe">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-igpe" title="Link to this equation">#</a></span>\[I=\frac{\ell_A-\ell_B}{N}
+=\frac1N\sum_i\ln\frac{\Lambda_A(j_i)}{\Lambda_B(j_i)}
+-\frac{\Lambda_A^{\rm tot}-\Lambda_B^{\rm tot}}N.\]</div>
+<p>若先正規化率形狀 <span class="math notranslate nohighlight">\(p_A(j)=\Lambda_A(j)/\Lambda_A^{\rm tot}\)</span>，則</p>
+<div class="math notranslate nohighlight" id="equation-eq-igpec">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-igpec" title="Link to this equation">#</a></span>\[I_c=\frac1N\sum_i\ln\frac{p_A(j_i)}{p_B(j_i)}.\]</div>
+<p>前者包括總量差，後者只比較條件形狀。重複事件仍逐顆配對，但不能因此視為獨立。
+零事件資料不定義每事件增益；直接比較整份對數概似差即可。</p>
+</section>
 </section>
 <section id="e-4">
 <h2>E.4 模擬分位數的誤差<a class="headerlink" href="#e-4" title="Link to this heading">#</a></h2>
@@ -484,7 +554,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 <div class="math notranslate nohighlight">
 \[\ln L_Z-\ln L_1=(\Lambda_1-\Lambda_Z)
 +\sum_{j,k}\omega_{jk}\ln\frac{\Lambda^Z_{jk}}{\Lambda^1_{jk}}.\]</div>
-<p>每個事件所在箱重複一次，把後項改寫為 <span class="math notranslate nohighlight">\(\sum_nd_n\)</span>，除以 <span class="math notranslate nohighlight">\(N&gt;0\)</span> 即得 <a class="reference internal" href="18_testing_comparison.html#equation-eq-igpe">(16)</a>。若 <span class="math notranslate nohighlight">\(N=0\)</span>，仍有總分差，但每事件資訊增益未定義。</p>
+<p>每個事件所在箱重複一次，把後項改寫為 <span class="math notranslate nohighlight">\(\sum_nd_n\)</span>，除以 <span class="math notranslate nohighlight">\(N&gt;0\)</span> 即得 <a class="reference internal" href="#equation-eq-igpe">(4)</a>。若 <span class="math notranslate nohighlight">\(N=0\)</span>，仍有總分差，但每事件資訊增益未定義。</p>
 <p>樣本變異數可寫成</p>
 <div class="math notranslate nohighlight">
 \[s_d^2=\frac{\sum_n(d_n-\bar d)^2}{N-1}
@@ -494,7 +564,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 \[\mathrm{Var}(\bar d)=\frac1{N^2}\left[\sum_n\mathrm{Var}(d_n)
 +2\sum_{i&lt;j}\mathrm{Cov}(d_i,d_j)\right].\]</div>
 <p>所以叢集中的區間可能需要區塊或模型式校準。未拒絕零增益不等於分數恰好相同，也不等於通過等價性檢定。</p>
-<p>AICc 型修正採 <span class="math notranslate nohighlight">\(\mathrm{AICc}=-2\ln L+2k+2k(k+1)/(N-k-1)\)</span>，兩模型相減、除以 <span class="math notranslate nohighlight">\(2N\)</span> 即得 <a class="reference internal" href="18_testing_comparison.html#equation-eq-igpec">(17)</a>。分母要求 <span class="math notranslate nohighlight">\(N&gt;k+1\)</span>；此為有條件近似，非所有相依點過程的通用修正。</p>
+<p>AICc 型修正採 <span class="math notranslate nohighlight">\(\mathrm{AICc}=-2\ln L+2k+2k(k+1)/(N-k-1)\)</span>，兩模型相減、除以 <span class="math notranslate nohighlight">\(2N\)</span> 即得 <a class="reference internal" href="#equation-eq-igpec">(5)</a>。分母要求 <span class="math notranslate nohighlight">\(N&gt;k+1\)</span>；此為有條件近似，非所有相依點過程的通用修正。</p>
 </section>
 <section id="e-6">
 <h2>E.6 警報面積與校準<a class="headerlink" href="#e-6" title="Link to this heading">#</a></h2>
@@ -560,8 +630,8 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 \[\frac{P}{1-P}=e^{b_0}\prod_i\phi_i^{b_i}.\]</div>
 <p>這是勝算的乘冪關係，不是點過程率的等式。由係數再建立非負率權重，需要特定轉換與獨立檢驗；截去負係數或移除截距是方法設計，並非 logistic 理論必然要求。</p>
 </section>
-<section id="id1">
-<h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.cseptesting.org/getting_started/theory.html">Theory of CSEP Tests</a> — pyCSEP 開發團隊，官方文件（免費）。先對照各檢驗的目標、模擬方式與分位數分數，再看 N、S、M 與 conditional L-test 的程式範例，可把本章公式接到實際檢驗流程。</p></li>
 <li><p><a class="reference external" href="https://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/zechar.pdf_2063069264.pdf">Evaluating earthquake predictions and earthquake forecasts: a guide for students and new researchers</a> — J. Douglas Zechar（2010），CORSSA 免費教材（DOI：10.5078/corssa-77337879）。從「觀測是否與預報一致」出發整理檢驗方法，適合先建立觀念，再回頭理解本章為何要拆開事件數、空間與規模。</p></li>
@@ -647,9 +717,17 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-0">E.0 同一份預報陣列如何進入檢驗</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">十欄匯出與重新分格</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">教學版檢驗的統計量</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-1-poisson">E.1 從 Poisson 計數到條件形狀</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">每事件資訊增益的兩種版本</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-4">E.4 模擬分位數的誤差</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-5">E.5 資訊增益與區間</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-6">E.6 警報面積與校準</a></li>
@@ -657,7 +735,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-8">E.8 凸組合的凹性與端點</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-9-kl">E.9 乘法修正的 KL 表達</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-10-logistic">E.10 混合分布、平均率與 logistic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">參考資料與延伸閱讀</a></li>
 </ul>
   </nav></div>
 
