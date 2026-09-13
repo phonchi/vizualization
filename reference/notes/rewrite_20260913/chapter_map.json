@@ -1,0 +1,26 @@
+{
+  "_note": "2026-09-13 重組：第一部 20 章新檔名；第二部檔名不動、顯示章號 21–29。取代 rewrite_20260911/chapter_map.json。",
+  "part1": {
+    "01_forecast_question": 1, "02_reading_horus": 2, "03_experiment_spec": 3,
+    "04_poisson_and_sup": 4, "05_likelihood_estimation": 5, "06_simulation_tests_scores": 6,
+    "07_gr_bvalue": 7, "08_completeness": 8, "09_ppe_forecast": 9, "10_clustering_laws": 10,
+    "11_conditional_intensity": 11, "12_etas_structure": 12, "13_etas_italy_forecast": 13,
+    "14_psi_precursory_scale": 14, "15_eepas_italy_forecast": 15, "16_test_number": 16,
+    "17_test_space_magnitude": 17, "18_test_comparison": 18, "19_ensembles": 19,
+    "20_beyond_forecast": 20
+  },
+  "part2": {
+    "01_overview": 21, "02_download": 22, "03_groundwater": 23, "04_geomagnetic": 24,
+    "05_seismic": 25, "06_gnss": 26, "07_case_hualien2024": 27, "08_explore_ideas": 28,
+    "23_taiwan_outlook": 29
+  },
+  "old_to_new_assets": {
+    "09_forecasting_intro": ["01"], "foundation_catalog": ["02"], "foundation_randomness": ["01", "04"],
+    "10_point_process": ["04", "11"], "11_catalog_completeness_b": ["07", "08"],
+    "12_clustering_laws": ["10"], "foundation_inference": ["05", "06"],
+    "13_etas_structure": ["12"], "14_etas_estimation": ["13"], "15_psi_phenomenon": ["14"],
+    "16_eepas_ppe": ["09", "15"], "17_testing_consistency": ["16", "17"],
+    "18_testing_comparison": ["18"], "19_ensembles": ["19"], "20_recurrence_models": ["appendix_f", "20"],
+    "21_psha": ["20", "appendix_f"], "22_operational_systems": ["20"]
+  }
+}

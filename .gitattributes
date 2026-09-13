@@ -1,0 +1,2 @@
+# Keep raw tool/build logs verbatim, including their trailing spaces.
+reference/notes/rewrite_20260913/continuation/*.log -whitespace

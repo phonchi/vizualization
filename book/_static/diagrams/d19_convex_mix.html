@@ -1,0 +1,43 @@
+<style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d19_convex_mix{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d19_convex_mix *{box-sizing:border-box}
+.dg-d19_convex_mix svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d19_convex_mix svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d19_convex_mix svg .name{font-weight:600}
+.dg-d19_convex_mix svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d19_convex_mix .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d19_convex_mix .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d19_convex_mix .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d19_convex_mix .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d19_convex_mix .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d19_convex_mix .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d19_convex_mix .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d19_convex_mix .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d19_convex_mix .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d19_convex_mix .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d19_convex_mix .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d19_convex_mix .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d19_convex_mix .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d19_convex_mix .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d19_convex_mix .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d19_convex_mix .details p,.dg-d19_convex_mix .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d19_convex_mix .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d19_convex_mix [hidden]{display:none}
+.dg-d19_convex_mix .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d19_convex_mix .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d19_convex_mix svg [data-detail-mark]{transition:none}}
+@media print{.dg-d19_convex_mix .choices{display:none}.dg-d19_convex_mix [hidden]{display:block}.dg-d19_convex_mix.enhanced svg [data-detail-mark]{opacity:1}.dg-d19_convex_mix .details{min-height:0}}
+
+.dg-d19_convex_mix:has(#dg-d19_convex_mix-choice-a:checked) [data-detail]:not([data-detail="a"]){display:none}
+.dg-d19_convex_mix:has(#dg-d19_convex_mix-choice-b:checked) [data-detail]:not([data-detail="b"]){display:none}
+.dg-d19_convex_mix:has(#dg-d19_convex_mix-choice-mix:checked) [data-detail]:not([data-detail="mix"]){display:none}
+.dg-d19_convex_mix svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d19_convex_mix:has(label:hover) [data-detail]{display:none!important}
+.dg-d19_convex_mix:has(label[for="dg-d19_convex_mix-choice-a"]:hover) [data-detail="a"]{display:block!important}
+.dg-d19_convex_mix:has(label:hover) [data-detail]{display:none!important}
+.dg-d19_convex_mix:has(label[for="dg-d19_convex_mix-choice-b"]:hover) [data-detail="b"]{display:block!important}
+.dg-d19_convex_mix:has(label:hover) [data-detail]{display:none!important}
+.dg-d19_convex_mix:has(label[for="dg-d19_convex_mix-choice-mix"]:hover) [data-detail="mix"]{display:block!important}}
+@media print{.dg-d19_convex_mix [data-detail]{display:block!important}.dg-d19_convex_mix [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d19_convex_mix" data-teaching-widget="d19_convex_mix"><p class="intro">合成的兩格例子。柱高表示格內期望數；權重先定為 1/2。</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 484" role="img" aria-labelledby="dg-d19_convex_mix-title dg-d19_convex_mix-desc"><title id="dg-d19_convex_mix-title">凸組合：逐格相加，總期望數如何變</title><desc id="dg-d19_convex_mix-desc">兩格預報 A 為 2 與 6，B 為 6 與 2；各占一半得到 4 與 4，總期望數仍為 8。</desc><text x="232" y="20" class="sub" text-anchor="middle">格 1</text><text x="344" y="20" class="sub" text-anchor="middle">格 2</text><g data-detail-mark="a"><text x="32" y="48" class="name" text-anchor="start">預報 A</text><rect x="200" y="80" width="64" height="16" class="node"/><text x="232" y="124" class="name" text-anchor="middle">2</text><rect x="312" y="48" width="64" height="48" class="node"/><text x="344" y="124" class="name" text-anchor="middle">6</text><path d="M 192 96 H 416" class="edge"/></g><g data-detail-mark="b"><text x="32" y="176" class="name" text-anchor="start">預報 B</text><rect x="200" y="176" width="64" height="48" class="node"/><text x="232" y="252" class="name" text-anchor="middle">6</text><rect x="312" y="208" width="64" height="16" class="node"/><text x="344" y="252" class="name" text-anchor="middle">2</text><path d="M 192 224 H 416" class="edge"/></g><g data-detail-mark="mix"><text x="32" y="304" class="name" text-anchor="start">各占一半</text><rect x="200" y="320" width="64" height="32" class="fill"/><text x="232" y="380" class="name" text-anchor="middle">4</text><rect x="312" y="320" width="64" height="32" class="fill"/><text x="344" y="380" class="name" text-anchor="middle">4</text><path d="M 192 352 H 416" class="edge"/></g><text x="240" y="420" class="name" text-anchor="middle">每張總數都是 8</text><text x="240" y="456" class="sub" text-anchor="middle">加總守恆 ≠ 概似守恆</text></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d19_convex_mix-choice-a" name="dg-d19_convex_mix-choice" value="a" aria-controls="dg-d19_convex_mix-panel-a" checked><label for="dg-d19_convex_mix-choice-a">預報 A</label></span><span><input type="radio" id="dg-d19_convex_mix-choice-b" name="dg-d19_convex_mix-choice" value="b" aria-controls="dg-d19_convex_mix-panel-b" ><label for="dg-d19_convex_mix-choice-b">預報 B</label></span><span><input type="radio" id="dg-d19_convex_mix-choice-mix" name="dg-d19_convex_mix-choice" value="mix" aria-controls="dg-d19_convex_mix-panel-mix" ><label for="dg-d19_convex_mix-choice-mix">各占一半</label></span></div><div class="details" aria-live="polite"><section id="dg-d19_convex_mix-panel-a" data-detail="a" aria-label="預報 A"><h4>預報 A</h4><p>兩個格箱的期望數為 2、6，總和為 8。這是合成例子，不是某個義大利預報窗的結果。</p></section><section id="dg-d19_convex_mix-panel-b" data-detail="b" aria-label="預報 B"><h4>預報 B</h4><p>相同兩個格箱的期望數為 6、2，總和也是 8。兩張預報必須使用相同區域、窗與規模箱，才能逐格混合。</p></section><section id="dg-d19_convex_mix-panel-mix" data-detail="mix" aria-label="各占一半"><h4>各占一半</h4><p>混合結果為 4、4。一般而言，總數等於 πΛ_A + (1−π)Λ_B；只有兩個成分總數相同時，才對所有 π 保持同一總數。對數概似不服從這個守恆式。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>

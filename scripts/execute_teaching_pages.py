@@ -1,6 +1,9 @@
 """Execute explicitly selected teaching pages with external downloads disabled."""
 from pathlib import Path
 import argparse
+import ast
+import hashlib
+from datetime import datetime, timezone
 import json
 import os
 import time
@@ -9,7 +12,7 @@ import nbformat
 from nbclient import NotebookClient
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/os.environ.get('TEACHING_REPORT_DIR','reference/notes/rewrite_20260911')
+OUT=ROOT/os.environ.get('TEACHING_REPORT_DIR','reference/notes/rewrite_20260913')
 GUARD='''import requests
 def _offline_request(*args, **kwargs):
     raise RuntimeError("Teaching validation is offline; prepare the local cache first")
@@ -18,10 +21,54 @@ import gdms_toolkit as _gt
 _gt.GDMSSession = _offline_request
 '''
 
+def execute_in_process(notebook):
+    """Socket-free execution with IPython rich outputs, one fresh namespace per page."""
+    from IPython.core.interactiveshell import InteractiveShell
+    from IPython.utils.capture import capture_output
+    from IPython.display import display
+    shell = InteractiveShell.instance()
+    shell.reset(new_session=True)
+    timings=[]
+    for i,cell in enumerate(notebook.cells):
+        if cell.cell_type != 'code':
+            continue
+        started=time.monotonic()
+        stamp=datetime.now(timezone.utc).isoformat()
+        tree=ast.parse(cell.source)
+        last=tree.body.pop() if tree.body and isinstance(tree.body[-1],ast.Expr) else None
+        with capture_output() as captured:
+            exec(compile(tree,f'<cell {i}>','exec'),shell.user_ns)
+            if last is not None:
+                value=eval(compile(ast.Expression(last.value),f'<cell {i}>','eval'),shell.user_ns)
+                if value is not None:
+                    display(value)
+        seconds=time.monotonic()-started
+        cell.outputs=[]
+        for name in ('stdout','stderr'):
+            content=getattr(captured,name)
+            if content:
+                cell.outputs.append(nbformat.v4.new_output('stream',name=name,text=content))
+        for output in captured.outputs:
+            cell.outputs.append(nbformat.v4.new_output('display_data',data=output.data,metadata=output.metadata))
+        cell.execution_count=len(timings)+1
+        cell.metadata['execution']={'iopub.execute_input':stamp,'iopub.status.idle':datetime.now(timezone.utc).isoformat()}
+        timings.append({'cell':i-1,'seconds':round(seconds,4)})
+        print(f'  cell {i-1}: {seconds:.3f}s',flush=True)
+        if seconds>=30:
+            raise RuntimeError(f'Cell {i-1} exceeded 30 seconds: {seconds:.2f}')
+    return timings[1:]
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('pages',nargs='+')
+    parser.add_argument('--in-process',action='store_true',help='Use socket-free IPython execution')
     args=parser.parse_args()
+    if os.name == "posix":
+        import resource
+        cap=3*1024**3
+        _,hard=resource.getrlimit(resource.RLIMIT_AS)
+        resource.setrlimit(resource.RLIMIT_AS,(min(cap,hard) if hard>0 else cap,hard))
     results=[]
     OUT.mkdir(parents=True,exist_ok=True)
     for name in args.pages:
@@ -31,8 +78,12 @@ def main():
         notebook.cells.insert(0,nbformat.v4.new_code_cell(GUARD,metadata={'tags':['remove-cell']}))
         print(f'START {name}',flush=True)
         try:
-            client=NotebookClient(notebook,timeout=600,kernel_name='python3',resources={'metadata':{'path':str(ROOT)}})
-            client.execute()
+            if args.in_process:
+                timings=execute_in_process(notebook)
+            else:
+                client=NotebookClient(notebook,timeout=30,kernel_name='python3',resources={'metadata':{'path':str(ROOT)}})
+                client.execute()
+                timings=[]
             notebook.cells.pop(0)
             for c in notebook.cells:
                 if c.cell_type=='code':
@@ -44,10 +95,14 @@ def main():
             cache.parent.mkdir(parents=True,exist_ok=True)
             nbformat.write(notebook,cache)
             row={'page':name,'status':'passed','seconds':round(time.monotonic()-start,2),
-                 'outputs':sum(len(c.get('outputs',[])) for c in notebook.cells)}
+                 'outputs':sum(len(c.get('outputs',[])) for c in notebook.cells),
+                 'method':'in-process IPython' if args.in_process else 'nbclient',
+                 'cells':timings,'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
+                 'toolkit_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'gdms_toolkit').glob('*.py'))}}
         except Exception as exc:
             row={'page':name,'status':'failed','seconds':round(time.monotonic()-start,2),'error':str(exc)}
             print(str(exc),flush=True)
+        (OUT/f'{name}_execution.json').write_text(json.dumps(row,ensure_ascii=False,indent=2)+'\n')
         results.append(row)
         print(json.dumps(row,ensure_ascii=False),flush=True)
         (OUT/'execution_latest.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')

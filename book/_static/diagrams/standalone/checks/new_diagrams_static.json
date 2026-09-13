@@ -1,0 +1,80 @@
+{
+  "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+  "generator": {
+    "file": "book/_static/diagrams/sources/build_teaching_diagrams.py",
+    "sha256": "b1ef3ae33de6f58e97a03763692dabf2f4c1ab8ac1c714c7db6af08cc1ebd815"
+  },
+  "names": [
+    "d01_forecast_pipeline",
+    "d09_kernel_smoothing",
+    "d12_etas_branching",
+    "d15_eepas_kernels",
+    "d16_csep_tests_flow",
+    "d19_convex_mix",
+    "d20_model_family"
+  ],
+  "files": [
+    {
+      "file": "book/_static/diagrams/d01_forecast_pipeline.html",
+      "sha256": "22cf49fa54a212da36194d5140cf9a16275ef1b6f45398032f8080b8759dc18e",
+      "viewbox_width": 480,
+      "svg_font_size_px": 20,
+      "hover_rule_gated_for_fine_pointer": true,
+      "no_inactive_svg_opacity": true
+    },
+    {
+      "file": "book/_static/diagrams/d09_kernel_smoothing.html",
+      "sha256": "2070a6cd0de2f759aad6b79034defd3e2bf469eb342f116c60e05d0568b1525a",
+      "viewbox_width": 480,
+      "svg_font_size_px": 20,
+      "hover_rule_gated_for_fine_pointer": true,
+      "no_inactive_svg_opacity": true
+    },
+    {
+      "file": "book/_static/diagrams/d12_etas_branching.html",
+      "sha256": "3f4767451500999d2ce47cb98392cd4bb097140e3ea606da32eac27af0764063",
+      "viewbox_width": 480,
+      "svg_font_size_px": 20,
+      "hover_rule_gated_for_fine_pointer": true,
+      "no_inactive_svg_opacity": true
+    },
+    {
+      "file": "book/_static/diagrams/d15_eepas_kernels.html",
+      "sha256": "c034e59d0475282690e61cc68b8f96c47204f859963fd39128b2a84e6b4d32dd",
+      "viewbox_width": 480,
+      "svg_font_size_px": 20,
+      "hover_rule_gated_for_fine_pointer": true,
+      "no_inactive_svg_opacity": true
+    },
+    {
+      "file": "book/_static/diagrams/d16_csep_tests_flow.html",
+      "sha256": "211a50a604630b83e3f9b942534172a9d85166bdd9b96f2130a8ff62fc037d73",
+      "viewbox_width": 480,
+      "svg_font_size_px": 20,
+      "hover_rule_gated_for_fine_pointer": true,
+      "no_inactive_svg_opacity": true
+    },
+    {
+      "file": "book/_static/diagrams/d19_convex_mix.html",
+      "sha256": "0bb6f16855ce278218a89eedfbf0a333e2ff4a23d48f557317a897d2a50dfae9",
+      "viewbox_width": 480,
+      "svg_font_size_px": 20,
+      "hover_rule_gated_for_fine_pointer": true,
+      "no_inactive_svg_opacity": true
+    },
+    {
+      "file": "book/_static/diagrams/d20_model_family.html",
+      "sha256": "058ebd2720b06f5978504c2e687310fadd02e018f559121e6675c9eb6d8a0799",
+      "viewbox_width": 480,
+      "svg_font_size_px": 20,
+      "hover_rule_gated_for_fine_pointer": true,
+      "no_inactive_svg_opacity": true
+    }
+  ],
+  "unique_ids": 66,
+  "svg_per_fragment": 1,
+  "remote_dependencies": 0,
+  "all_self_contained": true,
+  "browser_status": "not run by this agent; main agent is rerunning touch interactions and affected full-book pages",
+  "superseded_static_receipts": "book/_static/diagrams/standalone/checks/history/20260913T112700Z"
+}

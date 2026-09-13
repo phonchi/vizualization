@@ -1,0 +1,17 @@
+{
+  "source": "reference/[2023] Italy_EEPAS.pdf",
+  "source_sha256": "a4daeb6efb1559b28d43c08b2286ceb6d041ea94fdda4709835939a8b0448190",
+  "page": 12,
+  "printed_page": 1692,
+  "figure": 8,
+  "clip": [
+    102.0,
+    39.0,
+    474.0,
+    214.0
+  ],
+  "scale": 3,
+  "output": "book/_static/reading/biondini2023_fig8.png",
+  "output_sha256": "3c58d134f1712e97620b2c5d6b8bcb62814adc587c67847b52ca5748becd4e3a",
+  "citation": "Biondini, Rhoades & Gasperini (2023), GJI 234, doi:10.1093/gji/ggad123"
+}

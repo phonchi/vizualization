@@ -1,0 +1,46 @@
+<style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d20_model_family{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d20_model_family *{box-sizing:border-box}
+.dg-d20_model_family svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d20_model_family svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d20_model_family svg .name{font-weight:600}
+.dg-d20_model_family svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d20_model_family .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d20_model_family .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d20_model_family .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d20_model_family .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d20_model_family .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d20_model_family .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d20_model_family .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d20_model_family .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d20_model_family .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d20_model_family .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d20_model_family .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d20_model_family .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d20_model_family .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d20_model_family .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d20_model_family .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d20_model_family .details p,.dg-d20_model_family .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d20_model_family .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d20_model_family [hidden]{display:none}
+.dg-d20_model_family .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d20_model_family .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d20_model_family svg [data-detail-mark]{transition:none}}
+@media print{.dg-d20_model_family .choices{display:none}.dg-d20_model_family [hidden]{display:block}.dg-d20_model_family.enhanced svg [data-detail-mark]{opacity:1}.dg-d20_model_family .details{min-height:0}}
+
+.dg-d20_model_family:has(#dg-d20_model_family-choice-fixed:checked) [data-detail]:not([data-detail="fixed"]){display:none}
+.dg-d20_model_family:has(#dg-d20_model_family-choice-ppe:checked) [data-detail]:not([data-detail="ppe"]){display:none}
+.dg-d20_model_family:has(#dg-d20_model_family-choice-etas:checked) [data-detail]:not([data-detail="etas"]){display:none}
+.dg-d20_model_family:has(#dg-d20_model_family-choice-eepas:checked) [data-detail]:not([data-detail="eepas"]){display:none}
+.dg-d20_model_family svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-fixed"]:hover) [data-detail="fixed"]{display:block!important}
+.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-ppe"]:hover) [data-detail="ppe"]{display:block!important}
+.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-etas"]:hover) [data-detail="etas"]{display:block!important}
+.dg-d20_model_family:has(label:hover) [data-detail]{display:none!important}
+.dg-d20_model_family:has(label[for="dg-d20_model_family-choice-eepas"]:hover) [data-detail="eepas"]{display:block!important}}
+@media print{.dg-d20_model_family [data-detail]{display:block!important}.dg-d20_model_family [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d20_model_family" data-teaching-widget="d20_model_family"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 488" role="img" aria-labelledby="dg-d20_model_family-title dg-d20_model_family-desc"><title id="dg-d20_model_family-title">四種預報：差別在於如何使用歷史</title><desc id="dg-d20_model_family-desc">SUP 是固定空間基準；本站 PPE 隨已知來源緩慢更新並使用 50 天延遲；ETAS 與 EEPAS 分別由觸發與前兆尺度描述歷史貢獻。</desc><rect x="112" y="16" width="256" height="64" rx="8" class="node focal"/><text x="240.0" y="48" class="name" text-anchor="middle">格箱率預報</text><path d="M 216 80 V 104 Q 216 112 208 112 H 96 Q 88 112 88 120 V 144" class="edge"/><path d="M 264 80 V 104 Q 264 112 272 112 H 336 Q 344 112 344 120 V 144" class="edge"/><g data-detail-mark="fixed"><rect x="16" y="144" width="144" height="88" rx="8" class="node "/><text x="88.0" y="176" class="name" text-anchor="middle">SUP</text><text x="88.0" y="204" class="sub" text-anchor="middle">固定基準</text></g><rect x="224" y="144" width="240" height="88" rx="8" class="node "/><text x="344.0" y="176" class="name" text-anchor="middle">使用歷史資訊</text><text x="344.0" y="204" class="sub" text-anchor="middle">依發報規則更新</text><path d="M 280 232 V 252 Q 280 260 272 260 H 96 Q 88 260 88 268 V 328" class="edge"/><path d="M 344 232 V 276 Q 344 284 336 284 H 248 Q 240 284 240 292 V 328" class="edge"/><path d="M 392 232 V 328" class="edge"/><g data-detail-mark="ppe"><rect x="16" y="328" width="144" height="80" rx="8" class="node "/><text x="88.0" y="360" class="name" text-anchor="middle">PPE</text><text x="88.0" y="388" class="sub" text-anchor="middle">緩慢更新</text></g><g data-detail-mark="etas"><rect x="168" y="328" width="144" height="80" rx="8" class="node "/><text x="240.0" y="360" class="name" text-anchor="middle">ETAS</text><text x="240.0" y="388" class="sub" text-anchor="middle">觸發活動</text></g><g data-detail-mark="eepas"><rect x="320" y="328" width="144" height="80" rx="8" class="node "/><text x="392.0" y="360" class="name" text-anchor="middle">EEPAS</text><text x="392.0" y="388" class="sub" text-anchor="middle">前兆尺度</text></g><text x="240" y="456" class="name" text-anchor="middle">成分可組合，但權重須先定</text></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d20_model_family-choice-fixed" name="dg-d20_model_family-choice" value="fixed" aria-controls="dg-d20_model_family-panel-fixed" checked><label for="dg-d20_model_family-choice-fixed">SUP</label></span><span><input type="radio" id="dg-d20_model_family-choice-ppe" name="dg-d20_model_family-choice" value="ppe" aria-controls="dg-d20_model_family-panel-ppe" ><label for="dg-d20_model_family-choice-ppe">PPE</label></span><span><input type="radio" id="dg-d20_model_family-choice-etas" name="dg-d20_model_family-choice" value="etas" aria-controls="dg-d20_model_family-panel-etas" ><label for="dg-d20_model_family-choice-etas">ETAS</label></span><span><input type="radio" id="dg-d20_model_family-choice-eepas" name="dg-d20_model_family-choice" value="eepas" aria-controls="dg-d20_model_family-panel-eepas" ><label for="dg-d20_model_family-choice-eepas">EEPAS</label></span></div><div class="details" aria-live="polite"><section id="dg-d20_model_family-panel-fixed" data-detail="fixed" aria-label="SUP"><h4>SUP</h4><p>本站 SUP 在等面積格中均勻配置空間率，使用學習期決定的固定率。它是後面三個模型共同的簡單比較基準。</p></section><section id="dg-d20_model_family-panel-ppe" data-detail="ppe" aria-label="PPE"><h4>PPE</h4><p>本站 PPE 的來源目錄逐窗更新，來源須早於發報時刻 50 天。固定的是參數，並非來源或空間權重；時間項也隨目錄累積長度緩慢改變。</p></section><section id="dg-d20_model_family-panel-etas" data-detail="etas" aria-label="ETAS"><h4>ETAS</h4><p>ETAS 以觸發核描述事件後的叢集。本站格網版本只納入背景與已知歷史的第一代貢獻。變化的時間尺度依核參數、歷史與發報窗而定。</p></section><section id="dg-d20_model_family-panel-eepas" data-detail="eepas" aria-label="EEPAS"><h4>EEPAS</h4><p>EEPAS 依前兆尺度把事件貢獻分配到規模、時間與空間。本站使用 50 天資料延遲；較長時間尺度是本實驗的設定與解讀，不是所有 EEPAS 的固定範圍。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/home/phonchi/vizualization/book/_static/diagrams/sources/d01_forecast_pipeline.workflow.json",
+  "output": "/home/phonchi/vizualization/book/_static/diagrams/standalone/d01_forecast_pipeline.archify.html",
+  "specification": {
+    "sha256": "422421029e7a6365a55174e2a687b149653313ce29d2f85202fde4f544ca6c07",
+    "bytes": 2044
+  },
+  "artifact": {
+    "sha256": "6597d7c09a27245d61066d718387f8054dde4d46e03bc53a2c216ffb610703ed",
+    "bytes": 702189
+  },
+  "validation": {
+    "checksPassed": 9,
+    "checkCount": 9,
+    "compositionProfile": "showcase",
+    "compositionStatus": "pass",
+    "errors": 0,
+    "warnings": 0
+  }
+}

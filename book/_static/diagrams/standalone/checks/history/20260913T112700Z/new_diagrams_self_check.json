@@ -1,0 +1,105 @@
+{
+  "historical_only": true,
+  "superseded_reason": "Main-agent touch/hover media-query repair regenerated all 12 diagrams. Original receipt retained below; current checks are at parent checks directory.",
+  "archived_at_utc": "2026-09-13T11:27:00.482837+00:00",
+  "original_receipt": [
+    {
+      "file": "book/_static/diagrams/d01_forecast_pipeline.html",
+      "sha256": "ff9c276d33769ee76e4a30b3e7df2f3c607397c8a3e8fef85adfc917a250f0f6",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d01_forecast_pipeline.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d01_forecast_pipeline.html",
+      "sha256": "88190496862ac968856118873f3763996336771a11fcb56a94d5fec3c778cac3",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d01_forecast_pipeline.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d09_kernel_smoothing.html",
+      "sha256": "0fd5c14100c96ba2c4ba5c341de13df72a353b5bb19fcbaa5d9e0e2f922c074e",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d09_kernel_smoothing.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d09_kernel_smoothing.html",
+      "sha256": "36e36309adc68a7dfdd313230d66e405bfb2c2f4a0f8268cd09734079fb132e1",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d09_kernel_smoothing.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d12_etas_branching.html",
+      "sha256": "5cdc4f11ae1bac19d31de51c8d86a9c94775b6bf047e27c5c1a8330be22e5957",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d12_etas_branching.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d12_etas_branching.html",
+      "sha256": "1718bc6d45c6619e7be21fb715c038ca8c6bae6b5a10fd851d03aeebb3b73e70",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d12_etas_branching.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d15_eepas_kernels.html",
+      "sha256": "7d8bc2bcb27604482082060c7c1f3ed34cdd3c4825ba5688702665072c567277",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d15_eepas_kernels.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d15_eepas_kernels.html",
+      "sha256": "69856677b24ebc30e2bd1ed311864bb626860673c00d12fbd730a107f0959fa4",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d15_eepas_kernels.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d16_csep_tests_flow.html",
+      "sha256": "36facf37ff843726f2b7a5fec39644a730ee68f0dfd3abefda2bbaaba2f308e5",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d16_csep_tests_flow.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d16_csep_tests_flow.html",
+      "sha256": "f58843595cf615f605f5d18b49f20a50a46867a03b135741c488e72111abe612",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d16_csep_tests_flow.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d19_convex_mix.html",
+      "sha256": "2d3150d206481b4fbb7c168225c52eb5bcb2c5320315abc0ea7dc0b53ea93701",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d19_convex_mix.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d19_convex_mix.html",
+      "sha256": "00ba1fbe764bc64f27188a0f5474f7a5f34986831d6fa3ae33ef7ec28e4c7b3e",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d19_convex_mix.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/d20_model_family.html",
+      "sha256": "159532a1317a5b87e99dd8b6d17b75f616d3d358cfb2b866db8c7bd1331c9b11",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/d20_model_family.html\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d20_model_family.html",
+      "sha256": "5a659dec3b56588ff4a291672f159f59cb63f62f701f5659b3af52d66b850dc2",
+      "checked_at_utc": "2026-09-13T10:54:00.984130+00:00",
+      "exit_code": 0,
+      "output": "OK book/_static/diagrams/standalone/d20_model_family.html\n"
+    }
+  ]
+}

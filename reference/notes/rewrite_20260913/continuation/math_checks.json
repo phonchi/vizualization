@@ -1,0 +1,712 @@
+{
+  "timestamp_utc": "2026-09-13T11:31:26.292033+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "n=2 finite-window compensator",
+      "actual": 0.7666666666666666,
+      "expected": 0.7666666666666666,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite-window log likelihood",
+      "actual": -3.069251759660712,
+      "expected": -3.069251759660712,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite Omori integral p=0.8",
+      "actual": 4.3320149258858756,
+      "expected": 4.3320149258858756,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite Omori integral p=1.0",
+      "actual": 3.9318256327243253,
+      "expected": 3.9318256327243257,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite Omori integral p=1.2",
+      "actual": 3.7563314880532,
+      "expected": 3.7563314880532,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "planar kernel normalization with polar Jacobian",
+      "actual": 1.0000000000000153,
+      "expected": 1.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "discrete magnitude MLE score per event",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "asymmetric magnitude interval brackets estimate",
+      "passed": true,
+      "lower": 0.9920282299975384,
+      "estimate": 1.0914446942506806,
+      "upper": 1.2131505793966226
+    },
+    {
+      "name": "Gamma-Poisson predictive total variance by quadrature",
+      "actual": 17.346938775510225,
+      "expected": 17.346938775510203,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "concave mixture maximum may be on boundary",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "regular illustrative catalog provenance",
+      "passed": true,
+      "events": 80
+    },
+    {
+      "name": "poisson illustrative catalog provenance",
+      "passed": true,
+      "events": 80
+    },
+    {
+      "name": "cluster illustrative catalog provenance",
+      "passed": true,
+      "events": 80
+    },
+    {
+      "name": "POLL includes factorial at repeated events",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "jPOLL equals independent full Poisson log likelihood",
+      "actual": -3.264767064303988,
+      "expected": -3.264767064303988,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "positive event at zero rate has negative infinite score",
+      "passed": true
+    },
+    {
+      "name": "NB parameterization mean",
+      "actual": 3.9999999999999996,
+      "expected": 4.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "NB parameterization variance",
+      "actual": 9.999999999999996,
+      "expected": 10.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "NB inclusive lower tail",
+      "actual": 0.814092805364077,
+      "expected": 0.8140928053640772,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "NB inclusive upper tail",
+      "actual": 0.26029325907255463,
+      "expected": 0.2602932590725544,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "NB tails overlap by observed PMF",
+      "actual": 1.0743860644366316,
+      "expected": 1.0743860644366316,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "NB rejects variance not greater than mean",
+      "passed": true
+    },
+    {
+      "name": "IGPE equals independently expanded LL difference per event",
+      "actual": -0.1565193534504905,
+      "expected": -0.15651935345049053,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "IGPE agrees with jPOLL difference/N",
+      "actual": -0.1565193534504905,
+      "expected": -0.1565193534504905,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "IGPE paired t interval halfwidth",
+      "actual": 0.5988853289482327,
+      "expected": 0.5988853289482327,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "IGPE rejects zero events",
+      "passed": true
+    },
+    {
+      "name": "convex expected-count conservation weight=0.0",
+      "actual": 4.3,
+      "expected": 4.3,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "convex expected-count conservation weight=0.25",
+      "actual": 4.6,
+      "expected": 4.6,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "convex expected-count conservation weight=0.6",
+      "actual": 5.02,
+      "expected": 5.02,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "convex expected-count conservation weight=1.0",
+      "actual": 5.5,
+      "expected": 5.5,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "sparse categorical jPOLL equals same-seed dense allocation",
+      "actual": 1.7763568394002505e-15,
+      "expected": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "zero-rate simulation handles zero/positive counts",
+      "passed": true
+    },
+    {
+      "name": "SUP finite GR mass leaves upper tail unnormalized",
+      "actual": 0.9980501554002421,
+      "expected": 0.998050155400242,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "SUP first GR bin by density quadrature",
+      "actual": 0.22088780888690662,
+      "expected": 0.22088780888690665,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "EEPAS time CDF difference vs direct lognormal integral",
+      "actual": 0.886038648325953,
+      "expected": 0.8860386483259531,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "EEPAS zero-length time interval",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "EEPAS Gaussian rectangle vs separate density quadratures",
+      "actual": 0.3867821416856297,
+      "expected": 0.38678214168562997,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "EEPAS eta base-10 rate balance formula",
+      "actual": 0.032120461498051894,
+      "expected": 0.032120461498051894,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "EEPAS magnitude five-midpoint implementation",
+      "actual": 0.13874852241767524,
+      "expected": 0.13874852241767524,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "EEPAS magnitude midpoint accuracy in selected example",
+      "actual": 0.13874852241767524,
+      "expected": 0.13872174963450204,
+      "tolerance": 0.0003,
+      "passed": true
+    },
+    {
+      "name": "bin_targets half-open bins, gaps, region and 7.5 exclusion",
+      "passed": true
+    },
+    {
+      "name": "shared time boundary belongs to right window",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: SUP_learning.npy",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: SUP_testing.npy",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: PPE_learning.npy",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: PPE_testing.npy",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: ETAS_learning.npy",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: ETAS_testing.npy",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: EEPAS_learning.npy",
+      "passed": true
+    },
+    {
+      "name": "precomputed cache exists: EEPAS_testing.npy",
+      "passed": true
+    },
+    {
+      "name": "clean HORUS exists; no download permitted",
+      "passed": true
+    },
+    {
+      "name": "regrid cache exists; no reconstruction permitted",
+      "passed": true
+    },
+    {
+      "name": "SUP_learning shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        88,
+        177,
+        25
+      ],
+      "total": 26.94735419580655
+    },
+    {
+      "name": "SUP_testing shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        40,
+        177,
+        25
+      ],
+      "total": 12.249224202210975
+    },
+    {
+      "name": "PPE_learning shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        88,
+        177,
+        25
+      ],
+      "total": 26.950027625260805
+    },
+    {
+      "name": "PPE_testing shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        40,
+        177,
+        25
+      ],
+      "total": 14.009961373352763
+    },
+    {
+      "name": "ETAS_learning shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        88,
+        177,
+        25
+      ],
+      "total": 13.140609468827021
+    },
+    {
+      "name": "ETAS_testing shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        40,
+        177,
+        25
+      ],
+      "total": 7.502183261503269
+    },
+    {
+      "name": "EEPAS_learning shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        88,
+        177,
+        25
+      ],
+      "total": 27.81896315201844
+    },
+    {
+      "name": "EEPAS_testing shape/nonnegative/finite",
+      "passed": true,
+      "shape": [
+        40,
+        177,
+        25
+      ],
+      "total": 14.437109867085834
+    },
+    {
+      "name": "177 positive projected areas",
+      "passed": true
+    },
+    {
+      "name": "EPSG:7794 km geographic round-trip",
+      "actual": 1.8189894035458565e-12,
+      "expected": 0.0,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "177 equal cell areas",
+      "actual": 9.549694368615746e-12,
+      "expected": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "name": "HORUS 2024 learning targets",
+      "actual": 27.0,
+      "expected": 27.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "HORUS 2024 testing targets",
+      "actual": 25.0,
+      "expected": 25.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "learning final boundary is 2012-01-01",
+      "actual": 18993.0,
+      "expected": 18993.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "learning windows cover exact learning period",
+      "actual": 8035.0000000000055,
+      "expected": 8035.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "forecast window count",
+      "actual": 40.0,
+      "expected": 40.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "forecast total duration",
+      "actual": 3652.4000000000524,
+      "expected": 3652.4,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "uncovered testing-period tail in days",
+      "actual": 0.5999999999985448,
+      "expected": 0.6,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "target count in uncovered tail",
+      "actual": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "all real testing targets retained by bins",
+      "actual": 25.0,
+      "expected": 25.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "cached SUP total vs independent duration and GR mass",
+      "actual": 12.249224202210975,
+      "expected": 12.249224202210977,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "regrid weights finite/nonnegative",
+      "passed": true
+    },
+    {
+      "name": "regrid every source column sums to one",
+      "actual": 6.661338147750939e-16,
+      "expected": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "regrid preserves every magnitude-bin total",
+      "actual": 1.021405182655144e-14,
+      "expected": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "native CSEP export shape/flags",
+      "passed": true
+    },
+    {
+      "name": "native CSEP export roundoff total",
+      "actual": 14.437110088747898,
+      "expected": 14.437109867085834,
+      "tolerance": 7.362926032213775e-06,
+      "passed": true
+    },
+    {
+      "name": "regridded CSEP export shape/flags",
+      "passed": true
+    },
+    {
+      "name": "regridded CSEP export roundoff total",
+      "actual": 14.437109929508527,
+      "expected": 14.437109867085834,
+      "tolerance": 7.362926032213775e-06,
+      "passed": true
+    },
+    {
+      "name": "missing forecast cache never triggers implicit recomputation",
+      "passed": true
+    }
+  ],
+  "provenance": {
+    "seed": 20260915,
+    "maximum_score_simulation_catalogues": 8,
+    "spec": {
+      "catalog": "HORUS（Lolli et al. 2020），Mw 均一化，1960 年起",
+      "depth_max_km": 40.0,
+      "m0": 2.45,
+      "mT": 5.0,
+      "m_max": 7.5,
+      "mag_bin": 0.1,
+      "warmup": [
+        1960,
+        1989
+      ],
+      "learning": [
+        1990,
+        2011
+      ],
+      "testing": [
+        2012,
+        2021
+      ],
+      "window_days": 91.31,
+      "delay_days": 50.0,
+      "b_value": 1.084,
+      "n_cells": 177,
+      "cell_side_km": 42.42640687119285,
+      "crs": "EPSG:7794"
+    },
+    "published_model_parameters": {
+      "SUP": {
+        "b": 1.084
+      },
+      "PPE": {
+        "a": 0.62,
+        "d": 30.0,
+        "s": 9e-13,
+        "m_ref": 5.0,
+        "source": "Biondini et al. 2023, Table 3 (PPE)"
+      },
+      "EEPAS": {
+        "aM": 1.22,
+        "bM": 1.0,
+        "sM": 0.25,
+        "aT": 2.55,
+        "bT": 0.35,
+        "sT": 0.15,
+        "bA": 0.52,
+        "sA": 1.0,
+        "mu": 0.18,
+        "delay": 50.0,
+        "source": "Biondini et al. 2023, Table 3 (EEPAS-NW, 等權重)"
+      },
+      "ETAS": {
+        "K": 0.029,
+        "c": 0.004,
+        "p": 1.042,
+        "D": 1.04,
+        "gamma": 0.45,
+        "alpha": 1.12,
+        "q": 1.5,
+        "nu": 0.264,
+        "m_c": 2.5,
+        "source": "Biondini et al. 2023, Table 3 (ETAS-SUP)；時間單位以天處理"
+      }
+    },
+    "paper": "Biondini, Rhoades & Gasperini (2023), doi:10.1093/gji/ggad123, Table 3 and Appendix A",
+    "cache_rebuilt": false,
+    "sources": [
+      {
+        "path": "scripts/verify_teaching_math.py",
+        "bytes": 18125,
+        "sha256": "2cdef3305739e8106ff7daf4fd5fb882012a36498ef7c1965621ed54483b5783"
+      },
+      {
+        "path": "gdms_toolkit/csep_teaching.py",
+        "bytes": 8636,
+        "sha256": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded"
+      },
+      {
+        "path": "gdms_toolkit/italy.py",
+        "bytes": 16924,
+        "sha256": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737"
+      },
+      {
+        "path": "gdms_toolkit/italy_models.py",
+        "bytes": 13477,
+        "sha256": "549c490c4406d21f91cb6f488709c648572cb59a75589e03361cdd745d36fcec"
+      },
+      {
+        "path": "/tmp/italy_eepas_source.txt",
+        "bytes": 113373,
+        "sha256": "9489baa3926cb0ea6e5f9a16301beabb0a41dc78f169f893ce08932609fc58d6"
+      }
+    ],
+    "caches": [
+      {
+        "path": "data/cache/italy_forecasts/SUP_learning.npy",
+        "bytes": 3115328,
+        "sha256": "08c180c181bbd52e3bd80bb4469edf859dbdde46057d0163edd5ee49d9744fb0"
+      },
+      {
+        "path": "data/cache/italy_forecasts/SUP_testing.npy",
+        "bytes": 1416128,
+        "sha256": "cae0b96d76b01baedd883a225177b7f569aa28697cf792e4a5b55a34387a307d"
+      },
+      {
+        "path": "data/cache/italy_forecasts/PPE_learning.npy",
+        "bytes": 3115328,
+        "sha256": "63fc871fdbfc66f266e55fa706a80abfa40f1353ccd7abc0753a0ced3916e779"
+      },
+      {
+        "path": "data/cache/italy_forecasts/PPE_testing.npy",
+        "bytes": 1416128,
+        "sha256": "c3d58e0980f58fd250398217af9453d7bbb489bb22e57474366f23b02cb9e24a"
+      },
+      {
+        "path": "data/cache/italy_forecasts/ETAS_learning.npy",
+        "bytes": 3115328,
+        "sha256": "414a4267abaaa51b2ad442516c135a4a68597e781b81eab0b7c2f11107b02561"
+      },
+      {
+        "path": "data/cache/italy_forecasts/ETAS_testing.npy",
+        "bytes": 1416128,
+        "sha256": "e44c6195317cd8b688c35a87f13841ba07aec65f93cadcc01bd4a0bd0b9d322b"
+      },
+      {
+        "path": "data/cache/italy_forecasts/EEPAS_learning.npy",
+        "bytes": 3115328,
+        "sha256": "48d78eb5b38461828f021ed064b149eb880cb5b5f83e4017ede7e1d215df0722"
+      },
+      {
+        "path": "data/cache/italy_forecasts/EEPAS_testing.npy",
+        "bytes": 1416128,
+        "sha256": "e760da616d4a716a3f01e1aa62c9db5cb736226bef1f64647f58d3012515608d"
+      },
+      {
+        "path": "data/cache/italy/horus_clean.csv",
+        "bytes": 43255317,
+        "sha256": "85a096434f7dd8fcea1f39d9c4f4b48a1726c4623ea49b8ec4f06002285b30fd"
+      },
+      {
+        "path": "data/cache/italy/regrid_01deg.npz",
+        "bytes": 5536920,
+        "sha256": "51d71f5ba7c74946508abc6380cf1ad99a31c056172f45765de456657984d26e"
+      }
+    ],
+    "data_sources": [
+      {
+        "path": "data/cache/italy/regions/CELLE_ter.mat",
+        "bytes": 3214,
+        "sha256": "04865a0c9ab7eec97b4e6e07b9f41552af65a1fb9852e59e588ac50ffbc0e6cb"
+      },
+      {
+        "path": "data/cache/italy/regions/CPTI15.mat",
+        "bytes": 634,
+        "sha256": "fcbcd3b83828313dc84e9a782aece9bb2b3d72c16244f35d4f14e0d8202fe4f2"
+      },
+      {
+        "path": "data/cache/italy/HORUS_Ita_Catalog.txt",
+        "bytes": 125840851,
+        "sha256": "52232c2cf7a9edf827870bb98874d14192cdf1e2e2fa9a8e4d7a6fa23c2c1568"
+      }
+    ],
+    "verification_exports": [
+      {
+        "path": "reference/notes/rewrite_20260913/continuation/math_export_native.tsv",
+        "bytes": 526629,
+        "sha256": "f65e2b36ff099a92b475d7280c7c8ba495f0341f18e50aba4a7ecba3dc11d956"
+      },
+      {
+        "path": "reference/notes/rewrite_20260913/continuation/math_export_regridded.tsv",
+        "bytes": 11373479,
+        "sha256": "35ba736866a7c0c1bc238637513fe38207ca073115f7c278ee6aad5ed9cbaead"
+      }
+    ],
+    "limitations": [
+      "Forecast caches were read, not regenerated; this is not a complete independent model reconstruction.",
+      "Regrid column normalization proves mass conservation, not geometric intersection accuracy.",
+      "Midpoint magnitude accuracy is checked on one explicit EEPAS event, not every source event.",
+      "Source and cache hashes identify this run; historical cache-generation code was not inferred from hashes."
+    ]
+  },
+  "error": null
+}

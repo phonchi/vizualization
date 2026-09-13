@@ -24,5 +24,6 @@
   "06_gnss": 23,
   "07_case_hualien2024": 24,
   "08_explore_ideas": 25,
-  "23_taiwan_outlook": 26
+  "23_taiwan_outlook": 26,
+  "_superseded_by": "../rewrite_20260913/chapter_map.json"
 }

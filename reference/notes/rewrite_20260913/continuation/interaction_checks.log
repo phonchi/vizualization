@@ -1,0 +1,15 @@
+Running as unit: run-r315e02c9abf34f01a0131b67f5d68244.scope; invocation ID: fd096dd3f78c49199d90efec1278b66e
+{"diagram": "d01_forecast_pipeline", "page": "01_forecast_question", "theme": "light", "touch": true, "hover": true, "keyboard": true, "reduced_motion": true, "options": 5, "html_sha256": "3c7622f5fc6824b8a374e407bf2e8ef4a3eed72edbac726af2b3138905764d39"}
+{"diagram": "d02_regions_s_r", "page": "02_reading_horus", "theme": "light", "touch": true, "hover": true, "keyboard": true, "reduced_motion": true, "options": 3, "html_sha256": "a1087559f1f0731d43a49cc4f252fdeff1ac0955e0d19e05312caf2a14c0ee18"}
+{"diagram": "d03_timeline_windows", "page": "03_experiment_spec", "theme": "light", "touch": true, "hover": true, "keyboard": true, "reduced_motion": true, "options": 3, "html_sha256": "addef1163f6989b1dd0ebee34242c2cde48c18aa23e679e87fa1d4d85488cf21"}
+{"diagram": "d03_thresholds", "page": "03_experiment_spec", "theme": "light", "touch": true, "hover": true, "keyboard": true, "reduced_motion": true, "options": 4, "html_sha256": "addef1163f6989b1dd0ebee34242c2cde48c18aa23e679e87fa1d4d85488cf21"}
+{"diagram": "d04_density_to_counts", "page": "04_poisson_and_sup", "theme": "light", "touch": true, "hover": true, "keyboard": true, "reduced_motion": true, "options": 4, "html_sha256": "dfb4496c7c17f5a7dacaf19f3f21312f3d648396044c8df84ac173549fa25a2c"}
+{"diagram": "d06_quantile_pvalue", "page": "06_simulation_tests_scores", "theme": "light", "touch": true, "hover": true, "keyboard": true, "reduced_motion": true, "options": 4, "html_sha256": "b556faf813fbe7ec37726ae9fe15167ef25c736549e535f37c2e5b9f45fb9de4"}
+Traceback (most recent call last):
+  File "/home/phonchi/vizualization/scripts/check_teaching_interactions.py", line 69, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/phonchi/vizualization/scripts/check_teaching_interactions.py", line 38, in main
+    assert panel.is_visible(),(name,'tap panel',i)
+           ~~~~~~~~~~~~~~~~^^
+AssertionError: ('d09_kernel_smoothing', 'tap panel', 1)

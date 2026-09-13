@@ -1,0 +1,18 @@
+{
+  "09_forecasting_intro": "01_forecast_question",
+  "foundation_catalog": "02_reading_horus",
+  "foundation_randomness": "04_poisson_and_sup",
+  "10_point_process": "11_conditional_intensity",
+  "11_catalog_completeness_b": "08_completeness",
+  "12_clustering_laws": "10_clustering_laws",
+  "foundation_inference": "05_likelihood_estimation",
+  "13_etas_structure": "12_etas_structure",
+  "14_etas_estimation": "13_etas_italy_forecast",
+  "15_psi_phenomenon": "14_psi_precursory_scale",
+  "16_eepas_ppe": "15_eepas_italy_forecast",
+  "17_testing_consistency": "17_test_space_magnitude",
+  "18_testing_comparison": "18_test_comparison",
+  "20_recurrence_models": "appendix_f_hazard",
+  "21_psha": "20_beyond_forecast",
+  "22_operational_systems": "20_beyond_forecast"
+}

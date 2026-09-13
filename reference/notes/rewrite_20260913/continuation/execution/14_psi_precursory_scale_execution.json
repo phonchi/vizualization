@@ -1,0 +1,47 @@
+{
+  "page": "14_psi_precursory_scale",
+  "status": "passed",
+  "seconds": 0.94,
+  "outputs": 8,
+  "method": "in-process IPython",
+  "cells": [
+    {
+      "cell": 1,
+      "seconds": 0.0001
+    },
+    {
+      "cell": 2,
+      "seconds": 0.0001
+    },
+    {
+      "cell": 4,
+      "seconds": 0.0225
+    },
+    {
+      "cell": 7,
+      "seconds": 0.0274
+    },
+    {
+      "cell": 10,
+      "seconds": 0.7977
+    },
+    {
+      "cell": 13,
+      "seconds": 0.0005
+    }
+  ],
+  "source_sha256": "c49e767c1376ebb136d03b7b3aeb9b5ec717fa1314463fe6b72fafac5d0500bc",
+  "toolkit_sha256": {
+    "__init__.py": "4630ec6bd7170bd16542b5ebc6d1375f841ba3c25bf6137de06a98d853a5cb86",
+    "auth.py": "48e919b9f70d6e0c9711f5662ca6bcf9033c20ff0c9c160b0b66a73f1bed1cf3",
+    "catalog.py": "e943bd66cc0c232b658a6a5cc1f01bbf579fdcab374c80e850b4344503ff2f38",
+    "csep_teaching.py": "3ffe7732c177f6c720b0db829670b3f212cc3a1870a39c2ec71971b20c477ded",
+    "download.py": "92224bc12de20b4fcbf00fa514f62ffc3b13a8c49ec592c35f8d80c77aa41335",
+    "italy.py": "fc6f7f474b2204b00af5679d13be34743af6c846277403dfbd9c39942ba95737",
+    "italy_models.py": "93990b4ef8f4ef1fe90032a508859f376fbdf3066e8739f703ad16c85135feb9",
+    "readers.py": "dd6f832c36a9dd85a96239104d30f978d2aa86ba29f2e79adc226bf5250912ec",
+    "stations.py": "30161e80b718925f038e3ad38773b2f6e4b9347028584f3dd13d219338498f72",
+    "teaching.py": "4dfd50702a5c010a59ccdf6bcf1c4a796e6fdb91cb63c00206b1903bd541445f",
+    "viz.py": "7df11d5c667e9222d7916f0d92042b4c6ef2c71434580395b1d9b4c247fbd398"
+  }
+}

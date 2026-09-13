@@ -1,0 +1,247 @@
+{
+  "passed": true,
+  "reading_pages": 37,
+  "paired_notebooks": 28,
+  "pages": [
+    {
+      "page": "01_forecast_question",
+      "chinese_characters": 2081,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "b960d57d6a3775e83f1126b80470c2f96f0f4b881c47c59b04c9eaa86b07dbe3"
+    },
+    {
+      "page": "02_reading_horus",
+      "chinese_characters": 2397,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "922f238bb5eeb0d75d3f43697bb187fca3b7a766499a155991789eac793e25ee"
+    },
+    {
+      "page": "03_experiment_spec",
+      "chinese_characters": 2859,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "41c8205dffffa8d5bfa10324ac6bdf59acd7c6c3e18decc2123bb7b25a006c00"
+    },
+    {
+      "page": "04_poisson_and_sup",
+      "chinese_characters": 2066,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "5aea4a59fbd3142bd790b179a52d66fae1e397c6d1b474e6d190361f2d79c11d"
+    },
+    {
+      "page": "05_likelihood_estimation",
+      "chinese_characters": 2064,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "aec788d4d2c30b0876213fc774a789ab10df9cca71bc4ebd39d90728c25796d4"
+    },
+    {
+      "page": "06_simulation_tests_scores",
+      "chinese_characters": 2120,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "b1332adc97c6335b1ae997e62bd97dc2cef897e94b0da848477f0702ad19ca80"
+    },
+    {
+      "page": "07_gr_bvalue",
+      "chinese_characters": 2077,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "d0a77061bb4cbdb860cec378349c8b528cc6b94f1a539463202a3c78105caeb4"
+    },
+    {
+      "page": "08_completeness",
+      "chinese_characters": 2103,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "f993b32a960189c29b5f67c5c7a0048c8978d36101447a66ef32dac4beea0981"
+    },
+    {
+      "page": "09_ppe_forecast",
+      "chinese_characters": 2146,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "3353e865ea65e1111fb4b2b72a4c04098853e1da282b924f8d4a9ecbbfca1f12"
+    },
+    {
+      "page": "10_clustering_laws",
+      "chinese_characters": 2027,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "c30a48cbbac69d05569cdc13f65147cb337440cd1e32b43141ded108ca16e234"
+    },
+    {
+      "page": "11_conditional_intensity",
+      "chinese_characters": 2038,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "7ee6db66caa650a469fba754151dfbcc9679231f206b15d1f8b1b37302a84c85"
+    },
+    {
+      "page": "12_etas_structure",
+      "chinese_characters": 2042,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "5d60fb3b67266a13dcd9d68d23e9a5baa4761331cdccb5d3a3260aad8c6172a6"
+    },
+    {
+      "page": "13_etas_italy_forecast",
+      "chinese_characters": 2011,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "6eb5a8348ae9bc68d93065961d711c34d5e91e406ebed6f72bb390430b44f860"
+    },
+    {
+      "page": "14_psi_precursory_scale",
+      "chinese_characters": 2047,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "b282905b11a92956e88cd6671efda2863c7fec5063326f0a4f8dcd9070c40059"
+    },
+    {
+      "page": "15_eepas_italy_forecast",
+      "chinese_characters": 2004,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "24d7b16e68e4f9f92bfe93a779225bf7884171f0a1a01e4029f2381a8b90b6f4"
+    },
+    {
+      "page": "16_test_number",
+      "chinese_characters": 2081,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "7207fa6ce803f43bcd9945ac45e62f0cd047df4cf2d14dcd9f4c51b0618f072a"
+    },
+    {
+      "page": "17_test_space_magnitude",
+      "chinese_characters": 2094,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "0b5c63623f3b510948b775173bf0cb776c964b925e532921eeb2e7318f598eba"
+    },
+    {
+      "page": "18_test_comparison",
+      "chinese_characters": 2070,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "d7b956411abb33eee444afc33b495ba60b6bdfca63458a1dbd19f076c51bae82"
+    },
+    {
+      "page": "19_ensembles",
+      "chinese_characters": 2114,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "8750ec9394cf4f29c9a9b372eced12c09ca54027855d5ac80a665c1a2b0ffef0"
+    },
+    {
+      "page": "20_beyond_forecast",
+      "chinese_characters": 2559,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "ff9cdaad95eded3d51a6f44cdbe9cabe322d21c698af015cec09174a3b8b2091"
+    },
+    {
+      "page": "01_overview",
+      "chinese_characters": 1680,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "84e87efb578d60b74a9b3d73ff070acff10739fe4b986b1834a40393fcde2907"
+    },
+    {
+      "page": "02_download",
+      "chinese_characters": 1610,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "ed9d65985d732d0eabb1bfbe7dd5c59d45e20aa86bef1639cfbb734cfe60a998"
+    },
+    {
+      "page": "03_groundwater",
+      "chinese_characters": 2207,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "2f11187ed9790e76f97aa5c2d06af14ab9e9eaf8f078a1681726cad3775babe7"
+    },
+    {
+      "page": "04_geomagnetic",
+      "chinese_characters": 1766,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "2e91f047c0825f1b4f0d81eb4fcd78e0dda31e1390dc273b13b25dff13b8ab0b"
+    },
+    {
+      "page": "05_seismic",
+      "chinese_characters": 2189,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "c35ec0bc70b218b2c5c1ed759fa0770fcf2865acb05f51b37d8332efef73e486"
+    },
+    {
+      "page": "06_gnss",
+      "chinese_characters": 1590,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "bc6d5d2b60e66711aedfb0dfd160cc2903937152c9d20607eafe2d15bbfa1e8d"
+    },
+    {
+      "page": "07_case_hualien2024",
+      "chinese_characters": 1963,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "a0b3be017482ed1f6dc635874357b8b2eb4e7a0f6f2b0361b30c2ce169bd2eb8"
+    },
+    {
+      "page": "23_taiwan_outlook",
+      "chinese_characters": 4955,
+      "paired_cells_match": true,
+      "code_hidden": true,
+      "no_error_outputs": true,
+      "source_sha256": "58c3276d826b01830adc232118c805c5c334f232b0aea3faa2404be14fc4ddbb"
+    }
+  ],
+  "assets": {
+    "book/_static/teaching.css": "ab329bdfda6a43f340317f4f7c2b7e1a47748fd1f2d465d812dc10093c724686",
+    "book/_static/teaching_theme.js": "c62197ee0d8b2de54bffe60fb359a766749e12b3bcdd658226cd124285219622",
+    "book/_static/diagrams/d01_forecast_pipeline.html": "22cf49fa54a212da36194d5140cf9a16275ef1b6f45398032f8080b8759dc18e",
+    "book/_static/diagrams/d02_regions_s_r.html": "3a14bb221007c7cff3334a3a6506fe9933b41c5e591d4fd53699a88e9a2cf92d",
+    "book/_static/diagrams/d03_thresholds.html": "8d01e389ab4a5071fca6033945e9902eb72f33a49db90c6655e2abe679d33352",
+    "book/_static/diagrams/d03_timeline_windows.html": "5957b3b5b190414d66ea5c1bd56d5aece1fdabbbe71bccede1ef77a19bdecc87",
+    "book/_static/diagrams/d04_density_to_counts.html": "a6b46fffa099d471ad5669c23b8c711de95f78dd0ed7a6c81d2637500fcc26b4",
+    "book/_static/diagrams/d06_quantile_pvalue.html": "2ba58f28ad6123a264b37b2fffda4511f731651b4a638aaaa686fc4517600e74",
+    "book/_static/diagrams/d09_kernel_smoothing.html": "2070a6cd0de2f759aad6b79034defd3e2bf469eb342f116c60e05d0568b1525a",
+    "book/_static/diagrams/d12_etas_branching.html": "3f4767451500999d2ce47cb98392cd4bb097140e3ea606da32eac27af0764063",
+    "book/_static/diagrams/d15_eepas_kernels.html": "c034e59d0475282690e61cc68b8f96c47204f859963fd39128b2a84e6b4d32dd",
+    "book/_static/diagrams/d16_csep_tests_flow.html": "211a50a604630b83e3f9b942534172a9d85166bdd9b96f2130a8ff62fc037d73",
+    "book/_static/diagrams/d19_convex_mix.html": "0bb6f16855ce278218a89eedfbf0a333e2ff4a23d48f557317a897d2a50dfae9",
+    "book/_static/diagrams/d20_model_family.html": "058ebd2720b06f5978504c2e687310fadd02e018f559121e6675c9eb6d8a0799"
+  }
+}

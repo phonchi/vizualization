@@ -1,0 +1,42 @@
+[
+  {
+    "model": "SUP",
+    "window_start": "2011-10-01 23:16:48.000000103",
+    "window_end": "2012-01-01 00:00:00",
+    "old_final_total": 0.30623060505527433,
+    "new_final_total": 0.30529155599803814,
+    "seconds": 0.2811295860001337,
+    "before_sha256": "dce2319101d8ed6817813433b08ce3a4c3ca9eeecdbacbba0d53acd897b5abf3",
+    "after_sha256": "08c180c181bbd52e3bd80bb4469edf859dbdde46057d0163edd5ee49d9744fb0"
+  },
+  {
+    "model": "PPE",
+    "window_start": "2011-10-01 23:16:48.000000103",
+    "window_end": "2012-01-01 00:00:00",
+    "old_final_total": 0.30855413261498066,
+    "new_final_total": 0.30761022774464164,
+    "seconds": 0.2725849099997504,
+    "before_sha256": "b189ada2adc5e0e92a3be52d5570e4bcb02eb7c00ddb9c87b0ac1c3eb1f33533",
+    "after_sha256": "63fc871fdbfc66f266e55fa706a80abfa40f1353ccd7abc0753a0ced3916e779"
+  },
+  {
+    "model": "ETAS",
+    "window_start": "2011-10-01 23:16:48.000000103",
+    "window_end": "2012-01-01 00:00:00",
+    "old_final_total": 0.15066962144700846,
+    "new_final_total": 0.15024621415806783,
+    "seconds": 8.21054092500026,
+    "before_sha256": "eb80be0108ce4060334d3a26e113abfb8c275bdf0b223ee97ca29f1fc73b3707",
+    "after_sha256": "414a4267abaaa51b2ad442516c135a4a68597e781b81eab0b7c2f11107b02561"
+  },
+  {
+    "model": "EEPAS",
+    "window_start": "2011-10-01 23:16:48.000000103",
+    "window_end": "2012-01-01 00:00:00",
+    "old_final_total": 0.35396586747655945,
+    "new_final_total": 0.35287959904979227,
+    "seconds": 1.0585653409998486,
+    "before_sha256": "85fa271d6bf5f842b8c885bac1bf4986faebd65cbc87637d6325f6d7f2e6c020",
+    "after_sha256": "48d78eb5b38461828f021ed064b149eb880cb5b5f83e4017ede7e1d215df0722"
+  }
+]

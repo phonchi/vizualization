@@ -1,11 +1,11 @@
 
 # 附錄 D：Ψ 的量測與 EEPAS 的核函數
 
-本附錄需要條件機率、簡單線性迴歸與一變數積分。它補足 {doc}`Ψ <15_psi_phenomenon>`及 {doc}`EEPAS <16_eepas_ppe>`的計算；讀完每節可回到對應主文繼續閱讀。
+本附錄需要條件機率、簡單線性迴歸與一變數積分。它補足 {doc}`Ψ <14_psi_precursory_scale>`及 {doc}`EEPAS <15_eepas_italy_forecast>`的計算；讀完每節可回到對應主文繼續閱讀。
 
 ## D.1 累積規模異常的性質與限制
 
-令 $q_i=M_i-(m_c-0.1)>0$，$A(t)=\sum_{t_s<t_i\le t}q_i$，$D=t_f-t_s$。由主文 {eq}`eq:cumag`，$k=A(t_f)/D$，故
+令 $q_i=M_i-(m_c-0.1)>0$，$A(t)=\sum_{t_s<t_i\le t}q_i$，$D=t_f-t_s$。由第 14 章累積規模異常的定義，$k=A(t_f)/D$，故
 
 $$C(t_s)=0,\qquad C(t_f)=A(t_f)-\frac{A(t_f)}D D=0.$$
 
@@ -80,7 +80,7 @@ $$h(x,y\mid x_i,y_i,m_i)=\frac{1}{2\pi v_i}
 \exp\left[-\frac{(x-x_i)^2+(y-y_i)^2}{2v_i}\right],\qquad
 v_i=\sigma_A^2 10^{b_Am_i}.$$
 
-$g$ 對整條實線正規化，$h$ 對平面正規化；實際預報區域或規模範圍只會收到其中一部分，不能把有限區域積分直接當成一。空間座標須為相同長度單位，不能將經緯度差直接視為公裡。
+$g$ 對整條實線正規化，$h$ 對平面正規化；實際預報區域或規模範圍只會收到其中一部分，不能把有限區域積分直接當成一。空間座標須為相同長度單位，不能將經緯度差直接視為公里。
 
 三核相乘表達給定輸入事件後的可分離假設。面積尺度回歸只決定尺度如何隨規模變動，不唯一決定圓對稱常態形狀。若以圓形常態內含質量 $q$ 的面積表示，
 
@@ -134,7 +134,7 @@ $$-\beta u-\frac{(m-u)^2}{2\sigma_M^2}
 
 $$\Delta(m)=\Phi\left(\frac{m-a_M-b_Mm_0-\beta\sigma_M^2}{\sigma_M}\right).$$
 
-有限門檻下的時變長期規模率為理想值乘 $\Delta(m)$。以 $1/\Delta(m)$ 補償或使用其他補償版本，都須說明假設；$\Delta$ 很小時會放大模型誤差。若平均權重隨規模改變，前面的常數 $\bar w$ 不能照搬。
+有限門檻下的長期平均規模率為理想值乘 $\Delta(m)$。以 $1/\Delta(m)$ 補償或使用其他補償版本，都須說明假設；$\Delta$ 很小時會放大模型誤差。若平均權重隨規模改變，前面的常數 $\bar w$ 不能照搬。
 
 ## D.7 空間卷積與時間截斷
 
@@ -156,6 +156,34 @@ $$F_i(T_1-t_i)-F_i(T_0-t_i),$$
 
 其中 $F_i(u)=0$ 於 $u\le0$。目錄開始前事件的貢獻仍未知，不能只靠這個有限窗積分恢復；需指定過去活動模型或使用文獻的完整度補償方法。
 
+## D.8 義大利的三階段擬合
+
+Biondini 等（2023）第 3 節將 $b_M$ 全程固定為一，其餘參數分成三次最佳化。以下 $\mu_E$ 對應原文的 $\mu$。
+
+| 階段 | 固定參數 | 估計參數 |
+|---|---|---|
+| 第一次 | $b_T=0.40,b_A=0.35,\sigma_M=0.32,\sigma_T=0.23$ | $a_T,a_M,\sigma_A,\mu_E$ |
+| 第二次 | 第一次得到的 $a_T,a_M,\sigma_A$ | $b_T,b_A,\sigma_M,\sigma_T,\mu_E$ |
+| 第三次 | $b_M=1$ | 上述八個參數一起估計 |
+
+第三次以先前結果為起始值；$\mu_E$ 是三次都重新估計的參數。這套安排提供可解釋的起點，但不是全域最佳保證。第 15 章直接使用論文表 3 的 EEPAS-NW 已發表結果，不在教學頁執行最佳化。
+
+## D.9 發報截止與格箱積分
+
+本站時間以天、位置以公里計。設發報時間為 $t_0$、delay 為 $d=50$ 天，該窗來源集合固定為 $I_0=\{i:t_i\le t_0-d,m_i\ge m_0\}$。在窗 $[t_0,t_1)$、空間格 $R_j$、規模箱 $B_k$ 中，時變部分的期望數為
+
+$$\Lambda^{\mathrm{var}}_{jk}=
+\sum_{i\in I_0}\eta(m_i)
+\left[\int_{t_0}^{t_1}f_i(t)\,dt\right]
+\left[\int_{B_k}\frac{g_i(m)}{\Delta(m)}\,dm\right]
+\left[\int_{R_j}h_i(x,y)\,dx\,dy\right].$$
+
+最後再加 $\mu_E\Lambda^{\mathrm{PPE}}_{jk}$。可分離假設使三個低維積分相乘；$g_i/\Delta$ 是補償後的規模貢獻，不能再當成總積分為一的原始密度。
+
+對方格 $[x_0,x_1]\times[y_0,y_1]$，空間積分等於兩個常態累積分布差的乘積。本站時間積分也使用累積分布差，規模箱使用五個中點近似。模型總數的驗證必須涵蓋這些有限區域積分，不能只檢查無限範圍核正規化。
+
+完整歷史的可用起點、發報截止與 50 天 delay 是三個不同設定。規模門檻補償也不會恢復目錄起點以前的事件；時間完整度延伸須另外指定模型。暖機資料早期漏測的影響，見第 8 章及 Rhoades 等（2020）。
+
 ## 參考資料與延伸閱讀
 
 - [A 20-Year Journey of Forecasting with the “Every Earthquake a Precursor According to Scale” Model](https://doi.org/10.3390/geosciences12090349) — David A. Rhoades、Sepideh J. Rastin、Annemarie Christophersen，2022，*Geosciences*；免費開放全文。先讀第 2 節的 Ψ 現象與尺度關係，再讀限制與未解問題，掌握本章經驗觀察如何連到機率模型。
@@ -174,4 +202,4 @@ $$F_i(T_1-t_i)-F_i(T_0-t_i),$$
 
 - [Long-range earthquake forecasting allowing for aftershocks](https://doi.org/10.1111/j.1365-246X.2008.04083.x) — D. A. Rhoades，2009，*Geophysical Journal International*；[出版社網頁全文](https://academic.oup.com/gji/article/178/1/244/644120)可免費閱讀。閱讀 EEPAS 如何加入預報事件的餘震貢獻，對照本章 EAS 延伸與「降低輸入餘震權重」的不同角色。
 
-- [Application of a long-range forecasting model to earthquakes in the Japan mainland testing region](https://doi.org/10.5047/eps.2010.08.002) — David A. Rhoades（2011），Earth, Planets and Space（免費全文）。檢視不同目標規模的擬合差異與主文增益圖的回溯條件。
+- [Application of a long-range forecasting model to earthquakes in the Japan mainland testing region](https://doi.org/10.5047/eps.2010.08.002) — David A. Rhoades（2011），Earth, Planets and Space（免費全文）。檢視不同目標規模的擬合差異與已發表比較的回溯條件。

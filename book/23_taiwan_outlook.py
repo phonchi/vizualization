@@ -16,7 +16,7 @@
 # ---
 
 # %% [markdown]
-# # 26. 臺灣展望：把觀測、預報與驗證接起來
+# # 29. 臺灣展望：把觀測、預報與驗證接起來
 #
 # 上一章把物理觀測轉成可檢查的問題，也重新連回前一部的機率預報。現在
 # 回到臺灣：我們已有什麼樣的資料與已發表案例，它們支持哪些判斷，接下來
@@ -31,7 +31,26 @@
 # 基準的作用。最後將觀測與模型放進同一個驗證流程。文獻描述的成果以其
 # 研究年代與資料範圍為準，不把單一研究當作全臺服務現況的盤點。
 #
-# ## 26.1 長期目錄同時記錄了兩種歷史
+# ## 29.0 把義大利規格卡逐欄換成臺灣問題
+#
+# 第一部使用 HORUS 的 Mw 與義大利研究區。
+# 臺灣例子使用氣象署目錄的地方規模 ML。
+# 換資料時，區域、尺度與門檻都要重新指定。
+# 以下表格是一份待完成的臺灣研究設計。
+# 本章的既有案例各有篩選條件，並非同一次共同預報實驗。
+#
+# | 欄位 | 臺灣版要決定的內容 |
+# |---|---|
+# | 目錄與尺度 | CWA 目錄；ML；跨年代均一化方法待定 |
+# | 收集區 S／測試區 R | 邊界、外海範圍與輔助區待定 |
+# | 深度與三個門檻 | 深度、輸入 m0、目標 mT 待定；Mc 先由目錄估計 |
+# | 學習／測試期 | 切分、發報步長、資料延遲與保存版本待定 |
+# | 網格與檢驗 | 空間／規模解析度、基準與評分規則待定 |
+#
+# 先用下面的目錄分析看出資料差異，再決定這些欄位。
+# 每個分析都寫出自己的選樣條件，避免把不同樣本的數字混在一起。
+#
+# ## 29.1 長期目錄同時記錄了兩種歷史
 #
 # 下圖使用本書儲存的臺灣長期目錄，上方畫較大事件，下方畫全部收錄事件的
 # 年數量。圖中規模欄位沿用資料產品的標示；跨年代的原始量測定義仍需
@@ -103,14 +122,14 @@ fig
 # 線性轉換本身有散佈與適用範圍，已失去解析能力的飽和區也不能靠代數
 # 反解恢復。若把一份歷史研究的轉換直接套到新的即時目錄，應先檢查資料
 # 來源和估計範圍是否一致。完整的規模討論回看
-# {doc}`規模與完整度 <11_catalog_completeness_b>`。
+# {doc}`規模與完整度 <08_completeness>`。
 #
 # 觀測篇的各類產品也在這裡各有位置：波形與矩張量幫助限制震源，強震紀錄
 # 連到場址地動，GNSS 和其他連續資料提供變形及環境背景。它們互相補充，
 # 但不是每個事件、每個位置都有同樣完整的一套資料。
 #
 # %% [markdown]
-# ## 26.2 同一張臺灣地圖，觀測能力並不均勻
+# ## 29.2 同一張臺灣地圖，觀測能力並不均勻
 #
 # Chan & Wu（2013）分析當時的臺灣目錄，指出陸上與外海的完整度有明顯
 # 差異。原因之一是測站幾何：小事件在較遠或涵蓋不足的區域較難被穩定
@@ -172,7 +191,150 @@ fig
 # 和資料一致性之間取捨；這個取捨應在模型比較之前固定。
 #
 # %% [markdown]
-# ## 26.3 大埔案例：從事件率走到場址地動
+# ## 29.3 大小地震的比例，也隨取樣範圍改變
+#
+# 第 7 章介紹的 b 值，可以套在臺灣目錄。
+# 這裡先固定 ML≥3.5、深度≤30 km。
+# 五年一段的分組，讓各段都有足夠事件。
+# 右圖另看同一段期間內的空間差異。
+# 每格至少一百筆才估計，白格表示資料不足。
+#
+# 取整到 0.1 的規模適合用離散 GR 估計式。
+# 令 u 為規模超過門檻的平均，則
+# $b=\log(1+0.1/u)/(0.1\log 10)$。
+# 門檻相同仍不保證完整度相同。
+# 圖上的變化需要與測網和序列一起解讀。
+#
+# %% tags=["remove-input"]
+import pandas as pd
+from scipy import optimize
+from gdms_toolkit.download import CACHE_DIR
+
+def taiwan_b(values, threshold=3.5):
+    selected = np.round(np.asarray(values)/0.1)*0.1
+    selected = selected[selected >= threshold-1e-8]
+    if len(selected) < 100 or selected.mean() <= threshold:
+        return np.nan
+    return np.log1p(0.1/(selected.mean()-threshold))/(0.1*np.log(10))
+
+periods = list(range(1994, 2020, 5))
+b_time, mc_time = [], []
+for year in periods:
+    part = shallow[(shallow.time >= f"{year}-01-01") & (shallow.time < f"{year+5}-01-01")]
+    b_time.append(taiwan_b(part.ML))
+    hist, _ = np.histogram(part.ML, bins=mag_e)
+    mc_time.append(mag_c[hist.argmax()]+0.2)
+# Same 0.2 degree grid as the preceding completeness map.
+selected = mag_c >= 3.5-1e-8
+counts = H[:, :, selected].sum(axis=2)
+excess = (H[:, :, selected]*(mag_c[selected]-3.5)).sum(axis=2)
+mean_excess = np.divide(excess, counts, out=np.full_like(excess,np.nan), where=counts>=100)
+b_map = np.log1p(0.1/mean_excess)/(0.1*np.log(10))
+fig = make_subplots(rows=1,cols=2,subplot_titles=("五年分組 b 值", "空間 b 值（至少 100 筆）"))
+fig.add_trace(go.Scatter(x=periods,y=b_time,mode="lines+markers",name="ML≥3.5",line_color=ACCENT),row=1,col=1)
+fig.add_trace(go.Heatmap(x=lon_c,y=lat_c,z=b_map.T,colorscale="Blues",colorbar=dict(title="b",len=0.7)),row=1,col=2)
+fig.update_xaxes(title_text="起始年",row=1,col=1)
+fig.update_yaxes(title_text="b",row=1,col=1)
+fig.update_xaxes(title_text="經度",row=1,col=2)
+fig.update_yaxes(title_text="緯度",row=1,col=2)
+apply_layout(fig,title="臺灣淺層目錄：固定門檻下的規模斜率",height=470,showlegend=False)
+fig
+
+# %% [markdown]
+# 下一張圖用相同五年分組估完整度。
+# MaxC 找規模直方圖最高的一箱，再加 0.2。
+# 這個修正是教學估法，並非保證不漏報。
+# 若某段 Mc 接近所選門檻，b 的比較就要更保守。
+# 改用較高共同門檻可以檢查敏感度，代價是事件減少。
+#
+# %% tags=["remove-input"]
+fig = go.Figure(go.Scatter(x=periods,y=mc_time,mode="lines+markers",line_color=ACCENT))
+fig.add_hline(y=3.5,line_dash="dot",annotation_text="上述 b 值的固定門檻 3.5")
+apply_layout(fig,title="臺灣目錄的完整度：五年分組 MaxC＋0.2",xaxis_title="分組起始年",yaxis_title="估計 Mc",height=380)
+fig
+
+# %% [markdown]
+# ## 29.4 花蓮序列：間隔、Omori 衰減與最大餘震
+#
+# 2024 年春季目錄保留了花蓮序列的密集活動。
+# 先看三月到六月的全部事件間隔與每日計數。
+# 右圖包含沒有事件的日子，才能比較每日波動。
+# 參考曲線是同平均間隔的指數分布。
+# 很多短間隔指出固定率模型需要改進。
+# 率變動、空間差異與漏報也會影響這張圖。
+#
+# %% tags=["remove-input"]
+spring = pd.read_csv(CACHE_DIR/"catalog_2024spring.csv",parse_dates=["time"])
+zone = spring.time.dt.tz
+spring = spring[(spring.time>=pd.Timestamp("2024-03-01",tz=zone)) & (spring.time<pd.Timestamp("2024-07-01",tz=zone))]
+times = spring.time.sort_values()
+intervals = times.diff().dt.total_seconds().dropna()/3600
+calendar = pd.date_range("2024-03-01","2024-06-30",freq="D",tz=zone)
+daily = times.dt.floor("D").value_counts().reindex(calendar,fill_value=0)
+fano = daily.var()/daily.mean()
+edges = np.arange(0,12.25,0.25)
+hist,_ = np.histogram(intervals,bins=edges)
+centers = (edges[:-1]+edges[1:])/2
+fig = make_subplots(rows=1,cols=2,subplot_titles=("相鄰事件間隔", "每日計數（包含零事件日）"))
+fig.add_trace(go.Bar(x=centers,y=hist/(len(intervals)*np.diff(edges)),name="觀測",marker_color=ACCENT),row=1,col=1)
+fig.add_trace(go.Scatter(x=centers,y=np.exp(-centers/intervals.mean())/intervals.mean(),name="指數參考",line_color=PALETTE[2]),row=1,col=1)
+fig.add_trace(go.Bar(x=calendar,y=daily.values,name="每日事件",marker_color=ACCENT),row=1,col=2)
+fig.update_xaxes(title_text="小時",row=1,col=1)
+fig.update_yaxes(title_text="機率密度",row=1,col=1)
+fig.update_yaxes(title_text="事件數",row=1,col=2)
+apply_layout(fig,title=f"2024 春季臺灣目錄：{len(spring):,} 筆；每日變異數／平均={fano:.1f}",height=430,legend=dict(orientation="h",y=-0.3))
+fig
+
+# %% [markdown]
+# 接著固定主震後 0.1–30 天、100 km 內、ML≥3.5。
+# 跳過最早 0.1 天是本例的選樣條件。
+# 它減少最密集時段的影響，仍不能保證完全收錄。
+# 用 $r(t)=K(t+c)^{-p}$ 描述事件率。
+# 概似以實際有限窗積分正規化。
+# 這是回溯描述，不是當時已發出的預報。
+#
+# %% tags=["remove-input"]
+main_spring = spring.loc[spring.ML.idxmax()]
+tau = (spring.time-main_spring.time).dt.total_seconds()/86400
+radius = np.hypot((spring.longitude-main_spring.longitude)*111*np.cos(np.radians(main_spring.latitude)),(spring.latitude-main_spring.latitude)*111)
+chosen = (tau>=0.1)&(tau<30)&(radius<=100)&(spring.ML>=3.5)
+after_t = tau[chosen].to_numpy()
+
+def finite_omori(c,p):
+    if abs(p-1)<1e-7:
+        return np.log((30+c)/(0.1+c))
+    return ((30+c)**(1-p)-(0.1+c)**(1-p))/(1-p)
+
+def omori_objective(v):
+    c,p = np.exp(v)
+    return p*np.log(after_t+c).sum()+len(after_t)*np.log(finite_omori(c,p))
+fit = optimize.minimize(omori_objective,np.log([0.1,1.1]),bounds=[(np.log(0.001),np.log(3)),(np.log(0.3),np.log(3))])
+assert fit.success,fit.message
+c_fit,p_fit = np.exp(fit.x)
+K_fit = len(after_t)/finite_omori(c_fit,p_fit)
+bins = np.geomspace(0.1,30,20)
+n,_ = np.histogram(after_t,bins)
+mid = np.sqrt(bins[:-1]*bins[1:])
+grid = np.geomspace(0.1,30,250)
+fig = go.Figure(go.Scatter(x=mid,y=n/np.diff(bins),mode="markers",name="分箱觀測率",marker_color=ACCENT))
+fig.add_trace(go.Scatter(x=grid,y=K_fit*(grid+c_fit)**(-p_fit),name="有限窗 Omori 擬合",line_color=PALETTE[2]))
+apply_layout(fig,title=f"花蓮 0.1–30 天：N={len(after_t)}，p={p_fit:.2f}，c={c_fit:.3f} 天",xaxis_type="log",yaxis_type="log",xaxis_title="主震後天數",yaxis_title="每天事件數",height=430)
+fig
+
+# %% [markdown]
+# Båth 關係整理主震與最大餘震的規模差。
+# 原始經驗值約為 1.2，但單一序列可以差很多。
+# 以下列出同一有限窗的最大餘震與規模差。
+# 空間半徑、門檻與時間窗都會改變被選到的事件。
+# 不能因一個序列接近 1.2 就說關係已獲證實。
+#
+# %% tags=["remove-input"]
+from IPython.display import Markdown,display
+largest_after = float(spring.loc[chosen,"ML"].max())
+display(Markdown(f"本例主震 ML={main_spring.ML:.1f}；所選窗內最大餘震 ML={largest_after:.1f}；規模差為 **{main_spring.ML-largest_after:.1f}**。"))
+
+# %% [markdown]
+# ## 29.5 大埔案例：從事件率走到場址地動
 #
 # Hsieh et al.（2025）研究大埔地震序列，將時空 ETAS 與地動模型連結。
 # 流程先以歷史資料估計模型，預報時接入即時目錄，再模擬可能的未來事件。
@@ -244,18 +406,19 @@ fig
 # 只儲存事後整理最完整的一份。
 #
 # %% [markdown]
-# ## 26.4 用花蓮看空間基準的價值
+# ## 29.6 用花蓮看空間基準的價值
 #
 # 回到本部的花蓮案例。只用主震之前的地震資料，也能建立一張地震活動
-# 較集中在哪裡的空間圖。下面沿用{doc}`EEPAS 與 PPE <16_eepas_ppe>`
-# 介紹的空間項，將主震之前的目錄轉成率密度，再把主震位置標上去。
+# 較集中在哪裡的空間圖。下面沿用{doc}`PPE 核平滑 <09_ppe_forecast>`
+# 介紹的核平滑形式，使用臺灣示意參數與規模權重。
+# 將主震之前的目錄轉成相對率密度，再把主震位置標上去。
 #
 # 這裡只展示空間摘要，沒有發布完整的時空規模預報，也沒有執行前瞻檢驗。
 # 它可以幫助理解基準模型如何利用歷史空間分布，不能視為當時已發出的
 # 官方警報。
 #
 # %% tags=["remove-input"]
-D_KM, S_BG, MC_PPE = 15.0, 1e-4, 5.0        # 沿用 16.6 節的 h0 參數
+D_KM, S_BG, MC_PPE = 15.0, 1e-4, 5.0        # 臺灣示意參數；不是義大利擬合值
 pre = cat[(cat.time < hualien.time) & (cat.ML >= MC_PPE)]
 
 lons, lats = np.arange(119.0, 123.51, 0.1), np.arange(21.0, 26.01, 0.1)
@@ -305,7 +468,7 @@ fig
 # 不能用前者代替後者。
 #
 # %% [markdown]
-# ## 26.5 時間尺度不同，需要的證據也不同
+# ## 29.7 時間尺度不同，需要的證據也不同
 #
 # 下圖是一張工具用途的示意圖。預警關心已發生地震的傳播與通訊；短期預報
 # 關心未來事件；中長期模型與危害評估則服務不同期間的風險問題。圖中的
@@ -355,7 +518,7 @@ fig
 # 回答。
 #
 # %% [markdown]
-# ## 26.6 讓臺灣案例累積成可比較的證據
+# ## 29.8 讓臺灣案例累積成可比較的證據
 #
 # 比較模型之前，先讓它們預報同一件事。區域、深度、規模尺度、目標門檻、
 # 期間與目錄版本必須一致；模型需要哪種輸入目錄，可以不同，但用來評分的
@@ -370,8 +533,8 @@ fig
 # 同樣地，將計數改成「有或沒有」會減少多事件格的權重，但不自動解除
 # 跨格或跨時窗的叢集依賴。若用 Poisson、負二項或二元計分，應一起說明
 # 分布假設及哪些資料特徵可能使它失準。這些差異可回看
-# {doc}`一致性檢驗 <17_testing_consistency>`與
-# {doc}`模型比較 <18_testing_comparison>`。
+# {doc}`一致性檢驗 <17_test_space_magnitude>`與
+# {doc}`模型比較 <18_test_comparison>`。
 #
 # 評估不能只看一個總分。逐段檢查不同序列、不同區域與資料品質，
 # 可以看出優勢是否只由少數事件帶動。未拒絕模型可能表示它相容，也可能
@@ -379,7 +542,7 @@ fig
 # 一起公開，新的研究才能接續同一組問題，而不是每次重新挑一個有利案例。
 #
 # %% [markdown]
-# ## 26.7 科學產品與使用者之間
+# ## 29.9 科學產品與使用者之間
 #
 # 本部從儀器出發，前一部從預報目標出發，兩條線最後都要面對使用者。
 # 地震目錄、短期事件機率、場址地動與地震預警是不同產品。即使共用觀測網，
@@ -388,8 +551,8 @@ fig
 #
 # 有用的機率資訊需要連同時間窗、區域、目標門檻與更新時間呈現。相對背景
 # 升高很多的機率，絕對值仍可能很小；對是否值得採取行動的判斷，也取決於
-# 行動成本與可能損失。這正是{doc}`作業化系統 <22_operational_systems>`
-# 和{doc}`比較與決策 <18_testing_comparison>`已介紹的連結。
+# 行動成本與可能損失。這正是{doc}`作業化系統 <20_beyond_forecast>`
+# 和{doc}`比較與決策 <18_test_comparison>`已介紹的連結。
 #
 # 觀測研究也需要對應的溝通精度。「在本井、本時段未辨認出明顯反應」與
 # 「地下水沒有地震訊號」是不同範圍的主張；「單一序列的預報有合理表現」
@@ -397,7 +560,7 @@ fig
 # 被後續工作使用，而不是讓每次新的觀測都被迫在成功與失敗之間二選一。
 #
 # %% [markdown]
-# ## 26.8 把這兩條線一起帶走
+# ## 29.10 把這兩條線一起帶走
 #
 # 本書先從機率目標建立統計工具，再回到臺灣觀測，看資料如何形成、有哪些
 # 背景，以及同一事件在不同儀器中留下什麼。模型需要觀測告訴它哪些量可以

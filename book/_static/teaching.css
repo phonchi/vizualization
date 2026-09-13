@@ -1,6 +1,596 @@
-/* Keep scientific axes, legends and annotations readable on narrow screens.
-   Overflow belongs to the individual figure, never the reading column. */
+/* ============================================================================
+   teaching.css — 地震統計教學網站的排版層（Redesign · Preserve）
+   宿主：Jupyter Book 1.0 / sphinx-book-theme 1.3 / pydata-sphinx-theme 0.17
+   原則：只用 CSS 覆寫，不動主題骨架；長文閱讀優先（Tufte 式資訊排版）。
+
+   ── Token（light ／ dark）──────────────────────────────────────────────
+     --tc-paper        #fbfcfd ／ #1e232b     頁面底色
+     --tc-paper-2      #eef2f7 ／ #2a313c     卡片、行內 code 底
+     --tc-ink          #243040 ／ #e9eef4     內文
+     --tc-muted        #56657a ／ #b6c0cd     次要文字（表頭、圖說、規格卡左欄）
+     --tc-soft         #7d8797 ／ #8d98a8     裝飾用；≤ 24px 的文字不可用（light 3.5:1）
+     --tc-rule         rgba(36,48,64,.12) ／ rgba(233,238,244,.12)  hairline
+     --tc-accent       #2a78d6 ／ #6aa5ec     主題 primary（UI、標題短線、定義框）
+     --tc-accent-tint  rgba(42,120,214,.08) ／ rgba(106,165,236,.12)
+     --tc-link         #1f66bd ／ #6aa5ec     內文連結（accent 在 light 只有 4.3:1，
+                                              連結另取深一階以達 AA 4.5:1）
+     --tc-quake        #e34948 ／ #f07a79     只給地震事件標記，不當 accent
+                                              （dark 值沿用 diagrams/standalone/checks 的 DARK 表）
+     示意圖別名：--dg-paper --dg-paper-2 --dg-ink --dg-muted --dg-soft --dg-rule
+                 --dg-accent --dg-accent-tint --dg-quake（= 對應 --tc-*；
+                 _static/diagrams/*.html 只能用這組變數上色）
+
+   ── 深色 selector ─────────────────────────────────────────────────────
+     主題以 html[data-theme=dark] 切換；所有 token 在該 selector 覆寫一次即可。
+     pydata 會給 notebook 的 HTML 輸出鋪淺色底（specificity (0,5,3)），
+     示意圖與規格卡以 (0,6,3) 的 :has() 規則還原透明底，見「深色輸出區」段。
+
+   ── 元件 class 契約 ───────────────────────────────────────────────────
+     .spec-card                 規格卡；兩種來源：
+       (a) div.spec-card > .spec-title + .spec-row*（.spec-key + .spec-val；
+           .spec-row.pending = 待填列，muted、斜體、虛線底）
+       (b) MyST  ```{admonition} 規格卡  :class: spec-card``` 內含兩欄表格
+     div.admonition.definition  定義框：左 3px accent 邊、accent-tint 底、標題前小圓點
+     div.admonition.term-card   術語卡（中英對照）：hairline 邊、paper-2 底
+     .teaching-diagram          互動示意圖容器（show_diagram 產生，data-diagram=名稱）
+     .diagram-caption           圖說：muted 14px、上距 4px
+     .diagram-missing           占位：虛線框＋muted 字
+     表格：hairline 橫線、無直線；數字欄以 tabular-nums 對齊，
+           需靠右時在表格加 class="num-right"（第一欄以外靠右）
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- Token --- */
+:root {
+  --tc-paper: #fbfcfd;
+  --tc-paper-2: #eef2f7;
+  --tc-ink: #243040;
+  --tc-muted: #56657a;
+  --tc-soft: #7d8797;
+  --tc-rule: rgba(36, 48, 64, .12);
+  --tc-accent: #2a78d6;
+  --tc-accent-tint: rgba(42, 120, 214, .08);
+  --tc-link: #1f66bd;
+  --tc-quake: #e34948;
+
+  --tc-font-body: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --tc-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --tc-radius: 6px;
+  --tc-shadow-1: 0 1px 2px rgba(36, 48, 64, .06);
+  --tc-measure: 38em;
+  --tc-ease: 150ms ease-out;
+
+  --dg-paper: var(--tc-paper);
+  --dg-paper-2: var(--tc-paper-2);
+  --dg-ink: var(--tc-ink);
+  --dg-muted: var(--tc-muted);
+  --dg-soft: var(--tc-soft);
+  --dg-rule: var(--tc-rule);
+  --dg-accent: var(--tc-accent);
+  --dg-accent-tint: var(--tc-accent-tint);
+  --dg-quake: var(--tc-quake);
+}
+
+html[data-theme=dark] {
+  --tc-paper: #1e232b;
+  --tc-paper-2: #2a313c;
+  --tc-ink: #e9eef4;
+  --tc-muted: #b6c0cd;
+  --tc-soft: #8d98a8;
+  --tc-rule: rgba(233, 238, 244, .12);
+  --tc-accent: #6aa5ec;
+  --tc-accent-tint: rgba(106, 165, 236, .12);
+  --tc-link: #6aa5ec;
+  --tc-quake: #f07a79;
+  --tc-shadow-1: 0 1px 2px rgba(0, 0, 0, .3);
+}
+
+/* -------------------------------------------------- 主題變數橋接 ---------
+   sphinx-book-theme 把 --pst-color-primary 定義在 html[data-theme=*]（(0,1,1)），
+   單靠 :root 蓋不過去；四個 selector 都寫，順序在主題之後即生效。
+   primary 的衍生色（highlight／bg／sd-*）在主題裡是寫死的 hex，一併接上。 */
+:root,
+html:not([data-theme]),
+html[data-theme=light],
+html[data-theme=dark] {
+  --pst-color-primary: var(--tc-accent);
+  --pst-color-primary-highlight: color-mix(in srgb, var(--tc-accent) 82%, var(--tc-ink));
+  --pst-color-primary-bg: var(--tc-accent-tint);
+  --sd-color-primary: var(--pst-color-primary);
+  --sd-color-primary-highlight: var(--pst-color-primary-highlight);
+  --sd-color-primary-bg: var(--tc-accent-tint);
+  --pst-color-link: var(--tc-link);
+  --pst-color-link-hover: color-mix(in srgb, var(--tc-link) 78%, var(--tc-ink));
+  --pst-color-link-higher-contrast: var(--tc-link);
+  --pst-color-background: var(--tc-paper);
+  --pst-color-surface: var(--tc-paper-2);
+  --pst-color-text-base: var(--tc-ink);
+  --pst-color-text-muted: var(--tc-muted);
+  --pst-color-heading: var(--tc-ink);
+  --pst-color-inline-code: var(--tc-ink);
+  --pst-color-table: var(--tc-ink);
+  --pst-color-table-inner-border: transparent;
+  --pst-color-table-outer-border: transparent;
+  --pst-color-table-heading-bg: transparent;
+  --pst-color-table-row-zebra-high-bg: transparent;
+  --pst-color-table-row-zebra-low-bg: transparent;
+  --pst-color-shadow: rgba(36, 48, 64, .08);
+  --pst-font-family-base: var(--tc-font-body);
+  --pst-font-family-heading: var(--tc-font-body);
+  --pst-font-family-monospace: var(--tc-font-mono);
+}
+html:not([data-theme]),
+html[data-theme=light] {
+  --pst-color-on-background: var(--tc-paper);
+  --pst-color-primary-text: #fff;
+}
+html[data-theme=dark] {
+  --pst-color-on-background: var(--tc-paper-2);
+  --pst-color-primary-text: var(--tc-paper);
+  --pst-color-shadow: rgba(0, 0, 0, .35);
+}
+
+/* ------------------------------------------------------- 閱讀欄 ----------
+   17px／1.9 給 CJK 長文；正文區塊限寬 38em，圖、表、程式輸出仍用整個內容欄。 */
+.bd-article {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--tc-ink);
+  -webkit-font-smoothing: antialiased;
+}
+.bd-article :is(p, ul, ol, dl, blockquote, div.admonition, h1, h2, h3, h4, h5, h6, div.math) {
+  max-width: var(--tc-measure);
+}
+.bd-article p {
+  margin: 0 0 1.1em;
+  text-wrap: pretty;
+}
+.bd-article :is(ul, ol) {
+  padding-left: 1.6em;
+  margin: 0 0 1.1em;
+}
+.bd-article li {
+  margin-bottom: .35em;
+}
+.bd-article li > p {
+  margin-bottom: .45em;
+}
+.bd-article blockquote {
+  margin: 1.4em 0;
+  padding: .1em 0 .1em 1em;
+  border-left: 2px solid var(--tc-rule);
+  color: var(--tc-muted);
+}
+.bd-article blockquote p:last-child {
+  margin-bottom: 0;
+}
+.bd-article div.math {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .2em 0;
+}
+
+/* ------------------------------------------------------- 標題 ------------
+   scale 1.25；H1 600 加 40px accent 短線；h2 上距 2.4em；節號沿用主題編號。 */
+.bd-article :is(h1, h2, h3, h4, h5, h6),
+.bd-article-container :is(h1, h2, h3, h4, h5) {
+  color: var(--tc-ink);
+  font-family: var(--tc-font-body);
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+.bd-article h1,
+.bd-article-container h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 1.2em;
+}
+.bd-article h1::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: .45em;
+  background: var(--tc-accent);
+  border-radius: 1px;
+}
+.bd-article h2,
+.bd-article-container h2 {
+  font-size: 1.66em;
+  font-weight: 600;
+  margin: 2.4em 0 .7em;
+}
+.bd-article h3 {
+  font-size: 1.33em;
+  font-weight: 600;
+  margin: 1.9em 0 .6em;
+}
+.bd-article h4 {
+  font-size: 1.06em;
+  font-weight: 600;
+  margin: 1.6em 0 .5em;
+}
+.bd-article :is(h1, h2, h3, h4) .section-number {
+  color: var(--tc-muted);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  margin-right: .2em;
+}
+.bd-article a.headerlink {
+  color: var(--tc-soft);
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity var(--tc-ease);
+}
+.bd-article :is(h1, h2, h3, h4, h5, h6):hover a.headerlink,
+.bd-article a.headerlink:focus-visible {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------ 行內 code --------- */
+.bd-article :is(p, li, td, th, dd) code,
+.bd-article :is(p, li, td, th, dd) code.literal {
+  font-family: var(--tc-font-mono);
+  font-size: .92em;
+  color: var(--tc-ink);
+  background: var(--tc-paper-2);
+  border: 0;
+  border-radius: 4px;
+  padding: .08em .35em;
+}
+.bd-article a > code {
+  color: inherit;
+}
+.bd-article div.highlight pre,
+.bd-article pre {
+  font-family: var(--tc-font-mono);
+  font-size: .88em;
+  line-height: 1.65;
+  border: 1px solid var(--tc-rule);
+  border-radius: var(--tc-radius);
+  background: var(--tc-paper-2);
+}
+
+/* ------------------------------------------------------ 連結與焦點 -------- */
+.bd-article a:not(.headerlink) {
+  color: var(--tc-link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--tc-link) 45%, transparent);
+  text-underline-offset: .18em;
+  text-decoration-thickness: 1px;
+  transition: color var(--tc-ease), text-decoration-color var(--tc-ease);
+}
+.bd-article a:not(.headerlink):hover {
+  color: var(--pst-color-link-hover);
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1.5px;
+}
+.bd-article :is(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--tc-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------- 表格 ----------
+   hairline 橫線、無直線；表頭 muted 小字 600；bootstrap 用 inset box-shadow
+   鋪底色，要一併關掉。pandas 的 table.dataframe 走另一組 selector。 */
+.bd-article table.table,
+.bd-article .cell_output table {
+  width: auto;
+  max-width: 100%;
+  margin: 1.4em 0 1.6em;
+  border-collapse: collapse;
+  border: 0;
+  font-size: .94em;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+  color: var(--tc-ink);
+}
+.bd-article table.table > :not(caption) > * > *,
+.bd-article .cell_output table > :not(caption) > * > * {
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  border-bottom: 1px solid var(--tc-rule);
+  padding: .5em .8em;
+  vertical-align: top;
+}
+.bd-article table.table thead tr,
+.bd-article .cell_output table thead tr {
+  background: transparent;
+  border-bottom: 0;
+}
+.bd-article table.table thead th,
+.bd-article .cell_output table thead th {
+  color: var(--tc-muted);
+  font-size: .88em;
+  font-weight: 600;
+  letter-spacing: .01em;
+  border-bottom: 1px solid color-mix(in srgb, var(--tc-ink) 30%, transparent);
+  text-align: start;
+}
+.bd-article table.table tbody tr:nth-child(odd),
+.bd-article table.table tbody tr:nth-child(2n),
+.bd-article table.table tbody tr:hover {
+  background: transparent;
+}
+.bd-article table.table tbody tr:last-child > *,
+.bd-article .cell_output table tbody tr:last-child > * {
+  border-bottom: 1px solid color-mix(in srgb, var(--tc-ink) 30%, transparent);
+}
+.bd-article table.table :is(td, th) > p:last-child,
+.bd-article .cell_output table :is(td, th) > p:last-child {
+  margin: 0;
+}
+.bd-article table.num-right :is(td, th):not(:first-child) {
+  text-align: right;
+}
+/* pandas DataFrame 輸出（pydata 以 (0,3,3)+ 鋪 zebra 與 primary 邊） */
+.bd-content div.cell_output table.dataframe,
+.bd-content div.cell_output table.dataframe thead tr,
+.bd-content div.cell_output table.dataframe tbody tr:nth-child(odd),
+.bd-content div.cell_output table.dataframe tbody tr:nth-child(2n) {
+  background: transparent;
+  border: 0;
+}
+.bd-content div.cell_output table.dataframe :is(td, th) {
+  border: 0;
+  border-bottom: 1px solid var(--tc-rule);
+}
+.bd-content div.cell_output table.dataframe thead th {
+  border-bottom: 1px solid color-mix(in srgb, var(--tc-ink) 30%, transparent);
+}
+
+/* ------------------------------------------------ Admonition 共同重置 ----
+   pydata 給每個 admonition 陰影 (!important)、圖示 (::after) 與標題色塊 (::before)。 */
+.bd-article div.admonition:is(.definition, .term-card, .spec-card) {
+  margin: 1.6em 0;
+  padding: .7em 1em .85em;
+  border: 1px solid var(--tc-rule);
+  border-radius: var(--tc-radius);
+  box-shadow: none !important;
+  font-size: .96em;
+  line-height: 1.8;
+  overflow: visible;
+}
+.bd-article div.admonition:is(.definition, .term-card, .spec-card) > .admonition-title {
+  position: relative;
+  margin: 0 0 .35em;
+  padding: 0;
+  background: transparent;
+  color: var(--tc-ink);
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.6;
+}
+.bd-article div.admonition:is(.definition, .term-card, .spec-card) > .admonition-title::before,
+.bd-article div.admonition:is(.definition, .term-card, .spec-card) > .admonition-title::after {
+  content: none;
+}
+.bd-article div.admonition:is(.definition, .term-card, .spec-card) > :last-child {
+  margin-bottom: 0;
+}
+.bd-article div.admonition:is(.definition, .term-card, .spec-card) p {
+  margin-bottom: .6em;
+}
+
+/* 定義框：左 3px accent、accent-tint 底、標題前小圓點 */
+.bd-article div.admonition.definition {
+  border-color: var(--tc-rule);
+  border-left: 3px solid var(--tc-accent);
+  background: var(--tc-accent-tint);
+}
+.bd-article div.admonition.definition > .admonition-title {
+  padding-left: 1em;
+}
+.bd-article div.admonition.definition > .admonition-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tc-accent);
+}
+
+/* 術語卡：比定義框更輕 */
+.bd-article div.admonition.term-card {
+  background: var(--tc-paper-2);
+}
+.bd-article div.admonition.term-card > .admonition-title {
+  color: var(--tc-muted);
+  font-size: .92em;
+}
+
+/* ------------------------------------------------------- 規格卡 ----------
+   (a) div.spec-card（raw HTML／display(HTML)）  (b) admonition.spec-card 內含表格 */
+.spec-card {
+  box-sizing: border-box;
+  max-width: var(--tc-measure);
+  margin: 1.6em 0;
+  padding: 12px 16px 6px;
+  background: var(--tc-paper-2);
+  border: 1px solid var(--tc-rule);
+  border-radius: var(--tc-radius);
+  color: var(--tc-ink);
+  font-family: var(--tc-font-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.spec-card .spec-title {
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.spec-card .spec-row {
+  display: grid;
+  grid-template-columns: 32% minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 7px 0;
+  border-top: 1px solid var(--tc-rule);
+}
+.spec-card .spec-key {
+  color: var(--tc-muted);
+  font-size: .88em;
+  line-height: 1.75;
+}
+.spec-card .spec-val {
+  color: var(--tc-ink);
+  overflow-wrap: anywhere;
+}
+.spec-card .spec-row.pending .spec-val {
+  color: var(--tc-muted);
+  font-style: italic;
+}
+.spec-card .spec-row.pending {
+  border-top-style: dashed;
+}
+.spec-card .spec-row.pending + .spec-row {
+  border-top-style: dashed;
+}
+.spec-card code {
+  font-family: var(--tc-font-mono);
+  font-size: .92em;
+  background: var(--tc-paper);
+  border-radius: 4px;
+  padding: .05em .3em;
+}
+
+.bd-article div.admonition.spec-card {
+  background: var(--tc-paper-2);
+  padding-bottom: .4em;
+}
+.bd-article div.admonition.spec-card > .admonition-title {
+  margin-bottom: .2em;
+}
+.bd-article div.admonition.spec-card .pst-scrollable-table-container {
+  overflow-x: auto;
+}
+.bd-article div.admonition.spec-card table.table {
+  width: 100%;
+  margin: 0;
+  font-size: 1em;
+}
+.bd-article div.admonition.spec-card table.table thead {
+  display: none;
+}
+.bd-article div.admonition.spec-card table.table > :not(caption) > * > * {
+  padding: 7px 0;
+  border-bottom: 0;
+  border-top: 1px solid var(--tc-rule);
+}
+.bd-article div.admonition.spec-card table.table td:first-child {
+  width: 32%;
+  padding-right: 16px;
+  color: var(--tc-muted);
+  font-size: .88em;
+  line-height: 1.75;
+}
+.bd-article div.admonition.spec-card table.table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+/* ------------------------------------------------- 互動示意圖 ------------- */
+.teaching-diagram {
+  max-width: 100%;
+  margin: 1.6em 0 1.8em;
+  color: var(--tc-ink);
+}
+.teaching-diagram svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.diagram-caption,
+.teaching-diagram p.diagram-caption {
+  margin: 4px 0 0;
+  color: var(--tc-muted);
+  font-size: 14px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+.diagram-missing {
+  padding: 20px 16px;
+  border: 1px dashed color-mix(in srgb, var(--tc-ink) 28%, transparent);
+  border-radius: var(--tc-radius);
+  color: var(--tc-muted);
+  font-size: 15px;
+  text-align: center;
+}
+.diagram-missing code {
+  font-family: var(--tc-font-mono);
+  background: var(--tc-paper-2);
+  border-radius: 4px;
+  padding: .05em .3em;
+}
+
+/* ------------------------------------------------- 深色輸出區 -------------
+   pydata：html[data-theme=dark] .bd-content div.cell_output .text_html:not(:has(table.dataframe))
+   會鋪淺色底（(0,5,3)）。示意圖與規格卡自帶主題色，以 (0,6,3) 還原透明。 */
+html[data-theme=dark] .bd-content div.cell_output div.output.text_html:has(.teaching-diagram),
+html[data-theme=dark] .bd-content div.cell_output div.output.text_html:has(.spec-card),
+html[data-theme=dark] .bd-content .bd-article div.cell_output div.output.text_html {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* ------------------------------------------------------- 動效 ------------ */
+@media (prefers-reduced-motion: reduce) {
+  .bd-article *,
+  .teaching-diagram *,
+  .spec-card * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ------------------------------------------------------- 手機 ------------
+   Plotly 的科學軸與圖例在窄幅仍要可讀：圖自己橫向捲動，閱讀欄不動。 */
 @media (max-width: 600px) {
+  .bd-article {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .bd-article h1,
+  .bd-article-container h1 {
+    font-size: 2em;
+  }
+  .bd-article h2,
+  .bd-article-container h2 {
+    font-size: 1.5em;
+  }
+  .spec-card .spec-row {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+  .spec-card .spec-key {
+    line-height: 1.5;
+  }
+  .bd-article div.admonition.spec-card table.table,
+  .bd-article div.admonition.spec-card table.table tbody,
+  .bd-article div.admonition.spec-card table.table tr,
+  .bd-article div.admonition.spec-card table.table td {
+    display: block;
+    width: auto;
+  }
+  .bd-article div.admonition.spec-card table.table td {
+    border-top: 0;
+    padding: 0;
+  }
+  .bd-article div.admonition.spec-card table.table td:first-child {
+    width: auto;
+    padding: 7px 0 0;
+    border-top: 1px solid var(--tc-rule);
+    line-height: 1.5;
+  }
+  .bd-article div.admonition.spec-card table.table td:last-child {
+    padding-bottom: 7px;
+  }
+
   .cell_output:has(.js-plotly-plot) {
     max-width: 100%;
     overflow-x: auto;
@@ -11,9 +601,10 @@
     display: block;
     position: sticky;
     left: 0;
-    color: var(--pst-color-text-muted);
-    font-size: 0.8rem;
-    margin: 0.35rem 0 0.5rem;
+    color: var(--tc-muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 4px 0 8px;
   }
   .cell_output .js-plotly-plot {
     min-width: 760px;

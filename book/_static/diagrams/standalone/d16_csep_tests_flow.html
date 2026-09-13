@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每一種檢驗，都有自己的模擬問題</title><style>:root{--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}html[data-theme=dark]{--dg-paper:#1e232b;--dg-paper-2:#2a313c;--dg-ink:#e9eef4;--dg-muted:#b6c0cd;--dg-soft:#8d98a8;--dg-rule:rgba(233,238,244,.18);--dg-accent:#6aa5ec;--dg-accent-tint:rgba(106,165,236,.12);--dg-quake:#f07a79;}@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--dg-paper:#1e232b;--dg-paper-2:#2a313c;--dg-ink:#e9eef4;--dg-muted:#b6c0cd;--dg-soft:#8d98a8;--dg-rule:rgba(233,238,244,.18);--dg-accent:#6aa5ec;--dg-accent-tint:rgba(106,165,236,.12);--dg-quake:#f07a79;}}body{margin:0;padding:24px 16px;background:var(--dg-paper);color:var(--dg-ink);font-family:system-ui,sans-serif}main{max-width:760px;margin:auto}h1{font-family:'Instrument Serif','Noto Serif TC',serif;font-weight:400;font-size:28px}.eyebrow{color:var(--dg-muted);font-size:14px}footer{margin-top:24px;font-size:14px;color:var(--dg-muted)}</style></head><body><main><p class="eyebrow">義大利預報實驗 · workflow</p><h1>每一種檢驗，都有自己的模擬問題</h1><style>
+:where(:root){--dg-paper:#fbfcfd;--dg-paper-2:#eef2f7;--dg-ink:#243040;--dg-muted:#56657a;--dg-soft:#7d8797;--dg-rule:rgba(36,48,64,.12);--dg-accent:#2a78d6;--dg-accent-tint:rgba(42,120,214,.08);--dg-quake:#e34948;}
+.dg-d16_csep_tests_flow{max-width:100%;color:var(--dg-ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+.dg-d16_csep_tests_flow *{box-sizing:border-box}
+.dg-d16_csep_tests_flow svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;background:var(--dg-paper)}
+.dg-d16_csep_tests_flow svg text{fill:var(--dg-ink);font-size:20px}
+.dg-d16_csep_tests_flow svg .name{font-weight:600}
+.dg-d16_csep_tests_flow svg .sub{fill:var(--dg-muted);font-size:20px}
+.dg-d16_csep_tests_flow .node{fill:var(--dg-paper-2);stroke:var(--dg-muted);stroke-width:1.2}
+.dg-d16_csep_tests_flow .focal{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d16_csep_tests_flow .edge{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dg-d16_csep_tests_flow .curve{fill:none;stroke:var(--dg-accent);stroke-width:3;stroke-linejoin:round}
+.dg-d16_csep_tests_flow .curve-other{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:8 4;stroke-linejoin:round}
+.dg-d16_csep_tests_flow .curve-faint{fill:none;stroke:var(--dg-muted);stroke-width:2;stroke-dasharray:2 4;stroke-linejoin:round}
+.dg-d16_csep_tests_flow .fill{fill:var(--dg-accent-tint);stroke:var(--dg-accent);stroke-width:2}
+.dg-d16_csep_tests_flow .dot{fill:var(--dg-ink);stroke:var(--dg-paper);stroke-width:2}
+.dg-d16_csep_tests_flow .event{fill:var(--dg-quake);stroke:var(--dg-paper);stroke-width:2}
+.dg-d16_csep_tests_flow .grid{fill:none;stroke:var(--dg-rule);stroke-width:1}
+.dg-d16_csep_tests_flow .choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dg-d16_csep_tests_flow .choices label{display:block;font:inherit;font-size:15px;line-height:1.4;min-height:44px;padding:8px 12px;border:1px solid var(--dg-muted);border-radius:6px;background:var(--dg-paper);color:var(--dg-ink);cursor:pointer}
+.dg-d16_csep_tests_flow .choices input:checked + label{border-color:var(--dg-accent);background:var(--dg-accent-tint);font-weight:600}
+.dg-d16_csep_tests_flow .choices input:focus-visible + label{outline:3px solid var(--dg-accent);outline-offset:3px}
+.dg-d16_csep_tests_flow .details{border-top:1px solid var(--dg-rule);padding-top:12px;margin-top:8px;min-height:100px}
+.dg-d16_csep_tests_flow .details p,.dg-d16_csep_tests_flow .intro{font-size:16px;line-height:1.8;margin:0 0 8px}
+.dg-d16_csep_tests_flow .details h4{font-family:inherit;font-weight:600;font-size:16px;line-height:1.5;margin:0 0 4px}
+.dg-d16_csep_tests_flow [hidden]{display:none}
+.dg-d16_csep_tests_flow .choices input{position:absolute;width:1px;height:1px;opacity:0}
+.dg-d16_csep_tests_flow .legend{font-size:14px;line-height:1.7;color:var(--dg-muted);margin:8px 0}
+@media(prefers-reduced-motion:reduce){.dg-d16_csep_tests_flow svg [data-detail-mark]{transition:none}}
+@media print{.dg-d16_csep_tests_flow .choices{display:none}.dg-d16_csep_tests_flow [hidden]{display:block}.dg-d16_csep_tests_flow.enhanced svg [data-detail-mark]{opacity:1}.dg-d16_csep_tests_flow .details{min-height:0}}
+
+.dg-d16_csep_tests_flow:has(#dg-d16_csep_tests_flow-choice-n:checked) [data-detail]:not([data-detail="n"]){display:none}
+.dg-d16_csep_tests_flow:has(#dg-d16_csep_tests_flow-choice-s:checked) [data-detail]:not([data-detail="s"]){display:none}
+.dg-d16_csep_tests_flow:has(#dg-d16_csep_tests_flow-choice-m:checked) [data-detail]:not([data-detail="m"]){display:none}
+.dg-d16_csep_tests_flow:has(#dg-d16_csep_tests_flow-choice-cl:checked) [data-detail]:not([data-detail="cl"]){display:none}
+.dg-d16_csep_tests_flow:has(#dg-d16_csep_tests_flow-choice-l:checked) [data-detail]:not([data-detail="l"]){display:none}
+.dg-d16_csep_tests_flow svg [data-detail-mark]{opacity:1}
+@media (hover:hover) and (pointer:fine){.dg-d16_csep_tests_flow:has(label:hover) [data-detail]{display:none!important}
+.dg-d16_csep_tests_flow:has(label[for="dg-d16_csep_tests_flow-choice-n"]:hover) [data-detail="n"]{display:block!important}
+.dg-d16_csep_tests_flow:has(label:hover) [data-detail]{display:none!important}
+.dg-d16_csep_tests_flow:has(label[for="dg-d16_csep_tests_flow-choice-s"]:hover) [data-detail="s"]{display:block!important}
+.dg-d16_csep_tests_flow:has(label:hover) [data-detail]{display:none!important}
+.dg-d16_csep_tests_flow:has(label[for="dg-d16_csep_tests_flow-choice-m"]:hover) [data-detail="m"]{display:block!important}
+.dg-d16_csep_tests_flow:has(label:hover) [data-detail]{display:none!important}
+.dg-d16_csep_tests_flow:has(label[for="dg-d16_csep_tests_flow-choice-cl"]:hover) [data-detail="cl"]{display:block!important}
+.dg-d16_csep_tests_flow:has(label:hover) [data-detail]{display:none!important}
+.dg-d16_csep_tests_flow:has(label[for="dg-d16_csep_tests_flow-choice-l"]:hover) [data-detail="l"]{display:block!important}}
+@media print{.dg-d16_csep_tests_flow [data-detail]{display:block!important}.dg-d16_csep_tests_flow [data-detail-mark]{opacity:1!important}}
+</style><div class="dg-d16_csep_tests_flow" data-teaching-widget="d16_csep_tests_flow"><p class="intro">先指定問題與模擬規則，再把觀測統計量放進模擬分布。</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 348" role="img" aria-labelledby="dg-d16_csep_tests_flow-title dg-d16_csep_tests_flow-desc"><title id="dg-d16_csep_tests_flow-title">每一種檢驗，都有自己的模擬問題</title><desc id="dg-d16_csep_tests_flow-desc">N 檢驗總數；S、M 與 cL 固定觀測總數後模擬位置或規模；L 同時模擬總數與格箱分配。</desc><rect x="80" y="16" width="320" height="72" rx="8" class="node "/><text x="240.0" y="48" class="name" text-anchor="middle">一張格箱預報</text><text x="240.0" y="76" class="sub" text-anchor="middle">先選檢驗問題</text><path d="M 240 88 v 24 m -8 -8 l 8 8 l 8 -8" class="edge"/><rect x="48" y="128" width="384" height="76" rx="8" class="node focal"/><text x="240.0" y="160" class="name" text-anchor="middle">固定條件 → 生成模擬</text><text x="240.0" y="188" class="sub" text-anchor="middle">各檢驗固定的量不同</text><path d="M 240 204 v 24 m -8 -8 l 8 8 l 8 -8" class="edge"/><rect x="48" y="244" width="384" height="76" rx="8" class="node "/><text x="240.0" y="276" class="name" text-anchor="middle">觀測與模擬用同一統計量</text><text x="240.0" y="304" class="sub" text-anchor="middle">比較尾機率或分位數</text></svg><div class="choices" role="group" aria-label="選擇圖中概念；也可用 Tab 與方向鍵"><span><input type="radio" id="dg-d16_csep_tests_flow-choice-n" name="dg-d16_csep_tests_flow-choice" value="n" aria-controls="dg-d16_csep_tests_flow-panel-n" checked><label for="dg-d16_csep_tests_flow-choice-n">N：數量</label></span><span><input type="radio" id="dg-d16_csep_tests_flow-choice-s" name="dg-d16_csep_tests_flow-choice" value="s" aria-controls="dg-d16_csep_tests_flow-panel-s" ><label for="dg-d16_csep_tests_flow-choice-s">S：位置</label></span><span><input type="radio" id="dg-d16_csep_tests_flow-choice-m" name="dg-d16_csep_tests_flow-choice" value="m" aria-controls="dg-d16_csep_tests_flow-panel-m" ><label for="dg-d16_csep_tests_flow-choice-m">M：規模</label></span><span><input type="radio" id="dg-d16_csep_tests_flow-choice-cl" name="dg-d16_csep_tests_flow-choice" value="cl" aria-controls="dg-d16_csep_tests_flow-panel-cl" ><label for="dg-d16_csep_tests_flow-choice-cl">cL：條件聯合</label></span><span><input type="radio" id="dg-d16_csep_tests_flow-choice-l" name="dg-d16_csep_tests_flow-choice" value="l" aria-controls="dg-d16_csep_tests_flow-panel-l" ><label for="dg-d16_csep_tests_flow-choice-l">L：完整聯合</label></span></div><div class="details" aria-live="polite"><section id="dg-d16_csep_tests_flow-panel-n" data-detail="n" aria-label="N：數量"><h4>N：數量</h4><p>固定預報的總期望數，模擬總事件數；以觀測總數計算含等號的上下尾機率。Poisson 與負二項版本有不同的計數假設。</p></section><section id="dg-d16_csep_tests_flow-panel-s" data-detail="s" aria-label="S：位置"><h4>S：位置</h4><p>固定觀測總數 N，將預報對規模箱加總，正規化成各空間格機率，再用多項分布模擬 N 顆事件的位置。</p></section><section id="dg-d16_csep_tests_flow-panel-m" data-detail="m" aria-label="M：規模"><h4>M：規模</h4><p>固定觀測總數 N，將預報對空間格加總，正規化成各規模箱機率，再用多項分布模擬規模分配。</p></section><section id="dg-d16_csep_tests_flow-panel-cl" data-detail="cl" aria-label="cL：條件聯合"><h4>cL：條件聯合</h4><p>固定觀測總數 N，依各空間格與規模箱的聯合機率模擬分配；總數不變，但位置與規模配置會變。</p></section><section id="dg-d16_csep_tests_flow-panel-l" data-detail="l" aria-label="L：完整聯合"><h4>L：完整聯合</h4><p>先依預報的計數分布模擬總數，再分配到格箱；等價的 Poisson 版本可逐格箱抽計數。總數、位置、規模都會變。</p></section></div><p class="legend">選擇按鈕可查看說明；滑鼠停留、鍵盤聚焦與觸控皆可操作。</p></div>
+<footer>可離線閱讀；字型沿用系統已安裝的字型。</footer></main></body></html>

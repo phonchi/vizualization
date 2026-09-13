@@ -1,198 +1,451 @@
-# 附錄 A：點過程的機率、概似與模擬
+# 附錄 A：記號、統計工具與點過程
 
-這裡接續{doc}`10_point_process`。正文先建立率如何隨歷史更新的直覺，本附錄
-補上機率與概似的推導、時間變換的條件，以及生成圖表所用的抽樣原理。
-只想沿主文學習，可以回到{doc}`11_catalog_completeness_b`。
+**對應主文章**：
+第 3 章 {doc}`03_experiment_spec`；
+第 4 章 {doc}`04_poisson_and_sup`；
+第 5 章 {doc}`05_likelihood_estimation`；
+第 6 章 {doc}`06_simulation_tests_scores`；
+第 11 章 {doc}`11_conditional_intensity`。
 
-## 從下一事件的危害率得到存活函式
+本附錄提供記號回查與工具推導。
+主文先說用途，附錄再列適用條件。
+先備知識為基礎機率、微分與積分。
 
-給定時間 $t_0$ 的歷史 $H_{t_0}$，令 $T_1$ 是下一事件時間，
-$S_0(t)=P(T_1>t\mid H_{t_0})$。在直到 $t$ 都沒有新事件的條件下，
-令 $\lambda_0(t)$ 為相應的危害率。對小量 $h>0$，
+## A.1 讀者版記號表
 
-$$S_0(t+h)=S_0(t)[1-\lambda_0(t)h+o(h)].$$
+條件強度（conditional intensity）是歷史下的瞬時率。
+率密度還須指定面積與規模單位。
+格內期望數則已完成這些積分。
 
-假設所需的絕對連續性與局部可積性成立，取極限得到
-$S'_0(t)=-\lambda_0(t)S_0(t)$。以 $S_0(t_0)=1$ 積分：
+| 概念 | 記號 | 定義或單位 |
+|---|---|---|
+| 事件 | $(t_i,x_i,y_i,m_i)$ | 時間、位置與取整規模 |
+| 時間 | $t_i$ | 自 1960-01-01 起算的天數 |
+| 位置 | $(x_i,y_i)$ | 投影公里座標 |
+| 歷史 | $H_t$ | $t$ 之前可取得的事件 |
+| 條件強度 | $\lambda^*(t,x,y,m)$ | $\lambda(t,x,y,m\mid H_t)$ |
+| 格內期望數 | $\Lambda_{jk}$ | 指定窗、格 $j$、規模箱 $k$ |
+| 觀測數 | $\omega_{jk}$ | 同窗、同格箱的事件數 |
+| 完整度 | $M_c$ | 目錄可充分記錄的規模下限 |
+| 輸入門檻 | $m_0$ | 模型納入歷史事件的下限 |
+| 目標門檻 | $m_T$ | 預報與檢驗的規模下限 |
+| 機率 | $P(\cdot)$ | 一律以大寫 $P$ 表示 |
+
+Gutenberg–Richter 律簡稱 GR 律。
+它描述規模增加時的事件數衰減。
+核函數（kernel）分配單個來源的貢獻。
+產能（productivity）控制其總量。
+
+| 概念 | 記號 | 定義或提醒 |
+|---|---|---|
+| GR 斜率 | $b,\beta$ | $\beta=b\ln10$ |
+| GR 密度 | $s(m)$ | $\beta e^{-\beta(m-m_0)}$ |
+| Omori 時間密度 | $g(\tau)$ | $(p-1)c^{-1}(1+\tau/c)^{-p}$ |
+| 產能 | $\kappa(m)$ | $K e^{\alpha(m-m_0)}$ |
+| 分支比 | $n$ | 每事件的平均直接後代數 |
+| PPE 參數 | $a,d,s$ | 權重、平滑距離與底率 |
+| PPE 空間項 | $h_0(x,y)$ | 過去震央的平滑貢獻 |
+| EEPAS 規模核 | $a_M,b_M,\sigma_M$ | 截距、斜率與散布 |
+| EEPAS 時間核 | $a_T,b_T,\sigma_T$ | 對數時間的截距、斜率與散布 |
+| EEPAS 空間核 | $b_A,\sigma_A$ | 規模斜率與長度尺度 |
+| EEPAS 修正 | $\eta(m),\Delta(m)$ | 產能正規化與門檻保留比例 |
+| EEPAS 混合權重 | $\mu_E$ | 背景成分的係數 |
+| Ψ 尺度 | $M_P,T_P,A_P,M_m$ | 前兆規模、時間、面積與主震規模 |
+| 累積規模異常 | $C(t)$ | 去除全窗平均趨勢的累積量 |
+
+PPE 是 Proximity to Past Earthquakes。
+它以過去震央的鄰近程度分配率。
+EEPAS 的全名如下。
+Every Earthquake a Precursor According to Scale。
+模型讓每個事件依規模貢獻前兆訊息。
+Ψ 指前兆尺度增加現象。
+英文為 precursory scale increase。
+其量測定義見 {doc}`14_psi_precursory_scale`。
+
+| 概念 | 記號 | 定義或提醒 |
+|---|---|---|
+| 逐箱 Poisson 對數概似 | POLL | Poisson log-likelihood |
+| 聯合 Poisson 對數概似 | jPOLL | joint Poisson log-likelihood |
+| 二元對數概似 | BILL | binary log-likelihood |
+| 數量檢驗尾機率 | $\delta_1,\delta_2$ | 含等號的上尾與下尾 |
+| 分位數分數 | $q$ | 模擬統計量不大於觀測的比例 |
+| 每事件資訊增益 | IGPE | information gain per earthquake |
+| BPT 平均複發時間 | $T_r$ | 與時間軸同單位 |
+| 間隔變異係數 | $c_v$ | 標準差除以平均間隔 |
+| Weibull 形狀 | $k$ | 不使用 $\beta$ |
+| Janus 組合權重 | $\pi_{\rm ETAS}$ | ETAS 成分的權重 |
+
+BPT 指 Brownian passage time。
+它以隨機載入的首達時間描述複發。
+Janus 指結合不同時間尺度的組合模型。
+相關推導見 {doc}`appendix_f_hazard`。
+組合方法見 {doc}`19_ensembles`。
+
+$\beta$ 只表示 $b\ln10$。
+$p$ 用於 Omori 指數；檢定時寫「p 值」。
+ETAS 空間尾指數也沿用文獻的 $q$。
+它與分位數分數須依上下文區分。
+表中的 $g$ 要求 $p>1,c>0$。
+不同核正規化下的 $K$ 不可直接互換。
+具體換算見 {doc}`appendix_c_etas`。
+
+## A.2 兩套術語對照
+
+CSEP 是地震可預報性協作研究計畫。
+英文為 Collaboratory for the Study of Earthquake Predictability。
+本站採其預報實驗用語。
+ETAS 是類流行病餘震序列模型。
+英文為 Epidemic-Type Aftershock Sequence。
+下表對照 Jalilian（2019）的 R 套件用語。
+
+| 本站用語 | 英文 | ETAS R 對照 |
+|---|---|---|
+| 測試區 $R$ | testing region | study region |
+| 收集區 $S$ | collection／neighbourhood region | complementary events 所在區 |
+| 學習期、測試期 | learning／testing period | 依該次分析指定 study period |
+| 目標地震 | target events | target events |
+| 提供歷史的事件 | precursor／trigger | complementary events 的對應角色 |
+| 十進位天數 | decimal days，自 1960-01-01 | 自 `time.begin` 起算 |
+
+收集區提供可能影響測試區的事件。
+目標事件才進入指定評估窗的求和。
+目標事件發生後，也可成為後續歷史。
+「前兆」與「觸發源」仍屬不同模型概念。
+術語對照不代表已辨認物理因果。
+
+區域邊界稱多邊形（polygon）。
+ETAS R 要求頂點逆時針排列。
+EEPAS 框架要求順時針排列。
+兩者的時間原點也必須明確換算。
+
+## A.3 Poisson 過程與計數
+
+Poisson 過程以独立增量描述事件。
+此處的率 $\lambda(t)$ 是確定函數。
+令 $N(B)$ 為時間區間 $B$ 的事件數。
+將區間切細，每段多事件機率可忽略。
+各段獨立的 Bernoulli 計數取極限，得到
 
 $$\begin{aligned}
-\frac{\mathrm d}{\mathrm dt}\log S_0(t)&=-\lambda_0(t),\\
-S_0(t)&=\exp\left[-\int_{t_0}^t\lambda_0(u)\,\mathrm du\right],\\
+\Lambda(B)&=\int_B\lambda(t)\,dt,\\
+P(N(B)=n)&=e^{-\Lambda(B)}\frac{\Lambda(B)^n}{n!},\\
+\mathbb E[N(B)]&=\operatorname{Var}(N(B))=\Lambda(B),\\
+P(N(B)\ge1)&=1-e^{-\Lambda(B)}.
+\end{aligned}$$
+
+齊次（homogeneous）表示率固定。
+此時長度 $T$ 的期望數為 $\lambda T$。
+非齊次表示率可隨時間改變。
+非齊次本身不代表事件互相觸發。
+
+過度離散（overdispersion）指變異數大於平均。
+叢集可造成這種現象。
+混合不同年份的率也可能如此。
+不能只憑計數變異就判定觸發機制。
+
+## A.4 概似、MLE 與 bootstrap
+
+概似（likelihood）比較参数對資料的支持。
+它是固定資料後的參數函數。
+最大概似估計簡稱 MLE。
+英文為 maximum likelihood estimation。
+
+固定觀察期長 $T$，觀測數為 $N$。
+齊次 Poisson 的對數概似為
+
+$$\begin{aligned}
+\ell(\lambda)&=N\ln(\lambda T)-\lambda T-\ln(N!),\\
+\ell'(\lambda)&=N/\lambda-T,\\
+\widehat\lambda&=N/T.
+\end{aligned}$$
+
+$N>0$ 時，二階導數為負。
+$N=0$ 時，最大值位於零率邊界。
+資訊量（information）描述概似的曲率。
+其期望值為 $I(\lambda)=T/\lambda$。
+標準誤（standard error）近似為
+
+$$\operatorname{SE}(\widehat\lambda)\simeq\frac{\sqrt N}{T}.$$
+
+零事件時，此近似不能表示沒有不確定性。
+應回到完整計數分布建立區間。
+概似歸一化也不會自動變成參數機率。
+
+Bootstrap 是重抽樣估計法。
+它用重抽的資料近似估計量變動。
+普通版本從原樣本有放回抽樣。
+每份樣本重新估參數，再取經驗分位數。
+參數式版本則從擬合模型產生資料。
+
+地震序列常有相依性。
+逐事件重抽可能破壞叢集結構。
+區塊重抽樣保留一段內的相依。
+模型式模擬則依賴生成模型正確。
+所報區間須註明採用哪種抽樣單位。
+
+## A.5 分位數、p 值與對數分數
+
+統計量（statistic）是資料的一個摘要。
+令觀測值為 $s_{\rm obs}$。
+虛無模型產生 $B$ 個模擬值 $s_r$。
+分位數分數估計其下尾位置：
+
+$$\widehat q=\frac1B\sum_{r=1}^B\mathbf1\{s_r\le s_{\rm obs}\}.$$
+
+若低分才是不相容證據，便採下尾檢定。
+連續分布下，其 p 值為 $q$。
+若高分才是證據，則採上尾。
+離散分布須保留等號機率。
+
+$$\begin{aligned}
+P(S\ge s)&=1-F_S(s^-),\\
+P(S\le s)&=F_S(s),\\
+p_{\rm two}&=\min\{1,2\min[P(S\le s),P(S\ge s)]\}.
+\end{aligned}$$
+
+最後一式是等尾雙尾慣例。
+它不是每種檢定唯一的雙尾定義。
+離散資料不可一律使用 $1-q$ 作上尾。
+模擬零次落入尾端，也不表示機率為零。
+
+對數分數（log score）獎勵觀測處的機率。
+給觀測 $y$ 的分數為 $\ln P(y)$。
+連續觀測改用相同測度下的密度。
+兩模型相減得到對數概似比。
+網格、單位與目標不同時，不可直接比較。
+
+## A.6 AIC、KL 與貝氏推論
+
+KL 散度比較兩個分布的差異。
+全名為 Kullback–Leibler divergence。
+令真實分布為 $P$，候選分布為 $Q$。
+在離散且支撐相容的情況下，
+
+$$\begin{aligned}
+D_{\rm KL}(P\Vert Q)&=\sum_zP(z)\ln\frac{P(z)}{Q(z)}\ge0,\\
+\mathbb E_P[\ln Q(Z)]&=\mathbb E_P[\ln P(Z)]-D_{\rm KL}(P\Vert Q).
+\end{aligned}$$
+
+提高期望對數分數，相當於減少 KL 損失。
+有限測試資料只能估計這個期望。
+它不能直接揭露未知真實分布。
+
+AIC 是赤池資訊準則。
+英文為 Akaike information criterion。
+令自由參數數目為 $d$，則
+
+$$\operatorname{AIC}=-2\ell(\widehat\theta)+2d.$$
+
+懲罰項近似修正訓練分數的樂觀偏差。
+較小的 AIC 較受此準則支持。
+推導需要正則性與大樣本近似。
+相依資料、邊界參數須另查條件。
+AIC 權重也不是自動得到的後驗機率。
+
+貝氏推論（Bayesian inference）結合先驗與資料。
+先驗密度記為 $\pi(\theta)$。
+後驗密度記為 $\pi(\theta\mid\mathcal D)$。
+
+$$\pi(\theta\mid\mathcal D)=
+\frac{L(\theta;\mathcal D)\pi(\theta)}
+{\int L(u;\mathcal D)\pi(u)\,du}.$$
+
+以形狀、率參數定義 Gamma 先驗。
+令 $\lambda\sim\operatorname{Gamma}(a,r)$。
+Poisson 資料給出
+
+$$\lambda\mid N\sim\operatorname{Gamma}(a+N,r+T).$$
+
+這是共軛（conjugate）更新。
+意思是後驗仍屬同一分布族。
+未來長度 $h$ 的計數變異數為
+
+$$\operatorname{Var}(N_{\rm future}\mid\mathcal D)
+=h\mathbb E[\lambda\mid\mathcal D]
++h^2\operatorname{Var}(\lambda\mid\mathcal D).$$
+
+第一項來自事件本身的波動。
+第二項來自未知參數。
+ETAS 的後驗預報還須整合未來觸發。
+模型未描述的漏測也不會自動消失。
+
+## A.7 下一事件與點過程概似
+
+存活函數（survival function）表示尚未發生。
+令 $S_0(t)=P(T_1>t\mid H_{t_0})$。
+沿沒有新事件的路徑，危害率記為 $\lambda_0(t)$。
+小時間段的乘法關係給出
+
+$$\begin{aligned}
+S_0(t+h)&=S_0(t)[1-\lambda_0(t)h+o(h)],\\
+S'_0(t)&=-\lambda_0(t)S_0(t),\\
+S_0(t)&=\exp\left[-\int_{t_0}^t\lambda_0(u)\,du\right],\\
 f_0(t)&=\lambda_0(t)S_0(t).
 \end{aligned}$$
 
-對只含可觀測事件歷史與已知協變數的模型，$\lambda_0$ 可由「無新事件」的
-路徑求得。含未觀測外部隨機狀態時，必須使用相對於所給資訊的正確危害率，
-不能將某一條任意外部狀態路徑代入，當成條件於較少資訊的存活機率。
+此式要求相應密度存在且率局部可積。
+若還有未知外部狀態，須一併平均。
+不能任取一條外部路徑代入。
 
-這是下一個任意事件的結果。若目標是 $m\ge m_T$，其他規模的事件仍可
-先發生並影響後續目標事件，因此一般不能將目前歷史凍結、乘上一個規模比例
-後就當成完整的目標預報。在點過程模型下，常以給定目前歷史的未來目錄模擬
-計算目標事件出現比例。這個問題也不同於把一條已觀測的補償子稱作未來期望數。
-
-## 將事件密度與最後的空白連乘
-
-對 $0<t_1<\cdots<t_N\le T$，條件於觀察開始前的歷史，使用每次等待的
-條件密度，最後再乘上 $(t_N,T]$ 無事件的條件機率。沿已觀測歷史評估強度後，
+連乘每次等待密度，再乘最後空白，得到
 
 $$\begin{aligned}
-L(\theta)&=\left\{\prod_{i=1}^N\lambda^*_\theta(t_i)
-\exp\left[-\int_{t_{i-1}}^{t_i}\lambda^*_\theta(u)\,\mathrm du\right]\right\}
-\exp\left[-\int_{t_N}^{T}\lambda^*_\theta(u)\,\mathrm du\right]\\
-&=\left\{\prod_{i=1}^N\lambda^*_\theta(t_i)\right\}
-\exp\left[-\int_0^T\lambda^*_\theta(u)\,\mathrm du\right].
+L(\theta)&=\prod_{i=1}^N\lambda^*_\theta(t_i)
+\exp\left[-\int_0^T\lambda^*_\theta(u)\,du\right],\\
+\ell(\theta)&=\sum_{i=1}^N\ln\lambda^*_\theta(t_i)
+-\int_0^T\lambda^*_\theta(u)\,du.
 \end{aligned}$$
 
-取對數即得到正文的{eq}`eq:pp-loglik`。這是相對於事件時間的密度形式，
-不是某一串精確實數時間發生的正機率。它適用於具有相應條件密度、強度局部
-可積且不爆發的常見簡單點過程；不能不加條件地推廣到所有隨機點集合。
+這是事件時間的密度概似。
+精確實數時間本身沒有正機率。
+過程須簡單、非爆炸且符合可積條件。
+非爆炸指有限期間不產生無限事件。
 
-空間與規模加入後，觀察區為 $S$、輸入規模下限為 $m_0$：
+令評估窗為 $[a,b]\times R\times[m_T,m_u)$。
+加上位置與規模後，
 
-$$\ell(\theta)=\sum_i\log\lambda^*_\theta(t_i,x_i,y_i,m_i)
--\int_0^T\int_S\int_{m_0}^{\infty}\lambda^*_\theta(t,x,y,m)
-\,\mathrm dm\,\mathrm dx\,\mathrm dy\,\mathrm dt.$$
+$$\ell(\theta)=\sum_{i\in\mathcal I}\ln\lambda^*_\theta(t_i,x_i,y_i,m_i)
+-\int_a^b\int_R\int_{m_T}^{m_u}\lambda^*_\theta(t,x,y,m)\,dm\,dx\,dy\,dt.$$
 
-求和只包含評估窗內事件，歷史則可能需要窗前或區域外的補充事件。
-比較概似時須固定資料、觀察範圍、規模門檻與座標測度。每事件正規化不會
-自動消除不同單位、網格、目標或背景選擇的差異。
+$\mathcal I$ 只含評估窗內的目標事件。
+$S$ 內及窗前事件可提供歷史。
+估計輸入事件模型時，須另換評估門檻。
+求和與積分必須使用同一觀察範圍。
 
-## 標記分解不等於所有參數都能分開估
+若強度分解為 $\lambda^*_{ST}s(m)$，規模項可分開。
+分開估參數還要求參數空間獨立。
+例如 $\alpha=\beta$ 會把兩項重新連結。
+當次規模獨立，也不代表歷史規模無作用。
 
-若 $\lambda^*(t,x,y,m)=\lambda^*_{\theta}(t,x,y)s_\beta(m)$，且
-$s_\beta$ 在規模範圍積分為一，則
+## A.8 補償子、殘差與時間變換
 
-$$\ell=\sum_i\log s_\beta(m_i)+\sum_i\log\lambda^*_{\theta}(t_i,x_i,y_i)
--\int_0^T\int_S\lambda^*_{\theta}(t,x,y)\,\mathrm dx\,\mathrm dy\,\mathrm dt.$$
+補償子（compensator）是沿歷史累積的率。
+本節只看時間，定義 $A(t)=\int_0^t\lambda^*(u)\,du$。
+鞅（martingale）的未來增量條件期望為零。
+適當条件下，$N(t)-A(t)$ 是鞅。
+因此
 
-要分別最佳化，還需要兩部分的參數空間彼此獨立。例如將觸發產能指數設為
-$\alpha=\beta$，會使時空項也依賴 $\beta$，此時不能只最大化規模項。
-當次規模按固定密度抽取，也不表示過去規模不影響未來時間或位置。
+$$\begin{aligned}
+\mathbb E[N(t)]&=\mathbb E[A(t)],\\
+\mathbb E[N(T)-N(t_0)\mid H_{t_0}]
+&=\mathbb E\left[\int_{t_0}^T\lambda^*(u)\,du\mid H_{t_0}\right].
+\end{aligned}$$
 
-## 補償子、殘差與時間變換
+外側期望包含所有可能的未來歷史。
+目前歷史凍結後的積分通常只是近似。
+尤其小事件可能先出現，再觸發目標事件。
 
-定義 $\Lambda(t)=\int_0^t\lambda^*(u)\,\mathrm du$。在常見可積性條件下，
-$N(t)-\Lambda(t)$ 是鞅，因而 $E[N(t)]=E[\Lambda(t)]$。
-對歷史相依模型，$\Lambda(t)$ 通常隨觀測歷史變化。給定 $H_{t_0}$ 的未來
-期望數則滿足
+殘差（residual）比較觀測與模型預期。
+可預測權重 $v$ 只使用事件前的資訊。
+相應加權殘差為
 
-$$E[N(T)-N(t_0)\mid H_{t_0}]
-=E\left[\int_{t_0}^T\lambda^*(u)\,\mathrm du\mid H_{t_0}\right],$$
+$$R_v=\sum_i v(t_i)-\int v(t)\lambda^*(t)\,dt.$$
 
-不能省略外側對未來歷史的期望。
+適當可積條件下，$\mathbb E[R_v]=0$。
+倒數率權重會放大低率處的誤差。
+事後家族標籤不可當成可預測資訊。
 
-對可預測權重 $h$（只依賴事件之前可取得的資訊），在適當可積性下，
+時間變換（time rescaling）改用累積率計時。
+若 $A$ 連續且終將趨於無限，令 $\tau_i=A(t_i)$。
+正確強度下，
 
-$$E\left[\sum_i h(t_i,x_i,y_i)\right]
-=E\left[\int h(t,x,y)\lambda^*(t,x,y)\,\mathrm dt\,\mathrm dx\,\mathrm dy\right].$$
+$$\begin{aligned}
+P(\tau_{i+1}-\tau_i>s\mid H_{t_i})&=e^{-s},\\
+U_i&=1-e^{-(\tau_i-\tau_{i-1})}.
+\end{aligned}$$
 
-因此兩者之差形成零平均的加權殘差。$h=1$、$1/\lambda^*$ 或
-$1/\sqrt{\lambda^*}$ 強調不同區域，但率接近零時後兩者可能數值不穩定，
-需要檢查可積性與估計誤差。用事後知道的家族分類當作可預測權重，不符合上述條件。
+變換間隔應獨立且服從單位指數分布。
+$U_i$ 應獨立且服從均勻分布。
+率為零的平臺須用廣義反函數處理。
+有限窗另有末端截尾。
 
-當累積強度連續、可作相應時間變換且終將趨於無限時，令
-$\tau_i=\Lambda(t_i)$。下一事件存活公式給出
+Q–Q 圖對照兩分布的相同分位數。
+KS 統計量是累積分布的最大距離。
+兩者只檢查邊際形狀仍不夠。
+間隔相依性也須檢查。
+同資料估參數後，應模擬並重新擬合。
+如此才能校準診斷的參考分布。
 
-$$P(\tau_{i+1}-\tau_i>s\mid H_{t_i})=e^{-s}.$$
+## A.9 稀疏化與分支模擬
 
-條件分布不依賴歷史，逐次套用可得獨立單位指數間隔。若強度有零值區段，
-應使用廣義反函式處理平臺；若只觀察有限期間，則有邊界與截尾效應。
-再由機率積分變換，得到正文{eq}`eq:time-rescale`。
-用同一資料估參數後，不能假裝強度是事先已知的真值；可採參數模擬並重新擬合，
-校準診斷統計量的參考分布。
+稀疏化（thinning）先提候選，再決定保留。
+它需要候選區間內有效的上界 $\bar\lambda$。
 
-## 稀疏化與分支模擬
+1. 以 $\bar\lambda$ 產生候選等待時間。
+2. 以 $\lambda^*(s)/\bar\lambda$ 保留候選。
+3. 接受後更新歷史與上界。
+4. 拒絕後只推進時間。
+5. 到觀察窗末端時停止。
 
-稀疏化需要每一步都有對候選區間有效的上界 $\bar\lambda$。以該率提出
-候選時間 $s$，再以 $\lambda^*(s)/\bar\lambda$ 接受。接受後更新事件歷史，
-拒絕則不加入歷史。若上界不再有效，必須縮短區間或更新上界；將大於一的比值
-直接截為一，不能修復錯誤的提案機制。
+比值大於一表示上界失效。
+直接截成一不能修復抽樣機制。
+固定背景與遞減 Omori 核可用當下率作界。
+延遲峰值或上升背景須另找上界。
 
-正文的正規化Omori核在事件之間遞減，背景率又固定，因此事件後的當下強度
-是直到下一事件之前的有效上界。若核有延遲峰值，或背景率會上升，就需要
-另找對候選區間有效的界，不能直接複製正文的選法。
+分支模擬（branching simulation）先抽背景。
+每個事件再生成直接後代。
+後代仍能繼續繁衍。
+它需要模型具有相應 Poisson 分支表示。
 
-具有相應Poisson分支表示的線性自激發模型，可以先抽背景事件，再抽每個事件的
-後代數、延遲及位置。初始歷史、空間邊界與窗外後代處理必須和預定模型一致。
-正文的兩種方法比較使用空歷史；若目標是平穩目錄，需處理觀察前歷史，而不是
-直接假定空歷史等同穩態。
+Omori 核的反函數抽樣為
 
-對無限時間可正規化的Omori核，$p>1,c>0$ 時，
+$$\tau=c[(1-U)^{-1/(p-1)}-1],\qquad U\sim\operatorname{Unif}(0,1).$$
 
-$$g(u)=\frac{p-1}{c}(1+u/c)^{-p},\qquad
-G(u)=1-(1+u/c)^{1-p}.$$
+這裡要求 $p>1$。
+對面積尺度 $v>0$ 的空間核，
 
-令 $U\sim U(0,1)$，反解 $G(u)=U$ 得
-$u=c[(1-U)^{-1/(p-1)}-1]$。這個 $p>1$ 的限制來自無限時間正規化；
-有限窗的未正規化衰減率可以有 $p\le1$，見{doc}`appendix_b_catalog`。
+$$\begin{aligned}
+h(r)&=\frac{q-1}{\pi v}(1+r^2/v)^{-q},\qquad q>1,\\
+P(R\le r)&=1-(1+r^2/v)^{1-q},\\
+R&=\sqrt{v[(1-U)^{-1/(q-1)}-1]}.
+\end{aligned}$$
 
-對平面上各向同性的核
-$f(x,y)=(q-1)(\pi\sigma)^{-1}(1+r^2/\sigma)^{-q}$，$q>1,\sigma>0$，
-極座標面積元素是 $r\,\mathrm dr\,\mathrm d\vartheta$，因此
+角度均勻抽於 $[0,2\pi)$。
+推導使用極座標面積元 $r\,dr\,d\vartheta$。
+$\sqrt v$ 才是長度尺度。
+長尾樣本不能直接壓到窗邊。
+區外事件若能觸發區內後代，仍須保留。
+空歷史起步也不等於平穩目錄。
 
-$$P(R\le r)=\int_0^r2\pi u f(u)\,\mathrm du
-=1-(1+r^2/\sigma)^{1-q}.$$
+## A.10 固定總數與事件對
 
-半徑可抽為 $R=\sqrt{\sigma[(1-U)^{-1/(q-1)}-1]}$，角度均勻抽於
-$[0,2\pi)$。$\sigma$ 是面積尺度，$\sqrt{\sigma}$ 才是長度尺度。
-計算時需避免端點造成溢位，並按預定觀察窗處理長尾樣本；直接截短延遲再保留
-為窗內事件，會改變原模型。
+固定 $N$ 個均勻時間點，再排序。
+包含兩端的間隔共有 $N+1$ 個。
+任一間隔 $W$ 滿足
 
-## 描述平均與描述事件對
+$$P(W>w\mid N)=\left(1-\frac wT\right)^N,\qquad 0\le w\le T.$$
 
-### 固定事件總數後的間隔與計數
+平均間隔為 $T/(N+1)$。
+這些間隔互相相依。
+它們不是未固定總數的獨立指數間隔。
 
-{doc}`foundation_randomness`的均勻序列是將 $N$ 個獨立均勻點放在 $[0,T]$
-後排序。包含兩端在內的 $N+1$ 個間隔可交換；任一間隔 $W$ 的存活機率為
+時間切成 $J$ 個等長箱後，計數服從多項分布。
+若樣本變異數分母為 $J-1$，則
 
-$$P(W>w\mid N)=\left(1-\frac{w}{T}\right)^N,\qquad 0\le w\le T.$$
+$$\mathbb E[s_N^2]=N/J.$$
 
-以內部某個間隔為例，要求它大於 $w$，再把它右側所有點向左平移 $w$，
-可將允許區域對應到長度 $T-w$ 的有序點區域。$N$ 維體積比就是上式。
-因此平均間隔為 $T/(N+1)$；指數參考的平均 $T/N$ 是未固定總數的另一種設定。
-正文只取內部完整間隔，但其邊際分布仍是上式，指數不會因取了 $N-1$ 個間隔
-而改成 $N-1$。這些間隔也不是互相獨立的。
+Fano 比（Fano factor）是變異數除以平均。
+上述固定總數設定的期望基準仍為一。
+單次比值偏離一，不等於顯著叢集。
 
-若把時間平均切成 $k$ 箱，固定總數下的箱計數服從多項分布，各箱平均為 $N/k$。
-以分母 $k-1$ 計算樣本變異數 $s^2$ 時，
+一階矩描述平均計數。
+二階階乘矩描述不同事件對。
+對區間 $B,C$，
 
-$$E[s^2]=\frac{k(N/k)(1-1/k)}{k-1}=\frac Nk,
-\qquad E\!\left[\frac{s^2}{N/k}\right]=1.$$
+$$M^{[2]}(B\times C)=\mathbb E\left[
+\sum_{i\ne j}\mathbf1\{t_i\in B\}\mathbf1\{t_j\in C\}\right].$$
 
-所以固定總數不改變這個Fano統計量的期望基準，但單一實現與少量箱數仍會
-造成波動；這個期望等式本身不是顯著性檢定。
-
-### 一階與二階資訊
-
-對時間區間 $B$，一階矩測度 $M(B)=E[N(B)]$ 描述平均計數；
-二階階乘矩測度描述不同事件對，例如
-
-$$M^{[2]}(B\times C)=E\!\left[\sum_{i\ne j}
-\mathbf1_{\{t_i\in B\}}\mathbf1_{\{t_j\in C\}}\right].$$
-
-排除 $i=j$ 可避免把每個事件與自身配對。兩份目錄可有相同的一階結構，
-但不同的事件對結構。非均勻背景與邊界會影響比較，因此簡單比較近鄰數量
-不會自動辨認物理觸發。這是{doc}`foundation_randomness`二階統計的形式化版本。
-
-## 符號回查
-
-| 符號 | 意義 | 使用時留意 |
-|---|---|---|
-| $H_t$ | $t$ 以前的事件歷史 | 不含未來事件 |
-| $\lambda^*$ | 條件率或率密度 | 交代時間、空間與規模單位 |
-| $\Lambda(t)$ | 沿歷史累積的條件率 | 一般是隨機補償子 |
-| $\Lambda_{jk}$ | 預報網格期望數 | 依已宣告預報條件定義 |
-| $\omega_{jk}$ | 網格觀測數 | 和預報使用同樣目標 |
-| $M_c,m_0,m_T$ | 完整度、輸入門檻、目標門檻 | 三者目的不同 |
-| $b,\beta=b\ln10$ | 規模分布斜率 | $\beta$ 不作其他模型的形狀參數 |
-| $\mu(x,y)$ | ETAS背景率 | 是模型成分，不等同物理分類 |
-| $A,K$ | 正規化／未正規化核的產能係數 | 不直接跨參數化比較 |
-
-回到{doc}`10_point_process`，或接著讀{doc}`11_catalog_completeness_b`。
+排除自身配對後，才能比較事件對結構。
+相同平均率仍可有不同叢集程度。
+非均勻背景與邊界也會改變近鄰數。
 
 ## 參考資料與延伸閱讀
 
-- Daley, D. J. 與 Vere-Jones, D.（2003），[An Introduction to the Theory of Point Processes, Volume I，第二版](https://doi.org/10.1007/b97277)。第5.4節支撐事件對，第6.3–6.4節處理群集與標記，第7.2–7.6節處理本附錄的強度、概似、時間變換和模擬；全文需訂閱或館藏權限。
-- Ogata, Y.（1999），[Seismicity Analysis through Point-process Modeling: A Review](https://doi.org/10.1007/s000240050275)。附錄A整理地震點過程的概似、診斷與模擬，可與一般教材對照；出版社全文可能需訂閱。
-- Reinhart, A.（2018），[A Review of Self-Exciting Spatio-Temporal Point Processes and Their Applications](https://doi.org/10.1214/17-STS629)；[免費作者預印本](https://arxiv.org/abs/1708.02647)。第2–3節說明分支表示、估計與殘差工具，適合作為教材與應用之間的橋梁。
-- Jalilian, A.（2019），[ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data](https://doi.org/10.18637/jss.v088.c01)，[免費全文](https://www.jstatsoft.org/article/view/v088c01)。對照時間核、空間核及研究區邊界的具體定義。
+- Gallager（2011），[Poisson Processes](https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/mit6_262s11_chap02/)。免費講義。先讀等待時間與計數的關係。
+- Reinhart（2018），[自激發時空點過程綜述](https://doi.org/10.1214/17-STS629)。[免費作者稿](https://arxiv.org/abs/1708.02647)。串起估計、分支與殘差。
+- Daley 與 Vere-Jones（2003），[點過程理論，卷一](https://doi.org/10.1007/b97277)。需館藏或訂閱。回查事件對、標記與時間變換。
+- Ogata（1999），[地震點過程建模綜述](https://doi.org/10.1007/s000240050275)。全文可能需訂閱。對照地震概似與模擬。
+- Jalilian（2019），[ETAS R 套件](https://doi.org/10.18637/jss.v088.c01)。免費全文。核對兩區域與歷史事件用語。
+- Naylor 等（2023），[ETAS.inlabru 貝氏建模](https://doi.org/10.3389/fams.2023.1126759)。免費全文。比較參數不確定性與事件波動。
+- Biondini 等（2023），[EEPAS 在義大利的應用](https://doi.org/10.1093/gji/ggad123)。[免費機構版本](https://www.earth-prints.org/handle/2122/17084)。把記號對回義大利實驗。
+- Savran 等（2022），[pyCSEP 工具介紹](https://doi.org/10.21105/joss.03658)。免費全文。連結預報格式與統計檢驗。

@@ -1,0 +1,42 @@
+{
+  "historical_only": true,
+  "superseded_reason": "Main-agent touch/hover media-query repair regenerated all 12 diagrams. Original receipt retained below; current checks are at parent checks directory.",
+  "archived_at_utc": "2026-09-13T11:27:00.482837+00:00",
+  "original_receipt": [
+    {
+      "file": "book/_static/diagrams/standalone/d02_regions_s_r.html",
+      "sha256": "bb2e7c8f9cd5dc897246511c165c011d8ae062b637e41df42654d52cc46f73ae",
+      "checked_at_utc": "2026-09-13T11:01:00.922023+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d03_timeline_windows.html",
+      "sha256": "9a58c916abc37f2f60b0bf38db8bb1747fec89cbdc0695477541c116abf94c88",
+      "checked_at_utc": "2026-09-13T11:01:00.922023+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d03_thresholds.html",
+      "sha256": "ef97fc071310969b0361f68280b94f6955e719744235d666a09d61c7aaffbb50",
+      "checked_at_utc": "2026-09-13T11:01:00.922023+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d04_density_to_counts.html",
+      "sha256": "d6d2b7fda11834bb74132effab0451c7a241f02bfa53825a3026477b7aee58ed",
+      "checked_at_utc": "2026-09-13T11:01:00.922023+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d06_quantile_pvalue.html",
+      "sha256": "fe3c353ebe81785a4abcf8858810ca7ee4ea388ad0ad43b3a304bd52b3731115",
+      "checked_at_utc": "2026-09-13T11:01:00.922023+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    }
+  ]
+}

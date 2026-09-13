@@ -1,25 +1,28 @@
 format: jb-book
 root: 00_intro
 parts:
-  - caption: 第一部：地震統計與預報
+  - caption: 第一部：一份地震預報實驗，從資料到檢驗
     chapters:
-      - file: 09_forecasting_intro
-      - file: foundation_catalog
-      - file: foundation_randomness
-      - file: 10_point_process
-      - file: 11_catalog_completeness_b
-      - file: 12_clustering_laws
-      - file: foundation_inference
-      - file: 13_etas_structure
-      - file: 14_etas_estimation
-      - file: 15_psi_phenomenon
-      - file: 16_eepas_ppe
-      - file: 17_testing_consistency
-      - file: 18_testing_comparison
+      - file: 01_forecast_question
+      - file: 02_reading_horus
+      - file: 03_experiment_spec
+      - file: 04_poisson_and_sup
+      - file: 05_likelihood_estimation
+      - file: 06_simulation_tests_scores
+      - file: 07_gr_bvalue
+      - file: 08_completeness
+      - file: 09_ppe_forecast
+      - file: 10_clustering_laws
+      - file: 11_conditional_intensity
+      - file: 12_etas_structure
+      - file: 13_etas_italy_forecast
+      - file: 14_psi_precursory_scale
+      - file: 15_eepas_italy_forecast
+      - file: 16_test_number
+      - file: 17_test_space_magnitude
+      - file: 18_test_comparison
       - file: 19_ensembles
-      - file: 20_recurrence_models
-      - file: 21_psha
-      - file: 22_operational_systems
+      - file: 20_beyond_forecast
   - caption: 第二部：台灣地球物理觀測
     chapters:
       - file: 01_overview

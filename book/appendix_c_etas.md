@@ -1,18 +1,18 @@
 # 附錄 C：ETAS 的分支、概似與推論
 
-本附錄接續 {doc}`13_etas_structure` 與 {doc}`14_etas_estimation`。需要機率密度、期望、概似與基本矩陣微分；涉及機率生成函數的段落會先定義符號。正文先解釋各個結果的直覺，這裡集中列出推導與適用條件。
+本附錄接續 {doc}`12_etas_structure` 與 {doc}`13_etas_italy_forecast`。需要機率密度、期望、概似與基本矩陣微分；涉及機率生成函數的段落會先定義符號。正文先解釋各個結果的直覺，這裡集中列出推導與適用條件。
 
 ## C.1 正規化與分支比
 
-使用 {eq}`eq:etas-intensity`，時間、空間及新事件規模密度都正規化時，規模 $m$ 的事件有平均 $\kappa(m)=Ae^{\alpha(m-m_0)}$ 個直接後代。無上界 GR 下，
+使用第 12 章的 ETAS 強度，時間、空間及新事件規模密度都正規化時，規模 $m$ 的事件有平均 $\kappa(m)=Ke^{\alpha(m-m_0)}$ 個直接後代。無上界 GR 下，
 
 $$\begin{aligned}
 n&=\int_{m_0}^{\infty}\kappa(m)s(m)\,dm\\
- &=A\beta\int_0^{\infty}e^{-(\beta-\alpha)u}\,du
- =\frac{A\beta}{\beta-\alpha},\qquad \alpha<\beta.
+ &=K\beta\int_0^{\infty}e^{-(\beta-\alpha)u}\,du
+ =\frac{K\beta}{\beta-\alpha},\qquad \alpha<\beta.
 \end{aligned}$$
 
-這給出正文 {eq}`eq:branching-ratio` 的有限均值條件。$\alpha\ge\beta$ 時平均直接後代數無限，不能使用有限均值的平穩分支公式；它不同於「有限歷史上的每一項條件率都無限」。
+這給出第 12 章分支比公式的有限均值條件。$\alpha\ge\beta$ 時平均直接後代數無限，不能使用有限均值的平穩分支公式；它不同於「有限歷史上的每一項條件率都無限」。
 
 若 $\Delta=M_{\max}-m_0>0$，截斷規模密度為
 
@@ -20,7 +20,7 @@ $$s_T(m)=\frac{\beta e^{-\beta(m-m_0)}}{1-e^{-\beta\Delta}},\qquad m_0\le m\le M
 
 因此
 
-$$n_T=\frac{A\beta}{1-e^{-\beta\Delta}}
+$$n_T=\frac{K\beta}{1-e^{-\beta\Delta}}
 \begin{cases}
 \dfrac{1-e^{-(\beta-\alpha)\Delta}}{\beta-\alpha},&\alpha\ne\beta,\\
 \Delta,&\alpha=\beta.
@@ -30,7 +30,7 @@ $$n_T=\frac{A\beta}{1-e^{-\beta\Delta}}
 
 ### 改變輸入門檻並不是單純刪除資料
 
-若假設同一個直接觸發機制可向下延伸，將門檻降低 $d>0$，規模尾端依 GR 增加 $e^{\beta d}$ 倍，而親代產能相對新門檻需再調整 $e^{-\alpha d}$。在未截斷、相同形狀的外推假設下，$A'=Ae^{(\beta-\alpha)d}$，從而 $n'=ne^{(\beta-\alpha)d}$。
+若假設同一個直接觸發機制可向下延伸，將門檻降低 $d>0$，規模尾端依 GR 增加 $e^{\beta d}$ 倍，而親代產能相對新門檻需再調整 $e^{-\alpha d}$。在未截斷、相同形狀的外推假設下，$K'=Ke^{(\beta-\alpha)d}$，從而 $n'=ne^{(\beta-\alpha)d}$。
 
 這是指定模型外推，不是對任意重估 ETAS 的恆等式。若只是把小事件從觀測目錄刪掉，未觀測中間世代可能改變有效觸發核；固定上限時也須重新計算規模正規化。因此不能說 $\alpha=\beta$ 時分支比在所有門檻設定下都不變。
 
@@ -50,18 +50,18 @@ $n>1$ 時不存在這個正背景、有限均值的平穩解，但不能據此�
 
 ## C.3 直接後代超過親代的機率
 
-給定始祖規模 $m_1$，其直接後代數 $K\sim\operatorname{Poisson}(\kappa(m_1))$。若每個後代獨立以機率 $\theta$ 超過某個目標規模，其保留數的生成函數為
+給定始祖規模 $m_1$，其直接後代數 $J\sim\operatorname{Poisson}(\kappa(m_1))$。若每個後代獨立以機率 $\theta$ 超過某個目標規模，其保留數的生成函數為
 
-$$\mathbb E[z^{K_>}]=\mathbb E[(1-\theta+\theta z)^K]
+$$\mathbb E[z^{J_>}]=\mathbb E[(1-\theta+\theta z)^J]
 =\exp\{\kappa(m_1)\theta(z-1)\}.$$
 
-因此 $K_>\sim\operatorname{Poisson}(\kappa(m_1)\theta)$，至少一個的機率為 $1-e^{-\kappa(m_1)\theta}$。未截斷 GR 且目標為親代本身時，$\theta=e^{-\beta(m_1-m_0)}$。
+因此 $J_>\sim\operatorname{Poisson}(\kappa(m_1)\theta)$，至少一個的機率為 $1-e^{-\kappa(m_1)\theta}$。未截斷 GR 且目標為親代本身時，$\theta=e^{-\beta(m_1-m_0)}$。
 
 若限定直接後代在時間區間 $[a,b]$、空間區域 $\mathcal R$，再乘上對應核積分 $G$、$F$ 即可。這是單一親代的直接後代計數；多世代的完整目標事件機率不能只乘一個固定的平均放大倍率後套入 Poisson 公式。
 
 ## C.4 平均場家族的生成函數
 
-這一節改用一個較簡單的模型：每個事件的後代數均為 $\operatorname{Poisson}(n)$，與規模無關。它是正文灰色參考線的模型，不是規模依賴產能的 ETAS。
+這一節改用一個較簡單的模型：每個事件的後代數均為 $\operatorname{Poisson}(n)$，與規模無關。它提供容易求解的參考模型，不是規模依賴產能的 ETAS。
 
 令 $H(z)=\mathbb E[z^Y]$，始祖貢獻一個 $z$，每個後代再開啟一個同分布子家族，因此
 
@@ -127,7 +127,7 @@ $$F(R)=1-(1+R^2/\sigma)^{1-q},\qquad\sigma=De^{\gamma(m_i-m_0)}.$$
 
 ## C.7 未知親代與 EM
 
-令潛在標籤 $Z_j=0$ 表示背景，$Z_j=i$ 表示事件 $i$ 的直接後代。將事件 $j$ 附近的率貢獻除以總率，便得到 {eq}`eq:rho-phi`。共同的新事件規模密度在分子分母消去。
+令潛在標籤 $Z_j=0$ 表示背景，$Z_j=i$ 表示事件 $i$ 的直接後代。將事件 $j$ 附近的率貢獻除以總率，便得到第 13 章的親代與背景權重。共同的新事件規模密度在分子分母消去。
 
 給定參數 $\theta^{(k)}$ 的 E 步計算 $\phi_j^{(k)},\rho_{ij}^{(k)}$。M 步最大化期望完整資料對數概似，其結構為
 
@@ -139,7 +139,7 @@ Q(\theta\mid\theta^{(k)})={}&\sum_j\phi_j^{(k)}\ln\mu(z_j)\\
 
 這裡省略可分離的規模項，並假設分支模型的條件歷史處理一致。精確 E 步與使 $Q$ 不下降的 M 步，可保證觀測概似不下降；不保證全域最大。Veen 與 Schoenberg（2008）的 EM 型方法應連同其邊界與計算近似閱讀。
 
-Zhuang et al.（2002）的背景估計包含加權變頻寬平滑。若任意加入頻寬重選、截斷或固定次數迭代，就不能直接引用精確 EM 的單調保證。正文地圖固定外部觸發參數，只示範背景權重更新，並未最大化上述完整 $Q$。
+Zhuang et al.（2002）的背景估計包含加權變頻寬平滑。若任意加入頻寬重選、截斷或固定次數迭代，就不能直接引用精確 EM 的單調保證。第 13 章固定形狀、估計兩個振幅的示範，沒有最大化上述完整 $Q$。
 
 ## C.8 參數補償與資訊矩陣
 
@@ -162,11 +162,11 @@ $$H_{k+1}=H_k+\frac{s_ks_k^{\mathsf T}}{s_k^{\mathsf T}y_k}
 
 只保留一個指定主震 $M_m$，忽略背景與新事件再觸發，並採未截斷 GR，對目標規模 $M\ge m_0$ 積分，可得
 
-$$R(t,M)=A(p-1)c^{p-1}e^{\alpha(M_m-m_0)}e^{-\beta(M-m_0)}(t+c)^{-p}.$$
+$$R(t,M)=K(p-1)c^{p-1}e^{\alpha(M_m-m_0)}e^{-\beta(M-m_0)}(t+c)^{-p}.$$
 
-若 $\alpha=\beta$，便是正文 {eq}`eq:rj-rate` 的形式，且在相同時間單位下
+若 $\alpha=\beta$，便是第 13 章 R–J 單主震率 的形式，且在相同時間單位下
 
-$$10^{a'}=A(p-1)c^{p-1}.$$
+$$10^{a'}=K(p-1)c^{p-1}.$$
 
 這個代數對照要求 $p>1$ 以使用上述正規化核，並只描述指定來源的直接後代。R–J 自身在有限窗可使用其他 $p$；實際對整段序列擬合得到的 $a',p$ 也不必等於直接觸發核的參數。
 
@@ -186,6 +186,16 @@ $$P(N(B)\ge1\mid\mathcal D)=\int P_\theta(N(B)\ge1\mid H_{t_0})p(\theta\mid\math
 
 時間變換診斷使用補償子 $\tau_j=\int_0^{t_j}\lambda^*(u)du$。在正確強度與相應正則條件下，變換間隔應如單位指數分布；同資料估參數、選模型後，原始 KS 標準分布通常不再是正確校準，須透過模擬重估等方式處理。只檢查邊際分布也不足以確認間隔獨立。
 
+## C.11 精簡估計如何影響推論
+
+第 12–13 章將 $b,c,p,D,\gamma,\alpha,q$ 固定，只估背景振幅 $\nu$ 與產能振幅 $K$。固定形狀能減少最佳化維度，也能避免小樣本同時估計許多互相補償的參數。代價是所報不確定性以這些形狀值正確為條件；它沒有納入形狀參數的誤差。
+
+這個教學設計借用 simplETAS 降低估計負擔的想法，並不是該軟體的完整重現。本站全國格點預報另採 Biondini 等（2023）已發表參數快取；章內低維估計是獨立示範，沒有用示範估值替換正式預報。
+
+若固定 $\alpha=\beta$，未截斷 GR 的平均產能發散。必須先指定有限 $M_{\max}$，再用 C.1 的 $n_T$；不能把未截斷公式中的分母設成零後略去。有限的 $n_T$ 也仍須檢查是否小於一，才能使用 C.2 的平穩平均率。
+
+本站快取只積分發報前已知歷史的第一代貢獻，沒有模擬窗內事件的後代。其誤差可能隨預報窗長度、分支比及邊界處理而改變。C.9 的卷積級數說明為何不能把每格乘固定 $1/(1-n)$，就宣稱恢復完整 ETAS 時空預報。
+
 ## 參考資料與延伸閱讀
 
 - Jalilian, A.（2019），[ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data](https://doi.org/10.18637/jss.v088.c01)。[免費全文](https://www.jstatsoft.org/article/view/v088c01)，對照條件歷史、空間積分及估計流程。
@@ -200,4 +210,4 @@ $$P(N(B)\ge1\mid\mathcal D)=\int P_\theta(N(B)\ge1\mid H_{t_0})p(\theta\mid\math
 
 - [Seismicity Analysis through Point-process Modeling: A Review](https://doi.org/10.1007/s000240050275) — Yosihiko Ogata，1999，*Pure and Applied Geophysics*，155:471–507。從條件強度一路連到概似、ETAS 與殘差，適合把本章放回統計地震學的發展脈絡；出版社全文可能需訂閱。
 
-返回 {doc}`13_etas_structure` 或 {doc}`14_etas_estimation`。
+返回 {doc}`12_etas_structure` 或 {doc}`13_etas_italy_forecast`。

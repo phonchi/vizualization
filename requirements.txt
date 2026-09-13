@@ -9,3 +9,5 @@ plotly>=5.20
 folium>=0.16
 matplotlib
 scipy
+pyproj>=3.6
+gdown>=5

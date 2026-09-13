@@ -75,7 +75,7 @@ def sync():
         jupytext.write(notebook, source, fmt="py:percent")
         report.append({"page": source.stem, "restored_output_cells": restored,
                        "code_changed_vs_build": changed, "cells_without_cached_output": missing})
-    target = ROOT / os.environ.get("TEACHING_REPORT_DIR", "reference/notes/rewrite_20260911") / "notebook_sync.json"
+    target = ROOT / os.environ.get("TEACHING_REPORT_DIR", "reference/notes/rewrite_20260913") / "notebook_sync.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n")
     print(json.dumps(report, ensure_ascii=False, indent=2))

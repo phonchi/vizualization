@@ -1,0 +1,62 @@
+[
+  {
+    "diagram": "d01_forecast_pipeline",
+    "passed": true,
+    "options": 5
+  },
+  {
+    "diagram": "d02_regions_s_r",
+    "passed": true,
+    "options": 3
+  },
+  {
+    "diagram": "d03_timeline_windows",
+    "passed": true,
+    "options": 3
+  },
+  {
+    "diagram": "d03_thresholds",
+    "passed": true,
+    "options": 4
+  },
+  {
+    "diagram": "d04_density_to_counts",
+    "passed": true,
+    "options": 4
+  },
+  {
+    "diagram": "d06_quantile_pvalue",
+    "passed": true,
+    "options": 4
+  },
+  {
+    "diagram": "d09_kernel_smoothing",
+    "passed": true,
+    "options": 3
+  },
+  {
+    "diagram": "d12_etas_branching",
+    "passed": true,
+    "options": 3
+  },
+  {
+    "diagram": "d15_eepas_kernels",
+    "passed": true,
+    "options": 3
+  },
+  {
+    "diagram": "d16_csep_tests_flow",
+    "passed": true,
+    "options": 5
+  },
+  {
+    "diagram": "d19_convex_mix",
+    "passed": true,
+    "options": 3
+  },
+  {
+    "diagram": "d20_model_family",
+    "passed": true,
+    "options": 4
+  }
+]

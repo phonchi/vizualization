@@ -1,0 +1,46 @@
+# 新 _toc.yml 草稿（Phase 2 舊檔刪除後正式取代 book/_toc.yml）
+format: jb-book
+root: 00_intro
+parts:
+  - caption: 第一部：一份地震預報實驗，從資料到檢驗
+    chapters:
+      - file: 01_forecast_question
+      - file: 02_reading_horus
+      - file: 03_experiment_spec
+      - file: 04_poisson_and_sup
+      - file: 05_likelihood_estimation
+      - file: 06_simulation_tests_scores
+      - file: 07_gr_bvalue
+      - file: 08_completeness
+      - file: 09_ppe_forecast
+      - file: 10_clustering_laws
+      - file: 11_conditional_intensity
+      - file: 12_etas_structure
+      - file: 13_etas_italy_forecast
+      - file: 14_psi_precursory_scale
+      - file: 15_eepas_italy_forecast
+      - file: 16_test_number
+      - file: 17_test_space_magnitude
+      - file: 18_test_comparison
+      - file: 19_ensembles
+      - file: 20_beyond_forecast
+  - caption: 第二部：台灣地球物理觀測
+    chapters:
+      - file: 01_overview
+      - file: 02_download
+      - file: 03_groundwater
+      - file: 04_geomagnetic
+      - file: 05_seismic
+      - file: 06_gnss
+      - file: 07_case_hualien2024
+      - file: 08_explore_ideas
+      - file: 23_taiwan_outlook
+  - caption: 第三部：技術附錄
+    chapters:
+      - file: appendix_a_point_process
+      - file: appendix_b_catalog
+      - file: appendix_c_etas
+      - file: appendix_d_eepas
+      - file: appendix_e_testing
+      - file: appendix_f_hazard
+      - file: appendix_g_observations

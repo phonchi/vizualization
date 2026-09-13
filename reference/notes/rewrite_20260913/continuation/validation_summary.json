@@ -1,0 +1,17 @@
+{
+  "validated_utc": "2026-09-13T11:39:12.570476+00:00",
+  "scope": "第一部義大利20章；第二部台灣9章；附錄A-G；首頁",
+  "reading_pages": 37,
+  "paired_notebooks": 28,
+  "executed_pages": 21,
+  "maximum_cell_seconds": 1.5066,
+  "math_checks": 81,
+  "browser_combinations": 148,
+  "diagrams": 12,
+  "touch_keyboard_combinations": 24,
+  "desktop_hover_diagrams": 12,
+  "internal_links_checked": 2650,
+  "build_warnings": 0,
+  "publication": "pending",
+  "claims_limit": "教學版預報，不主張重現原論文全部結果；ETAS第一代近似、資料版本與窗口尾端明列。"
+}
