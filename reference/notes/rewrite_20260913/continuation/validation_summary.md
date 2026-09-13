@@ -10,4 +10,4 @@
 主要證據：`math_checks.json`、`structure_checks.json`、`internal_links.json`、`browser_acceptance.json`、`browser/results.json`、`interactions/`、`reader_review.md`及八張`*-all-pages.png`／`*-all-diagrams.png`。
 所有逐頁完整截圖仍在專案內`browser/`；版控保存總覽與機器可讀結果，避免重複存放數百張中間截圖。
 
-發布後的線上位元組核對另存`publication.json`；本檔不把本機驗收當成已發布。
+發布後的線上位元組核對已完成，41／41檔一致，詳見`publication.json`及`COMPLETION.md`。

@@ -12,6 +12,9 @@
   "desktop_hover_diagrams": 12,
   "internal_links_checked": 2650,
   "build_warnings": 0,
-  "publication": "pending",
-  "claims_limit": "教學版預報，不主張重現原論文全部結果；ETAS第一代近似、資料版本與窗口尾端明列。"
+  "publication": "verified",
+  "claims_limit": "教學版預報，不主張重現原論文全部結果；ETAS第一代近似、資料版本與窗口尾端明列。",
+  "source_commit": "1ce303fd1093ee00b3caf30e051de8bf8e187740",
+  "pages_commit": "6c9a664ddb186fec1641aef19ab04746b1319b78",
+  "published_files_matched": 41
 }

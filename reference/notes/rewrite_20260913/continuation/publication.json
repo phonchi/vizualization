@@ -1,0 +1,301 @@
+{
+  "timestamp_utc": "2026-09-13T11:46:36.104114+00:00",
+  "base": "https://phonchi.github.io/vizualization/",
+  "passed": true,
+  "reading_pages": 37,
+  "results": [
+    {
+      "file": "00_intro.html",
+      "status": 200,
+      "local_sha256": "56f18723b4e486206a2b32fcdf81f6905815fe92c25664d2d10cedf9614a3e6b",
+      "remote_sha256": "56f18723b4e486206a2b32fcdf81f6905815fe92c25664d2d10cedf9614a3e6b",
+      "matched": true
+    },
+    {
+      "file": "01_forecast_question.html",
+      "status": 200,
+      "local_sha256": "bc5361c81d1ae8762d70cb18bb243fe544a839bc1025c7cb1c78c90c6e85acd6",
+      "remote_sha256": "bc5361c81d1ae8762d70cb18bb243fe544a839bc1025c7cb1c78c90c6e85acd6",
+      "matched": true
+    },
+    {
+      "file": "02_reading_horus.html",
+      "status": 200,
+      "local_sha256": "0e18b7d988e49dc997b96c652cccc96d5fef229198ae333d1edba4262ce7cbab",
+      "remote_sha256": "0e18b7d988e49dc997b96c652cccc96d5fef229198ae333d1edba4262ce7cbab",
+      "matched": true
+    },
+    {
+      "file": "03_experiment_spec.html",
+      "status": 200,
+      "local_sha256": "1d28fed4f05d2beeb82b676a0a11ebff88906adf68c10a952b56e12d3f1d7c02",
+      "remote_sha256": "1d28fed4f05d2beeb82b676a0a11ebff88906adf68c10a952b56e12d3f1d7c02",
+      "matched": true
+    },
+    {
+      "file": "04_poisson_and_sup.html",
+      "status": 200,
+      "local_sha256": "8fcee8d2ec44571be3cf38a8fc9217c4e1ae13e21b2e797d7717fead325b860f",
+      "remote_sha256": "8fcee8d2ec44571be3cf38a8fc9217c4e1ae13e21b2e797d7717fead325b860f",
+      "matched": true
+    },
+    {
+      "file": "05_likelihood_estimation.html",
+      "status": 200,
+      "local_sha256": "3e7d1b3a1864003b9c140615ba6f110cedfe24c7cd22297f3dde4665dce2e35e",
+      "remote_sha256": "3e7d1b3a1864003b9c140615ba6f110cedfe24c7cd22297f3dde4665dce2e35e",
+      "matched": true
+    },
+    {
+      "file": "06_simulation_tests_scores.html",
+      "status": 200,
+      "local_sha256": "94fe65965f0c1bf6cb2f9467e69dcb2ca9c206b665ec59b12dd75c31b6798f7a",
+      "remote_sha256": "94fe65965f0c1bf6cb2f9467e69dcb2ca9c206b665ec59b12dd75c31b6798f7a",
+      "matched": true
+    },
+    {
+      "file": "07_gr_bvalue.html",
+      "status": 200,
+      "local_sha256": "c3b9f181d0c007374ad8953e0c140014c3ac558c3d6bcdb6c75aab20e6794060",
+      "remote_sha256": "c3b9f181d0c007374ad8953e0c140014c3ac558c3d6bcdb6c75aab20e6794060",
+      "matched": true
+    },
+    {
+      "file": "08_completeness.html",
+      "status": 200,
+      "local_sha256": "544b00ce16df75ba55c4bcac087edfec700c16e5f9da82ed80f71ab4651b51f6",
+      "remote_sha256": "544b00ce16df75ba55c4bcac087edfec700c16e5f9da82ed80f71ab4651b51f6",
+      "matched": true
+    },
+    {
+      "file": "09_ppe_forecast.html",
+      "status": 200,
+      "local_sha256": "deeb09a6ce594dc1e136a3f62245a3fa64397ee41c4ad67638c3c580bd24c861",
+      "remote_sha256": "deeb09a6ce594dc1e136a3f62245a3fa64397ee41c4ad67638c3c580bd24c861",
+      "matched": true
+    },
+    {
+      "file": "10_clustering_laws.html",
+      "status": 200,
+      "local_sha256": "9340b8a1ee3df2341be088a301cbf0c2c6faab1320b0020b13a29b01ffc4407e",
+      "remote_sha256": "9340b8a1ee3df2341be088a301cbf0c2c6faab1320b0020b13a29b01ffc4407e",
+      "matched": true
+    },
+    {
+      "file": "11_conditional_intensity.html",
+      "status": 200,
+      "local_sha256": "f447d592592941333636e7c2d4c0b245433a2d684b9faac2fa66cefdac2d6cd7",
+      "remote_sha256": "f447d592592941333636e7c2d4c0b245433a2d684b9faac2fa66cefdac2d6cd7",
+      "matched": true
+    },
+    {
+      "file": "12_etas_structure.html",
+      "status": 200,
+      "local_sha256": "3772ab177c981932d37d5c8ea907eb1034d1f31d8573c4e00058b0f80798ad92",
+      "remote_sha256": "3772ab177c981932d37d5c8ea907eb1034d1f31d8573c4e00058b0f80798ad92",
+      "matched": true
+    },
+    {
+      "file": "13_etas_italy_forecast.html",
+      "status": 200,
+      "local_sha256": "fc3910aa39b37350b642302aef39e907a3618c0f589e22d3913468bd18826997",
+      "remote_sha256": "fc3910aa39b37350b642302aef39e907a3618c0f589e22d3913468bd18826997",
+      "matched": true
+    },
+    {
+      "file": "14_psi_precursory_scale.html",
+      "status": 200,
+      "local_sha256": "05c966c125a17f8228318ae27bce16e661820c86d0760afea0a5e2c34861dbca",
+      "remote_sha256": "05c966c125a17f8228318ae27bce16e661820c86d0760afea0a5e2c34861dbca",
+      "matched": true
+    },
+    {
+      "file": "15_eepas_italy_forecast.html",
+      "status": 200,
+      "local_sha256": "b5baec18c0776c8c0856eb23d3d091f1837bef0e721184815415497556c2dfa2",
+      "remote_sha256": "b5baec18c0776c8c0856eb23d3d091f1837bef0e721184815415497556c2dfa2",
+      "matched": true
+    },
+    {
+      "file": "16_test_number.html",
+      "status": 200,
+      "local_sha256": "65385ca378f9ec9c5fc1723fcbbb7dc4a8242bea85777ba09f09be66c88fde31",
+      "remote_sha256": "65385ca378f9ec9c5fc1723fcbbb7dc4a8242bea85777ba09f09be66c88fde31",
+      "matched": true
+    },
+    {
+      "file": "17_test_space_magnitude.html",
+      "status": 200,
+      "local_sha256": "5048c9920bb4f37ecf87599ba18e8e365c4e20e62a85f9c619feef29c5cc43e3",
+      "remote_sha256": "5048c9920bb4f37ecf87599ba18e8e365c4e20e62a85f9c619feef29c5cc43e3",
+      "matched": true
+    },
+    {
+      "file": "18_test_comparison.html",
+      "status": 200,
+      "local_sha256": "648e1ba6341c4797df98bd15ce335ee9abf85fac669fe3957edef71be63400dc",
+      "remote_sha256": "648e1ba6341c4797df98bd15ce335ee9abf85fac669fe3957edef71be63400dc",
+      "matched": true
+    },
+    {
+      "file": "19_ensembles.html",
+      "status": 200,
+      "local_sha256": "cca417f834f6aa1ad1b14349bc07be48046900a2cb7e4add6b7a4c384a2b1941",
+      "remote_sha256": "cca417f834f6aa1ad1b14349bc07be48046900a2cb7e4add6b7a4c384a2b1941",
+      "matched": true
+    },
+    {
+      "file": "20_beyond_forecast.html",
+      "status": 200,
+      "local_sha256": "a6167f21861fdad15ea671387f73c9e6b21a79ca4f7f33aaae657fd02d4972e7",
+      "remote_sha256": "a6167f21861fdad15ea671387f73c9e6b21a79ca4f7f33aaae657fd02d4972e7",
+      "matched": true
+    },
+    {
+      "file": "01_overview.html",
+      "status": 200,
+      "local_sha256": "850dc45f4219e0e60894c61983c816cd7e4441a3777fcb26a524ad59f75a5043",
+      "remote_sha256": "850dc45f4219e0e60894c61983c816cd7e4441a3777fcb26a524ad59f75a5043",
+      "matched": true
+    },
+    {
+      "file": "02_download.html",
+      "status": 200,
+      "local_sha256": "66be135760cf5789840c5d23f33ec2235fbc31dccec06a98b76c76c5bcf3c3ae",
+      "remote_sha256": "66be135760cf5789840c5d23f33ec2235fbc31dccec06a98b76c76c5bcf3c3ae",
+      "matched": true
+    },
+    {
+      "file": "03_groundwater.html",
+      "status": 200,
+      "local_sha256": "0a9a681f89b2d18ce939ac669238619adcc9d961f9f54c68fd7846a3bb4cfc22",
+      "remote_sha256": "0a9a681f89b2d18ce939ac669238619adcc9d961f9f54c68fd7846a3bb4cfc22",
+      "matched": true
+    },
+    {
+      "file": "04_geomagnetic.html",
+      "status": 200,
+      "local_sha256": "96b35e92b6392d22bb6a1bbcb477a823ca5b0b27b056783de065cdbd6560dc7d",
+      "remote_sha256": "96b35e92b6392d22bb6a1bbcb477a823ca5b0b27b056783de065cdbd6560dc7d",
+      "matched": true
+    },
+    {
+      "file": "05_seismic.html",
+      "status": 200,
+      "local_sha256": "1bf5c3fadad58ecbd709a04f91428c78e92168d00b8ade3218be3a65893cd707",
+      "remote_sha256": "1bf5c3fadad58ecbd709a04f91428c78e92168d00b8ade3218be3a65893cd707",
+      "matched": true
+    },
+    {
+      "file": "06_gnss.html",
+      "status": 200,
+      "local_sha256": "cad5cf0a16512ae6f81ef8b35e91479285518a820b22f631c4598334c282dd63",
+      "remote_sha256": "cad5cf0a16512ae6f81ef8b35e91479285518a820b22f631c4598334c282dd63",
+      "matched": true
+    },
+    {
+      "file": "07_case_hualien2024.html",
+      "status": 200,
+      "local_sha256": "7c8cba58d893e7334eea08f35f7c655266ad5fa62d41d33dc90961799b3f44c4",
+      "remote_sha256": "7c8cba58d893e7334eea08f35f7c655266ad5fa62d41d33dc90961799b3f44c4",
+      "matched": true
+    },
+    {
+      "file": "08_explore_ideas.html",
+      "status": 200,
+      "local_sha256": "d824f36d5c7679b29af006f5eb071e0d6433f67378fa1760a73f9e6de64c4776",
+      "remote_sha256": "d824f36d5c7679b29af006f5eb071e0d6433f67378fa1760a73f9e6de64c4776",
+      "matched": true
+    },
+    {
+      "file": "23_taiwan_outlook.html",
+      "status": 200,
+      "local_sha256": "db94aaaba38a102b2162717ff242669b643727bef3e2def7affb31581f1a19f2",
+      "remote_sha256": "db94aaaba38a102b2162717ff242669b643727bef3e2def7affb31581f1a19f2",
+      "matched": true
+    },
+    {
+      "file": "appendix_a_point_process.html",
+      "status": 200,
+      "local_sha256": "8887fbc3ca5e4745853bd9a8898d8fa1800c5d1dbab4c3a2f1d411d394a3a45c",
+      "remote_sha256": "8887fbc3ca5e4745853bd9a8898d8fa1800c5d1dbab4c3a2f1d411d394a3a45c",
+      "matched": true
+    },
+    {
+      "file": "appendix_b_catalog.html",
+      "status": 200,
+      "local_sha256": "469b862ed2e44473ad8ae8a8024ad52a292ebb79f33b5304d72b2649533b03b1",
+      "remote_sha256": "469b862ed2e44473ad8ae8a8024ad52a292ebb79f33b5304d72b2649533b03b1",
+      "matched": true
+    },
+    {
+      "file": "appendix_c_etas.html",
+      "status": 200,
+      "local_sha256": "01b461e04281423d242ef541a6c92551fb8e8c5b233634298459bdba0b90f3c8",
+      "remote_sha256": "01b461e04281423d242ef541a6c92551fb8e8c5b233634298459bdba0b90f3c8",
+      "matched": true
+    },
+    {
+      "file": "appendix_d_eepas.html",
+      "status": 200,
+      "local_sha256": "a31cb46b436b9e89e6cfc36f0126d1aa630c6db356c3d3ca5e6cc0b5eb063ad6",
+      "remote_sha256": "a31cb46b436b9e89e6cfc36f0126d1aa630c6db356c3d3ca5e6cc0b5eb063ad6",
+      "matched": true
+    },
+    {
+      "file": "appendix_e_testing.html",
+      "status": 200,
+      "local_sha256": "6f2ac96393081b4ee10ef134d8a956af6fddcffa26419b73fd403a27c316c687",
+      "remote_sha256": "6f2ac96393081b4ee10ef134d8a956af6fddcffa26419b73fd403a27c316c687",
+      "matched": true
+    },
+    {
+      "file": "appendix_f_hazard.html",
+      "status": 200,
+      "local_sha256": "f913522b8f80b29b13a909af97e8be7da6b57987466ad504379c12f94afcd8b6",
+      "remote_sha256": "f913522b8f80b29b13a909af97e8be7da6b57987466ad504379c12f94afcd8b6",
+      "matched": true
+    },
+    {
+      "file": "appendix_g_observations.html",
+      "status": 200,
+      "local_sha256": "8809d25629ba783126532d95be5ff35622d5819ac69721448327bbae3855e7c8",
+      "remote_sha256": "8809d25629ba783126532d95be5ff35622d5819ac69721448327bbae3855e7c8",
+      "matched": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "local_sha256": "b574d8c2a33b236af63f579dee4015938fc04c088da4af4c7328d39550ad2d18",
+      "remote_sha256": "b574d8c2a33b236af63f579dee4015938fc04c088da4af4c7328d39550ad2d18",
+      "matched": true
+    },
+    {
+      "file": "_static/teaching.css",
+      "status": 200,
+      "local_sha256": "ab329bdfda6a43f340317f4f7c2b7e1a47748fd1f2d465d812dc10093c724686",
+      "remote_sha256": "ab329bdfda6a43f340317f4f7c2b7e1a47748fd1f2d465d812dc10093c724686",
+      "matched": true
+    },
+    {
+      "file": "_static/teaching_theme.js",
+      "status": 200,
+      "local_sha256": "c62197ee0d8b2de54bffe60fb359a766749e12b3bcdd658226cd124285219622",
+      "remote_sha256": "c62197ee0d8b2de54bffe60fb359a766749e12b3bcdd658226cd124285219622",
+      "matched": true
+    },
+    {
+      "file": "_static/reading/biondini2023_fig8.png",
+      "status": 200,
+      "local_sha256": "3c58d134f1712e97620b2c5d6b8bcb62814adc587c67847b52ca5748becd4e3a",
+      "remote_sha256": "3c58d134f1712e97620b2c5d6b8bcb62814adc587c67847b52ca5748becd4e3a",
+      "matched": true
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "matched": 41
+    }
+  ]
+}
