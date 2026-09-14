@@ -75,3 +75,32 @@ html:has(.museum-shell) .bd-main .bd-content .bd-article-container .bd-article{w
 .museum-shell .museum-home-hero .museum-home-links a{color:#cfe6df;text-decoration:none}
 .museum-shell .museum-home-hero .museum-home-links a.museum-enter{color:#0b363d}
 @media(max-width:767px){html:has(.museum-shell) .bd-main .bd-content .bd-article-container .bd-article{padding:0 0 50px}}
+
+/* Keep the book's chapter navigation visible while reading on desktop. */
+@media(min-width:960px){
+  html:has(.museum-shell) .bd-sidebar-primary{
+    display:flex!important;position:sticky;top:76px;align-self:flex-start;
+    width:260px;flex:0 0 260px;height:calc(100dvh - 76px);max-height:calc(100dvh - 76px);
+    padding:22px 16px 28px 20px;overflow-y:auto;overscroll-behavior:contain;
+    background:var(--tc-paper);border-right:1px solid var(--tc-rule);
+    font-family:var(--tc-font-body);scrollbar-width:thin;
+  }
+  html:has(.museum-shell) .bd-sidebar-primary .sidebar-primary-item:has(.logo),
+  html:has(.museum-shell) .bd-sidebar-primary .sidebar-primary-item:has(.search-button-field){display:none}
+  html:has(.museum-shell) .bd-sidebar-primary .bd-links{padding:0}
+  html:has(.museum-shell) .bd-sidebar-primary .caption{font-size:13px;line-height:1.7;color:var(--tc-accent);margin:24px 0 10px;font-weight:750}
+  html:has(.museum-shell) .bd-sidebar-primary .bd-sidenav a{font-size:14px;line-height:1.7;padding:8px 10px;color:var(--tc-muted);border-radius:3px;text-decoration:none}
+  html:has(.museum-shell) .bd-sidebar-primary .bd-sidenav a:hover{color:var(--tc-ink);background:var(--tc-accent-tint)}
+  html:has(.museum-shell) .bd-sidebar-primary .bd-sidenav a.current{color:var(--tc-accent);background:var(--tc-accent-tint);font-weight:750}
+  .museum-actions [data-museum-menu]{display:none}
+  html:has(.museum-shell) .bd-content{padding:0 24px;gap:20px}
+  html:has(.museum-shell) .bd-sidebar-secondary{width:160px;flex-basis:160px}
+}
+@media(min-width:960px) and (max-width:1279px){
+  html:has(.museum-shell) .bd-sidebar-secondary{display:none!important}
+  .museum-home-hero{grid-template-columns:1fr;padding:36px 30px}
+  .museum-home-hero h1{font-size:48px!important}
+  .museum-home-copy{padding-bottom:0}.museum-atlas svg{height:360px}
+}
+@media(min-width:1280px){.museum-home-hero{padding:40px 30px;column-gap:24px}.museum-home-hero h1{font-size:clamp(42px,3.6vw,64px)!important}}
+@media print{html:has(.museum-shell) .bd-sidebar-primary{display:none!important}}

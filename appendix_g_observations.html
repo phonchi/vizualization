@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
-    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=2e5e75c1" />
     <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_g_observations';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="_static/teaching_theme.js?v=e63afbaf"></script>
-    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/museum.js?v=8e96e9ae"></script>
     <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -590,7 +590,9 @@ cm/hPa。若採理想化線性反應的約定</p>
 <h2>G.5 RINEX、座標轉換與地表位移<a class="headerlink" href="#g-5-rinex" title="Link to this heading">#</a></h2>
 <p>RINEX 依版本定義標頭、觀測量與曆元格式。以教材中的 RINEX 2 檔名
 <code class="docutils literal notranslate"><span class="pre">hual0930.24o.gz</span></code> 為例，它包含站碼、年積日與年份等資訊；年積日必須
-按該年是否閏年解讀。標頭中的 <code class="docutils literal notranslate"><span class="pre">APPROX</span> <span class="pre">POSITION</span> <span class="pre">XYZ</span></code> 是地心直角
+按該年是否閏年解讀；本例為 2024-04-02。此檔頭明列 GPS 時間、
+30 秒間隔；曆元解析須保留秒數，不能把每分鐘的 00 與 30 秒合併。
+標頭中的 <code class="docutils literal notranslate"><span class="pre">APPROX</span> <span class="pre">POSITION</span> <span class="pre">XYZ</span></code> 是地心直角
 近似座標，不是整天各曆元的精密位置。</p>
 <section class="museum-section section-theory" id="id3">
 <h3>從地心直角座標到大地座標<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>

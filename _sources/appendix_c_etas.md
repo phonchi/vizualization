@@ -121,7 +121,9 @@ $\kappa(m_i)G_iF_i$ 是沿實際歷史對單個來源累積的窗內貢獻；整
 
 空間核若以來源為圓心，半徑 $R$ 的圓內積分為
 
-$$F(R)=1-(1+R^2/\sigma)^{1-q},\qquad\sigma=De^{\gamma(m_i-m_0)}.$$
+$$F(R)=1-(1+R^2/\sigma)^{1-q},\qquad\sigma=D^2e^{\gamma(m_i-m_0)}.$$
+
+此式的 $\sigma$ 是面積尺度，單位為 km²；$D$ 沿用第 12 章的公里單位。
 
 若區域相對來源是星形、每條射線自 0 到 $R(\varphi)$ 都在區域內，可再平均方位角得到 $F$。任意多邊形或區外來源可能有多段進出邊界，不能只放一個 $R(\varphi)$；須將每段徑向積分相加，或採其他可靠的區域積分法。核在 $\sigma>0$ 時原點有限，不需宣稱 Jacobian 消除了不存在的奇異點。
 
@@ -143,7 +145,7 @@ Zhuang et al.（2002）的背景估計包含加權變頻寬平滑。若任意加
 
 ## C.8 參數補償與資訊矩陣
 
-先考慮一個可分離的簡化模型：$\ell(\eta)=\sum_i\ell_i(u_i)$，$u_i=\eta_1+\eta_2\Delta m_i$。例如已知配對的空間核，可用 $\eta_1=\ln D$、$\eta_2=\gamma$。令 $w_i=-\mathbb E[\partial^2\ell_i/\partial u_i^2]>0$、$W=\sum_iw_i$，則
+先考慮一個可分離的簡化模型：$\ell(\eta)=\sum_i\ell_i(u_i)$，$u_i=\eta_1+\eta_2\Delta m_i$。例如已知配對的空間核，固定以公里表示 $D$，可用 $\eta_1=2\ln D$、$\eta_2=\gamma$，使 $u_i$ 表示面積尺度 $D^2e^{\gamma\Delta m_i}$ 的對數。令 $w_i=-\mathbb E[\partial^2\ell_i/\partial u_i^2]>0$、$W=\sum_iw_i$，則
 
 $$I=\begin{pmatrix}\sum_iw_i&\sum_iw_i\Delta m_i\\
 \sum_iw_i\Delta m_i&\sum_iw_i\Delta m_i^2\end{pmatrix},\qquad

@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
-    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=2e5e75c1" />
     <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_b_catalog';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="_static/teaching_theme.js?v=e63afbaf"></script>
-    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/museum.js?v=8e96e9ae"></script>
     <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -756,8 +756,10 @@ Bootstrap 也須配合資料相依性。
 多世代觸發與漏測可能讓此假設失效。</p>
 <p>Hessian 是目標函數的二階導數矩陣。
 用它估區間時，最優點須適合局部二次近似。
-矩陣非正定時，區間可能無法辨認。
-對負變異數取絕對值沒有統計依據。</p>
+最大化對數概似時，以負 Hessian 作觀測資訊矩陣，再用其反矩陣近似共變異數。
+這個資訊矩陣須正定；等價地，內部最大點的對數概似 Hessian 應負定。
+若最佳化的是負對數概似，才直接使用其正定 Hessian。
+資訊矩陣奇異或非正定時，不能直接套用上述區間近似；對負變異數取絕對值沒有統計依據。</p>
 </section>
 <section class="museum-section section-theory" id="b-8">
 <h2>B.8 空間核的尺度與正規化<a class="headerlink" href="#b-8" title="Link to this heading">#</a></h2>

@@ -5,7 +5,16 @@
     const slot=shell.querySelector('[data-museum-theme-slot]');
     const theme=document.querySelector('button.theme-switch-button');
     if(slot&&theme){slot.appendChild(theme);theme.setAttribute('aria-label','切換深淺主題');theme.title='切換深淺主題';}
+    const sidebar=document.querySelector('.bd-sidebar-primary');
+    const current=sidebar?.querySelector('a.current')||[...sidebar?.querySelectorAll('.bd-sidenav a')||[]].find(a=>new URL(a.href,location.href).pathname===location.pathname);
+    if(current){
+      current.setAttribute('aria-current','page');current.classList.add('current');
+      const revealCurrent=()=>{if(matchMedia('(min-width:960px)').matches){const a=current.getBoundingClientRect(),b=sidebar.getBoundingClientRect();sidebar.scrollTop+=a.top-b.top-sidebar.clientHeight/3;}};
+      requestAnimationFrame(revealCurrent);
+      matchMedia('(min-width:960px)').addEventListener('change',revealCurrent);
+    }
     const dialog=shell.querySelector('.museum-menu');
+    matchMedia('(min-width:960px)').addEventListener('change',e=>{if(e.matches&&dialog.open)dialog.close();});
     shell.querySelector('[data-museum-menu]').addEventListener('click',()=>dialog.showModal());
     shell.querySelector('[data-museum-close]').addEventListener('click',()=>dialog.close());
     dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});

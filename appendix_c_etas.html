@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
-    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=2e5e75c1" />
     <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_c_etas';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="_static/teaching_theme.js?v=e63afbaf"></script>
-    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/museum.js?v=8e96e9ae"></script>
     <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -535,7 +535,8 @@ P_&gt;=1-\frac{w}{1-\theta}.\]</div>
 <p><span class="math notranslate nohighlight">\(\kappa(m_i)G_iF_i\)</span> 是沿實際歷史對單個來源累積的窗內貢獻；整個補償子通常是依歷史變動的隨機量，不能無條件稱為預報起點已知的未來期望數。</p>
 <p>空間核若以來源為圓心，半徑 <span class="math notranslate nohighlight">\(R\)</span> 的圓內積分為</p>
 <div class="math notranslate nohighlight">
-\[F(R)=1-(1+R^2/\sigma)^{1-q},\qquad\sigma=De^{\gamma(m_i-m_0)}.\]</div>
+\[F(R)=1-(1+R^2/\sigma)^{1-q},\qquad\sigma=D^2e^{\gamma(m_i-m_0)}.\]</div>
+<p>此式的 <span class="math notranslate nohighlight">\(\sigma\)</span> 是面積尺度，單位為 km²；<span class="math notranslate nohighlight">\(D\)</span> 沿用第 12 章的公里單位。</p>
 <p>若區域相對來源是星形、每條射線自 0 到 <span class="math notranslate nohighlight">\(R(\varphi)\)</span> 都在區域內，可再平均方位角得到 <span class="math notranslate nohighlight">\(F\)</span>。任意多邊形或區外來源可能有多段進出邊界，不能只放一個 <span class="math notranslate nohighlight">\(R(\varphi)\)</span>；須將每段徑向積分相加，或採其他可靠的區域積分法。核在 <span class="math notranslate nohighlight">\(\sigma&gt;0\)</span> 時原點有限，不需宣稱 Jacobian 消除了不存在的奇異點。</p>
 </section>
 <section class="museum-section section-theory" id="c-7-em">
@@ -553,7 +554,7 @@ Q(\theta\mid\theta^{(k)})={}&amp;\sum_j\phi_j^{(k)}\ln\mu(z_j)\\
 </section>
 <section class="museum-section section-theory" id="c-8">
 <h2>C.8 參數補償與資訊矩陣<a class="headerlink" href="#c-8" title="Link to this heading">#</a></h2>
-<p>先考慮一個可分離的簡化模型：<span class="math notranslate nohighlight">\(\ell(\eta)=\sum_i\ell_i(u_i)\)</span>，<span class="math notranslate nohighlight">\(u_i=\eta_1+\eta_2\Delta m_i\)</span>。例如已知配對的空間核，可用 <span class="math notranslate nohighlight">\(\eta_1=\ln D\)</span>、<span class="math notranslate nohighlight">\(\eta_2=\gamma\)</span>。令 <span class="math notranslate nohighlight">\(w_i=-\mathbb E[\partial^2\ell_i/\partial u_i^2]&gt;0\)</span>、<span class="math notranslate nohighlight">\(W=\sum_iw_i\)</span>，則</p>
+<p>先考慮一個可分離的簡化模型：<span class="math notranslate nohighlight">\(\ell(\eta)=\sum_i\ell_i(u_i)\)</span>，<span class="math notranslate nohighlight">\(u_i=\eta_1+\eta_2\Delta m_i\)</span>。例如已知配對的空間核，固定以公里表示 <span class="math notranslate nohighlight">\(D\)</span>，可用 <span class="math notranslate nohighlight">\(\eta_1=2\ln D\)</span>、<span class="math notranslate nohighlight">\(\eta_2=\gamma\)</span>，使 <span class="math notranslate nohighlight">\(u_i\)</span> 表示面積尺度 <span class="math notranslate nohighlight">\(D^2e^{\gamma\Delta m_i}\)</span> 的對數。令 <span class="math notranslate nohighlight">\(w_i=-\mathbb E[\partial^2\ell_i/\partial u_i^2]&gt;0\)</span>、<span class="math notranslate nohighlight">\(W=\sum_iw_i\)</span>，則</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}I=\begin{pmatrix}\sum_iw_i&amp;\sum_iw_i\Delta m_i\\
 \sum_iw_i\Delta m_i&amp;\sum_iw_i\Delta m_i^2\end{pmatrix},\qquad

@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
-    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=2e5e75c1" />
     <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '02_reading_horus';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="_static/teaching_theme.js?v=e63afbaf"></script>
-    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/museum.js?v=8e96e9ae"></script>
     <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -565,11 +565,15 @@
 不同規模在同一顆地震上會差零點幾個單位，直接混用會把資料弄髒。</p>
 <p><strong>均一化</strong>（homogenization）就是把各種來源的規模，用經驗關係換算成同一種 Mw。
 HORUS 的作者做了這件事，並附上每一筆的不確定度 sigMw。
-全目錄 sigMw 的中位數是 0.2，換句話說，規模的第二位小數沒有意義。</p>
+全目錄 sigMw 的中位數是 0.2。
+顯示兩位小數，不代表單筆規模已精確到 0.01。
+取整後仍保留原始值與不確定度，供門檻判定與資料追查。</p>
 <p>因此 Biondini 等人（2023）把所有規模取整到 0.1，公式是</p>
 <div class="math notranslate nohighlight">
 \[m_{b} = \frac{\lfloor 10\,m_{\rm raw} + 0.5 \rfloor}{10}.\]</div>
-<p><strong>取整規模</strong>（binned magnitude, <span class="math notranslate nohighlight">\(m_b\)</span>）是本站往後所有計算用的規模。
+<p><strong>取整規模</strong>（binned magnitude, <span class="math notranslate nohighlight">\(m_b\)</span>）用於義大利標準預報實驗的
+輸入／目標事件判定與規模分箱。原始 Mw 仍保留，供取整邊界與量測不確定度等診斷。
+第二部的臺灣資料另依各章指定的規模尺度與處理方式。
 取整有一個常被忽略的後果：門檻的位置會移動。
 原始 Mw 4.95 取整後變成 5.0，所以「取整後 <span class="math notranslate nohighlight">\(\ge 5.0\)</span>」等於「原始 <span class="math notranslate nohighlight">\(\ge 4.95\)</span>」。
 同理，名目門檻 2.5 對應原始 2.45。第 3 章談門檻時會直接沿用這兩個數字。</p>
@@ -667,8 +671,10 @@ if (outputEl) {{
                         })                };            </script> </div></div></div>
 </div>
 <p>兩個尖峰值得停下來看。深度剛好 10.0 km 的有幾萬筆，剛好 0.0 km 的也有一萬多筆。
-這通常是定位程序給的<strong>固定深度</strong>（fixed depth）。資料不夠決定深度時，
-程式就填一個預設值。這種欄位值是假的，只能當「淺層」讀，不能拿來算深度分布。
+大量重複值可能與定位時採用<strong>固定深度</strong>（fixed depth）有關。
+資料不夠決定深度時，定位程序會先指定一個值。
+僅靠 0 或 10 km，還不能逐筆判定是否固定，也不能認定真實震源必然淺。
+解讀深度分布前，須回查定位品質與固定深度標記。
 另有一筆深度是 −0.2 km，代表震源在海平面以上，那是火山區的地震。</p>
 <p>Biondini 等人（2023）只保留深度 <span class="math notranslate nohighlight">\(\le 40\)</span> km 的地震。這是一次<strong>截斷</strong>
 （truncation）：超出範圍的資料整筆不用。被截掉的地震多在國界外的海域下方，
