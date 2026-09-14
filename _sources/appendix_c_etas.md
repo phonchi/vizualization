@@ -192,11 +192,29 @@ $$P(N(B)\ge1\mid\mathcal D)=\int P_\theta(N(B)\ge1\mid H_{t_0})p(\theta\mid\math
 
 這個教學設計借用 simplETAS 降低估計負擔的想法，並不是該軟體的完整重現。本站全國格點預報另採 Biondini 等（2023）已發表參數快取；章內低維估計是獨立示範，沒有用示範估值替換正式預報。
 
+### simplETAS 原作與本站示範的對照
+
+Mancini 與 Marzocchi（2023線上發表，2024卷期）以可移植的精簡基準為目標。下表使用其本文第2–3頁的設定；原文空間參數 $D$ 是面積量，本站Biondini寫法則用長度 $D$ 再平方，不能直接比較同名數字。
+
+| 項目 | simplETAS 原作 | 固定理由／本站差別 |
+|---|---|---|
+| GR 與產能斜率 | $b=1,\ \alpha=\beta=\ln10$ | 原作以自相似、Båth律及相關估計研究為動機；本站 $b=1.084,\alpha=1.12$，未施加兩者相等 |
+| Omori 時間 | $p=1.15,\ c=0.005$ 天 | 原作選經驗範圍內的代表 $p$，並考量 $c$ 受早期漏測影響；本站 $p=1.042,c=0.004$ 天 |
+| 空間尾端 | $q=1.5$ | 原作以遠場約 $r^{-3}$ 的衰減作物理動機；本站同取1.5，但不表示核在所有尺度都等同應力場 |
+| 空間尺度 | $\gamma=1.5,\ D=1$ km² | 原作降低參數互相補償，選代表尺度並參考定位誤差；本站 $\gamma=0.45,D=1.04$ km，核尺度為 $D^2e^{\gamma(m_i-m_0)}$ |
+| 背景空間分布 | 採 MPS19 空間密度 | 原作要與長期危害模型一致；本站採均勻參考背景 |
+| 自由振幅 | 背景總率 $\nu$ 與正規化產能 $A$ | 本站 $\nu$ 縮放由資料算出的背景，$K$ 乘未正規化Omori核；參數名與單位須換算 |
+| 資料與預報 | 50年 $M\ge3.95$、深度至30 km資料估計，另有暖機與空間延伸 | 本站第13章示範為1990–2011、取整 $M\ge4.0$、深度至40 km、100 km限距；正式快取另採名目2.5來源與第一代近似 |
+
+選代表值能降低估計維度，卻不能消除模型誤差。原作包含回溯的長期目錄重現及其他時間尺度的預報檢查；各項比較是否樣本外，須分別核對估計與測試期間。本站借用這個可檢驗的精簡思路，沒有聲稱重現原作預報。原作 $\alpha=\beta$ 的選擇也不能解除本附錄C.1的無上界積分問題；討論有限均值分支比時仍須明定規模截斷。
+
 若固定 $\alpha=\beta$，未截斷 GR 的平均產能發散。必須先指定有限 $M_{\max}$，再用 C.1 的 $n_T$；不能把未截斷公式中的分母設成零後略去。有限的 $n_T$ 也仍須檢查是否小於一，才能使用 C.2 的平穩平均率。
 
 本站快取只積分發報前已知歷史的第一代貢獻，沒有模擬窗內事件的後代。其誤差可能隨預報窗長度、分支比及邊界處理而改變。C.9 的卷積級數說明為何不能把每格乘固定 $1/(1-n)$，就宣稱恢復完整 ETAS 時空預報。
 
 ## 參考資料與延伸閱讀
+
+- Mancini 與 Marzocchi（2023線上發表；2024），[SimplETAS: A Benchmark Earthquake Forecasting Model Suitable for Operational Purposes and Seismic Hazard Analysis](https://doi.org/10.1785/0220230199)。第39–40頁解釋固定形狀的取捨；[作者公開程式](https://github.com/smancini2/simplETAS)可對照實作。
 
 - Jalilian, A.（2019），[ETAS: An R Package for Fitting the Space-Time ETAS Model to Earthquake Data](https://doi.org/10.18637/jss.v088.c01)。[免費全文](https://www.jstatsoft.org/article/view/v088c01)，對照條件歷史、空間積分及估計流程。
 - Reinhart, A.（2018），[A Review of Self-Exciting Spatio-Temporal Point Processes and Their Applications](https://doi.org/10.1214/17-STS629)。[免費作者預印本](https://arxiv.org/abs/1708.02647)，串起分支表示、邊界、估計與診斷。

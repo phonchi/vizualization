@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,7 +65,9 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_f_hazard';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <script src="_static/teaching_theme.js?v=e63afbaf"></script>
+    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="附錄 G：觀測資料、處理與幾何細節" href="appendix_g_observations.html" />
@@ -414,7 +418,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-4">F.4 截斷規模分布與事件率</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-5">F.5 全機率積分與反聚合</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-6-poisson">F.6 何時可以用 Poisson 零事件公式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-7">F.7 載入與釋放：自我修正和應力釋放模型</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">讓每次釋放量由標記決定</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">為什麼它不是一般的更新過程？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">參考資料與延伸閱讀</a></li>
 </ul>
             </nav>
         </div>
@@ -426,10 +435,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="f">
-<h1>附錄 F：複發時間與地震危害積分<a class="headerlink" href="#f" title="Link to this heading">#</a></h1>
-<p>本附錄需要條件機率、積分與基本隨機過程。對應 <a class="reference internal" href="20_beyond_forecast.html"><span class="doc">預報之後</span></a>。本附錄接收複發模型與 PSHA 的完整說明；先從等待時間讀起，再將事件率轉成場址地動。</p>
-<section id="f-0">
+  <div class="museum-shell museum-appendix" data-page="appendix_f_hazard"><header class="museum-topbar"><a class="museum-brand" href="00_intro.html"><b>地震統計與預報</b><span>從義大利實驗到臺灣觀測</span></a><nav class="museum-primary" aria-label="主要入口"><a href="01_forecast_question.html">義大利實驗</a><a href="01_overview.html">臺灣觀測</a><a href="appendix_a_point_process.html">技術附錄</a></nav><div class="museum-actions"><a class="museum-search" href="search.html" aria-label="搜尋全書"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg></a><span data-museum-theme-slot></span><button type="button" data-museum-menu aria-label="開啟章節目錄">目錄 <span aria-hidden="true">☰</span></button></div><div class="museum-reading-progress" aria-hidden="true"></div></header><dialog class="museum-menu" aria-label="全書章節目錄"><div class="museum-menu-heading"><h2>選一條路，開始探索。</h2><button type="button" data-museum-close aria-label="關閉目錄">關閉 ×</button></div><div class="museum-menu-columns"><section><h3>第一部：一份地震預報實驗，從資料到檢驗</h3><a  href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a><a  href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a><a  href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a><a  href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a><a  href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a><a  href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a><a  href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a><a  href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a><a  href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a><a  href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a><a  href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a><a  href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a><a  href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a><a  href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a><a  href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a><a  href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a><a  href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a><a  href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a><a  href="19_ensembles.html">19. 把模型加起來：凸組合</a><a  href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></section><section><h3>第二部：台灣地球物理觀測</h3><a  href="01_overview.html">21. 臺灣地球物理觀測總覽</a><a  href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a><a  href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a><a  href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a><a  href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a><a  href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a><a  href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a><a  href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a><a  href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></section><section><h3>第三部：技術附錄</h3><a  href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a><a  href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a><a  href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a><a  href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a><a  href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a><a aria-current=page href="#">附錄 F：複發時間與地震危害積分</a><a  href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></section></div></dialog><section class="tex2jax_ignore mathjax_ignore" id="f">
+<header class="museum-chapter-header" data-chapter-kind="appendix"><div class="museum-chapter-label"><span>技術附錄</span><b>F</b></div><div class="museum-chapter-heading"><p class="museum-kicker">深入推導，回查方法</p><h1>附錄 F：複發時間與地震危害積分</h1><div class="museum-chapter-lead"><p>本附錄需要條件機率、積分與基本隨機過程。對應 <a class="reference internal" href="20_beyond_forecast.html"><span class="doc">預報之後</span></a>。本附錄接收複發模型與 PSHA 的完整說明；先從等待時間讀起，再將事件率轉成場址地動。</p></div></div><nav aria-label="本章起點" class="museum-waypoints"><a href="#f-0"><span>01</span>F.0 從斷層等待時間走向場址地動</a><a href="#f-1"><span>02</span>F.1 存活函數、危害率與右設限</a><a href="#f-2-weibull"><span>03</span>F.2 Weibull 與對數常態</a></nav></header>
+
+<section class="museum-section section-comparison" id="f-0">
 <h2>F.0 從斷層等待時間走向場址地動<a class="headerlink" href="#f-0" title="Link to this heading">#</a></h2>
 <p>一段斷層已經多久沒有大破裂，可能是下一次破裂的資訊。
 要使用它，先定義哪些破裂算同一類事件，以及古地震年代的不確定性。
@@ -469,10 +478,10 @@ Weibull、對數常態與 BPT 則讓等待時間影響未來。</p>
 <p>BPT 是 Brownian passage time，從平均累積並帶布朗擾動的載入量出發。
 首次到達門檻就記一次破裂。用平均間隔 <span class="math notranslate nohighlight">\(T_r\)</span> 與變異係數 <span class="math notranslate nohighlight">\(c_v\)</span> 表示，</p>
 <div class="math notranslate nohighlight" id="equation-eq-bpt-pdf">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eq-bpt-pdf" title="Link to this equation">#</a></span>\[f(t)=\sqrt{\frac{T_r}{2\pi c_v^2t^3}}
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-bpt-pdf" title="Link to this equation">#</a></span>\[f(t)=\sqrt{\frac{T_r}{2\pi c_v^2t^3}}
 \exp\left[-\frac{(t-T_r)^2}{2c_v^2T_rt}\right],\qquad t&gt;0.\]</div>
 <p>這是理想化機制，不是直接量得全部斷層應力。F.3 推導其首達時間。</p>
-<section id="psha">
+<section class="museum-section section-theory" id="psha">
 <h3>PSHA 的五個步驟<a class="headerlink" href="#psha" title="Link to this heading">#</a></h3>
 <p>機率式地震危害分析（probabilistic seismic hazard analysis，PSHA）
 將各種地震情境按發生率加權，回答場址地動超過某門檻的頻率。
@@ -489,18 +498,18 @@ Weibull、對數常態與 BPT 則讓等待時間影響未來。</p>
 給出地動的中央趨勢和散布。一次近處中型地震與一次遠處大震都可能造成明顯地動。
 因此不能只挑最大規模，也不能只挑最常見情境。</p>
 <div class="math notranslate nohighlight" id="equation-eq-psha">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eq-psha" title="Link to this equation">#</a></span>\[\lambda_{IM}(x)=\sum_s\nu_s\int\!\!\int
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-psha" title="Link to this equation">#</a></span>\[\lambda_{IM}(x)=\sum_s\nu_s\int\!\!\int
 P(IM&gt;x\mid m,r,s)f_{M,R\mid s}(m,r)\,dm\,dr.\]</div>
 <p>內部積分是一次事件的超越機率，乘年事件率後得到年超越率。
 危害曲線逐一改變 <span class="math notranslate nohighlight">\(x\)</span>；不同門檻可能由不同規模和距離主導。
 F.5 的反聚合把各種情境的貢獻拆開。它解釋危害來源，不預言下一場地震。</p>
 <p>使用上下截斷的 GR 密度時，正規化形式為</p>
 <div class="math notranslate nohighlight" id="equation-eq-trunc-gr">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq-trunc-gr" title="Link to this equation">#</a></span>\[f_M(m)=\frac{\beta e^{-\beta(m-m_{\min})}}
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-trunc-gr" title="Link to this equation">#</a></span>\[f_M(m)=\frac{\beta e^{-\beta(m-m_{\min})}}
 {1-e^{-\beta(m_{\max}-m_{\min})}},\quad m_{\min}\le m&lt;m_{\max}.\]</div>
 <p>在獨立 Poisson 超越事件的假設下，期間 <span class="math notranslate nohighlight">\(T\)</span> 的超越機率為</p>
 <div class="math notranslate nohighlight" id="equation-eq-nhpp">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eq-nhpp" title="Link to this equation">#</a></span>\[P(N_x(T)\ge1)=1-\exp\left[-\int_0^T\nu_x(t)\,dt\right].\]</div>
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-nhpp" title="Link to this equation">#</a></span>\[P(N_x(T)\ge1)=1-\exp\left[-\int_0^T\nu_x(t)\,dt\right].\]</div>
 <p>固定年率下的回歸期 <span class="math notranslate nohighlight">\(1/\nu_x\)</span> 是平均時間尺度，不是等間隔日程。
 例如年超越率 0.002 對應 500 年回歸期，50 年超越機率為 <span class="math notranslate nohighlight">\(1-e^{-0.1}\)</span>，約 9.5%。
 未來群集會改變事件率時，需先處理未來歷史；F.6 說明為何不能直接套用零事件公式。</p>
@@ -508,7 +517,7 @@ F.5 的反聚合把各種情境的貢獻拆開。它解釋危害來源，不預�
 本附錄的數值只是教學例子；工程設計須使用對應場址、法規和正式模型。</p>
 </section>
 </section>
-<section id="f-1">
+<section class="museum-section section-theory" id="f-1">
 <h2>F.1 存活函數、危害率與右設限<a class="headerlink" href="#f-1" title="Link to this heading">#</a></h2>
 <p>由 <span class="math notranslate nohighlight">\(S=1-F\)</span>、<span class="math notranslate nohighlight">\(S'=-f\)</span>，</p>
 <div class="math notranslate nohighlight">
@@ -524,7 +533,7 @@ S(t)=\exp\left[-\int_0^th(u)\,du\right].\]</div>
 \[L(\theta)=\prod_{i=1}^nf_\theta(x_i)\,S_\theta(c).\]</div>
 <p>最後一項是右設限資訊。若一開始已知年齡為 <span class="math notranslate nohighlight">\(a\)</span>，第一個等待 <span class="math notranslate nohighlight">\(u\)</span> 的密度為 <span class="math notranslate nohighlight">\(f(a+u)/S(a)\)</span>；若年齡未知，就需要另外指定抽樣或先驗條件。平穩更新過程在任意時刻看到的剩餘等待，通常不等於原始間隔分布，這是長間隔較容易被抽到的結果。</p>
 </section>
-<section id="f-2-weibull">
+<section class="museum-section section-theory" id="f-2-weibull">
 <h2>F.2 Weibull 與對數常態<a class="headerlink" href="#f-2-weibull" title="Link to this heading">#</a></h2>
 <p>Weibull 尺度 <span class="math notranslate nohighlight">\(\theta&gt;0\)</span>、形狀 <span class="math notranslate nohighlight">\(k&gt;0\)</span>：</p>
 <div class="math notranslate nohighlight">
@@ -537,7 +546,7 @@ h(t)=\frac{k}{\theta}(t/\theta)^{k-1},\quad
 <p>對數常態若 <span class="math notranslate nohighlight">\(\ln T\sim N(\mu,\sigma^2)\)</span>，則 <span class="math notranslate nohighlight">\(\mathbb E[T]=e^{\mu+\sigma^2/2}\)</span>、<span class="math notranslate nohighlight">\(c_v^2=e^{\sigma^2}-1\)</span>。已知平均 <span class="math notranslate nohighlight">\(T_r\)</span> 和 <span class="math notranslate nohighlight">\(c_v\)</span> 時，<span class="math notranslate nohighlight">\(\sigma^2=\ln(1+c_v^2)\)</span>、<span class="math notranslate nohighlight">\(\mu=\ln T_r-\sigma^2/2\)</span>。</p>
 <p>其危害函數是 <span class="math notranslate nohighlight">\(\phi(z)/[t\sigma\bar\Phi(z)]\)</span>，<span class="math notranslate nohighlight">\(z=(\ln t-\mu)/\sigma\)</span>。由 Mills 比 <span class="math notranslate nohighlight">\(\phi(z)/\bar\Phi(z)\sim z\)</span>，長時間 <span class="math notranslate nohighlight">\(h(t)\sim(\ln t-\mu)/(\sigma^2t)\to0\)</span>。這是尾部條件化的結果，不是已觀測到的斷層卸載機制。</p>
 </section>
-<section id="f-3-bpt">
+<section class="museum-section section-theory" id="f-3-bpt">
 <h2>F.3 BPT 的首達時間<a class="headerlink" href="#f-3-bpt" title="Link to this heading">#</a></h2>
 <p>令載入 <span class="math notranslate nohighlight">\(X(t)=\rho t+\sigma W_t\)</span>，<span class="math notranslate nohighlight">\(X(0)=0\)</span>，門檻 <span class="math notranslate nohighlight">\(a&gt;0\)</span>，<span class="math notranslate nohighlight">\(\rho,\sigma&gt;0\)</span>；首次到達時間 <span class="math notranslate nohighlight">\(\tau=\inf\{t:X(t)=a\}\)</span>。無漂移情形，由反射原理</p>
 <div class="math notranslate nohighlight">
@@ -555,16 +564,16 @@ f(t)&amp;=\frac{a}{\sigma\sqrt{2\pi t^3}}
 <div class="math notranslate nohighlight">
 \[\mathbb E[e^{-s\tau}]=\exp\left[\frac{a}{\sigma^2}
 \left(\rho-\sqrt{\rho^2+2\sigma^2s}\right)\right].\]</div>
-<p>在 <span class="math notranslate nohighlight">\(s=0\)</span> 微分得 <span class="math notranslate nohighlight">\(\mathbb E[\tau]=a/\rho\)</span>、<span class="math notranslate nohighlight">\(\mathrm{Var}(\tau)=a\sigma^2/\rho^3\)</span>。設 <span class="math notranslate nohighlight">\(T_r=a/\rho\)</span>、<span class="math notranslate nohighlight">\(c_v^2=\sigma^2/(a\rho)\)</span>，即得到 <a class="reference internal" href="#equation-eq-bpt-pdf">(6)</a>。</p>
+<p>在 <span class="math notranslate nohighlight">\(s=0\)</span> 微分得 <span class="math notranslate nohighlight">\(\mathbb E[\tau]=a/\rho\)</span>、<span class="math notranslate nohighlight">\(\mathrm{Var}(\tau)=a\sigma^2/\rho^3\)</span>。設 <span class="math notranslate nohighlight">\(T_r=a/\rho\)</span>、<span class="math notranslate nohighlight">\(c_v^2=\sigma^2/(a\rho)\)</span>，即得到 <a class="reference internal" href="#equation-eq-bpt-pdf">(7)</a>。</p>
 <p>常用 inverse Gaussian 形狀尺度參數為平均 <span class="math notranslate nohighlight">\(T_r\)</span>、形狀 <span class="math notranslate nohighlight">\(T_r/c_v^2\)</span>。SciPy 的 <code class="docutils literal notranslate"><span class="pre">invgauss(mu,</span> <span class="pre">scale)</span></code> 則用 <code class="docutils literal notranslate"><span class="pre">mu=c_v**2</span></code>、<code class="docutils literal notranslate"><span class="pre">scale=T_r/c_v**2</span></code>；這是參數化對照，不代表名稱相同的參數可跨軟體直接複製。</p>
 <p>由密度可寫 <span class="math notranslate nohighlight">\(\ln f(t)=\mathrm{const}-(3/2)\ln t-t/(2c_v^2T_r)-T_r/(2c_v^2t)\)</span>。尾部 <span class="math notranslate nohighlight">\(S(t)\sim2c_v^2T_rf(t)\)</span>，故</p>
 <div class="math notranslate nohighlight">
 \[\lim_{t\to\infty}h(t)=\frac1{2c_v^2T_r}.\]</div>
 <p>離散步長模擬布朗路徑可能錯過步間首達，須做步長收斂或使用適當橋接修正；離散路徑只能提供近似。</p>
 </section>
-<section id="f-4">
+<section class="museum-section section-theory" id="f-4">
 <h2>F.4 截斷規模分布與事件率<a class="headerlink" href="#f-4" title="Link to this heading">#</a></h2>
-<p>令 <span class="math notranslate nohighlight">\(d=m_{\max}-m_{\min}&gt;0\)</span>，積分 <span class="math notranslate nohighlight">\(e^{-\beta(m-m_{\min})}\)</span> 後正規化，即得 <a class="reference internal" href="#equation-eq-trunc-gr">(8)</a>。其累積分布為</p>
+<p>令 <span class="math notranslate nohighlight">\(d=m_{\max}-m_{\min}&gt;0\)</span>，積分 <span class="math notranslate nohighlight">\(e^{-\beta(m-m_{\min})}\)</span> 後正規化，即得 <a class="reference internal" href="#equation-eq-trunc-gr">(9)</a>。其累積分布為</p>
 <div class="math notranslate nohighlight">
 \[F_M(m)=\frac{1-e^{-\beta(m-m_{\min})}}{1-e^{-\beta d}}.\]</div>
 <p>取 <span class="math notranslate nohighlight">\(U\sim\mathrm{Unif}(0,1)\)</span>，反解得</p>
@@ -575,32 +584,56 @@ f(t)&amp;=\frac{a}{\sigma\sqrt{2\pi t^3}}
 \[\mathbb E[M]=m_{\min}+\frac1\beta-\frac{d}{e^{\beta d}-1}.\]</div>
 <p><span class="math notranslate nohighlight">\(d\to\infty\)</span> 時回到 <span class="math notranslate nohighlight">\(m_{\min}+1/\beta\)</span>。如果原發生率是門檻 <span class="math notranslate nohighlight">\(m_a\)</span> 以上事件的年率 <span class="math notranslate nohighlight">\(\nu_a\)</span>，改成較高門檻 <span class="math notranslate nohighlight">\(m_b\)</span> 時，應乘以原分布的 <span class="math notranslate nohighlight">\(P(M\ge m_b)\)</span>；不能只重設密度而保持率不變。</p>
 </section>
-<section id="f-5">
+<section class="museum-section section-theory" id="f-5">
 <h2>F.5 全機率積分與反聚合<a class="headerlink" href="#f-5" title="Link to this heading">#</a></h2>
 <p>給定震源 <span class="math notranslate nohighlight">\(s\)</span> 的規模距離聯合密度 <span class="math notranslate nohighlight">\(f_{M,R\mid s}\)</span>，一次事件超越門檻機率為</p>
 <div class="math notranslate nohighlight">
 \[q_s(x)=\int\!\!\int P(IM&gt;x\mid m,r,s)f_{M,R\mid s}(m,r)\,dm\,dr.\]</div>
-<p>乘年率並加總即為 <a class="reference internal" href="#equation-eq-psha">(7)</a>。對數常態地動假設下，可再展開標準化殘差 <span class="math notranslate nohighlight">\(\varepsilon\)</span>：</p>
+<p>乘年率並加總即為 <a class="reference internal" href="#equation-eq-psha">(8)</a>。對數常態地動假設下，可再展開標準化殘差 <span class="math notranslate nohighlight">\(\varepsilon\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{IM}(x)=\sum_s\nu_s\int\!\!\int\!\!\int_{\varepsilon_0(x,m,r,s)}^\infty
 \phi(e)f_{M,R\mid s}(m,r)\,de\,dm\,dr,\]</div>
 <p>其中 <span class="math notranslate nohighlight">\(\varepsilon_0=(\ln x-\mu_{\ln IM})/\sigma_{\ln IM}\)</span>。規模距離若相依，保留聯合密度；若截斷殘差分布，須對其重新正規化。</p>
 <p>令 <span class="math notranslate nohighlight">\(c_{jk}(x)\)</span> 是規模距離格對此積分的非負貢獻。若 <span class="math notranslate nohighlight">\(\lambda_{IM}(x)&gt;0\)</span>，反聚合權重 <span class="math notranslate nohighlight">\(w_{jk}=c_{jk}/\lambda_{IM}(x)\)</span> 相加為一。它給超越事件的相對來源，不是未來第一場地震的預報。</p>
 </section>
-<section id="f-6-poisson">
+<section class="museum-section section-theory" id="f-6-poisson">
 <h2>F.6 何時可以用 Poisson 零事件公式<a class="headerlink" href="#f-6-poisson" title="Link to this heading">#</a></h2>
 <p>假設源事件為 Poisson，且給定事件標記後，各次是否超越門檻依指定獨立標記機制產生。獨立 thinning 使超越事件也是 Poisson；多個獨立 Poisson 震源相加仍為 Poisson。</p>
 <p>如果超越率為確定函數 <span class="math notranslate nohighlight">\(\nu_x(t)\)</span>，將時間切成小段，各段零事件機率為 <span class="math notranslate nohighlight">\(1-\nu_x(t_i)\Delta t+o(\Delta t)\)</span>。由獨立增量相乘、取對數並令步長趨零，</p>
 <div class="math notranslate nohighlight">
 \[P(N_x(T)=0)=\exp\left[-\int_0^T\nu_x(t)\,dt\right],\]</div>
-<p>即 <a class="reference internal" href="#equation-eq-nhpp">(9)</a>。對固定率，回歸期是 <span class="math notranslate nohighlight">\(1/\nu_x\)</span>，仍不表示等間隔。</p>
+<p>即 <a class="reference internal" href="#equation-eq-nhpp">(10)</a>。對固定率，回歸期是 <span class="math notranslate nohighlight">\(1/\nu_x\)</span>，仍不表示等間隔。</p>
 <p>若強度為外生隨機過程且條件下為 Poisson（Cox），則是 <span class="math notranslate nohighlight">\(P(N=0)=\mathbb E[e^{-A}]\)</span>，<span class="math notranslate nohighlight">\(A=\int\nu_x(t)dt\)</span>，而不是 <span class="math notranslate nohighlight">\(e^{-\mathbb E[A]}\)</span>。例如等機率選 <span class="math notranslate nohighlight">\(A=0\)</span> 或 <span class="math notranslate nohighlight">\(2\)</span>，均值同為一，零事件機率卻是 <span class="math notranslate nohighlight">\((1+e^{-2})/2\)</span>，不等於 <span class="math notranslate nohighlight">\(e^{-1}\)</span>。</p>
 <p>ETAS 的強度由事件本身改變，不能直接當成外生 Cox 路徑使用這個條件混合公式。發布時應傳遞所有未來歷史，透過相應點過程方法或完整模擬求至少一次超越；若每條模擬還生成地動，須保留模型要求的標記相依性。</p>
 <p>更新過程的下一次破裂可用 F.1 的條件存活公式，但某次未超越地動門檻的破裂仍會重設斷層年齡。故不能直接把更新 hazard 乘超越比例，再不加說明地套非齊次 Poisson 公式。</p>
 </section>
-<section id="id1">
-<h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section class="museum-section section-theory" id="f-7">
+<h2>F.7 載入與釋放：自我修正和應力釋放模型<a class="headerlink" href="#f-7" title="Link to this heading">#</a></h2>
+<p>一段斷層長期承受載入，事件又可能釋放部分累積量。這提供與Hawkes正向觸發不同的建模方向。<strong>自我修正過程</strong>（self-correcting process）的一個簡單形式是</p>
+<div class="math notranslate nohighlight">
+\[\lambda^*(t)=\exp\{a+bt-cN(t^-)\},\qquad b&gt;0,\ c&gt;0.\]</div>
+<p>時間單位固定後，<span class="math notranslate nohighlight">\(a\)</span> 控制參考對數率，<span class="math notranslate nohighlight">\(b\)</span> 控制無事件時的增加速度，<span class="math notranslate nohighlight">\(c\)</span> 控制一次事件的降低幅度。<span class="math notranslate nohighlight">\(N(t^-)\)</span> 是時刻 <span class="math notranslate nohighlight">\(t\)</span> 前的累積事件數；此例無標記，每次事件具有相同降低幅度。式子保持率為正，並非將負的Hawkes核直接加到背景。</p>
+<p>例如取 <span class="math notranslate nohighlight">\(c=\ln2\)</span>，每次事件之後的率乘 <span class="math notranslate nohighlight">\(1/2\)</span>。若 <span class="math notranslate nohighlight">\(b=\ln2/10\)</span>（每天），連續十天無事件，率就乘二。這兩個數字只是公式示意，沒有用義大利地震擬合；它們描述隨機發生率的變化，不代表十天後必然發生事件。</p>
+<section class="museum-section section-theory" id="id1">
+<h3>讓每次釋放量由標記決定<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>應力釋放模型</strong>（stress-release model）用一個隱含狀態表示載入及地震釋放。可考慮</p>
+<div class="math notranslate nohighlight">
+\[X(t^-)=X_0+\rho t-\sum_{t_i&lt;t}\Delta_i,\qquad
+\lambda^*(t)=\lambda_{\rm ref}\exp\{\gamma X(t^-)\},\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\rho&gt;0\)</span> 是載入率，<span class="math notranslate nohighlight">\(\Delta_i&gt;0\)</span> 是第 <span class="math notranslate nohighlight">\(i\)</span> 次釋放量，<span class="math notranslate nohighlight">\(\gamma&gt;0\)</span> 控制狀態對率的影響；需使指數中的量無量綱。若 <span class="math notranslate nohighlight">\(\Delta_i\)</span> 全取同一常數，便回到上面的計數自我修正形式。若 <span class="math notranslate nohighlight">\(\Delta_i\)</span> 依事件規模決定，就須另定規模—釋放關係和標記分布。</p>
+<p><span class="math notranslate nohighlight">\(X\)</span> 是模型狀態，沒有應力觀測與單位校準時，不能把它直接當成已量得的斷層應力。Ogata（1999）以這類模型說明條件強度能表示負向回饋，也指出將真實應力資料引入模型是另一項工作。不同stress-release版本不必使用相同指數連結或釋放律。</p>
+</section>
+<section class="museum-section section-theory" id="id2">
+<h3>為什麼它不是一般的更新過程？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>更新過程在每次指定事件後把年齡設為零，下一次間隔從同一分布重新開始。此處事件後的 <span class="math notranslate nohighlight">\(X\)</span> 通常仍保留過去累積狀態，不會回到同一固定值，所以一般不具有iid等待間隔。只有另加適當重設條件，才能得到相應更新模型。</p>
+<p>同一斷層段的大破裂可以採載入—釋放的負回饋；其周圍餘震可同時具有正向觸發。兩種敘事的事件集合與空間尺度不同，並不必然互相矛盾。實際混合兩種機制時，仍須指定完整強度並檢驗，不能只依物理語言選擇模型。</p>
+<p>附錄A.11並列Poisson、Cox、renewal、Hawkes與self-correcting。這些模型的零事件機率都要依其條件歷史處理；本節的事件後率下降，不會自動使整段事件數服從Poisson。</p>
+</section>
+</section>
+<section class="museum-section" id="id3">
+<h2>參考資料與延伸閱讀<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p>Ogata（1999），<a class="reference external" href="https://doi.org/10.1007/s000240050275">Seismicity Analysis through Point-process Modeling: A Review</a>。刊頁496討論應力狀態與資料，刊頁497–499並列更新、自我修正與Hawkes過程；用來對照不同歷史回饋。</p></li>
 <li><p><a class="reference external" href="https://itl.nist.gov/div898/handbook/eda/section3/eda362.htm">Related Distributions：Hazard Function 與 Survival Function</a> — NIST／SEMATECH，<em>e-Handbook of Statistical Methods</em>（免費）。先看機率密度、存活函數與危害函數的關係，釐清本章「已經等到現在，再發生的瞬時率」與一般發生機率的差別。</p></li>
 <li><p><a class="reference external" href="https://doi.org/10.1785/0120010267">A Brownian model for recurrent earthquakes</a> — Mark V. Matthews、William L. Ellsworth、Paul A. Reasenberg（2002），<em>Bulletin of the Seismological Society of America</em>（全文可能需訂閱；<a class="reference external" href="https://pubs.usgs.gov/publication/70024443">USGS 免費摘要</a>）。BPT 複發模型的核心論文，從帶有布朗擾動的載入過程推到首達時間，銜接本章的物理直覺與長時間危害率。</p></li>
 <li><p><a class="reference external" href="https://doi.org/10.1007/s11600-019-00284-4">Modeling the earthquake occurrence with time-dependent processes: a brief review</a> — Ourania Mangira、Christos Kourouklas、Dimitris Chorozoglou、Aggelos Iliopoulos、Eleftheria Papadimitriou（2019），<em>Acta Geophysica</em>（全文可能需訂閱）。將本章的更新過程、複發分布與應力釋放放回時間相依模型的全貌，閱讀時比較各模型適用的時間尺度、資料與假設。</p></li>
@@ -611,8 +644,7 @@ f(t)&amp;=\frac{a}{\sigma\sqrt{2\pi t^3}}
 </ul>
 </section>
 </section>
-
-    <script type="text/x-thebe-config">
+<script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -630,7 +662,7 @@ f(t)&amp;=\frac{a}{\sigma\sqrt{2\pi t^3}}
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+<script>kernelName = 'python3'</script></div>
 
                 </article>
               
@@ -688,7 +720,12 @@ f(t)&amp;=\frac{a}{\sigma\sqrt{2\pi t^3}}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-4">F.4 截斷規模分布與事件率</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-5">F.5 全機率積分與反聚合</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-6-poisson">F.6 何時可以用 Poisson 零事件公式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-7">F.7 載入與釋放：自我修正和應力釋放模型</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">讓每次釋放量由標記決定</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">為什麼它不是一般的更新過程？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">參考資料與延伸閱讀</a></li>
 </ul>
   </nav></div>
 

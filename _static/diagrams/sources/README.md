@@ -1,3 +1,7 @@
+# 此文件為先前圖版的歷史說明
+
+目前的十四張互動科學展件及重建方式，請讀 [EXHIBITS.md](EXHIBITS.md)。以下文字與舊 radio 圖、舊收據相對應。
+
 # 2026-09-13 十二張教學圖與手機重排
 
 `build_teaching_diagrams.py` 重建十二個嵌入片段及同名的 `../standalone/` 離線預覽。

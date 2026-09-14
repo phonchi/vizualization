@@ -1,0 +1,129 @@
+{
+  "historical_only": true,
+  "superseded_reason": "replaced by fourteen science exhibition widgets",
+  "original_receipt": {
+    "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+    "generator": {
+      "file": "book/_static/diagrams/sources/build_teaching_diagrams.py",
+      "sha256": "b1ef3ae33de6f58e97a03763692dabf2f4c1ab8ac1c714c7db6af08cc1ebd815"
+    },
+    "names": [
+      "d01_forecast_pipeline",
+      "d02_regions_s_r",
+      "d03_thresholds",
+      "d03_timeline_windows",
+      "d04_density_to_counts",
+      "d06_quantile_pvalue",
+      "d09_kernel_smoothing",
+      "d12_etas_branching",
+      "d15_eepas_kernels",
+      "d16_csep_tests_flow",
+      "d19_convex_mix",
+      "d20_model_family"
+    ],
+    "files": [
+      {
+        "file": "book/_static/diagrams/d01_forecast_pipeline.html",
+        "sha256": "22cf49fa54a212da36194d5140cf9a16275ef1b6f45398032f8080b8759dc18e",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d02_regions_s_r.html",
+        "sha256": "3a14bb221007c7cff3334a3a6506fe9933b41c5e591d4fd53699a88e9a2cf92d",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d03_thresholds.html",
+        "sha256": "8d01e389ab4a5071fca6033945e9902eb72f33a49db90c6655e2abe679d33352",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d03_timeline_windows.html",
+        "sha256": "5957b3b5b190414d66ea5c1bd56d5aece1fdabbbe71bccede1ef77a19bdecc87",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d04_density_to_counts.html",
+        "sha256": "a6b46fffa099d471ad5669c23b8c711de95f78dd0ed7a6c81d2637500fcc26b4",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d06_quantile_pvalue.html",
+        "sha256": "2ba58f28ad6123a264b37b2fffda4511f731651b4a638aaaa686fc4517600e74",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d09_kernel_smoothing.html",
+        "sha256": "2070a6cd0de2f759aad6b79034defd3e2bf469eb342f116c60e05d0568b1525a",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d12_etas_branching.html",
+        "sha256": "3f4767451500999d2ce47cb98392cd4bb097140e3ea606da32eac27af0764063",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d15_eepas_kernels.html",
+        "sha256": "c034e59d0475282690e61cc68b8f96c47204f859963fd39128b2a84e6b4d32dd",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d16_csep_tests_flow.html",
+        "sha256": "211a50a604630b83e3f9b942534172a9d85166bdd9b96f2130a8ff62fc037d73",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d19_convex_mix.html",
+        "sha256": "0bb6f16855ce278218a89eedfbf0a333e2ff4a23d48f557317a897d2a50dfae9",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      },
+      {
+        "file": "book/_static/diagrams/d20_model_family.html",
+        "sha256": "058ebd2720b06f5978504c2e687310fadd02e018f559121e6675c9eb6d8a0799",
+        "viewbox_width": 480,
+        "svg_font_size_px": 20,
+        "hover_rule_gated_for_fine_pointer": true,
+        "no_inactive_svg_opacity": true
+      }
+    ],
+    "unique_ids": 112,
+    "svg_per_fragment": 1,
+    "remote_dependencies": 0,
+    "all_self_contained": true,
+    "browser_status": "not run by this agent; main agent is rerunning touch interactions and affected full-book pages",
+    "superseded_static_receipts": "book/_static/diagrams/standalone/checks/history/20260913T112700Z"
+  }
+}

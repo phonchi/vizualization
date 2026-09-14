@@ -1,0 +1,90 @@
+{
+  "historical_only": true,
+  "superseded_reason": "replaced by fourteen science exhibition widgets",
+  "original_receipt": [
+    {
+      "file": "book/_static/diagrams/standalone/d01_forecast_pipeline.html",
+      "sha256": "2aba93bc7d66577b8681d6d4c9a8533e22a8f976d05d8f7765eb4cf6b56f74d9",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d02_regions_s_r.html",
+      "sha256": "94a905cb7105893307042c280f520b30b0e6b77f0a2aa5fe6963f6acf7adca84",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d03_thresholds.html",
+      "sha256": "b619bb2e433452c36832f1bc72a0a82ca22083b638d66523a4240ef8d9147b1e",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d03_timeline_windows.html",
+      "sha256": "32ea254f5985ba74f730ebeae3c3497cd0b683f3c30b06aa132830ba5c601d50",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d04_density_to_counts.html",
+      "sha256": "56a7d200953075a4c53d50b4ac43eca2874eef22bc4e5c99ba2d7b2eb54f7758",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d06_quantile_pvalue.html",
+      "sha256": "3ab36936c49bfec55e685a599493a8177a6dddad056b606ba65844e441b260c0",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d09_kernel_smoothing.html",
+      "sha256": "8d07aed3041b299c6f5f71b494a761f2743b983f6c99a25a87dc1a8632bcde39",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d12_etas_branching.html",
+      "sha256": "9199a3f712e4cd3d8516cdbc601041b0d06413e171d5a426ea8b726dbcf32fcd",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d15_eepas_kernels.html",
+      "sha256": "73d3be60e7c4cacd3f0de4b0e87c03f097436b04e2dd801b0967b6377d043e70",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d16_csep_tests_flow.html",
+      "sha256": "3bfdfe98a3fee753f0582f9a87d09b21952257296886f20f2ffe522400f1471a",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d19_convex_mix.html",
+      "sha256": "9aafbbb6966702fe76ea6d00b5900c71fa9770351b12048ae6a9e2715e48b3e0",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    },
+    {
+      "file": "book/_static/diagrams/standalone/d20_model_family.html",
+      "sha256": "0e085ba49325710bc1f8d450a2fd7f2be7b36329276e44aa1d93535a28e6bc4d",
+      "checked_at_utc": "2026-09-13T11:27:00.482837+00:00",
+      "exit_code": 0,
+      "output": "Summary: 1 file(s) checked, 0 finding(s).\n"
+    }
+  ]
+}

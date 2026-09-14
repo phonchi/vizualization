@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,7 +65,9 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_d_eepas';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <script src="_static/teaching_theme.js?v=e63afbaf"></script>
+    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="附錄 E：預報檢驗與模型組合的推導" href="appendix_e_testing.html" />
@@ -410,7 +414,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-4">D.4 三個正規化核</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-5">D.5 對數常態的三個時間摘要</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-6">D.6 規模權重與有限輸入門檻</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7 空間卷積與時間截斷</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7 空間卷積與時間截斷</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7-1">D.7.1 目標地震收到多少前兆貢獻？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7-2">D.7.2 補到平滑背景，或保留時變形狀？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7-3-eas">D.7.3 EAS：預報主震之後，還可能跟著餘震</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-8">D.8 義大利的三階段擬合</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-9">D.9 發報截止與格箱積分</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
@@ -425,10 +434,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="d-eepas">
-<h1>附錄 D：Ψ 的量測與 EEPAS 的核函數<a class="headerlink" href="#d-eepas" title="Link to this heading">#</a></h1>
-<p>本附錄需要條件機率、簡單線性迴歸與一變數積分。它補足 <a class="reference internal" href="14_psi_precursory_scale.html"><span class="doc">Ψ</span></a>及 <a class="reference internal" href="15_eepas_italy_forecast.html"><span class="doc">EEPAS</span></a>的計算；讀完每節可回到對應主文繼續閱讀。</p>
-<section id="d-1">
+  <div class="museum-shell museum-appendix" data-page="appendix_d_eepas"><header class="museum-topbar"><a class="museum-brand" href="00_intro.html"><b>地震統計與預報</b><span>從義大利實驗到臺灣觀測</span></a><nav class="museum-primary" aria-label="主要入口"><a href="01_forecast_question.html">義大利實驗</a><a href="01_overview.html">臺灣觀測</a><a href="appendix_a_point_process.html">技術附錄</a></nav><div class="museum-actions"><a class="museum-search" href="search.html" aria-label="搜尋全書"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg></a><span data-museum-theme-slot></span><button type="button" data-museum-menu aria-label="開啟章節目錄">目錄 <span aria-hidden="true">☰</span></button></div><div class="museum-reading-progress" aria-hidden="true"></div></header><dialog class="museum-menu" aria-label="全書章節目錄"><div class="museum-menu-heading"><h2>選一條路，開始探索。</h2><button type="button" data-museum-close aria-label="關閉目錄">關閉 ×</button></div><div class="museum-menu-columns"><section><h3>第一部：一份地震預報實驗，從資料到檢驗</h3><a  href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a><a  href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a><a  href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a><a  href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a><a  href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a><a  href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a><a  href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a><a  href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a><a  href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a><a  href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a><a  href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a><a  href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a><a  href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a><a  href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a><a  href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a><a  href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a><a  href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a><a  href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a><a  href="19_ensembles.html">19. 把模型加起來：凸組合</a><a  href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></section><section><h3>第二部：台灣地球物理觀測</h3><a  href="01_overview.html">21. 臺灣地球物理觀測總覽</a><a  href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a><a  href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a><a  href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a><a  href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a><a  href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a><a  href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a><a  href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a><a  href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></section><section><h3>第三部：技術附錄</h3><a  href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a><a  href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a><a  href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a><a aria-current=page href="#">附錄 D：Ψ 的量測與 EEPAS 的核函數</a><a  href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a><a  href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a><a  href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></section></div></dialog><section class="tex2jax_ignore mathjax_ignore" id="d-eepas">
+<header class="museum-chapter-header" data-chapter-kind="appendix"><div class="museum-chapter-label"><span>技術附錄</span><b>D</b></div><div class="museum-chapter-heading"><p class="museum-kicker">深入推導，回查方法</p><h1>附錄 D：Ψ 的量測與 EEPAS 的核函數</h1><div class="museum-chapter-lead"><p>本附錄需要條件機率、簡單線性迴歸與一變數積分。它補足 <a class="reference internal" href="14_psi_precursory_scale.html"><span class="doc">Ψ</span></a>及 <a class="reference internal" href="15_eepas_italy_forecast.html"><span class="doc">EEPAS</span></a>的計算；讀完每節可回到對應主文繼續閱讀。</p></div></div><nav aria-label="本章起點" class="museum-waypoints"><a href="#d-1"><span>01</span>D.1 累積規模異常的性質與限制</a><a href="#d-2"><span>02</span>D.2 測量誤差與回歸方向</a><a href="#d-3"><span>03</span>D.3 為什麼分群前後方向可以不同</a></nav></header>
+
+<section class="museum-section section-theory" id="d-1">
 <h2>D.1 累積規模異常的性質與限制<a class="headerlink" href="#d-1" title="Link to this heading">#</a></h2>
 <p>令 <span class="math notranslate nohighlight">\(q_i=M_i-(m_c-0.1)&gt;0\)</span>，<span class="math notranslate nohighlight">\(A(t)=\sum_{t_s&lt;t_i\le t}q_i\)</span>，<span class="math notranslate nohighlight">\(D=t_f-t_s\)</span>。由第 14 章累積規模異常的定義，<span class="math notranslate nohighlight">\(k=A(t_f)/D\)</span>，故</p>
 <div class="math notranslate nohighlight">
@@ -442,7 +451,7 @@
 <p>因此最小值對應的是帶時間窗長度權重的率差，不是未加權率差最大的切點，也不保證前段平均率在所有切點中最低。若最小值為負，可推出該切點前段低於全窗平均、後段高於全窗平均；這項代數事實本身不是變點檢定。</p>
 <p>在跳躍曲線上，最小值可能位於事件前的左極限。計算時須同時保留事件前、事件後的值，不能只用事件後累積量。更換分析窗會更換 <span class="math notranslate nohighlight">\(k\)</span>；搜尋很多窗後選最小者，也需要以同樣搜尋程序校準。</p>
 </section>
-<section id="d-2">
+<section class="museum-section section-theory" id="d-2">
 <h2>D.2 測量誤差與回歸方向<a class="headerlink" href="#d-2" title="Link to this heading">#</a></h2>
 <p>設 <span class="math notranslate nohighlight">\(X=X^*+\epsilon\)</span>、<span class="math notranslate nohighlight">\(Y=a+bX^*+\delta\)</span>，且 <span class="math notranslate nohighlight">\(X^*,\epsilon,\delta\)</span> 互不相關、誤差均值為零。令 <span class="math notranslate nohighlight">\(v=\mathrm{Var}(X^*)&gt;0\)</span>，則</p>
 <div class="math notranslate nohighlight">
@@ -466,7 +475,7 @@
 <p>帶主震固定截距的回歸，可先做組內去中心化，再使用相同關係。整體模型的 <span class="math notranslate nohighlight">\(R^2\)</span> 包含截距解釋的組間差異，不等於組內相關係數平方。</p>
 <p>reduced major axis 斜率為 <span class="math notranslate nohighlight">\(\mathrm{sign}(S_{XY})\sqrt{S_{YY}/S_{XX}}\)</span>，等於兩方向斜率在原座標下的帶符號幾何平均；它不是在所有誤差模型下都一致的真斜率估計。</p>
 </section>
-<section id="d-3">
+<section class="museum-section section-theory" id="d-3">
 <h2>D.3 為什麼分群前後方向可以不同<a class="headerlink" href="#d-3" title="Link to this heading">#</a></h2>
 <p>令 <span class="math notranslate nohighlight">\(G\)</span> 表示主震群組。全共變異數公式為</p>
 <div class="math notranslate nohighlight">
@@ -475,7 +484,7 @@
 <p>第一項可為負，第二項可為正；混合後接近零，不表示兩層都沒有關係。要比較各主震，可以在組內模型 <span class="math notranslate nohighlight">\(Y_{ij}=a_i+bX_{ij}+e_{ij}\)</span> 中選共同參考 <span class="math notranslate nohighlight">\(X_0\)</span>，以 <span class="math notranslate nohighlight">\(a_i+bX_0\)</span> 比較，而不是讓每組不同的 <span class="math notranslate nohighlight">\(X\)</span> 分布混入組間差異。</p>
 <p>此外 <span class="math notranslate nohighlight">\(\mathrm{Var}(X+Y)=\mathrm{Var}(X)+\mathrm{Var}(Y)+2\mathrm{Cov}(X,Y)\)</span>。負共變異數可降低和的變異數，卻不能無條件保證和對第三變數的 <span class="math notranslate nohighlight">\(R^2\)</span> 必然提升，更不能由此推導物理守恆。</p>
 </section>
-<section id="d-4">
+<section class="museum-section section-theory" id="d-4">
 <h2>D.4 三個正規化核<a class="headerlink" href="#d-4" title="Link to this heading">#</a></h2>
 <p>令 <span class="math notranslate nohighlight">\(\tau=t-t_i&gt;0\)</span>，<span class="math notranslate nohighlight">\(u=\log_{10}\tau\)</span>，<span class="math notranslate nohighlight">\(\mu_{T,i}=a_T+b_Tm_i\)</span>。若 <span class="math notranslate nohighlight">\(U\sim N(\mu_{T,i},\sigma_T^2)\)</span>，因 <span class="math notranslate nohighlight">\(du/d\tau=1/(\tau\ln10)\)</span>，</p>
 <div class="math notranslate nohighlight">
@@ -497,7 +506,7 @@ v_i=\sigma_A^2 10^{b_Am_i}.\]</div>
 A_q=-2\pi v_i\ln(1-q).\]</div>
 <p>因此把面積截距換成 <span class="math notranslate nohighlight">\(\sigma_A\)</span> 之前，需指定面積涵蓋的機率及幾何定義。</p>
 </section>
-<section id="d-5">
+<section class="museum-section section-theory" id="d-5">
 <h2>D.5 對數常態的三個時間摘要<a class="headerlink" href="#d-5" title="Link to this heading">#</a></h2>
 <p>由 <span class="math notranslate nohighlight">\(\tau=e^{U\ln10}\)</span> 及常態動差生成函數，</p>
 <div class="math notranslate nohighlight">
@@ -509,7 +518,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 -\frac{\log_{10}\tau-\mu_T}{\sigma_T^2\tau\ln10}=0,\]</div>
 <p>得 <span class="math notranslate nohighlight">\(\mathrm{mode}(\tau)=10^{\mu_T-\sigma_T^2\ln10}\)</span>。<span class="math notranslate nohighlight">\(\sigma_T&gt;0\)</span> 時眾數小於中位數、小於平均數。當 <span class="math notranslate nohighlight">\(\sigma_T=0.20\)</span>，平均與中位數比約 <span class="math notranslate nohighlight">\(1.112\)</span>；當 <span class="math notranslate nohighlight">\(\sigma_T=0.81\)</span>，約 <span class="math notranslate nohighlight">\(5.69\)</span>。比較文獻的「等待時間」前須先確認使用哪個摘要。</p>
 </section>
-<section id="d-6">
+<section class="museum-section section-theory" id="d-6">
 <h2>D.6 規模權重與有限輸入門檻<a class="headerlink" href="#d-6" title="Link to this heading">#</a></h2>
 <p>以 <span class="math notranslate nohighlight">\(z\)</span> 表示輸入規模，假設輸入長期率密度為 <span class="math notranslate nohighlight">\(C e^{-\beta z}\)</span>，平均事件權重 <span class="math notranslate nohighlight">\(\bar w&gt;0\)</span> 不隨規模變化，且 <span class="math notranslate nohighlight">\(b_M&gt;0\)</span>。採用</p>
 <div class="math notranslate nohighlight">
@@ -537,7 +546,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 \[\Delta(m)=\Phi\left(\frac{m-a_M-b_Mm_0-\beta\sigma_M^2}{\sigma_M}\right).\]</div>
 <p>有限門檻下的長期平均規模率為理想值乘 <span class="math notranslate nohighlight">\(\Delta(m)\)</span>。以 <span class="math notranslate nohighlight">\(1/\Delta(m)\)</span> 補償或使用其他補償版本，都須說明假設；<span class="math notranslate nohighlight">\(\Delta\)</span> 很小時會放大模型誤差。若平均權重隨規模改變，前面的常數 <span class="math notranslate nohighlight">\(\bar w\)</span> 不能照搬。</p>
 </section>
-<section id="d-7">
+<section class="museum-section section-comparison" id="d-7">
 <h2>D.7 空間卷積與時間截斷<a class="headerlink" href="#d-7" title="Link to this heading">#</a></h2>
 <p>若未知主震位置 <span class="math notranslate nohighlight">\(X\sim N(x_i,\sigma_1^2)\)</span>，相對位移 <span class="math notranslate nohighlight">\(E\sim N(0,\sigma_2^2)\)</span> 且獨立，餘震位置 <span class="math notranslate nohighlight">\(Z=X+E\)</span>，其密度為</p>
 <div class="math notranslate nohighlight">
@@ -552,8 +561,154 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 <div class="math notranslate nohighlight">
 \[F_i(T_1-t_i)-F_i(T_0-t_i),\]</div>
 <p>其中 <span class="math notranslate nohighlight">\(F_i(u)=0\)</span> 於 <span class="math notranslate nohighlight">\(u\le0\)</span>。目錄開始前事件的貢獻仍未知，不能只靠這個有限窗積分恢復；需指定過去活動模型或使用文獻的完整度補償方法。</p>
+<section class="museum-section section-comparison" id="d-7-1">
+<h3>D.7.1 目標地震收到多少前兆貢獻？<a class="headerlink" href="#d-7-1" title="Link to this heading">#</a></h3>
+<p><strong>時間完整度</strong>（temporal completeness）衡量可用歷史保留了多少預期前兆貢獻。
+它不是目錄中「有多少事件被偵測」的直接比例。
+單顆事件的 <span class="math notranslate nohighlight">\(F_i\)</span> 只能回答該事件的有限窗積分。
+要問規模 <span class="math notranslate nohighlight">\(m\)</span> 的目標還缺多少，必須把可能的輸入規模一起平均。</p>
+<p>Rhoades 等（2020）§2.3–2.4、式 10–17 以平穩歷史及 GR 規模分布為前提。
+以下用與本書核記號一致的積分寫出同一結構。
+先以共同平均空間因子處理區域活動；空間邊界造成的損失需另外檢查。
+比例的分母須為正，且來源權重與積分都須有限。
+令輸入規模為 <span class="math notranslate nohighlight">\(z\)</span>、長期輸入率密度為 <span class="math notranslate nohighlight">\(r_{\rm in}(z)\)</span>，時間核累積分布為 <span class="math notranslate nohighlight">\(F_z\)</span>。
+以 <span class="math notranslate nohighlight">\(g(m\mid z)\)</span> 表示規模核，並令</p>
+<div class="math notranslate nohighlight">
+\[W(z;m)=\eta(z)g(m\mid z)r_{\rm in}(z),\qquad
+r_{\rm in}(z)\propto10^{-bz}.\]</div>
+<p>共同的規模門檻補償若只依目標 <span class="math notranslate nohighlight">\(m\)</span> 變化，會在下面的比例中消去。
+等權、<span class="math notranslate nohighlight">\(b_M=1\)</span> 時，<span class="math notranslate nohighlight">\(\eta(z)\)</span> 也是常數；若放寬這些條件，就須在分子、分母保留相同權重。</p>
+<p><strong>目錄前置時間</strong>（catalogue lead time）從目錄起點量到目標地震的時刻。
+令目錄起點為 <span class="math notranslate nohighlight">\(t_{\rm cat}\)</span>、目標時刻為 <span class="math notranslate nohighlight">\(t\)</span>，則 <span class="math notranslate nohighlight">\(L_{\rm cat}=t-t_{\rm cat}\)</span>。
+它不是發報到目標的距離，也不是發報到資料截止的間隔。
+Rhoades 等（2020）緒論的定義及 §2.3 式 10–13 都以目錄來源時間來計算前兆貢獻。
+下面改用明確的兩個端點表示其時間積分，避免不同的 <span class="math notranslate nohighlight">\(L\)</span> 記法混用。</p>
+<p><strong>輸入延遲</strong>（input delay）記為 <span class="math notranslate nohighlight">\(d\)</span>，由發報時刻 <span class="math notranslate nohighlight">\(t_f\)</span> 回推資料截止 <span class="math notranslate nohighlight">\(t_f-d\)</span>。
+<strong>歷史時間差</strong>（time lag）記為 <span class="math notranslate nohighlight">\(T_{\rm lag}=t-(t_f-d)\)</span>。
+它從資料截止量到目標，因此窗內的目標越晚，time lag 越長。
+<strong>預報期限</strong>（forecast horizon）是發報到預報窗結束的長度 <span class="math notranslate nohighlight">\(\Delta t\)</span>。
+每個目標距發報的 <span class="math notranslate nohighlight">\(t-t_f\)</span> 位於該期限內；這又是另一個時間量。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>量</p></th>
+<th class="head"><p>兩個端點</p></th>
+<th class="head"><p>本站的意義</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(L_{\rm cat}\)</span></p></td>
+<td><p>目錄起點 → 目標時刻</p></td>
+<td><p>1960 年起的歷史到該目標有多長</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta t\)</span></p></td>
+<td><p>發報時刻 → 預報窗末</p></td>
+<td><p>通常為 91.31 天</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(d\)</span></p></td>
+<td><p>資料截止 → 發報時刻</p></td>
+<td><p>PPE／EEPAS 設 50 天</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(T_{\rm lag}\)</span></p></td>
+<td><p>資料截止 → 目標時刻</p></td>
+<td><p><span class="math notranslate nohighlight">\((t-t_f)+d\)</span>，隨窗內目標改變</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>當 <span class="math notranslate nohighlight">\(L_{\rm cat}\ge T_{\rm lag}\ge0\)</span>，來源時間區間是
+<span class="math notranslate nohighlight">\([t-L_{\rm cat},t-T_{\rm lag}]=[t_{\rm cat},t_f-d]\)</span>。
+對每種輸入規模平均後，預期保留的貢獻為</p>
+<div class="math notranslate nohighlight">
+\[c(T_{\rm lag},L_{\rm cat},m)=\int_{m_0}^{m_u^{\rm in}}W(z;m)
+\left[F_z(L_{\rm cat})-F_z(T_{\rm lag})\right]\,dz.\]</div>
+<p>若 <span class="math notranslate nohighlight">\(L_{\rm cat}&lt;T_{\rm lag}\)</span>，沒有可用歷史，本式改為零而非負積分。
+<span class="math notranslate nohighlight">\(m_u^{\rm in}\)</span> 是此補償模型指定的輸入上限，不可悄悄當成本站輸出箱上限。
+此處 <span class="math notranslate nohighlight">\(c\)</span> 的第二引數是最早來源距目標的時間差；若文獻寫成上限 <span class="math notranslate nohighlight">\(T+L\)</span>，須先換算這個端點。
+只考慮目錄起點截尾、令 <span class="math notranslate nohighlight">\(T_{\rm lag}=0\)</span> 時，原文記為 <span class="math notranslate nohighlight">\(p(L,m)\)</span>。
+這裡寫 <span class="math notranslate nohighlight">\(p_{\rm comp}\)</span>，避免混同 Omori 指數：</p>
+<div class="math notranslate nohighlight">
+\[p_{\rm comp}(L_{\rm cat},m)=\frac{c(0,L_{\rm cat},m)}{c(0,\infty,m)}\in[0,1].\]</div>
+<p>因 <span class="math notranslate nohighlight">\(F_z(L_{\rm cat})\)</span> 隨 <span class="math notranslate nohighlight">\(L_{\rm cat}\)</span> 增加，這個比例也不減；<span class="math notranslate nohighlight">\(L_{\rm cat}\to\infty\)</span> 時趨近 1。
+在原文 EEPAS 尺度關係下，大目標通常對應更久以前的輸入，因此同一 <span class="math notranslate nohighlight">\(L_{\rm cat}\)</span> 的完整度較低。
+這個規模方向取決於核與尺度設定，不能推成任意模型的定理。
+<span class="math notranslate nohighlight">\(M_c\)</span>、<span class="math notranslate nohighlight">\(\Delta(m)\)</span> 與 <span class="math notranslate nohighlight">\(p_{\rm comp}(L_{\rm cat},m)\)</span> 分別處理目錄偵測、輸入規模截尾、時間截尾。</p>
+<p>本站 50 天 delay 不會把所有目標的 time lag 固定成 50 天，也不會讓時間核往後平移。
+固定 1960 年目錄起點時，catalogue lead time 隨目標日期增長。
+<strong>固定前置時間 EEPAS</strong>（Fixed Lead Time EEPAS，FLEEPAS）則讓歷史起點隨目標時間移動，
+使每個目標都採同長的 catalogue lead time。
+它不能與本書固定目錄起點、逐窗發報的設定混稱。
+本節補償例先處理 <span class="math notranslate nohighlight">\(T_{\rm lag}=0\)</span> 的目錄起點損失；若同時補最近資料截尾，須使用兩端點比例。</p>
 </section>
-<section id="d-8">
+<section class="museum-section section-theory" id="d-7-2">
+<h3>D.7.2 補到平滑背景，或保留時變形狀？<a class="headerlink" href="#d-7-2" title="Link to this heading">#</a></h3>
+<p>將有限歷史的時變部分記為 <span class="math notranslate nohighlight">\(v(t,m,x,y)\)</span>，原率為 <span class="math notranslate nohighlight">\(\mu_E\lambda_0+v\)</span>。
+在上述平均模型下，若完整目標規模率為 <span class="math notranslate nohighlight">\(r(m)\)</span>，則</p>
+<div class="math notranslate nohighlight">
+\[\overline v=(1-\mu_E)p_{\rm comp}(L_{\rm cat},m)r(m).\]</div>
+<p>Rhoades 等（2020）式 15–16 提出兩個補償端點。
+省略共同引數，令 <span class="math notranslate nohighlight">\(p_c=p_{\rm comp}(L_{\rm cat},m)&gt;0\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{\rm smooth}=\left[\mu_E+(1-\mu_E)(1-p_c)\right]\lambda_0+v,\]</div>
+<div class="math notranslate nohighlight">
+\[\lambda_{\rm signal}=\mu_E\lambda_0+\frac{v}{p_c}.\]</div>
+<p>第一式把缺少的平均量補到背景圖，第二式放大現有時變形狀。
+只要 <span class="math notranslate nohighlight">\(\overline{\lambda_0}=r(m)\)</span>，兩式的長期平均都回到 <span class="math notranslate nohighlight">\(r(m)\)</span>。
+但有限窗中的空間與時間圖不相同。
+在兩者間作凸組合，可由學習資料選擇分配方式；這便是補償版本的一個核心選擇。
+<span class="math notranslate nohighlight">\(p_c\)</span> 很小時，放大操作也會放大模型誤差；<span class="math notranslate nohighlight">\(p_c=0\)</span> 時第二式無定義。
+平均量補回來不代表找回遺失事件的真實位置。
+本站四張預報快取沒有加入這套時間補償，不能把本節公式當成已實作的模型。</p>
+</section>
+<section class="museum-section section-comparison" id="d-7-3-eas">
+<h3>D.7.3 EAS：預報主震之後，還可能跟著餘震<a class="headerlink" href="#d-7-3-eas" title="Link to this heading">#</a></h3>
+<p><strong>EEPAS 的餘震延伸</strong>（EAS）處理尚未發生的預報主震可能帶來的餘震。
+Rhoades（2009）式 10–16 將主震率 <span class="math notranslate nohighlight">\(\lambda_M\)</span> 與餘震率 <span class="math notranslate nohighlight">\(\lambda_A\)</span> 分開，再加背景：</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{\rm EAS}=\mu_E\lambda_0+\lambda_M+\lambda_A.\]</div>
+<p>令 <span class="math notranslate nohighlight">\(u\)</span>、<span class="math notranslate nohighlight">\(\mathbf r\)</span>、<span class="math notranslate nohighlight">\(m'\)</span> 是未來主震的時間、位置與規模。
+令 <span class="math notranslate nohighlight">\(k_A(t,m,\mathbf x\mid u,m',\mathbf r)\)</span> 為該主震帶來的餘震期望率核。
+它包含指定餘震產能，不必是積分為一的機率密度。
+在發報後 <span class="math notranslate nohighlight">\(t_f&lt;u&lt;t\)</span> 的可能主震上平均，結構可寫成</p>
+<div class="math notranslate nohighlight">
+\[\lambda_A(t,m,\mathbf x)=\int_{t_f}^{t}\int\!\!\int
+\lambda_M(u,m',\mathbf r)\,
+ k_A(t,m,\mathbf x\mid u,m',\mathbf r)\,d\mathbf r\,dm'\,du.\]</div>
+<p>這是對「可能發生的主震」積分，不是等主震真的出現才更新。
+原文利用餘震時間尺度較短的近似，簡化時間卷積；空間部分則出現 D.7 的常態卷積。
+該近似需尺度分離，不是任意短窗都成立，也不能據此宣稱已涵蓋無限後代。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>做法</p></th>
+<th class="head"><p>調整哪一部分</p></th>
+<th class="head"><p>不能混同的事</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EEPAS-NW</p></td>
+<td><p>已知輸入事件等權</p></td>
+<td><p>不代表每顆都是已確認的物理前兆</p></td>
+</tr>
+<tr class="row-odd"><td><p>EEPAS-W</p></td>
+<td><p>以事件權重降低部分已知餘震的輸入貢獻</p></td>
+<td><p>沒有因此補上未來主震的餘震</p></td>
+</tr>
+<tr class="row-even"><td><p>EAS</p></td>
+<td><p>對預報主震整合其可能餘震率</p></td>
+<td><p>不是只把既有來源的權重改掉</p></td>
+</tr>
+<tr class="row-odd"><td><p>本站 ETAS 第一代近似</p></td>
+<td><p>計算已知歷史的直接觸發</p></td>
+<td><p>未含窗內新事件繼續繁殖</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>原文 EEPAS-W 的事件權重來自其採用的除叢／餘震模型，不能只憑時間距離任意指定。
+本站採 NW，沒有估那些權重，也沒有新增 EAS 快取或成績。
+本節讓讀者辨認模型結構，數值來源仍限已發表研究。</p>
+</section>
+</section>
+<section class="museum-section section-comparison" id="d-8">
 <h2>D.8 義大利的三階段擬合<a class="headerlink" href="#d-8" title="Link to this heading">#</a></h2>
 <p>Biondini 等（2023）第 3 節將 <span class="math notranslate nohighlight">\(b_M\)</span> 全程固定為一，其餘參數分成三次最佳化。以下 <span class="math notranslate nohighlight">\(\mu_E\)</span> 對應原文的 <span class="math notranslate nohighlight">\(\mu\)</span>。</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -581,7 +736,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 </div>
 <p>第三次以先前結果為起始值；<span class="math notranslate nohighlight">\(\mu_E\)</span> 是三次都重新估計的參數。這套安排提供可解釋的起點，但不是全域最佳保證。第 15 章直接使用論文表 3 的 EEPAS-NW 已發表結果，不在教學頁執行最佳化。</p>
 </section>
-<section id="d-9">
+<section class="museum-section section-theory" id="d-9">
 <h2>D.9 發報截止與格箱積分<a class="headerlink" href="#d-9" title="Link to this heading">#</a></h2>
 <p>本站時間以天、位置以公里計。設發報時間為 <span class="math notranslate nohighlight">\(t_0\)</span>、delay 為 <span class="math notranslate nohighlight">\(d=50\)</span> 天，該窗來源集合固定為 <span class="math notranslate nohighlight">\(I_0=\{i:t_i\le t_0-d,m_i\ge m_0\}\)</span>。在窗 <span class="math notranslate nohighlight">\([t_0,t_1)\)</span>、空間格 <span class="math notranslate nohighlight">\(R_j\)</span>、規模箱 <span class="math notranslate nohighlight">\(B_k\)</span> 中，時變部分的期望數為</p>
 <div class="math notranslate nohighlight">
@@ -594,7 +749,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 <p>對方格 <span class="math notranslate nohighlight">\([x_0,x_1]\times[y_0,y_1]\)</span>，空間積分等於兩個常態累積分布差的乘積。本站時間積分也使用累積分布差，規模箱使用五個中點近似。模型總數的驗證必須涵蓋這些有限區域積分，不能只檢查無限範圍核正規化。</p>
 <p>完整歷史的可用起點、發報截止與 50 天 delay 是三個不同設定。規模門檻補償也不會恢復目錄起點以前的事件；時間完整度延伸須另外指定模型。暖機資料早期漏測的影響，見第 8 章及 Rhoades 等（2020）。</p>
 </section>
-<section id="id1">
+<section class="museum-section" id="id1">
 <h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://doi.org/10.3390/geosciences12090349">A 20-Year Journey of Forecasting with the “Every Earthquake a Precursor According to Scale” Model</a> — David A. Rhoades、Sepideh J. Rastin、Annemarie Christophersen，2022，<em>Geosciences</em>；免費開放全文。先讀第 2 節的 Ψ 現象與尺度關係，再讀限制與未解問題，掌握本章經驗觀察如何連到機率模型。</p></li>
@@ -609,8 +764,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 </ul>
 </section>
 </section>
-
-    <script type="text/x-thebe-config">
+<script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -628,7 +782,7 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+<script>kernelName = 'python3'</script></div>
 
                 </article>
               
@@ -682,7 +836,12 @@ A_q=-2\pi v_i\ln(1-q).\]</div>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-4">D.4 三個正規化核</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-5">D.5 對數常態的三個時間摘要</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-6">D.6 規模權重與有限輸入門檻</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7 空間卷積與時間截斷</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7">D.7 空間卷積與時間截斷</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7-1">D.7.1 目標地震收到多少前兆貢獻？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7-2">D.7.2 補到平滑背景，或保留時變形狀？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-7-3-eas">D.7.3 EAS：預報主震之後，還可能跟著餘震</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-8">D.8 義大利的三階段擬合</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-9">D.9 發報截止與格箱積分</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>

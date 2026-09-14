@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,7 +65,9 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_b_catalog';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <script src="_static/teaching_theme.js?v=e63afbaf"></script>
+    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="附錄 C：ETAS 的分支、概似與推論" href="appendix_c_etas.html" />
@@ -413,7 +417,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">B.2 連續規模的概似與有限樣本偏差</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-3-gr">B.3 離散 GR 與精確最大概似</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-4">B.4 半格近似與不對稱區間</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5 規模差、修剪與相關性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5 規模差、修剪與相關性</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-positive">正相鄰差、絕對差與 b-positive</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-6-omori">B.6 Omori 核：有限窗與無限時間</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-7-omori">B.7 Omori 的剖面概似</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8">B.8 空間核的尺度與正規化</a></li>
@@ -432,18 +439,18 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="b">
-<h1>附錄 B：目錄、完整度與叢集律<a class="headerlink" href="#b" title="Link to this heading">#</a></h1>
-<p><strong>對應主文章</strong>：
+  <div class="museum-shell museum-appendix" data-page="appendix_b_catalog"><header class="museum-topbar"><a class="museum-brand" href="00_intro.html"><b>地震統計與預報</b><span>從義大利實驗到臺灣觀測</span></a><nav class="museum-primary" aria-label="主要入口"><a href="01_forecast_question.html">義大利實驗</a><a href="01_overview.html">臺灣觀測</a><a href="appendix_a_point_process.html">技術附錄</a></nav><div class="museum-actions"><a class="museum-search" href="search.html" aria-label="搜尋全書"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg></a><span data-museum-theme-slot></span><button type="button" data-museum-menu aria-label="開啟章節目錄">目錄 <span aria-hidden="true">☰</span></button></div><div class="museum-reading-progress" aria-hidden="true"></div></header><dialog class="museum-menu" aria-label="全書章節目錄"><div class="museum-menu-heading"><h2>選一條路，開始探索。</h2><button type="button" data-museum-close aria-label="關閉目錄">關閉 ×</button></div><div class="museum-menu-columns"><section><h3>第一部：一份地震預報實驗，從資料到檢驗</h3><a  href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a><a  href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a><a  href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a><a  href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a><a  href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a><a  href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a><a  href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a><a  href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a><a  href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a><a  href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a><a  href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a><a  href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a><a  href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a><a  href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a><a  href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a><a  href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a><a  href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a><a  href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a><a  href="19_ensembles.html">19. 把模型加起來：凸組合</a><a  href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></section><section><h3>第二部：台灣地球物理觀測</h3><a  href="01_overview.html">21. 臺灣地球物理觀測總覽</a><a  href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a><a  href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a><a  href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a><a  href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a><a  href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a><a  href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a><a  href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a><a  href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></section><section><h3>第三部：技術附錄</h3><a  href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a><a aria-current=page href="#">附錄 B：目錄、完整度與叢集律</a><a  href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a><a  href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a><a  href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a><a  href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a><a  href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></section></div></dialog><section class="tex2jax_ignore mathjax_ignore" id="b">
+<header class="museum-chapter-header" data-chapter-kind="appendix"><div class="museum-chapter-label"><span>技術附錄</span><b>B</b></div><div class="museum-chapter-heading"><p class="museum-kicker">深入推導，回查方法</p><h1>附錄 B：目錄、完整度與叢集律</h1><div class="museum-chapter-lead"><p><strong>對應主文章</strong>：
 第 2 章 <a class="reference internal" href="02_reading_horus.html"><span class="doc">2. 讀一份地震目錄：HORUS 與義大利</span></a>；
 第 3 章 <a class="reference internal" href="03_experiment_spec.html"><span class="doc">3. 標準預報實驗規格：把題目一次說清楚</span></a>；
 第 7 章 <a class="reference internal" href="07_gr_bvalue.html"><span class="doc">7. 大小地震的比例：GR 律與 b 值</span></a>；
 第 8 章 <a class="reference internal" href="08_completeness.html"><span class="doc">8. 從哪個規模開始相信目錄：完整度 Mc</span></a>；
-第 10 章 <a class="reference internal" href="10_clustering_laws.html"><span class="doc">10. 地震會互相引發：Omori、Båth 與產能</span></a>。</p>
+第 10 章 <a class="reference internal" href="10_clustering_laws.html"><span class="doc">10. 地震會互相引發：Omori、Båth 與產能</span></a>。</p></div></div><nav aria-label="本章起點" class="museum-waypoints"><a href="#b-0-horus-celle"><span>01</span>B.0 HORUS 取得、快取與 CELLE 反投影</a><a href="#b-1-gr"><span>02</span>B.1 從 GR 累積數到規模密度</a><a href="#b-2"><span>03</span>B.2 連續規模的概似與有限樣本偏差</a></nav></header>
+
 <p>本附錄補上資料處理與估計推導。
 門檻、格距與觀察窗都是模型條件。
 先備知識為機率密度、微分與概似。</p>
-<section id="b-0-horus-celle">
+<section class="museum-section section-comparison" id="b-0-horus-celle">
 <h2>B.0 HORUS 取得、快取與 CELLE 反投影<a class="headerlink" href="#b-0-horus-celle" title="Link to this heading">#</a></h2>
 <p>HORUS 是義大利均一化儀器地震目錄。
 英文為 Homogenized Instrumental Seismic Catalogue。
@@ -501,7 +508,7 @@
 收集區 <span class="math notranslate nohighlight">\(S\)</span> 提供區內外的歷史事件。
 <code class="docutils literal notranslate"><span class="pre">target_events()</span></code> 再選指定期間的目標事件。
 原始規模、取整規模與事件識別碼都應保留。</p>
-<section id="id1">
+<section class="museum-section section-theory" id="id1">
 <h3>規模取整與三個門檻<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>取整（rounding）把規模映到固定格點。
 依 Biondini（2023）式 2，規則為</p>
@@ -523,7 +530,7 @@
 本附錄沒有重新計數。
 差異不能解讀為模型多漏報了兩顆。</p>
 </section>
-<section id="celle">
+<section class="museum-section section-theory" id="celle">
 <h3>CELLE 座標與反投影<a class="headerlink" href="#celle" title="Link to this heading">#</a></h3>
 <p>反投影（inverse projection）把平面座標轉回經緯度。
 <code class="docutils literal notranslate"><span class="pre">CELLE_ter.mat</span></code> 的 <code class="docutils literal notranslate"><span class="pre">CELLESD</span></code> 是投影公里座標。
@@ -550,7 +557,7 @@ EPSG 原生長度單位為公尺。
 不能稱所有區域設計都在測試前凍結。</p>
 </section>
 </section>
-<section id="b-1-gr">
+<section class="museum-section section-theory" id="b-1-gr">
 <h2>B.1 從 GR 累積數到規模密度<a class="headerlink" href="#b-1-gr" title="Link to this heading">#</a></h2>
 <p>GR 是 Gutenberg–Richter 規模頻率律。
 令固定期間的期望累積數為 <span class="math notranslate nohighlight">\(10^{a-bm}\)</span>。
@@ -571,7 +578,7 @@ s(m)&amp;=\beta e^{-\beta(m-m_0)},\qquad \beta=b\ln10.
 這只是確定轉換的代數結果。
 實際換算还須納入量測與迴歸誤差。</p>
 </section>
-<section id="b-2">
+<section class="museum-section section-theory" id="b-2">
 <h2>B.2 連續規模的概似與有限樣本偏差<a class="headerlink" href="#b-2" title="Link to this heading">#</a></h2>
 <p>令 <span class="math notranslate nohighlight">\(X_i=m_i-m_0\)</span> 為獨立指數樣本。
 完整度與門檻先固定，樣本數為 <span class="math notranslate nohighlight">\(N\)</span>。
@@ -600,7 +607,7 @@ s(m)&amp;=\beta e^{-\beta(m-m_0)},\qquad \beta=b\ln10.
 <p>最後一步要求理想指數模型成立。
 它不包含目錄系統誤差。</p>
 </section>
-<section id="b-3-gr">
+<section class="museum-section section-theory" id="b-3-gr">
 <h2>B.3 離散 GR 與精確最大概似<a class="headerlink" href="#b-3-gr" title="Link to this heading">#</a></h2>
 <p>令最低格點為 <span class="math notranslate nohighlight">\(m_\ell\)</span>，格距為 <span class="math notranslate nohighlight">\(\Delta m\)</span>。
 <span class="math notranslate nohighlight">\(m_\ell\)</span> 與有效下緣 <span class="math notranslate nohighlight">\(m_0\)</span> 須分開。
@@ -620,7 +627,7 @@ s(m)&amp;=\beta e^{-\beta(m-m_0)},\qquad \beta=b\ln10.
 <span class="math notranslate nohighlight">\(u=0\)</span> 時，只能得到 <span class="math notranslate nohighlight">\(b\to\infty\)</span> 的邊界解。
 混合不同取整規則時，須重建區間概似。</p>
 </section>
-<section id="b-4">
+<section class="museum-section section-theory" id="b-4">
 <h2>B.4 半格近似與不對稱區間<a class="headerlink" href="#b-4" title="Link to this heading">#</a></h2>
 <p>令 <span class="math notranslate nohighlight">\(\delta=\Delta m/2\)</span>。
 Utsu 半格近似使用 <span class="math notranslate nohighlight">\(1/[(u+\delta)\ln10]\)</span>。
@@ -647,7 +654,7 @@ b_2&amp;=\frac1{2\delta\ln10}\ln\frac{C-\sqrt{C/N}}{1-\sqrt{C/N}}.
 Bootstrap 也須配合資料相依性。
 其定義見 <a class="reference internal" href="appendix_a_point_process.html"><span class="doc">附錄 A：記號、統計工具與點過程</span></a>。</p>
 </section>
-<section id="b-5">
+<section class="museum-section section-comparison" id="b-5">
 <h2>B.5 規模差、修剪與相關性<a class="headerlink" href="#b-5" title="Link to this heading">#</a></h2>
 <p>修剪（trimming）是按預定規則刪除部分樣本。
 規模差方法常先保留超過某門檻的差值。
@@ -675,8 +682,41 @@ Bootstrap 也須配合資料相依性。
 <p>其相關係數為正的 <span class="math notranslate nohighlight">\(1/3\)</span>。
 取絕對值後，不能沿用負相關結論。
 進一步修剪也會改變有效抽樣結構。</p>
+<section class="museum-section section-comparison" id="b-positive">
+<h3>正相鄰差、絕對差與 b-positive<a class="headerlink" href="#b-positive" title="Link to this heading">#</a></h3>
+<p>第7–8章的b-positive只保留時間相鄰的正規模差，並可設正的差值門檻。Tinti與Gasperini（2024）第435–436頁則同時比較正差、負差、絕對差及不同配對方式。因此以下三項不能混用：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>操作</p></th>
+<th class="head"><p>使用資料</p></th>
+<th class="head"><p>主要條件與限制</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>正相鄰差</p></td>
+<td><p><span class="math notranslate nohighlight">\(d_i=m_i-m_{i-1}&gt;d_c\)</span></p></td>
+<td><p>保留時間方向；差值門檻須預先指定</p></td>
+</tr>
+<tr class="row-odd"><td><p>絕對相鄰差</p></td>
+<td><p>$</p></td>
+<td><p>m_i-m_{i-1}</p></td>
+</tr>
+<tr class="row-even"><td><p>不重疊配對</p></td>
+<td><p><span class="math notranslate nohighlight">\((m_2-m_1),(m_4-m_3),\ldots\)</span></p></td>
+<td><p>在原規模iid假設下配對獨立，但只使用約一半配對</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>對連續iid指數規模，令 <span class="math notranslate nohighlight">\(D=Y-X\)</span>，條件於 <span class="math notranslate nohighlight">\(D&gt;d_c\ge0\)</span>，有</p>
+<div class="math notranslate nohighlight">
+\[P(D-d_c&gt;z\mid D&gt;d_c)=e^{-\beta z},\qquad z\ge0.\]</div>
+<p>所以在這個理想邊際分布下，可以從正差的超額平均估 <span class="math notranslate nohighlight">\(\beta\)</span>。本段不把未修正的連續公式當成離散目錄的精確估計式；取整規模有格距與零差值，須使用相應移位幾何分布。相鄰差也可能共用事件，不能直接將原始差值列視為獨立樣本套標準誤。</p>
+<p>b-positive的觀測動機是降低短期餘震不完整的影響；其有效性仍受漏測規則、差值門檻與規模分布隨時間變動的影響。從完整iid模型推導出的正差分布，並不自動證明任意漏測後仍成立。Tinti與Gasperini的比較是限制證據，不是所有情境下選絕對差或正差的統一處方。</p>
+<p>本書主線仍使用已交代的離散GR估計。閱讀其他positive系列方法時，先核對選配規則，不能只按方法名稱推斷公式與樣本數。</p>
 </section>
-<section id="b-6-omori">
+</section>
+<section class="museum-section section-theory" id="b-6-omori">
 <h2>B.6 Omori 核：有限窗與無限時間<a class="headerlink" href="#b-6-omori" title="Link to this heading">#</a></h2>
 <p>Omori–Utsu 律描述餘震率隨時間衰減。
 令 <span class="math notranslate nohighlight">\(\tau\)</span> 為距主震的時間，<span class="math notranslate nohighlight">\(c&gt;0\)</span>。
@@ -700,7 +740,7 @@ Bootstrap 也須配合資料相依性。
 它不同於只裁切觀察窗。
 固定未正規化係數時，總產能會隨期限改變。</p>
 </section>
-<section id="b-7-omori">
+<section class="museum-section section-theory" id="b-7-omori">
 <h2>B.7 Omori 的剖面概似<a class="headerlink" href="#b-7-omori" title="Link to this heading">#</a></h2>
 <p>剖面概似（profile likelihood）先消去部分參數。
 令未正規化率為 <span class="math notranslate nohighlight">\(K_O(\tau+c)^{-p}\)</span>。
@@ -719,7 +759,7 @@ Bootstrap 也須配合資料相依性。
 矩陣非正定時，區間可能無法辨認。
 對負變異數取絕對值沒有統計依據。</p>
 </section>
-<section id="b-8">
+<section class="museum-section section-theory" id="b-8">
 <h2>B.8 空間核的尺度與正規化<a class="headerlink" href="#b-8" title="Link to this heading">#</a></h2>
 <p>各向同性（isotropic）表示不依方位角改變。
 令面積尺度為 <span class="math notranslate nohighlight">\(v(m)&gt;0\)</span>，尾指數為 <span class="math notranslate nohighlight">\(q&gt;1\)</span>。</p>
@@ -734,7 +774,7 @@ Bootstrap 也須配合資料相依性。
 Biondini 的形式使用 <span class="math notranslate nohighlight">\(D^2\)</span> 作面積尺度。
 比較前須先確認參數化。</p>
 </section>
-<section id="b-9-bath">
+<section class="museum-section section-theory" id="b-9-bath">
 <h2>B.9 最大值、Båth 律與最大規模差<a class="headerlink" href="#b-9-bath" title="Link to this heading">#</a></h2>
 <p>Båth 律描述主震與最大餘震的平均規模差。
 它是序列統計规律，不是逐序列硬下界。
@@ -757,7 +797,7 @@ Biondini 的形式使用 <span class="math notranslate nohighlight">\(D^2\)</spa
 固定主震後再抽餘震，是另一個抽樣問題。
 若限制餘震不超過主震，還須截斷規模分布。</p>
 </section>
-<section id="b-10-gr">
+<section class="museum-section section-theory" id="b-10-gr">
 <h2>B.10 除叢後的 GR 交點<a class="headerlink" href="#b-10-gr" title="Link to this heading">#</a></h2>
 <p>除叢（declustering）依規則分離事件群。
 Gardner–Knopoff 方法使用時空窗。
@@ -773,7 +813,7 @@ r(m)=10^{a_d-a+(b-b_d)m}.\]</div>
 問題在兩條擬合線的共同外推。
 它不能單獨判定危害估計的偏差方向。</p>
 </section>
-<section id="b-11">
+<section class="museum-section section-comparison" id="b-11">
 <h2>B.11 完整度的三種估法<a class="headerlink" href="#b-11" title="Link to this heading">#</a></h2>
 <p>完整度（completeness）指事件被充分記錄的範圍。
 <span class="math notranslate nohighlight">\(M_c\)</span> 是其中的最低規模。
@@ -846,7 +886,7 @@ Omori 的 <span class="math notranslate nohighlight">\(c,p\)</span> 因而會受
 暖機期較高的 <span class="math notranslate nohighlight">\(M_c\)</span> 也會減少已知歷史。
 EEPAS 的長時間核尤其需要注意此點。</p>
 </section>
-<section id="id2">
+<section class="museum-section" id="id2">
 <h2>參考資料與延伸閱讀<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Lolli 等（2020），<em>The homogenized instrumental seismic catalog (HORUS) of Italy from 1960 to present</em>。刊於 SRL 91，3208–3222。先讀規模均一化與完整度。</p></li>
@@ -859,8 +899,7 @@ EEPAS 的長時間核尤其需要注意此點。</p>
 </ul>
 </section>
 </section>
-
-    <script type="text/x-thebe-config">
+<script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -878,7 +917,7 @@ EEPAS 的長時間核尤其需要注意此點。</p>
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+<script>kernelName = 'python3'</script></div>
 
                 </article>
               
@@ -935,7 +974,10 @@ EEPAS 的長時間核尤其需要注意此點。</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">B.2 連續規模的概似與有限樣本偏差</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-3-gr">B.3 離散 GR 與精確最大概似</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-4">B.4 半格近似與不對稱區間</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5 規模差、修剪與相關性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-5">B.5 規模差、修剪與相關性</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-positive">正相鄰差、絕對差與 b-positive</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-6-omori">B.6 Omori 核：有限窗與無限時間</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-7-omori">B.7 Omori 的剖面概似</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-8">B.8 空間核的尺度與正規化</a></li>

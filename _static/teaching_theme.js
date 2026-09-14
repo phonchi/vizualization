@@ -8,9 +8,10 @@
     if (!window.Plotly) return;
     const dark = document.documentElement.dataset.theme === 'dark';
     const key = dark ? 'dark' : 'light';
-    const ink = dark ? '#e9eef4' : '#243040';
-    const paper = dark ? '#1e232b' : '#fbfcfd';
-    const rule = dark ? 'rgba(233,238,244,.15)' : 'rgba(36,48,64,.12)';
+    const style=getComputedStyle(document.documentElement);
+    const ink=style.getPropertyValue('--tc-ink').trim();
+    const paper=style.getPropertyValue('--tc-paper').trim();
+    const rule=style.getPropertyValue('--tc-rule').trim();
     document.querySelectorAll('.js-plotly-plot').forEach(fig => {
       if (!fig._fullLayout || applied.get(fig) === key) return;
       // MapLibre initializes its style asynchronously after Plotly's layout exists.

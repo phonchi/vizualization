@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,7 +65,9 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_e_testing';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <script src="_static/teaching_theme.js?v=e63afbaf"></script>
+    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="附錄 F：複發時間與地震危害積分" href="appendix_f_hazard.html" />
@@ -410,7 +414,10 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-1-poisson">E.1 從 Poisson 計數到條件形狀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2-1">E.2.1 評分對準平均數，還是整個分布？</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">每事件資訊增益的兩種版本</a></li>
 </ul>
@@ -434,17 +441,17 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="e">
-<h1>附錄 E：預報檢驗與模型組合的推導<a class="headerlink" href="#e" title="Link to this heading">#</a></h1>
-<p>本附錄需要機率分布、微分與期望值。對應 <a class="reference internal" href="17_test_space_magnitude.html"><span class="doc">一致性檢驗</span></a>、<a class="reference internal" href="18_test_comparison.html"><span class="doc">模型比較</span></a>及 <a class="reference internal" href="19_ensembles.html"><span class="doc">模型組合</span></a>，各節推導後可回到主文的圖例。</p>
-<section id="e-0">
+  <div class="museum-shell museum-appendix" data-page="appendix_e_testing"><header class="museum-topbar"><a class="museum-brand" href="00_intro.html"><b>地震統計與預報</b><span>從義大利實驗到臺灣觀測</span></a><nav class="museum-primary" aria-label="主要入口"><a href="01_forecast_question.html">義大利實驗</a><a href="01_overview.html">臺灣觀測</a><a href="appendix_a_point_process.html">技術附錄</a></nav><div class="museum-actions"><a class="museum-search" href="search.html" aria-label="搜尋全書"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg></a><span data-museum-theme-slot></span><button type="button" data-museum-menu aria-label="開啟章節目錄">目錄 <span aria-hidden="true">☰</span></button></div><div class="museum-reading-progress" aria-hidden="true"></div></header><dialog class="museum-menu" aria-label="全書章節目錄"><div class="museum-menu-heading"><h2>選一條路，開始探索。</h2><button type="button" data-museum-close aria-label="關閉目錄">關閉 ×</button></div><div class="museum-menu-columns"><section><h3>第一部：一份地震預報實驗，從資料到檢驗</h3><a  href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a><a  href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a><a  href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a><a  href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a><a  href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a><a  href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a><a  href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a><a  href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a><a  href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a><a  href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a><a  href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a><a  href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a><a  href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a><a  href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a><a  href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a><a  href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a><a  href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a><a  href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a><a  href="19_ensembles.html">19. 把模型加起來：凸組合</a><a  href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></section><section><h3>第二部：台灣地球物理觀測</h3><a  href="01_overview.html">21. 臺灣地球物理觀測總覽</a><a  href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a><a  href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a><a  href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a><a  href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a><a  href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a><a  href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a><a  href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a><a  href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></section><section><h3>第三部：技術附錄</h3><a  href="appendix_a_point_process.html">附錄 A：記號、統計工具與點過程</a><a  href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a><a  href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a><a  href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a><a aria-current=page href="#">附錄 E：預報檢驗與模型組合的推導</a><a  href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a><a  href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></section></div></dialog><section class="tex2jax_ignore mathjax_ignore" id="e">
+<header class="museum-chapter-header" data-chapter-kind="appendix"><div class="museum-chapter-label"><span>技術附錄</span><b>E</b></div><div class="museum-chapter-heading"><p class="museum-kicker">深入推導，回查方法</p><h1>附錄 E：預報檢驗與模型組合的推導</h1><div class="museum-chapter-lead"><p>本附錄需要機率分布、微分與期望值。對應 <a class="reference internal" href="17_test_space_magnitude.html"><span class="doc">一致性檢驗</span></a>、<a class="reference internal" href="18_test_comparison.html"><span class="doc">模型比較</span></a>及 <a class="reference internal" href="19_ensembles.html"><span class="doc">模型組合</span></a>，各節推導後可回到主文的圖例。</p></div></div><nav aria-label="本章起點" class="museum-waypoints"><a href="#e-0"><span>01</span>E.0 同一份預報陣列如何進入檢驗</a><a href="#e-1-poisson"><span>02</span>E.1 從 Poisson 計數到條件形狀</a><a href="#e-2"><span>03</span>E.2 叢集的變異數：一個明確的模型</a></nav></header>
+
+<section class="museum-section section-theory" id="e-0">
 <h2>E.0 同一份預報陣列如何進入檢驗<a class="headerlink" href="#e-0" title="Link to this heading">#</a></h2>
 <p>一個預報窗的資料是 177 格 × 25 個規模箱。
 每個元素是期望數，觀測使用相同格箱的整數計數。
 時間窗為左閉右開；規模先取整到 0.1，再放入左閉右開的名目規模箱。
 第一部的 40 個 91.31 天窗口共覆蓋 3652.4 天；年底剩餘 0.6 天不評分。
 目前目錄在這段尾端沒有目標地震。若換版本，必須重新檢查，不能把尾端事件塞進最後一窗。</p>
-<section id="id1">
+<section class="museum-section section-theory" id="id1">
 <h3>十欄匯出與重新分格<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>CSEP 文字檔依序列出 <code class="docutils literal notranslate"><span class="pre">LON_0</span> <span class="pre">LON_1</span> <span class="pre">LAT_0</span> <span class="pre">LAT_1</span> <span class="pre">Z_0</span> <span class="pre">Z_1</span> <span class="pre">MAG_0</span> <span class="pre">MAG_1</span> <span class="pre">RATE</span> <span class="pre">FLAG</span></code>。
 前八欄界定經緯度、深度與規模的上下界，<code class="docutils literal notranslate"><span class="pre">RATE</span></code> 為該窗的格箱期望數，<code class="docutils literal notranslate"><span class="pre">FLAG</span></code> 為啟用旗標。
@@ -466,7 +473,7 @@
 欄正規化消除總量誤差，沒有消除邊界取樣誤差；提高解析度仍需做收斂檢查。
 第 16–18 章的評分始終使用原始 177 格，不混用重新分格結果。</p>
 </section>
-<section id="id2">
+<section class="museum-section section-theory" id="id2">
 <h3>教學版檢驗的統計量<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>本書使用完整的 Poisson 計數對數機率，包括同箱多事件的階乘項：</p>
 <div class="math notranslate nohighlight" id="equation-eq-jpoll">
@@ -482,7 +489,7 @@ S 先加總時間與規模，M 先加總時間與空間。
 這保留相同的多項抽樣分布，且記憶體不隨兩者乘積成長。</p>
 </section>
 </section>
-<section id="e-1-poisson">
+<section class="museum-section section-theory" id="e-1-poisson">
 <h2>E.1 從 Poisson 計數到條件形狀<a class="headerlink" href="#e-1-poisson" title="Link to this heading">#</a></h2>
 <p>獨立箱計數 <span class="math notranslate nohighlight">\(\omega_j\sim\mathrm{Poisson}(\Lambda_j)\)</span> 的乘積機率取對數，即得 <a class="reference internal" href="#equation-eq-jpoll">(3)</a>。總數 <span class="math notranslate nohighlight">\(N=\sum_j\omega_j\)</span> 的均值為 <span class="math notranslate nohighlight">\(\Lambda=\sum_j\Lambda_j\)</span>。條件在總數 <span class="math notranslate nohighlight">\(N=n\)</span> 上：</p>
 <div class="math notranslate nohighlight">
@@ -496,7 +503,7 @@ S 先加總時間與規模，M 先加總時間與空間。
 +N\ln\Delta V.\]</div>
 <p>同網格兩模型的最後一項抵消，但除以 <span class="math notranslate nohighlight">\(N\)</span> 仍留下 <span class="math notranslate nohighlight">\(\ln\Delta V\)</span>。因此每事件分數也不能直接消除跨網格尺度。一般歷史相依強度的連續概似使用順序條件化，不能由一組無條件獨立空間箱原封不動推出。</p>
 </section>
-<section id="e-2">
+<section class="museum-section section-comparison" id="e-2">
 <h2>E.2 叢集的變異數：一個明確的模型<a class="headerlink" href="#e-2" title="Link to this heading">#</a></h2>
 <p>令背景叢集數 <span class="math notranslate nohighlight">\(B\sim\mathrm{Poisson}(\mu_B)\)</span>，各叢集總大小 <span class="math notranslate nohighlight">\(G_i\ge1\)</span> 獨立同分布，且與 <span class="math notranslate nohighlight">\(B\)</span> 獨立。若 <span class="math notranslate nohighlight">\(N=\sum_{i=1}^B G_i\)</span>，全期望與全變異數給出</p>
 <div class="math notranslate nohighlight">
@@ -509,8 +516,69 @@ S 先加總時間與規模，M 先加總時間與空間。
 \[g=1+ng\Rightarrow g=\frac1{1-n},\qquad
 v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 <p>故完整叢集計數的 Fano 比為 <span class="math notranslate nohighlight">\(1/(1-n)^2\)</span>。真實帶規模產能的 ETAS 直接後代數可能是混合 Poisson，並非每事件同均值的 Poisson；不能只憑分支比就將此數值套到任何有限窗 ETAS 計數。</p>
+<section class="museum-section section-comparison" id="e-2-1">
+<h3>E.2.1 評分對準平均數，還是整個分布？<a class="headerlink" href="#e-2-1" title="Link to this heading">#</a></h3>
+<p><strong>完整分布預報</strong>（full-distribution forecast）給出所有計數機率 <span class="math notranslate nohighlight">\(P(N=n)\)</span>。
+<strong>期望數預報</strong>（expected-count forecast）只交出 <span class="math notranslate nohighlight">\(\Lambda=E[N]\)</span>。
+例如兩個分布可有相同平均，卻有不同零次機率及尾端。
+比較前先確認模型交付哪一種物件，不能從一個 RATE 欄自行讀出全部分布。</p>
+<p><strong>適當評分規則</strong>（proper scoring rule）讓真實分布在期望意義下得到最佳分數。
+本書沿用越大越好的記分方向。若 <span class="math notranslate nohighlight">\(Q\)</span> 是真實分布，則適當性要求</p>
+<div class="math notranslate nohighlight">
+\[E_Q[S(Q,N)]\ge E_Q[S(P,N)]\]</div>
+<p>對所考慮的分布類成立；只有 <span class="math notranslate nohighlight">\(P=Q\)</span> 才取等號時，稱為<strong>嚴格適當</strong>（strictly proper）。
+對數分數 <span class="math notranslate nohighlight">\(S(P,N)=\ln P(N)\)</span> 的期望差是 <span class="math notranslate nohighlight">\(D_{\rm KL}(Q\|P)\ge0\)</span>，
+須採相應的可積條件與零機率慣例。
+這不保證任意一次觀測的排名；它描述長期平均的誘因。
+Graham 等（2024）的 pyCSEP 更新文章 §Ranking scores 討論對數與 Brier 分數的不同懲罰。</p>
+<p><strong>一致評分函數</strong>（consistent scoring function）針對平均數等摘要。
+若真實均值為 <span class="math notranslate nohighlight">\(\mu\)</span>，最佳期望分數應在報出 <span class="math notranslate nohighlight">\(\Lambda=\mu\)</span> 時取得。
+Poisson 形式的分數</p>
+<div class="math notranslate nohighlight">
+\[S_{\rm P}(\Lambda,N)=N\ln\Lambda-\Lambda-\ln N!\]</div>
+<p>即具有這項均值性質，不要求真實計數服從 Poisson。
+對 <span class="math notranslate nohighlight">\(\mu,\Lambda&gt;0\)</span>，先相減使只依賴觀測的階乘項消去，再取期望：</p>
+<div class="math notranslate nohighlight">
+\[E[S_{\rm P}(\mu,N)-S_{\rm P}(\Lambda,N)]
+=\Lambda-\mu+\mu\ln\frac{\mu}{\Lambda}\ge0.\]</div>
+<p>令 <span class="math notranslate nohighlight">\(r=\Lambda/\mu\)</span>，右式是 <span class="math notranslate nohighlight">\(\mu(r-1-\ln r)\)</span>；由 <span class="math notranslate nohighlight">\(\ln r\le r-1\)</span> 得證。
+這個分數差只需要有限均值，避免單獨期待的階乘項可能不可積。
+<span class="math notranslate nohighlight">\(\mu=0\)</span> 時非負計數幾乎必為零，最佳值為 <span class="math notranslate nohighlight">\(\Lambda=0\)</span>；正觀測配零預報則受無窮懲罰。
+相同均值的不同分布，在這種均值比較下無法區分。
+Brehmer 等（2025）§2 的框架正是先分清這兩種預報物件。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>操作</p></th>
+<th class="head"><p>所需主張</p></th>
+<th class="head"><p>不會自動得到的結論</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>比較期望數的平均 Poisson 形式分數</p></td>
+<td><p>分數對均值一致</p></td>
+<td><p>實際計數具有 Poisson 變異</p></td>
+</tr>
+<tr class="row-odd"><td><p>以 Poisson 模擬 N／L 參考分布</p></td>
+<td><p>指定計數分布及相依結構</p></td>
+<td><p>這些假設已由評分公式驗證</p></td>
+</tr>
+<tr class="row-even"><td><p>對完整機率分布用適當規則評分</p></td>
+<td><p>完整分布及所選規則</p></td>
+<td><p>每次結果都會排對名次</p></td>
+</tr>
+<tr class="row-odd"><td><p>為分數差報區間</p></td>
+<td><p>時間／事件相依的推論條件</p></td>
+<td><p>單憑均值一致性就有正確涵蓋率</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>因此，總數模型不合時仍可比較平均率分數，但原本檢定的尾端或區間未必有效。
+反過來，通過某個一致性檢定也不保證有較高相對技巧。
+完整分布的評分與期望數比較，可並列服務不同的研究問題。</p>
 </section>
-<section id="e-3">
+</section>
+<section class="museum-section section-theory" id="e-3">
 <h2>E.3 負二項與二元分數<a class="headerlink" href="#e-3" title="Link to this heading">#</a></h2>
 <p>採負二項參數 <span class="math notranslate nohighlight">\(r&gt;0,0&lt;q&lt;1\)</span>。這一節的 <span class="math notranslate nohighlight">\(\mu\)</span>、<span class="math notranslate nohighlight">\(v\)</span> 分別表示計數 <span class="math notranslate nohighlight">\(N\)</span> 的平均與變異數，</p>
 <div class="math notranslate nohighlight">
@@ -525,7 +593,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 &amp;=(n-1)\ln\Lambda-\ln(n!)-\frac\Lambda2+O(\Lambda^2).
 \end{aligned}\end{split}\]</div>
 <p>最後一步使用 <span class="math notranslate nohighlight">\((1-e^{-\Lambda})/\Lambda=1-\Lambda/2+O(\Lambda^2)\)</span>。因此稀少單事件箱的差異小，重複事件箱的差異可能很大。一般計數分布的至少一次機率應直接用 <span class="math notranslate nohighlight">\(1-P(N=0)\)</span>，不能只看均值。</p>
-<section id="id3">
+<section class="museum-section section-theory" id="id3">
 <h3>每事件資訊增益的兩種版本<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>在相同網格與觀測下比較模型 A 與 B，<span class="math notranslate nohighlight">\(N&gt;0\)</span> 時，</p>
 <div class="math notranslate nohighlight" id="equation-eq-igpe">
@@ -539,7 +607,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 零事件資料不定義每事件增益；直接比較整份對數概似差即可。</p>
 </section>
 </section>
-<section id="e-4">
+<section class="museum-section section-theory" id="e-4">
 <h2>E.4 模擬分位數的誤差<a class="headerlink" href="#e-4" title="Link to this heading">#</a></h2>
 <p>固定觀測統計量 <span class="math notranslate nohighlight">\(s_{\rm obs}\)</span>，獨立模擬 <span class="math notranslate nohighlight">\(R\)</span> 次，令 <span class="math notranslate nohighlight">\(I_r=1\{s_r\le s_{\rm obs}\}\)</span>，<span class="math notranslate nohighlight">\(\hat\gamma=R^{-1}\sum_r I_r\)</span>。則</p>
 <div class="math notranslate nohighlight">
@@ -548,7 +616,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 <p>在 <span class="math notranslate nohighlight">\(\gamma=0.05\)</span> 時，<span class="math notranslate nohighlight">\(R=10^4\)</span> 對應標準誤約 <span class="math notranslate nohighlight">\(0.00218\)</span>。這只是模擬誤差，沒有包括模型參數不確定性。尾端或零次計數時應使用合適的二項區間；正式 Monte Carlo 檢定可預先採含觀測秩的加一修正，並處理 ties。</p>
 <p>多重檢驗若採 Bonferroni，以檢驗家族內實際數目 <span class="math notranslate nohighlight">\(J\)</span> 使用門檻 <span class="math notranslate nohighlight">\(\alpha/J\)</span>，不要求獨立。把相關檢驗直接折成較小的「有效數目」不保證同樣控制；需另行校準聯合拒絕機率。</p>
 </section>
-<section id="e-5">
+<section class="museum-section section-theory" id="e-5">
 <h2>E.5 資訊增益與區間<a class="headerlink" href="#e-5" title="Link to this heading">#</a></h2>
 <p>同一目錄的階乘項相消，網格概似差為</p>
 <div class="math notranslate nohighlight">
@@ -564,9 +632,12 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 \[\mathrm{Var}(\bar d)=\frac1{N^2}\left[\sum_n\mathrm{Var}(d_n)
 +2\sum_{i&lt;j}\mathrm{Cov}(d_i,d_j)\right].\]</div>
 <p>所以叢集中的區間可能需要區塊或模型式校準。未拒絕零增益不等於分數恰好相同，也不等於通過等價性檢定。</p>
-<p>AICc 型修正採 <span class="math notranslate nohighlight">\(\mathrm{AICc}=-2\ln L+2k+2k(k+1)/(N-k-1)\)</span>，兩模型相減、除以 <span class="math notranslate nohighlight">\(2N\)</span> 即得 <a class="reference internal" href="#equation-eq-igpec">(5)</a>。分母要求 <span class="math notranslate nohighlight">\(N&gt;k+1\)</span>；此為有條件近似，非所有相依點過程的通用修正。</p>
+<p>AICc 型修正採 <span class="math notranslate nohighlight">\(\mathrm{AICc}=-2\ln L+2k+2k(k+1)/(N-k-1)\)</span>。以模型 B 為基準，另定義</p>
+<div class="math notranslate nohighlight" id="equation-eq-igpe-aicc">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-igpe-aicc" title="Link to this equation">#</a></span>\[I_{\mathrm{AICc}}=\frac{\mathrm{AICc}_B-\mathrm{AICc}_A}{2N}.\]</div>
+<p>Rhoades 等人（2014）的 IGPEc 使用這種參數彈性修正。它與 <a class="reference internal" href="#equation-eq-igpec">(5)</a> 的條件形狀增益 <span class="math notranslate nohighlight">\(I_c\)</span> 不同：後者正規化總率，沒有扣參數懲罰。分母要求兩模型皆滿足 <span class="math notranslate nohighlight">\(N&gt;k+1\)</span>；AICc 修正有其模型與樣本假設，不是所有相依點過程的通用修正。</p>
 </section>
-<section id="e-6">
+<section class="museum-section section-theory" id="e-6">
 <h2>E.6 警報面積與校準<a class="headerlink" href="#e-6" title="Link to this heading">#</a></h2>
 <p>令 <span class="math notranslate nohighlight">\(\nu(\tau)\)</span> 是警報比例 <span class="math notranslate nohighlight">\(\tau\)</span> 下的漏報率，常用面積摘要為</p>
 <div class="math notranslate nohighlight">
@@ -583,7 +654,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 +\underbrace{\bar y(1-\bar y)}_{\mathrm{UNC}}.\]</div>
 <p>若只是將不同連續預報任意分箱，以箱平均代入不一定保持精確分解。對真實機率 <span class="math notranslate nohighlight">\(Q\)</span>，期望單次 Brier 分數為 <span class="math notranslate nohighlight">\(Q(P-1)^2+(1-Q)P^2=(P-Q)^2+Q(1-Q)\)</span>，唯一最小值在 <span class="math notranslate nohighlight">\(P=Q\)</span>，這就是嚴格適當性。</p>
 </section>
-<section id="e-7">
+<section class="museum-section section-theory" id="e-7">
 <h2>E.7 成本與損失<a class="headerlink" href="#e-7" title="Link to this heading">#</a></h2>
 <p>假設行動成本 <span class="math notranslate nohighlight">\(C\)</span>、不行動且事件發生損失 <span class="math notranslate nohighlight">\(L\)</span>、行動可完全避免該損失，<span class="math notranslate nohighlight">\(0&lt;\alpha=C/L&lt;1\)</span>。已知事件機率 <span class="math notranslate nohighlight">\(P\)</span> 時，比較 <span class="math notranslate nohighlight">\(C\)</span> 與 <span class="math notranslate nohighlight">\(PL\)</span>，得到門檻 <span class="math notranslate nohighlight">\(P&gt;\alpha\)</span>。</p>
 <p>若事件比例為 <span class="math notranslate nohighlight">\(s\)</span>，警報比例 <span class="math notranslate nohighlight">\(\tau\)</span>，漏報比例 <span class="math notranslate nohighlight">\(\nu\)</span>，每次平均支出除以 <span class="math notranslate nohighlight">\(L\)</span> 為 <span class="math notranslate nohighlight">\(e_f=\alpha\tau+s\nu\)</span>。只用長期比例的最佳基準為 <span class="math notranslate nohighlight">\(e_c=\min(\alpha,s)\)</span>；完美預報為 <span class="math notranslate nohighlight">\(e_p=\alpha s\)</span>。因此相對價值</p>
@@ -591,7 +662,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 \[V=\frac{\min(\alpha,s)-(\alpha\tau+s\nu)}{\min(\alpha,s)-\alpha s},\qquad 0&lt;s&lt;1.\]</div>
 <p>此式依賴相同成本、完全防護及可及時行動等假設，並不推出所有預報的價值峰值必在 <span class="math notranslate nohighlight">\(\alpha=s\)</span>。實際行動門檻改變時，<span class="math notranslate nohighlight">\(\tau,\nu\)</span> 也會改變。</p>
 </section>
-<section id="e-8">
+<section class="museum-section section-theory" id="e-8">
 <h2>E.8 凸組合的凹性與端點<a class="headerlink" href="#e-8" title="Link to this heading">#</a></h2>
 <p>固定率函數 <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span>，令 <span class="math notranslate nohighlight">\(\lambda_r=(1-r)\lambda_1+r\lambda_2\)</span>，在事件處率皆正，總積分為 <span class="math notranslate nohighlight">\(\Lambda_r=(1-r)\Lambda_1+r\Lambda_2\)</span>。對數概似的導數是</p>
 <div class="math notranslate nohighlight">
@@ -605,8 +676,39 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 <p>若樣本平均 <span class="math notranslate nohighlight">\(\overline{\ln\rho}=0\)</span> 恰成立，且事件處比值非常數，AM–GM 可推出兩條件。但統計檢驗未顯著不代表這個精確等式。反例是所有事件處 <span class="math notranslate nohighlight">\(\rho_n=2\)</span> 且總量相同，此時概似隨 <span class="math notranslate nohighlight">\(r\)</span> 增加，最佳值在端點 <span class="math notranslate nohighlight">\(r=1\)</span>。</p>
 <p>Jensen 另給出 <span class="math notranslate nohighlight">\(\ell(r)\ge(1-r)\ell(0)+r\ell(1)\)</span>；這是低於最佳成分與否都可能的下界，不是保證超過最佳成分。</p>
 </section>
-<section id="e-9-kl">
+<section class="museum-section section-theory" id="e-9-kl">
 <h2>E.9 乘法修正的 KL 表達<a class="headerlink" href="#e-9-kl" title="Link to this heading">#</a></h2>
+<p><strong>基準模型</strong>（baseline model）提供原始格箱率 <span class="math notranslate nohighlight">\(\Lambda_{1,jk}\)</span>。
+<strong>輔助模型</strong>（conjugate model）提供另一張非負空間資訊 <span class="math notranslate nohighlight">\(z_{i,j}\)</span>，不一定是完整率預報。
+Rhoades 等（2014）式 2–3 先以<strong>保序轉換</strong>（order-preserving transformation）形成乘子：</p>
+<div class="math notranslate nohighlight">
+\[\Lambda_{H,jk}=\Lambda_{1,jk}\exp\left[a+\sum_{i=2}^I f_i(z_{i,j})\right],\]</div>
+<div class="math notranslate nohighlight">
+\[f_i(z)=b_i[\ln(1+z)]^{c_i},\qquad b_i\ge0,\quad c_i&gt;0.\]</div>
+<p>此處明定自然對數；換對數底時必須連同 <span class="math notranslate nohighlight">\(b_i\)</span> 換算。
+原文將輔助預報先沿規模箱加總，再轉換其空間排序。
+若輸入是應變等其他帶單位資料，須先指定單位或無因次化尺度，再談轉換參數。
+<span class="math notranslate nohighlight">\(f_i\)</span> 不反轉原有大小次序，但可改變差距；參數仍需從學習資料估計。
+因乘子為正，基準的零率支撐也仍為零；輔助資訊不會自動救回那些格箱。</p>
+<p><span class="math notranslate nohighlight">\(a\)</span> 控制整體尺度。令未正規化總數為
+<span class="math notranslate nohighlight">\(Z=\sum_{jk}\Lambda_{1,jk}\exp[\sum_i f_i(z_{i,j})]\)</span>，若要固定總數為 <span class="math notranslate nohighlight">\(N_*&gt;0\)</span>，就取</p>
+<div class="math notranslate nohighlight">
+\[a=\ln(N_*/Z),\qquad Z&gt;0.\]</div>
+<p>若總數本身也待估，則不能事後聲稱它必須保持基準總數。
+使用非條件 Poisson 概似並自由估 <span class="math notranslate nohighlight">\(a\)</span> 時，對 <span class="math notranslate nohighlight">\(a\)</span> 微分得到 <span class="math notranslate nohighlight">\(N_{\rm learn}-e^a Z\)</span>；
+在正學習事件數下，最優整體期望數等於學習事件數。
+這是該擬合設定的結果，不是所有乘法混合的守恆律。</p>
+<p>用三個格的合成例子即可看到差別。
+基準期望數為 <span class="math notranslate nohighlight">\((2,3,5)\)</span>，輔助值為 <span class="math notranslate nohighlight">\((0,1,2)\)</span>。
+選示意轉換 <span class="math notranslate nohighlight">\(f(z)=\ln(1+z)\)</span>，得到乘子 <span class="math notranslate nohighlight">\((1,2,3)\)</span>。
+相乘後變成 <span class="math notranslate nohighlight">\((2,6,15)\)</span>，總數從 10 變成 23。
+若要保持總數 10，乘上 <span class="math notranslate nohighlight">\(10/23\)</span>，得到</p>
+<div class="math notranslate nohighlight">
+\[\Lambda_H=\left(\frac{20}{23},\frac{60}{23},\frac{150}{23}\right),\qquad
+\sum_j\Lambda_{H,j}=10.\]</div>
+<p>這是代數示例，不是義大利新模型或觀測成績。
+它區分「利用輔助排序改形狀」與「決定總量」兩個步驟。
+本節後面的 KL 表達描述成品分布間的資訊差，不能代替上述建構。</p>
 <p>將基準與修正後空間分布正規化為 <span class="math notranslate nohighlight">\(w_j,q_j\)</span>，且 <span class="math notranslate nohighlight">\(q_j=w_jm_j\)</span>、<span class="math notranslate nohighlight">\(\sum_jq_j=1\)</span>。任意真實分布 <span class="math notranslate nohighlight">\(p\)</span> 下，</p>
 <div class="math notranslate nohighlight">
 \[\sum_jp_j\ln m_j
@@ -618,7 +720,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 \[D_{\rm KL}(p\|q)\le D_{\rm KL}(p\|w)+\ln(1/\pi_1).\]</div>
 <p>它限制相對基準的損失，但不保證候選基準本身足夠好。各式需在所比較支撐上有正率或採適當無窮大慣例。</p>
 </section>
-<section id="e-10-logistic">
+<section class="museum-section section-theory" id="e-10-logistic">
 <h2>E.10 混合分布、平均率與 logistic<a class="headerlink" href="#e-10-logistic" title="Link to this heading">#</a></h2>
 <p>先抽模型指標 <span class="math notranslate nohighlight">\(I\)</span>，<span class="math notranslate nohighlight">\(P(I=i)=\pi_i\)</span>，再抽 <span class="math notranslate nohighlight">\(N\mid I=i\sim\mathrm{Poisson}(\Lambda_i)\)</span>。全變異數給出</p>
 <div class="math notranslate nohighlight">
@@ -630,9 +732,10 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 \[\frac{P}{1-P}=e^{b_0}\prod_i\phi_i^{b_i}.\]</div>
 <p>這是勝算的乘冪關係，不是點過程率的等式。由係數再建立非負率權重，需要特定轉換與獨立檢驗；截去負係數或移除截距是方法設計，並非 logistic 理論必然要求。</p>
 </section>
-<section id="id4">
+<section class="museum-section" id="id4">
 <h2>參考資料與延伸閱讀<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p>Graham 等（2024），<a class="reference external" href="https://doi.org/10.1785/0220240197">New Features in the pyCSEP Toolkit for Earthquake Forecast Development and Evaluation</a>。§Ranking scores 比較適當評分規則與 Brier 分數，先辨認預報格式與分數的方向。</p></li>
 <li><p><a class="reference external" href="https://docs.cseptesting.org/getting_started/theory.html">Theory of CSEP Tests</a> — pyCSEP 開發團隊，官方文件（免費）。先對照各檢驗的目標、模擬方式與分位數分數，再看 N、S、M 與 conditional L-test 的程式範例，可把本章公式接到實際檢驗流程。</p></li>
 <li><p><a class="reference external" href="https://www.corssa.org/export/sites/corssa/.galleries/articles-pdf/zechar.pdf_2063069264.pdf">Evaluating earthquake predictions and earthquake forecasts: a guide for students and new researchers</a> — J. Douglas Zechar（2010），CORSSA 免費教材（DOI：10.5078/corssa-77337879）。從「觀測是否與預報一致」出發整理檢驗方法，適合先建立觀念，再回頭理解本章為何要拆開事件數、空間與規模。</p></li>
 <li><p><a class="reference external" href="https://doi.org/10.1093/gji/ggac018">Prospective evaluation of multiplicative hybrid earthquake forecasting models in California</a> — J. A. Bayona、W. H. Savran、D. A. Rhoades、M. J. Werner（2022），<em>Geophysical Journal International</em>（免費全文）。本章 Poisson／二元似然、負二項計數與多重檢定的主要實例來源；閱讀時留意餘震叢集如何影響各種評分。</p></li>
@@ -650,8 +753,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 </ul>
 </section>
 </section>
-
-    <script type="text/x-thebe-config">
+<script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -669,7 +771,7 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+<script>kernelName = 'python3'</script></div>
 
                 </article>
               
@@ -723,7 +825,10 @@ v=nv+ng^2\Rightarrow v=\frac{n}{(1-n)^3}.\]</div>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-1-poisson">E.1 從 Poisson 計數到條件形狀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2">E.2 叢集的變異數：一個明確的模型</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-2-1">E.2.1 評分對準平均數，還是整個分布？</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-3">E.3 負二項與二元分數</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">每事件資訊增益的兩種版本</a></li>
 </ul>

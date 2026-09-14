@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/teaching.css?v=b63c3d1a" />
+    <link rel="stylesheet" type="text/css" href="_static/museum.css?v=46429f9a" />
+    <link rel="stylesheet" type="text/css" href="_static/exhibits.css?v=04c8eaba" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,7 +65,9 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix_a_point_process';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="_static/teaching_theme.js?v=9c5f9e27"></script>
+    <script src="_static/teaching_theme.js?v=e63afbaf"></script>
+    <script src="_static/museum.js?v=bc30e2c0"></script>
+    <script src="_static/exhibits.js?v=0b8c64c2"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="附錄 B：目錄、完整度與叢集律" href="appendix_b_catalog.html" />
@@ -414,6 +418,11 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-8">A.8 補償子、殘差與時間變換</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-9">A.9 稀疏化與分支模擬</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-10">A.10 固定總數與事件對</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-11">A.11 依條件強度辨認模型家族</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hawkes">標準線性 Hawkes 的積分形式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-process">從標記強度到 ground process</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
 </ul>
             </nav>
@@ -426,18 +435,18 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="a">
-<h1>附錄 A：記號、統計工具與點過程<a class="headerlink" href="#a" title="Link to this heading">#</a></h1>
-<p><strong>對應主文章</strong>：
+  <div class="museum-shell museum-appendix" data-page="appendix_a_point_process"><header class="museum-topbar"><a class="museum-brand" href="00_intro.html"><b>地震統計與預報</b><span>從義大利實驗到臺灣觀測</span></a><nav class="museum-primary" aria-label="主要入口"><a href="01_forecast_question.html">義大利實驗</a><a href="01_overview.html">臺灣觀測</a><a href="#">技術附錄</a></nav><div class="museum-actions"><a class="museum-search" href="search.html" aria-label="搜尋全書"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg></a><span data-museum-theme-slot></span><button type="button" data-museum-menu aria-label="開啟章節目錄">目錄 <span aria-hidden="true">☰</span></button></div><div class="museum-reading-progress" aria-hidden="true"></div></header><dialog class="museum-menu" aria-label="全書章節目錄"><div class="museum-menu-heading"><h2>選一條路，開始探索。</h2><button type="button" data-museum-close aria-label="關閉目錄">關閉 ×</button></div><div class="museum-menu-columns"><section><h3>第一部：一份地震預報實驗，從資料到檢驗</h3><a  href="01_forecast_question.html">1. 地震可以「預報」嗎？一份預報長什麼樣</a><a  href="02_reading_horus.html">2. 讀一份地震目錄：HORUS 與義大利</a><a  href="03_experiment_spec.html">3. 標準預報實驗規格：把題目一次說清楚</a><a  href="04_poisson_and_sup.html">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</a><a  href="05_likelihood_estimation.html">5. 統計工具箱 II：概似與估計</a><a  href="06_simulation_tests_scores.html">6. 統計工具箱 III：模擬、檢定與分數</a><a  href="07_gr_bvalue.html">7. 大小地震的比例：GR 律與 b 值</a><a  href="08_completeness.html">8. 從哪個規模開始相信目錄：完整度 Mc</a><a  href="09_ppe_forecast.html">9. 鄰近過去地震：PPE 預報</a><a  href="10_clustering_laws.html">10. 地震會互相引發：Omori、Båth 與產能</a><a  href="11_conditional_intensity.html">11. 讓率隨歷史更新：條件強度與點過程概似</a><a  href="12_etas_structure.html">12. ETAS：把叢集寫成分支過程</a><a  href="13_etas_italy_forecast.html">13. ETAS 在義大利：估兩個參數、出一張三個月預報</a><a  href="14_psi_precursory_scale.html">14. 大地震之前，小地震先變多變大？Ψ 現象</a><a  href="15_eepas_italy_forecast.html">15. EEPAS：每顆地震都是它尺度上的前兆</a><a  href="16_test_number.html">16. 檢驗 I：數量對不對？N-test</a><a  href="17_test_space_magnitude.html">17. 檢驗 II：位置與規模對不對？S、M、cL、L</a><a  href="18_test_comparison.html">18. 檢驗 III：哪張預報比較有資訊？</a><a  href="19_ensembles.html">19. 把模型加起來：凸組合</a><a  href="20_beyond_forecast.html">20. 預報之後：讀一篇論文、進入決策，與回到儀器</a></section><section><h3>第二部：台灣地球物理觀測</h3><a  href="01_overview.html">21. 臺灣地球物理觀測總覽</a><a  href="02_download.html">22. 資料產品與品質：取得資料之前先定義問題</a><a  href="03_groundwater.html">23. 地下水位：含水層如何回應外界擾動</a><a  href="04_geomagnetic.html">24. 地磁觀測：共同背景與局部變化</a><a  href="05_seismic.html">25. 地動觀測：波形如何成為地震目錄</a><a  href="06_gnss.html">26. GNSS：從衛星訊號到地表位移</a><a  href="07_case_hualien2024.html">27. 花蓮案例：同一場地震，不同觀測回答什麼</a><a  href="08_explore_ideas.html">28. 從觀測現象到可檢驗的證據</a><a  href="23_taiwan_outlook.html">29. 臺灣展望：把觀測、預報與驗證接起來</a></section><section><h3>第三部：技術附錄</h3><a aria-current=page href="#">附錄 A：記號、統計工具與點過程</a><a  href="appendix_b_catalog.html">附錄 B：目錄、完整度與叢集律</a><a  href="appendix_c_etas.html">附錄 C：ETAS 的分支、概似與推論</a><a  href="appendix_d_eepas.html">附錄 D：Ψ 的量測與 EEPAS 的核函數</a><a  href="appendix_e_testing.html">附錄 E：預報檢驗與模型組合的推導</a><a  href="appendix_f_hazard.html">附錄 F：複發時間與地震危害積分</a><a  href="appendix_g_observations.html">附錄 G：觀測資料、處理與幾何細節</a></section></div></dialog><section class="tex2jax_ignore mathjax_ignore" id="a">
+<header class="museum-chapter-header" data-chapter-kind="appendix"><div class="museum-chapter-label"><span>技術附錄</span><b>A</b></div><div class="museum-chapter-heading"><p class="museum-kicker">深入推導，回查方法</p><h1>附錄 A：記號、統計工具與點過程</h1><div class="museum-chapter-lead"><p><strong>對應主文章</strong>：
 第 3 章 <a class="reference internal" href="03_experiment_spec.html"><span class="doc">3. 標準預報實驗規格：把題目一次說清楚</span></a>；
 第 4 章 <a class="reference internal" href="04_poisson_and_sup.html"><span class="doc">4. 統計工具箱 I：計數、Poisson 過程，與第一張預報 SUP</span></a>；
 第 5 章 <a class="reference internal" href="05_likelihood_estimation.html"><span class="doc">5. 統計工具箱 II：概似與估計</span></a>；
 第 6 章 <a class="reference internal" href="06_simulation_tests_scores.html"><span class="doc">6. 統計工具箱 III：模擬、檢定與分數</span></a>；
-第 11 章 <a class="reference internal" href="11_conditional_intensity.html"><span class="doc">11. 讓率隨歷史更新：條件強度與點過程概似</span></a>。</p>
+第 11 章 <a class="reference internal" href="11_conditional_intensity.html"><span class="doc">11. 讓率隨歷史更新：條件強度與點過程概似</span></a>。</p></div></div><nav aria-label="本章起點" class="museum-waypoints"><a href="#a-1"><span>01</span>A.1 讀者版記號表</a><a href="#a-2"><span>02</span>A.2 兩套術語對照</a><a href="#a-3-poisson"><span>03</span>A.3 Poisson 過程與計數</a></nav></header>
+
 <p>本附錄提供記號回查與工具推導。
 主文先說用途，附錄再列適用條件。
 先備知識為基礎機率、微分與積分。</p>
-<section id="a-1">
+<section class="museum-section section-comparison" id="a-1">
 <h2>A.1 讀者版記號表<a class="headerlink" href="#a-1" title="Link to this heading">#</a></h2>
 <p>條件強度（conditional intensity）是歷史下的瞬時率。
 率密度還須指定面積與規模單位。
@@ -640,7 +649,7 @@ ETAS 空間尾指數也沿用文獻的 <span class="math notranslate nohighlight
 不同核正規化下的 <span class="math notranslate nohighlight">\(K\)</span> 不可直接互換。
 具體換算見 <a class="reference internal" href="appendix_c_etas.html"><span class="doc">附錄 C：ETAS 的分支、概似與推論</span></a>。</p>
 </section>
-<section id="a-2">
+<section class="museum-section section-comparison" id="a-2">
 <h2>A.2 兩套術語對照<a class="headerlink" href="#a-2" title="Link to this heading">#</a></h2>
 <p>CSEP 是地震可預報性協作研究計畫。
 英文為 Collaboratory for the Study of Earthquake Predictability。
@@ -693,7 +702,7 @@ ETAS R 要求頂點逆時針排列。
 EEPAS 框架要求順時針排列。
 兩者的時間原點也必須明確換算。</p>
 </section>
-<section id="a-3-poisson">
+<section class="museum-section section-theory" id="a-3-poisson">
 <h2>A.3 Poisson 過程與計數<a class="headerlink" href="#a-3-poisson" title="Link to this heading">#</a></h2>
 <p>Poisson 過程以独立增量描述事件。
 此處的率 <span class="math notranslate nohighlight">\(\lambda(t)\)</span> 是確定函數。
@@ -716,7 +725,7 @@ P(N(B)\ge1)&amp;=1-e^{-\Lambda(B)}.
 混合不同年份的率也可能如此。
 不能只憑計數變異就判定觸發機制。</p>
 </section>
-<section id="a-4-mle-bootstrap">
+<section class="museum-section section-theory" id="a-4-mle-bootstrap">
 <h2>A.4 概似、MLE 與 bootstrap<a class="headerlink" href="#a-4-mle-bootstrap" title="Link to this heading">#</a></h2>
 <p>概似（likelihood）比較参数對資料的支持。
 它是固定資料後的參數函數。
@@ -751,7 +760,7 @@ P(N(B)\ge1)&amp;=1-e^{-\Lambda(B)}.
 模型式模擬則依賴生成模型正確。
 所報區間須註明採用哪種抽樣單位。</p>
 </section>
-<section id="a-5-p">
+<section class="museum-section section-theory" id="a-5-p">
 <h2>A.5 分位數、p 值與對數分數<a class="headerlink" href="#a-5-p" title="Link to this heading">#</a></h2>
 <p>統計量（statistic）是資料的一個摘要。
 令觀測值為 <span class="math notranslate nohighlight">\(s_{\rm obs}\)</span>。
@@ -779,7 +788,7 @@ p_{\rm two}&amp;=\min\{1,2\min[P(S\le s),P(S\ge s)]\}.
 兩模型相減得到對數概似比。
 網格、單位與目標不同時，不可直接比較。</p>
 </section>
-<section id="a-6-aickl">
+<section class="museum-section section-theory" id="a-6-aickl">
 <h2>A.6 AIC、KL 與貝氏推論<a class="headerlink" href="#a-6-aickl" title="Link to this heading">#</a></h2>
 <p>KL 散度比較兩個分布的差異。
 全名為 Kullback–Leibler divergence。
@@ -827,7 +836,7 @@ Poisson 資料給出</p>
 ETAS 的後驗預報還須整合未來觸發。
 模型未描述的漏測也不會自動消失。</p>
 </section>
-<section id="a-7">
+<section class="museum-section section-theory" id="a-7">
 <h2>A.7 下一事件與點過程概似<a class="headerlink" href="#a-7" title="Link to this heading">#</a></h2>
 <p>存活函數（survival function）表示尚未發生。
 令 <span class="math notranslate nohighlight">\(S_0(t)=P(T_1&gt;t\mid H_{t_0})\)</span>。
@@ -869,7 +878,7 @@ L(\theta)&amp;=\prod_{i=1}^N\lambda^*_\theta(t_i)
 例如 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span> 會把兩項重新連結。
 當次規模獨立，也不代表歷史規模無作用。</p>
 </section>
-<section id="a-8">
+<section class="museum-section section-theory" id="a-8">
 <h2>A.8 補償子、殘差與時間變換<a class="headerlink" href="#a-8" title="Link to this heading">#</a></h2>
 <p>補償子（compensator）是沿歷史累積的率。
 本節只看時間，定義 <span class="math notranslate nohighlight">\(A(t)=\int_0^t\lambda^*(u)\,du\)</span>。
@@ -912,7 +921,7 @@ KS 統計量是累積分布的最大距離。
 同資料估參數後，應模擬並重新擬合。
 如此才能校準診斷的參考分布。</p>
 </section>
-<section id="a-9">
+<section class="museum-section section-theory" id="a-9">
 <h2>A.9 稀疏化與分支模擬<a class="headerlink" href="#a-9" title="Link to this heading">#</a></h2>
 <p>稀疏化（thinning）先提候選，再決定保留。
 它需要候選區間內有效的上界 <span class="math notranslate nohighlight">\(\bar\lambda\)</span>。</p>
@@ -949,7 +958,7 @@ R&amp;=\sqrt{v[(1-U)^{-1/(q-1)}-1]}.
 區外事件若能觸發區內後代，仍須保留。
 空歷史起步也不等於平穩目錄。</p>
 </section>
-<section id="a-10">
+<section class="museum-section section-theory" id="a-10">
 <h2>A.10 固定總數與事件對<a class="headerlink" href="#a-10" title="Link to this heading">#</a></h2>
 <p>固定 <span class="math notranslate nohighlight">\(N\)</span> 個均勻時間點，再排序。
 包含兩端的間隔共有 <span class="math notranslate nohighlight">\(N+1\)</span> 個。
@@ -976,7 +985,63 @@ R&amp;=\sqrt{v[(1-U)^{-1/(q-1)}-1]}.
 相同平均率仍可有不同叢集程度。
 非均勻背景與邊界也會改變近鄰數。</p>
 </section>
-<section id="id1">
+<section class="museum-section section-comparison" id="a-11">
+<h2>A.11 依條件強度辨認模型家族<a class="headerlink" href="#a-11" title="Link to this heading">#</a></h2>
+<p>第11章以Hawkes作為事件回饋的主例。下表比較的是生成機制，而不是單看圖形是否成群。非齊次Poisson的高率時段、Cox的共同環境與Hawkes的觸發，都可能產生視覺上密集的活動。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>模型</p></th>
+<th class="head"><p>率使用哪些資訊？</p></th>
+<th class="head"><p>事件出現後的作用</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>齊次／非齊次 Poisson</p></td>
+<td><p>確定常數或確定時間函數 <span class="math notranslate nohighlight">\(\lambda(t)\)</span></p></td>
+<td><p>不改變已指定的率</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cox</p></td>
+<td><p>外生隨機強度路徑；給定路徑為 Poisson</p></td>
+<td><p>更新對未知路徑的推測，不是事件回饋生成該路徑</p></td>
+</tr>
+<tr class="row-even"><td><p>更新過程（renewal）</p></td>
+<td><p>自上次指定事件的年齡 <span class="math notranslate nohighlight">\(a\)</span>；率為 <span class="math notranslate nohighlight">\(f(a)/S(a)\)</span></p></td>
+<td><p>年齡歸零；率如何跳變由間隔分布決定</p></td>
+</tr>
+<tr class="row-odd"><td><p>線性 Hawkes</p></td>
+<td><p>背景加所有已發生事件的非負因果核</p></td>
+<td><p>加入新的未來觸發貢獻</p></td>
+</tr>
+<tr class="row-even"><td><p>自我修正（self-correcting）</p></td>
+<td><p>載入與累積事件造成的負向回饋</p></td>
+<td><p>在典型形式中降低率，平靜時再逐漸上升</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>這五類不必構成互斥且窮盡的分類。齊次Poisson也是指數間隔的更新過程；更一般模型還能混合外生變動與事件回饋。比較表用來找主要假設，不作所有隨機過程的分類定理。</p>
+<section class="museum-section section-theory" id="hawkes">
+<h3>標準線性 Hawkes 的積分形式<a class="headerlink" href="#hawkes" title="Link to this heading">#</a></h3>
+<p>以 <span class="math notranslate nohighlight">\(N(du)\)</span> 表示時間 <span class="math notranslate nohighlight">\(u\)</span> 的事件計數測度。有限起點模型可寫成</p>
+<div class="math notranslate nohighlight">
+\[\lambda^*(t)=\mu+\int_{[0,t)}\phi(t-u)\,N(du)
+=\mu+\sum_{0\le t_i&lt;t}\phi(t-t_i).\]</div>
+<p>若有更早歷史，另加入那些事件的核貢獻；平穩版本則考慮無限過去。<span class="math notranslate nohighlight">\(\phi\)</span> 取非負、因果且可積的函數，<span class="math notranslate nohighlight">\(n=\int_0^\infty\phi(u)\,du\)</span> 是未標記模型的平均直接後代數。對標準固定正背景模型，<span class="math notranslate nohighlight">\(n&lt;1\)</span> 給出有限均值的平穩版本。</p>
+<p>「線性」是對事件計數測度的可加作用，並不要求 <span class="math notranslate nohighlight">\(\phi(u)\)</span> 對時間線性。非線性連結、負核抑制或多類型互激發需要另立條件，不能照搬這個單一非負核的分支論證。第12章及附錄C已給出規模依賴產能後的對應平均。</p>
+</section>
+<section class="museum-section section-theory" id="ground-process">
+<h3>從標記強度到 ground process<a class="headerlink" href="#ground-process" title="Link to this heading">#</a></h3>
+<p><strong>標記</strong>（mark）是事件附帶量，例如規模。<strong>基礎過程</strong>（ground process）保留時間與位置，去掉標記。令 <span class="math notranslate nohighlight">\(z=(t,x,y)\)</span>，帶標記的強度可分解為</p>
+<div class="math notranslate nohighlight">
+\[\lambda^*(z,m)=\lambda_g^*(z)\,f(m\mid z,H_t),\qquad
+\lambda_g^*(z)=\int \lambda^*(z,m)\,dm.\]</div>
+<p>此處 <span class="math notranslate nohighlight">\(\lambda_g^*\)</span> 仍以可用的完整歷史為條件，可以依賴過去規模；「去掉標記」不是把歷史規模的資訊一律丟棄。若只觀測ground process，就要改成相應較少資訊下的條件強度。</p>
+<p><strong>不可由過去預知的標記</strong>（unpredictable marks）描述新標記的分布不依過去事件及其標記。標準ETAS用固定 <span class="math notranslate nohighlight">\(s(m)\)</span> 生成新規模，同時讓過去 <span class="math notranslate nohighlight">\(m_i\)</span> 決定產能和空間尺度。附錄A.7的概似分解正是這個設定的例子。</p>
+<p><strong>獨立標記</strong>（independent marks）是另一個較強、不同的條件：給定全部事件時間與位置後，各標記互相獨立，分布只依各自位置時間。不能從標準ETAS的「新規模按固定GR抽樣」直接推出此條件，因為稍後的事件位置與數量含有先前規模造成的訊息。</p>
+<p>例如，一顆規模較大的事件通常容許更多後代。看到它之後一整團事件，會改變對其規模的條件推測；這不違反事件生成當下的GR抽樣假設。Reinhart（2018）第2.3節的區分，正是避免把這兩種獨立混用。</p>
+</section>
+</section>
+<section class="museum-section" id="id1">
 <h2>參考資料與延伸閱讀<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Gallager（2011），<a class="reference external" href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/mit6_262s11_chap02/">Poisson Processes</a>。免費講義。先讀等待時間與計數的關係。</p></li>
@@ -990,8 +1055,7 @@ R&amp;=\sqrt{v[(1-U)^{-1/(q-1)}-1]}.
 </ul>
 </section>
 </section>
-
-    <script type="text/x-thebe-config">
+<script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -1009,7 +1073,7 @@ R&amp;=\sqrt{v[(1-U)^{-1/(q-1)}-1]}.
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+<script>kernelName = 'python3'</script></div>
 
                 </article>
               
@@ -1067,6 +1131,11 @@ R&amp;=\sqrt{v[(1-U)^{-1/(q-1)}-1]}.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-8">A.8 補償子、殘差與時間變換</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-9">A.9 稀疏化與分支模擬</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-10">A.10 固定總數與事件對</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-11">A.11 依條件強度辨認模型家族</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hawkes">標準線性 Hawkes 的積分形式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-process">從標記強度到 ground process</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">參考資料與延伸閱讀</a></li>
 </ul>
   </nav></div>

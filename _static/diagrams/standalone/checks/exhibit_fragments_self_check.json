@@ -1,0 +1,86 @@
+[
+  {
+    "file": "book/_static/diagrams/d01_forecast_pipeline.html",
+    "sha256": "f20ef5ab892190551ef2f6232f33bbb78b403a08688e22afe677c9aa70841f50",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d01_forecast_pipeline.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d02_regions_s_r.html",
+    "sha256": "d34d7c49f9e112d8da4eb8ffb76cf8be16dddc7912d779804b9e5070cec490f4",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d02_regions_s_r.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d03_forecast_protocols.html",
+    "sha256": "f03de84fd28e1ad9a06af826d9c9d1d33fe5d9c2d967284ea59c7e730b96f02c",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d03_forecast_protocols.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d03_thresholds.html",
+    "sha256": "f4728e22f6d3aa5f09e1110d115fd24c900ec8d5b77e22eea0eea876ec8029fb",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d03_thresholds.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d03_timeline_windows.html",
+    "sha256": "5044a58892cd9b8eb980f3e0e6ddcf00cc9110fd740822e9cfad0505dee2c5df",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d03_timeline_windows.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d04_density_to_counts.html",
+    "sha256": "b27205bdafb50d549607c7ab4fd118b5c02bd2f3c1362442b3006969c7b18d3b",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d04_density_to_counts.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d06_quantile_pvalue.html",
+    "sha256": "827b4c59776b8abc09584d0f80f1db687403d3b0f3f7c2cd8c8497f80cb66cad",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d06_quantile_pvalue.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d09_kernel_smoothing.html",
+    "sha256": "ae01b6cac4cd0a03f07cc4a1c1b07ee6bba281bf13f0650a1ca23e7f4fce4c20",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d09_kernel_smoothing.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d11_hawkes_process.html",
+    "sha256": "cad9083ab5084f6ac7598dbadb26252f6a163fc3ad888ac094fe12118d080060",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d11_hawkes_process.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d12_etas_branching.html",
+    "sha256": "ff9178339bf392cbf9d5f2201b63535c5ebf8f113100e3d85520a962959dff2f",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d12_etas_branching.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d15_eepas_kernels.html",
+    "sha256": "f51e3b4e2c2e93688c5f6ca26756a7d29b9fbc1f6e168aca1a285c69342a811b",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d15_eepas_kernels.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d16_csep_tests_flow.html",
+    "sha256": "e5eaa54a538ecb0e53cb6277400dcae10be44b4ea6d97ac1fd24f7742c4ce223",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d16_csep_tests_flow.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d19_convex_mix.html",
+    "sha256": "fd810ff928338b79066dbe07a9122334d96b018f32fd1266f7fd439898c5a3e4",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d19_convex_mix.html\n"
+  },
+  {
+    "file": "book/_static/diagrams/d20_model_family.html",
+    "sha256": "ab68e306ef4d9474aed7652ca0eedcf7938326c3e2ee2560271fd44ed96e04e9",
+    "exit_code": 0,
+    "output": "OK book/_static/diagrams/d20_model_family.html\n"
+  }
+]

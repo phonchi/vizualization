@@ -1,0 +1,20 @@
+{
+  "inputs": [
+    {
+      "path": "EEPAS/data/CELLE_ter.mat",
+      "sha256": "04865a0c9ab7eec97b4e6e07b9f41552af65a1fb9852e59e588ac50ffbc0e6cb"
+    },
+    {
+      "path": "EEPAS/data/CPTI15.mat",
+      "sha256": "fcbcd3b83828313dc84e9a782aece9bb2b3d72c16244f35d4f14e0d8202fe4f2"
+    },
+    {
+      "path": "data/cache/italy/horus_clean.csv",
+      "sha256": "85a096434f7dd8fcea1f39d9c4f4b48a1726c4623ea49b8ec4f06002285b30fd"
+    }
+  ],
+  "cells": 177,
+  "polygon_vertices": 15,
+  "events": 128,
+  "scope": "lightweight export only; no model computation"
+}
