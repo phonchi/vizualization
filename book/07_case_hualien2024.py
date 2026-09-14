@@ -130,7 +130,7 @@ gw = gt.read_groundwater(CACHE_DIR / "edu-gw-hualien2024.tgz", "TUN",
 fig = go.Figure(go.Scattergl(x=gw.index, y=gw.water_level_cm, mode="lines",
                              line=dict(color=PALETTE[0], width=1.5)))
 fig.add_vline(x=str(EQ_UTC), line_dash="dash", line_color=QUAKE_COLOR)
-apply_layout(fig, title="壯圍（TUN）水位，主震前後各三天",
+apply_layout(fig, title="壯圍（TUN）水位，2024/03/30–04/06（UTC）",
              yaxis_title="水位（cm）", showlegend=False)
 fig
 
@@ -199,7 +199,7 @@ for row in (1, 2):
     fig.add_vline(x=str(EQ_UTC), line_dash="dash", line_color=QUAKE_COLOR,
                   row=row, col=1)
 apply_layout(fig, height=520, showlegend=False,
-             title="新城（XCG）地磁，主震前後各三天（nT）")
+             title="新城（XCG）地磁，2024/03/30–04/06（UTC；nT）")
 fig
 
 # %% [markdown]

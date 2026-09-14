@@ -1,0 +1,187 @@
+{
+  "passed": true,
+  "paired_sources": [
+    {
+      "page": "01_forecast_question",
+      "matched": true,
+      "sha256": "c2b8e8a51bc95e5e1a6ebe56efe6fc20e6141c70cfcdd2d617a9b61a9f3deb9e"
+    },
+    {
+      "page": "02_reading_horus",
+      "matched": true,
+      "sha256": "12f431cd2246cb558167049eea610a32190cb35dc30b6fcda4df809d53f4a3d9"
+    },
+    {
+      "page": "03_experiment_spec",
+      "matched": true,
+      "sha256": "9cb0d16afc77aa56fdd2fcb5389a77497cab4fac6d31cbdeda578065ddeac81c"
+    },
+    {
+      "page": "04_poisson_and_sup",
+      "matched": true,
+      "sha256": "a9448513d65cec08f0b4bf44a279ddab82ab366b6b9acdb0d6676e4c07337c52"
+    },
+    {
+      "page": "05_likelihood_estimation",
+      "matched": true,
+      "sha256": "703bb7a567c97ddfe97038a511a1600ffc3bb22ffeb314de2e98f05babe36dae"
+    },
+    {
+      "page": "06_simulation_tests_scores",
+      "matched": true,
+      "sha256": "b73a5bde476a4625115015793d4e338b5ef0ca3b295706b92ef51a8e030b395f"
+    },
+    {
+      "page": "07_gr_bvalue",
+      "matched": true,
+      "sha256": "c37b94eeaf9c26482510839b76a0cabf0841cfe534c194d89d42b56d027607a1"
+    },
+    {
+      "page": "08_completeness",
+      "matched": true,
+      "sha256": "c02cd5d21e18a39f40a1af3408006bc0617338781b3171a116e48c7cc31f5715"
+    },
+    {
+      "page": "09_ppe_forecast",
+      "matched": true,
+      "sha256": "011573b91b318d2d38ad9238daac4c5c8020092ef710c8ddb0d4ebc69afa2d27"
+    },
+    {
+      "page": "10_clustering_laws",
+      "matched": true,
+      "sha256": "cee0562d1bcc18e3c52188b93f5fc2ea2a3532ac68c24fff00316df6e11c6f35"
+    },
+    {
+      "page": "11_conditional_intensity",
+      "matched": true,
+      "sha256": "36a0fd817d640eccb6c967f981c5fd90fbfd5b3f114bd9e6022d643355f14c4e"
+    },
+    {
+      "page": "12_etas_structure",
+      "matched": true,
+      "sha256": "7e2f7e9d68ca1a6f71e0eed320b9e00c31de1f6d3dbecbd34009791b43b598d0"
+    },
+    {
+      "page": "13_etas_italy_forecast",
+      "matched": true,
+      "sha256": "8680d5c1580d1cc7c00c0d36f75e126e6327b9f831961c3cc8b60243872c5df0"
+    },
+    {
+      "page": "14_psi_precursory_scale",
+      "matched": true,
+      "sha256": "201b7f4b977be680c836c70efc8e669449da4c6913d751d53ab19c9e30ed73d3"
+    },
+    {
+      "page": "15_eepas_italy_forecast",
+      "matched": true,
+      "sha256": "ed65c7568557ff3406baea4212f4c7d1a770085c4131c08045dbd18997e8af55"
+    },
+    {
+      "page": "16_test_number",
+      "matched": true,
+      "sha256": "7207fa6ce803f43bcd9945ac45e62f0cd047df4cf2d14dcd9f4c51b0618f072a"
+    },
+    {
+      "page": "17_test_space_magnitude",
+      "matched": true,
+      "sha256": "0b5c63623f3b510948b775173bf0cb776c964b925e532921eeb2e7318f598eba"
+    },
+    {
+      "page": "18_test_comparison",
+      "matched": true,
+      "sha256": "23001cf355b84ce81abaaf5aa4f9a7ebda08ae89ed2cc9abc9861d52869281b4"
+    },
+    {
+      "page": "19_ensembles",
+      "matched": true,
+      "sha256": "74a25d36abfff7f484d17ed909da9c6758efe4caa2c633e621a7c8a3411dae2f"
+    },
+    {
+      "page": "20_beyond_forecast",
+      "matched": true,
+      "sha256": "0d00410035d34b398b3acc23373cc0d04c79a2e418608e167fcf858bfd4e7076"
+    },
+    {
+      "page": "01_overview",
+      "matched": true,
+      "sha256": "84e87efb578d60b74a9b3d73ff070acff10739fe4b986b1834a40393fcde2907"
+    },
+    {
+      "page": "02_download",
+      "matched": true,
+      "sha256": "ed9d65985d732d0eabb1bfbe7dd5c59d45e20aa86bef1639cfbb734cfe60a998"
+    },
+    {
+      "page": "03_groundwater",
+      "matched": true,
+      "sha256": "9eb6a598ac9b07b5b7e3e4135fa7d2b5428413ace8160788892f2cfb6f5be3d6"
+    },
+    {
+      "page": "04_geomagnetic",
+      "matched": true,
+      "sha256": "2e91f047c0825f1b4f0d81eb4fcd78e0dda31e1390dc273b13b25dff13b8ab0b"
+    },
+    {
+      "page": "05_seismic",
+      "matched": true,
+      "sha256": "8638f9e6ac886205d167bc3e4cfe52cb3f6aa75ee0be23d5b2b5c11a6c19c232"
+    },
+    {
+      "page": "06_gnss",
+      "matched": true,
+      "sha256": "4600b38b74933d1fc58c73759948abea2fe09e8b064851a5f18e57885dd52717"
+    },
+    {
+      "page": "07_case_hualien2024",
+      "matched": true,
+      "sha256": "bb2c8020a1b3d15060231d76d30612006375fdf1cfe625d4e319e499303b44be"
+    },
+    {
+      "page": "23_taiwan_outlook",
+      "matched": true,
+      "sha256": "76b63580ac6c5cadde40924cf84e924ab08a56ccb060112e3fe722a407115251"
+    }
+  ],
+  "reading_pages": 37,
+  "html_sha256": {
+    "00_intro.html": "6271352b2d259954e3edb33bdc4db51d80203508232360279ef57dbe06d84d33",
+    "01_forecast_question.html": "c1ead2eb94b30e7f444cce78eb3e9b3ca3368a5b3e8b23cd463ce12af87a4e82",
+    "02_reading_horus.html": "f73f03b3e124e649b61125eac910bc5764d063e36f0dd9621466efde57c2ca25",
+    "03_experiment_spec.html": "311c79c9214fe9ace4d0b07505140524c59a0dc522b33404e2b696b61cb8335b",
+    "04_poisson_and_sup.html": "f8afca8e4d0476810a820edf7046a7d1e6101905b8dcfcd9a6c950255ec6f4e9",
+    "05_likelihood_estimation.html": "504e47deb191fac0eed3e76b3dcc774cf1e1bcb2ef35979c61fa1b3ec0fef602",
+    "06_simulation_tests_scores.html": "3e2cb4b13888e3d0b09dc6a03864c66093397444d713704df79f36ff46914969",
+    "07_gr_bvalue.html": "b42a8d6ecdb1c16855e07ec45bfee33d0bc64756a39dc6f1b9dcf1733e3e989f",
+    "08_completeness.html": "63ead92a7c3aa47c369c4e4dc35d039319f5861648298031fc16a89dd7289a4c",
+    "09_ppe_forecast.html": "0cd5bef8d0c8ea7378aa6f6ddba683d68e4be2be7f9b61490df917bdc8db804b",
+    "10_clustering_laws.html": "bd284d9137d89e100a204dfcde9c5f1b8346a646188cf7e5f239f42efc135d82",
+    "11_conditional_intensity.html": "81e18f45a5c078e06bd86443fe5bae0a11b5e0cf72af1cb5db87fd4226caa04a",
+    "12_etas_structure.html": "fe8af31a0570d255fea1b06e8b78e12294a3928151fc4eeb47e1272d59d04465",
+    "13_etas_italy_forecast.html": "d23d6d8d1367915c628d77800c0b1e4fdc3c6e7c7804e03fa1f624b21e47e4d5",
+    "14_psi_precursory_scale.html": "d7a133f467133197d7b8ef4636934271a114cb4a4a1275bec509de9a97be6299",
+    "15_eepas_italy_forecast.html": "37eb6a02bdd37d8dcabbeb335a041c0ce348683f9d8ec5c7dd0fdc400c95b922",
+    "16_test_number.html": "dee96a90fc66ee3852b0b00764b32047e4fd3f8529556d1dbcd216beccea682d",
+    "17_test_space_magnitude.html": "868e0744835cfaa74283d8661d90232748581663d29a384c9e7897be5ad208e2",
+    "18_test_comparison.html": "5802302a839fff2f09ce5af009bb58740a86446e3ea9ab7c021c32377d178691",
+    "19_ensembles.html": "79c075b6fc9e23964b255300e2a87782dcddccc7c8d05b896a37a0345ddf7d18",
+    "20_beyond_forecast.html": "ee1862e0ae1b2e0240abf6c6fb98df944d9d1d5df7a494d681526e2010534a71",
+    "01_overview.html": "c2138619d1e19be94a8da10877f21c2ebde39c92b3d0f8c77ba0beab684631f0",
+    "02_download.html": "d0c01ffeff12fc360050f631ffc2a7084bd9c9b3c8f567f7f461d18a65872bb7",
+    "03_groundwater.html": "e5daf00c811cf86ced104c3ad5d50c8a3c6ce01e0f9dddabb90b3680a9d76fe5",
+    "04_geomagnetic.html": "426f5670efcab68f3a20530767343a81a296c1bdedf6fbe5435a71e6e3c53443",
+    "05_seismic.html": "32b54acce1e6fb6eb263fada826c7dc616b7b9874efd23bff030f64cf9fbcf80",
+    "06_gnss.html": "101132508a7494a649e50bb20aa45d550a32e43cfe0182bc92732ba1658b1330",
+    "07_case_hualien2024.html": "dda638c314653f388476a1d1acc3afc49fd8e44b78b2aeb8de2e82ae6e07b1ae",
+    "08_explore_ideas.html": "a99fadb1cab530124037ff7c7af4283b3c11c68384a56130042d9bed5bb40705",
+    "23_taiwan_outlook.html": "12a8971521f03f57f9ff1d21aff879520ddd0976f16ce9d0792e0484e49b0b26",
+    "appendix_a_point_process.html": "22f0a5bdb55b2ce97ea6e7ce753b710ae37747ebf3ffef3ffb3985501ec10cb2",
+    "appendix_b_catalog.html": "48ed79d31ee7e71d3f517ad24bbad2059c3daeb76effb8d85ec03a8747127dfa",
+    "appendix_c_etas.html": "e1162ec9e372aa6722b5cae97702989244a926f869453991103a91f413737a1d",
+    "appendix_d_eepas.html": "a7e241f68dd199338eb8789dfcd16d623d9ce0f163c22aed941a1bec17c6f486",
+    "appendix_e_testing.html": "a84d9aa4a06cc89a0416adaf0218a345e0c4447ef2b49e7358262f642b06762d",
+    "appendix_f_hazard.html": "416dffcf8031922cb9793ef451044aa7afd6638fe43d72b425e0be8a514160ae",
+    "appendix_g_observations.html": "4f6b94d4df34ffca9c63d5dfd77d4360ffdc62558dadcbaeb85501fe55770232"
+  },
+  "internal_references": 5656,
+  "failures": []
+}

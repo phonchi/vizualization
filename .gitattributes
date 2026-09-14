@@ -1,3 +1,5 @@
 # Keep raw tool/build logs verbatim, including their trailing spaces.
 reference/notes/rewrite_20260913/continuation/*.log -whitespace
 reference/notes/refresh_20260913_exhibition/*.log -whitespace
+reference/notes/reader_review_20260914/*.log -whitespace
+reference/notes/reader_review_20260914/**/*.log -whitespace

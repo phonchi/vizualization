@@ -339,7 +339,7 @@ display(HTML(italy.spec_card([
     ("PPE 來源", "S 內名目 Mw ≥ 5.0；每窗資料截止提前 50 天"),
     ("參數", f"a＝{P['a']}；d＝{P['d']:.0f} km；s＝{P['s']:.1e}；b＝{italy.SPEC.b_value}"),
     ("預報陣列", f"{forecast.shape}；每元素為窗 × 格 × 規模箱期望數"),
-    ("交換格式", f"0.1° 十欄示範；總數差 {relative_difference:+.3f}%，待工具箱修正"),
+    ("交換格式", f"0.1° 十欄示範；總數差 {relative_difference:+.3f}%；欄正規化保留總量，邊界仍為取樣近似"),
     ("檢驗", "待填（第 16 章）"),
 ])))
 

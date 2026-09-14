@@ -1,0 +1,14 @@
+{
+  "00_intro.md": "8dfa69234fcdc959658b4aecaecf0fd352d16c39419940026f82e979ab18aa31",
+  "01_overview.py": "84e87efb578d60b74a9b3d73ff070acff10739fe4b986b1834a40393fcde2907",
+  "02_download.py": "ed9d65985d732d0eabb1bfbe7dd5c59d45e20aa86bef1639cfbb734cfe60a998",
+  "03_groundwater.py": "2f11187ed9790e76f97aa5c2d06af14ab9e9eaf8f078a1681726cad3775babe7",
+  "04_geomagnetic.py": "2e91f047c0825f1b4f0d81eb4fcd78e0dda31e1390dc273b13b25dff13b8ab0b",
+  "05_seismic.py": "c35ec0bc70b218b2c5c1ed759fa0770fcf2865acb05f51b37d8332efef73e486",
+  "06_gnss.py": "bc6d5d2b60e66711aedfb0dfd160cc2903937152c9d20607eafe2d15bbfa1e8d",
+  "07_case_hualien2024.py": "a0b3be017482ed1f6dc635874357b8b2eb4e7a0f6f2b0361b30c2ce169bd2eb8",
+  "08_explore_ideas.md": "38750fb26e2df10b86ac9d4b7f44dade08c69b641a21de45b06d62802fe6ff38",
+  "23_taiwan_outlook.py": "58c3276d826b01830adc232118c805c5c334f232b0aea3faa2404be14fc4ddbb",
+  "appendix_g_observations.md": "a6680cc7c533b4a67af1bf1c63caffc69020ef80224730a32725b4257cc57ff3",
+  "20_beyond_forecast.py": "0d00410035d34b398b3acc23373cc0d04c79a2e418608e167fcf858bfd4e7076"
+}

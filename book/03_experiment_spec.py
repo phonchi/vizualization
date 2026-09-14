@@ -243,7 +243,7 @@ show_diagram("d03_forecast_protocols", caption="先看誰能接觸哪些結果�
 
 # %% tags=["remove-input"]
 show_diagram("d03_thresholds",
-             caption="規模軸上的三個門檻：目錄完整度 M_c、模型輸入門檻 m_0、預報目標門檻 m_T。")
+             caption="規模取整與輸入／目標門檻的有效邊界；完整度 M_c 的角色見下方定義。")
 
 # %% [markdown]
 # ```{admonition} 定義：三個規模門檻
@@ -268,7 +268,7 @@ show_diagram("d03_thresholds",
 # %% [markdown]
 # ## 3.4 測試期的 25 顆目標地震
 #
-# 下圖第一次出現紅色。本站的紅色只給目標地震，之後每一章的預報圖都沿用。
+# 下圖沿用紅色標出目標地震，之後各章的預報圖也使用相同約定。
 
 # %% tags=["remove-input"]
 ring_lon, ring_lat = [], []

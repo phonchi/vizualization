@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "layouts": [
+    {
+      "width": 959,
+      "page": "00_intro",
+      "passed": true
+    },
+    {
+      "width": 959,
+      "page": "11_conditional_intensity",
+      "passed": true
+    },
+    {
+      "width": 959,
+      "page": "appendix_g_observations",
+      "passed": true
+    },
+    {
+      "width": 960,
+      "page": "00_intro",
+      "passed": true
+    },
+    {
+      "width": 960,
+      "page": "11_conditional_intensity",
+      "passed": true
+    },
+    {
+      "width": 960,
+      "page": "appendix_g_observations",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "page": "00_intro",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "page": "11_conditional_intensity",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "page": "appendix_g_observations",
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "page": "00_intro",
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "page": "11_conditional_intensity",
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "page": "appendix_g_observations",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "page": "00_intro",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "page": "11_conditional_intensity",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "page": "appendix_g_observations",
+      "passed": true
+    }
+  ],
+  "chapter_link": true,
+  "resize_closes_modal": true
+}

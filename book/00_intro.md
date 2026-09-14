@@ -1,7 +1,7 @@
 # 地震統計與預報：從一份義大利實驗到臺灣觀測
 
-2016 年 8 月 24 日凌晨，義大利中部的 Amatrice 發生 Mw 6.2 地震。接下來兩個月，
-同一區域又出現三次規模 5.5 以上的地震。事後回頭看，這一串地震落在哪裡、
+2016 年 8 月 24 日凌晨，義大利中部的 Amatrice 發生取整 Mw 6.2 地震。約兩個月後，
+10 月 26 至 30 日，同一區域再出現三次取整規模 5.5 以上的地震。事後回頭看，這一串地震落在哪裡、
 間隔多久，都有跡可循。真正的問題是：**在它們發生之前**，一份寫好的預報
 能說出多少？
 
@@ -55,7 +55,7 @@
 
 ## 參考資料與延伸閱讀
 
-- Biondini, E., Rhoades, D. A. 與 Gasperini, P.（2023），[Application of the EEPAS earthquake forecasting model to Italy](https://doi.org/10.1093/gji/ggad123)，*Geophysical Journal International* 234, 1681–1700，開放取用。本站義大利實驗的設定、參數與檢驗結果都以這篇為準；建議先讀 APPLICATION TO ITALY 一節，再對照第 2、3 章的規格卡。
+- Biondini, E., Rhoades, D. A. 與 Gasperini, P.（2023），[Application of the EEPAS earthquake forecasting model to Italy](https://doi.org/10.1093/gji/ggad123)，*Geophysical Journal International* 234, 1681–1700，開放取用。這篇提供本站義大利實驗的設定與已發表參數；本站的目錄版本、ETAS 近似與檢驗實作另有差異，分數另行計算。建議先讀 APPLICATION TO ITALY 一節，再對照第 2、3 章的規格卡。
 - Mizrahi, L. 等（2024），[Developing, Testing, and Communicating Earthquake Forecasts: Current Practices and Future Directions](https://doi.org/10.1029/2023RG000823)，*Reviews of Geophysics*，開放取用。先讀 Plain Language Summary，看模型開發、檢驗與溝通如何串成一個流程。
 - USGS，[Can you predict earthquakes?](https://www.usgs.gov/faqs/can-you-predict-earthquakes)，免費官方說明。釐清「預測特定地震」與「機率預報」的差別。
 - 蕭乃祺（2019），[臺灣地震測報的發展](https://www.ntsec.edu.tw/liveSupply/detail.aspx?a=6829&cat=6841&lid=16154&p=1&print=1)，《科學研習》58 卷 6 期，免費文章。認識第二部觀測系統的建置背景。

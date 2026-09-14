@@ -38,7 +38,14 @@ def main():
                       brokenImages:[...document.images].filter(e=>!e.complete||e.naturalWidth===0).map(e=>e.src),
                       plots:[...document.querySelectorAll('.js-plotly-plot')].length,exhibits:document.querySelectorAll('.quake-exhibit').length};}''')
                 row={'page':stem,'device':device,**metrics,'errors':errors,'html_sha256':hashlib.sha256((HTML/f'{stem}.html').read_bytes()).hexdigest(),'exhibit_checks':[]}
-                page.get_by_role('button',name='開啟章節目錄',exact=True).click();row['menu_opens']=page.locator('.museum-menu').is_visible();page.keyboard.press('Escape');row['menu_closes']=not page.locator('.museum-menu').is_visible()
+                if width>=960:
+                    sidebar=page.locator('.bd-sidebar-primary')
+                    row['menu_opens']=sidebar.is_visible() and sidebar.locator('.bd-sidenav a').count()>=37
+                    row['menu_closes']=not page.get_by_role('button',name='開啟章節目錄',exact=True).is_visible()
+                    current=sidebar.locator('a[aria-current=page]')
+                    row['sidebar_current_visible']=bool(current.count()) and current.evaluate('e=>{const a=e.getBoundingClientRect(),b=e.closest(".bd-sidebar-primary").getBoundingClientRect();return a.top>=b.top&&a.bottom<=b.bottom}')
+                else:
+                    page.get_by_role('button',name='開啟章節目錄',exact=True).click();row['menu_opens']=page.locator('.museum-menu').is_visible();page.keyboard.press('Escape');row['menu_closes']=not page.locator('.museum-menu').is_visible()
                 exhibits=page.locator('.quake-exhibit')
                 for i in range(exhibits.count()):
                     exhibit=exhibits.nth(i);name=exhibit.get_attribute('data-exhibit');kind=exhibit.get_attribute('data-kind');slider=exhibit.locator('[data-control=progress]')
@@ -69,7 +76,7 @@ def main():
                         page.screenshot(path=str(OUT/f'{device}-{name}.png'),clip=clip,full_page=True);seen.add((device,name))
                 page.evaluate('scrollTo(0,0)');page.screenshot(path=str(OUT/f'{device}-{stem}-top.png'));page.screenshot(path=str(OUT/f'{device}-{stem}-full.png'),full_page=True)
                 results.append(row);(OUT/'results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n');print(json.dumps(row,ensure_ascii=False),flush=True)
-                failed=(row['width']>width+2 or errors or row['mathErrors'] or row['visibleCode'] or row['brokenImages'] or not row['menu_opens'] or not row['menu_closes'] or any(not c[k] for c in row['exhibit_checks'] for k in ['keyboard','scrub_changes_scene','compare','layers','play','pause']))
+                failed=(row['width']>width+2 or errors or row['mathErrors'] or row['visibleCode'] or row['brokenImages'] or not row['menu_opens'] or not row['menu_closes'] or row.get('sidebar_current_visible') is False or any(not c[k] for c in row['exhibit_checks'] for k in ['keyboard','scrub_changes_scene','compare','layers','play','pause']))
                 if not args.preview:failed|=bool(row['warnings'] or row['unparsedBold'] or row['weakStrong'])
                 if failed:failures.append(row)
                 page.remove_listener('pageerror',capture)

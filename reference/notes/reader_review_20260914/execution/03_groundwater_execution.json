@@ -1,0 +1,6 @@
+{
+  "page": "03_groundwater",
+  "status": "failed",
+  "seconds": 43.26,
+  "error": "Cell 4 exceeded 30 seconds: 42.86"
+}

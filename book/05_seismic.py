@@ -37,6 +37,9 @@ from gdms_toolkit.viz import setup_plotly
 setup_plotly()
 
 # %% tags=["remove-input"]
+from io import BytesIO
+from IPython.display import Image, display
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -56,7 +59,11 @@ print(st)
 # 當成震源朝向的答案。
 #
 # %% tags=["remove-input"]
-_ = st.plot(size=(1000, 500))
+wave_figure = st.plot(size=(1000, 500), show=False)
+wave_png = BytesIO()
+wave_figure.savefig(wave_png, format="png")
+display(Image(data=wave_png.getvalue()))
+plt.close(wave_figure)
 
 # %% [markdown]
 # 強震段把背景振幅壓縮得幾乎看不見。這是共用縱軸的視覺效果，不代表
@@ -99,8 +106,12 @@ fig
 # 讀圖時也要考慮這個取捨。
 #
 # %% tags=["remove-input"]
-_ = tr.spectrogram(log=True, wlen=10, dbscale=True,
-                   title="HWA.HHZ spectrogram")
+spectrum_figure = tr.spectrogram(log=True, wlen=10, dbscale=True,
+                                 title="HWA.HHZ spectrogram", show=False)
+spectrum_png = BytesIO()
+spectrum_figure.savefig(spectrum_png, format="png")
+display(Image(data=spectrum_png.getvalue()))
+plt.close(spectrum_figure)
 
 # %% [markdown]
 # 強烈震動通常在多個頻帶留下能量，後續短暫訊號則可能對應其他事件。
@@ -177,10 +188,10 @@ fig
 # 如果某段範圍近似直線，斜率描述那個範圍內大小事件的相對比例。
 # 圖上的最小平方法直線只是描述性參考，不是本書推薦的正式 $b$ 值估計，
 # 因為累積計數彼此相依。正式估計與完整度處理請回看
-# {doc}`規模與完整度 <08_completeness>`。
+# {doc}`b 值估計 <07_gr_bvalue>`與{doc}`完整度 <08_completeness>`。
 #
 # %% tags=["remove-input"]
-mags = np.arange(3, cat.ML.max() + 0.1, 0.1)
+mags = np.round(np.arange(3, cat.ML.max() + 0.1, 0.1), 1)
 N = [(cat.ML >= m).sum() for m in mags]
 fig = go.Figure(go.Scatter(x=mags, y=N, mode="markers",
                            marker=dict(color=ACCENT, size=7)))
@@ -229,21 +240,27 @@ fig
 #
 # ## 25.9 同一份目錄的兩個 $b$ 值
 #
-# 最後比較主震前與主震後三十天的規模資料。下列估計使用 $M_L\ge3.5$，
-# 並對 0.1 規模刻度作修正。這是一個敏感度示範：顯示的樣本數是各時段
-# 全部收錄事件數，真正進入估計的，是其中超過門檻的事件。兩個時段的樣本
-# 大小與偵測條件並不相同。
+# 最後比較主震前與主震起三十天的規模資料，後者包含主震本身。
+# 本快取的 $M_L$ 保存到 0.01，未先取整到 0.1；這是資料的數值格距，
+# 不表示單顆規模的量測誤差只有 0.01。本例採格距 $\Delta m=0.01$ 的
+# 離散 GR 模型，依第 7 章的精確估計式計算，門檻固定為 $M_L\ge3.5$。
+# 輸出同時列出實際進入估計的筆數和該時段全部收錄數。
+# 兩段資料的樣本大小與偵測條件仍不同，這是一個敏感度示範。
 #
 # %% tags=["remove-input"]
-def b_value(magnitudes, mc):
-    """Aki (1965) 最大概似法估 b 值。"""
-    m = magnitudes[magnitudes >= mc]
-    return np.log10(np.e) / (m.mean() - (mc - 0.05))
+def b_value(magnitudes, mc, dm=0.01):
+    """依保存的數值格距，採離散 GR 最大概似估計；不是量測精度聲明。"""
+    bins = np.rint(np.asarray(magnitudes, dtype=float) / dm).astype(int)
+    cutoff = int(round(mc / dm))
+    excess = (bins[bins >= cutoff] - cutoff) * dm
+    return np.log1p(dm / excess.mean()) / (dm * np.log(10))
 
 pre = cat[cat.time < main.time].ML
 post = aft[aft.day.between(1, 30)].ML
-print(f"主震前（3/1–4/2）：{len(pre)} 筆，b = {b_value(pre, 3.5):.2f}")
-print(f"餘震期（30 天）：{len(post)} 筆，b = {b_value(post, 3.5):.2f}")
+print(f"主震前（UTC；不含主震）：估計 N={int((pre >= 3.5).sum())}，"
+      f"時段收錄 {len(pre)} 筆，b = {b_value(pre, 3.5):.2f}")
+print(f"主震起 30 天（含主震）：估計 N={int((post >= 3.5).sum())}，"
+      f"時段收錄 {len(post)} 筆，b = {b_value(post, 3.5):.2f}")
 
 # %% [markdown]
 # 即使兩個 $b$ 值不同，仍有抽樣、門檻、尺度與空間組成等替代解釋。

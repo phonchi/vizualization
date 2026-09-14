@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "method": "Only three literal Plotly labels refreshed; every numeric array and all other outputs preserved",
+  "reason": "Full raw archive read exceeded existing 30-second cell limit; no new computation required for these labels",
+  "changed_labels": [
+    {
+      "before": "壯圍（TUN）觀測井，2024/03–04（時間為 UTC）",
+      "after": "壯圍（TUN）觀測井，2024/03/01–05/01（UTC）"
+    },
+    {
+      "before": "一週的水位：接近半日尺度的起伏",
+      "after": "3 月 10–17 日水位：接近半日尺度的起伏"
+    },
+    {
+      "before": "PSD",
+      "after": "功率譜密度（cm²/Hz）"
+    }
+  ],
+  "source_sha256": "9eb6a598ac9b07b5b7e3e4135fa7d2b5428413ace8160788892f2cfb6f5be3d6"
+}

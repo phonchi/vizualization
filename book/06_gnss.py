@@ -78,7 +78,8 @@ print("\n".join(lines[:20]))
 #
 # 下面顯示 HUAL 站某日各曆元記錄的衛星數。本書資料為三十秒間隔；衛星數
 # 變化可能反映星座移動、遮蔽或觀測可用性。突然減少值得檢查，但它不是
-# 地表突然移動的證據。
+# 地表突然移動的證據。檔頭明列本日使用 GPS 時間；圖中保留這個時間系統，
+# 沒有當成 UTC。每個曆元的秒數也保留，因此 00 與 30 秒是不同時刻。
 #
 # 定位能力也受衛星幾何影響。即使衛星數一樣，分散在天空各方向與集中在
 # 同一方向，對座標的約束也不同。這與上一章地震定位的測站幾何很相似：
@@ -94,8 +95,10 @@ def parse_epoch_sats(lines):
             try:
                 yy, mo, dd, hh, mi = (int(ln[1:3]), int(ln[4:6]), int(ln[7:9]),
                                       int(ln[10:12]), int(ln[13:15]))
+                seconds = float(ln[15:26])
                 nsat = int(ln[29:32])
-                out.append((pd.Timestamp(2000 + yy, mo, dd, hh, mi), nsat))
+                epoch = pd.Timestamp(2000 + yy, mo, dd, hh, mi) + pd.Timedelta(seconds=seconds)
+                out.append((epoch, nsat))
             except ValueError:
                 continue
     return pd.DataFrame(out, columns=["time", "nsat"]).set_index("time")
@@ -103,8 +106,8 @@ def parse_epoch_sats(lines):
 sats = parse_epoch_sats(lines)
 fig = go.Figure(go.Scattergl(x=sats.index, y=sats.nsat, mode="lines",
                              line=dict(color=ACCENT, width=1.2)))
-apply_layout(fig, title=f"HUAL 站 2024/04/02 可見衛星數（30 秒取樣，共 {len(sats)} 曆元）",
-             yaxis_title="衛星數", showlegend=False)
+apply_layout(fig, title=f"HUAL 站 2024/04/02 記錄衛星數（30 秒取樣，共 {len(sats)} 曆元）",
+             xaxis_title="GPS 時間（依 RINEX 檔頭）", yaxis_title="衛星數", showlegend=False)
 fig
 
 # %% [markdown]

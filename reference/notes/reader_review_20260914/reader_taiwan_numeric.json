@@ -1,0 +1,117 @@
+{
+  "checked_at_utc": "2026-09-14T00:53:26.665359+00:00",
+  "scope": "Reader audit plus bounded independent numeric recalculation; no notebook/browser/model execution",
+  "inputs": [
+    {
+      "file": "data/cache/catalog_2024spring.csv",
+      "sha256": "02507aabfe78233c255d41db742005e53aaeef857ff894241cc70d3490043d15"
+    },
+    {
+      "file": "data/cache/catalog_1973_2025.csv",
+      "sha256": "8c98488ef83e15c5e773af23ac4456d325aefa6b8718250aad59317a23c19b3b"
+    },
+    {
+      "file": "data/cache/edu-gnss-hualien2024.tgz",
+      "sha256": "713f40484e6e113512c9094164fb5bda02f59fee763e890cceb127db05767dc3"
+    }
+  ],
+  "spring": {
+    "n": 3006,
+    "start": "2024-03-01 03:54:28.500000",
+    "end": "2024-06-30 21:09:08.610000",
+    "mainshock_utc": "2024-04-02 23:58:09.940000",
+    "mainshock_ml": 7.19,
+    "off_tenth_grid": 2707,
+    "calendar_days": 122,
+    "fano": 298.98030935374413
+  },
+  "long_catalog": {
+    "n": 349868,
+    "m5": 942,
+    "start": "1973-01-02 04:53:55.800000",
+    "end": "2025-11-30 23:25:03.830000"
+  },
+  "b_estimation": {
+    "assumption": "Saved 0.01 numerical grid model, not physical magnitude measurement precision; threshold ML>=3.5",
+    "rows": [
+      {
+        "period": "pre",
+        "total_recorded": 208,
+        "estimation_n": 59,
+        "mean_selected": 3.9859322033898303,
+        "before_b": 0.8103533976056886,
+        "after_b": 0.884662884280753,
+        "independently_derived_b": 0.8846628842807533
+      },
+      {
+        "period": "post30_including_mainshock",
+        "total_recorded": 2485,
+        "estimation_n": 1608,
+        "mean_selected": 4.093594527363184,
+        "before_b": 0.674795175283051,
+        "after_b": 0.7255405167436917,
+        "independently_derived_b": 0.7255405167436921
+      }
+    ]
+  },
+  "gr_plot": {
+    "thresholds_changed": 26,
+    "largest_count_difference": 23,
+    "threshold_3_5_count_before": 1884,
+    "threshold_3_5_count_after": 1899,
+    "ols_b_before": 0.834652969376531,
+    "ols_b_after": 0.8507839372347032
+  },
+  "gnss": {
+    "member": "edu-gnss-hualien2024/hual0930.24o.gz",
+    "member_sha256": "a0fbd79c8117d55901ff8662a7b7e81ddd4962dfcbb63fc6e6d4708c3f6e14af",
+    "headers": [
+      "    30.0000                                                 INTERVAL",
+      "  2024     4     2     0     0    0.0000000     GPS         TIME OF FIRST OBS"
+    ],
+    "epochs": 2880,
+    "unique_epochs_before": 1440,
+    "unique_epochs_after": 2880,
+    "last_before": "2024-04-02 23:59:00",
+    "last_after": "2024-04-02 23:59:30",
+    "interval_seconds_after": 30,
+    "source_function_executed_in_isolation": true
+  },
+  "groundwater": {
+    "validation_input": "Saved Plotly minute series in 03_groundwater.ipynb, not a fresh read of the full raw archive",
+    "tun_psd_peak_sqrt": 504.1321123641247,
+    "unit": "cm/sqrt(Hz)",
+    "tun_barometric_slope": -0.014407231523796011,
+    "slope_unit": "cm/hPa"
+  },
+  "ppe_percentile": {
+    "lower_grid_points": 2343,
+    "total_grid_points": 2346,
+    "percentile": 99.87212276214834,
+    "before_label": "100",
+    "after_label": "約第99.9"
+  },
+  "source_after_sha256": {
+    "00_intro.md": "9ee9d48c36a9dfe58822ab599b47ec17ab3140372201eb1ed5bf094a80eb1237",
+    "01_overview.py": "84e87efb578d60b74a9b3d73ff070acff10739fe4b986b1834a40393fcde2907",
+    "02_download.py": "ed9d65985d732d0eabb1bfbe7dd5c59d45e20aa86bef1639cfbb734cfe60a998",
+    "03_groundwater.py": "9eb6a598ac9b07b5b7e3e4135fa7d2b5428413ace8160788892f2cfb6f5be3d6",
+    "04_geomagnetic.py": "2e91f047c0825f1b4f0d81eb4fcd78e0dda31e1390dc273b13b25dff13b8ab0b",
+    "05_seismic.py": "d2915e3ea65a67c0b233d28b44bc5f32a53e83753b51d07c7911389437e863bd",
+    "06_gnss.py": "4600b38b74933d1fc58c73759948abea2fe09e8b064851a5f18e57885dd52717",
+    "07_case_hualien2024.py": "bb2c8020a1b3d15060231d76d30612006375fdf1cfe625d4e319e499303b44be",
+    "08_explore_ideas.md": "5d06c120d68b77189e2e09c7b6715a420bf5a5110171e4986b92bde7062eef3d",
+    "23_taiwan_outlook.py": "76b63580ac6c5cadde40924cf84e924ab08a56ccb060112e3fe722a407115251",
+    "appendix_g_observations.md": "8efe59d645c31227adfc5e45670b72a1cc3590603e6c282006b19185470d0a4c",
+    "20_beyond_forecast.py": "0d00410035d34b398b3acc23373cc0d04c79a2e418608e167fcf858bfd4e7076"
+  },
+  "source_ast_and_control_checks_passed": true,
+  "notebook_sync_status": "Not modified by reader; main agent must execute/sync affected pages",
+  "rerun_pages": [
+    "03_groundwater",
+    "05_seismic",
+    "06_gnss",
+    "07_case_hualien2024",
+    "23_taiwan_outlook"
+  ]
+}

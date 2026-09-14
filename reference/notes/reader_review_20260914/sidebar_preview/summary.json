@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "combinations": 6,
+  "failures": [
+    {
+      "page": "00_intro",
+      "device": "desktop-light"
+    }
+  ]
+}

@@ -270,7 +270,7 @@ fig
 # 比較時，三者都須先換成相同表示法。
 
 # %% tags=["remove-input"]
-show_diagram("d03_thresholds", caption=f"三門檻示意｜輸入名目規模 {2.5:.1f}；目標名目規模 {italy.SPEC.mT:.1f}。")
+show_diagram("d03_thresholds", caption=f"取整與有效邊界｜輸入名目規模 {2.5:.1f}；目標名目規模 {italy.SPEC.mT:.1f}；完整度 Mc 的角色見正文。")
 
 # %% [markdown]
 # 1990 年起的文獻下限是名目 2.5。
@@ -279,7 +279,8 @@ show_diagram("d03_thresholds", caption=f"三門檻示意｜輸入名目規模 {2
 # 局部高下限與早期序列仍保留診斷標記。
 # 本頁的 MaxC 低值，也不會自動降低輸入門檻。
 #
-# 1960–1989 年的暖身期，使用較高完整度下限。
+# 1960–1989 年暖身期的完整度下限較高。
+# 模型仍使用其中已記錄、符合輸入門檻的事件；較早的小震可能缺漏。
 # 暖身期（warm-up period）提供正式學習前的事件歷史。
 # EEPAS 的長時間核會用到較早的小震。
 # 時間核（temporal kernel）描述事件影響隨時間的分布。

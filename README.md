@@ -89,3 +89,7 @@ python scripts/verify_teaching_presentation.py
 瀏覽器驗收另需 Playwright 與 Chromium；本機使用既有安裝，在3GB記憶體上限內逐頁執行
 `check_exhibition_browser.py`、`check_exhibition_lifecycle.py`及`check_exhibit_geometry.py`。
 文獻來源、去重與核對深度見本輪 `literature_coverage.md`；59個PDF登錄不等於59篇全文核讀。
+
+2026-09-14 的全文讀者審查與側欄修正記錄在 `reference/notes/reader_review_20260914/`。
+桌面常駐章節目錄，窄螢幕保留收合操作；`scripts/check_teaching_navigation.py` 檢查章節跳轉與響應式切換。
+同步建置後可用 `scripts/check_teaching_source_integrity.py` 檢查成對來源、頁面內部連結與錨點。

@@ -9,6 +9,8 @@ import os
 import time
 import requests
 import yaml
+from bs4 import BeautifulSoup
+from urllib.parse import urlsplit, unquote
 
 ROOT=Path(__file__).resolve().parents[1]
 HTML=ROOT/'book/_build/html'
@@ -23,8 +25,17 @@ def main():
     toc=yaml.safe_load((ROOT/'book/_toc.yml').read_text())
     files=[toc['root']+'.html']+[c['file']+'.html' for p in toc['parts'] for c in p['chapters']]
     reading_count=len(files)
+    reading_files=list(files)
+    images=set()
+    for name in reading_files:
+        for image in BeautifulSoup((HTML/name).read_text(),'html.parser').select('img[src]'):
+            url=urlsplit(image['src'])
+            if url.scheme or url.netloc:continue
+            target=(HTML/name).parent/unquote(url.path)
+            if target.is_file():images.add(str(target.relative_to(HTML)))
     files+=['index.html',*[f'_static/{n}' for n in ['teaching.css','museum.css','exhibits.css','teaching_theme.js','museum.js','exhibits.js']], '_static/reading/biondini2023_fig8.png','_static/diagrams/data/italy_exhibit_data.json']
     files += [str(p.relative_to(HTML)) for p in sorted((HTML/'_static/diagrams/standalone').glob('d*.html')) if '.archify.' not in p.name and '.visual-check.' not in p.name]
+    files=list(dict.fromkeys(files+sorted(images)))
     OUT.parent.mkdir(parents=True,exist_ok=True)
     local={name:sha256((HTML/name).read_bytes()).hexdigest() for name in files}
     history=[]

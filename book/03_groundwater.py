@@ -67,7 +67,7 @@ wells[["station_code", "chinese_station_name", "lat", "lon",
 # %% [markdown]
 # ## 23.3 先看一段完整的日常變化
 #
-# 以下使用本書儲存的 2024 年 3–4 月壯圍站（TUN）資料。原始取樣間隔為
+# 以下使用本書儲存的 2024 年 3 月 1 日至 5 月 1 日壯圍站（TUN）資料。原始取樣間隔為
 # 一秒，長時間圖先用一分鐘平均，讓日夜尺度的起伏容易閱讀。平均會減弱
 # 短暫振盪，因此這張圖適合看背景，不能替代同震短窗分析。
 #
@@ -100,7 +100,7 @@ for row in (1, 2):
     fig.add_vline(x=eq_t, line_dash="dash", line_color=QUAKE_COLOR, row=row, col=1)
 fig.add_annotation(x=eq_t, y=1, yref="paper", text="M7.2 花蓮地震",
                    showarrow=False, font=dict(color=QUAKE_COLOR), xanchor="left")
-apply_layout(fig, height=520, title="壯圍（TUN）觀測井，2024/03–04（時間為 UTC）",
+apply_layout(fig, height=520, title="壯圍（TUN）觀測井，2024/03/01–05/01（UTC）",
              showlegend=False)
 fig
 
@@ -112,7 +112,7 @@ fig
 #
 # ## 23.5 規律起伏提供了什麼資訊
 #
-# 放大到一週後，可以辨認接近半日尺度的起伏。重複訊號讓我們能
+# 放大到 3 月 10–17 日這八天後，可以辨認接近半日尺度的起伏。重複訊號讓我們能
 # 多次比較：同樣的外界激勵，水位的振幅與延遲是否穩定？若要把變化歸於
 # 地震，先要建立這種平常反應的範圍。
 #
@@ -122,7 +122,7 @@ fig = px.line(week, y="water_level_cm",
               labels={"Time": "時間（UTC）", "water_level_cm": "水位（cm）"},
               color_discrete_sequence=[ACCENT])
 fig.update_traces(line_width=1.5)
-apply_layout(fig, title="一週的水位：接近半日尺度的起伏", showlegend=False)
+apply_layout(fig, title="3 月 10–17 日水位：接近半日尺度的起伏", showlegend=False)
 fig
 
 # %% [markdown]
@@ -154,7 +154,7 @@ for p, name in [(12.42, "M2 太陰半日潮"), (12.0, "S2 太陽半日潮"),
 apply_layout(fig, title="水位功率譜（Welch 法）",
              xaxis=dict(type="log", title="週期（小時）",
                         range=[np.log10(3), np.log10(200)]),
-             yaxis=dict(type="log", title="PSD"), hovermode="x")
+             yaxis=dict(type="log", title="功率譜密度（cm²/Hz）"), hovermode="x")
 fig
 
 # %% [markdown]

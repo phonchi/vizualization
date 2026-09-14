@@ -1,0 +1,6 @@
+{
+  "page": "05_seismic",
+  "status": "failed",
+  "seconds": 6.15,
+  "error": "Unexpected stderr in cell 8; see /home/phonchi/vizualization/reference/notes/reader_review_20260914/execution/05_seismic_diagnostics.log"
+}
